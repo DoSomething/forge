@@ -5,6 +5,11 @@
 	width: 100%;
 }
 
+@mixin flex-width-custom($adjustment) {
+  max-width: $break-large - 100px + $adjustment;
+  width: 100% + ($adjustment / $break-large) * 100%;
+}
+
 @mixin respond-to($media) {
   @if $media == tablets_and_phones {
     @media only screen and (max-width: $break-large - 1) { @content; }

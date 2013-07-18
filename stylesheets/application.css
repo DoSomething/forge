@@ -435,41 +435,16 @@ h3 {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000326}}
+p {
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000330}}
 .wrapper {
   max-width: 1060px;
   width: 100%;
   background: #fff;
   margin: 0 auto;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000332}}
-footer.main {
-  max-width: 1060px;
-  width: 100%;
-  margin: 0 auto;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000336}}
-footer.main h4 {
-  color: #fff;
-  font-size: 22px;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000343}}
-footer.main ul {
-  list-style-type: none;
-  padding: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000348}}
-footer.main a {
-  color: #fff;
-  font-family: din-web, "HelveticaNeue-CondensedBold", "Arial Narrow", Arial, "Trebuchet MS", sans-serif;
-  text-decoration: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_app\.scss}line{font-family:\0000354}}
-footer.main .column {
-  width: 20%;
-  float: left;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_layout\.scss}line{font-family:\000033}}
@@ -633,4 +608,34 @@ nav.main .dropdown a:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_menu\.scss}line{font-family:\00003119}}
 nav.main:hover ~ .menu-link {
   color: red !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_menu\.scss}line{font-family:\00003124}}
+footer.main {
+  max-width: 1040px;
+  width: 98.27586%;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_menu\.scss}line{font-family:\00003128}}
+footer.main h4 {
+  color: #fff;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_menu\.scss}line{font-family:\00003135}}
+footer.main ul {
+  list-style-type: none;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_menu\.scss}line{font-family:\00003140}}
+footer.main a {
+  color: #fff;
+  font-family: din-web, "HelveticaNeue-CondensedBold", "Arial Narrow", Arial, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/david\/Sites\/ds-neue\/sass\/partials_base\/_menu\.scss}line{font-family:\00003146}}
+footer.main .column {
+  width: 20%;
+  float: left;
 }

@@ -121,3 +121,30 @@ nav.main {
 	}
 }
 
+footer.main {
+	@include flex-width-custom(-20px);
+	margin: 0 auto;
+
+	h4 {
+		color: #fff;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	a {
+		color: #fff;
+		font-family: $font-din-headline;
+		text-decoration: none;
+	}
+
+	.column {
+		width: 20%;
+		float: left;
+	}
+}
