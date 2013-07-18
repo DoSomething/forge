@@ -1,0 +1,17 @@
+// re-usable layout (grid) elements
+
+.flexwidth-wrapper {
+	@include flex-width;
+	margin: 0 auto;
+}
+
+.content-center {
+	width: 70%;
+	min-width: 300px;
+	margin: 0 auto;
+	padding: 24px;
+
+	h1, h2 {
+		text-align: center;
+	}
+}

@@ -1,0 +1,58 @@
+// Application elements (header, logo, container, footer, etc.)
+
+body {
+	background: #18408b;
+	font: 18px/1.4 $font-din-reg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-din-headline;
+}
+
+h1 {
+	font-size: 4.5em;
+	line-height: 1.2;
+	margin: 0.5em 0 0.25em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+.wrapper {
+	@include flex-width;
+	background: #fff;
+	margin: 0 auto;
+}
+
+footer.main {
+	@include flex-width;
+	margin: 0 auto;
+
+	h4 {
+		color: #fff;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-bottom: 0;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	a {
+		color: #fff;
+		font-family: $font-din-headline;
+		text-decoration: none;
+	}
+
+	.column {
+		width: 20%;
+		float: left;
+	}
+}
