@@ -1,4 +1,4 @@
-// Application elements (header, logo, container, footer, etc.)
+// Base HTML elements
 
 body {
 	background: #18408b;
@@ -7,10 +7,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-din-headline;
+	font-weight: bold;
 }
 
 h1 {
-	font-size: 4.5em;
+	font-size: 4.5rem;
 	line-height: 1.2;
 	margin: 0.5em 0 0.25em;
 }
@@ -25,10 +26,13 @@ h3 {
 
 p {
 	color: #333;
+	padding: 0.5em 0;
 }
 
-.wrapper {
-	@include flex-width;
-	background: #fff;
-	margin: 0 auto;
+strong, b {
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
 }

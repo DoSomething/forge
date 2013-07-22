@@ -25,7 +25,7 @@ nav.utility {
 	}
 }
 
-nav.main {
+nav.masthead {
 	position: relative;
 	@include flex-width;
 	margin: 0 auto;
@@ -34,6 +34,7 @@ nav.main {
 		position: absolute;
 		top: -45px;
 		left: -20px;
+		z-index: 101;
 		@include transition(left 0.5s);
 		@include respond-to(tablets_and_phones) {
 			left: 10px;
@@ -50,74 +51,98 @@ nav.main {
 		}
 	}
 
-	ul {
+	.main-menu {
 		padding-left: 250px;
 		margin: 12px 0 0;
 		@include transition(padding-left 0.5s);
 		@include respond-to(tablets_and_phones) {
 			padding-left: 135px;
 		}
-	}
+		@include respond-to(phones) {
+			display: none;
 
-	li {
-		position: relative;
-		list-style-type: none;
-		display: inline;
-
-		// display submenu on hover
-		&:hover > .dropdown {
-			display: block;
-			position: absolute;
-			top: 25px; left: 0;
-		}
-	}
-
-	.menu-link {
-		display: inline-block;
-		color: $gold;
-		width: 190px;
-		font-size: 32px;
-		font-family: $font-din-headline;
-		font-weight: 500;
-		text-decoration: none;
-		text-transform: uppercase;
-		margin: 0;
-		padding-bottom: 4px;
-
-		&:hover {
-			color: #fff;
+			&.is-visible-mobile {
+				display: block;
+			}
 		}
 
-		@include respond-to(tablets_and_phones) {
-			width: 150px;
-			font-size: 24px;
+		li {
+			position: relative;
+			display: inline;
+			list-style-type: none;
+
+			&:hover > .dropdown {
+				display: block;
+			}
 		}
-	}
 
-	.dropdown {
-		display: none;
-		width: 220px;
-		padding: 0;
-		background: #000;
-		background: rgba(0,0,0,0.5);
-
-		a {
-			display: block;
+		.menu-link {
+			display: inline-block;
+			color: $gold;
+			width: 24%;
+			font-size: 32px;
 			font-family: $font-din-headline;
-			font-size: 24px;
-			color: #fff;
+			font-weight: 500;
 			text-decoration: none;
-			padding: 0.25em 0.75em;
-
+			text-transform: uppercase;
+			margin: 0;
+			padding-bottom: 4px;
+			@include respond-to(tablets_and_phones) {
+				font-size: 22px;
+			}
+			@include respond-to(phones) {
+				display: block;
+				width: 100%;
+			}
 			&:hover {
-				color: $gold;
-				background: rgba(0,0,0,0.5);
+				color: #fff;
+			}
+		}
+
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: 2em;
+			margin: 1px;
+			left: 0;
+			width: 100%;
+			background: #000;
+			background: rgba(0,0,0, 0.5);
+			padding: 0.5em 0;
+			z-index: 99;
+			@include box-sizing(border-box);
+			@include respond-to(tablets_and_phones) {
+				display: none !important;
+			}
+
+			li {
+				list-style-type: none;
+
+				a {
+					display: block;
+					color: #fff;
+					font-family: $font-din-headline;
+					font-size: 1.2rem;
+					font-weight: 500;
+					text-decoration: none;
+					padding: 0.5em 1em;
+					border-radius: 2px;
+
+					&:hover {
+						color: $gold;
+					}
+				}
 			}
 		}
 	}
+}
 
-	&:hover ~ .menu-link {
-		color: red !important;
+.js-menu-toggle {
+	display: none;
+	margin-left: 150px;
+
+	@include respond-to(phones) {
+		display: inline;
 	}
 }
 

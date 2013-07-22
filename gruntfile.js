@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			sass: {
-				files: ['sass/**/*.{scss,sass}'],
+				files: ['scss/**/*.{scss,sass}'],
 				tasks: ['sass:dist']
 			},
 			coffee: {
@@ -20,10 +20,11 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'assets/application.css': 'sass/application.scss'
+					'assets/application.css': 'scss/application.scss'
 				},
 				options: {
-					sourcemap: 'true'
+					sourcemap: 'true',
+					style: 'compressed'
 				}
 			}
 		},
@@ -33,7 +34,8 @@ module.exports = function(grunt) {
 					'assets/application.js': ['coffee/*.coffee', 'js/vendor/*.js']
 				},
 				options: {
-					sourceMap: true
+					sourceMap: true,
+					style: 'compressed'
 				}
 			}
 		}

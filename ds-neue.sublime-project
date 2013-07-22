@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": [".sass-cache", "node_modules"]
+		}
+	],
+	"settings":
+	{
+		"tab_size": 2
+	}
+}
