@@ -151,9 +151,16 @@ nav.masthead {
 
 /** Footer (miscellaneous links) */
 footer.main {
-	@include flex-width-custom(-20px);
-	margin: 0 auto;
+	width: 100%;
+	background: $dark-gray;
+	margin-top: 1em;
+	overflow: scroll;
 
+	.footer-container {
+		@include flex-width-custom(-20px);
+		margin: 0 auto;
+	}
+	
 	h4 {
 		color: #fff;
 		font-size: 22px;
