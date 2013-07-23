@@ -1,7 +1,7 @@
 /* DS Neue */
 /* Version 0.1 */
 
-@import "vendor/reset";
+@import "vendor/normalize";
 @import "vendor/bourbon/bourbon";
 
 @import "globals/_variables";
@@ -10,4 +10,8 @@
 @import "partials_base/base";
 @import "partials_base/layout";
 @import "partials_base/forms";
-@import "partials_base/menu";
+@import "partials_base/navigation";
+
+@import "partials_blog/blog";
+
+@import "partials_home/home"

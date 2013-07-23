@@ -1,16 +1,16 @@
 // CSS for top utility/main menus and footer
 
+/** Gray utiltiy bar at the top of the site */
 nav.utility {
 	background: #333131;
 	color: #fff;
-	font-size: 18px;
 	padding: 10px 0 12px;
-	height: 1em;
+	height: 1rem;
 
 	.utility-links {
 		float: right;
 		list-style-type: none;
-		margin: 0 1em;
+		margin: 0 1rem;
 	}
 
 	a {
@@ -25,6 +25,7 @@ nav.utility {
 	}
 }
 
+/** Logo & primary navigation/dropdowns */
 nav.masthead {
 	position: relative;
 	@include flex-width;
@@ -35,7 +36,7 @@ nav.masthead {
 		top: -45px;
 		left: -20px;
 		z-index: 101;
-		@include transition(left 0.5s);
+		@include transition(top 0.5s, left 0.5s);
 		@include respond-to(tablets_and_phones) {
 			left: 10px;
 		}
@@ -104,11 +105,11 @@ nav.masthead {
 			position: absolute;
 			top: 2em;
 			margin: 1px;
-			left: 0;
-			width: 100%;
+			left: -2em;
+			width: 120%;
 			background: #000;
 			background: rgba(0,0,0, 0.5);
-			padding: 0.5em 0;
+			padding: 0;
 			z-index: 99;
 			@include box-sizing(border-box);
 			@include respond-to(tablets_and_phones) {
@@ -125,11 +126,12 @@ nav.masthead {
 					font-size: 1.2rem;
 					font-weight: 500;
 					text-decoration: none;
-					padding: 0.5em 1em;
+					padding: 0.5em 2em;
 					border-radius: 2px;
 
 					&:hover {
 						color: $gold;
+						background: rgba(0,0,0, 0.5);
 					}
 				}
 			}
@@ -137,6 +139,7 @@ nav.masthead {
 	}
 }
 
+/** Toggles first-level menu to appear when clicked on mobile */
 .js-menu-toggle {
 	display: none;
 	margin-left: 150px;
@@ -146,6 +149,7 @@ nav.masthead {
 	}
 }
 
+/** Footer (miscellaneous links) */
 footer.main {
 	@include flex-width-custom(-20px);
 	margin: 0 auto;
@@ -166,6 +170,10 @@ footer.main {
 		color: #fff;
 		font-family: $font-din-headline;
 		text-decoration: none;
+
+		&:hover {
+			color: $gold;
+		}
 	}
 
 	.column {
@@ -173,3 +181,32 @@ footer.main {
 		float: left;
 	}
 }
+
+/** Used to indicate position on sub-pages */
+nav.breadcrumbs {
+	text-align: center;
+
+	ul {
+		list-style-type: none;
+	}
+
+	li {
+		display: inline;
+
+		&:after {
+			font-family: $font-din-headline;
+			content: '>';
+			color: #ddd;
+			padding: 0 1em;
+		}
+
+		&:last-of-type:after {
+			display: none;
+		}
+	}
+
+	a {
+		color: #ccc;
+	}
+}
+

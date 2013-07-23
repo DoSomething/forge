@@ -12,6 +12,8 @@
 	margin: 0 auto;
 }
 
+
+/** Used for blog pages, FAQ sections, etc */	
 .content-center {
 	width: 70%;
 	min-width: 300px;
@@ -21,4 +23,34 @@
 	h1, h2 {
 		text-align: center;
 	}
+
+	figure {
+		padding: 2.5%;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	figcaption {
+		color: #999;
+		font-size: 0.8rem;
+		text-align: center;
+		padding: 0.5em 1em;
+	}
 }
+
+.one-col {
+	width: 100%;
+}
+
+.two-col {
+	float: left;
+	width: 50%;
+}
+
+.three-col {
+	float: left;
+	width: 33.3333333333%;
+}
+
