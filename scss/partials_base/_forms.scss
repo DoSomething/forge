@@ -1,2 +1,15 @@
 // buttons and textfields and labels oh my...
 
+input[type="text"] {
+	width: 100%;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding: 0.5em;
+	@include box-sizing(border-box);
+
+	&.search {
+		font-size: 0.9rem;
+		padding-left: 40px;
+		border-radius: 2em;
+	}
+}
