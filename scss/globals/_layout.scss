@@ -34,12 +34,14 @@
 }
 
 .one-col {
-	width: 100%;
+	width: 95%;
+	padding: 0 2.5%;
 }
 
 .two-col {
 	float: left;
-	width: 50%;
+	width: 45%;
+	padding: 0 2.5%;
 
 	@include respond-to(phones) {
 		width: 100%;
