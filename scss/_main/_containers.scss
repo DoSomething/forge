@@ -1,0 +1,6 @@
+.wrapper {
+	@include flex-width;
+	position: relative;
+	background: #fff;
+	margin: 0 auto;
+}

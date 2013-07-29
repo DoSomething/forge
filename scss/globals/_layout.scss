@@ -1,12 +1,5 @@
 // re-usable layout (grid) elements
 
-.wrapper {
-	@include flex-width;
-	position: relative;
-	background: #fff;
-	margin: 0 auto;
-}
-
 .flexwidth-wrapper {
 	@include flex-width;
 	margin: 0 auto;
@@ -47,10 +40,18 @@
 .two-col {
 	float: left;
 	width: 50%;
+
+	@include respond-to(phones) {
+		width: 100%;
+	}
 }
 
 .three-col {
 	float: left;
 	width: 33.3333333333%;
+
+	@include respond-to(phones) {
+		width: 100%;
+	}
 }
 

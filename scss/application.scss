@@ -6,12 +6,12 @@
 
 @import "globals/_variables";
 @import "globals/_helpers";
+@import "globals/base";
+@import "globals/layout";
+@import "globals/forms";
 
-@import "partials_base/base";
-@import "partials_base/layout";
-@import "partials_base/forms";
-@import "partials_base/navigation";
+@import "_main/containers";
+@import "_main/navigation";
 
-@import "partials_blog/blog";
-
-@import "partials_home/home"
+@import "_pages/home";
+@import "_pages/blog";
