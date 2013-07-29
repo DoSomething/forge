@@ -15,9 +15,9 @@ input[type="text"] {
 	}
 
 	&.search {
-		font-size: 0.9rem;
-		padding-left: 40px;
+    padding: 0.3em 0.3em 0.1em 48px;
 		border-radius: 2em;
+    background: url('../images/search.png') no-repeat 12px 50%;
 	}
 }
 
@@ -119,30 +119,34 @@ select {
   font-family: $font-din-reg;
   padding: 0.5em 1em;
   margin: 0.25em;
-  background: url('../images/dropdown.png') no-repeat 95% 50%;
+  background-image: url('../images/dropdown.png');
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
 
   -webkit-appearance: none;
   -moz-appearance: none;
-  &:after {
-    position: absolute;
-    display: block;
-    color: red;
-    content: "DOWN ARROW";
-    right: 5px;
-    z-index: 1000;
-  }
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
-
+  // &:after {
+  //   position: absolute;
+  //   display: block;
+  //   color: red;
+  //   content: "DOWN ARROW";
+  //   right: 5px;
+  //   z-index: 1000;
+  // }
   &.dark {
     display: block;
     width: 300px;
     margin: 0.25em auto;
     color: #fff;
-    background: $dark-gray;
+    background-color: $dark-gray;
     border: 1px solid $dark-gray;
   }
+
+  &:focus {
+    outline: 0;
+    border: 1px solid $gold;
+    box-shadow: 0 0 3px $gold;
+    background-image: url('../images/dropdown_gold.png');
+  }
+
 }
