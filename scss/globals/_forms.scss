@@ -55,10 +55,10 @@ form.default-form {
 .btn {
   clear: both;
   display: block;
-  background: $btn-color;
+  background: #eee;
+  border: 1px solid #ccc;
   margin: 0 auto;
   padding: 0.40em 1em 0.25em;
-  border: 1px solid $btn-border;
   cursor: pointer;
   color: #333;
   font-family: $font-din-reg;
@@ -69,29 +69,52 @@ form.default-form {
   border-radius: 5px;
   &:hover {
     background: $btn-hover;
-    @include background-image(linear-gradient($btn-color, $btn-hover));
+    @include background-image(linear-gradient(#eee, #ddd));
     box-shadow: 0 10px 10px -10px #bbb;
   }
   &:focus {
-  	outline: 0;
-  	box-shadow: 0 0 5px $blue;
+    outline: 0;
+    box-shadow: 0 0 5px $blue;
   }
   &:active {
-  	outline: 0;
-  	background: $btn-color;
-  	color: lighten(#333, 10) !important;
+    outline: 0;
+    background: $btn-color;
+    color: lighten(#333, 10) !important;
     padding: 0.45em 1em 0.2em !important;
     
     box-shadow: 0 10px 10px -10px #bbb;
-    @include background-image(linear-gradient($btn-hover, $btn-color));
+    @include background-image(linear-gradient(#ddd, #eee));
   }
+
+
+
   &:link, &:active, &:hover {
     color: #333;
     text-decoration: none !important;
   }
 
   &.primary {
-    
+    background: $btn-color;
+    border: 1px solid $btn-border;
+
+    &:hover {
+      background: $btn-hover;
+      @include background-image(linear-gradient($btn-color, $btn-hover));
+      box-shadow: 0 10px 10px -10px #bbb;
+    }
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 5px $blue;
+    }
+    &:active {
+      outline: 0;
+      background: $btn-color;
+      color: lighten(#333, 10) !important;
+      padding: 0.45em 1em 0.2em !important;
+      
+      box-shadow: 0 10px 10px -10px #bbb;
+      @include background-image(linear-gradient($btn-hover, $btn-color));
+    }
   }
 
   &.small {
