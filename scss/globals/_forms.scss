@@ -5,7 +5,7 @@ input[type="text"] {
   font-family: $font-din-reg;
 	border: 1px solid #ddd;
 	border-radius: 5px;
-	padding: 0.5em;
+	padding: 0.5em 0.5em 0.3em;
   margin: 0 0 0.5em;
 	@include box-sizing(border-box);
 	&:focus {
@@ -80,7 +80,7 @@ form.default-form {
   	outline: 0;
   	background: $btn-color;
   	color: lighten(#333, 10) !important;
-    padding: 2em 1em 0.10 !important;
+    padding: 0.35em 1em 0.15em !important;
     
     box-shadow: 0 10px 10px -10px #bbb;
     @include background-image(linear-gradient($btn-hover, $btn-color));

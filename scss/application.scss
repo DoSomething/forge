@@ -4,11 +4,12 @@
 @import "vendor/normalize";
 @import "vendor/bourbon/bourbon";
 
-@import "globals/_variables";
-@import "globals/_helpers";
+@import "globals/variables";
+@import "globals/helpers";
 @import "globals/base";
 @import "globals/layout";
 @import "globals/forms";
+@import "globals/din";
 
 @import "_main/containers";
 @import "_main/navigation";

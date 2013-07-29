@@ -1,0 +1,94 @@
+/*
+ *
+ *  DIN REGULAR
+ *
+ */
+
+/* LIGHT */
+@font-face {
+  font-family: "din-regular";
+  src: url('/assets/fonts/DINWeb-Light.eot');
+  src: url('/assets/fonts/DINWeb-Light.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-Light.woff') format('woff');
+  font-style: normal;
+  font-weight: 200;
+}
+
+/* REGULAR */
+@font-face {
+  font-family: "din-regular";
+  src: url('/assets/fonts/DINWeb.eot');
+  src: url('/assets/DINWeb.eot?iefix') format('eot'), url('/assets/fonts/DINWeb.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* MEDIUM */
+@font-face {
+  font-family: "din-regular";
+  src: url('/assets/fonts/DINWeb-Medium.eot');
+  src: url('/assets/fonts/DINWeb-Medium.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* BOLD */
+@font-face {
+  font-family: "din-regular";
+  src: url('/assets/fonts/DINWeb-Bold.eot');
+  src: url('/assets/fonts/DINWeb-Bold.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+
+/*
+ *
+ *  DIN CONDENSED
+ *
+ */
+
+/* LIGHT */
+@font-face {
+  font-family: "din-condensed";
+  src: url('/assets/fonts/DINWeb-CondLight.eot');
+  src: url('/assets/fonts/DINWeb-CondLight.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondLight.woff') format('woff');
+  font-style: normal;
+  font-weight: 200;
+}
+
+/* REGULAR */
+@font-face {
+  font-family: "din-condensed";
+  src: url('/assets/fonts/DINWeb-Cond.eot');
+  src: url('/assets/fonts/DINWeb-Cond.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-Cond.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* MEDIUM */
+@font-face {
+  font-family: "din-condensed";
+  src: url('/assets/fonts/DINWeb-CondMedium.eot');
+  src: url('/assets/fonts/DINWeb-CondMedium.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondMedium.woff') format('woff');
+  font-style: 500;
+  font-weight: 500;
+}
+
+/* BOLD */
+@font-face {
+  font-family: "din-condensed";
+  src: url('/assets/fonts/DINWeb-CondBold.eot');
+  src: url('/assets/fonts/DINWeb-CondBold.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* BLACK */
+@font-face {
+  font-family: "din-condensed";
+  src: url('/assets/fonts/DINWeb-CondBlack.eot');
+  src: url('/assets/fonts/DINWeb-CondBlack.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondBlack.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+}
