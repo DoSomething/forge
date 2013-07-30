@@ -157,17 +157,17 @@ nav.masthead {
 }
 
 /** Footer (miscellaneous links) */
-footer.main {
+.footer-wrapper {
 	width: 100%;
 	background: $dark-gray;
 	margin-top: 1em;
-	padding-top: 1em;
+	padding: 1em 0;
 	overflow: hidden;
+}
 
-	.footer-container {
-		@include flex-width-custom(-20px);
-		margin: 0 auto;
-	}
+footer.main {
+	@include flex-width-custom(-20px);
+	margin: 0 auto;
 
 	h4 {
 		font-family: $font-din-condensed;
