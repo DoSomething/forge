@@ -20,7 +20,8 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'assets/application.css': 'scss/application.scss'
+					'assets/application.css': 'scss/application.scss',
+					'assets/campaign.css': 'scss/campaign.scss'
 				},
 				options: {
 					sourcemap: 'true',

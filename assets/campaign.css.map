@@ -1,0 +1,6 @@
+{
+"version": "3",
+"mappings": "AAMA,IAAK,CACJ,UAAU,CAAE,IAAI",
+"sources": ["../scss/campaign.scss"],
+"file": "campaign.css"
+}

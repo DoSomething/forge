@@ -1,11 +1,11 @@
 /* DS Neue */
 /* Version 0.1 */
 
-@import "vendor/reset";
 @import "vendor/bourbon/bourbon";
-
 @import "globals/variables";
 @import "globals/helpers";
+
+@import "vendor/reset";
 @import "globals/base";
 @import "globals/layout";
 @import "globals/forms";

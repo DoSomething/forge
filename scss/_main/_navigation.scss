@@ -4,7 +4,7 @@
 nav.utility {
 	background: #333131;
 	color: #fff;
-	padding: 10px 0 12px;
+	padding: 0.75rem 0 1rem;
 	height: 1rem;
 
 	.utility-links {
@@ -30,6 +30,10 @@ nav.utility {
 	background: $blue;
 	width: 100%;
 	padding: 12px 0 0;
+
+	@include respond-to(phones) {
+		padding: 0;
+	}
 }
 
 nav.masthead {
@@ -59,6 +63,7 @@ nav.masthead {
 	}
 
 	.main-menu {
+		height: 3rem; // fixes FOUT-related issue when loading webfont.
 		padding-left: 250px;
 		@include transition(padding-left 0.5s);
 		@include respond-to(tablets_and_phones) {
@@ -86,7 +91,7 @@ nav.masthead {
 			display: inline-block;
 			color: $gold;
 			width: 24%;
-			font-size: 32px;
+			font-size: 2rem;
 			font-family: $font-din-condensed;
 			font-weight: 500;
 			text-decoration: none;
