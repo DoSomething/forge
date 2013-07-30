@@ -63,7 +63,7 @@ nav.masthead {
 	}
 
 	.main-menu {
-		height: 3rem; // fixes FOUT-related issue when loading webfont.
+		max-height: 3rem; // fixes FOUT-related issue when loading webfont.
 		padding-left: 250px;
 		@include transition(padding-left 0.5s);
 		@include respond-to(tablets_and_phones) {
