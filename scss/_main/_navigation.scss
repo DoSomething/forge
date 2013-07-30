@@ -154,7 +154,7 @@ nav.masthead {
 /** Toggles first-level menu to appear when clicked on mobile */
 .js-menu-toggle {
 	display: none;
-	margin-left: 150px;
+	margin-left: 130px;
 
 	@include respond-to(phones) {
 		display: inline;

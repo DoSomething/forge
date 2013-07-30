@@ -5,8 +5,13 @@
 	margin: 0 auto;
 }
 
+section.full-width {
+	clear: both;
+	width: 100%;
+	margin: 0 0 4rem;
+}
 
-/** Used for blog pages, FAQ sections, etc */	
+/** Used for blog pages, FAQ sections, etc */
 .content-center {
 	width: 70%;
 	min-width: 300px;
@@ -50,10 +55,30 @@
 
 .three-col {
 	float: left;
-	width: 33.3333333333%;
+	width: 28.33333333%;
+	padding: 0 2.5%;
 
 	@include respond-to(phones) {
 		width: 100%;
 	}
 }
 
+/** Used for campaign steps/prizes. Styles elements in column layouts. */
+.block {
+	img {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	h3 {
+		text-align: center;
+	}
+}
+
+/** Used at the end of forms or other floated column layouts. */
+.callout {
+  clear: both;
+  padding: 1em;
+  text-align: center;
+}
