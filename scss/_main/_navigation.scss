@@ -14,7 +14,7 @@ nav.utility {
 	}
 
 	a {
-		font-family: $font-din-headline;
+		font-family: $font-din-condensed;
 		color: #ddd;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -26,6 +26,12 @@ nav.utility {
 }
 
 /** Logo & primary navigation/dropdowns */
+.masthead-wrapper {
+	background: $blue;
+	width: 100%;
+	padding: 12px 0 0;
+}
+
 nav.masthead {
 	position: relative;
 	@include flex-width;
@@ -54,7 +60,6 @@ nav.masthead {
 
 	.main-menu {
 		padding-left: 250px;
-		margin: 12px 0 0;
 		@include transition(padding-left 0.5s);
 		@include respond-to(tablets_and_phones) {
 			padding-left: 135px;
@@ -82,7 +87,7 @@ nav.masthead {
 			color: $gold;
 			width: 24%;
 			font-size: 32px;
-			font-family: $font-din-headline;
+			font-family: $font-din-condensed;
 			font-weight: 500;
 			text-decoration: none;
 			text-transform: uppercase;
@@ -125,7 +130,7 @@ nav.masthead {
 				a {
 					display: block;
 					color: #fff;
-					font-family: $font-din-headline;
+					font-family: $font-din-condensed;
 					font-size: 1.2rem;
 					font-weight: 500;
 					text-decoration: none;
@@ -156,6 +161,7 @@ footer.main {
 	width: 100%;
 	background: $dark-gray;
 	margin-top: 1em;
+	padding-top: 1em;
 	overflow: hidden;
 
 	.footer-container {
@@ -164,6 +170,7 @@ footer.main {
 	}
 
 	h4 {
+		font-family: $font-din-condensed;
 		color: #fff;
 		font-size: 22px;
 		text-transform: uppercase;
@@ -177,7 +184,7 @@ footer.main {
 
 	a {
 		color: #fff;
-		font-family: $font-din-headline;
+		font-family: $font-din-condensed;
 		text-decoration: none;
 
 		&:hover {
@@ -193,6 +200,7 @@ footer.main {
 
 /** Used to indicate position on sub-pages */
 nav.breadcrumbs {
+	margin: 1em;
 	text-align: center;
 
 	ul {
@@ -202,7 +210,7 @@ nav.breadcrumbs {
 	li {
 		display: inline;
 		&:after {
-			font-family: $font-din-headline;
+			font-family: $font-din-condensed;
 			content: '>';
 			color: #ddd;
 			padding: 0 1em;
@@ -214,6 +222,11 @@ nav.breadcrumbs {
 
 	a {
 		color: #ccc;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 

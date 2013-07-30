@@ -17,3 +17,7 @@ Icon
 # NPM ignores
 npm-debug.log
 node_modules
+
+# editor ignores
+*.sublime-workspace
+*.sublime-project

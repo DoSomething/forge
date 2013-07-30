@@ -2,7 +2,8 @@
 
 input[type="text"] {
 	width: 100%;
-  font-family: $font-din-reg;
+  font-family: $font-din-regular;
+  font-size: 1rem;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	padding: 0.5em 1em 0.3em;
@@ -15,7 +16,7 @@ input[type="text"] {
 	}
 
 	&.search {
-    padding: 0.3em 0.3em 0.1em 48px;
+    padding: 0.3em 0.3em 0.2em 48px;
 		border-radius: 2em;
     background: #fff url('../images/search.png') no-repeat 12px 50%;
 	}
@@ -50,20 +51,20 @@ form.default-form {
 	.clear-columns {
 		clear: both;
 		padding: 1em;
+    text-align: center;
 	}
 }
 
 // buttons
 .btn {
   clear: both;
-  display: block;
   background: #eee;
   border: 1px solid #ccc;
   margin: 0 auto;
   padding: 0.40em 1em 0.25em;
   cursor: pointer;
   color: #333;
-  font-family: $font-din-reg;
+  font-family: $font-din-regular;
   font-weight: 600;
   text-align: center;
   text-decoration: none !important;
@@ -83,7 +84,7 @@ form.default-form {
     background: $btn-color;
     color: lighten(#333, 10) !important;
     padding: 0.45em 1em 0.2em !important;
-    
+
     box-shadow: 0 10px 10px -10px #bbb;
     @include background-image(linear-gradient(#ddd, #eee));
   }
@@ -113,7 +114,7 @@ form.default-form {
       background: $btn-color;
       color: lighten(#333, 10) !important;
       padding: 0.45em 1em 0.2em !important;
-      
+
       box-shadow: 0 10px 10px -10px #bbb;
       @include background-image(linear-gradient($btn-hover, $btn-color));
     }
@@ -141,7 +142,8 @@ select {
   border: 1px solid $light-gray;
   border-radius: 5px;
   color: #333;
-  font-family: $font-din-reg;
+  font-family: $font-din-regular;
+  font-size: 1rem;
   padding: 0.5em 1em;
   margin: 0.25em;
   background-image: url('../images/dropdown.png');

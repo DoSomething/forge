@@ -2,26 +2,26 @@
 
 body {
 	background: #18408b;
-	font: 18px/1.4 $font-din-reg;
+	font: 18px/1.4 $font-din-regular;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-din-headline;
+	font-family: $font-din-regular;
 	font-weight: bold;
 }
 
 h1 {
 	font-size: 4.5rem;
 	line-height: 1.2;
-	margin: 0.5rem 0 0.25rem;
+	margin: 2rem 0 1.25rem;
 	@include respond-to(phones) {
 		font-size: 2.5rem;
 	}
 }
 
 h2 {
-	font-size: 2rem;
-	margin-bottom: 0;
+	font-size: 2.25rem;
+	margin: 1.5rem 0 1.25rem;
 	@include respond-to(phones) {
 		font-size: 1.5rem;
 	}
@@ -30,13 +30,22 @@ h2 {
 h3 {
 	font-size: 1.5rem;
 	font-weight: 500;
-	margin-bottom: 0;
+	margin: 2rem 0 0;
 }
 
 p {
 	color: #333;
+	margin: 1em 0;
 }
 
 a {
 	color: $blue;
+}
+
+
+// header styles
+h1, h2, h3, h4, h5, h6 {
+	&> span {
+		padding: 0.1em 0.25em 0;
+	}
 }

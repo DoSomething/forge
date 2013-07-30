@@ -1,7 +1,7 @@
 /* DS Neue */
 /* Version 0.1 */
 
-@import "vendor/normalize";
+@import "vendor/reset";
 @import "vendor/bourbon/bourbon";
 
 @import "globals/variables";
@@ -16,3 +16,4 @@
 
 @import "_pages/home";
 @import "_pages/blog";
+@import "_pages/campaign";
