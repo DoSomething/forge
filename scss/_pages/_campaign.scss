@@ -21,9 +21,6 @@
 	text-align: center;
 }
 
-
-
-
 // sections
 
 section.header {
@@ -88,7 +85,10 @@ section.headline {
 
 section.call-to-action {
 	background: #eee;
-	border: 1px solid #ddd;
+	padding: 0.5rem;
+	@include respond-to(tablets_and_phones) {
+
+	}
 
 	&>p {
 		text-align: center;
@@ -107,4 +107,84 @@ section.call-to-action {
 	.btn {
 		display: inline;
 	}
+}
+
+.game-conversation {
+	clear: both;
+	position: relative;
+	background: #ccc;
+	margin: 1em auto 2em;
+	padding: 0.5rem 1rem;
+	border-radius: 2px;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		border-style: solid;
+		border-width: 15px;
+	}
+
+
+	&.game-ds {
+		float: left;
+		&:after {
+			bottom: -30px;
+			left: 20px;
+			border-color: #ccc #ccc transparent transparent;
+		}
+	}
+
+	&.game-user {
+		float: right;
+		&:after {
+			bottom: -30px;
+			right: 20px;
+			border-color: #ccc transparent transparent #ccc;
+		}
+	}
+}
+
+
+//gallery
+.gallery-image {
+	text-align: center;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.gallery-thumbs {
+	max-width: 700px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 1%;
+}
+
+.gallery-thumb {
+	float: left;
+	width: 18%;
+	margin: 1%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+footer.sponsor {
+	text-align: center;
+	margin: 2rem 0;
+
+	img {
+		margin: 1rem 2rem;
+	}
+}
+
+footer.contact {
+	text-align: center;
+	margin: 2rem 0;
 }

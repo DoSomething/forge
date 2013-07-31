@@ -18,6 +18,10 @@ section.full-width {
 	margin: 0 auto;
 	padding: 24px;
 
+	&.narrow {
+		width: 60%;
+	}
+
 	h1, h2 {
 		text-align: center;
 	}
@@ -49,7 +53,7 @@ section.full-width {
 	padding: 0 2.5%;
 
 	@include respond-to(phones) {
-		width: 100%;
+		width: 95%;
 	}
 }
 
@@ -59,19 +63,25 @@ section.full-width {
 	padding: 0 2.5%;
 
 	@include respond-to(phones) {
-		width: 100%;
+		width: 95%;
 	}
 }
 
 /** Used for campaign steps/prizes. Styles elements in column layouts. */
 .block {
+	margin: 1em 0;
+
 	img {
 		display: block;
 		max-width: 100%;
 		margin: 0 auto;
 	}
 
-	h3 {
+	h1, h2, h3, h4 {
+		text-align: center;
+	}
+
+	p {
 		text-align: center;
 	}
 }
@@ -81,4 +91,42 @@ section.full-width {
   clear: both;
   padding: 1em;
   text-align: center;
+}
+
+
+.btn-top {
+	color: #999;
+	font-size: 0.9rem;
+}
+
+.pager {
+	clear: both;
+	text-align: center;
+	margin: 2rem;
+
+	li {
+		display: inline-block;
+
+		a {
+			background: #eee;
+			border: 1px solid #eee;
+			border-radius: 5px;
+			text-decoration: none;
+			padding: 0.5rem 1.5rem;
+			margin: 0 0.5rem;
+
+			&:hover {
+				background: #ddd;
+				border: 1px solid #ddd;
+			}
+		}
+
+		span {
+			background: #fefefe;
+			border: 1px solid #eee;
+			border-radius: 5px;
+			padding: 0.5rem 1.5rem;
+			margin: 0 0.5rem;
+		}
+	}
 }

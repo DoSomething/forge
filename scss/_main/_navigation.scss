@@ -48,7 +48,11 @@ nav.masthead {
 		z-index: 101;
 		@include transition(top 0.5s, left 0.5s);
 		@include respond-to(tablets_and_phones) {
+			top: -55px;
 			left: 10px;
+		}
+		@include respond-to(phones) {
+			top: -45px;
 		}
 
 		img {

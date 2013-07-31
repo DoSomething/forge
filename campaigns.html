@@ -26,7 +26,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<nav class="utility">
+<nav id="top" class="utility">
 	<div class="flexwidth-wrapper">
 		<a href="#" class="js-menu-toggle">Menu</a>
 		<ul class="utility-links">
@@ -133,30 +133,30 @@
 	    <form action="//dosomething.mcommons.com/profiles/join" method="POST" class="form-default">
 	      <input type="hidden" name="redirect_to" value="mango" />
 
-	      <div class="sms-alpha-name sms-input-wrapper two-col">
+	      <div class="two-col">
 	        <label>Your First Name:</label>
-	        <input class="sms-input" type="text" name="person[first_name]" placeholder="Your name:"/>
+	        <input type="text" name="person[first_name]" placeholder="Your name:"/>
 	      </div>
 
-	      <div class="sms-alpha-mobile sms-input-wrapper two-col">
+	      <div class="two-col">
 	        <label>Your Cell #:</label>
-	        <input class="sms-input" type="text" name="person[phone]" placeholder="Your cell #:" />
+	        <input type="text" name="person[phone]" placeholder="Your cell #:" />
 	      </div>
 
 				<div class="one-col">
-	      	<label class="sms-beta-mobile">Friend's Cell #s:</label>
+	      	<label>Friend's Cell #s:</label>
 	      </div>
 
-	      <div class="sms-input-wrapper two-col">
-	        <input class="sms-input" type="text" name="friends[]" placeholder="Friend's cell #:"/>
-	        <input class="sms-input" type="text" name="friends[]" placeholder="Friend's cell #:"/>
-	        <input class="sms-input" type="text" name="friends[]" placeholder="Friend's cell #:"/>
+	      <div class="two-col">
+	        <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
+	        <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
+	        <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
 	      </div>
 
-	      <div class="sms-input-wrapper two-col">
-	        <input class="sms-input" type="text" name="friends[]" placeholder="Friend's cell #:"/>
-	        <input class="sms-input" type="text" name="friends[]" placeholder="Friend's cell #:"/>
-	        <input class="sms-input" type="text" name="friends[]" placeholder="Friend's cell #:"/>
+	      <div class="two-col">
+	        <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
+	        <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
+	        <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
 	      </div>
 
 				<div class="one-col callout">
@@ -175,7 +175,7 @@
 	<section class="call-to-action full-width" id="call-to-action">
 	  <p>
 	  	<span>Press the button to start grinding some beans!</span>
-	  	<a class="left btn primary medium jump-scroll"><span>report back</span></a>
+	  	<a class="left btn primary medium js-jump-scroll">Report Back</a>
 	  </p>
 	</section>
 
@@ -186,7 +186,7 @@
 	      <div class="three-col block">
 	        <img src="/images/placeholder.png" alt="X (placeholder image)" />
 	        <h3>Learn the Issue</h3>
-	        <p>1 in 3 teenagers have slept through math or English class in the past week</p>
+	        <p>1 in 3 teenagers have slept through Math or English class in the past week.</p>
 	      </div>
 
 	      <div class="three-col block">
@@ -211,35 +211,35 @@
 	  <h2 class="section-header"><span>Prizing</span></h2>
 	  <p class="section-intro">This is the prizing section. You could win a prize!</p>
 
-	  <section class="prizing-container">
+	  <div class="content-center">
 	    <div class="one-col block">
 	      <img src="/images/placeholder.png" alt="x placeholder"/>
-	      <h1>Big Ol' Grand Prize</h1>
+	      <h2>Big Ol' Grand Prize</h2>
 	      <p>You can drink coffee all by yourself. That's why they call it a "solo" espresso!</p>
 	    </div>
 
 	    <div class="two-col block">
 	      <img src="/images/placeholder.png" alt="x placeholder"/>
-	      <h2>Individual Scholarship</h2>
+	      <h3>Individual Scholarship</h3>
 	      <p>You can drink coffee all by yourself. That's why they call it a "solo" espresso!</p>
 	    </div>
 
 	    <div class="two-col block">
 	      <img src="/images/placeholder.png" alt="x placeholder"/>
-	      <h2>Group Scholarship</h2>
-	      <p>You can coffee with your friends. Order a "quad americano" and see what happens #YOLO</p>
+	      <h3>Group Scholarship</h3>
+	      <p>You can coffee with your friends. Order a "quad americano" and see what happens. #YOLO</p>
 	    </div>
 			<div class="callout">
-				<p><a class="btn primary medium jump-scroll" href="#prizing"><span>Tell Us About It</span></a></p>
-	    	<p><a class="official-rules">Official Rules &amp; Regulations</a></p>
+				<p><a href="#headline" class="btn primary medium js-jump-scroll">Tell Us About It</a></p>
+	    	<p><a href="#" class="official-rules">Official Rules &amp; Regulations</a></p>
 			</div>
-	  </section>
+	  </div>
 	</section>
 
 	<section class="sms-game-example full-width" id="sms-game-example">
 	  <h2 class="section-header"><span>An Example From the Game</span></h2>
 
-	  <section class="sms-game-container">
+	  <div class="content-center narrow">
 	    <div class="game-conversation game-ds">
 	      <p>Girl, you got any 'fee?</p>
 	    </div>
@@ -251,88 +251,60 @@
 	    <div class="game-conversation game-ds">
 	      <p>Double americano? Lemme get some!</p>
 	    </div>
-	  </section>
+	  </div>
 		<div class="callout">
-			<a class="btn primary medium jump-scroll" href="#call-to-action"><span>Play The Game</span></a>
+			<a href="#headline" class="btn primary medium js-jump-scroll">Play The Game</a>
 		</div>
 	</section>
 
 	<section class="gallery full-width">
 	  <h2 class="section-header"><span>Your Impact</span></h2>
-	<div class="view view-campaign-gallery view-id-campaign_gallery view-display-id-panel_pane_1">
-	<div class="view-content">
-	<div id="galleriffic" class="clearfix">
-	<div id="controls" class="controls"></div>
-	<div style="display: none;" id="loading" class="loader"></div>
-	<div style="height: 360px;" id="slideshow"><span style="opacity: 1;" class="image-wrapper current"><a class="advance-link" rel="history" href="#2" title=""><img src="http://www.dosomething.org/files/styles/large/public/Danielle-T4J-2.jpg?itok=7MU0Ap1v" alt=""></a></span></div>
-	<div id="caption" class="caption-container"><span style="opacity: 1;" class="image-caption current"><div class="caption">
-	</div></span></div>
-	<div id="thumbs" class="navigation">
-	<ul class="thumbs noscript">
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/Danielle-T4J-2.jpg?itok=7MU0Ap1v" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/Danielle-T4J-2.jpg?itok=b9NvS9yj" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/Danielle-T4J-1.jpg?itok=Ymu2EgZ5" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/Danielle-T4J-1.jpg?itok=c6xDMU2_" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/jeans_41.jpg?itok=rRbX3VWf" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/jeans_41.jpg?itok=0fHD425_" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/027_7.JPG?itok=9za9CmQi" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/027_7.JPG?itok=u49FEDCe" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/028.JPG?itok=QgcM7Wla" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/028.JPG?itok=d9Z4BM02" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/030_1.JPG?itok=1eHTzFCp" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/030_1.JPG?itok=dQIwm41e" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/035_3.JPG?itok=lTqe_DKh" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/035_3.JPG?itok=8AR1vr5-" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/031_2.JPG?itok=raHTY4lv" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/031_2.JPG?itok=58xT3-4u" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/032_2.JPG?itok=qTzSzrsX" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/032_2.JPG?itok=pSTYbqnn" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	<li>
-	<a class="thumb" href="http://www.dosomething.org/files/styles/large/public/033_1.JPG?itok=5xur9gOi" title="" name=""><img src="http://www.dosomething.org/files/styles/thumbnail/public/033_1.JPG?itok=ioGI-EvF" alt="" /></a>
-	<div class="caption">
-	</div>
-	</li>
-	</ul>
-	</div>
-	</div>
-	</div>
-	<h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
-	<li class="pager-item"><a title="Go to page 2" href="/teensforjeans?page=1">2</a></li>
-	<li class="pager-item"><a title="Go to page 3" href="/teensforjeans?page=2">3</a></li>
-	<li class="pager-item"><a title="Go to page 4" href="/teensforjeans?page=3">4</a></li>
-	<li class="pager-item"><a title="Go to page 5" href="/teensforjeans?page=4">5</a></li>
-	<li class="pager-ellipsis">…</li>
-	<li class="pager-next"><a title="Go to next page" href="/teensforjeans?page=1">next ›</a></li>
-	<li class="pager-last last"><a title="Go to last page" href="/teensforjeans?page=377">last »</a></li>
-	</ul></div>
-	</div>
+
+		<div class="gallery-image">
+			<img src="http://www.placekitten.com/g/960/500" alt=""></a>
+		</div>
+
+		<ul class="gallery-thumbs">
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/220/220" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/240/240" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/250/250" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/260/260" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/270/270" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/400/400" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/300/300" alt="" /></a>
+			</li>
+			<li class="gallery-thumb">
+				<a href="#" title="" name=""><img src="http://www.placekitten.com/g/320/320" alt="" /></a>
+			</li>
+		</ul>
+
+		<ul class="pager">
+			<li class="pager-current"><span class="first">1</span></li>
+			<li class="pager-item"><a title="Go to page 2" href="/teensforjeans?page=1">2</a></li>
+			<li class="pager-item"><a title="Go to page 3" href="/teensforjeans?page=2">3</a></li>
+			<li class="pager-item"><a title="Go to page 4" href="/teensforjeans?page=3">4</a></li>
+			<li class="pager-item"><a title="Go to page 5" href="/teensforjeans?page=4">5</a></li>
+			<li class="pager-next"><a title="Go to next page" href="/teensforjeans?page=1">next ›</a></li>
+		</ul>
 	</section>
 
 	<section class="content full-width" id="content">
@@ -342,19 +314,19 @@
 
 		  <p class="legal">*Disclaimer: The best way to prevent an underconsumption of 'fee is to order more 'fee (duh). Whether you choose to have a lot or even more, it's important to know the facts, so we've provided a list of different resources so that you can inform your own decisions.</p>
 
-		  <h3 class="headline-callout"><span>this is a fact</span></h3>
+		  <h3 class="headline-callout">This is a fact.</h3>
 		  <p>Not having any 'fee today will probably make you a terrible person.</p>
 
-		  <h3 class="headline-callout"><span>this is a fact</span></h3>
+		  <h3 class="headline-callout">This is a fact.</h3>
 		  <p>You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee.</p>
 
-		  <h3 class="headline-callout"><span>this is a fact</span></h3>
+		  <h3 class="headline-callout">This is a fact.</h3>
 		  <p>You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee.</p>
 
-		  <h3 class="headline-callout"><span>this is a fact</span></h3>
+		  <h3 class="headline-callout">This is a fact.</h3>
 		  <p>You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee. You should probably drink more 'fee.</p>
 
-		  <h3 class="headline-callout"><span>Additional Resources</span></h3>
+		  <h3 class="headline-callout">Additional Resources</h3>
 		  <p>Need more? Check out these additional resources:<br>
 		  <a href="#" target="_blank">a link</a><br>
 		  <a href="#" target="_blank">another link</a><br>
@@ -416,23 +388,23 @@
 		</div>
 
 		<div class="callout">
-		  <a class="btn btn-cta-large jump-scroll" href="#scholarship"><span>I want to play</span></a>
-		  <p class="back-to-top"><a class="top-btn jump-scroll" href="#utility-bar">Back to Top</a></p>
+		  <a href="#headline" class="btn primary medium js-jump-scroll">I want to play</a>
+		  <p><a href="#top" class="btn-top js-jump-scroll">Back to Top</a></p>
 		</div>
 	</section>
 
-	<section class="sponsor full-width" id="sponsor">
+	<footer class="sponsor full-width" id="sponsor">
 	  <h3>Sponsored by:</h3>
 
 	  <p>
 	    <a href="#"> <img src="images/placeholder.png" alt="x placeholder"/></a>
 	    <a href="#"> <img src="images/placeholder.png" alt="x placeholder"/></a>
 	  </p>
-	</section>
+	</footer>
 
-	<section class="footer full-width" id="footer">
+	<footer class="contact" id="footer">
 	  <p>Questions? E-mail <a href="mailto:help@dosomething.org">help@dosomething.org</a>!</p>
-	</section>
+	</footer>
 
 	<!--
 	Edvisors tracking pixel
