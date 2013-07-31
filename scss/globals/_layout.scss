@@ -9,6 +9,7 @@ section.full-width {
 	clear: both;
 	width: 100%;
 	margin: 0 0 4rem;
+	@include box-sizing(border-box);
 }
 
 /** Used for blog pages, FAQ sections, etc */
@@ -17,6 +18,7 @@ section.full-width {
 	min-width: 300px;
 	margin: 0 auto;
 	padding: 24px;
+	overflow: hidden;
 
 	&.narrow {
 		width: 60%;
@@ -43,38 +45,61 @@ section.full-width {
 }
 
 .one-col {
-	width: 95%;
+	width: 100%;
 	padding: 0 2.5%;
+	@include box-sizing(border-box);
 }
 
 .two-col {
 	float: left;
-	width: 45%;
+	width: 50%;
 	padding: 0 2.5%;
+	@include box-sizing(border-box);
 
 	@include respond-to(phones) {
+		float: none;
 		width: 95%;
+		margin: 0 auto;
 	}
 }
 
 .three-col {
 	float: left;
-	width: 28.33333333%;
+	width: 33.333333333%;
 	padding: 0 2.5%;
+	@include box-sizing(border-box);
+
+	img {
+		max-width: 100%;
+	}
+
+	// span over two columns in a three-column layout
+	&.span-two {
+		width: 66.66666666%;
+		padding: 0 2.5%;
+	}
 
 	@include respond-to(phones) {
-		width: 95%;
+		float: none;
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto;
 	}
 }
 
 /** Used for campaign steps/prizes. Styles elements in column layouts. */
 .block {
-	margin: 1em 0;
+	margin: 0;
+	padding: 1rem;
+
+	@include respond-to(phones) {
+		margin: 0 auto;
+	}
 
 	img {
 		display: block;
 		max-width: 100%;
-		margin: 0 auto;
+		margin: 1rem auto 2rem;
 	}
 
 	h1, h2, h3, h4 {

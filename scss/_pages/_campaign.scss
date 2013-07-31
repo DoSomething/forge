@@ -8,13 +8,19 @@
 	text-align: center;
 	text-transform: capitalize;
 	padding: 0;
-	margin: 0 auto 2em auto;
+	margin: 0 auto 1.5em auto;
 	letter-spacing: 0.1em;
 	color: #888888;
 
 	span {
 		border-bottom: 6px solid #f4f4f4;
 	}
+}
+
+.campaign-section {
+	padding-bottom: 2rem;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
 }
 
 .section-intro {
@@ -85,10 +91,7 @@ section.headline {
 
 section.call-to-action {
 	background: #eee;
-	padding: 0.5rem;
-	@include respond-to(tablets_and_phones) {
-
-	}
+	padding: 2%;
 
 	&>p {
 		text-align: center;
@@ -113,8 +116,8 @@ section.call-to-action {
 	clear: both;
 	position: relative;
 	background: #ccc;
-	margin: 1em auto 2em;
-	padding: 0.5rem 1rem;
+	margin: 0 auto 3em;
+	padding: 0.5rem 1.5rem;
 	border-radius: 2px;
 	text-transform: uppercase;
 	font-weight: bold;
