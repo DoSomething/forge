@@ -44,6 +44,12 @@ section.full-width {
 	}
 }
 
+.column-break {
+	clear: both;
+	padding: 1rem 0;
+	overflow: hidden;
+}
+
 .one-col {
 	width: 100%;
 	padding: 0 2.5%;

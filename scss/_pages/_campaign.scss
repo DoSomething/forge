@@ -115,12 +115,12 @@ section.call-to-action {
 .game-conversation {
 	clear: both;
 	position: relative;
-	background: #ccc;
+	background: #e1e1e1;
 	margin: 0 auto 3em;
 	padding: 0.5rem 1.5rem;
 	border-radius: 2px;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 500;
 
 	&:after {
 		content: "";
@@ -136,7 +136,7 @@ section.call-to-action {
 		&:after {
 			bottom: -30px;
 			left: 20px;
-			border-color: #ccc #ccc transparent transparent;
+			border-color: #e1e1e1 #e1e1e1 transparent transparent;
 		}
 	}
 
@@ -145,7 +145,7 @@ section.call-to-action {
 		&:after {
 			bottom: -30px;
 			right: 20px;
-			border-color: #ccc transparent transparent #ccc;
+			border-color: #e1e1e1 transparent transparent #e1e1e1;
 		}
 	}
 }
