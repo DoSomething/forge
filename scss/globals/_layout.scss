@@ -25,6 +25,10 @@ section.full-width {
 
 	&.narrow {
 		width: 60%;
+
+		@include respond-to(phones) {
+			width: 90%;
+		}
 	}
 
 	h1, h2 {
@@ -127,13 +131,13 @@ section.full-width {
   text-align: center;
 }
 
-
+/** Used to style "back to top" links. */
 .btn-top {
 	color: #999;
 	font-size: 0.9rem;
 }
 
-// pagination links (1, 2, 3, next, etc.)
+/** Used for pagination links (1, 2, 3, next, etc.). See campaign template gallery for implementation example. */
 .pager {
 	clear: both;
 	text-align: center;
