@@ -124,7 +124,7 @@ form.default-form {
     font-weight: 600;
   }
 
-  &.inactive, .btn[disabled="disabled"] {
+  &.inactive, &[disabled="disabled"] {
     clear: both;
     background: #fff;
     border: 1px solid #ddd;
