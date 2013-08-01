@@ -54,8 +54,8 @@ form.default-form {
   clear: both;
   background: #eee;
   border: 1px solid #ccc;
-  margin: 0 auto;
-  padding: 0.40em 1em 0.25em;
+  margin: 0.25rem;
+  padding: 0.40rem 1em 0.25rem;
   cursor: pointer;
   color: #333;
   font-family: $font-din-regular;
@@ -77,13 +77,10 @@ form.default-form {
     outline: 0;
     background: $btn-color;
     color: lighten(#333, 10) !important;
-    padding: 0.45em 1em 0.2em !important;
 
     box-shadow: 0 10px 10px -10px #bbb;
     @include background-image(linear-gradient(#ddd, #eee));
   }
-
-
 
   &:link, &:active, &:hover {
     color: #333;
@@ -106,8 +103,7 @@ form.default-form {
     &:active {
       outline: 0;
       background: $btn-color;
-      color: lighten(#333, 10) !important;
-      padding: 0.45em 1em 0.2em !important;
+      color: lighten(#333, 10);
 
       box-shadow: 0 10px 10px -10px #bbb;
       @include background-image(linear-gradient($btn-hover, $btn-color));
@@ -127,6 +123,37 @@ form.default-form {
     font-size: 2.5rem;
     font-weight: 600;
   }
+
+  &.inactive, .btn[disabled="disabled"] {
+    clear: both;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    margin: 0.25rem;
+    padding: 0.40rem 1em 0.25rem;
+    cursor: default;
+    color: #eee;
+    font-family: $font-din-regular;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
+      outline: 0;
+      background: #fff !important;
+      color: #eee !important;
+
+      box-shadow: none;
+    }
+  }
+
+
 }
 
 // select boxes

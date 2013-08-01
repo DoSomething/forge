@@ -175,7 +175,7 @@ nav.masthead {
 }
 
 footer.main {
-	@include flex-width-custom(-20px);
+	@include flex-width;
 	margin: 0 auto;
 
 	h4 {
@@ -202,8 +202,15 @@ footer.main {
 	}
 
 	.column {
-		width: 20%;
 		float: left;
+		width: 20%;
+		padding: 1rem 0.5rem;
+		@include box-sizing(border-box);
+
+		@include respond-to(phones) {
+			width: 100%;
+			text-align: center;
+		}
 	}
 }
 

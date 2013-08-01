@@ -108,7 +108,7 @@ section.call-to-action {
 	}
 
 	.btn {
-		display: inline;
+		display: inline-block;
 	}
 }
 
@@ -157,6 +157,7 @@ section.call-to-action {
 
 	img {
 		max-width: 100%;
+		@include box-shadow(0 10px 10px -10px #bbbbbb);
 	}
 }
 
@@ -175,6 +176,8 @@ section.call-to-action {
 	img {
 		width: 100%;
 		height: auto;
+		border-radius: 2px;
+		@include box-shadow(0 10px 10px -10px #bbbbbb);
 	}
 }
 

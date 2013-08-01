@@ -101,7 +101,9 @@
 			<input type="text" class="search" placeholder="Search&hellip;">
 
 			<div class="callout">
+				<input class="btn primary small" type="submit" value="Greet Humans">
 				<input class="btn secondary small" type="submit" value="Destroy Humans">
+				<input class="btn secondary small" type="submit" disabled="disabled" value="Disable Humans">
 			</div>
 		</form>
 
@@ -165,6 +167,18 @@
 			<option>At Work</option>
 			<option>In Space</option>
 		</select>
+
+
+		<h2>Pagination</h2>
+		<ul class="pager">
+			<li class="pager-next"><span class="btn inactive" title="Go to previous page">&#8249; prev</span></li>
+			<li class="pager-current"><span class="btn inactive" class="first">1</span></li>
+			<li class="pager-item"><a class="btn" title="Go to page 2" href="/teensforjeans?page=1">2</a></li>
+			<li class="pager-item"><a class="btn" title="Go to page 3" href="/teensforjeans?page=2">3</a></li>
+			<li class="pager-item"><a class="btn" title="Go to page 4" href="/teensforjeans?page=3">4</a></li>
+			<li class="pager-item"><a class="btn" title="Go to page 5" href="/teensforjeans?page=4">5</a></li>
+			<li class="pager-next"><a class="btn" title="Go to next page" href="/teensforjeans?page=1">next &#8250;</a></li>
+		</ul>
 	</article>
 </div>
 
