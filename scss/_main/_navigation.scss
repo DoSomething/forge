@@ -75,6 +75,7 @@ nav.masthead {
 		}
 		@include respond-to(phones) {
 			display: none;
+			max-height: none;
 
 			&.is-visible-mobile {
 				display: block;

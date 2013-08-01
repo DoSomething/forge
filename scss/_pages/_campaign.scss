@@ -33,6 +33,9 @@ section.header {
 	position: relative;
 	background: #eee;
 	padding: 112px 24px;
+	@include respond-to(phones) {
+		padding: 48px 24px;
+	}
 
 	.header-logotype {
 		color: #fff;
@@ -158,7 +161,7 @@ section.call-to-action {
 
 	img {
 		max-width: 100%;
-		@include box-shadow(0 10px 10px -10px #bbbbbb);
+		box-shadow: 0 10px 10px -10px #bbbbbb;
 	}
 }
 
@@ -178,7 +181,7 @@ section.call-to-action {
 		width: 100%;
 		height: auto;
 		border-radius: $sm-border-radius;
-		@include box-shadow(0 10px 10px -10px #bbbbbb);
+		box-shadow: 0 10px 10px -10px #bbbbbb;
 	}
 }
 

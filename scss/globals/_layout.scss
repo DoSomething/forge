@@ -146,6 +146,6 @@ section.full-width {
 img.bordered {
 	border: 5px solid #fff;
 	margin: 0.5rem;
-	@include box-shadow(0 2px 10px 0 #bbbbbb);
+	box-shadow: 0 2px 10px 0 #bbbbbb;
 }
 

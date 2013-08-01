@@ -9,6 +9,7 @@ input[type="text"] {
 	padding: 0.5em 1em 0.3em;
   margin: 0 0 0.5em;
 	@include box-sizing(border-box);
+  -webkit-appearance: none;
 	&:focus {
 		outline: 0;
 		border: 1px solid $gold;
@@ -64,6 +65,7 @@ form.default-form {
   text-decoration: none !important;
   text-transform: uppercase;
   border-radius: $lg-border-radius;
+  -webkit-appearance: none;
   &:hover {
     background: $btn-hover;
     @include background-image(linear-gradient(#eee, #ddd));
@@ -75,7 +77,7 @@ form.default-form {
   }
   &:active {
     outline: 0;
-    background: $btn-color;
+    background: #333;
     color: lighten(#333, 10) !important;
 
     box-shadow: 0 10px 10px -10px #bbb;
