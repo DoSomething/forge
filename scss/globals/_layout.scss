@@ -15,10 +15,13 @@ section.full-width {
 /** Used for blog pages, FAQ sections, etc */
 .content-center {
 	width: 70%;
-	min-width: 300px;
 	margin: 0 auto;
 	padding: 24px;
 	overflow: hidden;
+	@include box-sizing(border-box);
+	@include respond-to(phones) {
+		width: 90%;
+	}
 
 	&.narrow {
 		width: 60%;
@@ -120,7 +123,7 @@ section.full-width {
 /** Used at the end of forms or other floated column layouts. */
 .callout {
   clear: both;
-  padding: 1em;
+  padding: 1rem 0;
   text-align: center;
 }
 

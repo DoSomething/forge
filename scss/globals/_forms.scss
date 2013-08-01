@@ -52,11 +52,12 @@ form.default-form {
 
 // buttons
 .btn {
+  display: inline-block;
   clear: both;
   background: #eee;
   border: 1px solid #ccc;
   margin: 0.25rem;
-  padding: 0.40rem 1em 0.25rem;
+  padding: 0.5em 1em 0.3em;
   cursor: pointer;
   color: #333;
   font-family: $font-din-regular;
@@ -83,7 +84,6 @@ form.default-form {
     box-shadow: 0 10px 10px -10px #bbb;
     @include background-image(linear-gradient(#ddd, #eee));
   }
-
   &:link, &:active, &:hover {
     color: #333;
     text-decoration: none !important;
@@ -158,8 +158,10 @@ form.default-form {
       box-shadow: none;
     }
   }
+}
 
-
+input[type="submit"] {
+  white-space: normal; // ensures text wraps to new lines when in an <input> element
 }
 
 // select boxes
