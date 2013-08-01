@@ -119,7 +119,7 @@ section.call-to-action {
 	background: #eee;
 	margin: 0 auto 3em;
 	padding: 0.5rem 1.5rem;
-	border-radius: 2px;
+	border-radius: $sm-border-radius;
 	text-transform: uppercase;
 	font-weight: 500;
 
@@ -177,7 +177,7 @@ section.call-to-action {
 	img {
 		width: 100%;
 		height: auto;
-		border-radius: 2px;
+		border-radius: $sm-border-radius;
 		@include box-shadow(0 10px 10px -10px #bbbbbb);
 	}
 }

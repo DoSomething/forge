@@ -1,5 +1,9 @@
 // Base HTML elements
 
+html {
+	font-size: 18px;
+}
+
 body {
 	background: #18408b;
 	font: 18px/1.4 $font-din-regular;
@@ -11,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 4.5rem;
+	font-size: 4rem;
 	line-height: 1.2;
 	margin: 2rem 0 1.25rem;
 	@include respond-to(phones) {
@@ -20,7 +24,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2.25rem;
+	font-size: 2rem;
 	margin: 1.5rem 0 1.25rem;
 	@include respond-to(phones) {
 		font-size: 1.5rem;
@@ -31,6 +35,10 @@ h3 {
 	font-size: 1.5rem;
 	font-weight: 500;
 	margin: 0.5rem 0;
+}
+
+h4 {
+	font-size: 1rem;
 }
 
 p {

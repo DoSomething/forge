@@ -95,7 +95,7 @@ nav.masthead {
 			display: inline-block;
 			color: $gold;
 			width: 24%;
-			font-size: 2rem;
+			font-size: 1.8rem;
 			font-family: $font-din-condensed;
 			font-weight: 500;
 			text-decoration: none;
@@ -144,7 +144,6 @@ nav.masthead {
 					font-weight: 500;
 					text-decoration: none;
 					padding: 0.5em 2em;
-					border-radius: 2px;
 					&:hover {
 						color: $gold;
 						background: rgba(0,0,0, 0.5);
