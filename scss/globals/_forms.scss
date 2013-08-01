@@ -63,7 +63,7 @@ form.default-form {
   font-family: $font-din-regular;
   font-weight: 600;
   text-align: center;
-  text-decoration: none !important;
+  text-decoration: none;
   text-transform: uppercase;
   border-radius: $lg-border-radius;
   -webkit-appearance: none;
@@ -79,14 +79,14 @@ form.default-form {
   &:active {
     outline: 0;
     background: #333;
-    color: lighten(#333, 10) !important;
+    color: lighten(#333, 10);
 
     box-shadow: 0 10px 10px -10px #bbb;
     @include background-image(linear-gradient(#ddd, #eee));
   }
   &:link, &:active, &:hover {
     color: #333;
-    text-decoration: none !important;
+    text-decoration: none;
   }
 
   &.primary {
@@ -142,7 +142,7 @@ form.default-form {
     font-family: $font-din-regular;
     font-weight: 600;
     text-align: center;
-    text-decoration: none !important;
+    text-decoration: none;
     text-transform: uppercase;
     border-radius: $lg-border-radius;
 
@@ -152,8 +152,8 @@ form.default-form {
 
     &:active {
       outline: 0;
-      background: #ddd !important;
-      color: #efefef !important;
+      background: #ddd;
+      color: #efefef;
 
       box-shadow: none;
     }

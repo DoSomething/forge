@@ -33,7 +33,10 @@
 section.header {
 	position: relative;
 	background: #eee;
+	background-position: center center;
+	background-repeat: no-repeat;
 	padding: 112px 24px;
+	@include background-size(cover);
 	@include respond-to(phones) {
 		padding: 48px 24px;
 	}
@@ -73,9 +76,9 @@ section.headline {
 
 		span {
 			display: inline-block;
-			border: 1px solid #ddd;
-			box-shadow: 0 10px 10px -10px #ddd;
+			background: #eee;
 			margin: 0 1em;
+			padding: 0.2em 1em 0;
 		}
 	}
 }
