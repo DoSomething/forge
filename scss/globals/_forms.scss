@@ -52,6 +52,7 @@ form.default-form {
 
 // buttons
 .btn {
+  /* base/default (secondary) appearance */
   display: inline-block;
   clear: both;
   background: #eee;
@@ -70,7 +71,7 @@ form.default-form {
   &:hover {
     background: $btn-hover;
     @include background-image(linear-gradient(#eee, #ddd));
-    box-shadow: 0 10px 10px -10px #bbb;
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2);
   }
   &:focus {
     outline: 0;
@@ -81,7 +82,7 @@ form.default-form {
     background: #333;
     color: lighten(#333, 10);
 
-    box-shadow: 0 10px 10px -10px #bbb;
+    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2);
     @include background-image(linear-gradient(#ddd, #eee));
   }
   &:link, &:active, &:hover {
@@ -89,6 +90,7 @@ form.default-form {
     text-decoration: none;
   }
 
+  /* primary appearance */
   &.primary {
     background: $btn-color;
     border: 1px solid $btn-border;
@@ -96,7 +98,6 @@ form.default-form {
     &:hover {
       background: $btn-hover;
       @include background-image(linear-gradient($btn-color, $btn-hover));
-      box-shadow: 0 10px 10px -10px #bbb;
     }
     &:focus {
       outline: 0;
@@ -106,12 +107,11 @@ form.default-form {
       outline: 0;
       background: $btn-color;
       color: lighten(#333, 10);
-
-      box-shadow: 0 10px 10px -10px #bbb;
       @include background-image(linear-gradient($btn-hover, $btn-color));
     }
   }
 
+  /* sizes */
   &.small {
     font-size: 0.75rem;
   }
@@ -130,6 +130,7 @@ form.default-form {
     font-weight: 600;
   }
 
+  /* disabled state */
   &[disabled="disabled"], &.inactive {
     clear: both;
     background: #ddd;

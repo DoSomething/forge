@@ -1,17 +1,97 @@
+// .ds-intro {
+// 	padding: 42px;
+
+// 	.flexwidth-wrapper {
+// 		padding-left: 250px;
+// 	}
+
+// 	h1 {
+// 		font-size: 2rem;
+// 	}
+
+// 	h2 {
+// 		font-size: 1.75em;
+// 	}
+// }
+
+h4.homepage {
+	font-size: 1.25rem;
+	padding-top: 200px;
+	text-transform: uppercase;
+	padding-bottom: 0;
+}
+
+/** Link fills container. Triggers hover effect on some specified child elements. **/
+.full-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+
+	span {
+		display: none;
+	}
+
+	&:hover ~ .headline .btn {
+		background: $btn-hover;
+    @include background-image(linear-gradient($btn-color, $btn-hover));
+	}
+
+	&:active ~ .headline .btn {
+    background: $btn-color;
+    color: lighten(#333, 10);
+    @include background-image(linear-gradient($btn-hover, $btn-color));
+	}
+}
+
+/** Base styling for the homepage feature blocks **/
 .feature {
+	position: relative;
 	height: 300px;
 	background: #eee;
 	text-align: center;
 	margin-bottom: 0.25em;
+	padding: 0;
+	overflow: hidden;
+	@include background-size(cover);
+
+	.headline {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background: rgba(0,181,224,0.5);
+		color: #fff;
+		font-size: 1.5rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		padding: 1em;
+		@include box-sizing(border-box);
+
+		&.purple {
+			background: rgba(80, 40, 98, 0.5);
+		}
+
+		&.yellow {
+			background: rgba(254, 202, 0, 0.5);
+		}
+
+		&.red {
+			background: rgba(180, 43, 37, 0.5);
+		}
+	}
+
+	.campaign-logo {
+		height: 100px;
+		padding-top: 48px;
+	}
 }
 
-.content-block {
-	background: #efefef;
-}
-
+/** Style overrides based on block size **/
 .feature.one-col {
 	height: 450px;
-	@include transition(height 0.5s);
+	@include transition(height 0.25s);
 	@include respond-to(tablets_and_phones) {
 		height: 350px;
 	}
@@ -23,17 +103,14 @@
 .feature.three-col {
 	width: 33%;
 	margin-bottom: 0.25em;
-	@include transition(height 0.5s);
+	@include transition(height 0.25s);
 	@include respond-to(tablets_and_phones) {
-		height: 150px;
+		height: 140px;
 	}
 	@include respond-to(phones) {
-		height: 100px;
 		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
 	}
-	
+
 	&.left {
 		margin-right: 0.5%;
 	}
@@ -41,13 +118,38 @@
 	&.right {
 		margin-left: 0.5%;
 	}
+
+	.headline {
+		display: block;
+		position: relative;
+		bottom: -160px;
+		padding: 1em;
+		@include transition(bottom 0.25s);
+
+		@include respond-to(tablets_and_phones) {
+			bottom: 0px;
+		}
+	}
+
+	a:hover ~.headline {
+		bottom: 0;
+
+		@include respond-to(tablets_and_phones) {
+			bottom: 150px;
+		}
+	}
 }
 
+/** Content block styles **/
 .content-block.two-col {
 	text-align: center;
 	height: 200px;
+	border: 2px dashed #eee;
+	color: #ddd;
 	width: 49.75%;
+	padding: 7.5% 0;
 	margin-bottom: 0.25em;
+	@include box-sizing(border-box);
 	@include respond-to(phones) {
 		width: 100%;
 		margin-left: 0;
@@ -65,4 +167,19 @@
 
 .homepage-sponsors {
 	clear: both;
+
+	h4 {
+		color: #ccc;
+		text-align: center;
+		padding-top: 2em;
+	}
+
+	img {
+		margin: 0 1rem;
+	}
+
+	p {
+		text-align: center;
+		padding-bottom: 1em;
+	}
 }
