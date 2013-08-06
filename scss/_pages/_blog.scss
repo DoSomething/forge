@@ -26,8 +26,7 @@ aside.pullquote {
 
 
 .related-links {
-	max-width: 400px;
-	margin: 2em auto;
+	text-align: left;
 
 	h4 {
 		text-align: center;
@@ -37,6 +36,7 @@ aside.pullquote {
 	.related {
 		display: block;
 		clear: both;
+		text-decoration: none;
 		margin: 1em 0;
 
 		img {
@@ -48,8 +48,18 @@ aside.pullquote {
 
 		span {
 			display: block;
-			padding: 0.75em;
 			font-size: 1rem;
+			text-align: left;
+			text-decoration: underline;
+			padding: 0.5em 0.5em 0.1em 70px;
+		}
+
+		em {
+			display: block;
+			color: #999;
+			font-size: 0.9em;
+			text-decoration: none;
+			padding-left: 70px;
 		}
 	}
 }

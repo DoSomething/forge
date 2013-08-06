@@ -1,24 +1,55 @@
-// .ds-intro {
-// 	padding: 42px;
+body.homepage {
+	background: #fff;
+}
 
-// 	.flexwidth-wrapper {
-// 		padding-left: 250px;
-// 	}
+.ds-intro {
+	color: #fff;
+	background: url('/images/bg-intro.jpg') no-repeat center center;
+	background-size: cover;
 
-// 	h1 {
-// 		font-size: 2rem;
-// 	}
+	.flexwidth-wrapper {
+		width: 620px;
+		padding: 24px 0 42px;
+		@include box-sizing(border-box);
+		@include transition(padding 0.5s);
+		@include respond-to(tablets_and_phones) {
+			padding: 42px;
+			width: auto;
+		}
+	}
 
-// 	h2 {
-// 		font-size: 1.75em;
-// 	}
-// }
+	h1 {
+		font-family: $font-din-condensed;
+		font-size: 1.75rem;
+		font-weight: 500;
+		border-bottom: 4px solid rgb(255,255,255);
+		border-bottom: 4px solid rgba(255,255,255,0.5);
+		padding-bottom: 0.5em;
+
+		strong {
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+
+	h2 {
+		font-family: $font-din-regular;
+		font-size: 1em;
+		font-weight: 400;
+
+		margin-top: 0.5em;
+		padding-top: 0;
+	}
+
+	input[type="text"] {
+		max-width: 300px;
+		margin-right: 0.5em;
+	}
+}
 
 h4.homepage {
-	font-size: 1.25rem;
-	padding-top: 200px;
 	text-transform: uppercase;
-	padding-bottom: 0;
+	padding: 1rem 0 0;
 }
 
 /** Link fills container. Triggers hover effect on some specified child elements. **/
@@ -55,36 +86,58 @@ h4.homepage {
 	margin-bottom: 0.25em;
 	padding: 0;
 	overflow: hidden;
-	@include background-size(cover);
+	background-size: cover;
 
 	.headline {
+		display: table;
 		position: absolute;
 		bottom: 0;
 		width: 100%;
-		background: rgba(0,181,224,0.5);
+		background: rgb(0,181,224);
+		background: rgba(0,181,224,0.4);
 		color: #fff;
 		font-size: 1.5rem;
 		font-weight: 500;
 		text-transform: uppercase;
-		padding: 1em;
+		padding: 0;
 		@include box-sizing(border-box);
 
 		&.purple {
-			background: rgba(80, 40, 98, 0.5);
+			background: rgb(80, 40, 98);
+			background: rgba(80, 40, 98, 0.4);
 		}
 
 		&.yellow {
-			background: rgba(254, 202, 0, 0.5);
+			background: rgb(254, 202, 0);
+			background: rgba(254, 202, 0, 0.4);
 		}
 
 		&.red {
-			background: rgba(180, 43, 37, 0.5);
+			background: rgb(180, 43, 37);
+			background: rgba(180, 43, 37, 0.4);
 		}
+
+		&.big {
+			display: block;
+			padding: 1em;
+
+			@include respond-to(phones) {
+				height: 100%;
+			}
+		}
+	}
+
+	.headline-text {
+		display: table-cell;
+		vertical-align: middle;
+		height: 140px;
+		padding: 0 1em;
+		overflow: hidden;
 	}
 
 	.campaign-logo {
 		height: 100px;
-		padding-top: 48px;
+		padding: 28px 0;
 	}
 }
 
@@ -109,6 +162,7 @@ h4.homepage {
 	}
 	@include respond-to(phones) {
 		width: 100%;
+		max-width: none;
 	}
 
 	&.left {
@@ -116,6 +170,7 @@ h4.homepage {
 	}
 
 	&.right {
+		float: right;
 		margin-left: 0.5%;
 	}
 
@@ -123,7 +178,6 @@ h4.homepage {
 		display: block;
 		position: relative;
 		bottom: -160px;
-		padding: 1em;
 		@include transition(bottom 0.25s);
 
 		@include respond-to(tablets_and_phones) {
@@ -133,7 +187,6 @@ h4.homepage {
 
 	a:hover ~.headline {
 		bottom: 0;
-
 		@include respond-to(tablets_and_phones) {
 			bottom: 150px;
 		}
@@ -143,11 +196,8 @@ h4.homepage {
 /** Content block styles **/
 .content-block.two-col {
 	text-align: center;
-	height: 200px;
-	border: 2px dashed #eee;
-	color: #ddd;
 	width: 49.75%;
-	padding: 7.5% 0;
+	padding-top: 1rem;
 	margin-bottom: 0.25em;
 	@include box-sizing(border-box);
 	@include respond-to(phones) {
@@ -157,6 +207,7 @@ h4.homepage {
 	}
 
 	&.left {
+		clear: both;
 		margin-right: 0.25%;
 	}
 
