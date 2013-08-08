@@ -11,7 +11,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font-din-regular;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 h1 {
@@ -48,6 +48,10 @@ p {
 
 a {
 	color: $blue;
+}
+
+strong, b {
+	font-weight: 600;
 }
 
 
