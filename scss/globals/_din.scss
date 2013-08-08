@@ -1,28 +1,13 @@
-/*
- *
- *  DIN REGULAR
- *
- */
-
-/* LIGHT */
-@font-face {
-  font-family: "din-regular";
-  src: url('/assets/fonts/DINWeb-Light.eot');
-  src: url('/assets/fonts/DINWeb-Light.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-Light.woff') format('woff');
-  font-style: normal;
-  font-weight: 200;
-}
-
-/* REGULAR */
+/* DIN REGULAR REGULAR */
 @font-face {
   font-family: "din-regular";
   src: url('/assets/fonts/DINWeb.eot');
   src: url('/assets/DINWeb.eot?iefix') format('eot'), url('/assets/fonts/DINWeb.woff') format('woff');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
 }
 
-/* MEDIUM */
+/* DIN REGULAR MEDIUM */
 @font-face {
   font-family: "din-regular";
   src: url('/assets/fonts/DINWeb-Medium.eot');
@@ -31,7 +16,7 @@
   font-weight: 500;
 }
 
-/* BOLD */
+/* DIN REGULAR BOLD */
 @font-face {
   font-family: "din-regular";
   src: url('/assets/fonts/DINWeb-Bold.eot');
@@ -40,55 +25,11 @@
   font-weight: 600;
 }
 
-
-
-/*
- *
- *  DIN CONDENSED
- *
- */
-
-/* LIGHT */
-@font-face {
-  font-family: "din-condensed";
-  src: url('/assets/fonts/DINWeb-CondLight.eot');
-  src: url('/assets/fonts/DINWeb-CondLight.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondLight.woff') format('woff');
-  font-style: normal;
-  font-weight: 200;
-}
-
-/* REGULAR */
-@font-face {
-  font-family: "din-condensed";
-  src: url('/assets/fonts/DINWeb-Cond.eot');
-  src: url('/assets/fonts/DINWeb-Cond.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-Cond.woff') format('woff');
-  font-style: normal;
-  font-weight: normal;
-}
-
-/* MEDIUM */
+/* DIN CONDENSED MEDIUM */
 @font-face {
   font-family: "din-condensed";
   src: url('/assets/fonts/DINWeb-CondMedium.eot');
   src: url('/assets/fonts/DINWeb-CondMedium.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondMedium.woff') format('woff');
   font-style: normal;
   font-weight: 500;
-}
-
-/* BOLD */
-@font-face {
-  font-family: "din-condensed";
-  src: url('/assets/fonts/DINWeb-CondBold.eot');
-  src: url('/assets/fonts/DINWeb-CondBold.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondBold.woff') format('woff');
-  font-style: normal;
-  font-weight: 600;
-}
-
-/* BLACK */
-@font-face {
-  font-family: "din-condensed";
-  src: url('/assets/fonts/DINWeb-CondBlack.eot');
-  src: url('/assets/fonts/DINWeb-CondBlack.eot?iefix') format('eot'), url('/assets/fonts/DINWeb-CondBlack.woff') format('woff');
-  font-style: normal;
-  font-weight: 700;
 }
