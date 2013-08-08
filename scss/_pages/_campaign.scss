@@ -34,7 +34,7 @@ section.header {
 	background-position: center center;
 	background-repeat: no-repeat;
 	padding: 112px 24px;
-	@include background-size(cover);
+	background-size: cover;
 	@include respond-to(phones) {
 		padding: 48px 24px;
 	}

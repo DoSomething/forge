@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 					'assets/ie.css': 'scss/ie.scss'
 				},
 				options: {
-					sourcemap: 'true',
+					sourcemap: true,
 					style: 'compressed'
 				}
 			}
