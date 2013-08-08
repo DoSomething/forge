@@ -11,6 +11,11 @@ nav.utility {
 		float: right;
 		list-style-type: none;
 		margin: 0 1rem;
+
+		li {
+			float: left;
+			margin: 0 0.5rem;
+		}
 	}
 
 	a {
