@@ -15,6 +15,14 @@
     return console.log("yo");
   });
 
+  $("form.search input[type='search']").on("focus", function(e) {
+    return $(".utility-link").addClass("is-hidden-on-phones");
+  });
+
+  $("form.search input[type='search']").on("blur", function(e) {
+    return $(".utility-link").removeClass("is-hidden-on-phones");
+  });
+
 }).call(this);
 
 /*

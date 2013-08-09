@@ -1,6 +1,6 @@
 // buttons and textfields and labels oh my...
 
-input[type="text"] {
+input[type="text"], input[type="search"] {
   width: 100%;
   font-family: $font-din-regular;
   font-size: 1rem;
@@ -15,12 +15,13 @@ input[type="text"] {
     border: 1px solid $gold;
     box-shadow: 0 0 3px $gold;
   }
+}
 
-  &.search {
-    padding: 0.3em 0.3em 0.2em 48px;
-    border-radius: 2em; // fully rounded borders indicate search box
-    background: #fff url('../images/search.png') no-repeat 12px 50%;
-  }
+input[type="search"] {
+  padding: 0.3em 0.3em 0.1em 36px;
+  border-radius: 2em; // fully rounded borders indicate search box
+  background: #fff url('images/search.png') no-repeat 18px 50%;
+  background-size: 36px 18px;
 }
 
 label {

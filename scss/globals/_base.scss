@@ -61,3 +61,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.1em 0.25em 0;
   }
 }
+
+/* breakpoint classes for javascript */
+@include respond-to(phones) {
+  .is-hidden-on-phones {
+    display: none !important;
+  }
+}

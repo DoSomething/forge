@@ -1,6 +1,6 @@
 // CSS for top utility/main menus and footer
 
-/** Gray utiltiy bar at the top of the site */
+/** Gray utility bar at the top of the site */
 nav.utility {
   background: #333131;
   color: #fff;
@@ -29,6 +29,37 @@ nav.utility {
     }
   }
 }
+
+form.search {
+  float: left;
+  margin-top: -5px;
+
+  input[type="search"] {
+    width: 10px;
+    font-size: 0.9rem;
+    border: 0;
+    background: #333131 url('images/search.png') no-repeat 12px 6px;
+    background-size: 18px 45px;
+    cursor: pointer;
+    @include transition(width 0.25s, background-color 0.25s);
+
+    &:hover {
+      background-position: 12px -21px;
+    }
+
+    &:focus {
+      width: 200px;
+      cursor: text;
+      background-color: #fff;
+      background-position: 12px 6px;
+    }
+  }
+}
+
+form.search input[type="search"]:focus .js-menu-toggle {
+  display: none;
+}
+
 
 /** Logo & primary navigation/dropdowns */
 .masthead-wrapper {
