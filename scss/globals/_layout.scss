@@ -1,127 +1,127 @@
 // re-usable layout (grid) elements
 
 .flexwidth-wrapper {
-	@include flex-width;
-	margin: 0 auto;
+  @include flex-width;
+  margin: 0 auto;
 }
 
 section.full-width {
-	clear: both;
-	width: 100%;
-	margin: 0 0 4rem;
-	@include box-sizing(border-box);
+  clear: both;
+  width: 100%;
+  margin: 0 0 4rem;
+  @include box-sizing(border-box);
 }
 
 /** Used for blog pages, FAQ sections, etc */
 .content-center {
-	width: 70%;
-	margin: 0 auto;
-	padding: 24px;
-	overflow: hidden;
-	@include box-sizing(border-box);
-	@include respond-to(phones) {
-		width: 90%;
-	}
+  width: 70%;
+  margin: 0 auto;
+  padding: 24px;
+  overflow: hidden;
+  @include box-sizing(border-box);
+  @include respond-to(phones) {
+    width: 90%;
+  }
 
-	&.narrow {
-		width: 60%;
+  &.narrow {
+    width: 60%;
 
-		@include respond-to(phones) {
-			width: 90%;
-		}
-	}
+    @include respond-to(phones) {
+      width: 90%;
+    }
+  }
 
-	h1, h2 {
-		text-align: center;
-	}
+  h1, h2 {
+    text-align: center;
+  }
 
-	figure {
-		padding: 2.5%;
+  figure {
+    padding: 2.5%;
 
-		img {
-			max-width: 100%;
-		}
-	}
+    img {
+      max-width: 100%;
+    }
+  }
 
-	figcaption {
-		color: #999;
-		font-size: 0.8rem;
-		text-align: center;
-		padding: 0.5em 1em;
-	}
+  figcaption {
+    color: #999;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.5em 1em;
+  }
 }
 
 .column-break {
-	clear: both;
-	padding: 1rem 0;
-	overflow: hidden;
+  clear: both;
+  padding: 1rem 0;
+  overflow: hidden;
 }
 
 .one-col {
-	width: 100%;
-	padding: 0 2.5%;
-	@include box-sizing(border-box);
+  width: 100%;
+  padding: 0 2.5%;
+  @include box-sizing(border-box);
 }
 
 .two-col {
-	float: left;
-	width: 50%;
-	padding: 0 2.5%;
-	@include box-sizing(border-box);
+  float: left;
+  width: 50%;
+  padding: 0 2.5%;
+  @include box-sizing(border-box);
 
-	@include respond-to(phones) {
-		float: none;
-		width: 95%;
-		margin: 0 auto;
-	}
+  @include respond-to(phones) {
+    float: none;
+    width: 95%;
+    margin: 0 auto;
+  }
 }
 
 .three-col {
-	float: left;
-	width: 33.333333333%;
-	padding: 0 2.5%;
-	@include box-sizing(border-box);
+  float: left;
+  width: 33.333333333%;
+  padding: 0 2.5%;
+  @include box-sizing(border-box);
 
-	img {
-		max-width: 100%;
-	}
+  img {
+    max-width: 100%;
+  }
 
-	// span over two columns in a three-column layout
-	&.span-two {
-		width: 66.66666666%;
-		padding: 0 2.5%;
-	}
+  // span over two columns in a three-column layout
+  &.span-two {
+    width: 66.66666666%;
+    padding: 0 2.5%;
+  }
 
-	@include respond-to(phones) {
-		float: none;
-		width: 100%;
-		max-width: 400px;
-		margin: 0 auto;
-	}
+  @include respond-to(phones) {
+    float: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 /** Used for campaign steps/prizes. Styles elements in column layouts. */
 .block {
-	margin: 0;
-	padding: 1rem;
+  margin: 0;
+  padding: 1rem;
 
-	@include respond-to(phones) {
-		margin: 0 auto;
-	}
+  @include respond-to(phones) {
+    margin: 0 auto;
+  }
 
-	img {
-		display: block;
-		max-width: 100%;
-		margin: 1rem auto 2rem;
-	}
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 1rem auto 2rem;
+  }
 
-	h1, h2, h3, h4 {
-		text-align: center;
-	}
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
 
-	p {
-		text-align: center;
-	}
+  p {
+    text-align: center;
+  }
 }
 
 /** Used at the end of forms or other floated column layouts. */
@@ -133,26 +133,26 @@ section.full-width {
 
 /** Used to style "back to top" links. */
 .btn-top {
-	color: #999;
-	font-size: 0.9rem;
+  color: #999;
+  font-size: 0.9rem;
 }
 
 /** Used for pagination links (1, 2, 3, next, etc.). See campaign template gallery for implementation example. */
 .pager {
-	clear: both;
-	text-align: center;
-	margin: 2rem;
+  clear: both;
+  text-align: center;
+  margin: 2rem;
 
-	li {
-		display: inline-block;
-		margin: 1rem 0;
-	}
+  li {
+    display: inline-block;
+    margin: 1rem 0;
+  }
 }
 
 // image styles
 img.bordered {
-	border: 5px solid #fff;
-	box-shadow: 0 2px 10px 0 #bbbbbb;
-	@include box-sizing(border-box);
+  border: 5px solid #fff;
+  box-shadow: 0 2px 10px 0 #bbbbbb;
+  @include box-sizing(border-box);
 }
 

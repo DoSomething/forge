@@ -1,44 +1,44 @@
 // buttons and textfields and labels oh my...
 
 input[type="text"] {
-	width: 100%;
+  width: 100%;
   font-family: $font-din-regular;
   font-size: 1rem;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	padding: 0.5em 1em 0.3em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.3em;
   margin: 0 0 0.5em;
-	@include box-sizing(border-box);
+  @include box-sizing(border-box);
   -webkit-appearance: none;
-	&:focus {
-		outline: 0;
-		border: 1px solid $gold;
-		box-shadow: 0 0 3px $gold;
-	}
+  &:focus {
+    outline: 0;
+    border: 1px solid $gold;
+    box-shadow: 0 0 3px $gold;
+  }
 
-	&.search {
+  &.search {
     padding: 0.3em 0.3em 0.2em 48px;
-		border-radius: 2em; // fully rounded borders indicate search box
+    border-radius: 2em; // fully rounded borders indicate search box
     background: #fff url('../images/search.png') no-repeat 12px 50%;
-	}
+  }
 }
 
 label {
   float: left;
-	clear: both;
+  clear: both;
   width: 100%;
-	margin: 1em 1em 0.5em;
+  margin: 1em 1em 0.5em;
 }
 
 form.default-form {
-	padding: 1em;
+  padding: 1em;
 
   fieldset {
     border: 0;
     padding: 0;
   }
 
-	.two-col {
+  .two-col {
     select {
       width: 100%;
       margin: 0;
@@ -47,7 +47,7 @@ form.default-form {
     @include respond-to(phones) {
       width: 100%;
     }
-	}
+  }
 }
 
 // buttons
