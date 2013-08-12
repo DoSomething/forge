@@ -10,7 +10,6 @@ $(".js-jump-scroll").on("click", (e)->
 
 $(".js-menu-toggle").on("click", (e)->
   $(".main-menu").toggleClass("is-visible-mobile")
-  console.log "yo"
 )
 
 # toggle search field

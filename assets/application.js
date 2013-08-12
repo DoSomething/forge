@@ -11,8 +11,7 @@
   });
 
   $(".js-menu-toggle").on("click", function(e) {
-    $(".main-menu").toggleClass("is-visible-mobile");
-    return console.log("yo");
+    return $(".main-menu").toggleClass("is-visible-mobile");
   });
 
   $("form.search input[type='search']").on("focus", function(e) {
