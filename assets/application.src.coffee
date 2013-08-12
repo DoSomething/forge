@@ -1,14 +1,19 @@
 $(".js-jump-scroll").on("click", (e)->
-	e.preventDefault()
+  e.preventDefault()
 
-	href = $(this).attr('href')
-	$('html,body').animate({scrollTop: $(e.target.hash).offset().top}, 'slow', () ->
-		window.location.hash = href
-	)
+  href = $(this).attr('href')
+  $('html,body').animate({scrollTop: $(e.target.hash).offset().top}, 'slow', () ->
+    window.location.hash = href
+  )
 )
-# menu logic
+# toggle dropdown menu navigation on mobile
 
-$(".js-menu-toggle").on("click", (e)->
-	$(".main-menu").toggleClass("is-visible-mobile")
-	console.log "yo"
-)
+$(".js-menu-toggle").click (e)->
+  $(".main-menu").toggleClass("is-visible-mobile")
+
+# toggle search field
+$("form.search input[type='search']").focus (e)->
+  $(".utility-link").addClass("is-hidden-on-phones")
+
+$("form.search input[type='search']").blur (e)->
+  $(".utility-link").removeClass("is-hidden-on-phones")

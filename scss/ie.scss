@@ -6,3 +6,12 @@
 @import "globals/helpers";
 
 // ...and so far so good! (insert overrides here if ever necessary)
+
+
+form.search {
+  input[type="search"] {
+    color: #333131;
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+}

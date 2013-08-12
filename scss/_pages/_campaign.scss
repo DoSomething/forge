@@ -1,202 +1,202 @@
 // common
 
 .section-header {
-	// h1, h2, h3, etc...
-	font-weight: 500;
-	text-align: center;
-	text-transform: capitalize;
-	padding: 0.5em 0;
-	margin: 0 auto 1.5em auto;
-	letter-spacing: 0.1em;
-	color: #888888;
+  // h1, h2, h3, etc...
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.5em 0;
+  margin: 0 auto 1.5em auto;
+  letter-spacing: 0.1em;
+  color: #888888;
 
-	span {
-		line-height: 2em;
-		border-bottom: 6px solid #f4f4f4;
-	}
+  span {
+    line-height: 2em;
+    border-bottom: 6px solid #f4f4f4;
+  }
 }
 
 .campaign-section {
-	padding-bottom: 2rem;
-	border-bottom: 1px solid #eee;
-	overflow: hidden;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
 }
 
 .section-intro {
-	text-align: center;
+  text-align: center;
 }
 
 // sections
 
 section.header {
-	position: relative;
-	background: #eee;
-	background-position: center center;
-	background-repeat: no-repeat;
-	padding: 112px 24px;
-	background-size: cover;
-	@include respond-to(phones) {
-		padding: 48px 24px;
-	}
+  position: relative;
+  background: #eee;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 112px 24px;
+  background-size: cover;
+  @include respond-to(phones) {
+    padding: 48px 24px;
+  }
 
-	.header-logotype {
-		color: #fff;
-		text-align: center;
-		text-transform: uppercase;
-		text-shadow: 0 0 10px rgba(0,0,0,0.3);
-	}
+  .header-logotype {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
 
-	.header-date {
-		color: #fff;
-		font-weight: 600;
-		text-align: center;
-		text-transform: uppercase;
-		text-shadow: 0 0 10px rgba(0,0,0,0.3);
-	}
+  .header-date {
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
 
-	.header-social {
-		position: absolute;
-		bottom: 0;
-		left: 12px;
+  .header-social {
+    position: absolute;
+    bottom: 0;
+    left: 12px;
 
-		.header-twitter-share {
-			display: inline;
-			margin-left: 8px;
-		}
-	}
+    .header-twitter-share {
+      display: inline;
+      margin-left: 8px;
+    }
+  }
 }
 
 section.headline {
-	padding-top: 3rem;
-	h1, h2, h3 {
-		color: #333;
-		text-align: center;
+  padding-top: 3rem;
+  h1, h2, h3 {
+    color: #333;
+    text-align: center;
 
-		span {
-			display: inline-block;
-			background: #eee;
-			margin: 0 1em;
-			padding: 0.2em 1em 0;
-		}
-	}
+    span {
+      display: inline-block;
+      background: #eee;
+      margin: 0 1em;
+      padding: 0.2em 1em 0;
+    }
+  }
 }
 
 .official-rules {
-	color: #ccc;
+  color: #ccc;
 
-	&:hover, &:visited {
-		color: #aaa;
-	}
+  &:hover, &:visited {
+    color: #aaa;
+  }
 }
 
 .legal {
-	font-size: 0.75rem;
-	color: #ccc;
-	margin: 0 0 1em;
+  font-size: 0.75rem;
+  color: #ccc;
+  margin: 0 0 1em;
 }
 
 section.call-to-action {
-	background: #eee;
-	padding: 2%;
+  background: #eee;
+  padding: 2%;
 
-	&>p {
-		text-align: center;
-		padding: 1rem;
+  &>p {
+    text-align: center;
+    padding: 1rem;
 
-		&>span {
-			padding: 0 2rem;
+    &>span {
+      padding: 0 2rem;
 
-			@include respond-to(phones) {
-				display: block;
-				padding-bottom: 2rem;
-			}
-		}
-	}
+      @include respond-to(phones) {
+        display: block;
+        padding-bottom: 2rem;
+      }
+    }
+  }
 
-	.btn {
-		display: inline-block;
-	}
+  .btn {
+    display: inline-block;
+  }
 }
 
 .game-conversation {
-	clear: both;
-	position: relative;
-	background: #eee;
-	margin: 0 auto 3em;
-	padding: 0.5rem 1.5rem;
-	border-radius: $sm-border-radius;
-	text-transform: uppercase;
-	font-weight: 500;
+  clear: both;
+  position: relative;
+  background: #eee;
+  margin: 0 auto 3em;
+  padding: 0.5rem 1.5rem;
+  border-radius: $sm-border-radius;
+  text-transform: uppercase;
+  font-weight: 500;
 
-	&:after {
-		content: "";
-		position: absolute;
-		display: block;
-		border-style: solid;
-		border-width: 15px;
-	}
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-width: 15px;
+  }
 
 
-	&.game-ds {
-		float: left;
-		&:after {
-			bottom: -30px;
-			left: 20px;
-			border-color: #eee #eee transparent transparent;
-		}
-	}
+  &.game-ds {
+    float: left;
+    &:after {
+      bottom: -30px;
+      left: 20px;
+      border-color: #eee #eee transparent transparent;
+    }
+  }
 
-	&.game-user {
-		float: right;
-		&:after {
-			bottom: -30px;
-			right: 20px;
-			border-color: #eee transparent transparent #eee;
-		}
-	}
+  &.game-user {
+    float: right;
+    &:after {
+      bottom: -30px;
+      right: 20px;
+      border-color: #eee transparent transparent #eee;
+    }
+  }
 }
 
 
 //gallery
 .gallery-image {
-	text-align: center;
+  text-align: center;
 
-	img {
-		max-width: 100%;
-		box-shadow: 0 10px 10px -10px #bbbbbb;
-	}
+  img {
+    max-width: 100%;
+    box-shadow: 0 10px 10px -10px #bbbbbb;
+  }
 }
 
 .gallery-thumbs {
-	max-width: 700px;
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 1%;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 1%;
 }
 
 .gallery-thumb {
-	float: left;
-	width: 18%;
-	margin: 1%;
+  float: left;
+  width: 18%;
+  margin: 1%;
 
-	img {
-		width: 100%;
-		height: auto;
-		border-radius: $sm-border-radius;
-		box-shadow: 0 10px 10px -10px #bbbbbb;
-	}
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $sm-border-radius;
+    box-shadow: 0 10px 10px -10px #bbbbbb;
+  }
 }
 
 footer.sponsor {
-	text-align: center;
-	margin: 2rem 0;
+  text-align: center;
+  margin: 2rem 0;
 
-	img {
-		margin: 1rem 2rem;
-	}
+  img {
+    margin: 1rem 2rem;
+  }
 }
 
 footer.contact {
-	text-align: center;
-	margin: 2rem 0;
+  text-align: center;
+  margin: 2rem 0;
 }
