@@ -54,6 +54,10 @@ form.search {
       background-position: 12px 6px;
     }
   }
+
+  @include high-dpi {
+    background-image: url('images/search_2x.png');
+  }
 }
 
 form.search input[type="search"]:focus .js-menu-toggle {
