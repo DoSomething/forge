@@ -1,237 +1,237 @@
 body.homepage {
-	background: #fff;
+  background: #fff;
 }
 
 .ds-intro {
-	color: #fff;
-	background: url('/images/bg-intro.jpg') no-repeat center center;
-	background-size: cover;
+  color: #fff;
+  background: url('images/bg-intro.jpg') no-repeat center center;
+  background-size: cover;
 
-	.flexwidth-wrapper {
-		width: 620px;
-		padding: 32px 0 42px;
-		@include box-sizing(border-box);
-		@include transition(padding 0.5s);
-		@include respond-to(tablets_and_phones) {
-			padding: 42px;
-			width: auto;
-		}
-	}
+  .flexwidth-wrapper {
+    width: 620px;
+    padding: 32px 0 42px;
+    @include box-sizing(border-box);
+    @include transition(padding 0.5s);
+    @include respond-to(tablets_and_phones) {
+      padding: 42px;
+      width: auto;
+    }
+  }
 
-	h1 {
-		font-family: $font-din-condensed;
-		font-size: 1.75rem;
-		font-weight: 500;
-		border-bottom: 4px solid rgb(255,255,255);
-		border-bottom: 4px solid rgba(255,255,255,0.5);
-		padding-bottom: 0.5em;
+  h1 {
+    font-family: $font-din-condensed;
+    font-size: 1.75rem;
+    font-weight: 500;
+    border-bottom: 4px solid rgb(255,255,255);
+    border-bottom: 4px solid rgba(255,255,255,0.5);
+    padding-bottom: 0.5em;
 
-		strong {
-			font-weight: 600;
-			text-transform: uppercase;
-		}
-	}
+    strong {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
 
-	h2 {
-		font-family: $font-din-regular;
-		font-size: 1em;
-		font-weight: 400;
+  h2 {
+    font-family: $font-din-regular;
+    font-size: 1em;
+    font-weight: 400;
 
-		margin-top: 0.5em;
-		padding-top: 0;
-	}
+    margin-top: 0.5em;
+    padding-top: 0;
+  }
 
-	input[type="text"] {
-		max-width: 300px;
-		margin-right: 0.5em;
-	}
+  input[type="text"] {
+    max-width: 300px;
+    margin-right: 0.5em;
+  }
 }
 
 h4.homepage {
-	text-transform: uppercase;
-	padding: 1rem 0 0;
+  text-transform: uppercase;
+  padding: 1rem 0 0;
 }
 
 /** Link fills container. Triggers hover effect on some specified child elements. **/
 .full-link {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
 
-	span {
-		display: none;
-	}
+  span {
+    display: none;
+  }
 
-	&:hover ~ .headline .btn {
-		background: $btn-hover;
+  &:hover ~ .headline .btn {
+    background: $btn-hover;
     @include background-image(linear-gradient($btn-color, $btn-hover));
-	}
+  }
 
-	&:active ~ .headline .btn {
+  &:active ~ .headline .btn {
     background: $btn-color;
     color: lighten(#333, 10);
     @include background-image(linear-gradient($btn-hover, $btn-color));
-	}
+  }
 }
 
 /** Base styling for the homepage feature blocks **/
 .feature {
-	position: relative;
-	height: 300px;
-	background: #eee;
-	text-align: center;
-	margin-bottom: 0.25em;
-	padding: 0;
-	overflow: hidden;
-	background-size: cover;
+  position: relative;
+  height: 300px;
+  background: #eee;
+  text-align: center;
+  margin-bottom: 0.25em;
+  padding: 0;
+  overflow: hidden;
+  background-size: cover;
 
-	.headline {
-		display: table;
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		background: rgb(0,181,224);
-		background: rgba(0,181,224,0.4);
-		color: #fff;
-		font-size: 1.5rem;
-		font-weight: 500;
-		text-transform: uppercase;
-		padding: 0;
-		z-index: 1;
-		@include box-sizing(border-box);
+  .headline {
+    display: table;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgb(0,181,224);
+    background: rgba(0,181,224,0.4);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0;
+    z-index: 1;
+    @include box-sizing(border-box);
 
-		&.purple {
-			background: rgb(80, 40, 98);
-			background: rgba(80, 40, 98, 0.4);
-		}
+    &.purple {
+      background: rgb(80, 40, 98);
+      background: rgba(80, 40, 98, 0.4);
+    }
 
-		&.yellow {
-			background: rgb(254, 202, 0);
-			background: rgba(254, 202, 0, 0.4);
-		}
+    &.yellow {
+      background: rgb(254, 202, 0);
+      background: rgba(254, 202, 0, 0.4);
+    }
 
-		&.red {
-			background: rgb(180, 43, 37);
-			background: rgba(180, 43, 37, 0.4);
-		}
+    &.red {
+      background: rgb(180, 43, 37);
+      background: rgba(180, 43, 37, 0.4);
+    }
 
-		&.big {
-			display: block;
-			padding: 1em;
+    &.big {
+      display: block;
+      padding: 1em;
 
-			@include respond-to(phones) {
-				height: 100%;
-			}
-		}
-	}
+      @include respond-to(phones) {
+        height: 100%;
+      }
+    }
+  }
 
-	.headline-text {
-		display: table-cell;
-		vertical-align: middle;
-		height: 140px;
-		padding: 0 1em;
-		overflow: hidden;
-	}
+  .headline-text {
+    display: table-cell;
+    vertical-align: middle;
+    height: 140px;
+    padding: 0 1em;
+    overflow: hidden;
+  }
 
-	.campaign-logo {
-		height: 100px;
-		padding: 28px 0;
-	}
+  .campaign-logo {
+    height: 100px;
+    padding: 28px 0;
+  }
 }
 
 /** Style overrides based on block size **/
 .feature.one-col {
-	height: 450px;
-	@include transition(height 0.25s);
-	@include respond-to(tablets_and_phones) {
-		height: 350px;
-	}
-	@include respond-to(phones) {
-		height: 250px;
-	}
+  height: 450px;
+  @include transition(height 0.25s);
+  @include respond-to(tablets_and_phones) {
+    height: 350px;
+  }
+  @include respond-to(phones) {
+    height: 250px;
+  }
 }
 
 .feature.three-col {
-	width: 33%;
-	margin-bottom: 0.25em;
-	@include transition(height 0.25s);
-	@include respond-to(tablets_and_phones) {
-		height: 140px;
-	}
-	@include respond-to(phones) {
-		width: 100%;
-		max-width: none;
-	}
+  width: 33%;
+  margin-bottom: 0.25em;
+  @include transition(height 0.25s);
+  @include respond-to(tablets_and_phones) {
+    height: 140px;
+  }
+  @include respond-to(phones) {
+    width: 100%;
+    max-width: none;
+  }
 
-	&.left {
-		margin-right: 0.5%;
-	}
+  &.left {
+    margin-right: 0.5%;
+  }
 
-	&.right {
-		float: right;
-		margin-left: 0.5%;
-	}
+  &.right {
+    float: right;
+    margin-left: 0.5%;
+  }
 
-	.headline {
-		display: block;
-		position: relative;
-		bottom: -160px;
-		@include transition(bottom 0.25s);
+  .headline {
+    display: block;
+    position: relative;
+    bottom: -160px;
+    @include transition(bottom 0.25s);
 
-		@include respond-to(tablets_and_phones) {
-			bottom: 0px;
-		}
-	}
+    @include respond-to(tablets_and_phones) {
+      bottom: 0px;
+    }
+  }
 
-	a:hover ~.headline {
-		bottom: 0;
-		@include respond-to(tablets_and_phones) {
-			bottom: 150px;
-		}
-	}
+  a:hover ~.headline {
+    bottom: 0;
+    @include respond-to(tablets_and_phones) {
+      bottom: 150px;
+    }
+  }
 }
 
 /** Content block styles **/
 .content-block.two-col {
-	text-align: center;
-	width: 49.75%;
-	padding-top: 1rem;
-	margin-bottom: 0.25em;
-	@include box-sizing(border-box);
-	@include respond-to(phones) {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
+  text-align: center;
+  width: 49.75%;
+  padding-top: 1rem;
+  margin-bottom: 0.25em;
+  @include box-sizing(border-box);
+  @include respond-to(phones) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-	&.left {
-		clear: both;
-		margin-right: 0.25%;
-	}
+  &.left {
+    clear: both;
+    margin-right: 0.25%;
+  }
 
-	&.right {
-		margin-left: 0.25%;
-	}
+  &.right {
+    margin-left: 0.25%;
+  }
 }
 
 .homepage-sponsors {
-	clear: both;
+  clear: both;
 
-	h4 {
-		color: #ccc;
-		text-align: center;
-		padding-top: 2em;
-	}
+  h4 {
+    color: #ccc;
+    text-align: center;
+    padding-top: 2em;
+  }
 
-	img {
-		margin: 0 1rem;
-	}
+  img {
+    margin: 0 1rem;
+  }
 
-	p {
-		text-align: center;
-		padding-bottom: 1em;
-	}
+  p {
+    text-align: center;
+    padding-bottom: 1em;
+  }
 }
