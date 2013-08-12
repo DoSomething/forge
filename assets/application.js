@@ -10,15 +10,15 @@
     });
   });
 
-  $(".js-menu-toggle").on("click", function(e) {
+  $(".js-menu-toggle").click(function(e) {
     return $(".main-menu").toggleClass("is-visible-mobile");
   });
 
-  $("form.search input[type='search']").on("focus", function(e) {
+  $("form.search input[type='search']").focus(function(e) {
     return $(".utility-link").addClass("is-hidden-on-phones");
   });
 
-  $("form.search input[type='search']").on("blur", function(e) {
+  $("form.search input[type='search']").blur(function(e) {
     return $(".utility-link").removeClass("is-hidden-on-phones");
   });
 
