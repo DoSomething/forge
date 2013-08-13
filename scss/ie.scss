@@ -1,5 +1,5 @@
-/* Overrides for IE8 and below. */
-/* Abandon all hope, all ye who enter here. */
+/* Overrides for Internet Explorer. */
+/* Abandon hope, all ye who enter here. */
 
 @import "vendor/bourbon/bourbon";
 @import "globals/variables";
@@ -7,11 +7,28 @@
 
 // ...and so far so good! (insert overrides here if ever necessary)
 
+body {
+  background: red;
+}
 
 form.search {
   input[type="search"] {
     color: #333131;
     padding-top: 8px;
     padding-bottom: 6px;
+  }
+}
+
+form.search {
+  input[type="search"] {
+    background: #333131 url('images/search.png') no-repeat 12px 6px;
+
+    &:hover {
+      background-position: 12px -21px;
+    }
+
+    &:focus {
+      background-position: 12px 6px;
+    }
   }
 }
