@@ -219,6 +219,8 @@ h4.homepage {
 
 .homepage-sponsors {
   clear: both;
+  width: 90%;
+  margin: 0 auto;
 
   h4 {
     color: #ccc;
@@ -233,5 +235,72 @@ h4.homepage {
   p {
     text-align: center;
     padding-bottom: 1em;
+  }
+
+  .sprite {
+    background-image: url(images/sponsors.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0 1em;
+  }
+
+  .sprite-HRB {
+    width: 120px;
+    height: 70px;
+    background-position: -5px -5px;
+  }
+
+  .sprite-aeropostale {
+    width: 100px;
+    height: 70px;
+    background-position: -135px -5px;
+  }
+
+  .sprite-channel-one {
+    width: 100px;
+    height: 70px;
+    background-position: -5px -85px;
+  }
+
+  .sprite-fastweb {
+    width: 100px;
+    height: 70px;
+    background-position: -115px -85px;
+  }
+
+  .sprite-intel {
+    width: 100px;
+    height: 70px;
+    background-position: -5px -165px;
+  }
+
+  .sprite-jetblue {
+    width: 100px;
+    height: 70px;
+    background-position: -115px -165px;
+  }
+
+  .sprite-lenovo {
+    width: 100px;
+    height: 70px;
+    background-position: -245px -5px;
+  }
+
+  .sprite-sprint {
+    width: 100px;
+    height: 70px;
+    background-position: -225px -85px;
+  }
+
+  .sprite-vh1 {
+    width: 100px;
+    height: 70px;
+    background-position: -225px -165px;
+  }
+
+  .sprite-walmart {
+    width: 100px;
+    height: 70px;
+    background-position: -5px -245px;
   }
 }
