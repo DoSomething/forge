@@ -63,11 +63,12 @@ h4.homepage {
 /** Link fills container. Triggers hover effect on some specified child elements. **/
 .full-link {
   position: absolute;
+  background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'); // fixes link z-indexing in IE. yeah, really.
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 10;
 
   span {
     display: none;
