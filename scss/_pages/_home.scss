@@ -39,6 +39,14 @@ body.homepage {
 
     margin-top: 0.5em;
     padding-top: 0;
+
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+
+  p.legal {
+    color: rgba(255,255,255,0.5);
   }
 
   input[type="text"] {
