@@ -1,36 +1,3 @@
-// buttons and textfields and labels oh my...
-
-input[type="text"], input[type="search"] {
-  width: 100%;
-  font-family: $font-din-regular;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 0.5em 1em 0.3em;
-  margin: 0 0 0.5em;
-  @include box-sizing(border-box);
-  -webkit-appearance: none;
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
-}
-
-input[type="search"] {
-  padding: 0.3em 0.3em 0.1em 36px;
-  border-radius: 2em; // fully rounded borders indicate search box
-  background: #fff url('images/search.png') no-repeat 18px 50%;
-  background-size: 36px 18px;
-}
-
-label {
-  float: left;
-  clear: both;
-  width: 100%;
-  margin: 1em 1em 0.5em;
-}
-
 form.default-form {
   padding: 1em;
 
@@ -51,7 +18,61 @@ form.default-form {
   }
 }
 
-// buttons
+// Labels for form elements.
+//
+// Styleguide 2.1
+label {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin: 1em 1em 0.5em;
+}
+
+
+// Text input fields.
+//
+// Styleguide 2.2.1
+input[type="text"], input[type="search"] {
+  width: 100%;
+  font-family: $font-din-regular;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.3em;
+  margin: 0 0 0.5em;
+  @include box-sizing(border-box);
+  -webkit-appearance: none;
+  &:focus {
+    outline: 0;
+    border: 1px solid $gold;
+    box-shadow: 0 0 3px $gold;
+  }
+}
+
+// Specific style rules for search input fields.
+//
+// Styleguide 2.2.2
+input[type="search"] {
+  padding: 0.3em 0.3em 0.1em 36px;
+  border-radius: 2em; // fully rounded borders indicate search box
+  background: #fff url('images/search.png') no-repeat 16px 8px;
+}
+
+
+// Button styles for both input and anchor buttons. Suitable for all-purpose use.
+//
+// :hover             - Suble hover state (will not be displayed on touch interfaces)
+// :focus             - Focus state for users navigating the page using tab keys.
+// :active            - "Pushed" button state
+// .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
+// .primary           - Used to bring attention to the main call-to-action on a page. Use sparingly.
+// .primary:hover     - Subltle hover on call-to-action button
+// .small             - A tiny button.
+// .medium            - (Default) A normal button size.
+// .large             - A large button. Suitable for call-to-action or other important buttons.
+// .x-large           - A really big button. Use sparingly.
+//
+// Styleguide 2.3
 .btn {
   /* base/default (secondary) appearance */
   display: inline-block;
@@ -87,6 +108,7 @@ form.default-form {
     @include background-image(linear-gradient(#ddd, #eee));
   }
   &:link, &:active, &:hover {
+    // overrides for default <a> styling
     color: #333;
     text-decoration: none;
   }
@@ -166,7 +188,14 @@ input[type="submit"] {
   white-space: normal; // ensures text wraps to new lines when in an <input> element
 }
 
-// select boxes
+// Custom styling for select boxes. <mark>At the moment, only Webkit browsers correctly style select elements
+// so apperance varies slightly by browser.</mark>
+//
+// :focus - An active select box (while dropdown is shown or has keyboard focus).
+// .dark  - A dark variation of the select box (like used in the Action Finder). Use sparingly.
+// .dark:focus - Focused style of the dark select box.
+//
+// Styleguide 2.4
 select {
   position: relative;
   background: #fff;
@@ -175,26 +204,16 @@ select {
   color: #333;
   font-family: $font-din-regular;
   font-size: 1rem;
-  padding: 0.5em 1em;
+  padding: 0.5em 3em 0.5em 1em;
   margin: 0.25em;
   background-image: url('../images/dropdown.png');
-  background-position: 95% 50%;
+  background-position: 90% 50%;
   background-repeat: no-repeat;
 
   -webkit-appearance: none;
-  -moz-appearance: none;
-  // &:after {
-  //   position: absolute;
-  //   display: block;
-  //   color: red;
-  //   content: "DOWN ARROW";
-  //   right: 5px;
-  //   z-index: 1000;
-  // }
+
   &.dark {
     display: block;
-    width: 70%;
-    margin: 0.25em auto;
     color: #fff;
     background-color: $dark-gray;
     border: 1px solid $dark-gray;

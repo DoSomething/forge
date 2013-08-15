@@ -1,0 +1,254 @@
+<link rel="stylesheet" href="/kss/kss.css">
+<script type="text/javascript" src="/kss/kss.js"></script>
+
+<nav class="sidebar js-pin-top">
+  <ul>
+    <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
+    <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+    <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
+    <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
+    <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
+  </ul>
+</nav>
+
+<div class="content-center">
+  <h1>Styleguide Neue</h1>
+
+  <p>This is a living styleguide. It catalogues the re-usable classes included in the DS Neue library. It can be used as both a design &amp; code reference to minimize "rebuilding the wheel". Some full-page examples are also available for reference:</p>
+  <ul>
+    <li><a href="/index.html">Homepage</a></li>
+    <li><a href="/blog.html">Blog Post</a></li>
+    <li><a href="/campaign.html">Campaign Template</a></li>
+  </ul>
+
+  <h2 id="base">Base Elements</h2>
+  <section class="full-width">
+    <% styleguide_block  '1.1' do %>
+      <h1 class="$modifier_class"><span>Heading</span></h1>
+      <h2 class="$modifier_class"><span>Heading</span></h2>
+      <h3 class="$modifier_class"><span>Heading</span></h3>
+      <h4 class="$modifier_class"><span>Heading</span></h4>
+    <% end %>
+
+    <% styleguide_block  '1.2' do %>
+      <p>Lorem ipsum dolor sit amet. This is some <strong>bold</strong>
+      placeholder text and a <a href="#">link</a>.</p>
+    <% end %>
+  </section>
+
+  <h2 id="forms">Forms</h2>
+  <section class="full-width">
+    <% styleguide_block  '2.1' do %>
+      <label>Label</label>
+      <input type="text">
+    <% end %>
+
+    <% styleguide_block  '2.2.1' do %>
+      <input type="text">
+      <input type="text" placeholder="with placeholder directions">
+    <% end %>
+
+    <% styleguide_block  '2.2.2' do %>
+      <input type="search" placeholder="Search...">
+    <% end %>
+
+    <% styleguide_block  '2.3' do %>
+      <a class="btn $modifier_class">Example Button</a>
+    <% end %>
+
+    <% styleguide_block  '2.4' do %>
+      <select class="$modifier_class">
+        <option>Awesome Things</option>
+        <option>Popular Things</option>
+        <option>Random Things</option>
+      </select>
+    <% end %>
+  </section>
+
+  <section>
+    <h2>Layout</h2>
+
+    <% styleguide_block  '3.1.1' do %>
+      <!-- no example -->
+    <% end %>
+
+    <% styleguide_block  '3.1.2' do %>
+      <!-- no example -->
+    <% end %>
+
+    <% styleguide_block  '3.2' do %>
+      <div class="content-center $modifier_class">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block  '3.3.1' do %>
+      <div class="one-col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block  '3.3.2' do %>
+      <div class="two-col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
+      </div>
+
+      <div class="two-col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block  '3.3.3' do %>
+      <div class="three-col $modifier_class">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
+      </div>
+
+      <div class="three-col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
+      </div>
+
+      <div class="three-col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block  '3.4' do %>
+      <div class="block three-col $modifier_class">
+        <h3>One Kitten</h3>
+        <img src="http://placekitten.com/g/300/200">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
+      </div>
+
+      <div class="block three-col">
+        <h3>Two Kitten</h3>
+        <img src="http://placekitten.com/g/300/200">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
+      </div>
+
+      <div class="block three-col">
+        <h3>Three Kitten</h3>
+        <img src="http://placekitten.com/g/300/200">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block '3.5.1' do %>
+      <a href="#top" class="btn-top js-jump-scroll">Back to Top</a>
+    <% end %>
+
+    <% styleguide_block '3.5.2' do %>
+      <ul class="pager">
+        <li class="pager-next"><span class="btn small inactive" title="Go to previous page">&#8249; prev</span></li>
+        <li class="pager-current"><span class="btn small inactive">1</span></li>
+        <li class="pager-item"><a class="btn small" title="Go to page 2" href="#">2</a></li>
+        <li class="pager-item"><a class="btn small" title="Go to page 3" href="#">3</a></li>
+        <li class="pager-item"><a class="btn small" title="Go to page 4" href="#">4</a></li>
+        <li class="pager-next"><a class="btn small" title="Go to next page" href="#">next &#8250;</a></li>
+      </ul>
+    <% end %>
+
+    <% styleguide_block '3.7.1' do %>
+      <!-- utility class -->
+    <% end %>
+
+    <% styleguide_block '3.7.1' do %>
+      <!-- utility class -->
+    <% end %>
+  </section>
+
+  <h2 id="blog">Blog</h2>
+  <section>
+    <% styleguide_block '4.1' do %>
+      <div class="one-col">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <aside class="pullquote $modifier_class">Lorem ipsum dolor sit amet.</aside>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block '4.2' do %>
+      <div class="content-center narrow related-links">
+        <h4>More on DoSomething.org</h4>
+        <a href="#" class="related">
+          <img src="http://placekitten.com/75/75" alt="One kitten">
+          <span>Kitten decides to do something about rising world population, kills family of 3.</span>
+        </a>
+        <a href="#" class="related">
+          <img src="http://placekitten.com/75/75" alt="Two kitten">
+          <span>Kittens, in your ceiling? It's more likely than you think!</span>
+        </a>
+        <a href="#" class="related">
+          <img src="http://placekitten.com/75/75" alt="Three kitten">
+          <span>Meow meow meow. Lorem ipsum dolor sit ameow.</span>
+        </a>
+      </div>
+    <% end %>
+  </section>
+
+  <h2 id="campaign">Campaign</h2>
+  <section>
+    <% styleguide_block '5.1' do %>
+      <p class="legal">By registering, you agree to recieve emails and text messages. You can't escape.</p>
+    <% end %>
+
+    <% styleguide_block '5.2' do %>
+      <div class="content-center narrow">
+        <div class="game-conversation $modifier_class">
+          <p>Girl, you got any 'fee?</p>
+        </div>
+      </div>
+    <% end %>
+
+    <% styleguide_block '5.3' do %>
+      <div class="gallery-image">
+        <img src="http://www.placekitten.com/g/960/500" alt="">
+      </div>
+
+      <ul class="gallery-thumbs">
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/220/220" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/240/240" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/250/250" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/260/260" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/270/270" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/400/400" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/300/300" alt="" /></a>
+        </li>
+        <li class="gallery-thumb">
+          <a href="#" title=""><img src="http://www.placekitten.com/g/320/320" alt="" /></a>
+        </li>
+      </ul>
+    <% end %>
+
+  </section>
+</div>
