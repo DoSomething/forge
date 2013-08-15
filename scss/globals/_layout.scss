@@ -1,18 +1,27 @@
-// re-usable layout (grid) elements
+/* This section includes re-usable layout/grid elements */
 
+// Full width centered page wrapper. Resizes fluidly from $max-width as viewport width decreases.
+//
+// Styleguide 3.1.1
 .flexwidth-wrapper {
   @include flex-width;
   margin: 0 auto;
 }
 
+// Basic full-width "section" used on campaign pages, etc. Clears floats and adds bottom margin for spacing.
+//
+// Styleguide 3.1.2
 section.full-width {
   clear: both;
-  width: 100%;
   margin: 0 0 4rem;
   @include box-sizing(border-box);
 }
 
-/** Used for blog pages, FAQ sections, etc */
+// Used for blog pages, FAQ sections, etc. Intended to decrease line-width of paragraphs for easier reading.
+//
+//  .narrow - even narrower line-width!
+//
+// Styleguide 3.2
 .content-center {
   width: 70%;
   margin: 0 auto;
@@ -51,18 +60,18 @@ section.full-width {
   }
 }
 
-.column-break {
-  clear: both;
-  padding: 1rem 0;
-  overflow: hidden;
-}
-
+// Single column grid element.
+//
+// Styleguide 3.3.1
 .one-col {
   width: 100%;
   padding: 0 2.5%;
   @include box-sizing(border-box);
 }
 
+// Two column grid element. Stacks vertically on mobile.
+//
+// Styleguide 3.3.2
 .two-col {
   float: left;
   width: 50%;
@@ -76,15 +85,16 @@ section.full-width {
   }
 }
 
+// Three column grid element. Stacks vertically on mobile.
+//
+// .span-two - Allows an element to span two columns in a three-column layout.
+//
+// Styleguide 3.3.3
 .three-col {
   float: left;
   width: 33.333333333%;
   padding: 0 2.5%;
   @include box-sizing(border-box);
-
-  img {
-    max-width: 100%;
-  }
 
   // span over two columns in a three-column layout
   &.span-two {
@@ -100,7 +110,9 @@ section.full-width {
   }
 }
 
-/** Used for campaign steps/prizes. Styles elements in column layouts. */
+// Applies styles to grid content block elements, for example campaign steps/prizes.
+//
+// Styleguide 3.4
 .block {
   margin: 0;
   padding: 1rem;
@@ -124,20 +136,17 @@ section.full-width {
   }
 }
 
-/** Used at the end of forms or other floated column layouts. */
-.callout {
-  clear: both;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-/** Used to style "back to top" links. */
+// Used to style "back to top" links.
+//
+// Styleguide 3.5.1
 .btn-top {
   color: #999;
   font-size: 0.9rem;
 }
 
-/** Used for pagination links (1, 2, 3, next, etc.). See campaign template gallery for implementation example. */
+// Used for pagination links (1, 2, 3, next, etc.).
+//
+// Styleguide 3.5.2
 .pager {
   clear: both;
   text-align: center;
@@ -149,10 +158,29 @@ section.full-width {
   }
 }
 
-// image styles
+// Stylized "polaroid" image, with a thick border and subtle shadow.
+//
+// Styleguide 3.6.1
 img.bordered {
   border: 5px solid #fff;
   box-shadow: 0 2px 10px 0 #bbbbbb;
   @include box-sizing(border-box);
 }
 
+// Utility class which clears floated columns and makes a new block formatting context.
+//
+// Styleguide 3.7.1
+.column-break {
+  clear: both;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+// Used at the end of forms or other floated column layouts.
+//
+// Styleguide 3.7.2
+.callout {
+  clear: both;
+  padding: 1rem 0;
+  text-align: center;
+}

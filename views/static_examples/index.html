@@ -7,8 +7,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <link rel="stylesheet" href="../assets/application.css" media="screen, projection" type="text/css">
-  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="/application.css" media="screen, projection" type="text/css">
+  <link rel="shortcut icon" href="/favicon.ico">
 
   <meta property="og:site_name" content="Do Something">
   <meta property="fb:app_id" content="105775762330">
@@ -40,9 +40,9 @@
   </div>
 </nav>
 
-<div class="masthead-wrapper homepage">
+<div class="masthead-wrapper">
   <nav class="masthead">
-    <a class="logo" href="http://www.dosomething.org"><img src="../assets/images/ds-logo.png" alt="DoSomething.org"></a>
+    <a class="logo" href="http://www.dosomething.org"><img src="/images/ds-logo.png" alt="DoSomething.org"></a>
     <ul class="main-menu">
       <li>
         <a class="menu-link" href="/about">About Us</a>
@@ -119,7 +119,7 @@
 
 <div role="main" class="wrapper">
   <h4 class="homepage section-header"><span>Featured Campaigns</span></h4>
-  <div class="content-block feature one-col" style="background-image: url('images/placeholder_feature.jpg');">
+  <div class="content-block feature one-col" style="background-image: url('/images/placeholders/placeholder_feature.jpg');">
     <a class="full-link" href="#"><span>Get Started</span></a>
     <div class="headline big">
       <h3>Everyone has a birthday. Help a homeless teen celebrate theirs.</h3>
@@ -127,7 +127,7 @@
     </div>
   </div>
 
-  <div class="content-block feature three-col left" style="background-image: url('images/placeholder_homepage1.jpg'); background-position: center center;">
+  <div class="content-block feature three-col left" style="background-image: url('/images/placeholders/placeholder_homepage1.jpg'); background-position: center center;">
     <a class="full-link" href="#"><span>Get Started</span></a>
     <div class="headline purple">
       <div class="headline-text"><h3>Change Her Life With $25</h3></div>
@@ -135,7 +135,7 @@
     </div>
   </div>
 
-  <div class="content-block feature three-col" style="background-image: url('images/placeholder_homepage2.jpg'); background-position: center bottom;">
+  <div class="content-block feature three-col" style="background-image: url('/images/placeholders/placeholder_homepage2.jpg'); background-position: center bottom;">
     <a class="full-link" href="#"><span>Get Started</span></a>
     <div class="headline red">
       <div class="headline-text"><h3>Help Save Shelter Pets Near You</h3></div>
@@ -143,31 +143,13 @@
     </div>
   </div>
 
-  <div class="content-block feature three-col right" style="background-image: url('images/placeholder_homepage3.jpg'); background-position: center bottom;">
+  <div class="content-block feature three-col right" style="background-image: url('/images/placeholders/placeholder_homepage3.jpg'); background-position: center bottom;">
     <a class="full-link" href="#"><span>Get Started</span></a>
     <div class="headline yellow">
       <div class="headline-text"><h3>Run an Epic Book Drive</h3></div>
       <img class="campaign-logo" src="images/placeholder_campaign3.png" alt="Epic Book Drive">
     </div>
   </div>
-
-  <!-- <div class="content-block two-col left">
-    <h4 class="section-header"><span>What's Happening Now</span></h4>
-    <div class="related-links">
-      <a href="#" class="related">
-        <img src="http://www.dosomething.org/files/styles/whats_happening_now_thumbnail/public/pictures/blog/jessica%20strayer%20iheartdad_0.jpg?itok=FWprtK_8" alt="Living Healthier Thanks to I Heart Dad">
-        <span>Living Healthier Thanks to I Heart Dad</span> <em>How Jessica Strayer is helping her family fight heart disease. Living Healthier Thanks to I Heart Dad. How Jessica Strayer is helping her family fight heart disease.</em>
-      </a>
-      <a href="#" class="related">
-        <img src="http://www.dosomething.org/files/styles/whats_happening_now_thumbnail/public/pictures/99199318.jpg?itok=y_p1tWlF" alt="Background on Obesity">
-        <span>Background on Obesity</span> <em>In 2012, only 24% of adults met the standard for aerobic physical activity.</em>
-      </a>
-      <a href="#" class="related">
-        <img src="http://www.dosomething.org/files/styles/whats_happening_now_thumbnail/public/pictures/blog/thumb%20wars%20leonardo%20jimenezs_1.jpg?itok=3WNcTro8" alt="Winning the Thumb Wars Battle">
-        <span>Winning the Thumb Wars Battle</span> <em>Leonardo Jimenez is saving his friends from the dangers of texting and driving.</em>
-      </a>
-    </div>
-  </div> -->
 
   <div class="homepage-sponsors">
     <h4>Sponsors</h4>
@@ -240,9 +222,22 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="../assets/application.js"></script>
+<script type="text/javascript" src="/application.js"></script>
 <!--[if lt IE 9]>
-  <script src="../assets/ie/rem.min.js"></script>
+  <script src="/ie/rem.min.js"></script>
 <![endif]-->
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
 </body>
 </html>
