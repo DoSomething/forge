@@ -1,3 +1,9 @@
+// A pullquote brings attention to a quote from an article.
+//
+// .right - Floats the pullquote to the right (on wider screens).
+// .left - Floats the pullquote to the left (on wider screens).
+//
+// Styleguide 4.1
 aside.pullquote {
   width: 80%;
   max-width: 650px;
@@ -24,7 +30,9 @@ aside.pullquote {
   }
 }
 
-
+// The related links module lists links to other pages.
+//
+// Styleguide 4.2
 .related-links {
   text-align: left;
 
