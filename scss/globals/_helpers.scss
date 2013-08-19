@@ -36,3 +36,9 @@
 @mixin high-dpi {
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { @content; }
 }
+
+// Shortcut for writing sprites that scale down on mobile displays.
+@mixin responsive-sprite($posX, $posY) {
+  background-position: $posX $posY;
+  @include respond-to(phones) { background-position: $posX/2 $posY/2; }
+}
