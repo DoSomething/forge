@@ -13,6 +13,13 @@ class StyleGuide < Sinatra::Base
     send_file "views/static_examples/#{params[:splat].first}.html"
   end
 
+  post '/github/update' do
+    command = 'git pull'
+    @ok = system(command)
+
+    "Success: #{@ok}"
+  end
+
   helpers do
     # Generates a styleguide block. A little bit evil with @_out_buf, but
     # if you're using something like Rails, you can write a much cleaner helper
@@ -34,5 +41,5 @@ class StyleGuide < Sinatra::Base
       @_out_buf = out
     end
   end
-  
+
 end
