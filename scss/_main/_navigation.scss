@@ -58,10 +58,10 @@ form.search {
         margin-right: -40px;
       }
     }
-  }
 
-  @include high-dpi {
-    background-image: url('images/search_2x.png');
+    @include high-dpi {
+      background-image: url('images/search_2x.png');
+    }
   }
 }
 
