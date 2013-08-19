@@ -258,66 +258,31 @@ h4.homepage {
     background-image: url(images/sponsors.png);
     background-repeat: no-repeat;
     display: inline-block;
+    width: 100px;
+    height: 70px;
     margin: 0 1em;
+    @include respond-to(phones) {
+      background-size: 175px 160px;
+      width: 50px;
+      height: 35px;
+    }
   }
 
   .sprite-HRB {
     width: 120px;
-    height: 70px;
-    background-position: -5px -5px;
+    @include respond-to(phones) {
+      width: 60px;
+    }
   }
 
-  .sprite-aeropostale {
-    width: 100px;
-    height: 70px;
-    background-position: -135px -5px;
-  }
-
-  .sprite-channel-one {
-    width: 100px;
-    height: 70px;
-    background-position: -5px -85px;
-  }
-
-  .sprite-fastweb {
-    width: 100px;
-    height: 70px;
-    background-position: -115px -85px;
-  }
-
-  .sprite-intel {
-    width: 100px;
-    height: 70px;
-    background-position: -5px -165px;
-  }
-
-  .sprite-jetblue {
-    width: 100px;
-    height: 70px;
-    background-position: -115px -165px;
-  }
-
-  .sprite-lenovo {
-    width: 100px;
-    height: 70px;
-    background-position: -245px -5px;
-  }
-
-  .sprite-sprint {
-    width: 100px;
-    height: 70px;
-    background-position: -225px -85px;
-  }
-
-  .sprite-vh1 {
-    width: 100px;
-    height: 70px;
-    background-position: -225px -165px;
-  }
-
-  .sprite-walmart {
-    width: 100px;
-    height: 70px;
-    background-position: -5px -245px;
-  }
+  .sprite-HRB { @include responsive-sprite(-5px, -5px); }
+  .sprite-aeropostale { @include responsive-sprite(-135px, -5px); }
+  .sprite-channel-one { @include responsive-sprite(-5px, -85px); }
+  .sprite-fastweb { @include responsive-sprite(-115px, -85px); }
+  .sprite-intel { @include responsive-sprite(-5px, -165px); }
+  .sprite-jetblue { @include responsive-sprite(-115px, -165px); }
+  .sprite-lenovo { @include responsive-sprite(-245px, -5px); }
+  .sprite-sprint { @include responsive-sprite(-225px, -85px); }
+  .sprite-vh1 { @include responsive-sprite(-225px, -165px); }
+  .sprite-walmart { @include responsive-sprite(-5px, -245px); }
 }
