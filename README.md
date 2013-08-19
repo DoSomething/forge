@@ -3,7 +3,9 @@ DS Neue
 
 **DoSomething.org's default theme, but not terrible. This is the bleeding-edge "style guide".** This theme should be used as a basis for constructing application-specific templates across our web properties. See the included HTML files for implementation details.
 
-You can run the styleguide on your local machine! Here's the steps:
+If you're in the office, you can access the styleguide at [styleguide.dosomething.org](http://styleguide.dosomething.org/).
+
+You can also run the styleguide on your local machine! Here's the steps:
 
   1. Clone this repository.
   2. Run `bundle install` to configure dependencies.
