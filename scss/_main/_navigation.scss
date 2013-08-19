@@ -10,7 +10,7 @@ nav.utility {
   .utility-links {
     float: right;
     list-style-type: none;
-    margin: 0 1rem;
+    margin: 0 1rem 0 0;
 
     li {
       float: left;
@@ -42,9 +42,10 @@ form.search {
     background-size: 18px 45px;
     cursor: pointer;
     @include transition(width 0.25s, background-color 0.25s);
-
-    &:hover {
-      background-position: 12px -21px;
+    @include respond-to(widescreens_and_tablets) {
+      &:hover {
+        background-position: 12px -21px;
+      }
     }
 
     &:focus {
@@ -52,6 +53,10 @@ form.search {
       cursor: text;
       background-color: #fff;
       background-position: 12px 6px;
+
+      @include respond-to(phones) {
+        margin-right: -40px;
+      }
     }
   }
 
@@ -102,6 +107,10 @@ nav.masthead {
       @include respond-to(tablets_and_phones) {
         width: 109px;
         height: 86px;
+      }
+      @include respond-to(phones) {
+        width: 87px;
+        height: 69px;
       }
     }
   }
@@ -198,7 +207,7 @@ nav.masthead {
 /** Toggles first-level menu to appear when clicked on mobile */
 .js-menu-toggle {
   display: none;
-  margin-left: 130px;
+  margin-left: 100px;
 
   @include respond-to(phones) {
     display: inline;
