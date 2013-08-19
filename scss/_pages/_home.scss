@@ -61,6 +61,16 @@ body.homepage {
   input[type="text"] {
     max-width: 300px;
     margin-right: 0.5em;
+
+    @include respond-to(phones) {
+      max-width: 140px;
+      margin-right: 0.25em;
+    }
+  }
+
+  input[type="submit"] {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
