@@ -37,6 +37,7 @@ body.homepage {
 
     @include respond-to(phones) {
       font-size: 1.25rem;
+      border-bottom: 0;
     }
   }
 
