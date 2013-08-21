@@ -138,13 +138,18 @@ h4.homepage {
     }
 
     &.yellow {
-      background: rgb(254, 202, 0);
-      background: rgba(254, 202, 0, 0.4);
+      background: rgb(222, 177, 39);
+      background: rgba(222, 177, 39, 0.4);
     }
 
     &.red {
       background: rgb(180, 43, 37);
       background: rgba(180, 43, 37, 0.4);
+    }
+
+    &.teal {
+      background: rgb(0, 169, 157);
+      background: rgba(0, 169, 157, 0.4);
     }
 
     &.big {
