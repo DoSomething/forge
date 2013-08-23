@@ -4,11 +4,11 @@ body.homepage {
 
 .ds-intro {
   color: #fff;
-  background: url('images/bg-intro_r2.jpg') no-repeat center center;
+  background: url('images/bg-intro.jpg') no-repeat center center;
   background-size: cover;
 
   .flexwidth-wrapper {
-    width: 620px;
+    width: 580px;
     padding: 32px 0 42px;
     @include box-sizing(border-box);
     @include transition(padding 0.5s);
@@ -24,7 +24,7 @@ body.homepage {
 
   h1 {
     font-family: $font-din-condensed;
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 500;
     border-bottom: 4px solid rgb(255,255,255);
     border-bottom: 4px solid rgba(255,255,255,0.5);
@@ -36,8 +36,9 @@ body.homepage {
     }
 
     @include respond-to(phones) {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       border-bottom: 0;
+      padding-bottom: 0.25em;
     }
   }
 
@@ -49,7 +50,7 @@ body.homepage {
     margin-top: 0.5em;
     padding-top: 0;
 
-    padding-bottom: 0;
+    padding-bottom: 0.75em;
     margin-bottom: 0;
   }
 
@@ -111,7 +112,7 @@ h4.homepage {
   height: 300px;
   background: #eee;
   text-align: center;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.35rem;
   padding: 0;
   overflow: hidden;
   background-size: cover;
@@ -137,13 +138,18 @@ h4.homepage {
     }
 
     &.yellow {
-      background: rgb(254, 202, 0);
-      background: rgba(254, 202, 0, 0.4);
+      background: rgb(222, 177, 39);
+      background: rgba(222, 177, 39, 0.4);
     }
 
     &.red {
       background: rgb(180, 43, 37);
       background: rgba(180, 43, 37, 0.4);
+    }
+
+    &.teal {
+      background: rgb(0, 169, 157);
+      background: rgba(0, 169, 157, 0.4);
     }
 
     &.big {
@@ -164,15 +170,17 @@ h4.homepage {
     overflow: hidden;
   }
 
-  .campaign-logo {
-    height: 100px;
-    padding: 28px 0;
+  .block-cta {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
   }
+
 }
 
 /** Style overrides based on block size **/
 .feature.one-col {
   height: 450px;
+  margin-top: 0.75rem;
   @include transition(height 0.25s);
   @include respond-to(tablets_and_phones) {
     height: 350px;
@@ -184,7 +192,7 @@ h4.homepage {
 
 .feature.three-col {
   width: 33%;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.25rem;
   @include transition(height 0.25s);
   @include respond-to(tablets_and_phones) {
     height: 140px;
