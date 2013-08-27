@@ -35,7 +35,7 @@ body.homepage {
       text-transform: uppercase;
     }
 
-    @include respond-to(phones) {
+    @include respond-to(tablets_and_phones) {
       font-size: 1.5rem;
       border-bottom: 0;
       padding-bottom: 0.25em;
@@ -165,7 +165,7 @@ h4.homepage {
   .headline-text {
     display: table-cell;
     vertical-align: middle;
-    height: 140px;
+    height: 170px;
     padding: 0 1em;
     overflow: hidden;
   }
@@ -195,7 +195,7 @@ h4.homepage {
   margin-bottom: 0.25rem;
   @include transition(height 0.25s);
   @include respond-to(tablets_and_phones) {
-    height: 140px;
+    height: 170px;
   }
   @include respond-to(phones) {
     width: 100%;
@@ -214,7 +214,7 @@ h4.homepage {
   .headline {
     display: block;
     position: relative;
-    bottom: -160px;
+    bottom: -170px;
     @include transition(bottom 0.25s);
 
     @include respond-to(tablets_and_phones) {
@@ -225,7 +225,7 @@ h4.homepage {
   a:hover ~.headline {
     bottom: 0;
     @include respond-to(tablets_and_phones) {
-      bottom: 150px;
+      bottom: 170px;
     }
   }
 }
