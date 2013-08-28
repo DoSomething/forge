@@ -15,6 +15,10 @@ nav.utility {
     li {
       float: left;
       margin: 0 0.5rem;
+
+      &.search {
+        margin: 0;
+      }
     }
   }
 
@@ -30,7 +34,7 @@ nav.utility {
   }
 }
 
-form.search {
+.search form {
   float: left;
   margin-top: -5px;
 

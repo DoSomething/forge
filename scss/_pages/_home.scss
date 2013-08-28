@@ -171,8 +171,13 @@ h4.homepage {
   }
 
   .block-cta {
-    padding-top: 1rem;
-    padding-bottom: 4rem;
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+
+    @include respond-to(tablets_and_phones) {
+      padding-top: 1rem;
+      padding-bottom: 4rem;
+    }
   }
 
 }
@@ -214,7 +219,7 @@ h4.homepage {
   .headline {
     display: block;
     position: relative;
-    bottom: -170px;
+    bottom: -140px;
     @include transition(bottom 0.25s);
 
     @include respond-to(tablets_and_phones) {
