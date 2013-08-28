@@ -4,7 +4,7 @@
   $ = jQuery;
 
   $(function() {
-    return $(".js-jump-scroll").on("click", function(e) {
+    return $(".js-jump-scroll").click(function(e) {
       var href;
       e.preventDefault();
       href = $(this).attr('href');
