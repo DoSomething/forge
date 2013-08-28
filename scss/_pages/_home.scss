@@ -304,10 +304,11 @@ h4.homepage {
   .sprite-aeropostale { @include responsive-sprite(-135px, -5px); }
   .sprite-channel-one { @include responsive-sprite(-5px, -85px); }
   .sprite-fastweb { @include responsive-sprite(-115px, -85px); }
-  .sprite-intel { @include responsive-sprite(-5px, -165px); }
+  .sprite-toyota { @include responsive-sprite(-5px, -165px); }
   .sprite-jetblue { @include responsive-sprite(-115px, -165px); }
-  .sprite-lenovo { @include responsive-sprite(-245px, -5px); }
+  .sprite-aarp { @include responsive-sprite(-245px, -5px); }
   .sprite-sprint { @include responsive-sprite(-225px, -85px); }
   .sprite-vh1 { @include responsive-sprite(-225px, -165px); }
   .sprite-walmart { @include responsive-sprite(-5px, -245px); }
+  .sprite-amex { @include responsive-sprite(-115px, -245px); }
 }
