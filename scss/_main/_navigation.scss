@@ -1,273 +1,3 @@
-// CSS for top utility/main menus and footer
-
-/** Gray utility bar at the top of the site */
-nav.utility {
-  background: #333131;
-  color: #fff;
-  padding: 0.75rem 0 1rem;
-  height: 1rem;
-
-  .utility-links {
-    float: right;
-    list-style-type: none;
-    margin: 0 1rem 0 0;
-
-    li {
-      float: left;
-      margin: 0 0.5rem;
-
-      &.search {
-        margin: 0;
-      }
-    }
-  }
-
-  a {
-    font-family: $font-din-condensed;
-    color: #ddd;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
-.search form {
-  float: left;
-  margin-top: -5px;
-
-  input[type="search"] {
-    width: 10px;
-    font-size: 0.9rem;
-    border: 0;
-    background: #333131 url('images/search.png') no-repeat 12px 6px;
-    background-size: 18px 45px;
-    cursor: pointer;
-    @include transition(width 0.25s, background-color 0.25s);
-    @include respond-to(widescreens_and_tablets) {
-      &:hover {
-        background-position: 12px -21px;
-      }
-    }
-
-    &:focus {
-      width: 200px;
-      cursor: text;
-      background-color: #fff;
-      background-position: 12px 6px;
-
-      @include respond-to(phones) {
-        margin-right: -40px;
-      }
-    }
-
-    @include high-dpi {
-      background-image: url('images/search_2x.png');
-    }
-  }
-}
-
-form.search input[type="search"]:focus .js-menu-toggle {
-  display: none;
-}
-
-
-/** Logo & primary navigation/dropdowns */
-.masthead-wrapper {
-  background: $blue;
-  width: 100%;
-  padding: 12px 0 0;
-
-  @include respond-to(phones) {
-    padding: 0;
-  }
-}
-
-nav.masthead {
-  position: relative;
-  @include flex-width;
-  margin: 0 auto;
-
-  .logo {
-    position: absolute;
-    top: -45px;
-    left: -20px;
-    z-index: 101;
-    @include transition(top 0.5s, left 0.5s);
-    @include respond-to(tablets_and_phones) {
-      top: -55px;
-      left: 10px;
-    }
-    @include respond-to(phones) {
-      top: -45px;
-    }
-
-    img {
-      width: 219px;
-      height: 172px;
-      @include transition(width 0.5s, height 0.5s);
-      @include respond-to(tablets_and_phones) {
-        width: 109px;
-        height: 86px;
-      }
-      @include respond-to(phones) {
-        width: 87px;
-        height: 69px;
-      }
-    }
-  }
-
-  .main-menu {
-    max-height: 3rem; // fixes FOUT-related issue when loading webfont.
-    padding-left: 250px;
-    @include transition(padding-left 0.5s);
-    @include respond-to(tablets_and_phones) {
-      padding-left: 135px;
-    }
-    @include respond-to(phones) {
-      display: none;
-      max-height: none;
-
-      &.is-visible-mobile {
-        display: block;
-      }
-    }
-
-    li {
-      position: relative;
-      display: inline;
-      list-style-type: none;
-
-      &:hover > .dropdown {
-        display: block;
-      }
-    }
-
-    .menu-link {
-      display: inline-block;
-      color: $gold;
-      width: 24%;
-      font-size: 1.8rem;
-      font-family: $font-din-condensed;
-      font-weight: 500;
-      text-decoration: none;
-      text-transform: uppercase;
-      margin: 0;
-      padding-bottom: 4px;
-      @include respond-to(tablets_and_phones) {
-        font-size: 22px;
-      }
-      @include respond-to(phones) {
-        display: block;
-        width: 100%;
-      }
-      &:hover {
-        color: #fff;
-      }
-      &.active {
-        color: #fff;
-      }
-    }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 2em;
-      background: #000;
-      background: rgba(0,0,0, 0.7);
-      width: 120%;
-      margin: 1px;
-      left: -2em;
-      padding: 0;
-      z-index: 9999;
-      @include box-sizing(border-box);
-      @include respond-to(tablets_and_phones) {
-        display: none !important;
-      }
-
-      li {
-        list-style-type: none;
-
-        a {
-          display: block;
-          color: #fff;
-          font-family: $font-din-condensed;
-          font-size: 1.2rem;
-          font-weight: 500;
-          text-decoration: none;
-          padding: 0.5em 2em;
-          &:hover {
-            color: $gold;
-            background: rgba(0,0,0, 0.5);
-          }
-        }
-      }
-    }
-  }
-}
-
-/** Toggles first-level menu to appear when clicked on mobile */
-.js-menu-toggle {
-  display: none;
-  margin-left: 100px;
-
-  @include respond-to(phones) {
-    display: inline;
-  }
-}
-
-/** Footer (miscellaneous links) */
-.footer-wrapper {
-  width: 100%;
-  background: $dark-gray;
-  margin-top: 1em;
-  padding: 1em 0;
-  overflow: hidden;
-}
-
-footer.main {
-  @include flex-width;
-  margin: 0 auto;
-
-  h4 {
-    font-family: $font-din-condensed;
-    color: #fff;
-    font-size: 22px;
-    text-transform: uppercase;
-    margin-bottom: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  a {
-    color: #bbb;
-    font-family: $font-din-condensed;
-    font-size: 0.9rem;
-    text-decoration: none;
-
-    &:hover {
-      color: $gold;
-    }
-  }
-
-  .column {
-    float: left;
-    width: 20%;
-    padding: 1rem 0.5rem;
-    @include box-sizing(border-box);
-
-    @include respond-to(phones) {
-      width: 100%;
-      text-align: center;
-    }
-  }
-}
-
 /** Used to indicate position on sub-pages */
 nav.breadcrumbs {
   margin: 1em;
@@ -300,3 +30,44 @@ nav.breadcrumbs {
   }
 }
 
+/** Sidebar for in-page or in-section navigation. */
+nav.sidebar {
+  float:left;
+  width:160px;
+  padding: 100px 1rem;
+
+  ul{
+    margin-left:10px;
+  }
+
+  li{
+    list-style-type:none;
+    margin: 1em 0;
+
+    a{
+      text-decoration:none;
+      border-bottom: 2px solid #eee;
+      color:#666;
+
+      &.active {
+        color: #000;
+        font-weight: bold;
+        border-bottom: 2px solid $purple;
+      }
+
+      &:hover{
+        text-decoration:none;
+        border-bottom: 2px solid $gold;
+        color:#000;
+      }
+    }
+  }
+}
+
+/** Used to preserve layout when using 'pinned' sidebar. */
+.sidebar-wrapper {
+  display: block;
+  float: left;
+  width: 250px;
+  min-height: 1px; /* ensures layout doesn't collapse when child "pops out" to fixed pos. */
+}

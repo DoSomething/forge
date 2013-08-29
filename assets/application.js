@@ -1,5 +1,5 @@
 (function() {
-  var $;
+  var $, stickyRelocate;
 
   $ = jQuery;
 
@@ -29,6 +29,47 @@
       return $(".utility-link").removeClass("is-hidden-on-phones");
     });
   });
+
+  $ = jQuery;
+
+  window.pinToTop = function() {
+    $(window).scroll(stickyRelocate);
+    return stickyRelocate();
+  };
+
+  stickyRelocate = function(el) {
+    var div_top, window_top;
+    window_top = $(window).scrollTop();
+    div_top = $("#js-pin-to-top-anchor").offset().top;
+    if (window_top > div_top) {
+      return $('.js-pin-to-top').addClass('is-stuck');
+    } else {
+      return $('.js-pin-to-top').removeClass('is-stuck');
+    }
+  };
+
+  $ = jQuery;
+
+  window.sidebarActiveLinks = function() {
+    var contentTop, topRange;
+    topRange = 200;
+    contentTop = [];
+    $('nav.sidebar').find('a').each(function() {
+      return contentTop.push($($(this).attr('href')).offset().top);
+    });
+    return $(window).scroll(function() {
+      var bodyHeight, viewportHeight, windowTop;
+      windowTop = $(window).scrollTop();
+      bodyHeight = $(document).height();
+      viewportHeight = $(window).height();
+      return $.each(contentTop, function(i, loc) {
+        if (loc > windowTop && (loc < windowTop + topRange || (windowTop + viewportHeight) >= bodyHeight)) {
+          $('nav.sidebar a').removeClass("active");
+          return $('nav.sidebar a').eq(i).addClass("active");
+        }
+      });
+    });
+  };
 
 }).call(this);
 

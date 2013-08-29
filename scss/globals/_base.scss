@@ -83,6 +83,10 @@ strong, b {
   font-weight: 600;
 }
 
+mark {
+  background: #fdfbbd;
+}
+
 /* breakpoint classes for javascript */
 @include respond-to(phones) {
   .is-hidden-on-phones {
