@@ -14,6 +14,9 @@ nav.utility {
 
     li {
       float: left;
+      color: #666;
+      font-family: "din-condensed";
+      text-transform: uppercase;
       margin: 0 0.5rem;
 
       &.search {
