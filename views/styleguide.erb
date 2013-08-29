@@ -1,15 +1,18 @@
 <link rel="stylesheet" href="/kss/kss.css">
 <script type="text/javascript" src="/kss/kss.js"></script>
 
-<nav class="sidebar js-pin-top">
-  <ul>
-    <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
-    <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
-    <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
-    <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
-    <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
-  </ul>
-</nav>
+<div id="js-pin-to-top-anchor"></div>
+<div class="sidebar-wrapper">
+  <nav class="sidebar js-pin-to-top">
+    <ul>
+      <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
+      <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+      <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
+      <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
+      <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
+    </ul>
+  </nav>
+</div>
 
 <div class="content-center">
   <h1>Styleguide Neue</h1>
@@ -21,8 +24,9 @@
     <li><a href="/campaign.html">Campaign Template</a></li>
   </ul>
 
-  <h2 id="base">Base Elements</h2>
-  <section class="full-width">
+  
+  <section>
+    <h2 id="base">Base Elements</h2>
     <% styleguide_block  '1.1' do %>
       <h1 class="$modifier_class"><span>Heading</span></h1>
       <h2 class="$modifier_class"><span>Heading</span></h2>
@@ -36,8 +40,8 @@
     <% end %>
   </section>
 
-  <h2 id="forms">Forms</h2>
-  <section class="full-width">
+  <section>
+    <h2 id="forms">Forms</h2>
     <% styleguide_block  '2.1' do %>
       <label>Label</label>
       <input type="text">
@@ -66,7 +70,7 @@
   </section>
 
   <section>
-    <h2>Layout</h2>
+    <h2 id="layout">Layout</h2>
 
     <% styleguide_block  '3.1.1' do %>
       <!-- no example -->
@@ -156,8 +160,9 @@
     <% end %>
   </section>
 
-  <h2 id="blog">Blog</h2>
+  
   <section>
+    <h2 id="blog">Blog</h2>
     <% styleguide_block '4.1' do %>
       <div class="one-col">
 
@@ -197,8 +202,9 @@
     <% end %>
   </section>
 
-  <h2 id="campaign">Campaign</h2>
+  
   <section>
+    <h2 id="campaign">Campaign</h2>
     <% styleguide_block '5.1' do %>
       <p class="legal">By registering, you agree to recieve emails and text messages. You can't escape.</p>
     <% end %>
