@@ -196,3 +196,66 @@ footer.contact {
   text-align: center;
   margin: 2rem 0;
 }
+
+// Vertical timeline.
+//
+// Styleguide 5.4
+.timeline-divider {
+  color: #ccc;
+  margin-top: 4px;
+  margin-left: -14px;
+}
+
+.timeline {
+  border-left: 5px solid #ccc;
+
+  li {
+    clear: both;
+    position: relative;
+    padding: 1rem 0 1rem 1.5rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 18px;
+      display: block;
+      background: #000;
+      width: 12px;
+      height: 12px;
+      border-radius: 20px;
+      border: 4px solid #fff;
+    }
+
+    .event-wrapper {
+      overflow: hidden;
+    }
+
+    .title {
+      color: #000;
+      font-weight: 500;
+      text-transform: uppercase;
+      @include box-sizing(border-box);
+
+      @include respond-to(widescreens_and_tablets) {
+        float: left;
+        width: 40%;
+        padding-right: 3.5rem;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+
+    .description {
+      color: #666;
+
+      @include respond-to(widescreens_and_tablets) {
+        float: left;
+        width: 60%;
+      }
+    }
+  }
+}

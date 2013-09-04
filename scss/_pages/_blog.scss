@@ -70,4 +70,11 @@ aside.pullquote {
       padding-left: 70px;
     }
   }
+
+  &.wide-media {
+    .related img {
+      width: 150px;
+      height: 75px;
+    }
+  }
 }

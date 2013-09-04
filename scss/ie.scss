@@ -28,3 +28,12 @@ form.search {
     }
   }
 }
+
+
+.timeline {
+  li {
+    &:before {
+      display: none;
+    }
+  }
+}

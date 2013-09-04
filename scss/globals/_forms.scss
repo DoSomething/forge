@@ -171,6 +171,7 @@ input[type="search"] {
     border-radius: $lg-border-radius;
 
     &:hover {
+      background: #ddd;
       box-shadow: none;
     }
 

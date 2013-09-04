@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: #18408b;
+  background: #fff;
   font: 18px/1.4 $font-din-regular;
 }
 
@@ -49,7 +49,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 1.5rem 0 1.25rem;
   @include respond-to(phones) {
     font-size: 1.5rem;
