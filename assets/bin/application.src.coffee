@@ -12,34 +12,31 @@ $ ->
 $ = jQuery
 
 $ ->
-  # toggle dropdown menu navigation on mobile
-  $(".js-menu-toggle").click (e)->
-    $(".main-menu").toggleClass("is-visible-mobile")
+  $(document).ready ->
+    # toggle dropdown menu navigation on mobile
+    $(".js-menu-toggle").click (e)->
+      $(".main-menu").toggleClass("is-visible-mobile")
 
-  # toggle search field
-  $("form.search input[type='search']").focus (e)->
-    $(".utility-link").addClass("is-hidden-on-phones")
+    # toggle search field
+    $(".search form input[type='search']").focus (e)->
+      $(".utility-link").addClass("is-hidden-on-phones")
 
-  $("form.search input[type='search']").blur (e)->
-    $(".utility-link").removeClass("is-hidden-on-phones")
-
-$ = jQuery
+    $(".search form input[type='search']").blur (e)->
+      $(".utility-link").removeClass("is-hidden-on-phones")
 
 # removes :hover rules when on touch device
-$ ->
-  $(document).ready ->
-    if $("html").hasClass('touch')
-      ignore = /:hover\b/
-      try
-        for stylesheet in document.styleSheets
-          idxs = []
-          # detect hover rules
-          for rule, idx in stylesheet.cssRules
-            if rule.type is CSSRule.STYLE_RULE and ignore.test(rule.selectorText)
-              idxs.unshift idx
+if Modernizr.touch
+  ignore = /:hover\b/
+  try
+    for stylesheet in document.styleSheets
+      idxs = []
+      # detect hover rules
+      for rule, idx in stylesheet.cssRules
+        if rule.type is CSSRule.STYLE_RULE and ignore.test(rule.selectorText)
+          idxs.unshift idx
 
-          # delete hover rules
-          stylesheet.deleteRule idx for idx in idxs
+      # delete hover rules
+      stylesheet.deleteRule idx for idx in idxs
 $ = jQuery
 
 window.pinToTop = () ->

@@ -56,10 +56,8 @@ nav.utility {
     background-size: 18px 45px;
     cursor: pointer;
     @include transition(width 0.25s, background-color 0.25s);
-    @include respond-to(widescreens_and_tablets) {
-      &:hover {
-        background-position: 12px -21px;
-      }
+    &:hover {
+      background-position: 12px -21px;
     }
 
     &:focus {
