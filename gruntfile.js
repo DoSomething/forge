@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 				tasks: ['sass:dist']
 			},
 			coffee: {
-				files: ['coffee/**/*.coffee'],
-				tasks: ['coffee:compile']
+				files: ['coffee/vendor/**/*.js', 'coffee/**/*.coffee'],
+				tasks: ['coffee:compile', 'uglify:js']
 			},
 			livereload: {
 				files: ['*.html', '*.php', 'assets/**/*.{js,json}', 'assets/*.css','img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
@@ -33,11 +33,21 @@ module.exports = function(grunt) {
 		coffee: {
 			compile: {
 				files: {
-					'assets/application.js': ['coffee/*.coffee', 'js/vendor/*.js']
+					'assets/bin/application.js': ['coffee/*.coffee']
 				},
 				options: {
-					sourceMap: true,
-					style: 'compressed'
+					sourceMap: true
+				}
+			}
+		},
+		uglify: {
+			js: {
+				options: {
+					sourceMap: 'application.js.map',
+	        sourceMapIn: 'assets/bin/application.js.map', // input sourcemap from a previous compilation
+				},
+				files: {
+					'assets/application.js': ['coffee/vendor/**/*.js', 'assets/bin/application.js']
 				}
 			}
 		}
@@ -45,5 +55,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['watch']);
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 };
