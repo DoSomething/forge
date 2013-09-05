@@ -56,11 +56,6 @@ nav.utility {
     background-size: 18px 45px;
     cursor: pointer;
     @include transition(width 0.25s, background-color 0.25s);
-    @include respond-to(widescreens_and_tablets) {
-      &:hover {
-        background-position: 12px -21px;
-      }
-    }
 
     &:focus {
       width: 200px;
@@ -77,6 +72,12 @@ nav.utility {
       background-image: url('images/search_2x.png');
     }
   }
+}
+
+// only enable hover effects on non-touch devices
+// (prevents bug where users had to double-tap to search)
+.no-touch .search form input[type="search"]:hover {
+  background-position: 12px -21px;
 }
 
 form.search input[type="search"]:focus .js-menu-toggle {
@@ -142,6 +143,8 @@ nav.masthead {
 
       &.is-visible-mobile {
         display: block;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
       }
     }
 
