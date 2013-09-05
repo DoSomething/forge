@@ -32,6 +32,42 @@
 
   $ = jQuery;
 
+  $(function() {
+    return $(document).ready(function() {
+      var idx, idxs, ignore, rule, stylesheet, _i, _j, _len, _len1, _ref, _ref1, _results;
+      if ($("html").hasClass('touch')) {
+        ignore = /:hover\b/;
+        try {
+          _ref = document.styleSheets;
+          _results = [];
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            stylesheet = _ref[_i];
+            idxs = [];
+            _ref1 = stylesheet.cssRules;
+            for (idx = _j = 0, _len1 = _ref1.length; _j < _len1; idx = ++_j) {
+              rule = _ref1[idx];
+              if (rule.type === CSSRule.STYLE_RULE && ignore.test(rule.selectorText)) {
+                idxs.unshift(idx);
+              }
+            }
+            _results.push((function() {
+              var _k, _len2, _results1;
+              _results1 = [];
+              for (_k = 0, _len2 = idxs.length; _k < _len2; _k++) {
+                idx = idxs[_k];
+                _results1.push(stylesheet.deleteRule(idx));
+              }
+              return _results1;
+            })());
+          }
+          return _results;
+        } catch (_error) {}
+      }
+    });
+  });
+
+  $ = jQuery;
+
   window.pinToTop = function() {
     $(window).scroll(stickyRelocate);
     return stickyRelocate();

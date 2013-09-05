@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				options: {
-					sourceMap: 'assets/application.js.map',
+					sourceMap: 'application.js.map',
 	        sourceMapIn: 'assets/bin/application.js.map', // input sourcemap from a previous compilation
 				},
 				files: {
