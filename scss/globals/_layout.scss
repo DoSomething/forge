@@ -208,6 +208,11 @@ section.full-width {
     }
   }
 
+  .row {
+    display: table-row;
+    margin: 0 auto;
+  }
+
   .headline-text {
     display: table-cell;
     vertical-align: middle;
@@ -217,12 +222,12 @@ section.full-width {
   }
 
   .block-cta {
-    padding-top: 0rem;
-    padding-bottom: 4rem;
+    display: table-cell;
+    vertical-align: middle;
+    height: 130px;
 
     @include respond-to(tablets_and_phones) {
-      padding-top: 1rem;
-      padding-bottom: 4rem;
+      height: 170px;
     }
   }
 
