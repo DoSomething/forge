@@ -1,0 +1,30 @@
+.alert {
+  position: relative;
+  background: #eee;
+  padding: 1em 1em 1em 3.5em;
+  margin: 0.5rem;
+  text-align: left;
+  border-radius: $sm-border-radius;
+
+  &.error {
+    background: #fcf6e5;
+
+    &:before {
+      content: "\2718";
+      position: absolute;
+      left: 1.5em;
+      color: darken(#fcf6e5, 10%);
+    }
+  }
+
+  &.success {
+    background: #dbfbd5;
+
+    &:before {
+      content: "\2714";
+      position: absolute;
+      left: 1.5em;
+      color: darken(#dbfbd5, 10%);
+    }
+  }
+}

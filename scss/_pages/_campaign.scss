@@ -259,3 +259,23 @@ footer.contact {
     }
   }
 }
+
+
+// Location finder. Initialize by calling <code>window.initializeLocationFinder();</code>.
+//
+// Styleguide 5.5
+.location-list {
+  li {
+    margin: 1rem 0;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #eee;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+.no-js-hide-feature {
+  display: none;
+}
