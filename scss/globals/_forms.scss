@@ -1,3 +1,9 @@
+    @include keyframes(rotation) {
+     from { @include transform(rotate(0deg));}
+     to { @include transform(rotate(359deg));}
+    }
+
+
 form.default-form {
   padding: 1em;
 
@@ -29,7 +35,11 @@ label {
 }
 
 
-// Text input fields.
+// Text input fields. Defaults to full-width, but can be modified to be smaller
+// if necessary (use sparingly).
+//
+// .short         - Short input width (e.g. for zip codes)
+// .medium        - Medium-sized input width (e.g. for phone numbers)
 //
 // Styleguide 2.2.1
 input[type="text"], input[type="search"] {
@@ -46,6 +56,14 @@ input[type="text"], input[type="search"] {
     outline: 0;
     border: 1px solid $gold;
     box-shadow: 0 0 3px $gold;
+  }
+
+  &.short {
+    width: 175px;
+  }
+
+  &.medium {
+    width: 300px;
   }
 }
 
@@ -65,6 +83,7 @@ input[type="search"] {
 // :focus             - Focus state for users navigating the page using tab keys.
 // :active            - "Pushed" button state
 // .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
+// .loading           - AJAX loading animation. Used when loading results inline.
 // .primary           - Used to bring attention to the main call-to-action on a page. Use sparingly.
 // .primary:hover     - Subltle hover on call-to-action button
 // .small             - A tiny button.
@@ -183,11 +202,94 @@ input[type="search"] {
       box-shadow: none;
     }
   }
+
+  /** Must be used on an <a> or <button> element. Will not work on <input>. **/
+  &.loading {
+    position: relative;
+    background: #efefef;
+    border: 2px solid #efefef;
+    color: #efefef;
+    box-shadow: none;
+    &:hover {
+      background: #efefef;
+    }
+    &:active {
+      color: #efefef;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      height:1.5em;
+      width:1.5em;
+      margin:0 auto;
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.75em;
+      margin-left: -0.75em;
+      border:0.3em solid #ddd;
+      border-radius:100%;
+      @include box-sizing(border-box);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      height:1.5em;
+      width:1.5em;
+      margin:0 auto;
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.75em;
+      margin-left: -0.75em;
+      border:0.3em solid #ccc;
+      border-left:0.3em solid transparent;
+      border-bottom:0.3em solid transparent;
+      border-right:0.3em solid transparent;
+      border-radius:100%;
+      @include box-sizing(border-box);
+      @include animation(rotation 1.5s infinite linear);
+    }
+  }
 }
 
 input[type="submit"] {
   white-space: normal; // ensures text wraps to new lines when in an <input> element
 }
+
+
+
+
+// Spinner to indicate loading content.
+//
+// Styleguide 2.x
+.spinner {
+   height:30px;
+   width:30px;
+   margin:0 auto;
+   position:relative;
+   @include animation(rotation 1.5s infinite linear);
+   border:6px solid rgba(204,204,204,.3);
+   border-radius:100%;
+}
+
+.spinner:before {
+   content:"";
+   display:block;
+   position:absolute;
+   left:-6px;
+   top:-6px;
+   height:100%;
+   width:100%;
+   border:6px solid rgba(204,204,204,1);
+   border-left:6px solid transparent;
+   border-bottom:6px solid transparent;
+   border-right:6px solid transparent;
+   border-radius:100%;
+}
+
 
 // Custom styling for select boxes. <mark>At the moment, only Webkit browsers correctly style select elements
 // so apperance varies slightly by browser.</mark>

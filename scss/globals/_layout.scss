@@ -29,7 +29,8 @@ section.full-width {
   overflow: hidden;
   @include box-sizing(border-box);
   @include respond-to(phones) {
-    width: 90%;
+    width: 100%;
+    padding: 16px 24px;
   }
 
   &.narrow {

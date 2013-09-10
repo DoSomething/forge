@@ -1,0 +1,5 @@
+  <li>
+    <strong>{{name}}</strong><br>
+    {{street}}, {{city}}, {{state}} {{zip}}<br>
+    (203) 555-5555
+  </li>

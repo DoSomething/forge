@@ -19,6 +19,39 @@
   $ = jQuery;
 
   $(function() {
+    $(".no-js-feature-warning").hide();
+    $(".js-location-finder-results").hide();
+    return $(".js-location-finder-button").click(function(e) {
+      var zip;
+      e.preventDefault();
+      $(this).addClass("loading");
+      zip = $(".js-location-finder-input").val();
+      return $.get('/example-data.json', function(data) {
+        $(".js-location-finder-results-zip").text(zip);
+        $(".js-location-finder-results .location-list").html("");
+        $.each(data.results, function(index, value) {
+          return $(".js-location-finder-results .location-list").append(Handlebars.templates['location.template'](value));
+        });
+        $(".js-location-finder-form").slideUp(400);
+        $(".js-location-finder-results").slideDown(400);
+        return $(".js-location-finder-reset").click(function(e) {
+          e.preventDefault();
+          $(".js-location-finder-results").slideUp(400);
+          $(".js-location-finder-form").slideDown(400);
+          $(".js-location-finder-results .location-list").html("");
+          return $(".js-location-finder-button").removeClass("loading");
+        });
+      }).fail(function() {
+        $(".js-location-finder-results").html("<div class='alert error'>We had trouble talking to the server. Check that your internet connection is working, or try reloading the page.");
+        $(".js-location-finder-form").slideUp(400);
+        return $(".js-location-finder-results").slideDown(400);
+      });
+    });
+  });
+
+  $ = jQuery;
+
+  $(function() {
     return $(document).ready(function() {
       $(".js-menu-toggle").click(function(e) {
         return $(".main-menu").toggleClass("is-visible-mobile");
