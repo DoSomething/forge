@@ -1,5 +1,5 @@
 (function() {
-  var $, bindResetButton, idx, idxs, ignore, rule, stickyRelocate, stylesheet, _i, _j, _k, _len, _len1, _len2, _ref, _ref1;
+  var $, bindResetButton, findLocation, idx, idxs, ignore, rule, stickyRelocate, stylesheet, _i, _j, _k, _len, _len1, _len2, _ref, _ref1;
 
   $ = jQuery;
 
@@ -18,40 +18,49 @@
 
   $ = jQuery;
 
-  $(function() {
+  window.initializeLocationFinder = function() {
     $(".no-js-feature-warning").hide();
+    $(".no-js-hide-feature").show();
     $(".js-location-finder-results").hide();
-    return $(".js-location-finder-button").click(function(e) {
-      var zip;
+    $(".js-location-finder-button").click(function(e) {
       e.preventDefault();
-      $(this).addClass("loading");
-      zip = $(".js-location-finder-input").val();
-      if (zip.match(/^\d{5}$/)) {
-        return $.get('/example-data.json', function(data) {
-          $(".js-location-finder-results-zip").text(zip);
-          $(".js-location-finder-results .location-list").html("");
-          $.each(data.results, function(index, value) {
-            return $(".js-location-finder-results .location-list").append(Handlebars.templates['location.template'](value));
-          });
-          $(".js-location-finder-form").slideUp(400);
-          $(".js-location-finder-results").slideDown(400);
-          return bindResetButton();
-        }).fail(function() {
-          $(".js-location-finder-results").html("<div class='alert error'>We had trouble talking to the server. Check that your internet connection is working, or try reloading the page.");
-          $(".js-location-finder-form").slideUp(400);
-          return $(".js-location-finder-results").slideDown(400);
-        });
-      } else {
-        $(".js-location-finder-button").removeClass("loading");
-        $(".js-location-finder-form").append("<div id='js-location-finder-validation-error' class='alert error'>Slow down buddy, that's not a zip code.</div>").slideDown(400);
-        return $(".js-location-finder-input").bind("propertychange input keyup", function() {
-          return $("#js-location-finder-validation-error").slideUp(400, function() {
-            return $("#js-location-finder-validation-error").remove();
-          });
-        });
-      }
+      return findLocation();
     });
-  });
+    return $(".js-location-finder-form").submit(function(e) {
+      e.preventDefault();
+      return findLocation();
+    });
+  };
+
+  findLocation = function() {
+    var zip;
+    $(this).addClass("loading");
+    zip = $(".js-location-finder-input").val();
+    if (zip.match(/^\d{5}$/)) {
+      return $.get('/example-data.json', function(data) {
+        $(".js-location-finder-results-zip").text(zip);
+        $(".js-location-finder-results .location-list").html("");
+        $.each(data.results, function(index, value) {
+          return $(".js-location-finder-results .location-list").append("<li>\n  <strong>" + value.name + "</strong><br>\n  " + value.street + ", " + value.city + ", " + value.state + " " + value.zip + "<br>\n  (555) 555-5555\n</li>");
+        });
+        $(".js-location-finder-form").slideUp(400);
+        $(".js-location-finder-results").slideDown(400);
+        return bindResetButton();
+      }).fail(function() {
+        $(".js-location-finder-results").html("<div class='alert error'>We had trouble talking to the server. Check that your internet connection is working, or try reloading the page.");
+        $(".js-location-finder-form").slideUp(400);
+        return $(".js-location-finder-results").slideDown(400);
+      });
+    } else {
+      $(".js-location-finder-button").removeClass("loading");
+      $(".js-location-finder-form").append("<div id='js-location-finder-validation-error' class='alert error'>Slow down buddy, that's not a zip code.</div>").slideDown(400);
+      return $(".js-location-finder-input").bind("propertychange input keyup", function() {
+        return $("#js-location-finder-validation-error").slideUp(400, function() {
+          return $("#js-location-finder-validation-error").remove();
+        });
+      });
+    }
+  };
 
   bindResetButton = function() {
     return $(".js-location-finder-reset").click(function(e) {

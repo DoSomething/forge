@@ -264,14 +264,16 @@
     <h3 class="section-header"><span>Location Finder</span></h3>
 
     <form action="#" class="content-center narrow callout js-location-finder-form">
-      <p>Enter your zip code to search for a drop-off point near you.</p>
-      <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
-      <a class="btn primary medium js-location-finder-button">Search</a>
+      <div class="no-js-hide-feature">
+        <p>Enter your zip code to search for a drop-off point near you.</p>
+        <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
+        <a class="btn primary medium js-location-finder-button">Search</a>
+      </div>
 
       <div class="alert error no-js-feature-warning">The Location Finder requires JavaScript to be enabled in your browser.</div>
     </form>
 
-    <div class="content-center narrow js-location-finder-results">
+    <div class="content-center narrow js-location-finder-results no-js-hide-feature">
       <p>Nearest drop-off points for zipcode <span class="js-location-finder-results-zip"></span> (<a href='#' class='js-location-finder-reset'>change</a>):</p>
 
       <ul class="location-list">
@@ -504,6 +506,13 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="/application.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.initializeLocationFinder();
+  });
+</script>
+
 <!--[if lt IE 9]>
   <script src="/ie/rem.min.js"></script>
 <![endif]-->
