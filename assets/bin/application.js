@@ -55,7 +55,7 @@
       $(".js-location-finder-button").removeClass("loading");
       $(".js-location-finder-form").append("<div id='js-location-finder-validation-error' class='alert error'>Slow down buddy, that's not a zip code.</div>").slideDown(400);
       return $(".js-location-finder-input").bind("propertychange input keyup", function() {
-        return $("#js-location-finder-validation-error").slideUp(400, function() {
+        return $("#js-location-finder-validation-error").delay(800).slideUp(400, function() {
           return $("#js-location-finder-validation-error").remove();
         });
       });

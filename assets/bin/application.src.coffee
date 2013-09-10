@@ -59,7 +59,7 @@ findLocation = ->
     $(".js-location-finder-form").append("<div id='js-location-finder-validation-error' class='alert error'>Slow down buddy, that's not a zip code.</div>").slideDown(400)
 
     $(".js-location-finder-input").bind "propertychange input keyup", ->
-      $("#js-location-finder-validation-error").slideUp 400, ->
+      $("#js-location-finder-validation-error").delay(800).slideUp 400, ->
         $("#js-location-finder-validation-error").remove()
 
 
