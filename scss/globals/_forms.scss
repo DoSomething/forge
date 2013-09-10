@@ -289,8 +289,6 @@ input[type="submit"] {
 // so apperance varies slightly by browser.</mark>
 //
 // :focus - An active select box (while dropdown is shown or has keyboard focus).
-// .dark  - A dark variation of the select box (like used in the Action Finder). Use sparingly.
-// .dark:focus - Focused style of the dark select box.
 //
 // Styleguide 2.4
 select {
@@ -306,15 +304,7 @@ select {
   background-image: url('../images/dropdown.png');
   background-position: 90% 50%;
   background-repeat: no-repeat;
-
   -webkit-appearance: none;
-
-  &.dark {
-    display: block;
-    color: #fff;
-    background-color: $dark-gray;
-    border: 1px solid $dark-gray;
-  }
 
   &:focus {
     outline: 0;
