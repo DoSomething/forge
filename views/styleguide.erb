@@ -5,11 +5,13 @@
 <div class="sidebar-wrapper">
   <nav class="sidebar js-pin-to-top">
     <ul>
+      <li><a href="#fonts-and-colors" class="js-jump-scroll">Colors &amp; Fonts</a></li>
       <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
       <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
       <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
       <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
       <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
+      <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
     </ul>
   </nav>
 </div>
@@ -25,8 +27,80 @@
     <li><a href="/campaign.html">Campaign Template</a></li>
   </ul>
 
+  <section class="campaign-section">
+    <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
 
-  <section>
+    <style type="text/css">
+      .font-tile {
+        margin: 1rem;
+        border: 1px solid #eee;
+        padding: 1em;
+        border-radius: 2px;
+      }
+
+      .font-tile code {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .color-tile {
+        float: left;
+        width: 45%;
+        margin: 2.5%;
+        background: #eee;
+        color: #fff;
+        text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+        padding: 2em 1em;
+        border-radius: 2px;
+        box-sizing: border-box;
+      }
+
+      .color-tile code {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+    
+    <h3>Fonts</h3>
+    <p>Generally, the right font to use is the one specified by the style element you are using.</p>
+    <p class="font-tile" style="font-family: 'din-regular';">
+      We use Din Regular for most of our text and headings. <code>($font-din-regular)</code>
+    </p>
+
+    <p class="font-tile" style="font-family: 'din-condensed'; font-size: 2rem;">
+      We use Din Condensed for special elements and headings. It should be used sparingly &amp; at bigger font sizes for legibility. <code>($font-din-condensed)</code>
+    </p>
+
+    <h3>Colors</h3>
+
+    <p class="color-tile" style="background: #18408b">
+      <strong>Blue</strong> <code>($blue, #18408b)</code>
+    </p>
+
+    <p class="color-tile" style="background: #00b5e0">
+      <strong>Light Blue</strong> <code>($light-blue, #00b5e0)</code>
+    </p>
+
+    <p class="color-tile" style="background: #fed100">
+      <strong>Gold</strong> <code>($gold, #fed100)</code>
+    </p>
+
+    <p class="color-tile" style="background: #502862">
+      <strong>Purple</strong> <code>($purple, #502862)</code>
+    </p>
+
+    <p class="color-tile" style="background: #333131">
+      <strong>Dark Gray</strong> <code>($dark-gray, #333131)</code>
+    </p>
+
+    <p class="color-tile" style="background: #666">
+      <strong>Gray</strong> <code>($gray, #666)</code>
+    </p>
+
+    <p class="color-tile" style="background: #ddd">
+      <strong>Light Gray</strong> <code>($light-gray, #ddd)</code>
+    </p>
+  </section>
+
+  <section class="campaign-section">
     <h2 id="base">Base Elements</h2>
     <% styleguide_block  '1.1' do %>
       <h1 class="$modifier_class"><span>Heading</span></h1>
@@ -74,7 +148,7 @@
     <% end %>
   </section>
 
-  <section>
+  <section class="campaign-section">
     <h2 id="layout">Layout</h2>
 
     <% styleguide_block  '3.1.1' do %>
@@ -170,7 +244,7 @@
   </section>
 
 
-  <section>
+  <section class="campaign-section">
     <h2 id="blog">Blog</h2>
     <% styleguide_block '4.1' do %>
       <div class="one-col">
@@ -212,7 +286,7 @@
   </section>
 
 
-  <section>
+  <section class="campaign-section">
     <h2 id="campaign">Campaign</h2>
     <% styleguide_block '5.1' do %>
       <p class="legal">By registering, you agree to recieve emails and text messages. You can't escape.</p>
@@ -339,8 +413,8 @@
     <% end %>
   </section>
 
-  <section>
-    <h2 id="campaign">Navigation</h2>
+  <section class="campaign-section">
+    <h2 id="navigation">Navigation</h2>
 
     <% styleguide_block '6.1' do %>
       <nav class="breadcrumbs">
