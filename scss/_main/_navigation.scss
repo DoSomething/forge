@@ -1,4 +1,6 @@
-/** Used to indicate position on sub-pages */
+// Used to indicate position on sub-pages. This helps the user orient theirself.
+//
+// Styleguide 6.1
 nav.breadcrumbs {
   margin: 1em;
   text-align: center;
@@ -30,36 +32,51 @@ nav.breadcrumbs {
   }
 }
 
-/** Sidebar for in-page or in-section navigation. */
+/**  */
+// Sidebar for in-page or in-section navigation. Use sparingly, multiple levels
+// of navigation on a page may be confusing for the user.
+//
+// Styleguide 6.2
 nav.sidebar {
   float:left;
   width:160px;
   padding: 100px 1rem;
 
   ul{
-    margin-left:10px;
+    margin-left:1em;
+
+    li {
+      list-style-type:none;
+      margin: 1em 0;
+
+      a {
+        text-decoration:none;
+        border-bottom: 2px solid #eee;
+        color:#666;
+
+        &.active {
+          color: #000;
+          font-weight: bold;
+          border-bottom: 2px solid $purple;
+        }
+
+        &:hover{
+          text-decoration:none;
+          border-bottom: 2px solid $gold;
+          color:#000;
+        }
+      }
+    }
   }
 
-  li{
-    list-style-type:none;
-    margin: 1em 0;
+  .section li {
+    font-size: 0.9rem;
 
-    a{
-      text-decoration:none;
-      border-bottom: 2px solid #eee;
-      color:#666;
+    a {
+      border-bottom: 0;
 
-      &.active {
-        color: #000;
-        font-weight: bold;
-        border-bottom: 2px solid $purple;
-      }
-
-      &:hover{
-        text-decoration:none;
-        border-bottom: 2px solid $gold;
-        color:#000;
-      }
+      &:hover { border-bottom: 0; }
+      &:active { border-bottom: 0; }
     }
   }
 }
