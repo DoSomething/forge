@@ -9,7 +9,7 @@
 
 /** Gray utility bar at the top of the site */
 nav.utility {
-  background: #333131;
+  background: $off-black;
   color: #fff;
   padding: 0.75rem 0 1rem;
   height: 1rem;
@@ -21,7 +21,7 @@ nav.utility {
 
     li {
       float: left;
-      color: #666;
+      color: $dark-gray;
       font-family: "din-condensed";
       text-transform: uppercase;
       margin: 0 0.5rem;
@@ -34,7 +34,7 @@ nav.utility {
 
   a {
     font-family: $font-din-condensed;
-    color: #ddd;
+    color: $light-gray;
     text-decoration: none;
     text-transform: uppercase;
 
@@ -42,6 +42,12 @@ nav.utility {
       color: #fff;
     }
   }
+}
+
+// only enable hover effects on non-touch devices (prevents bug where users had to double-tap to search)
+// this is pulled out of the below markup because of a bug with JS snippet not finding it if nested
+.no-touch .search form input[type="search"]:hover {
+  background-position: 12px -21px;
 }
 
 .search form {
@@ -52,7 +58,7 @@ nav.utility {
     width: 10px;
     font-size: 0.9rem;
     border: 0;
-    background: #333131 url('images/search.png') no-repeat 12px 6px;
+    background: $off-black url('images/search.png') no-repeat 12px 6px;
     background-size: 18px 45px;
     cursor: pointer;
     @include transition(width 0.25s, background-color 0.25s);
@@ -61,7 +67,7 @@ nav.utility {
       width: 200px;
       cursor: text;
       background-color: #fff;
-      background-position: 12px 6px;
+      background-position: 12px 6px !important; // to override hover styles when focused
 
       @include respond-to(phones) {
         margin-right: -40px;
@@ -74,11 +80,7 @@ nav.utility {
   }
 }
 
-// only enable hover effects on non-touch devices
-// (prevents bug where users had to double-tap to search)
-.no-touch .search form input[type="search"]:hover {
-  background-position: 12px -21px;
-}
+
 
 form.search input[type="search"]:focus .js-menu-toggle {
   display: none;
@@ -234,7 +236,7 @@ nav.masthead {
 /** Footer (miscellaneous links) */
 .footer-wrapper {
   width: 100%;
-  background: $dark-gray;
+  background: $off-black;
   margin-top: 1em;
   padding: 1em 0;
   overflow: hidden;
@@ -258,7 +260,7 @@ footer.main {
   }
 
   a {
-    color: #bbb;
+    color: $light-gray;
     font-family: $font-din-condensed;
     font-size: 0.9rem;
     text-decoration: none;

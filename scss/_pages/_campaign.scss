@@ -2,7 +2,7 @@
 
 .campaign-section {
   padding-bottom: 2rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $off-white;
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
 
 section.header {
   position: relative;
-  background: #eee;
+  background: $off-white;
   background-position: center center;
   background-repeat: no-repeat;
   padding: 112px 24px;
@@ -53,12 +53,12 @@ section.header {
 section.headline {
   padding-top: 3rem;
   h1, h2, h3 {
-    color: #333;
+    color: $off-black;
     text-align: center;
 
     span {
       display: inline-block;
-      background: #eee;
+      background: $off-white;
       margin: 0 1em;
       padding: 0.2em 1em 0;
     }
@@ -66,10 +66,10 @@ section.headline {
 }
 
 .official-rules {
-  color: #ccc;
+  color: $light-gray;
 
   &:hover, &:visited {
-    color: #aaa;
+    color: $off-black;
   }
 }
 
@@ -78,12 +78,12 @@ section.headline {
 // Styleguide 5.1
 .legal {
   font-size: 0.75rem;
-  color: #ccc;
+  color: $light-gray;
   margin: 0 0 1em;
 }
 
 section.call-to-action {
-  background: #eee;
+  background: $off-white;
   padding: 2%;
 
   &>p {
@@ -105,7 +105,7 @@ section.call-to-action {
   }
 }
 
-// Stylized SMS conversation bubbles. Requires a modifier class to specify which role is talking.
+// Stylized SMS conversation bubbles. <mark>Requires a modifier class to specify which role is talking.</mark>
 //
 // game-ds - Represents the other party in the conversation, usually DoSomething.
 // game-user - Represents the user in the conversation flow.
@@ -114,7 +114,7 @@ section.call-to-action {
 .game-conversation {
   clear: both;
   position: relative;
-  background: #eee;
+  background: $off-white;
   margin: 0 auto 3em;
   padding: 0.5rem 1.5rem;
   border-radius: $sm-border-radius;
@@ -136,7 +136,7 @@ section.call-to-action {
     &:after {
       bottom: -30px;
       left: 20px;
-      border-color: #eee #eee transparent transparent;
+      border-color: $off-white $off-white transparent transparent;
     }
   }
 
@@ -145,7 +145,7 @@ section.call-to-action {
     &:after {
       bottom: -30px;
       right: 20px;
-      border-color: #eee transparent transparent #eee;
+      border-color: $off-white transparent transparent $off-white;
     }
   }
 }
@@ -159,7 +159,7 @@ section.call-to-action {
 
   img {
     max-width: 100%;
-    box-shadow: 0 10px 10px -10px #bbbbbb;
+    box-shadow: 0 10px 10px -10px $off-black;
   }
 }
 
@@ -179,7 +179,7 @@ section.call-to-action {
     width: 100%;
     height: auto;
     border-radius: $sm-border-radius;
-    box-shadow: 0 10px 10px -10px #bbbbbb;
+    box-shadow: 0 10px 10px -10px $off-black;
   }
 }
 
@@ -201,13 +201,13 @@ footer.contact {
 //
 // Styleguide 5.4
 .timeline-divider {
-  color: #ccc;
+  color: $light-gray;
   margin-top: 4px;
   margin-left: -14px;
 }
 
 .timeline {
-  border-left: 5px solid #ccc;
+  border-left: 5px solid $light-gray;
 
   li {
     clear: both;
@@ -220,11 +220,11 @@ footer.contact {
       left: -12px;
       top: 18px;
       display: block;
-      background: #000;
+      background: $off-black;
       width: 12px;
       height: 12px;
       border-radius: 20px;
-      border: 4px solid #fff;
+      border: 4px solid #fff; // should match backgrounf of container
     }
 
     .event-wrapper {
@@ -232,7 +232,7 @@ footer.contact {
     }
 
     .title {
-      color: #000;
+      color: $off-black;
       font-weight: 500;
       text-transform: uppercase;
       @include box-sizing(border-box);
@@ -244,13 +244,13 @@ footer.contact {
       }
 
       a {
-        color: #000;
+        color: $off-black;
         text-decoration: none;
       }
     }
 
     .description {
-      color: #666;
+      color: $dark-gray;
 
       @include respond-to(widescreens_and_tablets) {
         float: left;
@@ -268,7 +268,7 @@ footer.contact {
   li {
     margin: 1rem 0;
     padding: 0 1rem 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $light-gray;
 
     &:last-of-type {
       border-bottom: none;

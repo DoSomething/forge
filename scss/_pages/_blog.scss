@@ -7,7 +7,7 @@
 aside.pullquote {
   width: 80%;
   max-width: 650px;
-  color: $purple;
+  color: $light-blue;
   font-size: 2rem;
   font-weight: 400;
   margin: 1em auto;
@@ -38,7 +38,7 @@ aside.pullquote {
 
   h4 {
     text-align: center;
-    color: #999;
+    color: $dark-gray;
   }
 
   .related {
@@ -64,7 +64,7 @@ aside.pullquote {
 
     em {
       display: block;
-      color: #999;
+      color: $dark-gray;
       font-size: 0.9em;
       text-decoration: none;
       padding-left: 70px;

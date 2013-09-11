@@ -12,6 +12,7 @@
       <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
       <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
       <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
+      <li><a href="#widgets" class="js-jump-scroll">Widgets</a></li>
     </ul>
   </nav>
 </div>
@@ -69,8 +70,9 @@
       We use Din Condensed for special elements and headings. It should be used sparingly &amp; at bigger font sizes for legibility. <code>($font-din-condensed)</code>
     </p>
 
-    <h3>Colors</h3>
+    <!--- BRAND POWER -->
 
+    <h3>Color Palette</h3>
     <p class="color-tile" style="background: #18408b">
       <strong>Blue</strong> <code>($blue, #18408b)</code>
     </p>
@@ -83,20 +85,24 @@
       <strong>Gold</strong> <code>($gold, #fed100)</code>
     </p>
 
-    <p class="color-tile" style="background: #502862">
-      <strong>Purple</strong> <code>($purple, #502862)</code>
+    <p class="color-tile" style="background: #f6e816">
+      <strong>Yellow</strong> <code>($yellow, #f6e816)</code>
     </p>
 
     <p class="color-tile" style="background: #333131">
-      <strong>Dark Gray</strong> <code>($dark-gray, #333131)</code>
+      <strong>Off Black</strong> <code>($off-black, #333131)</code>
     </p>
 
     <p class="color-tile" style="background: #666">
-      <strong>Gray</strong> <code>($gray, #666)</code>
+      <strong>Dark Gray</strong> <code>($dark-gray, #666)</code>
     </p>
 
     <p class="color-tile" style="background: #ddd">
       <strong>Light Gray</strong> <code>($light-gray, #ddd)</code>
+    </p>
+
+    <p class="color-tile" style="background: #f4f4f4">
+      <strong>Off White</strong> <code>($off-white, #f4f4f4)</code>
     </p>
   </section>
 
@@ -390,27 +396,6 @@
         </ul>
       </div>
     <% end %>
-
-    
-    <% styleguide_block '5.5' do %>
-      <form action="#" class="content-center narrow callout js-location-finder-form">
-        <div class="no-js-hide-feature">
-          <p>Enter your zip code to search for a drop-off point near you.</p>
-          <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
-          <a class="btn primary medium js-location-finder-button">Search</a>
-        </div>
-
-        <div class="alert error no-js-feature-warning">The Location Finder requires JavaScript to be enabled in your browser.</div>
-      </form>
-
-      <div class="content-center narrow js-location-finder-results no-js-hide-feature">
-        <p>Nearest drop-off points for zipcode <span class="js-location-finder-results-zip"></span> (<a href='#' class='js-location-finder-reset'>change</a>):</p>
-
-        <ul class="location-list">
-
-        </ul>
-      </div>
-    <% end %>
   </section>
 
   <section class="campaign-section">
@@ -435,7 +420,14 @@
         </ul>
       </nav>
     <% end %>
+  </section>
 
+  <section class="campaign-section">
+    <h2 id="widgets">Widgets</h2>
+
+    <% styleguide_block '7.1' do %>
+      <div class="alert $modifier_class">There's something I need to tell you.</div>
+    <% end %>
   </section>
 
 </div>

@@ -14,7 +14,7 @@ nav.breadcrumbs {
     &:after {
       font-family: $font-din-condensed;
       content: '>';
-      color: #ddd;
+      color: $light-gray;
       padding: 0 1em;
     }
     &:last-of-type:after {
@@ -23,7 +23,7 @@ nav.breadcrumbs {
   }
 
   a {
-    color: #ccc;
+    color: $dark-gray;
     text-decoration: none;
 
     &:hover {
@@ -52,18 +52,18 @@ nav.sidebar {
       a {
         text-decoration:none;
         border-bottom: 2px solid #eee;
-        color:#666;
+        color:$dark-gray;
 
         &.active {
-          color: #000;
+          color: $off-black;
           font-weight: bold;
-          border-bottom: 2px solid $purple;
+          border-bottom: 2px solid $light-blue;
         }
 
         &:hover{
           text-decoration:none;
           border-bottom: 2px solid $gold;
-          color:#000;
+          color:$off-black;
         }
       }
     }
