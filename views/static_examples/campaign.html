@@ -109,14 +109,18 @@
 
 <div role="main" class="wrapper">
   <section class="header" id="header">
-    <h1 class="header-logotype">Logo</h1>
-    <p class="header-date">
-      June 1st &mdash; July 29th, 2013
-    </p>
+    <img class="header-logo" alt="Campaign Logo" src="/images/placeholders/logo-project.png" />
+    <p class="header-date">Ends July 29th, 2013</p>
+
+    <div class="header-sponsors">
+      <img src="/images/placeholders/logo-sponsor-icon.png" alt="Corporate Sponsor" />
+      <img src="/images/placeholders/logo-sponsor-wordy.png" alt="Corporate Sponsor" />
+      <img src="/images/placeholders/logo-sponsor-long.png" alt="Corporate Sponsor" />
+    </div>
 
     <div class="header-social">
       <!-- Facebook Like Button -->
-      <div class="fb-like" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+      <div class="fb-like header-facebook-share" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
       <!-- Twitter Tweet Button -->
       <div class="header-twitter-share">
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.dosomething.org/pbj" data-text="1 in 6 people in America will go hungry at some point during the year. Help @dosomething about feeding the hungry: http://www.dosomething.org/pbj" data-count="none">Tweet</a>
@@ -431,26 +435,27 @@
     <h3>Sponsored by:</h3>
 
     <p>
-      <a href="#"> <img src="/images/placeholders/placeholder.png" alt="x placeholder"/></a>
-      <a href="#"> <img src="/images/placeholders/placeholder.png" alt="x placeholder"/></a>
+      <img src="/images/placeholders/logo-sponsor-icon.png" alt="Corporate Sponsor" />
+      <img src="/images/placeholders/logo-sponsor-wordy.png" alt="Corporate Sponsor" />
+      <img src="/images/placeholders/logo-sponsor-long.png" alt="Corporate Sponsor" />
     </p>
   </footer>
-
-  <footer class="contact" id="footer">
-    <p>Questions? E-mail <a href="mailto:help@dosomething.org">help@dosomething.org</a>!</p>
-  </footer>
-
-  <!--
-  Edvisors tracking pixel
-  @todo - Ideally this will be handled in a more automated fashion.  This
-  can be achieved by Stashing the Edvisor offer id on the campaign and
-  using a a standardize (but themable) webform confirmation page.
-  @todo - add a http referrer check as well
-  -->
-  <!-- Offer Conversion: DoSomething.org -->
-  <iframe src="http://tracking.edvisors.com/aff_l?offer_id=98" scrolling="no" frameborder="0" width="1" height="1"></iframe>
-  <!-- // End Offer Conversion -->
 </div>
+
+<footer class="contact" id="footer">
+  <p>Questions? E-mail <a href="mailto:help@dosomething.org">help@dosomething.org</a>!</p>
+</footer>
+
+<!--
+Edvisors tracking pixel
+@todo - Ideally this will be handled in a more automated fashion.  This
+can be achieved by Stashing the Edvisor offer id on the campaign and
+using a a standardize (but themable) webform confirmation page.
+@todo - add a http referrer check as well
+-->
+<!-- Offer Conversion: DoSomething.org -->
+<iframe style="display: none;" src="http://tracking.edvisors.com/aff_l?offer_id=98" scrolling="no" frameborder="0" width="1" height="1"></iframe>
+<!-- // End Offer Conversion -->
 
 <div class="footer-wrapper">
   <footer class="main">
