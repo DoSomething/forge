@@ -25,7 +25,7 @@ section.full-width {
 .content-center {
   width: 70%;
   margin: 0 auto;
-  padding: 24px;
+  padding: 0 24px;
   overflow: hidden;
   @include box-sizing(border-box);
   @include respond-to(phones) {
@@ -275,6 +275,24 @@ section.full-width {
     @include respond-to(phones) {
       height: 300px;
     }
+  }
+}
+
+.feature.two-col {
+  width: 49.5%;
+  margin-bottom: 0.35rem;
+
+  &.fixed {
+    height: 225px;
+  }
+
+  &.left {
+    margin-right: 0.5%;
+  }
+
+  &.right {
+    float: right;
+    margin-left: 0.5%;
   }
 }
 

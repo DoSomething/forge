@@ -36,7 +36,7 @@ label {
 // .medium        - Medium-sized input width (e.g. for phone numbers)
 //
 // Styleguide 2.2.1
-input[type="text"], input[type="search"] {
+input[type="text"], input[type="search"], input[type="password"] {
   width: 100%;
   font-family: $font-din-regular;
   font-size: 1rem;
@@ -59,6 +59,18 @@ input[type="text"], input[type="search"] {
   &.medium {
     width: 300px;
   }
+}
+
+textarea {
+  width: 100%;
+  font-family: $font-din-regular;
+  font-size: 1rem;
+  border: 1px solid $light-gray;
+  border-radius: $lg-border-radius;
+  padding: 0.5em 1em 0.3em;
+  margin: 0 0 0.5em;
+  resize: vertical;
+  @include box-sizing(border-box);
 }
 
 // Specific style rules for search input fields.
