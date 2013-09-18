@@ -1,13 +1,13 @@
-// Alert boxes.
+// Alert banners. Should be used to notify the user of something outside of the typical application flow (for example, on form validation.)
 //
 // .error   - Used to display errors. Be careful not to blame the user for a mistake.
 // .success - Used when something goes according to plan.
 //
-// Styleguide 7.1
+// Styleguide 7.1 - Alert Banners
 
 .alert {
   position: relative;
-  background: $off-white;
+  background: #fcf6e5;
   padding: 1em 1em 1em 3.5em;
   margin: 0.5rem;
   text-align: left;
@@ -17,17 +17,17 @@
     content: "\2691";
     position: absolute;
     left: 1.5em;
-    color: darken($off-white, 10%);
+    color: darken(#fcf6e5, 15%);
   }
 
   &.error {
-    background: #fcf6e5;
+    background: #efd0d0;
 
     &:before {
-      content: "\2718";
+      content: "\20E0";
       position: absolute;
       left: 1.5em;
-      color: darken(#fcf6e5, 10%);
+      color: darken(#efd0d0, 15%);
     }
   }
 
@@ -35,10 +35,10 @@
     background: #dbfbd5;
 
     &:before {
-      content: "\2714";
+      content: "\2713";
       position: absolute;
       left: 1.5em;
-      color: darken(#dbfbd5, 10%);
+      color: darken(#dbfbd5, 15%);
     }
   }
 }
