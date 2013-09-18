@@ -53,7 +53,7 @@ section.header {
 
     img {
       float: right;
-      height: $logo-sponsor-height;
+      height: 45px;
       margin: 0.5rem 0 0 0.5rem;
     }
   }
@@ -131,9 +131,6 @@ section.call-to-action {
 
 section.faq {
   border-bottom: none;
-  @include respond_to(phones) {
-    border-bottom: 1px solid $light-gray;
-  }
 }
 
 // Stylized SMS conversation bubbles. <mark>Requires a modifier class to specify which role is talking.</mark>
@@ -219,12 +216,15 @@ footer.sponsor {
   display: none;
   @include respond-to(phones) {
     display: block;
+    border-top: 1px solid $light-gray;
+    margin: -4rem 0px 0px;
+    padding: 4rem 0px 0px;
   }
 
   img {
     max-width: 80%;
     margin: 1rem;
-    height: $logo-sponsor-height;
+    height: 45px;
   }
 }
 
