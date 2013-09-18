@@ -110,7 +110,7 @@ nav.masthead {
     z-index: 101;
     @include transition(top 0.5s, left 0.5s);
     @include respond-to(tablets_and_phones) {
-      top: -55px;
+      top: -35px;
       left: 10px;
     }
     @include respond-to(phones) {
@@ -118,27 +118,24 @@ nav.masthead {
     }
 
     img {
-      width: 219px;
-      height: 172px;
+      width: 160px;
+      height: 130px;
       @include transition(width 0.5s, height 0.5s);
       @include respond-to(tablets_and_phones) {
-        width: 109px;
-        height: 86px;
+        width: 120px;
+        height: 98px;
       }
       @include respond-to(phones) {
-        width: 87px;
-        height: 69px;
+        width: 80px;
+        height: 65px;
       }
     }
   }
 
   .main-menu {
     max-height: 3rem; // fixes FOUT-related issue when loading webfont.
-    padding-left: 250px;
+    padding-left: 170px;
     @include transition(padding-left 0.5s);
-    @include respond-to(tablets_and_phones) {
-      padding-left: 135px;
-    }
     @include respond-to(phones) {
       display: none;
       max-height: none;
