@@ -17,8 +17,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-din-regular;
   font-weight: 600;
+  clear: both;
 
-  &> span {
+  &.section-header > span {
     padding: 0.1em 0.25em 0;
   }
 }
@@ -61,7 +62,7 @@ h2 {
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 1rem 0 0;
   margin: 0;
 }
 
@@ -75,7 +76,7 @@ h4 {
 // Styleguide 1.2 - Inline Elements
 p {
   color: #222;
-  margin: 1em 0;
+  margin: 0.5em 0 1em;
 }
 
 a {

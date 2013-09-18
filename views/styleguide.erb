@@ -62,18 +62,27 @@
     </style>
     
     <h3>Fonts</h3>
-    <p>Generally, the right font to use is the one specified by the style element you are using.</p>
-    <p class="font-tile" style="font-family: 'din-regular';">
-      We use Din Regular for most of our text and headings. <code>($font-din-regular)</code>
+    <p>We use Din Regular for most of our text and headings.</p>
+    <p class="font-tile" style="font-family: 'din-regular'; font-weight: 400; ">
+      Lorem ipsum dolor sit amet. <code>($font-din-regular, 400)</code>
     </p>
 
-    <p class="font-tile" style="font-family: 'din-condensed'; font-size: 2rem;">
-      We use Din Condensed for special elements and headings. It should be used sparingly &amp; at bigger font sizes for legibility. <code>($font-din-condensed)</code>
+    <p class="font-tile" style="font-family: 'din-regular'; font-weight: 500; ">
+      Lorem ipsum dolor sit amet. <code>($font-din-regular, 500)</code>
     </p>
 
-    <!--- BRAND POWER -->
+    <p class="font-tile" style="font-family: 'din-regular'; font-weight: 600; ">
+      Lorem ipsum dolor sit amet. <code>($font-din-regular, 600)</code>
+    </p>
 
-    <h3>Color Palette</h3>
+    <p>We sometimes use Din Condensed for special elements and headings. It should only be used at bigger font sizes for legibility. <mark>Deprecated: Din Condensed is no longer part of our brand in 2013. It will be removed in the future.</mark></p>
+    <p class="font-tile" style="font-family: 'din-condensed'; font-weight: 500; font-size: 2rem;">
+      Lorem ipsum dolor sit amet. <code>($font-din-condensed, 500)</code>
+    </p>
+
+    <!--- BRAAAAAAAAAAAND POWER -->
+
+    <h3>Brand Colors</h3>
     <p class="color-tile" style="background: #18408b">
       <strong>Blue</strong> <code>($blue, #18408b)</code>
     </p>
@@ -89,7 +98,10 @@
     <p class="color-tile" style="background: #f6e816">
       <strong>Yellow</strong> <code>($yellow, #f6e816)</code>
     </p>
+    
+    <!-- 4 Shades of Gray -->
 
+    <h3>Gray Tones</h3>
     <p class="color-tile" style="background: #333131">
       <strong>Off Black</strong> <code>($off-black, #333131)</code>
     </p>
@@ -111,9 +123,16 @@
     <h2 id="base">Base Elements</h2>
     <% styleguide_block  '1.1 - Headings' do %>
       <h1 class="$modifier_class"><span>Heading</span></h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+
       <h2 class="$modifier_class"><span>Heading</span></h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+
       <h3 class="$modifier_class"><span>Heading</span></h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+
       <h4 class="$modifier_class"><span>Heading</span></h4>
+      <p>Lorem ipsum dolor sit amet.</p>
     <% end %>
 
     <% styleguide_block  '1.2 - Inline Elements' do %>

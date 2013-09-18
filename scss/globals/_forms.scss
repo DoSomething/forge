@@ -90,27 +90,30 @@ input[type="search"] {
 }
 
 
-// Button styles for both input and anchor buttons. Suitable for all-purpose use.
+// Button styles for both input and anchor buttons. Suitable for all-purpose use. Defaults
+// to `.primary` class. The primary (yellow) button style should be used in moderation -
+// it is meant to call action to the primary call-to-action on a page and overuse dilutes
+// its power.
 //
 // :hover             - Suble hover state (will not be displayed on touch interfaces)
 // :focus             - Focus state for users navigating the page using tab keys.
 // :active            - "Pushed" button state
 // .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
 // .loading           - AJAX loading animation. Used when loading results inline. <mark>Must be used on &lt;a&gt; or &lt;button&gt; tag. Will not work with &lt;input&gt; tags.
-// .primary           - Used to bring attention to the main call-to-action on a page. Use sparingly.
-// .primary:hover     - Subtle hover on call-to-action button
+// .secondary         - Should be used if not the main call-to-action on a page.
+// .secondary:hover   - Subtle hover on button (not displayed on touch interfaces).
 // .small             - A tiny button.
 // .medium            - (Default) A normal button size.
 // .large             - A large button. Suitable for call-to-action or other important buttons.
-// .x-large           - A really big button. Use sparingly.
 //
 // Styleguide 2.3 - Buttons
 .btn {
   /* base/default (secondary) appearance */
   display: inline-block;
   clear: both;
-  background: #eee;
-  border: 1px solid $light-gray;
+  background: $btn-color;
+  border: 1px solid $btn-border;
+
   margin: 0.25rem;
   padding: 0.5em 1em 0.3em;
   cursor: pointer;
@@ -124,8 +127,7 @@ input[type="search"] {
   -webkit-appearance: none;
   &:hover {
     background: $btn-hover;
-    @include background-image(linear-gradient(#eee, #ddd));
-    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2);
+    @include background-image(linear-gradient($btn-color, $btn-hover));
   }
   &:focus {
     outline: 0;
@@ -133,11 +135,9 @@ input[type="search"] {
   }
   &:active {
     outline: 0;
-    background: $off-black;
+    background: $btn-color;
     color: lighten($off-black, 10);
-
-    box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2);
-    @include background-image(linear-gradient(#ddd, #eee));
+    @include background-image(linear-gradient($btn-hover, $btn-color));
   }
   &:link, &:active, &:hover {
     // overrides for default <a> styling
@@ -145,14 +145,15 @@ input[type="search"] {
     text-decoration: none;
   }
 
-  /* primary appearance */
-  &.primary {
-    background: $btn-color;
-    border: 1px solid $btn-border;
+  /* secondary appearance */
+  &.secondary {
+    background: #eee;
+    border: 1px solid $light-gray;
 
     &:hover {
       background: $btn-hover;
-      @include background-image(linear-gradient($btn-color, $btn-hover));
+      @include background-image(linear-gradient(#eee, #ddd));
+      box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2);
     }
     &:focus {
       outline: 0;
@@ -160,9 +161,10 @@ input[type="search"] {
     }
     &:active {
       outline: 0;
-      background: $btn-color;
+      background: $off-black;
       color: lighten($off-black, 10);
-      @include background-image(linear-gradient($btn-hover, $btn-color));
+      box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2);
+      @include background-image(linear-gradient(#ddd, #eee));
     }
   }
 
@@ -177,11 +179,6 @@ input[type="search"] {
 
   &.large {
     font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  &.x-large {
-    font-size: 2.5rem;
     font-weight: 600;
   }
 
@@ -223,9 +220,13 @@ input[type="search"] {
     border: 2px solid $off-white;
     color: $off-white; // hiding the text, but keeping it in the background to preserve dimensions
     box-shadow: none;
+    cursor: default;
+    @include user-select(none);
+
     &:hover {
       background: $off-white;
     }
+
     &:active {
       color: $off-white;
     }
