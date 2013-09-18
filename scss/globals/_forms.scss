@@ -100,11 +100,11 @@ input[type="search"] {
 // :active            - "Pushed" button state
 // .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
 // .loading           - AJAX loading animation. Used when loading results inline. <mark>Must be used on &lt;a&gt; or &lt;button&gt; tag. Will not work with &lt;input&gt; tags.
-// .secondary         - Should be used if not the main call-to-action on a page.
-// .secondary:hover   - Subtle hover on button (not displayed on touch interfaces).
 // .small             - A tiny button.
 // .medium            - (Default) A normal button size.
 // .large             - A large button. Suitable for call-to-action or other important buttons.
+// .secondary         - Should be used if not the main call-to-action on a page.
+// .secondary:hover   - Subtle hover on button (not displayed on touch interfaces).
 //
 // Styleguide 2.3 - Buttons
 .btn {
@@ -328,4 +328,49 @@ select {
    border-bottom:6px solid transparent;
    border-right:6px solid transparent;
    border-radius:100%;
+}
+
+// Alert banners. Should be used to notify the user of something outside of the typical application flow (for example, on form validation.)
+//
+// .error   - Used to display errors. Be careful not to blame the user for a mistake.
+// .success - Used when something goes according to plan.
+//
+// Styleguide 2.6 - Alert Banners
+
+.alert {
+  position: relative;
+  background: #fcf6e5;
+  padding: 1em 1em 1em 3.5em;
+  margin: 0.5rem;
+  text-align: left;
+  border-radius: $sm-border-radius;
+
+  &:before {
+    content: "\2691";
+    position: absolute;
+    left: 1.5em;
+    color: darken(#fcf6e5, 15%);
+  }
+
+  &.error {
+    background: #efd0d0;
+
+    &:before {
+      content: "\20E0";
+      position: absolute;
+      left: 1.5em;
+      color: darken(#efd0d0, 15%);
+    }
+  }
+
+  &.success {
+    background: #dbfbd5;
+
+    &:before {
+      content: "\2713";
+      position: absolute;
+      left: 1.5em;
+      color: darken(#dbfbd5, 15%);
+    }
+  }
 }

@@ -12,7 +12,6 @@
       <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
       <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
       <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
-      <li><a href="#widgets" class="js-jump-scroll">Widgets</a></li>
     </ul>
   </nav>
 </div>
@@ -166,7 +165,7 @@
     <% end %>
 
     <% styleguide_block  '2.4 - Select Boxes' do %>
-      <select>
+      <select class="$modifier_class">
         <option>Awesome Things</option>
         <option>Popular Things</option>
         <option>Random Things</option>
@@ -175,6 +174,10 @@
 
     <% styleguide_block  '2.5 - Loading Spinner' do %>
       <div class="spinner"></div>
+    <% end %>
+
+    <% styleguide_block '2.6 - Alert Banners' do %>
+      <div class="alert $modifier_class">There's something I need to tell you.</div>
     <% end %>
   </section>
 
@@ -251,12 +254,12 @@
 
     <% styleguide_block '3.6.2 - Pagination' do %>
       <ul class="pager">
-        <li class="pager-next"><span class="btn small inactive" title="Go to previous page">&#8249; prev</span></li>
-        <li class="pager-current"><span class="btn small inactive">1</span></li>
-        <li class="pager-item"><a class="btn small" title="Go to page 2" href="#">2</a></li>
-        <li class="pager-item"><a class="btn small" title="Go to page 3" href="#">3</a></li>
-        <li class="pager-item"><a class="btn small" title="Go to page 4" href="#">4</a></li>
-        <li class="pager-next"><a class="btn small" title="Go to next page" href="#">next &#8250;</a></li>
+        <li class="pager-next"><span class="btn secondary small disabled" title="Go to previous page">&#8249; prev</span></li>
+        <li class="pager-current"><span class="btn secondary small disabled">1</span></li>
+        <li class="pager-item"><a class="btn secondary small" title="Go to page 2" href="#">2</a></li>
+        <li class="pager-item"><a class="btn secondary small" title="Go to page 3" href="#">3</a></li>
+        <li class="pager-item"><a class="btn secondary small" title="Go to page 4" href="#">4</a></li>
+        <li class="pager-next"><a class="btn secondary small" title="Go to next page" href="#">next &#8250;</a></li>
       </ul>
     <% end %>
 
@@ -450,13 +453,4 @@
       </nav>
     <% end %>
   </section>
-
-  <section class="campaign-section">
-    <h2 id="widgets">Widgets</h2>
-
-    <% styleguide_block '7.1 - Alert Banners' do %>
-      <div class="alert $modifier_class">There's something I need to tell you.</div>
-    <% end %>
-  </section>
-
 </div>
