@@ -75,7 +75,7 @@ section.headline {
 
 // Legal text (a.k.a. the fine print).
 //
-// Styleguide 5.1
+// Styleguide 5.1 - Legal Text
 .legal {
   font-size: 0.75rem;
   color: $light-gray;
@@ -110,7 +110,7 @@ section.call-to-action {
 // game-ds - Represents the other party in the conversation, usually DoSomething.
 // game-user - Represents the user in the conversation flow.
 //
-// Styleguide 5.2
+// Styleguide 5.2 - Conversation Bubbles
 .game-conversation {
   clear: both;
   position: relative;
@@ -153,7 +153,7 @@ section.call-to-action {
 
 // Image gallery with thumbnails.
 //
-// Styleguide 5.3
+// Styleguide 5.3 - Gallery Module
 .gallery-image {
   text-align: center;
 
@@ -199,7 +199,7 @@ footer.contact {
 
 // Vertical timeline.
 //
-// Styleguide 5.4
+// Styleguide 5.4 - Timeline Module
 .timeline-divider {
   color: $light-gray;
   margin-top: 4px;
@@ -263,7 +263,7 @@ footer.contact {
 
 // Location finder. Initialize by calling <code>window.initializeLocationFinder();</code>.
 //
-// Styleguide 5.5
+// Styleguide 5.5 - Location Finder Module
 .location-list {
   li {
     margin: 1rem 0;

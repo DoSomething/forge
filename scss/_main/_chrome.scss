@@ -123,7 +123,7 @@ nav.masthead {
       @include transition(width 0.5s, height 0.5s);
       @include respond-to(tablets_and_phones) {
         width: 120px;
-        height: 98px;
+        height: 97px;
       }
       @include respond-to(phones) {
         width: 80px;

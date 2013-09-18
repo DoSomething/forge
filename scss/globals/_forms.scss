@@ -20,7 +20,7 @@ form.default-form {
 
 // Labels for form elements.
 //
-// Styleguide 2.1
+// Styleguide 2.1 - Form Labels
 label {
   float: left;
   clear: both;
@@ -35,7 +35,7 @@ label {
 // .short         - Short input width (e.g. for zip codes)
 // .medium        - Medium-sized input width (e.g. for phone numbers)
 //
-// Styleguide 2.2.1
+// Styleguide 2.2.1 - Text Input Fields
 input[type="text"], input[type="search"], input[type="password"] {
   width: 100%;
   font-family: $font-din-regular;
@@ -58,9 +58,16 @@ input[type="text"], input[type="search"], input[type="password"] {
 
   &.medium {
     width: 300px;
+
+    @include respond-to(phones) {
+      width: 140px;  
+    }
   }
 }
 
+// Multi-line textarea fields.
+//
+// Styleguide 2.2.2 - Text Area Fields
 textarea {
   width: 100%;
   font-family: $font-din-regular;
@@ -75,7 +82,7 @@ textarea {
 
 // Specific style rules for search input fields.
 //
-// Styleguide 2.2.2
+// Styleguide 2.2.3 - Search Fields
 input[type="search"] {
   padding: 0.3em 0.3em 0.1em 36px;
   border-radius: 2em; // fully rounded borders indicate search box
@@ -97,7 +104,7 @@ input[type="search"] {
 // .large             - A large button. Suitable for call-to-action or other important buttons.
 // .x-large           - A really big button. Use sparingly.
 //
-// Styleguide 2.3
+// Styleguide 2.3 - Buttons
 .btn {
   /* base/default (secondary) appearance */
   display: inline-block;
@@ -270,7 +277,7 @@ input[type="submit"] {
 //
 // :focus - An active select box (while dropdown is shown or has keyboard focus).
 //
-// Styleguide 2.4
+// Styleguide 2.4 - Select Boxes
 select {
   position: relative;
   background: #fff;
@@ -296,7 +303,7 @@ select {
 
 // Spinner to indicate loading content.
 //
-// Styleguide 2.5
+// Styleguide 2.5 - Loading Spinner
 .spinner {
    height:30px;
    width:30px;

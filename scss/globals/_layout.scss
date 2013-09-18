@@ -2,7 +2,7 @@
 
 // Full width centered page wrapper. Resizes fluidly from $max-width as viewport width decreases.
 //
-// Styleguide 3.1.1
+// Styleguide 3.1.1 - Flex-width Wrapper
 .flexwidth-wrapper {
   @include flex-width;
   margin: 0 auto;
@@ -10,7 +10,7 @@
 
 // Basic full-width "section" used on campaign pages, etc. Clears floats and adds bottom margin for spacing.
 //
-// Styleguide 3.1.2
+// Styleguide 3.1.2 - Full-width Section
 section.full-width {
   clear: both;
   margin: 0 0 4rem;
@@ -21,7 +21,7 @@ section.full-width {
 //
 //  .narrow - even narrower line-width!
 //
-// Styleguide 3.2
+// Styleguide 3.2.1 - Content (Center)
 .content-center {
   width: 70%;
   margin: 0 auto;
@@ -63,7 +63,7 @@ section.full-width {
 
 // Single column grid element.
 //
-// Styleguide 3.3.1
+// Styleguide 3.3.1 - Grid (One-Column)
 .one-col {
   width: 100%;
   padding: 0 2.5%;
@@ -72,7 +72,7 @@ section.full-width {
 
 // Two column grid element. Stacks vertically on mobile.
 //
-// Styleguide 3.3.2
+// Styleguide 3.3.2 - Grid (Two-Column)
 .two-col {
   float: left;
   width: 50%;
@@ -90,7 +90,7 @@ section.full-width {
 //
 // .span-two - Allows an element to span two columns in a three-column layout.
 //
-// Styleguide 3.3.3
+// Styleguide 3.3.3 - Grid (Three-Column)
 .three-col {
   float: left;
   width: 33.333333333%;
@@ -113,7 +113,7 @@ section.full-width {
 
 // Applies styles to grid content block elements, for example campaign steps/prizes.
 //
-// Styleguide 3.4
+// Styleguide 3.4 - Block Style
 .block {
   margin: 0;
   padding: 1rem;
@@ -139,7 +139,7 @@ section.full-width {
 
 // "Feature" blocks call attention to a link with a big picture and big typography.
 //
-// Styleguide 3.5
+// Styleguide 3.5 - Feature Blocks
 .feature {
   position: relative;
   background: $off-white;
@@ -343,7 +343,7 @@ section.full-width {
 
 // Used to style "back to top" links.
 //
-// Styleguide 3.6.1
+// Styleguide 3.6.1 - Back to Top link
 .btn-top {
   color: $dark-gray;
   font-size: 0.9rem;
@@ -351,7 +351,7 @@ section.full-width {
 
 // Used for pagination links (1, 2, 3, next, etc.).
 //
-// Styleguide 3.6.2
+// Styleguide 3.6.2 - Pagination
 .pager {
   clear: both;
   text-align: center;
@@ -365,7 +365,7 @@ section.full-width {
 
 // Stylized "polaroid" image, with a thick border and subtle shadow.
 //
-// Styleguide 3.7.1
+// Styleguide 3.7.1 - Bordered image style
 img.bordered {
   border: 5px solid #fff;
   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
@@ -374,7 +374,7 @@ img.bordered {
 
 // Utility class which clears floated columns and makes a new block formatting context.
 //
-// Styleguide 3.8.1
+// Styleguide 3.8.1 - Column Breaker
 .column-break {
   clear: both;
   padding: 1rem 0;
@@ -383,7 +383,7 @@ img.bordered {
 
 // Used at the end of forms or other floated column layouts.
 //
-// Styleguide 3.8.2
+// Styleguide 3.8.2 - Callout
 .callout {
   clear: both;
   padding: 1rem 0;
@@ -393,7 +393,7 @@ img.bordered {
 // Utility class to make links fill their parent container. Also applies button hover
 // effects to adjacent buttons.
 //
-// Styleguide 3.8.3
+// Styleguide 3.8.3 - Full Container Link
 .full-link {
   position: absolute;
   background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'); // fixes link z-indexing in IE. yeah, really.
