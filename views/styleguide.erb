@@ -10,7 +10,7 @@
       <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
       <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
       <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
-      <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
+      <li><a href="#content" class="js-jump-scroll">Content</a></li>
       <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
       <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
     </ul>
@@ -365,8 +365,19 @@
 
 
   <section class="campaign-section">
-    <h2 id="blog">Blog</h2>
-    <% styleguide_block '4.1 - Pullquote' do %>
+    <h2 id="content">Content</h2>
+    <% styleguide_block '4.1 - Content Styles' do %>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <ul class="$modifier_class">
+          <li>One thing</li>
+          <li>One <em>more</em> thing</li>
+        </ul>
+      </div>
+    <% end %>
+
+    <% styleguide_block '4.2 - Pullquote' do %>
       <div class="one-col">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -386,7 +397,7 @@
       </div>
     <% end %>
 
-    <% styleguide_block '4.2 - Related Links' do %>
+    <% styleguide_block '4.3 - Related Links' do %>
       <div class="content-center narrow related-links">
         <h4>More on DoSomething.org</h4>
         <a href="#" class="related">

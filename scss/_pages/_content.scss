@@ -1,9 +1,49 @@
+// Basic style classes for inline content.
+//
+// .good - style for list items
+// .bad - style for list items
+//
+// Styleguide 4.1 - Content Styles
+.content {
+  ul {
+    list-style-type: none;
+
+    li {
+      padding-left: 1em;
+      text-indent: -0.65em;
+      margin-bottom: 0.15em;
+
+      &:before {
+        content: '\25A0';
+        position: relative;
+        left: -0.5em;
+        color: $light-gray;
+        font-size: 0.8em;
+      }
+    }
+    
+    &.bad {
+      li:before {
+        content: "\2718";
+        color: #dc9797;
+      }
+    }
+
+    &.good {
+      li:before {
+        content: "\2713";
+        color: #acdc97;
+      }
+    }
+  }
+}
+
 // A pullquote brings attention to a quote from an article.
 //
 // .right - Floats the pullquote to the right (on wider screens).
 // .left - Floats the pullquote to the left (on wider screens).
 //
-// Styleguide 4.1 - Pullquote
+// Styleguide 4.2 - Pullquote
 aside.pullquote {
   width: 80%;
   max-width: 650px;
@@ -32,7 +72,7 @@ aside.pullquote {
 
 // The related links module lists links to other pages.
 //
-// Styleguide 4.2 - Related Links
+// Styleguide 4.3 - Related Links
 .related-links {
   text-align: left;
 
