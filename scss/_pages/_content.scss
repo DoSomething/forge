@@ -1,4 +1,5 @@
-// Basic style classes for inline content.
+// Basic style classes for inline content. This wrapper class is used to prevent
+// text styles for things like lists from polluting interface element styling.
 //
 // .good - style for list items
 // .bad - style for list items
@@ -55,7 +56,7 @@ aside.pullquote {
   @include respond-to(widescreens_and_tablets) {
     &.right {
       float: right;
-      width: 30%;
+      width: 40%;
       max-width: 300px;
       text-align: right;
       margin: 1em 0 1em 1em;
@@ -63,58 +64,50 @@ aside.pullquote {
 
     &.left {
       float: left;
-      width: 30%;
+      width: 40%;
       max-width: 300px;
       margin: 1em 1em 1em 0;
     }
   }
 }
 
-// The related links module lists links to other pages.
+// The 'media' interface pattern contains a list of text/links with associated thumbnails.
 //
-// Styleguide 4.3 - Related Links
-.related-links {
-  text-align: left;
+// .large - Large thumbnail image.
+//
+// Styleguide 4.3 - Media
 
-  h4 {
-    text-align: center;
-    color: $dark-gray;
+.media {
+  display: block;
+  clear: both;
+  text-decoration: none;
+  margin: 1em 0;
+
+  img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 0.5em;
   }
 
-  .related {
+  span {
     display: block;
-    clear: both;
-    text-decoration: none;
-    margin: 1em 0;
-
-    img {
-      float: left;
-      width: 50px;
-      height: 50px;
-      padding: 0.5em;
-    }
-
-    span {
-      display: block;
-      font-size: 1rem;
-      text-align: left;
-      text-decoration: underline;
-      padding: 0.5em 0.5em 0.1em 70px;
-    }
-
-    em {
-      display: block;
-      color: $dark-gray;
-      font-size: 0.9em;
-      text-decoration: none;
-      padding-left: 70px;
-    }
+    font-size: 1rem;
+    text-align: left;
+    text-decoration: underline;
+    padding: 0.5em 0.5em 0.1em 70px;
   }
 
-  &.wide-media {
-    .related img {
-      width: 150px;
-      height: 75px;
-    }
+  em {
+    display: block;
+    color: $dark-gray;
+    font-size: 0.9em;
+    text-decoration: none;
+    padding-left: 70px;
+  }
+
+  &.large img {
+    width: 150px;
+    height: 150px;
   }
 }

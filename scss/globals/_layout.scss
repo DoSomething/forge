@@ -5,6 +5,7 @@
 // Styleguide 3.1.1 - Flex-width Wrapper
 .flexwidth-wrapper {
   @include flex-width;
+  overflow: hidden;
   margin: 0 auto;
 }
 
@@ -13,6 +14,7 @@
 // Styleguide 3.1.2 - Full-width Section
 section.full-width {
   clear: both;
+  overflow: hidden;
   margin: 0 0 4rem;
   @include box-sizing(border-box);
 }
