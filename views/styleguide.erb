@@ -5,7 +5,7 @@
 <div class="sidebar-wrapper">
   <nav class="sidebar js-pin-to-top">
     <ul>
-      <li><a href="#logo" class="js-jump-scroll">Logo</a></li>
+      <li><a href="#brand" class="js-jump-scroll">Our Brand</a></li>
       <li><a href="#fonts-and-colors" class="js-jump-scroll">Colors &amp; Fonts</a></li>
       <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
       <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
@@ -29,8 +29,10 @@
     <li>Error pages: <a href="/404.html">404</a>, <a href="/500.html">500</a></li>
   </ul>
 
+ 
   <section class="campaign-section">
-    <h2 id="logo">Logo</h2>
+    <h2 id="brand">Our Brand</h2>
+    <h4 class="section-header"><span>DoSomething.org Logo</span></h4>
     <div class="two-col block">
       <img src="images/ds-logo_2x.png" alt="DoSomething.org logo">
     </div>
@@ -48,9 +50,43 @@
         <a href="source/ds-logo.png" class="btn secondary small">Rasterized PNG (1050 x 825)</a><br>
         High-resolution rasterized image with transparent background. Only use this if your editor doesn't support vector files.
       </p>
-  
+    </div>
+
+    <h4 class="section-header"><span>Words &amp; Phrasing</span></h4>
+    <div class="three-col content">
+      <h4>Banned Words</h4>
+      <ul class="bad">
+        <li>Mission</li>
+        <li>Service</li>
+        <li>Pledge</li>
+        <li>Empower</li>
+        <li>Changing the World</li>
+        <li>Young adult/youths</li>
+        <li>Cyberspace</li>
+        <li>Kids</li>
+      </ul>
+      <br>
+    </div>
+    <div class="three-col content">
+      <h4>Words We Avoid</h4>
+      <ul class="bad">
+        <li>Volunteerism</li>
+        <li>Awesome</li>
+        <li>Community Service</li>
+      </ul>
+      <br>
+    </div>
+    <div class="three-col content">
+      <h4>Phrases We DO Use</h4>
+      <ul class="good">
+        <li>Because Apathy Sucks</li>
+        <li>Do it with us</li>
+        <li>Let's do something together</li>
+        <li>Just do something</li>
+      </ul>
     </div>
   </section>
+
 
   <section class="campaign-section">
     <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
@@ -102,9 +138,8 @@
     <p class="font-tile" style="font-family: 'din-condensed'; font-weight: 500; font-size: 2rem;">
       Lorem ipsum dolor sit amet. <code>($font-din-condensed, 500)</code>
     </p>
-
+    
     <!--- BRAAAAAAAAAAAND POWER -->
-
     <h3>Brand Colors</h3>
     <p class="color-tile" style="background: #18408b">
       <strong>Blue</strong> <code>($blue, #18408b)</code>
@@ -123,7 +158,6 @@
     </p>
     
     <!-- 4 Shades of Gray -->
-
     <h3>Gray Tones</h3>
     <p class="color-tile" style="background: #333131">
       <strong>Off Black</strong> <code>($off-black, #333131)</code>
@@ -139,6 +173,30 @@
 
     <p class="color-tile" style="background: #f4f4f4">
       <strong>Off White</strong> <code>($off-white, #f4f4f4)</code>
+    </p>
+
+
+    <!-- not really our brand but kinda? DESIGN. -->
+    <h3>Secondary Colors</h3>
+    <p>They're not part of our brand, but we're pretty fond of these guys. If you're going to use a color in one of these families, use this one.</p>
+    <p class="color-tile" style="background: #ef4135">
+      <strong>Red</strong> <code>($red, #ef4135)</code>
+    </p>
+
+    <p class="color-tile" style="background: #8cc026">
+      <strong>Green</strong> <code>($green, #8cc026)</code>
+    </p>
+
+    <p class="color-tile" style="background: #a9218e">
+      <strong>Purple</strong> <code>($purple, #a9218e)</code>
+    </p>
+
+    <p class="color-tile" style="background: #2eb393">
+      <strong>Teal</strong> <code>($teal, #2eb393)</code>
+    </p>
+
+    <p class="color-tile" style="background: #e20177">
+      <strong>Hot Pink</strong> <code>($hot-pink, #e20177)</code>
     </p>
   </section>
 
@@ -252,7 +310,7 @@
       </div>
     <% end %>
 
-    <% styleguide_block  '3.4 - Block Style' do %>
+    <% styleguide_block  '3.4.2 - Block Style' do %>
       <div class="block three-col $modifier_class">
         <h3>One Kitten</h3>
         <img src="http://placekitten.com/g/300/200">

@@ -111,9 +111,47 @@ section.full-width {
   }
 }
 
+// Basic style classes for inline content.
+//
+// Styleguide 3.4.1 - Content Style
+.content {
+  ul {
+    list-style-type: none;
+
+    li {
+      padding-left: 1em;
+      margin-bottom: 0.1em;
+
+      &:before {
+        content: '\25A0';
+        position: relative;
+        left: -0.5em;
+        color: $light-gray;
+        font-size: 0.8em;
+      }
+    }
+    
+    &.bad {
+      li:before {
+        content: "\2718";
+        color: #dc9797;
+      }
+    }
+
+    &.good {
+      li:before {
+        content: "\2713";
+        color: #acdc97;
+      }
+    }
+  }
+}
+
+
+
 // Applies styles to grid content block elements, for example campaign steps/prizes.
 //
-// Styleguide 3.4 - Block Style
+// Styleguide 3.4.2 - Block Style
 .block {
   margin: 0;
   padding: 1rem;
