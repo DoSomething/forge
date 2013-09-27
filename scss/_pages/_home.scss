@@ -1,10 +1,10 @@
 .wallpaper-wrapper {
   position: relative;
   background: #eee;
+  background-size:cover;
   overflow: hidden;
   padding: 0;
-  @include background-size(cover);
-
+  
   img.fullwidth {
     display: block;
     width: 100%;
