@@ -206,7 +206,24 @@
 }
 
 
+// ********
 
+.team--person {
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 0;
+
+  em {
+    color: $dark-gray;
+    font-size: 0.8rem;
+  }
+
+  .twitter-link {
+    font-size: 0.8rem;
+    color: $light-gray;
+    text-decoration: none;
+    padding-left: 0.25rem;
+  }
+}
 
 
 
