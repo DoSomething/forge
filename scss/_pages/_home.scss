@@ -1,9 +1,59 @@
+.wallpaper-wrapper {
+  position: relative;
+  background: #eee;
+  background-size:cover;
+  overflow: hidden;
+  padding: 0;
+  
+  img.fullwidth {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
+  }
+}
+
+.wallpaper-content-center {
+  background: transparent;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 200px 0;
+  @include respond-to(phones) {
+    padding: 50px 0;
+  }
+
+  .content-center {
+    max-width: 900px;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.5rem;
+
+    @include respond-to(phones) {
+      font-size: 1rem;
+    }
+  }
+}
+
+
 .ds-intro {
   color: #fff;
   background: url('images/bg-intro.jpg') no-repeat center center;
   background-size: cover;
 
-  .flexwidth-wrapper {
+  .content-center {
     width: 580px;
     padding: 48px 0 64px;
     @include box-sizing(border-box);
@@ -22,14 +72,10 @@
     font-family: $font-din-condensed;
     font-size: 2rem;
     font-weight: 500;
+    text-align: left;
     border-bottom: 4px solid rgb(255,255,255);
     border-bottom: 4px solid rgba(255,255,255,0.5);
     padding-bottom: 0.5em;
-
-    strong {
-      font-weight: 600;
-      text-transform: uppercase;
-    }
 
     @include respond-to(phones) {
       font-size: 1.5rem;
@@ -42,32 +88,16 @@
     font-family: $font-din-regular;
     font-size: 1em;
     font-weight: 400;
+    text-align: left;
 
     margin-top: 0.5em;
     padding-top: 0;
-
     padding-bottom: 0.75em;
     margin-bottom: 0;
   }
 
-
   p.legal {
     color: rgba(255,255,255,0.5);
-  }
-
-  input[type="text"] {
-    max-width: 300px;
-    margin-right: 0.5em;
-
-    @include respond-to(phones) {
-      max-width: 140px;
-      margin-right: 0.25em;
-    }
-  }
-
-  input[type="submit"] {
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 

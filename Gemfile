@@ -6,3 +6,8 @@ gem 'sinatra', '~> 1.3.1'
 gem 'kss', '~> 0.4.0'
 
 gem 'thin'
+
+group :development do
+  gem "pry"
+  gem "pry-nav"  
+end

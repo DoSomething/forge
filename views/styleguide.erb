@@ -5,14 +5,14 @@
 <div class="sidebar-wrapper">
   <nav class="sidebar js-pin-to-top">
     <ul>
+      <li><a href="#brand" class="js-jump-scroll">Our Brand</a></li>
       <li><a href="#fonts-and-colors" class="js-jump-scroll">Colors &amp; Fonts</a></li>
       <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
       <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
       <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
-      <li><a href="#blog" class="js-jump-scroll">Blog</a></li>
+      <li><a href="#content" class="js-jump-scroll">Content</a></li>
       <li><a href="#campaign" class="js-jump-scroll">Campaign</a></li>
       <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
-      <li><a href="#widgets" class="js-jump-scroll">Widgets</a></li>
     </ul>
   </nav>
 </div>
@@ -26,8 +26,68 @@
     <li><a href="/blog.html">Blog Post</a></li>
     <li><a href="/campaigns.html">Campaigns List</a></li>
     <li><a href="/campaign.html">Campaign Template</a></li>
+    <li>Static pages: <a href="/about.html">About Us</a>, <a href="/jobs.html">Jobs</a>, <a href="/internships.html">Internships</a>, <a href="/team.html">Team</a>, <a href="/help.html">Help</a></li>
     <li>Error pages: <a href="/404.html">404</a>, <a href="/500.html">500</a></li>
   </ul>
+
+ 
+  <section class="campaign-section">
+    <h2 id="brand">Our Brand</h2>
+    <h4 class="section-header"><span>DoSomething.org Logo</span></h4>
+    <div class="two-col block">
+      <img src="images/ds-logo_2x.png" alt="DoSomething.org logo">
+    </div>
+    <div class="two-col block">
+      <h4>Download our Logo</h4>
+      
+      <br>
+      <p class="legal">
+        <a href="source/ds-logo.ai" class="btn primary small">Adobe Illustrator (.ai)</a>
+        <a href="source/ds-logo.eps" class="btn primary small">Encapsulated PostScript (.eps)</a><br>
+        These will scale well to any size, and are almost always your best choice.
+      </p>
+      <br>
+      <p class="legal">
+        <a href="source/ds-logo.png" class="btn secondary small">Rasterized PNG (1050 x 825)</a><br>
+        High-resolution rasterized image with transparent background. Only use this if your editor doesn't support vector files.
+      </p>
+    </div>
+
+    <h4 class="section-header"><span>Words &amp; Phrasing</span></h4>
+    <div class="three-col content">
+      <h4>Banned Words</h4>
+      <ul class="bad">
+        <li>Mission</li>
+        <li>Service</li>
+        <li>Pledge</li>
+        <li>Empower</li>
+        <li>Changing the World</li>
+        <li>Young adult/youths</li>
+        <li>Cyberspace</li>
+        <li>Kids</li>
+      </ul>
+      <br>
+    </div>
+    <div class="three-col content">
+      <h4>Words We Avoid</h4>
+      <ul class="bad">
+        <li>Volunteerism</li>
+        <li>Awesome</li>
+        <li>Community Service</li>
+      </ul>
+      <br>
+    </div>
+    <div class="three-col content">
+      <h4>Phrases We DO Use</h4>
+      <ul class="good">
+        <li>Because Apathy Sucks</li>
+        <li>Do it with us</li>
+        <li>Let's do something together</li>
+        <li>Just do something</li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="campaign-section">
     <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
@@ -62,18 +122,26 @@
     </style>
     
     <h3>Fonts</h3>
-    <p>Generally, the right font to use is the one specified by the style element you are using.</p>
-    <p class="font-tile" style="font-family: 'din-regular';">
-      We use Din Regular for most of our text and headings. <code>($font-din-regular)</code>
+    <p>We use Din Regular for most of our text and headings.</p>
+    <p class="font-tile" style="font-family: 'din-regular'; font-weight: 400; ">
+      Lorem ipsum dolor sit amet. <code>($font-din-regular, 400)</code>
     </p>
 
-    <p class="font-tile" style="font-family: 'din-condensed'; font-size: 2rem;">
-      We use Din Condensed for special elements and headings. It should be used sparingly &amp; at bigger font sizes for legibility. <code>($font-din-condensed)</code>
+    <p class="font-tile" style="font-family: 'din-regular'; font-weight: 500; ">
+      Lorem ipsum dolor sit amet. <code>($font-din-regular, 500)</code>
     </p>
 
-    <!--- BRAND POWER -->
+    <p class="font-tile" style="font-family: 'din-regular'; font-weight: 600; ">
+      Lorem ipsum dolor sit amet. <code>($font-din-regular, 600)</code>
+    </p>
 
-    <h3>Color Palette</h3>
+    <p>We sometimes use Din Condensed for special elements and headings. It should only be used at bigger font sizes for legibility. <mark>Deprecated: Din Condensed is no longer part of our brand in 2013. It will be removed in the future.</mark></p>
+    <p class="font-tile" style="font-family: 'din-condensed'; font-weight: 500; font-size: 2rem;">
+      Lorem ipsum dolor sit amet. <code>($font-din-condensed, 500)</code>
+    </p>
+    
+    <!--- BRAAAAAAAAAAAND POWER -->
+    <h3>Brand Colors</h3>
     <p class="color-tile" style="background: #18408b">
       <strong>Blue</strong> <code>($blue, #18408b)</code>
     </p>
@@ -89,7 +157,9 @@
     <p class="color-tile" style="background: #f6e816">
       <strong>Yellow</strong> <code>($yellow, #f6e816)</code>
     </p>
-
+    
+    <!-- 4 Shades of Gray -->
+    <h3>Gray Tones</h3>
     <p class="color-tile" style="background: #333131">
       <strong>Off Black</strong> <code>($off-black, #333131)</code>
     </p>
@@ -105,18 +175,49 @@
     <p class="color-tile" style="background: #f4f4f4">
       <strong>Off White</strong> <code>($off-white, #f4f4f4)</code>
     </p>
+
+
+    <!-- not really our brand but kinda? DESIGN. -->
+    <h3>Secondary Colors</h3>
+    <p>They're not part of our brand, but we're pretty fond of these guys. If you're going to use a color in one of these families, use this one.</p>
+    <p class="color-tile" style="background: #ef4135">
+      <strong>Red</strong> <code>($red, #ef4135)</code>
+    </p>
+
+    <p class="color-tile" style="background: #8cc026">
+      <strong>Green</strong> <code>($green, #8cc026)</code>
+    </p>
+
+    <p class="color-tile" style="background: #a9218e">
+      <strong>Purple</strong> <code>($purple, #a9218e)</code>
+    </p>
+
+    <p class="color-tile" style="background: #2eb393">
+      <strong>Teal</strong> <code>($teal, #2eb393)</code>
+    </p>
+
+    <p class="color-tile" style="background: #e20177">
+      <strong>Hot Pink</strong> <code>($hot-pink, #e20177)</code>
+    </p>
   </section>
 
   <section class="campaign-section">
     <h2 id="base">Base Elements</h2>
-    <% styleguide_block  '1.1' do %>
+    <% styleguide_block  '1.1 - Headings' do %>
       <h1 class="$modifier_class"><span>Heading</span></h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+
       <h2 class="$modifier_class"><span>Heading</span></h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+
       <h3 class="$modifier_class"><span>Heading</span></h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+
       <h4 class="$modifier_class"><span>Heading</span></h4>
+      <p>Lorem ipsum dolor sit amet.</p>
     <% end %>
 
-    <% styleguide_block  '1.2' do %>
+    <% styleguide_block  '1.2 - Inline Elements' do %>
       <p>Lorem ipsum dolor sit amet. This is some <strong>bold</strong>
       placeholder text and a <a href="#">link</a>.</p>
     <% end %>
@@ -124,61 +225,69 @@
 
   <section>
     <h2 id="forms">Forms</h2>
-    <% styleguide_block  '2.1' do %>
+    <% styleguide_block  '2.1 - Form Labels' do %>
       <label>Label</label>
       <input type="text">
     <% end %>
 
-    <% styleguide_block  '2.2.1' do %>
+    <% styleguide_block  '2.2.1 - Text Input Fields' do %>
       <input type="text" class="$modifier_class">
       <input type="text" class="$modifier_class" placeholder="with placeholder directions">
     <% end %>
 
-    <% styleguide_block  '2.2.2' do %>
+    <% styleguide_block  '2.2.2 - Text Area Fields' do %>
+      <textarea name="textarea">Write something here</textarea>
+    <% end %>
+
+    <% styleguide_block  '2.2.3 - Search Fields' do %>
       <input type="search" placeholder="Search...">
     <% end %>
 
-    <% styleguide_block  '2.3' do %>
+    <% styleguide_block  '2.3 - Buttons' do %>
       <a class="btn $modifier_class">Example Button</a>
     <% end %>
 
-    <% styleguide_block  '2.4' do %>
-      <select>
+    <% styleguide_block  '2.4 - Select Boxes' do %>
+      <select class="$modifier_class">
         <option>Awesome Things</option>
         <option>Popular Things</option>
         <option>Random Things</option>
       </select>
     <% end %>
 
-    <% styleguide_block  '2.5' do %>
+    <% styleguide_block  '2.5 - Loading Spinner' do %>
       <div class="spinner"></div>
+    <% end %>
+
+    <% styleguide_block '2.6 - Alert Banners' do %>
+      <div class="alert $modifier_class">There's something I need to tell you.</div>
     <% end %>
   </section>
 
   <section class="campaign-section">
     <h2 id="layout">Layout</h2>
 
-    <% styleguide_block  '3.1.1' do %>
-      <!-- no example -->
+    <% styleguide_block  '3.1.1 - Flex-width Wrapper' do %>
+      <!-- .flexwidth-wrapper -->
     <% end %>
 
-    <% styleguide_block  '3.1.2' do %>
-      <!-- no example -->
+    <% styleguide_block  '3.1.2 - Full-width Section' do %>
+      <!-- section.full-width -->
     <% end %>
 
-    <% styleguide_block  '3.2' do %>
+    <% styleguide_block  '3.2.1 - Content (Center)' do %>
       <div class="content-center $modifier_class">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
       </div>
     <% end %>
 
-    <% styleguide_block  '3.3.1' do %>
+    <% styleguide_block  '3.3.1 - Grid (One-Column)' do %>
       <div class="one-col">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
       </div>
     <% end %>
 
-    <% styleguide_block  '3.3.2' do %>
+    <% styleguide_block  '3.3.2 - Grid (Two-Column)' do %>
       <div class="two-col">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit. Donec pretium eros quam, in sagittis lorem semper et. Curabitur mattis mi a ipsum vehicula rhoncus.</p>
       </div>
@@ -188,7 +297,7 @@
       </div>
     <% end %>
 
-    <% styleguide_block  '3.3.3' do %>
+    <% styleguide_block  '3.3.3 - Grid (Three-Column)' do %>
       <div class="three-col $modifier_class">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis, nibh quis pellentesque viverra, arcu purus dictum neque, at rutrum lectus urna sed elit.</p>
       </div>
@@ -202,7 +311,7 @@
       </div>
     <% end %>
 
-    <% styleguide_block  '3.4' do %>
+    <% styleguide_block  '3.4.2 - Block Style' do %>
       <div class="block three-col $modifier_class">
         <h3>One Kitten</h3>
         <img src="http://placekitten.com/g/300/200">
@@ -222,38 +331,54 @@
       </div>
     <% end %>
 
-    <% styleguide_block '3.6.1' do %>
+    <% styleguide_block '3.6.1 - Back to Top link' do %>
       <a href="#top" class="btn-top js-jump-scroll">Back to Top</a>
     <% end %>
 
-    <% styleguide_block '3.6.2' do %>
+    <% styleguide_block '3.6.2 - Pagination' do %>
       <ul class="pager">
-        <li class="pager-next"><span class="btn small inactive" title="Go to previous page">&#8249; prev</span></li>
-        <li class="pager-current"><span class="btn small inactive">1</span></li>
-        <li class="pager-item"><a class="btn small" title="Go to page 2" href="#">2</a></li>
-        <li class="pager-item"><a class="btn small" title="Go to page 3" href="#">3</a></li>
-        <li class="pager-item"><a class="btn small" title="Go to page 4" href="#">4</a></li>
-        <li class="pager-next"><a class="btn small" title="Go to next page" href="#">next &#8250;</a></li>
+        <li class="pager-next"><span class="btn secondary small disabled" title="Go to previous page">&#8249; prev</span></li>
+        <li class="pager-current"><span class="btn secondary small disabled">1</span></li>
+        <li class="pager-item"><a class="btn secondary small" title="Go to page 2" href="#">2</a></li>
+        <li class="pager-item"><a class="btn secondary small" title="Go to page 3" href="#">3</a></li>
+        <li class="pager-item"><a class="btn secondary small" title="Go to page 4" href="#">4</a></li>
+        <li class="pager-next"><a class="btn secondary small" title="Go to next page" href="#">next &#8250;</a></li>
       </ul>
     <% end %>
 
-    <% styleguide_block '3.8.1' do %>
+    <% styleguide_block '3.7.1 - Bordered image style' do %>
+      <img class="bordered" src="http://placekitten.com/g/400/250" alt="Kitten">
+    <% end %>
+
+    <% styleguide_block '3.8.1 - Column Breaker' do %>
       <!-- utility class .column-break -->
     <% end %>
 
-    <% styleguide_block '3.8.2' do %>
+    <% styleguide_block '3.8.2 - Callout' do %>
       <!-- utility class .callout -->
     <% end %>
 
-    <% styleguide_block '3.8.3' do %>
+    <% styleguide_block '3.8.3 - Full Container Link' do %>
       <a class="full-link" href="#"><span>Link Title (hidden)</span></a>
+      <p>Yes, this is an example (hover over the container).</p>
     <% end %>
   </section>
 
 
   <section class="campaign-section">
-    <h2 id="blog">Blog</h2>
-    <% styleguide_block '4.1' do %>
+    <h2 id="content">Content</h2>
+    <% styleguide_block '4.1 - Content Styles' do %>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <ul class="$modifier_class">
+          <li>One thing</li>
+          <li>One <em>more</em> thing</li>
+        </ul>
+      </div>
+    <% end %>
+
+    <% styleguide_block '4.2 - Pullquote' do %>
       <div class="one-col">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -273,21 +398,23 @@
       </div>
     <% end %>
 
-    <% styleguide_block '4.2' do %>
-      <div class="content-center narrow related-links">
-        <h4>More on DoSomething.org</h4>
-        <a href="#" class="related">
-          <img src="http://placekitten.com/75/75" alt="One kitten">
-          <span>Kitten decides to do something about rising world population, kills family of 3.</span>
+    <% styleguide_block '4.3 - Media' do %>
+      <div class="media $modifier_class">
+        <a href="#" class="img">
+          <img src="http://placekitten.com/g/100/100" alt="me" />
         </a>
-        <a href="#" class="related">
-          <img src="http://placekitten.com/75/75" alt="Two kitten">
-          <span>Kittens, in your ceiling? It's more likely than you think!</span>
+        <div class="media-content">
+          Some long text and a <a href="#">link</a>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, nostrum, non, ducimus neque sapiente ad hic quas veniam iusto repellat saepe modi commodi. Temporibus, animi, rerum dicta delectus provident sint. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, velit, expedita, eveniet, corporis saepe doloremque dicta ab sapiente impedit quaerat officia praesentium culpa eaque. Expedita, architecto corporis autem accusantium rem.
+        </div>
+      </div>
+
+      <div class="media $modifier_class">
+        <a href="#" class="img">
+          <img src="http://placekitten.com/g/100/100" alt="me" />
         </a>
-        <a href="#" class="related">
-          <img src="http://placekitten.com/75/75" alt="Three kitten">
-          <span>Meow meow meow. Lorem ipsum dolor sit ameow.</span>
-        </a>
+        <div class="media-content">
+          Some shorter text and a <a href="#">link</a>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eius.
+        </div>
       </div>
     <% end %>
   </section>
@@ -295,11 +422,11 @@
 
   <section class="campaign-section">
     <h2 id="campaign">Campaign</h2>
-    <% styleguide_block '5.1' do %>
+    <% styleguide_block '5.1 - Legal Text' do %>
       <p class="legal">By registering, you agree to recieve emails and text messages. You can't escape.</p>
     <% end %>
 
-    <% styleguide_block '5.2' do %>
+    <% styleguide_block '5.2 - Conversation Bubbles' do %>
       <div class="content-center narrow">
         <div class="game-conversation $modifier_class">
           <p>Girl, you got any 'fee?</p>
@@ -307,7 +434,7 @@
       </div>
     <% end %>
 
-    <% styleguide_block '5.3' do %>
+    <% styleguide_block '5.3 - Gallery Module' do %>
       <div class="gallery-image">
         <img src="http://www.placekitten.com/g/960/500" alt="">
       </div>
@@ -346,7 +473,7 @@
       </ul>
     <% end %>
 
-    <% styleguide_block '5.4' do %>
+    <% styleguide_block '5.4 - Timeline Module' do %>
       <div class="timeline-divider">AUG</div>
       <ul class="timeline">
         <li class="event">
@@ -378,7 +505,7 @@
       </ul>
     <% end %>
 
-    <% styleguide_block '5.5' do %>
+    <% styleguide_block '5.5 - Location Finder Module' do %>
       <form action="#" class="content-center narrow callout js-location-finder-form">
         <div class="no-js-hide-feature">
           <p>Enter your zip code to search for a drop-off point near you.</p>
@@ -402,7 +529,7 @@
   <section class="campaign-section">
     <h2 id="navigation">Navigation</h2>
 
-    <% styleguide_block '6.1' do %>
+    <% styleguide_block '6.1 - Breadcrumbs' do %>
       <nav class="breadcrumbs">
         <ul>
           <li><a href="#">Home</a></li>
@@ -412,7 +539,7 @@
       </nav>
     <% end %>
 
-    <% styleguide_block '6.2' do %>
+    <% styleguide_block '6.2 - Sidebar' do %>
       <nav class="sidebar">
         <ul>
           <li><a href="#">Cats</a></li>
@@ -422,13 +549,4 @@
       </nav>
     <% end %>
   </section>
-
-  <section class="campaign-section">
-    <h2 id="widgets">Widgets</h2>
-
-    <% styleguide_block '7.1' do %>
-      <div class="alert $modifier_class">There's something I need to tell you.</div>
-    <% end %>
-  </section>
-
 </div>

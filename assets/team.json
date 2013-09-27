@@ -1,0 +1,287 @@
+{
+  "staff":
+    [
+      {
+        "name": "Aaron Schachter",
+        "title": "Software Engineer",
+        "twitter": "aaronschachter",
+        "tags": [""]
+      },
+      {
+        "name": "Alysha Bologno",
+        "title": "Mobile Engagement Manager",
+        "twitter": "shishab",
+        "tags": [""]
+      },
+      {
+        "name": "Alyssa Ruderman",
+        "title": "Campaigns Manager - Sex, Violence & Relationships",
+        "twitter": "alyssaruderman",
+        "tags": [""]
+      },
+      {
+        "name": "April Wright",
+        "title": "Director of International Programs",
+        "twitter": "aprilmwright",
+        "tags": [""]
+      },
+      {
+        "name": "Aria Finger",
+        "title": "COO",
+        "twitter": "AriaIrene",
+        "tags": [""]
+      },
+      {
+        "name": "Barry Clark",
+        "title": "Director of Technical Product",
+        "twitter": "bazclef",
+        "tags": [""]
+      },
+      {
+        "name": "Baylee Greenberg",
+        "title": "Business Development Associate",
+        "twitter": "baylgreen",
+        "tags": [""]
+      },
+      {
+        "name": "Ben Kassoy",
+        "title": "Content Editor",
+        "twitter": "bkassoy",
+        "tags": [""]
+      },
+      {
+        "name": "Brad Williams",
+        "title": "Video Producer",
+        "twitter": "spoonerwilliams",
+        "tags": [""]
+      },
+      {
+        "name": "Calvin Stowell",
+        "title": "Director of Digital & Content",
+        "twitter": "aurosan",
+        "tags": [""]
+      },
+      {
+        "name": "Chaquana Lyons",
+        "title": "Finance and HR Manager",
+        "twitter": "Chaq_Quana",
+        "tags": [""]
+      },
+      {
+        "name": "Chloe Lee",
+        "title": "Marketing Manager",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Colleen Wormsley",
+        "title": "Marketing Associate",
+        "twitter": "ColleenWormsley",
+        "tags": [""]
+      },
+      {
+        "name": "Crystal Bell",
+        "title": "User Experience Researcher",
+        "twitter": "crystalruthbell",
+        "tags": [""]
+      },
+      {
+        "name": "Darren \"Dee\" Lee",
+        "title": "Back-End Engineer",
+        "twitter": "deezone",
+        "tags": [""]
+      },
+      {
+        "name": "Darren Mastropaolo",
+        "title": "Business Development Manager",
+        "twitter": "dcmpolo",
+        "tags": [""]
+      },
+      {
+        "name": "Dave DeLuca",
+        "title": "Head of Campaigns",
+        "twitter": "davdeluca",
+        "tags": [""]
+      },
+      {
+        "name": "David Furnes",
+        "title": "Developer",
+        "twitter": "dfurnes",
+        "tags": [""]
+      },
+      {
+        "name": "Desmond Morris",
+        "title": "Director of Engineering",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Ellie Zeitlin",
+        "title": "",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Member Engagement Manager",
+        "title": "",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Farah Sheikh",
+        "title": "",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Campaigns Associate - Education",
+        "title": "",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Gleb Boundin",
+        "title": "Tech Wizard",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Greg Thomas",
+        "title": "Campaigns Manager - Bullying",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Hilary Gridley",
+        "title": "Campaigns Associate - Environment & Animal Welfare",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Jeff Bladt",
+        "title": "Director of Data Products & Analytics",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Jonathan Uy",
+        "title": "Mobile Developer",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Josh Cusano",
+        "title": "Data Analyst",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Julie Lorch",
+        "title": "Product Manager",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Katie Radford",
+        "title": "Head of Fun",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Kenia Baumgarten",
+        "title": "Director of Finance",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Keri Goff",
+        "title": "Campaign Graphic Designer",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Lisa Boyd",
+        "title": "Do Something Agency Associate",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Liz Eddy",
+        "title": "Special Projects",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Marah Lidey",
+        "title": "Digital Engagement Manager",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Matt Holford",
+        "title": "CTO",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Maxwell Watson",
+        "title": "Senior Front-End Developer",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Mike Chittenden",
+        "title": "Software Engineer",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Mike Fantini",
+        "title": "Head of Product",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Muneer Panjwani",
+        "title": "Business Development Manager",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Nami Mody",
+        "title": "Campaigns Associate - Poverty & Homelessness",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Nancy Lublin",
+        "title": "CEO & Chief Old Person",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Naomi Hirabayashi",
+        "title": "CMO",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Ravelle Worthington",
+        "title": "Managing Editor",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Ritika Kaushal",
+        "title": "Finance/HR Associate",
+        "twitter": "",
+        "tags": [""]
+      },
+      {
+        "name": "Sarah Piper-Goldberg",
+        "title": "Campaigns Associate - Physical & Mental Health",
+        "twitter": "",
+        "tags": [""]
+      }
+    ]
+}
