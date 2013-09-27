@@ -84,41 +84,28 @@ aside.pullquote {
 
 // The 'media' interface pattern contains a list of text/links with associated thumbnails.
 //
-// .large - Large thumbnail image.
-//
 // Styleguide 4.3 - Media
 
 .media {
-  display: block;
-  clear: both;
-  text-decoration: none;
-  margin: 1em 0;
+  margin: 1rem;
+  overflow: hidden;
+  
+  .media-content {
+    overflow: hidden;
+  }
 
-  img {
+  .img {
     float: left;
-    width: 50px;
-    height: 50px;
-    padding: 0.5em;
+    margin-right: 1rem;
+
+    img {
+      display: block;
+    }
   }
 
-  span {
-    display: block;
-    font-size: 1rem;
-    text-align: left;
-    padding: 0.5em 0.5em 0.1em 70px;
-  }
-
-  em {
-    display: block;
-    color: $dark-gray;
-    font-size: 0.9em;
-    text-decoration: none;
-    padding-left: 70px;
-  }
-
-  &.large img {
-    width: 150px;
-    height: 150px;
+  .imgExt {
+    float: right;
+    margin-left: 1rem;
   }
 }
 
