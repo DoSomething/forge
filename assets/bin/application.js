@@ -1,5 +1,27 @@
 (function() {
-  var $, bindResetButton, findLocation, idx, idxs, ignore, rule, stickyRelocate, stylesheet, _i, _j, _k, _len, _len1, _len2, _ref, _ref1;
+  var $, bindResetButton, findLocation, idx, idxs, ignore, rule, setScrollIndicatorVisibility, stickyRelocate, stylesheet, _i, _j, _k, _len, _len1, _len2, _ref, _ref1;
+
+  $ = jQuery;
+
+  $(function() {
+    var allFades, win;
+    win = $(window);
+    allFades = $(".js-fade-up-on-scroll");
+    allFades.each(function(i, el) {
+      el = $(el);
+      if (el.real_visible(true)) {
+        return el.addClass("come-in");
+      }
+    });
+    return $(window).scroll(function(e) {
+      return allFades.each(function(i, el) {
+        el = $(el);
+        if (el.real_visible(true)) {
+          return el.addClass("come-in");
+        }
+      });
+    });
+  });
 
   $ = jQuery;
 
@@ -125,6 +147,32 @@
       return $('.js-pin-to-top').addClass('is-stuck');
     } else {
       return $('.js-pin-to-top').removeClass('is-stuck');
+    }
+  };
+
+  $ = jQuery;
+
+  $(function() {
+    $(".js-toggle-video-link").click(function() {
+      $(".js-toggle-video-link").hide();
+      $(".scroll-indicator-link").hide();
+      $(".js-toggle-video-container").html("<iframe src='http://www.youtube.com/embed/nz8mmznuasw?autoplay=1&amp;modestbranding=1&amp;autohide=1' frameborder='0' allowfullscreen></iframe>");
+      return $(".js-toggle-video-container").show();
+    });
+    setScrollIndicatorVisibility();
+    return $(window).on("scroll touchmove resize", function() {
+      return setScrollIndicatorVisibility();
+    });
+  });
+
+  setScrollIndicatorVisibility = function() {
+    var content_top, window_top;
+    window_top = $(window).scrollTop();
+    content_top = $(".js-scroll-indicator-link-killer").offset().top;
+    if ($(".js-scroll-indicator-link-killer").visible(true)) {
+      return $(".scroll-indicator-link").fadeOut(400);
+    } else if (window_top < content_top) {
+      return $(".scroll-indicator-link").fadeIn(400);
     }
   };
 

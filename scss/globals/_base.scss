@@ -13,12 +13,12 @@ body {
 //
 // .section-header - Stylized headers. Requires an inline span element for text underline.
 //
-// Styleguide 1.1
+// Styleguide 1.1 - Headings
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-din-regular;
   font-weight: 600;
 
-  &> span {
+  &.section-header > span {
     padding: 0.1em 0.25em 0;
   }
 }
@@ -61,7 +61,7 @@ h2 {
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 1rem 0 0.5rem;
   margin: 0;
 }
 
@@ -72,10 +72,10 @@ h4 {
 
 // Inline text elements.
 //
-// Styleguide 1.2
+// Styleguide 1.2 - Inline Elements
 p {
-  color: #222;
-  margin: 1em 0;
+  color: $off-black;
+  margin: 0.5em 0 1em;
 }
 
 a {
