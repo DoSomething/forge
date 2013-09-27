@@ -1,23 +1,39 @@
-// Alert boxes.
+// Status message styles based on Drupal defaults.
 //
-// .error   - Used to display errors. Be careful not to blame the user for a mistake.
-// .success - Used when something goes according to plan.
+// .messages - Base class used to signify a status message.
+// .status - Used when something goes according to plan.
+// .warning - Used to flag potential problems for the user.
+// .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
 // Styleguide 7.1
 
-.alert {
+.messages {
   position: relative;
-  background: $off-white;
   padding: 1em 1em 1em 3.5em;
   margin: 0.5rem;
   text-align: left;
   border-radius: $sm-border-radius;
 
-  &:before {
-    content: "\2691";
-    position: absolute;
-    left: 1.5em;
-    color: darken($off-white, 10%);
+  &.status {
+    background: #dbfbd5;
+
+    &:before {
+      content: "\2714";
+      position: absolute;
+      left: 1.5em;
+      color: darken(#dbfbd5, 10%);
+    }
+  }
+
+  &.warning {
+    background: $off-white;
+
+    &:before {
+      content: "\2691";
+      position: absolute;
+      left: 1.5em;
+      color: darken($off-white, 10%);
+    }
   }
 
   &.error {
@@ -28,17 +44,6 @@
       position: absolute;
       left: 1.5em;
       color: darken(#fcf6e5, 10%);
-    }
-  }
-
-  &.success {
-    background: #dbfbd5;
-
-    &:before {
-      content: "\2714";
-      position: absolute;
-      left: 1.5em;
-      color: darken(#dbfbd5, 10%);
     }
   }
 }
