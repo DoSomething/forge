@@ -23,11 +23,11 @@ section.header {
     padding: 48px 24px;
   }
 
-  .header-logotype {
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  .header-logo {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 500px;
   }
 
   .header-date {
@@ -38,13 +38,37 @@ section.header {
     text-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 
+  .header-sponsors,
   .header-social {
     position: absolute;
-    bottom: 0;
-    left: 12px;
+    bottom: 0.5rem;
+  }
+
+  .header-sponsors {
+    right: 0.5rem;
+    width: 70%;
+    @include respond-to(phones) {
+      display: none;
+    }
+
+    img {
+      float: right;
+      height: 30px;
+      margin: 0.5rem 0 0 0.5rem;
+    }
+  }
+
+  .header-social {
+    height: 20px;
+    left: 0.5rem;
+
+    .header-facebook-share,
+    .header-twitter-share {
+      height: 20px;
+      display: inline-block;
+    }
 
     .header-twitter-share {
-      display: inline;
       margin-left: 8px;
     }
   }
@@ -103,6 +127,10 @@ section.call-to-action {
   .btn {
     display: inline-block;
   }
+}
+
+section.faq {
+  border-bottom: none;
 }
 
 // Stylized SMS conversation bubbles. <mark>Requires a modifier class to specify which role is talking.</mark>
@@ -185,16 +213,26 @@ section.call-to-action {
 
 footer.sponsor {
   text-align: center;
-  margin: 2rem 0;
+  display: none;
+  @include respond-to(phones) {
+    display: block;
+    border-top: 1px solid $light-gray;
+    margin: -4rem 0px 0px;
+    padding: 4rem 0px 0px;
+  }
 
   img {
-    margin: 1rem 2rem;
+    max-width: 80%;
+    margin: 1rem;
+    height: 30px;
   }
 }
 
 footer.contact {
   text-align: center;
-  margin: 2rem 0;
+  margin: 4rem 0 0 0;
+  padding: 2rem 0;
+  background: $light-gray;
 }
 
 // Vertical timeline.
