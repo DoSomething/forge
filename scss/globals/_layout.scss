@@ -5,7 +5,6 @@
 // Styleguide 3.1.1 - Flex-width Wrapper
 .flexwidth-wrapper {
   @include flex-width;
-  overflow: hidden;
   margin: 0 auto;
 }
 
@@ -110,6 +109,10 @@ section.full-width {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
@@ -379,7 +382,7 @@ img.bordered {
 // Styleguide 3.8.1 - Column Breaker
 .column-break {
   clear: both;
-  padding: 1rem 0;
+  padding: 2rem 0;
   overflow: hidden;
 }
 
@@ -390,6 +393,13 @@ img.bordered {
   clear: both;
   padding: 1rem 0;
   text-align: center;
+}
+
+// Adds a big top-margin to a section
+//
+// Styleguide 3.8.4 - Section Starter
+.section-starter {
+  padding-top: 4rem;
 }
 
 // Utility class to make links fill their parent container. Also applies button hover
@@ -404,6 +414,27 @@ img.bordered {
   width: 100%;
   height: 100%;
   z-index: 10;
+
+  &.video-play-link {
+    &:before {
+      content: '\25B6';
+      border: 5px solid #fff;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin-left: -40px;
+      border-radius: 160px;
+      text-align: center;
+      color: #fff;
+      font-size: 40px;
+      padding-top: 13px;
+      padding-left: 6px;
+      @include box-sizing(border-box);
+    }
+  }
 
   span {
     display: none;

@@ -1,6 +1,50 @@
 .wallpaper-wrapper {
+  position: relative;
   background: #eee;
   overflow: hidden;
+  padding: 0;
+  @include background-size(cover);
+
+  img.fullwidth {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
+  }
+}
+
+.wallpaper-content-center {
+  background: transparent;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 200px 0;
+  @include respond-to(phones) {
+    padding: 50px 0;
+  }
+
+  .content-center {
+    max-width: 900px;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.5rem;
+
+    @include respond-to(phones) {
+      font-size: 1rem;
+    }
+  }
 }
 
 
