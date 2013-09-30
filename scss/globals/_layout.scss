@@ -118,6 +118,9 @@ section.full-width {
 
 // Applies styles to grid content block elements, for example campaign steps/prizes.
 //
+// .left - Removes padding from left side for alignment with the grid.
+// .right - Removes padding from right side for alignment with the grid.
+//
 // Styleguide 3.4.2 - Block Style
 .block {
   margin: 0;
@@ -125,6 +128,14 @@ section.full-width {
 
   @include respond-to(phones) {
     margin: 0 auto;
+  }
+
+  &.left {
+    padding-left: 0;
+  }
+
+  &.right {
+    padding-right: 0;
   }
 
   img {
