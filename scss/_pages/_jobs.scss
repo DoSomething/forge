@@ -134,9 +134,20 @@
 
 
 .internships--testimonials {
-  .column-break:nth-child(even) .pullquote {
-    text-align: right;
-  }
+  @include respond-to(widescreens_and_tablets) {
+    .column-break .pullquote {
+      margin-top: 3rem;
+    }
+
+    .column-break:nth-child(odd) .pullquote {
+      margin-right: 4rem;
+    }
+
+    .column-break:nth-child(even) .pullquote {
+      text-align: right;
+      margin-left: 4rem;
+    }
+  }  
 }
 
 .js-toggle-video {

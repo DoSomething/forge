@@ -39,26 +39,18 @@
   }
 }
 
-// A pullquote brings attention to a quote from an article.
+// An aside is used for content that floats outside the normal
+// flow, such as a pullquote or sidebar.
 //
 // .right - Floats the pullquote to the right (on wider screens).
 // .left - Floats the pullquote to the left (on wider screens).
 //
-// Styleguide 4.2 - Pullquote
-aside.pullquote {
+// Styleguide 4.2 - Aside
+aside {
   width: 80%;
   max-width: 650px;
-  color: $light-blue;
-  font-size: 2rem;
   font-weight: 400;
   margin: 1em auto;
-  @include respond-to(tablets) {
-    font-size: 1.5rem;
-  }
-  @include respond-to(phones) {
-    width: 95%;
-    font-size: 1.25rem;
-  }
 
   @include respond-to(widescreens_and_tablets) {
     &.right {
@@ -66,15 +58,31 @@ aside.pullquote {
       width: 40%;
       max-width: 300px;
       text-align: right;
-      margin: 1em 0 1em 1em;
+      margin: 1.6rem 0 1.6rem 1rem;
     }
 
     &.left {
       float: left;
       width: 40%;
       max-width: 300px;
-      margin: 1em 1em 1em 0;
+      margin: 1.6rem 1rem 1.6rem 0;
     }
+  }
+}
+
+// An pullquote draws attention to a particular quote from the
+// text. Generally used with <code>aside</code> element.
+//
+// Styleguide 4.2.1 - Pullquote
+.pullquote {
+  color: $light-blue;
+  font-size: 1.5rem;
+  @include respond-to(tablets) {
+    font-size: 1.5rem;
+  }
+  @include respond-to(phones) {
+    width: 95%;
+    font-size: 1.25rem;
   }
 
   cite {
@@ -131,4 +139,9 @@ aside.pullquote {
 }
 
 
-
+footer.content {
+  color: $dark-gray;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2em 1em 4em;
+}

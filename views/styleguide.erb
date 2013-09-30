@@ -17,7 +17,7 @@
   </nav>
 </div>
 
-<div class="content-center">
+<div class="content-center section-starter">
   <h1>Styleguide Neue</h1>
 
   <p>This is a living styleguide. It catalogues the re-usable classes included in the DS Neue library. It can be used as both a design &amp; code reference to minimize "rebuilding the wheel". Some full-page examples are also available for reference:</p>
@@ -31,7 +31,7 @@
   </ul>
 
  
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="brand">Our Brand</h2>
     <h4 class="section-header"><span>DoSomething.org Logo</span></h4>
     <div class="two-col block">
@@ -53,7 +53,7 @@
       </p>
     </div>
 
-    <h4 class="section-header"><span>Words &amp; Phrasing</span></h4>
+    <h4 class="section-header full-width"><span>Words &amp; Phrasing</span></h4>
     <div class="three-col content">
       <h4>Banned Words</h4>
       <ul class="bad">
@@ -89,7 +89,7 @@
   </section>
 
 
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
 
     <style type="text/css">
@@ -107,7 +107,7 @@
       .color-tile {
         float: left;
         width: 45%;
-        margin: 2.5%;
+        margin: 0 2.5% 5%;
         background: #eee;
         color: #fff;
         text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
@@ -201,7 +201,7 @@
     </p>
   </section>
 
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="base">Base Elements</h2>
     <% styleguide_block  '1.1 - Headings' do %>
       <h1 class="$modifier_class"><span>Heading</span></h1>
@@ -223,7 +223,7 @@
     <% end %>
   </section>
 
-  <section>
+  <section class="campaign-section full-width">
     <h2 id="forms">Forms</h2>
     <% styleguide_block  '2.1 - Form Labels' do %>
       <label>Label</label>
@@ -264,7 +264,7 @@
     <% end %>
   </section>
 
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="layout">Layout</h2>
 
     <% styleguide_block  '3.1.1 - Flex-width Wrapper' do %>
@@ -365,7 +365,7 @@
   </section>
 
 
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="content">Content</h2>
     <% styleguide_block '4.1 - Content Styles' do %>
       <div class="content">
@@ -378,7 +378,20 @@
       </div>
     <% end %>
 
-    <% styleguide_block '4.2 - Pullquote' do %>
+    <% styleguide_block '4.2 - Aside' do %>
+      <div class="one-col">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <aside class="$modifier_class">Lorem ipsum dolor sit amet.</aside>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+      </div>
+    <% end %>
+
+    <% styleguide_block '4.2.1 - Pullquote' do %>
       <div class="one-col">
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -420,7 +433,7 @@
   </section>
 
 
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="campaign">Campaign</h2>
     <% styleguide_block '5.1 - Legal Text' do %>
       <p class="legal">By registering, you agree to recieve emails and text messages. You can't escape.</p>
@@ -526,7 +539,7 @@
     <% end %>
   </section>
 
-  <section class="campaign-section">
+  <section class="campaign-section full-width">
     <h2 id="navigation">Navigation</h2>
 
     <% styleguide_block '6.1 - Breadcrumbs' do %>
