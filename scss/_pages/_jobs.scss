@@ -53,11 +53,6 @@
   to { @include transform(translateY(0)); }
 }
 
-.js-toggle-video-container {
-  display: none;
-  background: $off-black;
-}
-
 // ********
 
 .internship--wallpaper-block {
@@ -148,10 +143,6 @@
       margin-left: 4rem;
     }
   }  
-}
-
-.js-toggle-video {
-  display: none;
 }
 
 .embed-content {
