@@ -7,6 +7,9 @@ $ ->
     $(".js-toggle-video-container").html("<iframe src='http://www.youtube.com/embed/nz8mmznuasw?autoplay=1&amp;modestbranding=1&amp;autohide=1' frameborder='0' allowfullscreen></iframe>")
     $(".js-toggle-video-container").show()
 
+
+
+window.initializeScrollIndicatorVisibility = () ->
   setScrollIndicatorVisibility()
   $(window).on "scroll touchmove resize", ->
     setScrollIndicatorVisibility()
