@@ -11,10 +11,12 @@
 // Basic full-width "section" used on campaign pages, etc. Clears floats and adds bottom margin for spacing.
 //
 // Styleguide 3.1.2 - Full-width Section
-section.full-width {
+.full-width {
   clear: both;
   overflow: hidden;
+  // padding-bottom: 2rem;
   margin: 0 0 4rem;
+  overflow: hidden;
   @include box-sizing(border-box);
 }
 
@@ -58,7 +60,7 @@ section.full-width {
     color: $dark-gray;
     font-size: 0.8rem;
     text-align: center;
-    padding: 0.5em 1em;
+    padding: 0 1rem 1.5rem;
   }
 }
 
@@ -118,6 +120,9 @@ section.full-width {
 
 // Applies styles to grid content block elements, for example campaign steps/prizes.
 //
+// .left - Removes padding from left side for alignment with the grid.
+// .right - Removes padding from right side for alignment with the grid.
+//
 // Styleguide 3.4.2 - Block Style
 .block {
   margin: 0;
@@ -125,6 +130,14 @@ section.full-width {
 
   @include respond-to(phones) {
     margin: 0 auto;
+  }
+
+  &.left {
+    padding-left: 0;
+  }
+
+  &.right {
+    padding-right: 0;
   }
 
   img {
@@ -399,7 +412,7 @@ img.bordered {
 //
 // Styleguide 3.8.4 - Section Starter
 .section-starter {
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 
 // Utility class to make links fill their parent container. Also applies button hover

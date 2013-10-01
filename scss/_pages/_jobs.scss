@@ -53,11 +53,6 @@
   to { @include transform(translateY(0)); }
 }
 
-.js-toggle-video-container {
-  display: none;
-  background: $off-black;
-}
-
 // ********
 
 .internship--wallpaper-block {
@@ -134,13 +129,20 @@
 
 
 .internships--testimonials {
-  .column-break:nth-child(even) .pullquote {
-    text-align: right;
-  }
-}
+  @include respond-to(widescreens_and_tablets) {
+    .column-break .pullquote {
+      margin-top: 3rem;
+    }
 
-.js-toggle-video {
-  display: none;
+    .column-break:nth-child(odd) .pullquote {
+      margin-right: 4rem;
+    }
+
+    .column-break:nth-child(even) .pullquote {
+      text-align: right;
+      margin-left: 4rem;
+    }
+  }  
 }
 
 .embed-content {

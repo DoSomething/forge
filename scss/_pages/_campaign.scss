@@ -1,9 +1,7 @@
 // common
 
 .campaign-section {
-  padding-bottom: 2rem;
   border-bottom: 1px solid $off-white;
-  overflow: hidden;
 }
 
 .section-intro {
@@ -17,14 +15,14 @@ section.header {
   background: $off-white;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 112px 24px;
+  padding: 96px 24px;
   background-size: cover;
   @include respond-to(phones) {
     padding: 48px 24px;
   }
 
   .header-logo {
-    margin: 0 auto;
+    margin: 1.6rem auto;
     display: block;
     width: 100%;
     max-width: 500px;
@@ -75,7 +73,7 @@ section.header {
 }
 
 section.headline {
-  padding: 3rem 0;
+  margin: 3rem 0;
   h1, h2, h3 {
     color: $off-black;
     text-align: center;
@@ -108,7 +106,7 @@ section.headline {
 
 section.call-to-action {
   background: $off-white;
-  padding: 2%;
+  padding: 1.6rem 1.6rem 0;
 
   &>p {
     text-align: center;
@@ -148,7 +146,6 @@ section.faq {
   border-radius: $sm-border-radius;
   text-transform: uppercase;
   font-weight: 500;
-
   &:after {
     content: "";
     position: absolute;
@@ -156,6 +153,10 @@ section.faq {
     border-style: solid;
     border-width: 15px;
     border-color: transparent;
+  }
+
+  p {
+    margin: 0.5em;
   }
 
 
@@ -231,7 +232,7 @@ footer.sponsor {
 footer.contact {
   text-align: center;
   margin: 4rem 0 0 0;
-  padding: 2rem 0;
+  padding: 2.6rem 0 1rem;
   background: $light-gray;
 }
 
