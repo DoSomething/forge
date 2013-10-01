@@ -330,47 +330,54 @@ select {
    border-radius:100%;
 }
 
-// Alert banners. Should be used to notify the user of something outside of the typical application flow (for example, on form validation.)
+// Status message styles based on Drupal defaults.
 //
-// .error   - Used to display errors. Be careful not to blame the user for a mistake.
-// .success - Used when something goes according to plan.
+// .status - Used when something goes according to plan.
+// .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
-// Styleguide 2.6 - Alert Banners
+// Styleguide 2.6 - Status Banners
+$unicode-good: "\2714";
+$unicode-meh: "\2691";
+$unicode-bad: "\2718";
+$bg-good: #dbfbd5;
+$bg-meh: #fcf6e5;
+$bg-bad: #ffe0e0;
 
-.alert {
+.messages { /* Drupal default "meh" */
   position: relative;
-  background: #fcf6e5;
   padding: 1em 1em 1em 3.5em;
   margin: 0.5rem;
   text-align: left;
   border-radius: $sm-border-radius;
+  background: $bg-meh;
 
   &:before {
-    content: "\2691";
+    content: $unicode-meh;
     position: absolute;
     left: 1.5em;
-    color: darken(#fcf6e5, 15%);
+    color: darken($bg-meh, 10%);
   }
 
-  &.error {
-    background: #efd0d0;
+  &.status, /* Default "success" message forDrupal */
+  &.success /* Default "success" message for rational people */ {
+    background: $bg-good;
 
     &:before {
-      content: "\20E0";
+      content: $unicode-good;
       position: absolute;
       left: 1.5em;
-      color: darken(#efd0d0, 15%);
+      color: darken($bg-good, 15%);
     }
   }
 
-  &.success {
-    background: #dbfbd5;
+  &.error { /* Drupal default "error" */
+    background: $bg-bad;
 
     &:before {
-      content: "\2713";
+      content: $unicode-bad; 
       position: absolute;
       left: 1.5em;
-      color: darken(#dbfbd5, 15%);
+      color: darken($bg-bad, 15%);
     }
   }
 }
