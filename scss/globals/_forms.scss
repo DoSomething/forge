@@ -332,9 +332,7 @@ select {
 
 // Status message styles based on Drupal defaults.
 //
-// .messages - Base class used to signify a status message.
 // .status - Used when something goes according to plan.
-// .warning - Used to flag potential problems for the user.
 // .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
 // Styleguide 2.6 - Status Banners
@@ -342,7 +340,7 @@ $unicode-good: "\2714";
 $unicode-meh: "\2691";
 $unicode-bad: "\2718";
 $bg-good: #dbfbd5;
-$bg-meh: #f0f0f0;
+$bg-meh: #fcf6e5;
 $bg-bad: #ffe0e0;
 
 .messages { /* Drupal default "meh" */
@@ -351,9 +349,17 @@ $bg-bad: #ffe0e0;
   margin: 0.5rem;
   text-align: left;
   border-radius: $sm-border-radius;
+  background: $bg-meh;
 
-  &.status /* Drupal default "success" */,
-  &.success { 
+  &:before {
+    content: $unicode-meh;
+    position: absolute;
+    left: 1.5em;
+    color: darken($bg-meh, 10%);
+  }
+
+  &.status, /* Default "success" message forDrupal */
+  &.success /* Default "success" message for rational people */ {
     background: $bg-good;
 
     &:before {
@@ -361,17 +367,6 @@ $bg-bad: #ffe0e0;
       position: absolute;
       left: 1.5em;
       color: darken($bg-good, 15%);
-    }
-  }
-
-  &.warning { /* Drupal default "meh" */
-    background: $bg-meh;
-
-    &:before {
-      content: $unicode-meh;
-      position: absolute;
-      left: 1.5em;
-      color: darken($bg-meh, 10%);
     }
   }
 
