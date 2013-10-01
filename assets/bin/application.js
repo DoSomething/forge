@@ -153,17 +153,20 @@
   $ = jQuery;
 
   $(function() {
-    $(".js-toggle-video-link").click(function() {
+    return $(".js-toggle-video-link").click(function() {
       $(".js-toggle-video-link").hide();
       $(".scroll-indicator-link").hide();
       $(".js-toggle-video-container").html("<iframe src='http://www.youtube.com/embed/nz8mmznuasw?autoplay=1&amp;modestbranding=1&amp;autohide=1' frameborder='0' allowfullscreen></iframe>");
       return $(".js-toggle-video-container").show();
     });
+  });
+
+  window.initializeScrollIndicatorVisibility = function() {
     setScrollIndicatorVisibility();
     return $(window).on("scroll touchmove resize", function() {
       return setScrollIndicatorVisibility();
     });
-  });
+  };
 
   setScrollIndicatorVisibility = function() {
     var content_top, window_top;
