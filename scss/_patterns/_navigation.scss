@@ -1,0 +1,43 @@
+// Used to indicate position on sub-pages. This helps the user orient theirself.
+//
+// Styleguide 6.1 - Breadcrumbs
+nav.breadcrumbs {
+  margin: 1.65rem;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline;
+    &:after {
+      font-family: $font-din-condensed;
+      content: '>';
+      color: $light-gray;
+      padding: 0 1em;
+    }
+    &:last-of-type:after {
+      display: none;
+    }
+  }
+
+  a {
+    color: $dark-gray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// Used to navigate between sections/panels within a section.
+//
+// .vertical - Vertical tab layout (for use in a sidebar).
+//
+// Styleguide 6.1 - Tabs
+.tabs {
+  
+}

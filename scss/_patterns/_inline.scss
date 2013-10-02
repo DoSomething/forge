@@ -1,0 +1,44 @@
+// Style for images in content sections.
+//
+// Styleguide x.1.1 - Figures
+figure {
+  padding: 2.5% 0;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+figcaption {
+  color: $dark-gray;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0 1rem 1.5rem;
+}
+
+// Stylized "polaroid" image, with a thick border and subtle shadow.
+//
+// Styleguide x.1.2 - Bordered image style
+img.bordered {
+  border: 5px solid #fff;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+  @include box-sizing(border-box);
+}
+
+
+// Legal text (a.k.a. the fine print).
+//
+// Styleguide 5.1 - Legal Text
+.legal {
+  font-size: 0.75rem;
+  color: $light-gray;
+  margin: 0 0 1em;
+
+  a {
+    color: $light-gray;
+
+    &:hover, &:visited {
+      color: $off-black;
+    }
+  }
+}

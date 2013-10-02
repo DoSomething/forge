@@ -1,0 +1,340 @@
+/* This section includes re-usable layout/grid elements */
+
+// Full width centered page wrapper. Resizes fluidly from $max-width as viewport width decreases.
+//
+// Styleguide 3.1.1 - Full-width Container
+.full-width {
+  width: 100%;
+}
+
+// Container for page sections. Fills viewport up until $max-width - 100.
+//
+// .copy-container - Decreases line-width of paragraphs for easier reading.
+//
+// Styleguide 3.1.2 - Page-width Container
+.page-width {
+  width: 100%;
+  @include flex-width;
+  @include box-sizing(border-box);
+
+  &.copy-container {
+    h1, h2, h3, h4, p {
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// 12-column grid for layout. Apply `.gutters` to parent container to enable gutters between columns.
+//
+// - .span_X - Spans X (1-12) columns on tablet/desktop. Defaults to single column on mobile.
+// - .always_span_X - Spans X (1-12) columns across all devices.
+//
+// Styleguide 3.2.1 - Columns
+.column {
+  display: block;
+  float: left;
+  width: 100%;
+  @include box-sizing(border-box);
+}
+
+.always_span_1 { width: 8.33333333333%; }
+.always_span_2 { width: 16.6666666667%; }
+.always_span_3 { width: 25%; }
+.always_span_4 { width: 33.3333333333%; }
+.always_span_5 { width: 41.6666666667%; }
+.always_span_6 { width: 50%; }
+.always_span_7 { width: 58.3333333333%; }
+.always_span_8 { width: 66.6666666667%; }
+.always_span_9 { width: 75%; }
+.always_span_10 { width: 83.3333333333%; }
+.always_span_11 { width: 91.6666666667%; }
+.always_span_12 { width: 100%; }
+
+// on tablet/desktop, apply column widths based on grid
+@include respond-to(widescreens_and_tablets) {
+  .span_1 { width: 8.33333333333%; }
+  .span_2 { width: 16.6666666667%; }
+  .span_3 { width: 25%; }
+  .span_4 { width: 33.3333333333%; }
+  .span_5 { width: 41.6666666667%; }
+  .span_6 { width: 50%; }
+  .span_7 { width: 58.3333333333%; }
+  .span_8 { width: 66.6666666667%; }
+  .span_9 { width: 75%; }
+  .span_10 { width: 83.3333333333%; }
+  .span_11 { width: 91.6666666667%; }
+  .span_12 { width: 100%; }
+
+  // adds gutters between columns if applied to parent
+  .gutters {
+    .column {
+      margin-left: 2%;
+
+      &:first-child { 
+        margin-left: 0; 
+      }
+    }
+
+    .span_1 { width: 6.5%; }
+    .span_2 { width: 15.0%; }
+    .span_3 { width: 23.5%; }
+    .span_4 { width: 32.0%; }
+    .span_5 { width: 40.5%; }
+    .span_6 { width: 49.0%; }
+    .span_7 { width: 57.5%; }
+    .span_8 { width: 66.0%; }
+    .span_9 { width: 74.5%; }
+    .span_10 { width: 83.0%; }
+    .span_11 { width: 91.5%; }
+    .span_12 { width: 100%; }
+  }
+}
+
+// 12-column grid for layout. Apply `.gutters` to parent container to enable gutters between columns.
+//
+// - .span_X - Spans X (1-12) columns on tablet/desktop. Defaults to single column on mobile.
+// - .always_span_X - Spans X (1-12) columns across all devices.
+//
+// Styleguide 3.2.1 - Rows
+.row {
+  clear: both;
+  display: block;
+
+  &.section {
+    margin-bottom: 2rem;
+    @include respond-to(widescreens_and_tablets) {
+      margin-bottom: 4rem;
+    }
+
+    &:first-child {
+      margin-top: 2rem;
+
+      @include respond-to(widescreens_and_tablets) {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+// An aside is used for content that floats outside the normal
+// flow, such as a pullquote or sidebar. Use in conjunction with
+// `.span-X` to set width.
+//
+// .right - Floats the pullquote to the right (on wider screens).
+// .left - Floats the pullquote to the left (on wider screens).
+//
+// Styleguide 3.3.1 - Aside
+.aside {
+  width: 80%;
+  max-width: 650px;
+  font-weight: 400;
+  margin: 1em auto;
+
+  @include respond-to(widescreens_and_tablets) {
+    &.right {
+      float: right;
+      text-align: right;
+      margin: 1.6rem 0 1.6rem 1rem;
+    }
+
+    &.left {
+      float: left;
+      margin: 1.6rem 1rem 1.6rem 0;
+    }
+  }
+}
+
+// Centers contents of element.
+//
+// Styleguide 3.4.1 - Callout
+.callout {
+  text-align: center;
+}
+
+// // ------------------- doesn't belong here ------------------
+
+// Used to style "back to top" links.
+//
+// Styleguide 3.3.1 - Back to Top link
+.btn-top {
+  color: $dark-gray;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+// // ------------------- feature (deprecated) ------------------
+// .feature {
+//   position: relative;
+//   background: $off-white;
+//   color: #fff;
+//   text-align: center;
+//   margin: 0 0 0.35rem;
+//   padding: 0;
+//   overflow: hidden;
+//   background-size: cover;
+
+//   h1, h2 {
+//     font-family: $font-din-condensed;
+//     text-transform: uppercase;
+//     padding: 0 1rem;
+//     margin: 1rem 0 0;
+//   }
+
+//   p {
+//     color: #fff;
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     margin: 0 0 1rem;
+//   }
+
+//   .headline {
+//     display: table;
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     background: rgb(0,181,224);
+//     background: rgba(0,181,224,0.4);
+//     color: #fff;
+//     font-size: 1.5rem;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     padding: 0;
+//     z-index: 1;
+//     @include box-sizing(border-box);
+
+//     &.purple {
+//       background: rgb(80, 40, 98);
+//       background: rgba(80, 40, 98, 0.4);
+//     }
+
+//     &.yellow {
+//       background: rgb(222, 177, 39);
+//       background: rgba(222, 177, 39, 0.4);
+//     }
+
+//     &.red {
+//       background: rgb(180, 43, 37);
+//       background: rgba(180, 43, 37, 0.4);
+//     }
+
+//     &.teal {
+//       background: rgb(0, 169, 157);
+//       background: rgba(0, 169, 157, 0.4);
+//     }
+
+//     &.big {
+//       display: block;
+//       padding: 1em;
+
+//       @include respond-to(phones) {
+//         height: 100%;
+//       }
+//     }
+//   }
+
+//   .row {
+//     display: table-row;
+//     margin: 0 auto;
+//   }
+
+//   .headline-text {
+//     display: table-cell;
+//     vertical-align: middle;
+//     height: 170px;
+//     padding: 0 1em;
+//     overflow: hidden;
+
+//     h3 {
+//       font-size: 1.25rem;
+//     }
+//   }
+
+//   .block-cta {
+//     display: table-cell;
+//     vertical-align: middle;
+//     height: 130px;
+
+//     @include respond-to(tablets_and_phones) {
+//       height: 170px;
+//     }
+//   }
+
+//   .description {
+//     @include respond-to(widescreens_and_tablets) {
+//       text-align: left;
+//       padding: 1rem;
+//       width: 70%;
+//       max-width: 500px;
+//     }
+//   }
+
+//   .action {
+//     font-family: $font-din-condensed;
+//     text-transform: uppercase;
+
+
+//     @include respond-to(widescreens_and_tablets) {
+//       position: absolute;
+//       bottom: 0;
+//       right: 0;
+//       font-size: 1.5rem;
+//       text-align: right;
+//     }
+//   }
+// }
+
+// /** Style overrides based on block size **/
+// .feature {
+//   @include transition(height 0.25s);
+
+//   &.one-col.fixed {
+//     height: 450px;
+//     @include respond-to(tablets_and_phones) {
+//       height: 350px;
+//       margin-top: 0.35rem;
+//     }
+//     @include respond-to(phones) {
+//       height: 300px;
+//     }
+//   }
+
+//   &.three-col {
+//     .headline {
+//       display: block;
+//       position: relative;
+//       bottom: -140px;
+//       @include transition(bottom 0.25s);
+
+//       @include respond-to(tablets_and_phones) {
+//         bottom: 0px;
+//       }
+//     }
+
+//     a:hover ~.headline {
+//       bottom: 0;
+//       @include respond-to(tablets_and_phones) {
+//         bottom: 170px;
+//       }
+//     }
+//   }
+
+//   &.three-col.fixed {
+//     height: 300px;
+//     @include respond-to(tablets_and_phones) {
+//       height: 170px;
+//     }
+//     @include respond-to(phones) {
+//       width: 100%;
+//       max-width: none;
+//     }
+//   }
+// }

@@ -1,24 +1,36 @@
-/* DS Neue */
+/*    ____  _____    _   __              
+     / __ \/ ___/   / | / /__  __  _____ 
+    / / / /\__ \   /  |/ / _ \/ / / / _ \
+   / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+  /_____//____/  /_/ |_/\___/\__,_/\___/ 
+                                        */
 
+/** Declaration of global variables and mixins */
 @import "vendor/bourbon/bourbon";
 @import "globals/variables";
-@import "globals/helpers";
-
-@import "vendor/reset";
-@import "globals/base";
-@import "globals/layout";
-@import "globals/forms";
+@import "globals/mixins";
 @import "globals/din";
 
+/** Basic interface and layout building blocks */
+@import "vendor/reset";
+@import "_main/base";
 @import "_main/chrome";
-@import "_main/navigation";
+@import "_main/layout";
 
+/** Interface patterns */
+@import "_patterns/forms";
+@import "_patterns/inline";
+@import "_patterns/helpers";
+@import "_patterns/navigation";
+@import "_patterns/widgets";
+
+/** Supporting styles for JS features. */
+@import "_js/pin-to-top";
+@import "_js/toggle-video";
+
+/** Overrides for specific pages */
 @import "_pages/home";
 @import "_pages/content";
 @import "_pages/campaign";
 @import "_pages/errors";
 @import "_pages/jobs";
-
-@import "_features/pin-to-top";
-@import "_features/toggle-video";
-
