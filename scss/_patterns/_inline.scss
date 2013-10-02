@@ -42,3 +42,44 @@ img.bordered {
     }
   }
 }
+
+
+// List styles, applied to `ul` elements when wrapped in a `.copy-container`.
+//
+// .good - Checkmark for good things!
+// .bad - X for bad things! Boo!
+//
+// Styleguide x.1.2 - Bordered image style
+.copy-container {
+  ul {
+    list-style-type: none;
+
+    li {
+      padding-left: 1em;
+      text-indent: -0.65em;
+      margin-bottom: 0.15em;
+
+      &:before {
+        content: '\25A0';
+        position: relative;
+        left: -0.5em;
+        color: $light-gray;
+        font-size: 0.8em;
+      }
+    }
+    
+    &.bad {
+      li:before {
+        content: "\2718";
+        color: #dc9797;
+      }
+    }
+
+    &.good {
+      li:before {
+        content: "\2713";
+        color: #acdc97;
+      }
+    }
+  }
+}
