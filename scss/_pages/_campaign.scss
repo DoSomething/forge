@@ -1,6 +1,7 @@
 // common
 
 .campaign-section {
+  padding-bottom: 2rem;
   border-bottom: 1px solid $off-white;
 
   &:last-of-type {
@@ -9,8 +10,7 @@
 }
 
 // sections
-
-section.header {
+.campaign--header {
   position: relative;
   background: $off-white;
   background-position: center center;
@@ -72,7 +72,7 @@ section.header {
   }
 }
 
-section.headline {
+.campaign--headline {
   margin: 3rem 0;
   h1, h2, h3 {
     color: $off-black;
@@ -86,27 +86,3 @@ section.headline {
     }
   }
 }
-
-section.call-to-action {
-  background: $off-white;
-  padding: 1.6rem 1.6rem 0;
-
-  &>p {
-    text-align: center;
-    padding: 1rem;
-
-    &>span {
-      padding: 0 2rem;
-
-      @include respond-to(phones) {
-        display: block;
-        padding-bottom: 2rem;
-      }
-    }
-  }
-
-  .btn {
-    display: inline-block;
-  }
-}
-

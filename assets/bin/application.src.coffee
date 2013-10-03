@@ -140,8 +140,8 @@ $ = jQuery
 $ ->
   $(".js-toggle-video-link").click ->
     $(".js-toggle-video-link").hide()
-    $(".scroll-indicator-link").hide()
-    $(".js-toggle-video-container").html("<iframe src='http://www.youtube.com/embed/nz8mmznuasw?autoplay=1&amp;modestbranding=1&amp;autohide=1' frameborder='0' allowfullscreen></iframe>")
+    $(".scroll-indicator-link").remove()
+    $(".js-toggle-video-container").html($(".js-toggle-video-container").data("embed"))
     $(".js-toggle-video-container").show()
 
 

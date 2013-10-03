@@ -1,106 +1,38 @@
-.wallpaper-wrapper {
-  position: relative;
-  background: #eee;
-  background-size:cover;
-  overflow: hidden;
-  padding: 0;
-  
-  img.fullwidth {
-    display: block;
-    width: 100%;
-    margin: 0;
-  }
-
-  .caption {
-    position: absolute;
-    bottom: 0.5rem;
-    right: 1rem;
-    background: rgb(0,0,0);
-    background: rgba(0,0,0, 0.5);
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 0.5em 1em;
-  }
-}
-
-.wallpaper-content-center {
-  background: transparent;
+/** Top introductory banner on homepage */
+.full-width.wallpaper.ds-intro {
   color: #fff;
-  width: 100%;
-  text-align: center;
-  padding: 10rem 1rem 9rem;
-  @include respond-to(phones) {
-    padding: 50px 0;
+  background-image: url('images/bg-intro.jpg');
+  padding: 3rem 1rem 2rem;
+  @include respond-to(widescreens_and_tablets) {
+    padding: 5rem 1rem 4rem;
   }
 
-  .content-center {
-    max-width: 900px;
-  }
+  .page-width.with-copy {
+    h1, p {
+      max-width: 35rem;
+      text-align: left;
+    }
 
-  p {
-    color: #fff;
-    font-size: 1.5rem;
+    h1 {
+      font-family: $font-din-condensed;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      @include respond-to(widescreens_and_tablets) {
+        font-size: 2rem;
+        border-bottom: 4px solid rgb(255,255,255);
+        border-bottom: 4px solid rgba(255,255,255,0.5);
+        padding-bottom: 0.3em;
+      }
+    }
 
-    @include respond-to(phones) {
+    p {
       font-size: 1rem;
     }
   }
 }
 
-
-.ds-intro {
-  color: #fff;
-  background: url('images/bg-intro.jpg') no-repeat center center;
-  background-size: cover;
-
-  .content-center {
-    width: 580px;
-    padding: 72px 0 64px;
-    @include box-sizing(border-box);
-    @include transition(padding 0.5s);
-    @include respond-to(tablets_and_phones) {
-      padding: 42px;
-      width: auto;
-    }
-
-    @include respond-to(phones) {
-      padding: 32px;
-    }
-  }
-
-  h1 {
-    font-family: $font-din-condensed;
-    font-size: 2rem;
-    font-weight: 500;
-    text-align: left;
-    border-bottom: 4px solid rgb(255,255,255);
-    border-bottom: 4px solid rgba(255,255,255,0.5);
-    padding-bottom: 0.5em;
-
-    @include respond-to(phones) {
-      font-size: 1.5rem;
-      border-bottom: 0;
-      padding-bottom: 0.25em;
-    }
-  }
-
-  h2 {
-    font-family: $font-din-regular;
-    font-size: 1em;
-    font-weight: 400;
-    text-align: left;
-
-    margin-top: 0.5em;
-    padding-top: 0;
-    padding-bottom: 0.75em;
-    margin-bottom: 0;
-  }
-
-  p.legal {
-    color: rgba(255,255,255,0.5);
-  }
-}
-
+/** Sponsor logo */
 .homepage-sponsors {
   clear: both;
   width: 90%;

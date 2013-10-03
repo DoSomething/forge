@@ -54,6 +54,38 @@
   }
 }
 
+// Used to indicate that the user can scroll (useful on pages with huge content above
+// the fold). Scrolls to main content area on click.
+// ** Must be initialized with `window.initializeScrollIndicatorVisibility();` **
+//
+// Styleguide x.1.2 - Scroll Indicator Link
+.scroll-indicator-link {
+  position: fixed;
+  bottom: 3rem;
+  color: rgba(255,255,255,0.9);
+  z-index: 11;
+  width:100%;
+  text-align: center;
+  text-decoration: none;
+
+  &:after {
+    content: "\FFEC";
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    width: 100%;
+    font-size: 2rem;
+    @include animation(bounce 2s ease infinite alternate);
+  }
+}
+
+
+// Keeps an image at 100% width of the container.
+//
+// Styleguide x.1.4 - Full-Width Image
+img.full-width-img {
+  width: 100%;
+}
 
 // Hides content on phones. (Not mobile first so that we can ensure the `display: none` will always hide element.)
 //

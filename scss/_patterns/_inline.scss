@@ -43,6 +43,26 @@ img.bordered {
   }
 }
 
+// An pullquote draws attention to a particular quote from the
+// text. Generally used with an `aside` element.
+//
+// Styleguide 4.2.1 - Pullquote
+.pullquote {
+  color: $light-blue;
+  font-size: 1.5rem;
+  @include respond-to(tablets) {
+    font-size: 1.5rem;
+  }
+  @include respond-to(phones) {
+    width: 95%;
+    font-size: 1.25rem;
+  }
+
+  cite {
+    color: $light-gray;
+  }
+}
+
 
 // List styles, applied to `ul` elements when wrapped in a `.copy-container`.
 //
@@ -81,5 +101,26 @@ img.bordered {
         color: #acdc97;
       }
     }
+  }
+}
+
+// Responsive embedded videos.
+//
+// Styleguide 4.3 - Embeds
+.embed-container {
+  position: relative;
+  padding-bottom: 54%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }

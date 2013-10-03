@@ -13,6 +13,188 @@
 }
 
 
+// Banner with text and a link. Used for text-based call-to-actions.
+//
+// Styleguide 3.6.2 - Banners
+.banner {
+  background: $off-white;
+  padding: 2rem;
+
+  &>p {
+    text-align: center;
+    margin-bottom: 0;
+
+    &>span {
+      padding: 0 2rem;
+
+      @include respond-to(phones) {
+        display: block;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  .btn {
+    display: inline-block;
+  }
+}
+
+// Blocks featuring big background images and big text. Used for homepage &
+// campaigns page links.
+//
+// Styleguide 3.6.2 - Pagination
+.feature-block {
+  position: relative;
+  display: block;
+  background-size: cover;
+  overflow: hidden;
+  padding: 2%;
+
+  .headline {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    background: rgb(0,181,224);
+    background: rgba(0,181,224,0.4);
+    text-align: center;
+    padding: 1.5rem;
+    @include box-sizing(border-box);
+
+    h3 {
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    }
+
+    h4 {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    }
+
+    &.purple {
+      background: rgb(80, 40, 98);
+      background: rgba(80, 40, 98, 0.4);
+    }
+
+    &.yellow {
+      background: rgb(222, 177, 39);
+      background: rgba(222, 177, 39, 0.4);
+    }
+
+    &.red {
+      background: rgb(180, 43, 37);
+      background: rgba(180, 43, 37, 0.4);
+    }
+
+    &.teal {
+      background: rgb(0, 169, 157);
+      background: rgba(0, 169, 157, 0.4);
+    }
+  }
+
+  &.span_12 {
+    height: 200px;
+    @include respond-to(widescreens_and_tablets) {
+      height: 400px;
+    }
+    @include respond-to(phones) {
+      height: auto;
+      padding: 0;
+
+      .headline {
+        position: static;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &.span_4 {
+    height: 150px;
+    @include transition(height 0.5s);
+    @include respond-to(widescreens) {
+      height: 300px;
+    }
+    @include respond-to(widescreens_and_tablets) {
+      &:hover {
+        .headline {
+          left: 0; bottom: 0px;
+        }
+      }
+    }
+
+    .headline {
+      position: absolute;
+      left: 0; bottom: -150px;
+      padding: 0;
+      @include transition(bottom 0.25s);
+
+      .headline-row {
+        display: table-row;
+        height: 150px;
+        text-align: center;
+        
+        h4 {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 0.5rem 1.5rem;
+        }
+
+        .homepage-block-cta {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+      }
+    }
+  }
+
+  // campaigns page
+  .description {
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+
+    h2 {
+      font-family: $font-din-condensed;
+      margin-bottom: 0;
+    }
+
+    p {
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    @include respond-to(widescreens_and_tablets) {
+      text-align: left;
+      padding: 2rem;
+      width: 70%;
+      max-width: 500px;
+    }
+  }
+
+  .action {
+    font-family: $font-din-condensed;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 1rem 1rem;
+    margin: 0;
+    text-align: center;
+
+    @include respond-to(widescreens_and_tablets) {
+      position: absolute;
+      bottom: 0; right: 0;
+      text-align: right;
+    }
+  }
+}
+
+
 // Stylized SMS conversation bubbles. <mark>Requires a modifier class to specify which role is talking.</mark>
 //
 // game-ds - Represents the other party in the conversation, usually DoSomething.
@@ -113,8 +295,7 @@ footer.sponsor {
 
 footer.contact {
   text-align: center;
-  margin: 4rem 0 0 0;
-  padding: 2.6rem 0 1rem;
+  padding: 3rem 0 2rem;
   background: $light-gray;
 }
 

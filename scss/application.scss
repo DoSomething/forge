@@ -3,7 +3,7 @@
     / / / /\__ \   /  |/ / _ \/ / / / _ \
    / /_/ /___/ /  / /|  /  __/ /_/ /  __/
   /_____//____/  /_/ |_/\___/\__,_/\___/ 
-                                        */
+                                          */
 
 /** Declaration of global variables and mixins */
 @import "vendor/bourbon/bourbon";
@@ -16,6 +16,7 @@
 @import "_main/base";
 @import "_main/chrome";
 @import "_main/layout";
+@import "_main/animations";
 
 /** Interface patterns */
 @import "_patterns/forms";
@@ -30,7 +31,9 @@
 
 /** Overrides for specific pages */
 @import "_pages/home";
-@import "_pages/content";
 @import "_pages/campaign";
 @import "_pages/errors";
 @import "_pages/jobs";
+@import "_pages/internships";
+@import "_pages/about";
+@import "_pages/team";
