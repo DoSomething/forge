@@ -1,2 +1,2 @@
 require './app'
-run StyleGuide.new
+run Sinatra::Application

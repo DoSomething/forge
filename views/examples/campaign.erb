@@ -1,113 +1,9 @@
-<!DOCTYPE html>
+<% content_for :title do %>
+  Campaign Template | DoSomething.org
+<% end %>
 
-<html class="no-js">
-<head>
-  <meta charset="utf-8">
-  <title>DS Neue Campaigns</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-  <link rel="stylesheet" href="/application.css" media="screen, projection" type="text/css" />
-  <link rel="stylesheet" href="/campaign.css" media="screen, projection" type="text/css" />
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
-  <!--[if lt IE 9]>
-    <link rel="stylesheet" href="/ie.css" type="text/css" />
-    <script src="/ie/html5.min.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=193555714029599";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<nav id="top" class="utility">
-  <div class="page-width">
-    <a href="#" class="utility-link js-menu-toggle">Menu</a>
-    <ul class="utility-links">
-      <li class="search">
-      <form action="#">
-        <input name="query" type="search">
-      </form>
-      </li>
-      <li><a class="utility-link" href="#">Help</a></li>
-      <li><a class="utility-link" href="#">Sign In</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="masthead-wrapper">
-  <nav class="masthead">
-    <a class="logo" href="http://www.dosomething.org"><img src="/images/ds-logo.png" alt="DoSomething.org"></a>
-    <ul class="main-menu">
-      <li>
-        <a class="menu-link" href="/about">About Us</a>
-        <ul class="dropdown">
-          <li><a href="/about/who-we-are">Who We Are</a></li>
-          <li><a href="/about/why-become-a-member">Why Become a Member?</a></li>
-          <li><a href="/about/team">Staff Bios</a></li>
-          <li><a href="/about/team/jobs">Jobs</a></li>
-          <li><a href="/about/team/internships">Internships</a></li>
-          <li><a href="/about/international">International</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/campaigns">Campaigns</a>
-        <ul class="dropdown">
-          <li><a href="/women">25,000 Women</a></li>
-          <li><a href="http://pics.dosomething.org">Pics for Pets</a></li>
-          <li><a href="/hunt">The Hunt</a></li>
-          <li><a href="/iheartdad">I Heart Dad</a></li>
-          <li><a href="/undocumented">Undocumented</a></li>
-          <li><a href="/thumbwars">Thumb Wars</a></li>
-          <li><a href="/puppy">Puppy Text</a></li>
-          <li><a href="/baby">Pregnancy Text</a></li>
-          <li><a href="/band">Band Together</a></li>
-          <li><a href="/past-campaigns">Past Campaigns</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/causes">Causes</a>
-        <ul class="dropdown">
-          <li><a href="/cause/animals">Animals</a></li>
-          <li><a href="/cause/bullying-and-violence">Bullying &amp; Violence</a></li>
-          <li><a href="/cause/disasters">Disasters</a></li>
-          <li><a href="/cause/discrimination">Discrimination</a></li>
-          <li><a href="/cause/education">Education</a></li>
-          <li><a href="/cause/environment">Environment</a></li>
-          <li><a href="/cause/homelessness-and-poverty">Homelessness &amp; Poverty</a></li>
-          <li><a href="/cause/human-rights">Human Rights</a></li>
-          <li><a href="/cause/our-troops">Our Troops</a></li>
-          <li><a href="/cause/physical-and-mental-health">Physical &amp; Mental Health</a></li>
-          <li><a href="/cause/sex-and-relationships">Sex &amp; Relationships</a></li>
-          <li><a href="/resources">All Resources</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/awesome-things">Awesome-Things</a>
-        <ul class="dropdown">
-          <li><a href="/scholarships">Scholarships</a></li>
-          <li><a href="/petitions">Petitions</a></li>
-          <li><a href="/quizzes">Quizzes</a></li>
-          <li><a href="/clubs">Clubs</a></li>
-          <li><a href="/awards">Do Something Awards</a></li>
-          <li><a href="/grants">Grants</a></li>
-          <li><a href="/bootcamp">Boot Camp</a></li>
-          <li><a href="/blog">Blog Center</a></li>
-          <li><a href="/projects">Projects</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</div>
-
-<div role="main" class="wrapper">
+<div class="page-width">
   <section class="campaign--header" id="header">
     <img class="header-logo" alt="Campaign Logo" src="/images/placeholders/logo-project.png" />
     <p class="header-date">Ends July 29th, 2013</p>
@@ -443,7 +339,7 @@
     </div>
   </section>
 
-  <footer class="sponsor full-width" id="sponsor">
+  <footer class="row section sponsor" id="sponsor">
     <h3>Sponsored by:</h3>
 
     <p>
@@ -457,82 +353,3 @@
 <footer class="contact" id="footer">
   <p>Questions? E-mail <a href="mailto:help@dosomething.org">help@dosomething.org</a>!</p>
 </footer>
-
-<!--
-Edvisors tracking pixel
-@todo - Ideally this will be handled in a more automated fashion.  This
-can be achieved by Stashing the Edvisor offer id on the campaign and
-using a a standardize (but themable) webform confirmation page.
-@todo - add a http referrer check as well
--->
-<!-- Offer Conversion: DoSomething.org -->
-<iframe style="display: none;" src="http://tracking.edvisors.com/aff_l?offer_id=98" scrolling="no" frameborder="0" width="1" height="1"></iframe>
-<!-- // End Offer Conversion -->
-
-<div class="footer-wrapper">
-  <footer class="main">
-    <div class="column">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="/help">Help Center</a></li>
-        <li><a href="/tipsandtools/hotlines">Crisis Hotlines</a></li>
-        <li><a href="http://www.facebook.com/dosomething">Like Us on Facebook</a></li>
-        <li><a href="https://twitter.com/#!/dosomething">Follow Us on Twitter</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Show Your Love</h4>
-      <ul>
-        <li><a href="http://store.dosomething.org/">Wear Your Love</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/rss">RSS Feed</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Popular Stuff</h4>
-      <ul>
-        <li><a href="/awards">Do Something Awards</a></li>
-        <li><a href="/scholarships">Scholarships</a></li>
-        <li><a href="/clubs">Clubs</a></li>
-        <li><a href="/grants">Grants</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Our Peeps</h4>
-      <ul>
-        <li><a href="//www.tmiagency.org/">TMI Agency</a></li>
-        <li><a href="/about/partners">Partners</a></li>
-        <li><a href="/about/team/board">Board of Directors</a></li>
-        <li><a href="/yac">Youth Advisory Council</a></li>
-        <li><a href="/ds-virtual">#DSVirtual</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Random Stuff</h4>
-      <ul>
-        <li><a href="/faqs">FAQ</a></li>
-        <li><a href="/sitemap">Sitemap</a></li>
-        <li><a href="/about/stats">Mind-Blowing Stats</a></li>
-        <li><a href="/our-sexy-financials-and-impact">Sexy Financials and Impact</a></li>
-        <li><a href="/oldpeople">Old People</a></li>
-        <li><a href="/about/privacy">Privacy Policy</a></li>
-        <li><a href="/about/terms-of-service">Terms of Service</a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="/application.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    window.initializeLocationFinder();
-  });
-</script>
-
-<!--[if lt IE 9]>
-  <script src="/ie/rem.min.js"></script>
-<![endif]-->
-</body>
-</html>

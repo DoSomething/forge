@@ -44,9 +44,11 @@
 
 .with-copy {
   h1, h2, h3, h4, p, form, ul, ol {
-    max-width: 40rem;
+    max-width: 37rem;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   h1, h2 {
@@ -88,50 +90,34 @@
 
 // on tablet/desktop, apply column widths based on grid
 @include respond-to(widescreens_and_tablets) {
-  .span_1 { width: 8.33333333333%; }
-  .span_2 { width: 16.6666666667%; }
-  .span_3 { width: 25%; }
-  .span_4 { width: 33.3333333333%; }
-  .span_5 { width: 41.6666666667%; }
-  .span_6 { width: 50%; }
-  .span_7 { width: 58.3333333333%; }
-  .span_8 { width: 66.6666666667%; }
-  .span_9 { width: 75%; }
-  .span_10 { width: 83.3333333333%; }
-  .span_11 { width: 91.6666666667%; }
-  .span_12 { width: 100%; }
+  .column {
+    margin-left: 1%;
 
-  // adds gutters between columns if applied to parent
-  .gutters {
-    .column {
-      margin-left: 1%;
-
-      &:first-child { 
-        margin-left: 0; 
-      }
+    &:first-child { 
+      margin-left: 0; 
     }
-
-    .row {
-      margin-bottom: 1%;
-
-      &:first-child { 
-        margin-top: 1%; 
-      }
-    }
-
-    .span_1 { width: 7.41666666667%; }
-    .span_2 { width: 15.8333333333%; }
-    .span_3 { width: 24.25%; }
-    .span_4 { width: 32.6666666667%; }
-    .span_5 { width: 41.0833333333; }
-    .span_6 { width: 49.5%; }
-    .span_7 { width: 57.9166666667%; }
-    .span_8 { width: 66.3333333333%; }
-    .span_9 { width: 74.75%; }
-    .span_10 { width: 83.166666667%; }
-    .span_11 { width: 91.583333333%; }
-    .span_12 { width: 100%; }
   }
+
+  .row {
+    margin-bottom: 1%;
+
+    &:first-child { 
+      margin-top: 1%; 
+    }
+  }
+
+  .span_1 { width: 7.41666666667%; }
+  .span_2 { width: 15.8333333333%; }
+  .span_3 { width: 24.25%; }
+  .span_4 { width: 32.6666666667%; }
+  .span_5 { width: 41.0833333333; }
+  .span_6 { width: 49.5%; }
+  .span_7 { width: 57.9166666667%; }
+  .span_8 { width: 66.3333333333%; }
+  .span_9 { width: 74.75%; }
+  .span_10 { width: 83.166666667%; }
+  .span_11 { width: 91.583333333%; }
+  .span_12 { width: 100%; }
 }
 
 // Rows for grid layout.
@@ -167,7 +153,7 @@
 //
 // Styleguide 3.3.1 - Aside
 .aside {
-  max-width: 650px;
+  max-width: 620px;
   font-weight: 400;
   margin: 1em auto;
 
@@ -223,3 +209,12 @@
 .callout {
   text-align: center;
 }
+
+
+// Show grid guidelines.
+//
+// Styleguide 3.4.1 - Grid Helper
+// .page-width, .row {
+//   background: url('images/grid.png') repeat-y top center;
+//   background-size: 100% auto;
+// }
