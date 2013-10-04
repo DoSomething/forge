@@ -54,7 +54,7 @@
   }
 }
 
-// 12-column grid for layout. Apply `.gutters` to parent container to enable gutters between columns.
+// 12-column grid for layout. Columns have 2% padding and 1% gutters.
 //
 // - .span_X - Spans X (1-12) columns on tablet/desktop. Defaults to single column on mobile.
 // - .always_span_X - Spans X (1-12) columns across all devices.
