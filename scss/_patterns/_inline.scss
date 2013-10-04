@@ -64,13 +64,13 @@ img.bordered {
 }
 
 
-// List styles, applied to `ul` elements when wrapped in a `.copy-container`.
+// List styles, applied to `ul` elements when wrapped in a `.with-copy`.
 //
 // .good - Checkmark for good things!
 // .bad - X for bad things! Boo!
 //
 // Styleguide x.1.2 - Bordered image style
-.copy-container {
+.with-copy {
   ul {
     list-style-type: none;
 

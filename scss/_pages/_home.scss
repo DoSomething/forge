@@ -34,10 +34,6 @@
 
 /** Sponsor logo */
 .homepage-sponsors {
-  clear: both;
-  width: 90%;
-  margin: 0 auto;
-
   h4 {
     color: $light-gray;
     text-align: center;
@@ -59,7 +55,7 @@
     display: inline-block;
     width: 100px;
     height: 70px;
-    margin: 0 1em;
+    margin: 0 1rem;
     @include respond-to(phones) {
       background-size: 175px 160px;
       width: 50px;
