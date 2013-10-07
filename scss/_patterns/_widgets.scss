@@ -1,21 +1,6 @@
-// Used for pagination links (1, 2, 3, next, etc.).
-//
-// Styleguide 3.6.2 - Pagination
-.pager {
-  clear: both;
-  text-align: center;
-  margin: 2rem;
-
-  li {
-    display: inline-block;
-    margin: 1rem 0;
-  }
-}
-
-
 // Banner with text and a link. Used for text-based call-to-actions.
 //
-// Styleguide 3.6.2 - Banners
+// Styleguide 4.4.1 - Banners
 .banner {
   background: $off-white;
   padding: 2rem;
@@ -42,7 +27,7 @@
 // Blocks featuring big background images and big text. Used for homepage &
 // campaigns page links.
 //
-// Styleguide 3.6.2 - Pagination
+// Styleguide 4.4.2 - Feature Blocks
 .feature-block {
   position: relative;
   display: block;
@@ -200,7 +185,7 @@
 // game-ds - Represents the other party in the conversation, usually DoSomething.
 // game-user - Represents the user in the conversation flow.
 //
-// Styleguide 5.2 - Conversation Bubbles
+// Styleguide 4.4.3 - Conversation Bubbles
 .game-conversation {
   clear: both;
   position: relative;
@@ -246,7 +231,7 @@
 
 // Image gallery with thumbnails.
 //
-// Styleguide 5.3 - Gallery Module
+// Styleguide 4.4.4 - Image Gallery
 .gallery-image {
   text-align: center;
 
@@ -301,7 +286,7 @@ footer.contact {
 
 // Vertical timeline.
 //
-// Styleguide 5.4 - Timeline Module
+// Styleguide 4.4.5 - Timeline Module
 .timeline-divider {
   color: $light-gray;
   margin-top: 4px;
@@ -359,5 +344,31 @@ footer.contact {
         width: 60%;
       }
     }
+  }
+}
+
+
+// Used to indicate that the user can scroll (useful on pages with huge content above
+// the fold). Scrolls to main content area on click.
+// ** Must be initialized with `window.initializeScrollIndicatorVisibility();` **
+//
+// Styleguide 4.4.6 - Scroll Indicator Link
+.scroll-indicator-link {
+  position: fixed;
+  bottom: 3rem;
+  color: rgba(255,255,255,0.9);
+  z-index: 11;
+  width:100%;
+  text-align: center;
+  text-decoration: none;
+
+  &:after {
+    content: "\FFEC";
+    position: absolute;
+    bottom: -2.5rem;
+    left: 0;
+    width: 100%;
+    font-size: 2rem;
+    @include animation(bounce 2s ease infinite alternate);
   }
 }

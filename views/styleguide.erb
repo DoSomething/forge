@@ -1,17 +1,40 @@
 <div class="page-width gutters">
   <div class="column span_4">
-    <div id="js-pin-to-top-anchor"></div>
-    <nav class="sidebar js-pin-to-top">
-      <ul>
-        <li><a href="#fonts-and-colors" class="js-jump-scroll">Colors &amp; Fonts</a></li>
-        <li><a href="#typography" class="js-jump-scroll">Typography</a></li>
-        <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
-        <li><a href="#widgets" class="js-jump-scroll">Widgets</a></li>
-        <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
-        <li><a href="#brand" class="js-jump-scroll">Our Brand</a></li>
-      </ul>
-    </nav>
-    &nbsp;
+    <div class="row section">
+      <div id="js-pin-to-top-anchor"></div>
+      <nav class="tabs vertical js-pin-to-top">
+        <ul>
+          <li>
+            <a href="#fonts-and-colors" class="js-jump-scroll">Colors &amp; Fonts</a>
+          </li>
+          <li>
+            <a href="#typography" class="js-jump-scroll">Typography</a>
+          </li>
+          <li>
+            <a href="#layout" class="js-jump-scroll">Layout</a>
+            <ul>
+              <li><a href="#containers" class="js-jump-scroll">Page Containers</a></li>
+              <li><a href="#grid" class="js-jump-scroll">Grid Elements</a></li>
+              <li><a href="#alternates" class="js-jump-scroll">Alternate Containers</a></li>
+              <li><a href="#modifiers" class="js-jump-scroll">Layout Modifiers</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#patterns" class="js-jump-scroll">Patterns</a>
+            <ul>
+              <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+              <li><a href="#inline" class="js-jump-scroll">Inline</a></li>
+              <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
+              <li><a href="#widgets" class="js-jump-scroll">Widgets</a></li>
+              <li><a href="#helpers" class="js-jump-scroll">Helpers</a></li>
+            </ul>
+          </li>
+          <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
+          <li><a href="#brand" class="js-jump-scroll">Our Brand</a></li>
+        </ul>
+      </nav>
+      &nbsp;
+    </div>
   </div>
 
   <div class="column span_8">
@@ -22,12 +45,12 @@
 
       <p>Check out these full-page mocks to see Neue in action:</p>
       <ul>
-        <li><a href="/examples/index">Homepage</a></li>
-        <li><a href="/examples/blog.html">Blog Post</a></li>
-        <li><a href="/examples/campaigns.html">Campaigns List</a></li>
-        <li><a href="/examples/campaign.html">Campaign Template</a></li>
-        <li>Static pages: <a href="/examples/about">About Us</a>, <a href="/examples/jobs">Jobs</a>, <a href="/examples/internships">Internships</a>, <a href="/examples/team">Team</a>, <a href="/examples/help">Help</a></li>
-        <li>Error pages: <a href="/examples/404">404</a>, <a href="/examples/500.html">500</a></li>
+        <li><a href="/example/home">Homepage</a></li>
+        <li><a href="/example/blog">Blog Post</a></li>
+        <li><a href="/example/campaigns">Campaigns List</a></li>
+        <li><a href="/example/campaign">Campaign Template</a></li>
+        <li>Static pages: <a href="/example/about">About Us</a>, <a href="/example/jobs">Jobs</a>, <a href="/example/internships">Internships</a>, <a href="/example/team">Team</a>, <a href="/example/help">Help</a></li>
+        <li>Error pages: <a href="/example/404">404</a>, <a href="/example/500.html">500</a></li>
       </ul>
     </section>
 
@@ -186,7 +209,7 @@
       <h2 id="layout">Layout</h2>
 
       <div class="row section">
-        <h4>3.1 Page Containers</h4>
+        <h4 id="containers">3.1 Page Containers</h4>
         <p>These are outer wrappers for the grid layout.</p>
         <p></p>
         <% styleguide_block_without_preview '3.1.1 - Full-width Container' do %>
@@ -203,7 +226,7 @@
       </div>
 
       <div class="row section">
-        <h4>3.2 Grid Elements</h4>
+        <h4 id="grid">3.2 Grid Elements</h4>
         <p>Neue is based on a fluid 12-column grid. Each column is separated by a 1% gutter, and has 2% padding on the inside of each column. A column (or zone) can span any number of grid columns, but each row must be composed of 12 columns for the layout to work.</p>
         <style>
           .styleguide-element .column {
@@ -474,7 +497,7 @@
       </div>
 
       <div class="row section">
-        <h4>3.3 Alternate Containers</h4>
+        <h4 id="alternates">3.3 Alternate Containers</h4>
         <style>
           .styleguide-example .aside {
             background: #f4f4f4;
@@ -485,7 +508,7 @@
           }
         </style>
         <% styleguide_block  '3.3.1 - Aside' do %>
-          <div class="aside $modifier_class">
+          <div class="aside $modifier_class span_6">
             &hellip;
           </div>
         <% end %>
@@ -516,7 +539,7 @@
       </div>
 
       <div class="row section">
-        <h4>3.4 Layout Modifiers</h4>
+        <h4 id="modifiers">3.4 Layout Modifiers</h4>
         <p>Use these classes to adjust the apperance of a container's content.</p>
 
         <% styleguide_block  '3.4.1 - Callout' do %>
@@ -536,11 +559,283 @@
   </section>
 
   <section class="row section campaign-section">
-    <h2 id="widgets">Widgets</h2>
+    <h2 id="patterns">Patterns</h2>
+
+    <div class="row section">
+      <h4 id="forms">4.1 Forms</h4>
+
+      <% styleguide_block  '4.1.1 - Form Labels' do %>
+        <label>Label</label>
+        <input type="text">
+      <% end %>
+
+      <% styleguide_block  '4.1.2 - Text Input Fields' do %>
+        <input type="text" class="$modifier_class">
+        <input type="text" class="$modifier_class" placeholder="with placeholder directions">
+      <% end %>
+
+      <% styleguide_block  '4.1.3 - Search Fields' do %>
+        <input type="search" placeholder="Search...">
+      <% end %>
+
+      <% styleguide_block  '4.1.4 - Text Area Fields' do %>
+        <textarea name="textarea">Write something here</textarea>
+      <% end %>
+
+      <% styleguide_block  '4.1.5 - Buttons' do %>
+        <a class="btn $modifier_class">Example Button</a>
+      <% end %>
+
+      <% styleguide_block  '4.1.6 - Select Boxes' do %>
+        <select class="$modifier_class">
+          <option>Awesome Things</option>
+          <option>Popular Things</option>
+          <option>Random Things</option>
+        </select>
+      <% end %>
+
+      <% styleguide_block  '4.1.7 - Loading Spinner' do %>
+        <div class="spinner"></div>
+      <% end %>
+
+      <% styleguide_block '4.1.8 - Status Banners' do %>
+        <div class="messages $modifier_class">There's something I need to tell you.</div>
+      <% end %>
+    </div>
+
+    <div class="row section">
+      <h4 id="inline">4.2 Inline</h4>
+
+      <% styleguide_block  '4.2.1 - Figures' do %>
+        <figure>
+          <img src="http://www.placekitten.com/g/600/400" alt="a kitten">
+          <figcaption>This is a kitten. It is not to be trusted.</figcaption>
+        </figure>
+      <% end %>
+
+      <% styleguide_block  '4.2.2 - Bordered image style' do %>
+        <img class="bordered" src="http://www.placekitten.com/g/300/300" alt="another kitten">
+      <% end %>
+
+      <% styleguide_block  '4.2.3 - Legal Text' do %>
+        <p class="legal">By clicking submit, you agree to sell your soul to the lorem ipsum dolor sit amet.</p>
+      <% end %>
+
+      <% styleguide_block  '4.2.4 - Pullquote' do %>
+        <p class="pullquote">Lorem ipsum dolor sit aquote.</p>
+      <% end %>
+
+      <div class="with-copy">
+        <% styleguide_block  '4.2.5 - List styles' do %>
+          <ul class="$modifier_class">
+            <li>One item</li>
+            <li>Two item</li>
+            <li>Three item</li>
+          </ul>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="row section">
+      <h4 id="navigation">4.3 Navigation</h4>
+
+      <% styleguide_block  '4.3.1 - Breadcrumbs' do %>
+        <nav class="breadcrumbs">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Category</a></li>
+          </ul>
+        </nav>
+      <% end %>
+
+      <% styleguide_block  '4.3.2 - Tabs' do %>
+        <nav class="tabs $modifier_class">
+          <ul>
+            <li><a class="active" href="#">Section One</a></li>
+            <li><a href="#">Section Two</a></li>
+            <li><a href="#">Section Three</a></li>
+          </ul>
+        </nav>
+      <% end %>
+    </div>
+
+    <div class="row section">
+      <h4 id="widgets">4.4 Widgets</h4>
+        
+      <% styleguide_block '4.4.1 - Banners' do %>
+        <section class="row section banner">
+          <p>
+            <span>Do the things! Win the points!</span>
+            <a class="left btn primary large" href="#">Do This</a>
+          </p>
+        </section>
+      <% end %>
+
+      <% styleguide_block '4.4.2 - Feature Blocks' do %>
+          <div class="row">
+            <div class="column span_12 feature-block fixed" style="background-image: url('/images/placeholders/feature.jpg');">
+            <a class="full-link" href="/bully"><span>Do This</span></a>
+            <div class="headline big blue">
+              <h3>Invite friends to stand up to bullying with the Bully Text.</h3>
+              <a href="/bully" class="btn primary large">Do This</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row feature-block" style="background-image: url('/images/placeholders/project2.jpg');">
+          <a href="#" class="full-link"><span>Do This</span></a>
+          <div class="description">
+            <h2>Birthday Mail</h2>
+            <p>Create an awesome birthday card for a child or teen experiencing homelessness.</p>
+          </div>
+          <p class="action"><a href="#" class="btn primary medium">Do This</a></p>
+        </div>
+      <% end %>
+
+      <% styleguide_block '4.4.3 - Conversation Bubbles' do %>
+        <div class="game-conversation $modifier_class">
+          <p>Girl, you got any 'fee?</p>
+        </div>
+      <% end %>
+
+      <% styleguide_block '4.4.4 - Image Gallery' do %>
+        <div class="gallery-image">
+          <img src="http://www.placekitten.com/g/960/500" alt="">
+        </div>
+
+        <ul class="gallery-thumbs">
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/220/220" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/240/240" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/250/250" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/260/260" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/270/270" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/400/400" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/300/300" alt="" /></a>
+          </li>
+          <li class="gallery-thumb">
+            <a href="#" title=""><img src="http://www.placekitten.com/g/320/320" alt="" /></a>
+          </li>
+        </ul>
+      <% end %>
+
+      <% styleguide_block '4.4.5 - Timeline Module' do %>
+        <div class="timeline-divider">AUG</div>
+        <ul class="timeline">
+          <li class="event">
+            <div class="event-wrapper">
+              <a href="#" class="full-link"><span>Pics For Pets</span></a>
+              <div class="title full-link-delegate"><a href="#">Pics For Pets</a></div>
+              <div class="description">You helped homeless pets get adopted by sharing pics.</div>
+            </div>
+          </li>
+
+          <li class="event">
+            <div class="event-wrapper">
+              <a href="#" class="full-link"><span>Undocumented For A Day</span></a>
+              <div class="title full-link-delegate"><a href="#">Undocumented For A Day</a></div>
+              <div class="description">45,146 people took the Undocumented For A Day experience to learn about the struggles of undocumented immigrants.</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="timeline-divider">JUL</div>
+        <ul class="timeline">
+          <li class="event">
+            <div class="event-wrapper">
+              <a href="#" class="full-link"><span>Pregnancy Text</span></a>
+              <div class="title full-link-delegate"><a href="#">Pregnancy Text</a></div>
+              <div class="description">You got your friends talking about teen pregnancy and over 120,000 phone babies were born.</div>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+
+      <% styleguide_block '4.4.6 - Scroll Indicator Link' do %>
+
+      <% end %>
+    </div>
+
+    <div class="row section">
+      <h4 id="helpers">4.5 Helpers</h4>
+      <p>Helpers modify the behavior of an object.</p>
+      
+      <style>
+        .kss-no-padding .styleguide-element {
+          padding: 0;
+        }
+
+        .kss-dark .styleguide-element {
+          background: #666;
+        }
+
+        .kss-min-height .styleguide-element {
+          min-height: 300px;
+        }
+      </style>
+
+
+      <div class="kss-no-padding kss-dark kss-min-height">
+        <% styleguide_block  '4.5.1 - Full Container Link' do %>
+          <a href="#" class="full-link $modifier_class"><span>Do This</span></a>
+        <% end %>
+      </div>
+      
+      <div class="kss-no-padding">
+        <% styleguide_block  '4.5.2 - Full-Width Image' do %>
+          <img src="http://www.placekitten.com/g/500/100" alt="" class="full-width-img">
+        <% end %>
+      </div>
+
+
+      <% styleguide_block_without_preview  '4.5.3 - Hide on Phones' do %>
+        <div class="is-hidden-on-phones">
+          
+        </div>
+      <% end %>
+
+      <% styleguide_block_without_preview  '4.5.4 - Hide without JS' do %>
+        <div class="no-js-hide-feature">
+          
+        </div>
+      <% end %>
+    </div>
   </section>
 
   <section class="row section campaign-section">
     <h2 id="animation">Animation</h2>
+    
+    <% styleguide_block  '5.1 - Fade up on Scroll' do %>
+      <div class="js-fade-up-on-scroll">
+        <h1>Here I am!</h1>
+      </div>
+    <% end %>
+
+    <% styleguide_block  '5.2 - Bounce' do %>
+      <div class="animation-bounce">
+        <h1>&#9632;</h1>
+      </div>
+    <% end %>
   </section>
 
   <section class="row section campaign-section">

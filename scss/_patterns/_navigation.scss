@@ -1,6 +1,6 @@
-// Used to indicate position on sub-pages. This helps the user orient theirself.
+// Used to indicate position on sub-pages. This helps the user orient themself.
 //
-// Styleguide 6.1 - Breadcrumbs
+// Styleguide 4.3.1 - Breadcrumbs
 nav.breadcrumbs {
   margin: 1.65rem;
   text-align: center;
@@ -33,11 +33,52 @@ nav.breadcrumbs {
 }
 
 
-// Used to navigate between sections/panels within a section.
+// Used to navigate between sections/panels/pages within an interface. Apply `.active` class to
+// link element for "active" state.
 //
 // .vertical - Vertical tab layout (for use in a sidebar).
 //
-// Styleguide 6.1 - Tabs
+// Styleguide 4.3.2 - Tabs
 .tabs {
-  
+  padding: 1.65rem 0;
+  font-size: 1.1rem;
+  overflow: hidden;
+
+  ul {
+    font-size: 0.9em;
+    margin: 1rem;
+  }
+
+  li {
+    float: left;
+    margin: 0 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      border: 2px solid $light-blue;
+      border-radius: $lg-border-radius;
+    }
+  }
+
+  &.vertical {
+    font-size: 1.1em; /* decreasing font size, starting at 1em */
+
+    ul {
+      font-size: 0.9em;
+      margin: 0.5rem 1rem 1rem;
+    }
+
+    li {
+      float: none;
+      margin: 0.5rem 0; 
+    }
+  }
 }

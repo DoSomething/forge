@@ -1,6 +1,6 @@
 // Style for images in content sections.
 //
-// Styleguide x.1.1 - Figures
+// Styleguide 4.2.1 - Figures
 figure {
   padding: 2.5% 0;
 
@@ -18,7 +18,7 @@ figcaption {
 
 // Stylized "polaroid" image, with a thick border and subtle shadow.
 //
-// Styleguide x.1.2 - Bordered image style
+// Styleguide 4.2.2 - Bordered image style
 img.bordered {
   border: 5px solid #fff;
   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
@@ -28,7 +28,7 @@ img.bordered {
 
 // Legal text (a.k.a. the fine print).
 //
-// Styleguide 5.1 - Legal Text
+// Styleguide 4.2.3 - Legal Text
 .legal {
   font-size: 0.75rem;
   color: $light-gray;
@@ -46,7 +46,7 @@ img.bordered {
 // An pullquote draws attention to a particular quote from the
 // text. Generally used with an `aside` element.
 //
-// Styleguide 4.2.1 - Pullquote
+// Styleguide 4.2.4 - Pullquote
 .pullquote {
   color: $light-blue;
   font-size: 1.5rem;
@@ -69,7 +69,7 @@ img.bordered {
 // .good - Checkmark for good things!
 // .bad - X for bad things! Boo!
 //
-// Styleguide x.1.2 - Bordered image style
+// Styleguide 4.2.5 - List styles
 .with-copy {
   ul {
     list-style-type: none;
@@ -106,7 +106,7 @@ img.bordered {
 
 // Responsive embedded videos.
 //
-// Styleguide 4.3 - Embeds
+// Styleguide 4.2.6 - Embeds
 .embed-container {
   position: relative;
   padding-bottom: 54%;
