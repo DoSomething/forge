@@ -29,6 +29,4 @@ tmp/
 
 # Ignore build files
 assets/bin/
-assets/*.js
-assets/*.css
 assets/*.map
