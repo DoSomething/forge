@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 	        sourceMapIn: 'assets/bin/neue.js.map', // input sourcemap from a previous compilation
 				},
 				files: {
-					'assets/application.js': ['coffee/vendor/**/*.js', 'assets/bin/application.js']
+					'assets/neue.js': ['coffee/vendor/**/*.js', 'assets/bin/neue.js']
 				}
 			}
 		}
