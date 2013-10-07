@@ -52,7 +52,8 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-	grunt.registerTask('default', ['sass:dist', 'coffee:compile', 'uglify:js', 'watch']);
+	grunt.registerTask('build', ['sass:dist', 'coffee:compile', 'uglify:js'])
+	grunt.registerTask('default', ['build', 'watch']);
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-concat');
