@@ -184,21 +184,29 @@
 
     <section class="row section campaign-section">
       <h2 id="layout">Layout</h2>
-      <% styleguide_block_without_preview '3.1.1 - Full-width Container' do %>
-        <div class="full-width $modifier_class">
-          <!-- content -->
-        </div>
-      <% end %>
 
-      <% styleguide_block_without_preview '3.1.2 - Page-width Container' do %>
-        <div class="page-width $modifier_class">
-          <!-- content -->
-        </div>
-      <% end %>
+      <div class="row section">
+        <h4>3.1 Page Containers</h4>
+        <p>These are outer wrappers for the grid layout.</p>
+        <p></p>
+        <% styleguide_block_without_preview '3.1.1 - Full-width Container' do %>
+          <div class="full-width $modifier_class">
+            <!-- content -->
+          </div>
+        <% end %>
 
-      <% styleguide_block_without_modifiers '3.2.1 - Columns' do %>
+        <% styleguide_block_without_preview '3.1.2 - Page-width Container' do %>
+          <div class="page-width $modifier_class">
+            <!-- content -->
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row section">
+        <h4>3.2 Grid Elements</h4>
+        <p>Neue is based on a fluid 12-column grid. Each column is separated by a 1% gutter, and has 2% padding on the inside of each column. A column (or zone) can span any number of grid columns, but each row must be composed of 12 columns for the layout to work.</p>
         <style>
-          .example_cols .column {
+          .styleguide-element .column {
             background: #f4f4f4;
             border: 1px solid #ddd;
             color: #666;
@@ -206,205 +214,394 @@
             padding: 0.5rem 0;
           }
         </style>
+        <div class="styleguide-example">
+          <% styleguide_block_custom_example '3.2.1 - Columns' %>
+          <div class="styleguide-element">
+            <div class="row">
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+              <div class="column span_1">
+                1
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span_2">
+                2
+              </div>
+              <div class="column span_2">
+                2
+              </div>
+              <div class="column span_2">
+                2
+              </div>
+              <div class="column span_2">
+                2
+              </div>
+              <div class="column span_2">
+                2
+              </div>
+              <div class="column span_2">
+                2
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span_3">
+                span_3
+              </div>
+              <div class="column span_3">
+                span_3
+              </div>
+              <div class="column span_3">
+                span_3
+              </div>
+              <div class="column span_3">
+                span_3
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span_4">
+                span_4
+              </div>
+              <div class="column span_4">
+                span_4
+              </div>
+              <div class="column span_4">
+                span_4
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span_6">
+                span_6
+              </div>
+              <div class="column span_6">
+                span_6
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span_2">
+                2
+              </div>
+              <div class="column span_8">
+                span_8
+              </div>
+              <div class="column span_2">
+                2
+              </div>
+            </div>
+            <div class="row">
+              <div class="column span_4">
+                2
+              </div>
+              <div class="column span_8">
+                span_6
+              </div>
+            </div>
+          </div>
 
-        <div class="row example_cols">
-          <div class="column span_1">
-            1
+          <div class="styleguide-element">
+            <span class="styleguide-modifier-name">.always_span_X</span>
+            <div class="row">
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+              <div class="column always_span_1">
+                1
+              </div>
+            </div>
+            <div class="row">
+              <div class="column always_span_2">
+                2
+              </div>
+              <div class="column always_span_2">
+                2
+              </div>
+              <div class="column always_span_2">
+                2
+              </div>
+              <div class="column always_span_2">
+                2
+              </div>
+              <div class="column always_span_2">
+                2
+              </div>
+              <div class="column always_span_2">
+                2
+              </div>
+            </div>
+            <div class="row">
+              <div class="column always_span_3">
+                3
+              </div>
+              <div class="column always_span_3">
+                3
+              </div>
+              <div class="column always_span_3">
+                3
+              </div>
+              <div class="column always_span_3">
+                3
+              </div>
+            </div>
+            <div class="row">
+              <div class="column always_span_4">
+                4
+              </div>
+              <div class="column always_span_4">
+                4
+              </div>
+              <div class="column always_span_4">
+                4
+              </div>
+            </div>
+            <div class="row">
+              <div class="column always_span_6">
+                6
+              </div>
+              <div class="column always_span_6">
+                6
+              </div>
+            </div>
+            <div class="row">
+              <div class="column always_span_2">
+                2
+              </div>
+              <div class="column always_span_8">
+                8
+              </div>
+              <div class="column always_span_2">
+                2
+              </div>
+            </div>
+            <div class="row">
+              <div class="column always_span_4">
+                2
+              </div>
+              <div class="column always_span_8">
+                6
+              </div>
+            </div>
           </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-          <div class="column span_1">
-            1
-          </div>
-        </div>
-        <div class="row example_cols">
-          <div class="column span_2">
-            2
-          </div>
-          <div class="column span_2">
-            2
-          </div>
-          <div class="column span_2">
-            2
-          </div>
-          <div class="column span_2">
-            2
-          </div>
-          <div class="column span_2">
-            2
-          </div>
-          <div class="column span_2">
-            2
-          </div>
-        </div>
-        <div class="row example_cols">
-          <div class="column span_3">
-            span_3
-          </div>
-          <div class="column span_3">
-            span_3
-          </div>
-          <div class="column span_3">
-            span_3
-          </div>
-          <div class="column span_3">
-            span_3
-          </div>
-        </div>
-        <div class="row example_cols">
-          <div class="column span_4">
-            span_4
-          </div>
-          <div class="column span_4">
-            span_4
-          </div>
-          <div class="column span_4">
-            span_4
-          </div>
-        </div>
-        <div class="row example_cols">
-          <div class="column span_6">
-            span_6
-          </div>
-          <div class="column span_6">
-            span_6
-          </div>
-        </div>
 
+          <div class="styleguide-html">
+            <pre class="styleguide-code">
+                &lt;div class="column span_X"&gt;
+                  &lt;!-- content -- &gt;
+                &lt;/div&gt;
+            </pre>
+          </div>
+        </div>
+        
+        <style>
+          .row-example .row {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            color: #666;
+            text-align: center;
+            padding: 0.5rem 0;
+          }
+        </style>
+        <div class="row-example">
+          <% styleguide_block  '3.2.2 - Rows' do %>
+            <div class="row $modifier_class">
+              &hellip;
+            </div>
+            <div class="row $modifier_class">
+              &hellip;
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row section">
+        <h4>3.3 Alternate Containers</h4>
+        <style>
+          .styleguide-example .aside {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            color: #666;
+            text-align: center;
+            padding: 0.5rem 0;
+          }
+        </style>
+        <% styleguide_block  '3.3.1 - Aside' do %>
+          <div class="aside $modifier_class">
+            &hellip;
+          </div>
+        <% end %>
+
+        <% styleguide_block  '3.3.2 - Media' do %>
+          <div class="media $modifier_class">
+            <a href="#" class="img">
+              <img src="/images/static/staff/aaron.jpg" width="100" height="100"  alt="Aaron Schachter" />
+            </a>
+            <div class="media-content">
+              <strong>Aaron Schachter</strong><br>
+              Developer<br>
+              <em>writes that cray computer code</em>
+            </div>
+          </div>
+
+          <div class="media $modifier_class">
+            <div class="img">
+              <img src="/images/static/staff/alyssa.jpg" width="100" height="100" alt="Alyssa Ruderman" />
+            </div>
+            <div class="media-content">
+              <strong>Alyssa Ruderman</strong><br>
+              Campaigns Specialist &mdash; Sex &amp; Relationships<br>
+              <em>likes scrambled eggs w/ ketchup</em>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row section">
+        <h4>3.4 Layout Modifiers</h4>
+        <p>Use these classes to adjust the apperance of a container's content.</p>
+
+        <% styleguide_block  '3.4.1 - Callout' do %>
+          <div class="row callout">
+            I'm important so I'm centered! Wow!
+          </div>
+        <% end %>
+
+
+        <% styleguide_block  '3.4.2 - With Copy' do %>
+          <div class="page-width with-copy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, voluptatibus, sit, tempore, rem fugiat minus culpa officiis molestias soluta ut deleniti molestiae dolorem itaque aut iste natus est sint minima.</p>
+          </div>
+        <% end %>
+      </div>
+      
+  </section>
+
+  <section class="row section campaign-section">
+    <h2 id="widgets">Widgets</h2>
+  </section>
+
+  <section class="row section campaign-section">
+    <h2 id="animation">Animation</h2>
+  </section>
+
+  <section class="row section campaign-section">
+    <h2 id="brand">Our Brand</h2>
+    <h4 class="section-header"><span>DoSomething.org Logo</span></h4>
+    <div class="row">
+      <div class="column span_6">
+        <img src="images/ds-logo_2x.png" alt="DoSomething.org logo">
+      </div>
+      <div class="column span_6 callout">
+        <h4>Download our Logo</h4>
+        
         <br>
-
-        <div class="row example_cols">
-          <div class="column span_2">
-            2
-          </div>
-          <div class="column span_8">
-            span_6
-          </div>
-          <div class="column span_2">
-            2
-          </div>
-        </div>
-        <div class="row example_cols">
-          <div class="column span_4">
-            2
-          </div>
-          <div class="column span_8">
-            span_6
-          </div>
-        </div>
-
-<!--         <div class="row example_cols">
-          <div class="column always_span_2">
-            2
-          </div>
-          <div class="column always_span_8">
-            span_6
-          </div>
-          <div class="column always_span_2">
-            2
-          </div>
-        </div>
-        <div class="row example_cols">
-          <div class="column always_span_4">
-            2
-          </div>
-          <div class="column always_span_8">
-            span_6
-          </div>
-        </div> -->
-
-
-      <% end %>
-    </section>
-
-
-    <section class="row section campaign-section">
-      <h2 id="brand">Our Brand</h2>
-      <h4 class="section-header"><span>DoSomething.org Logo</span></h4>
-      <div class="row">
-        <div class="column span_6">
-          <img src="images/ds-logo_2x.png" alt="DoSomething.org logo">
-        </div>
-        <div class="column span_6 callout">
-          <h4>Download our Logo</h4>
-          
-          <br>
-          <p class="legal">
-            <a href="source/ds-logo.ai" class="btn primary small">Adobe Illustrator (.ai)</a>
-            <a href="source/ds-logo.eps" class="btn primary small">Encapsulated PostScript (.eps)</a><br>
-            These will scale well to any size, and are almost always your best choice.
-          </p>
-          <br>
-          <p class="legal">
-            <a href="source/ds-logo.png" class="btn secondary small">Rasterized PNG (1050 x 825)</a><br>
-            High-resolution rasterized image with transparent background. Only use this if your editor doesn't support vector files.
-          </p>
-        </div>
-      </div>
-
-      <h4 class="section-header full-width"><span>Words &amp; Phrasing</span></h4>
-      <div class="row">
-      <div class="column span_4 with-copy">
-        <h4>Banned Words</h4>
-        <ul class="bad">
-          <li>Mission</li>
-          <li>Service</li>
-          <li>Pledge</li>
-          <li>Empower</li>
-          <li>Changing the World</li>
-          <li>Young adult/youths</li>
-          <li>Cyberspace</li>
-          <li>Kids</li>
-        </ul>
+        <p class="legal">
+          <a href="source/ds-logo.ai" class="btn primary small">Adobe Illustrator (.ai)</a>
+          <a href="source/ds-logo.eps" class="btn primary small">Encapsulated PostScript (.eps)</a><br>
+          These will scale well to any size, and are almost always your best choice.
+        </p>
         <br>
+        <p class="legal">
+          <a href="source/ds-logo.png" class="btn secondary small">Rasterized PNG (1050 x 825)</a><br>
+          High-resolution rasterized image with transparent background. Only use this if your editor doesn't support vector files.
+        </p>
       </div>
-      <div class="column span_4 with-copy">
-        <h4>Words We Avoid</h4>
-        <ul class="bad">
-          <li>Volunteerism</li>
-          <li>Awesome</li>
-          <li>Community Service</li>
-        </ul>
-        <br>
-      </div>
-      <div class="column span_4 with-copy">
-        <h4>Phrases We DO Use</h4>
-        <ul class="good">
-          <li>Because Apathy Sucks</li>
-          <li>Do it with us</li>
-          <li>Let's do something together</li>
-          <li>Just do something</li>
-        </ul>
-      </div>
-      </div>
-    </section>
+    </div>
+
+    <h4 class="section-header full-width"><span>Words &amp; Phrasing</span></h4>
+    <div class="row">
+    <div class="column span_4 with-copy">
+      <h4>Banned Words</h4>
+      <ul class="bad">
+        <li>Mission</li>
+        <li>Service</li>
+        <li>Pledge</li>
+        <li>Empower</li>
+        <li>Changing the World</li>
+        <li>Young adult/youths</li>
+        <li>Cyberspace</li>
+        <li>Kids</li>
+      </ul>
+      <br>
+    </div>
+    <div class="column span_4 with-copy">
+      <h4>Words We Avoid</h4>
+      <ul class="bad">
+        <li>Volunteerism</li>
+        <li>Awesome</li>
+        <li>Community Service</li>
+      </ul>
+      <br>
+    </div>
+    <div class="column span_4 with-copy">
+      <h4>Phrases We DO Use</h4>
+      <ul class="good">
+        <li>Because Apathy Sucks</li>
+        <li>Do it with us</li>
+        <li>Let's do something together</li>
+        <li>Just do something</li>
+      </ul>
+    </div>
+    </div>
+  </section>
 
 </div>

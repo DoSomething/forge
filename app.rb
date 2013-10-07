@@ -42,6 +42,11 @@ helpers do
     @_out_buf << erb(:_styleguide_block_without_modifiers)
   end
 
+  def styleguide_block_custom_example(section)
+    @section = @styleguide.section(section)
+    @_out_buf << erb(:_styleguide_block_custom_example)
+  end
+
   # Captures the result of a block within an erb template without spitting it
   # to the output buffer.
   def capture(&block)

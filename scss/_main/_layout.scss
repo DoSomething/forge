@@ -33,25 +33,11 @@
 
 // Container for page sections. Fills viewport up until $max-width - 100.
 //
-// .with-copy - Decreases line-width of paragraphs for easier reading.
-//
 // Styleguide 3.1.2 - Page-width Container
 .page-width {
   margin: 0 auto;
   @include flex-width;
   @include box-sizing(border-box);
-}
-
-.with-copy {
-  h1, h2, h3, h4, p, form, ul, ol {
-    max-width: 37rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  h1, h2 {
-    text-align: center;
-  }
 }
 
 // 12-column grid for layout. Columns have 2% padding and 1% gutters.
@@ -71,20 +57,24 @@
   img {
     max-width: 100%;
   }
+
+  &:first-child { 
+    margin-left: 0; 
+  }
 }
 
-.always_span_1 { width: 8.33333333333%; }
-.always_span_2 { width: 16.6666666667%; }
-.always_span_3 { width: 25%; }
-.always_span_4 { width: 33.3333333333%; }
-.always_span_5 { width: 41.6666666667%; }
-.always_span_6 { width: 50%; }
-.always_span_7 { width: 58.3333333333%; }
-.always_span_8 { width: 66.6666666667%; }
-.always_span_9 { width: 75%; }
-.always_span_10 { width: 83.3333333333%; }
-.always_span_11 { width: 91.6666666667%; }
-.always_span_12 { width: 100%; }
+.always_span_1 { width: 7.41666666667%; margin-left: 1%; }
+.always_span_2 { width: 15.8333333333%; margin-left: 1%; }
+.always_span_3 { width: 24.25%; margin-left: 1%; }
+.always_span_4 { width: 32.6666666667%; margin-left: 1%; }
+.always_span_5 { width: 41.0833333333; margin-left: 1%; }
+.always_span_6 { width: 49.5%; margin-left: 1%; }
+.always_span_7 { width: 57.9166666667%; margin-left: 1%; }
+.always_span_8 { width: 66.3333333333%; margin-left: 1%; }
+.always_span_9 { width: 74.75%; margin-left: 1%; }
+.always_span_10 { width: 83.166666667%; margin-left: 1%; }
+.always_span_11 { width: 91.583333333%; margin-left: 1%; }
+.always_span_12 { width: 100%; margin-left: 1%; }
 
 // on tablet/desktop, apply column widths based on grid
 @include respond-to(widescreens_and_tablets) {
@@ -208,10 +198,26 @@
   text-align: center;
 }
 
+// Sets a maximum line-width of paragraphs for easier reading. Usually applied to a `.page-width` container.
+//
+// Styleguide 3.4.2 - With Copy
+.with-copy {
+  h1, h2, h3, h4, p, form, ul, ol {
+    max-width: 37rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+}
+
+
 
 // Show grid guidelines.
 //
-// Styleguide 3.4.1 - Grid Helper
+// Styleguide 3.5.1 - Grid Helper
 
 // .page-width, .row {
 //   background: url('images/grid.png') repeat-y top center;
