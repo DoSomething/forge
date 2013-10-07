@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				options: {
-					sourceMap: 'neue.js.map',
+					sourceMap: 'assets/neue.js.map',
 	        sourceMapIn: 'assets/bin/neue.js.map', // input sourcemap from a previous compilation
 				},
 				files: {
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['sass:dist', 'coffee:compile', 'uglify:js', 'watch']);
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-concat');
