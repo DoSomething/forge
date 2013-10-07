@@ -3,11 +3,11 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>DS Neue Styleguide</title>
+  <title>Styleguide | DoSomething.org</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <link rel="stylesheet" href="/application.css" media="screen, projection" type="text/css">
+  <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 
@@ -25,10 +25,13 @@
     <link rel="stylesheet" href="/ie.css" type="text/css" />
     <script src="/ie/html5.min.js"></script>
   <![endif]-->
+
+  <link rel="stylesheet" href="/kss/kss.css">
+  <script type="text/javascript" src="/kss/kss.js"></script>
 </head>
 <body>
 <nav id="top" class="utility">
-  <div class="flexwidth-wrapper">
+  <div class="page-width">
     <a href="#" class="utility-link js-menu-toggle">Menu</a>
     <ul class="utility-links">
       <li><a class="utility-link" href="https://github.com/DoSomething/ds-neue">View On Github</a></li>
@@ -66,6 +69,54 @@
     window.pinToTop();
     window.initializeLocationFinder();
   });
+</script>
+
+<style>
+  .js-color-label {
+    display: block;
+  }
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".color-tile").each(function() {
+      $(this).css("background-color", $(this).data("hex"));
+      swapColorLabels($(this));
+    });
+
+    $(".color-tile").click(function() {
+      $(".color-tile").each(function() {
+        swapColorLabels($(this));
+      });
+    });
+  });
+
+  function swapColorLabels(swatch) {
+    var color_label = swatch.find(".js-color-label");
+    var hex = swatch.data("hex");
+    var rgb = hexToRgb(hex);
+
+    if(color_label.text() == hex) {
+      color_label.text("rgb(" + rgb.r + ", " + rgb.g + ", " + rgb.b + ")");
+    } else {
+      color_label.text(hex);
+    }
+  }
+
+  function hexToRgb(hex) {
+    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
+
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+  }
 </script>
 
 <!--[if lt IE 9]>

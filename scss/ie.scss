@@ -3,9 +3,7 @@
 
 @import "vendor/bourbon/bourbon";
 @import "globals/variables";
-@import "globals/helpers";
-
-// ...and so far so good! (insert overrides here if ever necessary)
+@import "globals/mixins";
 
 form.search {
   input[type="search"] {

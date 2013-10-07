@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'assets/application.css': 'scss/application.scss',
+					'assets/neue.css': 'scss/neue.scss',
 					'assets/campaign.css': 'scss/campaign.scss',
 					'assets/ie.css': 'scss/ie.scss'
 				},
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 		coffee: {
 			compile: {
 				files: {
-					'assets/bin/application.js': ['coffee/*.coffee']
+					'assets/bin/neue.js': ['coffee/*.coffee']
 				},
 				options: {
 					sourceMap: true
@@ -43,19 +43,26 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				options: {
-					sourceMap: 'application.js.map',
-	        sourceMapIn: 'assets/bin/application.js.map', // input sourcemap from a previous compilation
+					sourceMap: 'assets/neue.js.map',
+	        sourceMapIn: 'assets/bin/neue.js.map', // input sourcemap from a previous compilation
 				},
 				files: {
-					'assets/application.js': ['coffee/vendor/**/*.js', 'assets/bin/application.js']
+					'assets/neue.js': ['coffee/vendor/**/*.js', 'assets/bin/neue.js']
 				}
+			}
+		},
+		bump: {
+			options: {
+				pushTo: 'origin'
 			}
 		}
 	});
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['sass:dist', 'coffee:compile', 'uglify:js'])
+	grunt.registerTask('default', ['build', 'watch']);
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-bump');
 };

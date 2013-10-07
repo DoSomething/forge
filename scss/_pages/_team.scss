@@ -1,0 +1,16 @@
+.team--person {
+  margin: 0;
+  margin-bottom: 1%;
+
+  em {
+    color: $dark-gray;
+    font-size: 0.8rem;
+  }
+
+  .twitter-link {
+    font-size: 0.8rem;
+    color: $light-gray;
+    text-decoration: none;
+    padding-left: 0.25rem;
+  }
+}
