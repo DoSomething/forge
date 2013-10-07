@@ -1,0 +1,37 @@
+// Triggers a fade-up animation when the element enters the viewport.
+//
+// Styleguide 5.1 - Fade up on Scroll
+.js-fade-up-on-scroll {
+  opacity: 0;
+}
+
+.come-in {
+  @include transform(translateY(150px));
+  @include animation(come-in 2s ease forwards);
+  @include transition(opacity 0.25s);
+  opacity: 1;
+}
+.come-in:nth-child(odd) {
+  @include animation-duration(1.5s); /* So they look staggered */
+}
+
+.already-visible {
+  @include transform(translateY(0));
+  @include animation(none);
+  opacity: 1;
+}
+
+@include keyframes(come-in) {
+  to { @include transform(translateY(0)); }
+}
+
+// Element subtly bounces to grab the users attention.
+//
+// Styleguide 5.2 - Bounce
+.animation-bounce {
+  @include animation(bounce 1.5s ease infinite alternate);
+}
+
+@include keyframes(bounce) {
+  to { @include transform(translateY(10px)); }
+}

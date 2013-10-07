@@ -25,3 +25,8 @@ node_modules
 # rack/pow stuff
 log/
 tmp/
+
+
+# Ignore build files
+assets/bin/
+assets/*.map

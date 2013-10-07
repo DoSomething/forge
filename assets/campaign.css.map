@@ -1,6 +1,0 @@
-{
-"version": "3",
-"mappings": "AAWI,2BAEC,CC2BJ,IAAK,CC3BE,iBAAoB,CAAE,YAAM,CD4BnC,EAAG,CC5BI,iBAAoB,CAAE,cAAM,EFKhC,wBAEC,CCoBJ,IAAK,CCtBE,cAAiB,CAAE,YAAM,CDuBhC,EAAG,CCvBI,cAAiB,CAAE,cAAM,EFO7B,sBAEC,CCaJ,IAAK,CCZE,YAAe,CAAE,YAAM,CDa9B,EAAG,CCbI,YAAe,CAAE,cAAM,EFI3B,mBAEC,CCMJ,IAAK,CCPE,SAAY,CAAE,YAAM,CDQ3B,EAAG,CCRI,SAAY,CAAE,cAAM",
-"sources": ["../scss/vendor/bourbon/css3/_keyframes.scss","../scss/globals/_variables.scss","../scss/vendor/bourbon/addons/_prefixer.scss"],
-"file": "campaign.css"
-}

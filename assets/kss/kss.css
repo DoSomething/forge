@@ -52,7 +52,8 @@ h1.styleguide {
     color: #999;
     background: #f9f9f9;
     border: 1px solid #eee;
-    border-top: none; }
+    border-top: none; 
+    z-index: 10;}
   .styleguide-example .styleguide-html {
     padding: 5px 10px;
     background: #edf6f8;

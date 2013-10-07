@@ -1,114 +1,10 @@
-<!DOCTYPE html>
+<% content_for :title do %>
+  Campaign Template | DoSomething.org
+<% end %>
 
-<html class="no-js">
-<head>
-  <meta charset="utf-8">
-  <title>DS Neue Campaigns</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-  <link rel="stylesheet" href="/application.css" media="screen, projection" type="text/css" />
-  <link rel="stylesheet" href="/campaign.css" media="screen, projection" type="text/css" />
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
-  <!--[if lt IE 9]>
-    <link rel="stylesheet" href="/ie.css" type="text/css" />
-    <script src="/ie/html5.min.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=193555714029599";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<nav id="top" class="utility">
-  <div class="flexwidth-wrapper">
-    <a href="#" class="utility-link js-menu-toggle">Menu</a>
-    <ul class="utility-links">
-      <li class="search">
-      <form action="#">
-        <input name="query" type="search">
-      </form>
-      </li>
-      <li><a class="utility-link" href="#">Help</a></li>
-      <li><a class="utility-link" href="#">Sign In</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="masthead-wrapper">
-  <nav class="masthead">
-    <a class="logo" href="http://www.dosomething.org"><img src="/images/ds-logo.png" alt="DoSomething.org"></a>
-    <ul class="main-menu">
-      <li>
-        <a class="menu-link" href="/about">About Us</a>
-        <ul class="dropdown">
-          <li><a href="/about/who-we-are">Who We Are</a></li>
-          <li><a href="/about/why-become-a-member">Why Become a Member?</a></li>
-          <li><a href="/about/team">Staff Bios</a></li>
-          <li><a href="/about/team/jobs">Jobs</a></li>
-          <li><a href="/about/team/internships">Internships</a></li>
-          <li><a href="/about/international">International</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/campaigns">Campaigns</a>
-        <ul class="dropdown">
-          <li><a href="/women">25,000 Women</a></li>
-          <li><a href="http://pics.dosomething.org">Pics for Pets</a></li>
-          <li><a href="/hunt">The Hunt</a></li>
-          <li><a href="/iheartdad">I Heart Dad</a></li>
-          <li><a href="/undocumented">Undocumented</a></li>
-          <li><a href="/thumbwars">Thumb Wars</a></li>
-          <li><a href="/puppy">Puppy Text</a></li>
-          <li><a href="/baby">Pregnancy Text</a></li>
-          <li><a href="/band">Band Together</a></li>
-          <li><a href="/past-campaigns">Past Campaigns</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/causes">Causes</a>
-        <ul class="dropdown">
-          <li><a href="/cause/animals">Animals</a></li>
-          <li><a href="/cause/bullying-and-violence">Bullying &amp; Violence</a></li>
-          <li><a href="/cause/disasters">Disasters</a></li>
-          <li><a href="/cause/discrimination">Discrimination</a></li>
-          <li><a href="/cause/education">Education</a></li>
-          <li><a href="/cause/environment">Environment</a></li>
-          <li><a href="/cause/homelessness-and-poverty">Homelessness &amp; Poverty</a></li>
-          <li><a href="/cause/human-rights">Human Rights</a></li>
-          <li><a href="/cause/our-troops">Our Troops</a></li>
-          <li><a href="/cause/physical-and-mental-health">Physical &amp; Mental Health</a></li>
-          <li><a href="/cause/sex-and-relationships">Sex &amp; Relationships</a></li>
-          <li><a href="/resources">All Resources</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/awesome-things">Awesome-Things</a>
-        <ul class="dropdown">
-          <li><a href="/scholarships">Scholarships</a></li>
-          <li><a href="/petitions">Petitions</a></li>
-          <li><a href="/quizzes">Quizzes</a></li>
-          <li><a href="/clubs">Clubs</a></li>
-          <li><a href="/awards">Do Something Awards</a></li>
-          <li><a href="/grants">Grants</a></li>
-          <li><a href="/bootcamp">Boot Camp</a></li>
-          <li><a href="/blog">Blog Center</a></li>
-          <li><a href="/projects">Projects</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</div>
-
-<div role="main" class="wrapper">
-  <section class="header" id="header">
+<div class="page-width">
+  <section class="campaign--header" id="header">
     <img class="header-logo" alt="Campaign Logo" src="/images/placeholders/logo-project.png" />
     <p class="header-date">Ends July 29th, 2013</p>
 
@@ -129,125 +25,129 @@
     </div>
   </section>
 
-  <section class="headline" id="headline">
+  <section class="campaign--headline" id="headline">
     <h2 class="headline-callout"><span>OVER 1% OF YOU WILL FILL OUT THIS FORM</span></h2>
     <h3 class="headline-callout"><span>IN THE UNITED KINGDOM PEOPLE DRINK TEA</span></h3>
   </section>
 
-  <section class="campaign-section sms full-width" id="sms">
-    <div class="content-center">
-      <p class="section-intro">Send this fact to 6 of your friends for cash money!</p>
+  <p class="row section callout">
+    Send this fact to 6 of your friends for cash money!
+  </p>
 
-      <form action="//dosomething.mcommons.com/profiles/join" method="POST" class="form-default">
-        <input type="hidden" name="redirect_to" value="mango" />
-
-        <div class="two-col">
+  <section class="row section with-copy gutters" id="sms">
+    <form action="#" method="POST" class="form-default">
+      <input type="hidden" name="redirect_to" value="mango" />
+      <div class="row">
+        <div class="column span_6">
           <label>Your First Name:</label>
           <input type="text" name="person[first_name]" placeholder="Your name:"/>
         </div>
 
-        <div class="two-col">
+        <div class="column span_6">
           <label>Your Cell #:</label>
           <input type="text" name="person[phone]" placeholder="Your cell #:" />
         </div>
+      </div>
+      
+      <div class="row">
+        <label>Friend's Cell #s:</label>
+      </div>
 
-        <div class="one-col">
-          <label>Friend's Cell #s:</label>
-        </div>
-
-        <div class="two-col">
+      <div class="row">
+        <div class="column span_6">
           <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
           <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
           <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
         </div>
 
-        <div class="two-col">
+        <div class="column span_6">
           <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
           <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
           <input type="text" name="friends[]" placeholder="Friend's cell #:"/>
         </div>
+      </div>
+      
+      <div class="row callout">
+        <input type="hidden" name="opt_in_path" value="mango" />
+        <input type="hidden" name="friends_opt_in_path" value="mango" />
 
-        <div class="one-col callout">
-          <input type="hidden" name="opt_in_path" value="mango" />
-          <input type="hidden" name="friends_opt_in_path" value="mango" />
-
-          <input type="submit" class="btn primary large" value="invite friends" />
-
-          <p><a class="official-rules" href="mango" target="_blank">Official Rules &amp; Regulations</a></p>
-          <p class="legal">Message &amp; data rates may apply. Text <strong>STOP</strong> to opt-out, <strong>HELP</strong> for help.</p>
-        </div>
-      </form>
-     </div>
+        <input type="submit" class="btn primary large" value="Invite Friends" />
+        
+        <p><a href="#" class="btn secondary medium">Official Rules &amp; Regulations</a></p>
+        <p class="legal">Message &amp; data rates may apply. Text <strong>STOP</strong> to opt-out, <strong>HELP</strong> for help.</p>
+      </div>
+    </form>
   </section>
 
-  <section class="campaign-section call-to-action full-width" id="call-to-action">
+  <section class="row section banner" id="call-to-action">
     <p>
       <span>Press the button to start grinding some beans!</span>
       <a class="left btn primary large js-jump-scroll">Report Back</a>
     </p>
   </section>
 
-  <section class="campaign-section how-it-works full-width" id="how-it-works">
+  <section class="row section campaign-section gutters" id="how-it-works">
       <h3 class="section-header"><span>Here's What You Do</span></h3>
 
-      <section class="how-it-works-container">
-        <div class="three-col block">
+      <section class="row section gutters">
+        <div class="column span_4 callout">
           <img src="/images/placeholders/placeholder.png" alt="X (placeholder image)" />
           <h3>Learn the Issue</h3>
           <p>1 in 3 teenagers have slept through Math or English class in the past week.</p>
         </div>
 
-        <div class="three-col block">
+        <div class="column span_4 callout">
           <img src="/images/placeholders/placeholder.png" alt="X (placeholder image)" />
           <h3>Complete the Action</h3>
           <p>Drink coffee to stay awake! DoSomething.org recommends 3 cups per day.</p>
         </div>
 
-        <div class="three-col block">
+        <div class="column span_4 callout">
           <img src="/images/placeholders/placeholder.png" alt="X (placeholder image)" />
           <h3>Get Friends Involved</h3>
           <p><a href="#">Invite</a> your friends to hang out at a caf&eacute; with you and drink some 'fee.</p>
         </div>
       </section>
 
-      <div class="action-kit callout" id="action-kit">
+      <div class="row callout" id="action-kit">
         <p>Want help running your drive? <a href="#">Download</a> our action kit, sailor.</p>
       </div>
   </section>
 
-  <section class="campaign-section prizing full-width" id="prizing">
+  <section class="row section campaign-section gutters" id="prizing">
     <h3 class="section-header"><span>Prizing</span></h3>
-    <p class="section-intro">This is the prizing section. You could win a prize!</p>
+    <p class="callout">This is the prizing section. You could win a prize!</p>
 
-    <div class="content-center">
-      <div class="one-col block">
+    <div class="row aside">
+      <div class="column span_12 callout">
         <img src="/images/placeholders/placeholder.png" alt="x placeholder"/>
         <h2>Big Ol' Grand Prize</h2>
         <p>You can drink coffee all by yourself. That's why they call it a "solo" espresso!</p>
       </div>
-
-      <div class="two-col block">
+    </div>
+    <div class="row aside">
+      <div class="column span_6 callout">
         <img src="/images/placeholders/placeholder.png" alt="x placeholder"/>
         <h3>Individual Scholarship</h3>
         <p>You can drink coffee all by yourself. That's why they call it a "solo" espresso!</p>
       </div>
 
-      <div class="two-col block">
+      <div class="column span_6 callout">
         <img src="/images/placeholders/placeholder.png" alt="x placeholder"/>
         <h3>Group Scholarship</h3>
         <p>You can coffee with your friends. Order a "quad americano" and see what happens. #YOLO</p>
       </div>
-      <div class="callout">
-        <p><a href="#headline" class="btn primary large js-jump-scroll">Tell Us About It</a></p>
-        <p><a href="#" class="official-rules">Official Rules &amp; Regulations</a></p>
-      </div>
+    </div>
+    <div class="row callout">
+      <p><a href="#headline" class="btn primary large js-jump-scroll">Tell Us About It</a></p>
+      <p><a href="#" class="btn secondary medium">Official Rules &amp; Regulations</a></p>
     </div>
   </section>
 
-  <section class="campaign-section sms-game-example full-width" id="sms-game-example">
+  <section class="row section campaign-section" id="sms-game-example">
     <h3 class="section-header"><span>An Example From the Game</span></h3>
-
-    <div class="content-center narrow">
+    
+    <div class="row aside span_6">
       <div class="game-conversation game-ds">
         <p>Girl, you got any 'fee?</p>
       </div>
@@ -260,12 +160,12 @@
         <p>Double americano? Lemme get some!</p>
       </div>
     </div>
-    <div class="callout">
+    <div class="row callout">
       <a href="#headline" class="btn primary large js-jump-scroll">Play The Game</a>
     </div>
   </section>
 
-  <section class="campaign-section location-finder full-width" id="location-finder">
+  <section class="section row with-copy campaign-section location-finder" id="location-finder">
     <h3 class="section-header"><span>Location Finder</span></h3>
 
     <form action="#" class="content-center narrow callout js-location-finder-form">
@@ -287,7 +187,7 @@
     </div>
   </section>
 
-  <section class="campaign-section gallery full-width">
+  <section class="row section campaign-section">
     <h3 class="section-header"><span>Your Impact</span></h3>
 
     <div class="gallery-image">
@@ -338,7 +238,7 @@
     </ul>
   </section>
 
-  <section class="campaign-section content full-width" id="content">
+  <section class="row section campaign-section with-copy" id="content">
     <h3 class="section-header"><span>More Information on 'fee</span></h3>
     <div class="content-center">
       <p>Part of growing up means making decisions and sometimes hard life choices*. Are you going to order a double or triple espresso? Do you want that 'fee to go?</p>
@@ -367,35 +267,43 @@
     </div>
   </section>
 
-  <section class="campaign-section profiles full-width" id="profiles">
-    <h3 class="section-header"><span>Meet the Baristas</span></h3>
+  <section class="row section campaign-section with-copy gutters" id="profiles">
+    <div class="row">
+      <h3 class="section-header"><span>Meet the Baristas</span></h3>
+    </div>
 
-    <div class="column-break">
-      <div class="three-col"><img src="//www.placekitten.com/g/580/350" class="bordered" alt="Diane Nash"></div>
-      <div class="three-col span-two">
+    <div class="row">
+      <div class="column span_4">
+        <img src="//www.placekitten.com/g/580/350" class="bordered" alt="Diane Nash">
+      </div>
+      <div class="column span_8">
        <h3>Diane Nash, 22</h3>
        <p>After seeing public bathrooms marked “white” or “colored” as a student in Nashville Tennessee, Nash was determined to fight racism. She attended nonviolent, civil disobedience workshops lead by Rev. James Lawson, and became a leader of the Nashville sit-ins, a nonviolent tactic to integrate restaurants around the city. Students would sit in “whites only” sections of lunch counters, accepting arrest and even violence to prove a point about making a change. She also helped found and led the Student Nonviolent Coordinating Committee, the largest student activist group that led key grassroots action against discrimination during the civil rights movement.</p>
       </div>
     </div>
 
-    <div class="column-break">
-      <div class="three-col"><img src="//www.placekitten.com/g/590/360" class="bordered" alt="Barbara Johns"></div>
-      <div class="three-col span-two">
+    <div class="row">
+      <div class="column span_4">
+        <img src="//www.placekitten.com/g/590/360" class="bordered" alt="Barbara Johns">
+      </div>
+      <div class="column span_8">
        <h3>Barbara Johns, 16</h3>
        <p>As a student, she was part of a segregated school district in Virginia that crammed 450 kids into a 200 person building. She started a two week strike with the help of the NAACP to advocate for an integrated school district, marching to the town courthouse to make officials aware of the large difference in quality between black and white schools. In response, her house was burned to the ground. NAACP took her case to court, which became a part of the groundbreaking Brown v. Board of Education case that ruled "separate but equal” facilities based on race illegal.</p>
       </div>
     </div>
 
-    <div class="column-break">
-      <div class="three-col"><img src="//www.placekitten.com/g/550/320" class="bordered" alt="James Zwerg"></div>
-      <div class="three-col span-two">
+    <div class="row">
+      <div class="column span_4">
+        <img src="//www.placekitten.com/g/550/320" class="bordered" alt="James Zwerg">
+      </div>
+      <div class="column span_8">
        <h3>James Zwerg, 22</h3>
        <p>He developed an interest in civil rights after seeing his African-American roommate experience prejudice. Attending an exchange program, he went to Fisk University and met John Lewis, a leader of the Student Nonviolent Coordinating Committee, and decided to go on a Freedom Ride, a nonviolent action to test out integration laws on buses. He was arrested, and at one point ambushed during the ride. He was beaten so badly he was unconscious for two days and stayed in a hospital for five. His photos were used in many newspapers and magazines across the country, stirring even more support for the civil rights movement.</p>
       </div>
     </div>
   </section>
 
-  <section class="campaign-section faq full-width" id="faq">
+  <section class="row section campaign-section with-copy" id="faq">
     <h3 class="section-header"><span>Frequently Asked Questions</span></h3>
     <div class="content-center">
       <div class="answer">
@@ -427,11 +335,11 @@
 
     <div class="callout">
       <a href="#headline" class="btn primary large js-jump-scroll">I want to play</a>
-      <p><a href="#top" class="btn-top js-jump-scroll">Back to Top</a></p>
+      <p><a href="#top" class="btn secondary small js-jump-scroll">Back to Top</a></p>
     </div>
   </section>
 
-  <footer class="sponsor full-width" id="sponsor">
+  <footer class="row section sponsor" id="sponsor">
     <h3>Sponsored by:</h3>
 
     <p>
@@ -445,82 +353,3 @@
 <footer class="contact" id="footer">
   <p>Questions? E-mail <a href="mailto:help@dosomething.org">help@dosomething.org</a>!</p>
 </footer>
-
-<!--
-Edvisors tracking pixel
-@todo - Ideally this will be handled in a more automated fashion.  This
-can be achieved by Stashing the Edvisor offer id on the campaign and
-using a a standardize (but themable) webform confirmation page.
-@todo - add a http referrer check as well
--->
-<!-- Offer Conversion: DoSomething.org -->
-<iframe style="display: none;" src="http://tracking.edvisors.com/aff_l?offer_id=98" scrolling="no" frameborder="0" width="1" height="1"></iframe>
-<!-- // End Offer Conversion -->
-
-<div class="footer-wrapper">
-  <footer class="main">
-    <div class="column">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="/help">Help Center</a></li>
-        <li><a href="/tipsandtools/hotlines">Crisis Hotlines</a></li>
-        <li><a href="http://www.facebook.com/dosomething">Like Us on Facebook</a></li>
-        <li><a href="https://twitter.com/#!/dosomething">Follow Us on Twitter</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Show Your Love</h4>
-      <ul>
-        <li><a href="http://store.dosomething.org/">Wear Your Love</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/rss">RSS Feed</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Popular Stuff</h4>
-      <ul>
-        <li><a href="/awards">Do Something Awards</a></li>
-        <li><a href="/scholarships">Scholarships</a></li>
-        <li><a href="/clubs">Clubs</a></li>
-        <li><a href="/grants">Grants</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Our Peeps</h4>
-      <ul>
-        <li><a href="//www.tmiagency.org/">TMI Agency</a></li>
-        <li><a href="/about/partners">Partners</a></li>
-        <li><a href="/about/team/board">Board of Directors</a></li>
-        <li><a href="/yac">Youth Advisory Council</a></li>
-        <li><a href="/ds-virtual">#DSVirtual</a></li>
-      </ul>
-    </div>
-    <div class="column">
-      <h4>Random Stuff</h4>
-      <ul>
-        <li><a href="/faqs">FAQ</a></li>
-        <li><a href="/sitemap">Sitemap</a></li>
-        <li><a href="/about/stats">Mind-Blowing Stats</a></li>
-        <li><a href="/our-sexy-financials-and-impact">Sexy Financials and Impact</a></li>
-        <li><a href="/oldpeople">Old People</a></li>
-        <li><a href="/about/privacy">Privacy Policy</a></li>
-        <li><a href="/about/terms-of-service">Terms of Service</a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="/application.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    window.initializeLocationFinder();
-  });
-</script>
-
-<!--[if lt IE 9]>
-  <script src="/ie/rem.min.js"></script>
-<![endif]-->
-</body>
-</html>
