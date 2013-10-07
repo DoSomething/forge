@@ -50,6 +50,11 @@ module.exports = function(grunt) {
 					'assets/neue.js': ['coffee/vendor/**/*.js', 'assets/bin/neue.js']
 				}
 			}
+		},
+		bump: {
+			options: {
+				pushTo: 'origin'
+			}
 		}
 	});
 	grunt.registerTask('build', ['sass:dist', 'coffee:compile', 'uglify:js'])
@@ -59,4 +64,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-bump');
 };
