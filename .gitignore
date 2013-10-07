@@ -25,3 +25,7 @@ node_modules
 # rack/pow stuff
 log/
 tmp/
+
+
+# build junk
+assets/bin/
