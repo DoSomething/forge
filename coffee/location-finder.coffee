@@ -1,6 +1,33 @@
-$ = jQuery
+###
 
-window.initializeLocationFinder = ->
+Location finder widget.
+
+Usage:
+
+  window.initializeLocationFinder({
+    mode: 'default' or 'select',
+    endpoint: '<JSON endpoint URL>',
+    target: <if in 'select' mode, DOM object where selected ID will be output to>
+  });
+
+###
+
+$ = jQuery
+options = {}
+
+window.initializeLocationFinder = (opts) ->
+  # set up default options 
+  defaults =
+    mode: 'default', 
+    endpoint: '/example-data.json',
+    delegate: $(".js-location-finder-delegate")
+
+  # combine options with default values
+  if(opts?)
+    options = $.extend({}, defaults, opts)
+  else
+    options = defaults
+
   $(".no-js-feature-warning").hide()
   $(".no-js-hide-feature").show()
   $(".js-location-finder-results").hide()
@@ -21,19 +48,37 @@ findLocation = ->
 
   # validate input
   if(zip.match(/^\d{5}$/))
-    $.get '/example-data.json', (data)->
+    $.get "#{options.endpoint}?zip=#{zip}", (data)->
       $(".js-location-finder-results-zip").text(zip)
 
       $(".js-location-finder-results .location-list").html("")
       $.each(data.results, (index, value) ->
+        if(options.mode == "select")
+          modifier_class = ""
+        else
+          modifier_class = ""
+
         $(".js-location-finder-results .location-list").append("""
-          <li>
+          <li data-id="#{value.id}">
             <strong>#{value.name}</strong><br>
             #{value.street}, #{value.city}, #{value.state} #{value.zip}<br>
             (555) 555-5555
           </li>
           """)
       )
+
+      if(options.mode == "select")
+        list_items = $(".js-location-finder-results .location-list li")
+        list_items.addClass("js-clickable")
+        list_items.click( ->
+          $(".js-location-finder-results .location-list").find(".js-clickable").removeClass("js-selected");
+          $(this).addClass("js-selected")
+
+          if(options.delegate?)
+            options.delegate.val($(this).data("id"))
+          else
+            console.error("Location finder delegate not set.")
+        )
 
       $(".js-location-finder-form").slideUp(400)
       $(".js-location-finder-results").slideDown(400)
