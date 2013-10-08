@@ -75,14 +75,15 @@ img.bordered {
     list-style-type: none;
 
     li {
-      padding-left: 1em;
-      text-indent: -0.65em;
+      position: relative;
+      padding-left: 2em;
       margin-bottom: 0.15em;
+      text-indent: -0.6em;
 
       &:before {
         content: '\25A0';
         position: relative;
-        left: -0.5em;
+        left: -1em;
         color: $light-gray;
         font-size: 0.8em;
       }
