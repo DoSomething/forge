@@ -67,7 +67,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     window.pinToTop();
-    window.initializeLocationFinder();
+    window.initializeLocationFinder({
+      mode: "select",
+      delegate: $(".js-location-finder-delegate")
+    });
   });
 </script>
 

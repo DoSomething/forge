@@ -1,21 +1,6 @@
 // Location finder. Initialize by calling <code>window.initializeLocationFinder();</code>.
 //
 // Styleguide X.1 - Location Finder Module
-.location-list {
-  list-style-type: none;
-
-  li {
-    margin: 0;
-    padding: 1rem;
-    border-bottom: 1px solid $light-gray;
-
-    &:last-of-type {
-      border-bottom: none;
-    }
-  }
-}
-
-
 .js-clickable {
   cursor: pointer;
 
