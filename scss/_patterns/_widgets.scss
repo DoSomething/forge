@@ -372,3 +372,25 @@ footer.contact {
     @include animation(bounce 2s ease infinite alternate);
   }
 }
+
+
+
+// Used to indicate that the user can scroll (useful on pages with huge content above
+// the fold). Scrolls to main content area on click.
+// ** Must be initialized with `window.initializeLocationFinder();`. See `location-finder.coffee`
+// for full documentation **
+//
+// Styleguide 4.4.7 - Location Finder
+.location-list {
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid $light-gray;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}

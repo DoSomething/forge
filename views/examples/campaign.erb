@@ -165,25 +165,27 @@
     </div>
   </section>
 
-  <section class="section row with-copy campaign-section location-finder" id="location-finder">
-    <h3 class="section-header"><span>Location Finder</span></h3>
+  <section class="section row campaign-section location-finder" id="location-finder">
+    <div class="aside span_8">
+      <h3 class="section-header"><span>Location Finder</span></h3>
 
-    <form action="#" class="content-center narrow callout js-location-finder-form">
-      <div class="no-js-hide-feature">
-        <p>Enter your zip code to search for a drop-off point near you.</p>
-        <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
-        <a class="btn primary medium js-location-finder-button">Search</a>
+      <form action="#" class="content-center narrow callout js-location-finder-form">
+        <div class="no-js-hide-feature">
+          <p>Enter your zip code to search for a drop-off point near you.</p>
+          <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
+          <a class="btn primary medium js-location-finder-button">Search</a>
+        </div>
+
+        <div class="alert error no-js-feature-warning">The Location Finder requires JavaScript to be enabled in your browser.</div>
+      </form>
+
+      <div class="content-center narrow js-location-finder-results no-js-hide-feature">
+        <p>Nearest drop-off points for zipcode <span class="js-location-finder-results-zip"></span> (<a href='#' class='js-location-finder-reset'>change</a>):</p>
+
+        <ul class="location-list">
+
+        </ul>
       </div>
-
-      <div class="alert error no-js-feature-warning">The Location Finder requires JavaScript to be enabled in your browser.</div>
-    </form>
-
-    <div class="content-center narrow js-location-finder-results no-js-hide-feature">
-      <p>Nearest drop-off points for zipcode <span class="js-location-finder-results-zip"></span> (<a href='#' class='js-location-finder-reset'>change</a>):</p>
-
-      <ul class="location-list">
-
-      </ul>
     </div>
   </section>
 
@@ -227,14 +229,14 @@
       </li>
     </ul>
 
-    <ul class="pager">
-      <li class="pager-next"><span class="btn small disabled" title="Go to previous page">&#8249; prev</span></li>
-      <li class="pager-current"><span class="btn small disabled">1</span></li>
-      <li class="pager-item"><a class="btn secondary small" title="Go to page 2" href="/teensforjeans?page=1">2</a></li>
-      <li class="pager-item"><a class="btn secondary small" title="Go to page 3" href="/teensforjeans?page=2">3</a></li>
-      <li class="pager-item"><a class="btn secondary small" title="Go to page 4" href="/teensforjeans?page=3">4</a></li>
-      <li class="pager-item"><a class="btn secondary small" title="Go to page 5" href="/teensforjeans?page=4">5</a></li>
-      <li class="pager-next"><a class="btn secondary small" title="Go to next page" href="/teensforjeans?page=1">next &#8250;</a></li>
+    <ul class="tabs">
+      <li><span>&#8249; prev</span></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a title="Go to page 2" href="/teensforjeans?page=1">2</a></li>
+      <li><a title="Go to page 3" href="/teensforjeans?page=2">3</a></li>
+      <li><a title="Go to page 4" href="/teensforjeans?page=3">4</a></li>
+      <li><a title="Go to page 5" href="/teensforjeans?page=4">5</a></li>
+      <li><a title="Go to next page" href="/teensforjeans?page=1">next &#8250;</a></li>
     </ul>
   </section>
 
