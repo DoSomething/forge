@@ -165,9 +165,16 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="/application.js"></script>
+<script type="text/javascript" src="/neue.js"></script>
 
-<%= yield_content :inline_javascript %>
+<!-- temporarily added for testing since Sinatra content_for is broked -->
+<script>
+  $(document).ready(function() {
+    window.initializeLocationFinder({
+      mode: "default",
+    });
+  });
+</script>
 
 <!--[if lt IE 9]>
   <script src="/ie/rem.min.js"></script>
