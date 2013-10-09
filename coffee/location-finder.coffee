@@ -59,10 +59,10 @@ findLocation = ->
           modifier_class = ""
 
         $(".js-location-finder-results .location-list").append("""
-          <li data-id="#{value.id}">
-            <strong>#{value.name}</strong><br>
-            #{value.street}, #{value.city}, #{value.state} #{value.zip}<br>
-            (555) 555-5555
+          <li data-id="#{@id}">
+            <strong>#{@name}</strong><br>
+            #{@street}, #{@city}, #{@state} #{@zip}<br>
+            #{if @phone? then @phone + "\n" else "" }
           </li>
           """)
       )
