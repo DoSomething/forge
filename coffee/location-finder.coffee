@@ -53,7 +53,7 @@ do ($, window) ->
 
     # validate input
     if(zip.match(options.validation))
-      $.get "#{options.endpoint}?zip=#{zip}", (data)->
+      $.get "#{options.endpoint}#{zip}", (data)->
         $(".js-location-finder-results-zip").text(zip)
 
         $(".js-location-finder-results .location-list").html("")
@@ -64,7 +64,7 @@ do ($, window) ->
             modifier_class = ""
 
           $(".js-location-finder-results .location-list").append("""
-            <li data-id="#{@id}">
+            <li data-id="#{@gsid}">
               <strong>#{@name}</strong><br>
               #{@street}, #{@city}, #{@state} #{@zip}<br>
               #{if @phone? then @phone + "\n" else "" }
