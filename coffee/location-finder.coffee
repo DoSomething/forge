@@ -7,7 +7,8 @@ Usage:
   window.initializeLocationFinder({
     mode: 'default' or 'select',
     endpoint: '<JSON endpoint URL>',
-    target: <if in 'select' mode, DOM object where selected ID will be output to>
+    validatoin: regex for form validation, ex: /^\d{5}$/
+    delegate: if in 'select' mode, DOM object where selected ID will be output to, ex: $("#formID")
   });
 
 ###
@@ -24,7 +25,8 @@ do ($, window) ->
       defaults =
         mode: 'default', 
         endpoint: '/example-data.json',
-        delegate: $(".js-location-finder-delegate")
+        validation: /[\s\S]*/,
+        delegate: $('.js-location-finder-delegate')
 
       # combine options with default values
       if(opts?)
@@ -50,7 +52,7 @@ do ($, window) ->
     zip = $(".js-location-finder-input").val()
 
     # validate input
-    if(zip.match(/^\d{5}$/))
+    if(zip.match(options.validation))
       $.get "#{options.endpoint}?zip=#{zip}", (data)->
         $(".js-location-finder-results-zip").text(zip)
 
@@ -87,10 +89,11 @@ do ($, window) ->
         $(".js-location-finder-results").slideDown(400)
 
         bindResetButton()
-      .fail ->
-        $(".js-location-finder-results").html("<div class='alert error'>We had trouble talking to the server. Check that your internet connection is working, or try reloading the page.");
-        $(".js-location-finder-form").slideUp(400)
-        $(".js-location-finder-results").slideDown(400)
+      # removed fail handler because jQuery 
+      # .fail ->
+      #   $(".js-location-finder-results").html("<div class='alert error'>We had trouble talking to the server. Check that your internet connection is working, or try reloading the page.");
+      #   $(".js-location-finder-form").slideUp(400)
+      #   $(".js-location-finder-results").slideDown(400)
     else
       $(".js-location-finder-button").removeClass("loading")
       $(".js-location-finder-form").append("<div id='js-location-finder-validation-error' class='messages error'>Slow down buddy, that's not a zip code.</div>").slideDown(400)
