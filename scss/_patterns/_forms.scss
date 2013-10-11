@@ -67,6 +67,12 @@ textarea {
   margin: 0 0 0.5em;
   resize: vertical;
   @include box-sizing(border-box);
+
+  &:focus {
+    outline: 0;
+    border: 1px solid $gold;
+    box-shadow: 0 0 3px $gold;
+  }
 }
 
 
@@ -84,7 +90,6 @@ textarea {
 // .medium            - (Default) A normal button size.
 // .large             - A large button. Suitable for call-to-action or other important buttons.
 // .secondary         - Should be used if not the main call-to-action on a page.
-// .secondary:hover   - Subtle hover on button (not displayed on touch interfaces).
 //
 // Styleguide 4.1.5 - Buttons
 .btn {
@@ -135,14 +140,16 @@ textarea {
     border: none;
 
     &:hover {
-      background: none;
+      background-color: none;
       color: #000;
       box-shadow: none;
     }
+
     &:focus {
       outline: 0;
       box-shadow: none;
     }
+
     &:active {
       outline: 0;
       background: $off-white;
@@ -256,32 +263,20 @@ input[type="submit"] {
   white-space: normal; // ensures text wraps to new lines when in an <input> element
 }
 
-// Custom styling for select boxes. <mark>At the moment, only Webkit browsers correctly style select elements
-// so apperance varies slightly by browser.</mark>
-//
-// :focus - An active select box (while dropdown is shown or has keyboard focus).
+// Select boxes present a list of options on a form.
 //
 // Styleguide 4.1.6 - Select Boxes
 select {
-  position: relative;
-  background: #fff;
+  display: block;
+  width: 100%;
+  height: 34px;
   border: 1px solid $light-gray;
-  border-radius: $lg-border-radius;
-  color: $off-black;
-  font-family: $font-din-regular;
-  font-size: 1rem;
-  padding: 0.5em 3em 0.5em 1em;
-  margin: 0.25em;
-  background-image: url('../images/dropdown.png');
-  background-position: 90% 50%;
-  background-repeat: no-repeat;
-  -webkit-appearance: none;
+  @include box-sizing(border-box);
 
   &:focus {
     outline: 0;
     border: 1px solid $gold;
     box-shadow: 0 0 3px $gold;
-    background-image: url('../images/dropdown_gold.png');
   }
 }
 
