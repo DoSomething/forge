@@ -3,9 +3,6 @@
   color: #fff;
   background-image: url('images/bg-intro.jpg');
   padding: 3rem 1rem 2rem;
-  @include respond-to(widescreens_and_tablets) {
-    padding: 5rem 1rem 4rem;
-  }
 
   .page-width.with-copy {
     h1, p {
