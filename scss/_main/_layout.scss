@@ -159,7 +159,9 @@
   }
 }
 
-// The 'media' interface pattern contains a list of text/links with associated thumbnails.
+// The 'media' interface pattern is used for components made up of a left- or
+// right-aligned image alongside textual content. Blog comments, a news feed,
+// or a list of related articles are all good examples of this pattern.
 //
 // .right - alternate apperance with media element right aligned.
 //
