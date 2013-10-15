@@ -375,8 +375,8 @@ footer.contact {
 
 
 
-// Used to indicate that the user can scroll (useful on pages with huge content above
-// the fold). Scrolls to main content area on click.
+// Allows the user to search for and list locations (and, optionally, select them and pass an
+// ID to a hidden input field).
 // ** Must be initialized with `window.initializeLocationFinder();`. See `location-finder.coffee`
 // for full documentation **
 //
