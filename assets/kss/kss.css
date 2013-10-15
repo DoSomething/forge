@@ -75,4 +75,14 @@ h1.styleguide {
     font-family: Monaco, monospace;
   }
 
+  ul.styleguide-modifier {
+    list-style-type: none;
+    padding: 0.5em 1em;
+    margin-left: 0;
+  }
+
+  ul.styleguide-modifier li {
+    margin-bottom: 0.25em;
+  }
+
 /* @end */
