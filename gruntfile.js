@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 			},
 			coffee: {
 				files: ['coffee/vendor/**/*.js', 'coffee/**/*.coffee'],
-				tasks: ['coffee:compile', 'uglify:js']
+				tasks: ['coffee:compile', 'uglify:js', 'docco']
 			},
 			livereload: {
 				files: ['*.html', '*.php', 'assets/**/*.{js,json}', 'assets/*.css','img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
@@ -51,18 +51,27 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+	  docco: {
+	  	docs: {
+	  		src: ['coffee/*.coffee'],
+		    options: {
+		        output: 'assets/docs'
+		    }
+	  	}
+	  },
 		bump: {
 			options: {
 				pushTo: 'origin'
 			}
 		}
 	});
-	grunt.registerTask('build', ['sass:dist', 'coffee:compile', 'uglify:js'])
+	grunt.registerTask('build', ['sass:dist', 'coffee:compile', 'uglify:js', 'docco'])
 	grunt.registerTask('default', ['build', 'watch']);
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-docco2');
 	grunt.loadNpmTasks('grunt-bump');
 };

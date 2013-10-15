@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>no-touch-hover.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>no-touch-hover.coffee</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>removes :hover rules when on touch device</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">if</span> Modernizr.touch
+  ignore = <span class="regexp">/:hover\b/</span>
+  <span class="keyword">try</span>
+    <span class="keyword">for</span> stylesheet <span class="keyword">in</span> document.styleSheets
+      idxs = []</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>detect hover rules</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">for</span> rule, idx <span class="keyword">in</span> stylesheet.cssRules
+        <span class="keyword">if</span> rule.type <span class="keyword">is</span> CSSRule.STYLE_RULE <span class="keyword">and</span> ignore.test(rule.selectorText)
+          idxs.unshift idx</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>delete hover rules</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      stylesheet.deleteRule idx <span class="keyword">for</span> idx <span class="keyword">in</span> idxs</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

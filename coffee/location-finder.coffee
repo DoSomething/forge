@@ -1,34 +1,39 @@
-###
+# 
+# The location finder module must be initialized before it can be used on a page. Usage:
+# 
+#   ```js
+#   window.initializeLocationFinder({
+#     mode: 'default' or 'select',
+#     endpoint: '<JSON endpoint URL>',
+#     validatoin: 
+#     
+#   });
+#   ```
+#
 
-Location finder widget.
-
-Usage:
-
-  window.initializeLocationFinder({
-    mode: 'default' or 'select',
-    endpoint: '<JSON endpoint URL>',
-    validatoin: regex for form validation, ex: /^\d{5}$/
-    delegate: if in 'select' mode, DOM object where selected ID will be output to, ex: $("#formID")
-  });
-
-###
-
+# We initialize the module in a closure to protect it from being tampered with.
 do ($, window) ->
   initialized = false;
   options = {}
 
   window.initializeLocationFinder = (opts) ->
-    if (!initialized)
+    # We track whether the module is initialized and prevent re-initialization.
+    if (!initialized) 
       initialized = true;
 
-      # set up default options 
+      # Default options can be overridden by passing JSON value in to initialize method.
+      # - **mode:** either 'default' or 'select'
+        #    - 'select' makes results clickable, and passes the selected result to a hidden form delegate
+      # - **endpoint:** JSON endpoint to connect to
+      # - **validation:** regex for form validation, ex: `/^\d{5}$/`
+      # - **delegate:** if in 'select' mode, DOM object where selected ID will be output to, ex: $("#formID")
       defaults =
-        mode: 'default', 
+        mode: 'default',
         endpoint: '/example-data.json',
         validation: /[\s\S]*/,
         delegate: $('.js-location-finder-delegate')
 
-      # combine options with default values
+      # Override default options with any settings passed during initialization.
       if(opts?)
         options = $.extend({}, defaults, opts)
       else
@@ -51,7 +56,7 @@ do ($, window) ->
 
     zip = $(".js-location-finder-input").val()
 
-    # validate input
+    # If a `validation` regular expression was set, we check that before proceeding.
     if(zip.match(options.validation))
       $.get "#{options.endpoint}#{zip}", (data)->
         $(".js-location-finder-results-zip").text(zip)
