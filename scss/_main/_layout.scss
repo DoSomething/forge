@@ -144,6 +144,7 @@
   max-width: 620px;
   font-weight: 400;
   margin: 1em auto;
+  padding: 2%;
 
   @include respond-to(widescreens_and_tablets) {
     &.right {
@@ -208,6 +209,7 @@
     max-width: 37rem;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 2%;
   }
 
   h1, h2 {

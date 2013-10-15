@@ -72,19 +72,22 @@ img.bordered {
 // Styleguide 4.2.5 - List styles
 .with-copy {
   ul {
-    list-style-type: none;
+    list-style-type: square;
+    padding-left: 4em;
 
     li {
       position: relative;
-      padding-left: 2em;
       margin-bottom: 0.15em;
-      text-indent: -0.6em;
+    }
 
-      &:before {
-        content: '\25A0';
+    &.bad, &.good {
+      list-style-type: none;
+      text-indent: -0.6em;
+      padding-left: 2em;
+      margin-left: 0;
+      li:before {
         position: relative;
-        left: -1em;
-        color: $light-gray;
+        left: -0.75em;
         font-size: 0.8em;
       }
     }

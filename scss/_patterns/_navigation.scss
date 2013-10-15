@@ -7,6 +7,8 @@ nav.breadcrumbs {
 
   ul {
     list-style-type: none;
+    margin-left: auto;
+    padding-left: 0;
   }
 
   li {
@@ -42,6 +44,7 @@ nav.breadcrumbs {
 .tabs {
   padding: 4.55rem 0; // aligns top edge with top of <p> below an <h1> element
   font-size: 1.1rem;
+  text-align: center;
   overflow: hidden;
 
   ul {
@@ -50,7 +53,7 @@ nav.breadcrumbs {
   }
 
   li {
-    float: left;
+    display: inline;
     margin: 0 1rem;
   }
 
@@ -70,6 +73,7 @@ nav.breadcrumbs {
 
   &.vertical {
     font-size: 1.1em; /* decreasing font size, starting at 1em */
+    text-align: left;
 
     ul {
       font-size: 0.9em;
@@ -77,7 +81,7 @@ nav.breadcrumbs {
     }
 
     li {
-      float: none;
+      display: block;
       margin: 0.5rem 0; 
     }
   }
