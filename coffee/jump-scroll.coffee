@@ -1,6 +1,4 @@
-$ = jQuery
-
-$ ->
+jQuery ($) ->
   $(".js-jump-scroll").click (e)->
     e.preventDefault()
 

@@ -11,55 +11,17 @@
 #   ```
 #
 
-# We initialize the module in a closure to protect it from being tampered with.
-do ($, window) ->
+$ = jQuery
+
+window.DSLocationFinder = ->
   initialized = false;
   options = {}
 
-  window.initializeLocationFinder = (opts) ->
-    # We track whether the module is initialized and prevent re-initialization.
-    if (!initialized) 
-      initialized = true;
-
-      # Default options can be overridden by passing JSON value in to initialize method.
-      # - **mode:** either 'default' or 'select'
-        #    - 'select' makes results clickable, and passes the selected result to a hidden form delegate
-      # - **endpoint:** JSON endpoint to connect to
-      # - **validation:** regex for form validation, ex: `/^\d{5}$/`
-      # - **delegate:** if in 'select' mode, DOM object where selected ID will be output to, ex: $("#formID")
-      defaults =
-        mode: 'default',
-        endpoint: '/example-data.json',
-        validation: /[\s\S]*/,
-        delegate: $('.js-location-finder-delegate')
-
-      # Override default options with any settings passed during initialization.
-      if(opts?)
-        options = $.extend({}, defaults, opts)
-      else
-        options = defaults
-
-      $(".no-js-feature-warning").hide()
-      $(".no-js-hide-feature").show()
-      $(".js-location-finder-results").hide()
-
-      $(".js-location-finder-button").click (e) ->
-        e.preventDefault()
-        findLocation()
-
-      $(".js-location-finder-form").submit (e) ->
-        e.preventDefault()
-        findLocation()
-
-  findLocation = ->
-    $(this).addClass("loading")
-
-    zip = $(".js-location-finder-input").val()
-
+  findLocation = (query) =>
     # If a `validation` regular expression was set, we check that before proceeding.
-    if(zip.match(options.validation))
-      $.get "#{options.endpoint}#{zip}", (data)->
-        $(".js-location-finder-results-zip").text(zip)
+    if(query.match(options.validation))
+      $.get "#{options.endpoint}#{query}", (data)->
+        $(".js-location-finder-results-zip").text(query)
 
         $(".js-location-finder-results .location-list").html("")
         $.each(data.results, (index, value) ->
@@ -69,7 +31,7 @@ do ($, window) ->
             modifier_class = ""
 
           $(".js-location-finder-results .location-list").append("""
-            <li data-id="#{@gsid}">
+            <li data-id="#{@gsid}" data-name="#{@name}">
               <strong>#{@name}</strong><br>
               #{@street}, #{@city}, #{@state} #{@zip}<br>
               #{if @phone? then @phone + "\n" else "" }
@@ -86,6 +48,8 @@ do ($, window) ->
 
             if(options.delegate?)
               options.delegate.val($(this).data("id"))
+              options.delegate.attr("data-name", $(this).data("name"))
+              options.delegate.trigger("change")
             else
               console.error("Location finder delegate not set.")
           )
@@ -118,3 +82,40 @@ do ($, window) ->
       $(".js-location-finder-form").slideDown(400)
       $(".js-location-finder-results .location-list").html("")
       $(".js-location-finder-button").removeClass("loading")
+
+
+
+  initialize: (opts) ->
+    if (!initialized) 
+      initialized = true;
+
+      # Default options can be overridden by passing JSON value in to initialize method.
+      # - **mode:** either 'default' or 'select'
+        #    - 'select' makes results clickable, and passes the selected result to a hidden form delegate
+      # - **endpoint:** JSON endpoint to connect to
+      # - **validation:** regex for form validation, ex: `/^\d{5}$/`
+      # - **delegate:** if in 'select' mode, DOM object where selected ID will be output to, ex: $("#formID")
+      defaults =
+        mode: 'default',
+        endpoint: '/example-data.json',
+        validation: /[\s\S]*/,
+        delegate: $('.js-location-finder-delegate')
+
+      # Override default options with any settings passed during initialization.
+      if(opts?)
+        options = $.extend({}, defaults, opts)
+      else
+        options = defaults
+
+      # Prepare the form for use.
+      $(".no-js-feature-warning").hide()
+      $(".no-js-hide-feature").show()
+      $(".js-location-finder-results").hide()
+
+      $(".js-location-finder-button").click (e) =>
+        e.preventDefault()
+        findLocation $(".js-location-finder-input").val()
+
+      $(".js-location-finder-form").submit (e) =>
+        e.preventDefault()
+        findLocation $(".js-location-finder-input").val()
