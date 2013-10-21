@@ -1,0 +1,29 @@
+div.pitch--slide {
+  position: relative;
+  background: $dark-gray url('images/placeholders/pitch1.jpg') no-repeat center bottom;
+  background-size: cover;
+  min-height: 350px;
+  @media only screen and (min-height: 460px) {
+    min-height: 420px;
+  }
+
+  div.pitch--text {
+    position: absolute;
+    bottom: 0;
+    padding: 0 1rem;
+    color: #fff;
+    text-align: center;
+
+    h2, p {
+      color: #fff;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
