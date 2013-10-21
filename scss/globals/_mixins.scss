@@ -34,7 +34,7 @@
 //
 // Compatible in IE9+, Chrome 4+, Firefox 3.5+, Safari 3.1+.
 @mixin high-dpi {
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { @content; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx) { @content; }
 }
 
 // Shortcut for writing sprites that scale down on mobile displays.
