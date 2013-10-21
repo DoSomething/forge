@@ -381,8 +381,9 @@ footer.contact {
 // for full documentation **
 //
 // Styleguide 4.4.7 - Location Finder
-.location-list {
-  list-style-type: none;
+ul.location-list {
+  list-style-type: none !important;
+  padding-left: 2% !important;
 
   li {
     margin: 0;
@@ -393,4 +394,56 @@ footer.contact {
       border-bottom: none;
     }
   }
+}
+
+
+// Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
+//
+// Styleguide 4.4.7 - Modal (Popup)
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  //display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  
+
+  .modal-content {
+    position: relative;
+    background: #fff;
+    width: 600px;
+    z-index: 1050;
+    width: auto;
+    padding: 2rem 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 100%;
+    
+    .modal-close-button {
+      position: absolute;
+      top: 0.5rem; right: 0.5rem;
+      text-decoration: none;
+    }
+
+    h2 {
+      padding-right: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    @include respond-to(widescreens_and_tablets) {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      min-height: 0;
+    }
+  }  
+}
+
+body.modal-open {
+  overflow: hidden;
 }

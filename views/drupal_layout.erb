@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
+  <link rel="stylesheet" href="/neue.dev.css" media="screen, projection" type="text/css">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
   
@@ -25,6 +25,13 @@
     <link rel="stylesheet" href="/ie.css" type="text/css" />
     <script src="/ie/html5.min.js"></script>
   <![endif]-->
+
+  <!-- NOTE: these should really be loaded at the end of the <body> tag for performance.
+       We're loading them here so that we can use inline scripts for quick mock-ups. -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/neue.js"></script>
+
+
 </head>
 <body class="with-grid">
 <nav id="top" class="utility">
@@ -164,17 +171,7 @@
   </footer>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="/neue.js"></script>
-
-<!-- temporarily added for testing since Sinatra content_for is broked -->
-<script>
-  $(document).ready(function() {
-    window.initializeLocationFinder({
-      mode: "default",
-    });
-  });
-</script>
+<%= params[:new_chrome] %>
 
 <!--[if lt IE 9]>
   <script src="/ie/rem.min.js"></script>

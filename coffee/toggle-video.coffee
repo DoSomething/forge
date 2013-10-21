@@ -1,6 +1,4 @@
-$ = jQuery
-
-$ ->
+jQuery ($) ->
   $(".js-toggle-video-link").click ->
     $(".js-toggle-video-link").hide()
     $(".scroll-indicator-link").remove()

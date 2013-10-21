@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>jump-scroll.coffee</title>
+  <title>modal.coffee</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -15,7 +15,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>jump-scroll.coffee</h1>
+                  <h1>modal.coffee</h1>
               </div>
           </li>
         
@@ -31,13 +31,17 @@
             </div>
             
             <div class="content"><div class='highlight'><pre>jQuery ($) -&gt;
-  $(<span class="string">".js-jump-scroll"</span>).click (e)-&gt;
+  $(<span class="string">".js-trigger-modal"</span>).click (e) -&gt;
     e.preventDefault()
+    href = <span class="string">"<span class="subst">#{$(<span class="keyword">this</span>).attr('href')}</span>"</span>
 
-    href = $(<span class="keyword">this</span>).attr(<span class="string">'href'</span>)
-    $(<span class="string">'html,body'</span>).animate({scrollTop: $(e.target.hash).offset().top}, <span class="string">'slow'</span>, () -&gt;
-      window.location.hash = href
-    )</pre></div></div>
+    $(<span class="string">"body"</span>).addClass(<span class="string">"modal-open"</span>)
+    $(href).show()
+
+  $(<span class="string">".js-close-modal"</span>).click (e) -&gt;
+    e.preventDefault()
+    $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>).hide()
+    $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>)</pre></div></div>
             
         </li>
         

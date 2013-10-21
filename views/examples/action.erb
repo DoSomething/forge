@@ -1,0 +1,148 @@
+<div class="full-width">
+  <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width">
+</div>
+
+<div class="page-width with-copy">
+  <div class="row section">
+    <h2>Fight texting &amp; driving.</h2>  
+  </div>
+
+  <div class="messages success">You're signed up for <strong>Thumb Wars</strong>!</div>
+
+  <div class="row section action--step action--step-active">
+    <h3>Step 1: Learn</h3>
+    <div class="action--description">
+      <p>When you text and drive, your eyes can go off the road for the length of a football field. But your thumbs, and our free thumb socks, can save the day.</p>
+      <ul class="action--faq">
+        <li><a href="#">More stats on distracted driving.</a></li>
+      </ul>
+
+      <div class="action--stepper callout">
+        <a href="#" class="btn primary medium js-action-step-complete">Next Step</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row section action--step action--step-inactive">
+    <h3>Step 2: Plan</h3>
+    <div class="action--description">
+      <p>Enter your address below to get two free pairs of thumb socks. Then, pick a friend or family member who texts and drives and share the socks with them in a surprising way. The more creative and fun, the more effective it’ll be.</p>
+
+      <p class="action--result">
+        You chose to send your socks to <strong class="js-action-result">The Evil Lair</strong>. (<a class="js-change-location" href="#">change</a>)
+      </p>
+
+      <ul class="action--faq">
+        <li><a href="#">Tips on how to share the socks</a></li>
+        <li><a href="#">More questions? Read our FAQ.</a></li>
+      </ul>
+
+      <div class="action--widget">
+        <form action="#" class="callout js-location-finder-form">
+          <div class="no-js-hide-feature">
+            <p>Choose shipping address:</p>
+            <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
+            <a class="btn primary medium js-location-finder-button">Search</a>
+          </div>
+
+          <div class="alert error no-js-feature-warning">The Location Finder requires JavaScript to be enabled in your browser.</div>
+        </form>
+
+        <div class="content-center narrow js-location-finder-results no-js-hide-feature">
+          <p>Nearest drop-off points for zipcode <span class="js-location-finder-results-zip"></span> (<a href='#' class='js-location-finder-reset'>change</a>):</p>
+
+          <ul class="location-list">
+
+          </ul>
+        </div>
+
+        <form action="#">
+          <input class="js-location-finder-delegate" type="hidden">
+        </form>
+      </div>
+
+      <div class="action--stepper is-hidden-until-step-complete callout">
+        <a href="#" class="btn primary medium js-action-step-complete">Next Step</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row section action--step action--step-inactive">
+    <h3>Step 3: Do</h3>
+    <div class="action--description">
+      <p>Take a pic of you and your friend with the socks. Make it crazy - we’ll be sharing our favorite pics on our Facebook page and Instagram (#thumbwars.)</p>  
+
+      <div class="action--stepper callout">
+        <a href="#" class="btn primary medium js-action-step-complete">Next Step</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row section action--step action--step-inactive">
+    <h3>Step 4: Tell Us</h3>
+    <div class="action--description">
+      <p>Upload the pic of you and your friend. You’ll be entered to win a $5K scholarship!</p>
+
+      <div class="action--stepper callout">
+        <a href="#" class="btn primary medium js-action-step-complete">Tell Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var locFinder = window.DSLocationFinder();
+    locFinder.initialize({
+      mode: "select",
+      endpoint: "/example-data.json?q="
+    });
+
+    $(".js-action-step-complete").click(function(e) {
+      e.preventDefault();
+      $(".messages").slideUp();
+
+      console.log("FEEEEEE");
+      var thisStep = $(this).closest(".action--step");
+
+      thisStep.find(".action--widget").slideUp();
+
+      thisStep.removeClass("action--step-active");
+      thisStep.addClass("action--step-complete");
+
+      thisStep.next(".action--step").removeClass("action--step-inactive");
+
+      thisStep.find(".is-hidden-until-step-complete").hide();
+    });
+
+    $(".js-change-location").click(function() {
+      console.log("ROLLIN' IT BACK");
+      $(".action--step").addClass("action--step-inactive");
+      $((".action--step")).removeClass("action--step-active");
+
+      var thisStep = $(this).closest(".action--step");
+      console.log(thisStep);
+
+      //thisStep.css("background", "red");
+      thisStep.removeClass("action--step-complete");
+      thisStep.removeClass("action--step-inactive");
+      thisStep.addClass("action--step-active");
+      thisStep.find(".action--widget").slideDown();
+
+    });
+
+    $(".is-hidden-until-step-complete").hide();
+
+    $(".js-location-finder-delegate").change(function() {
+      console.log("YOU PICKED IT");
+      var thisStep = $(this).closest(".action--step");
+
+      $(".js-action-result").text($(this).attr("data-name"));
+
+
+      $(".is-hidden-until-step-complete").show();
+    });
+
+
+  });
+</script>

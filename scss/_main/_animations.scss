@@ -35,3 +35,30 @@
 @include keyframes(bounce) {
   to { @include transform(translateY(10px)); }
 }
+
+// Element subtly bounces to grab the users attention.
+//
+// Styleguide 5.3 - Slide In (Fast)
+.slide-in-fast {
+  @include transform(translateY(150px));
+  @include animation(slide-in-fast 0.25s ease forwards);
+  @include transition(opacity 0.25s);
+  opacity: 0;
+}
+
+@include keyframes(slide-in-fast) {
+  to { @include transform(translateY(0)); opacity: 1; }
+}
+
+// Element subtly bounces to grab the users attention.
+//
+// Styleguide 5.2 - Fade In
+.fade-in {
+  @include animation(fade-in 0.25s ease forwards);
+  @include transition(opacity 0.25s);
+  opacity: 0;
+}
+
+@include keyframes(fade-in) {
+  to { opacity: 1; }
+}

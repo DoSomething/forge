@@ -1,6 +1,4 @@
-$ = jQuery
-
-$ ->
+jQuery ($) ->
   $(document).ready ->
     # toggle dropdown menu navigation on mobile
     $(".js-menu-toggle").click (e)->

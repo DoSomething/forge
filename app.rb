@@ -14,7 +14,11 @@ get '/examples/*.html' do
 end
 
 get '/example/*' do
-  render :erb, :"examples/#{params[:splat].first}", layout: :drupal_layout
+  if params[:new_chrome] == "1"
+    render :erb, :"examples/#{params[:splat].first}", layout: :new_layout
+  else
+    render :erb, :"examples/#{params[:splat].first}", layout: :drupal_layout
+  end
 end
 
 helpers do
