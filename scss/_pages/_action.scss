@@ -1,3 +1,5 @@
+/** ACTION STEP CONCEPT **/
+
 .action--step {
   
   .action--widget {
@@ -68,4 +70,96 @@
   padding-left: 1.5rem !important;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+
+/** ACTION STAGE CONCEPT **/
+
+.action--header {
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+}
+
+
+.action--stage {
+  .action--widget {
+    background: $off-white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: $sm-border-radius;
+  }
+
+  .action--result {
+    display: none;
+  }
+
+  p.summary {
+    display: none;
+  }
+  
+  @include respond-to(phones) {
+    h3, p {
+      margin-left: 6%;
+      margin-right: 6%;
+    }
+  }
+}
+
+.action--stage-inactive {
+  &:hover {
+    cursor: pointer;
+  }
+
+  p.summary {
+    display: block;
+    color: $light-gray;
+  }  
+
+  .action--description {
+    display: none;
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: $light-gray;
+    text-decoration: underline;
+  }
+}
+
+.action--stage-complete {
+  .action--description {
+    p {
+      color: $light-gray;  
+    }
+
+    .action--result {
+      display: block;
+      color: $dark-gray;
+    }
+    
+    .action--nextstage {
+      display: none;
+    }
+
+    p.summary {
+      display: block;
+      color: $light-gray;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    color: $green;
+
+    &:after {
+      content: "\2714";
+      padding-left: 1rem;
+      color: $green;
+    }
+  }
+
+  .action--faq {
+    display: none;
+  }
 }
