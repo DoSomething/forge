@@ -1,7 +1,7 @@
-/** ACTION STEP CONCEPT **/
+/** ACTION STEP PAGE **/
 
 .action--step {
-  
+
   .action--widget {
     background: $off-white;
     margin: 1rem;
@@ -12,7 +12,7 @@
   .action--result {
     display: none;
   }
-  
+
   @include respond-to(phones) {
     h3, p {
       margin-left: 6%;
@@ -36,7 +36,7 @@
 .action--step-complete {
   .action--description {
     p {
-      color: $light-gray;  
+      color: $light-gray;
     }
 
     .action--result {
@@ -97,7 +97,7 @@
   p.summary {
     display: none;
   }
-  
+
   @include respond-to(phones) {
     h3, p {
       margin-left: 6%;
@@ -114,7 +114,7 @@
   p.summary {
     display: block;
     color: $light-gray;
-  }  
+  }
 
   .action--description {
     display: none;
@@ -130,14 +130,14 @@
 .action--stage-complete {
   .action--description {
     p {
-      color: $light-gray;  
+      color: $light-gray;
     }
 
     .action--result {
       display: block;
       color: $dark-gray;
     }
-    
+
     .action--nextstage {
       display: none;
     }
