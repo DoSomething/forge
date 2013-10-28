@@ -23,16 +23,13 @@ module.exports = (grunt) ->
 					'assets/neue.dev.css': 'scss/neue.dev.scss'
 					'assets/ie.css': 'scss/ie.scss'
 				options:
-					sourcemap: true
 					style: 'compressed'
-		
+
 		# compile CoffeeScript
 		coffee:
 			compile:
 				files:
 					'assets/bin/neue.js': ['coffee/*.coffee']
-				options:
-					sourceMap: true
 
 		# concatenate CoffeeScript and third-party JavaScript & minify
 		uglify:
@@ -56,7 +53,7 @@ module.exports = (grunt) ->
 	# register grunt tasks
 	grunt.registerTask 'build', ['sass:dist', 'coffee:compile', 'uglify:js', 'docco']
 	grunt.registerTask 'default', ['build', 'watch']
-	
+
 	# load grunt dependencies
 	grunt.loadNpmTasks 'grunt-contrib-sass'
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
