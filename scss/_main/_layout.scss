@@ -58,8 +58,8 @@
     max-width: 100%;
   }
 
-  &:first-child { 
-    margin-left: 0; 
+  &:first-child {
+    margin-left: 0;
   }
 }
 
@@ -81,16 +81,16 @@
   .column {
     margin-left: 1%;
 
-    &:first-child { 
-      margin-left: 0; 
+    &:first-child {
+      margin-left: 0;
     }
   }
 
   .row {
     margin-bottom: 1%;
 
-    &:first-child { 
-      margin-top: 1%; 
+    &:first-child {
+      margin-top: 1%;
     }
   }
 
@@ -113,22 +113,20 @@
 // .section - applies a larger margin for visual distinction between sections
 //
 // Styleguide 3.2.2 - Rows
-.row {
+section.row {
   clear: both;
   display: block;
   overflow: hidden;
+  margin-bottom: 1rem;
 
-  &.section {
-    margin-bottom: 1rem;
+  @include respond-to(widescreens_and_tablets) {
+    margin-bottom: 3rem;
+  }
+
+  &:first-child {
+    margin-top: 2rem;
     @include respond-to(widescreens_and_tablets) {
-      margin-bottom: 3rem;
-    }
-
-    &:first-child {
-      margin-top: 2rem;
-      @include respond-to(widescreens_and_tablets) {
-        margin-top: 4rem;
-      }
+      margin-top: 4rem;
     }
   }
 }
@@ -178,7 +176,7 @@
       margin-left: 1rem;
     }
   }
-  
+
   .media-content {
     overflow: hidden;
   }
