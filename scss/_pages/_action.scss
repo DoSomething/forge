@@ -1,5 +1,15 @@
 /** ACTION STEP PAGE **/
 
+// TODO - DELETE THIS WRAPPER
+//        ONCE A FONT IS SELECTED
+
+#action--wrapper {
+  h1, h2, h3, h4, h5, h6, p, li, a {
+    font-family: "Comic Sans MS";
+  }
+}
+
+
 .action--sponsors {
 
   img {
@@ -8,6 +18,17 @@
     width: 40%;
     float: left;
   }
+}
+
+
+.action--step-nav.fixed {
+  display: none;
+  position: fixed;
+  background: #eee;
+  width: 100%;
+  height: 1.5rem;
+  padding: 0.5rem;
+  top: 0;
 }
 
 
@@ -172,5 +193,13 @@
 
   .action--faq {
     display: none;
+  }
+}
+
+
+.complete--social {
+
+  a {
+    text-align: center;
   }
 }
