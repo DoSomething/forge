@@ -63,10 +63,38 @@
     </div>
   </section>
 
-  <section class="row action--step">
-    <h3 id="do">Step 3: Do It</h3>
+  <section class="row action--step"> <h3 id="do">Step 3: Do It</h3>
     <div class="action--description">
       <p>Enter your friends’ numbers below and we’ll send them their phone baby.</p>
+
+      <section style="display: block;" class="sms section" id="sms">
+        <form>
+          <input name="redirect_to" value="mango" type="hidden">
+
+          <label class="sms-beta-mobile">Friend's Cell #s:</label>
+
+          <div class="sms-input-wrapper first-fields">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+          </div>
+
+          <div class="sms-input-wrapper sectond-fields">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+          </div>
+
+          <input name="opt_in_path" value="mango" type="hidden">
+          <input name="friends_opt_in_path" value="mango" type="hidden">
+
+          <a class="btn secondary medium callout" href="#">ipsum send 'em</a>
+          <a id="show-more-fields" class="btn secondary tertiary callout" href="#">invite more friends</a>
+
+          <p><a class="official-rules" href="#" target="_blank">Official Rules &amp; Regulations</a></p>
+          <p class="ctia legal">Message &amp; data rates may apply. Text <strong>STOP</strong> to opt-out, <strong>HELP</strong> for help.</p>
+        </form>
+      </section>
 
       <section class="action--sms-example">
         <h3 class="section-header"><span>Example From the Game:</span></h3>
@@ -224,11 +252,11 @@
 
 <script type="text/javascript">
 
-  //
-  // Action Step Scrolling Nav
-  //
-
   (function($) {
+    //
+    // Action Step Scrolling Nav
+    //
+
     var $window = $(window);
     var $digest_nav = $("#action--step-nav-digest");
     var $fixed_nav = $("#action--step-nav-fixed");
@@ -260,6 +288,20 @@
       }
       scroll++
     });
+
+    //
+    // SMS Invite Show More Fields
+    //
+
+    var $secondary_fields = $('.sectond-fields');
+    var $show_more_fields = $('#show-more-fields');
+
+    $secondary_fields.hide();
+    $show_more_fields.click(function(e) {
+      e.preventDefault();
+      $secondary_fields.show();
+      $show_more_fields.hide();
+    })
 
   })(jQuery);
 </script>
