@@ -250,11 +250,22 @@ footer.main {
     font-size: 22px;
     text-transform: uppercase;
     margin-bottom: 0;
+
+    @include respond-to(phones) {
+      text-align: left;
+    }
   }
 
   ul {
     list-style-type: none;
     padding: 0;
+  }
+
+  li {
+
+    @include respond-to(phones) {
+      text-align: left;
+    }
   }
 
   a {
@@ -275,8 +286,9 @@ footer.main {
     @include box-sizing(border-box);
 
     @include respond-to(phones) {
-      width: 100%;
+      width: 45%;
       text-align: center;
+      margin: 0 0 0 3.5%;
     }
   }
 }
