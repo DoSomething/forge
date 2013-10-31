@@ -9,6 +9,12 @@
   }
 }
 
+.newchrome--footer-wrapper {
+  margin: -55px 0px 0px;
+  @media only screen and (max-width: 321px) {
+    margin: -20px 0 0 0;
+  }
+}
 
 .action--sponsors {
 
@@ -202,5 +208,32 @@
 
   a {
     text-align: center;
+  }
+}
+
+// TODO - DELETE THIS
+body {
+  background: #222 !important;
+}
+
+.action--step-nav.fixed {
+  @media only screen and (min-width: 321px) {
+    margin: 0 0 0 -1rem;
+    max-width: 302px;
+  }
+}
+
+.mobile--container {
+  max-width: 320px;
+  width: 100%;
+  @media only screen and (min-width: 321px) {
+    margin: 5rem auto;
+  }
+
+  div[role="main"] {
+    background: #fff;
+    @media only screen and (min-width: 321px) {
+      padding: 0 1rem;
+    }
   }
 }
