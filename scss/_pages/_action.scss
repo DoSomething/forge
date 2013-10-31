@@ -29,6 +29,7 @@
   height: 1.5rem;
   padding: 0.5rem;
   top: 0;
+  z-index: 2;
 }
 
 
@@ -46,7 +47,7 @@
   }
 
   @include respond-to(phones) {
-    h3, p {
+    h3, h4, p {
       margin-left: 6%;
       margin-right: 6%;
     }
