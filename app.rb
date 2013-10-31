@@ -14,14 +14,22 @@ get '/examples/*.html' do
 end
 
 get '/example/*' do
-  if params[:new_chrome] == "1"
-    render :erb, :"examples/#{params[:splat].first}", layout: :new_layout
-  else
-    render :erb, :"examples/#{params[:splat].first}", layout: :drupal_layout
-  end
+ render_layout
 end
 
 helpers do
+  # Layout Handling (parse path and serve proper layout)
+  def render_layout
+    splat = params[:splat][0]
+    splat_sanitized = splat.slice(4..-1)
+
+    if splat.slice(0,4) == "new/"
+      render :erb, :"examples/#{splat_sanitized}", layout: :new_layout
+    else
+      render :erb, :"examples/#{splat}", layout: :drupal_layout
+    end
+  end
+
   # Generates a styleguide block. A little bit evil with @_out_buf, but
   # if you're using something like Rails, you can write a much cleaner helper
   # very easily.

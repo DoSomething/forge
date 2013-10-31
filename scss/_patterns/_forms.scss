@@ -133,6 +133,34 @@ textarea {
 
   /* secondary appearance */
   &.secondary {
+    background: $light-gray;
+    color: $dark_gray;
+    font-weight: 500;
+    text-transform: none;
+    text-decoration: none;
+    border: none;
+
+    &:hover {
+      background-color: none;
+      color: #000;
+      box-shadow: none;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+
+    &:active {
+      outline: 0;
+      background: $off-white;
+      color: lighten($off-black, 10);
+      box-shadow: none;
+    }
+  }
+
+  /* tertiary appearance */
+  &.tertiary {
     background: none;
     color: $dark_gray;
     font-weight: 500;

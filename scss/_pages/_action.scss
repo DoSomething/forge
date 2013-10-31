@@ -1,5 +1,44 @@
 /** ACTION STEP PAGE **/
 
+// TODO - DELETE THIS WRAPPER
+//        ONCE A FONT IS SELECTED
+
+#action--wrapper {
+  h1, h2, h3, h4, h5, h6, p, li, a {
+    font-family: "Comic Sans MS";
+  }
+}
+
+.newchrome--footer-wrapper {
+  margin: -55px 0px 0px;
+  @media only screen and (max-width: 321px) {
+    margin: -20px 0 0 0;
+  }
+}
+
+.action--sponsors {
+
+  img {
+    display: block;
+    margin: 5%;
+    width: 40%;
+    float: left;
+  }
+}
+
+
+.action--step-nav.fixed {
+  display: none;
+  position: fixed;
+  background: #eee;
+  width: 100%;
+  height: 1.5rem;
+  padding: 0.5rem;
+  top: 0;
+  z-index: 2;
+}
+
+
 .action--step {
 
   .action--widget {
@@ -14,7 +53,7 @@
   }
 
   @include respond-to(phones) {
-    h3, p {
+    h3, h4, p {
       margin-left: 6%;
       margin-right: 6%;
     }
@@ -43,7 +82,7 @@
       display: block;
       color: $dark-gray;
     }
-    
+
     .action--stepper {
       display: none;
     }
@@ -161,5 +200,40 @@
 
   .action--faq {
     display: none;
+  }
+}
+
+
+.complete--social {
+
+  a {
+    text-align: center;
+  }
+}
+
+// TODO - DELETE THIS
+body {
+  background: #222 !important;
+}
+
+.action--step-nav.fixed {
+  @media only screen and (min-width: 321px) {
+    margin: 0 0 0 -1rem;
+    max-width: 302px;
+  }
+}
+
+.mobile--container {
+  max-width: 320px;
+  width: 100%;
+  @media only screen and (min-width: 321px) {
+    margin: 5rem auto;
+  }
+
+  div[role="main"] {
+    background: #fff;
+    @media only screen and (min-width: 321px) {
+      padding: 0 1rem;
+    }
   }
 }

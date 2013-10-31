@@ -33,23 +33,27 @@
 </head>
 
 <body>
-  <div class="newchrome--nav">
-    <a class="newchrome--logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
-    <a href="#" class="newchrome--hamburger">&#9776;<span>Menu</span></a>
-  </div>
+<div class="mobile--container">
+  <header>
+    <nav class="newchrome--nav">
+      <a class="newchrome--logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+      <a href="#" class="newchrome--hamburger">&#9776;<span>Menu</span></a>
+    </nav>
+  </header>
 
   <div role="main">
     <%= yield %>
   </div>
 
-  <div class="newchrome--footer-wrapper">
-    <footer>
+  <footer>
+    <div class="newchrome--footer-wrapper">
       <p>A DoSomething.org campaign</p>
       <p class="newchrome--ds-info">
         Join over 2.2 million young people taking action. Make the world suck less.
       </p>
-    </footer>
-  </div>
+    </div>
+  </footer>
+</div>
 
   <!--[if lt IE 9]>
     <script src="/ie/rem.min.js"></script>

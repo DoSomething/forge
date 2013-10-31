@@ -3,25 +3,20 @@
 
 <div class="full-width">
   <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" style="height: 200px" />
-
-  <section class="row action--sponsors">
-    <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" />
-    <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" />
-  </section>
 </div>
 
 <div class="page-width">
 
   <section class="row callout action--cta">
-    <h2>Campaign Call to Action</h2>
+    <h2>Impregnate your friends’ phone with a phone baby</h2>
   </section>
 
   <nav id="action--step-nav-digest" class="row action--step action--step-nav digest">
     <ul>
-      <li><h3><a href="#learn">1. Learn lorem ipsum dolor</a></h3></li>
-      <li><h3><a href="#plan">2. Plan lorem ipsum dolor</a></h3></li>
-      <li><h3><a href="#do">3. Do It lorem ipsum dolor</a></h3></li>
-      <li><h3><a href="#tell">4. Tell Us ipsum ipsum</a></h3></li>
+      <li><h3><a href="#learn">1. Learn</a></h3></li>
+      <li><h3><a href="#plan">2. Plan</a></h3></li>
+      <li><h3><a href="#do">3. Do It</a></h3></li>
+      <li><h3><a href="#tell">4. Tell Us</a></h3></li>
       <li><p><a href="#">Scholarhips and Prizing</a></p></li>
     </li>
   </nav>
@@ -38,7 +33,12 @@
   <section class="row action--step">
     <h3 id="learn">Step 1: Learn</h3>
     <div class="action--description">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Almost 1 in 3 girls will become pregnant by the time they turn 20.</p>
+
+      <p>One of the best ways to prevent teen pregnancy is to just talk about it!</p>
+
+      <p>Sending a phone baby to your friends tells them that they can talk to you about this stuff in a funny, no-pressure way. It also gives them a sneak peek into life as a teen parent.</p>
+
       <ul class="action--faq">
         <li><a href="#modal--faq1" class="js-trigger-modal">Learn more</a></li>
         <li><a href="#modal--faq3" class="js-trigger-modal">FAQs</a></li>
@@ -51,10 +51,8 @@
   <section class="row action--step">
     <h3 id="plan">Step 2: Plan</h3>
     <div class="action--description">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-
+      <p>Send this to a friend who needs someone to talk to about these things or maybe someone who doesn’t think/talk about them enough.</p>
+      <p>The challenge starts the morning after they accept and lasts for one day. They’ll receive approximately 10 text messages from a sassy phone baby.</p>
       <p class="action--result">
         You chose to send your lorems to <strong class="js-action-result">The Evil Lair</strong>. (<a class="js-change-location" href="#">change</a>)
       </p>
@@ -62,73 +60,67 @@
       <ul class="action--faq">
         <li><a href="#modal--faq2" class="js-trigger-modal">Check out the Action Guide</a></li>
       </ul>
+    </div>
+  </section>
 
-      <div class="action--widget">
-        <form action="#" class="callout js-location-finder-form">
-          <div class="no-js-hide-feature">
-            <p>Choose shipping address:</p>
-            <input type="text" maxlength="5" class="short js-location-finder-input" placeholder="zip code">
-            <a class="btn secondary medium callout js-location-finder-button">Search</a>
+  <section class="row action--step"> <h3 id="do">Step 3: Do It</h3>
+    <div class="action--description">
+      <p>Enter your friends’ numbers below and we’ll send them their phone baby.</p>
+
+      <section style="display: block;" class="sms section" id="sms">
+        <form>
+          <input name="redirect_to" value="mango" type="hidden">
+
+          <label class="sms-beta-mobile">Friend's Cell #s:</label>
+
+          <div class="sms-input-wrapper first-fields">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
           </div>
 
-          <div class="alert error no-js-feature-warning">The Location Finder requires JavaScript to be enabled in your browser.</div>
+          <div class="sms-input-wrapper sectond-fields">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+          </div>
+
+          <input name="opt_in_path" value="mango" type="hidden">
+          <input name="friends_opt_in_path" value="mango" type="hidden">
+
+          <a class="btn secondary medium callout" href="#">ipsum send 'em</a>
+          <a id="show-more-fields" class="btn secondary tertiary callout" href="#">invite more friends</a>
+
+          <p><a class="official-rules" href="#" target="_blank">Official Rules &amp; Regulations</a></p>
+          <p class="ctia legal">Message &amp; data rates may apply. Text <strong>STOP</strong> to opt-out, <strong>HELP</strong> for help.</p>
         </form>
+      </section>
 
-        <div class="content-center narrow js-location-finder-results no-js-hide-feature">
-          <p>Nearest drop-off points for zipcode <span class="js-location-finder-results-zip"></span> (<a href='#' class='js-location-finder-reset'>change</a>):</p>
-
-          <ul class="location-list">
-
-          </ul>
+      <section class="action--sms-example">
+        <h3 class="section-header"><span>Example From the Game:</span></h3>
+        <div class="game-conversation game-ds">
+          <p>Girl, you got any 'fee?</p>
         </div>
 
-        <form action="#">
-          <input class="js-location-finder-delegate" type="hidden">
-        </form>
-      </div>
+        <div class="game-conversation game-user">
+          <p>Yeah, I got that 'fee. Desmond gave it to me.</p>
+        </div>
 
+        <div class="game-conversation game-ds">
+          <p>Double americano? Lemme get some!</p>
+        </div>
+      </section>
+
+      <p>At the end of the experience, they’ll get access to a resource guide on their phone with tons of info about teen pregnancy.</p>
+
+      <p>Talk to your friends about it! See how they did, what they thought the hardest part was etc. </p>
     </div>
-  </section>
-
-  <section class="row action--step">
-    <h3 id="do">Step 3: Do It</h3>
-    <div class="action--description">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
-    </div>
-  </section>
-
-  <section class="row section campaign-section">
-    <h3 class="section-header"><span>Your Impact</span></h3>
-
-    <div>
-      <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" style="height: 200px" />
-    </div>
-
-    <ul class="gallery-thumbs">
-      <li class="column always_span_4">
-        <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" style="height: 90px" />
-      </li>
-      <li class="column always_span_4">
-        <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" style="height: 90px" />
-      </li>
-      <li class="column always_span_4">
-        <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" style="height: 90px" />
-      </li>
-    </ul>
   </section>
 
   <section class="row action--step">
     <h3 id="tell">Step 4: Tell Us</h3>
     <div class="action--description">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
 
       <div class="action--prizing-preview">
         <h3>Prizing</h3>
@@ -141,10 +133,6 @@
         <p>Prize ipsum incentivization lorem?</p>
 
         <p><a href="#modal--prizing" class="js-trigger-modal">View All Prizes</a></p>
-      </div>
-
-      <div class="action--stepper callout">
-        <a href="/example/complete?new_chrome=1" class="btn secondary large callout js-action-step-complete">Tell Us About It</a>
       </div>
     </div>
   </section>
@@ -264,11 +252,11 @@
 
 <script type="text/javascript">
 
-  //
-  // Action Step Scrolling Nav
-  //
-
   (function($) {
+    //
+    // Action Step Scrolling Nav
+    //
+
     var $window = $(window);
     var $digest_nav = $("#action--step-nav-digest");
     var $fixed_nav = $("#action--step-nav-fixed");
@@ -300,6 +288,20 @@
       }
       scroll++
     });
+
+    //
+    // SMS Invite Show More Fields
+    //
+
+    var $secondary_fields = $('.sectond-fields');
+    var $show_more_fields = $('#show-more-fields');
+
+    $secondary_fields.hide();
+    $show_more_fields.click(function(e) {
+      e.preventDefault();
+      $secondary_fields.show();
+      $show_more_fields.hide();
+    })
 
   })(jQuery);
 </script>
