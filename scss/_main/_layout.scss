@@ -117,16 +117,18 @@
   clear: both;
   display: block;
   overflow: hidden;
-  margin-bottom: 1rem;
 
-  @include respond-to(widescreens_and_tablets) {
-    margin-bottom: 3rem;
-  }
-
-  &:first-child {
-    margin-top: 2rem;
+  &.section {
+    margin-bottom: 1rem;
     @include respond-to(widescreens_and_tablets) {
-      margin-top: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    &:first-child {
+      margin-top: 2rem;
+      @include respond-to(widescreens_and_tablets) {
+        margin-top: 4rem;
+      }
     }
   }
 }
