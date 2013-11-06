@@ -57,32 +57,28 @@
 
 
 .newchrome--footer {
-  margin: -55px 0px 0px;
+  background: $off-black;
+  color: $off-white;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem;
 
   @media only screen and (max-width: 321px) {
     margin: -20px 0 0 0;
   }
 
-  &.wrapper {
-    background: $off-black;
+  a.newchrome--ds-link {
+    color: $gold;
+    text-decoration: none;
+  }
+
+  p {
     color: $off-white;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 1rem;
+  }
 
-    a.newchrome--ds-link {
-      color: $gold;
-      text-decoration: none;
-    }
-
-    p {
-      color: $off-white;
-    }
-
-    p.newchrome--ds-info {
-      color: $dark-gray;
-      font-size: 0.7rem;
-    }
+  p.newchrome--ds-info {
+    color: $dark-gray;
+    font-size: 0.7rem;
   }
 }
 
