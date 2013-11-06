@@ -2,7 +2,8 @@
 # The location finder module must be initialized before it can be used on a page. Usage:
 # 
 #   ```js
-#   window.initializeLocationFinder({
+#   var locFinder = window.DSLocationFinder();
+#   locFinder.initialize({
 #     mode: 'default' or 'select',
 #     endpoint: '<JSON endpoint URL>',
 #     validatoin: 

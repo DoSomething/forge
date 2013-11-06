@@ -67,7 +67,8 @@
 <script type="text/javascript">
   $(document).ready(function() {
     window.pinToTop();
-    window.initializeLocationFinder({
+    var locFinder = window.DSLocationFinder();
+    locFinder.initialize({
       mode: "select",
       delegate: $(".js-location-finder-delegate")
     });
