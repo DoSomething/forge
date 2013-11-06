@@ -16,7 +16,7 @@
 
   <section class="row callout action--cta">
     <h2>Campaign Call to Action</h2>
-    <p><a href="#">Scholarhips and Prizing</a></p>
+    <p><a href="#modal--prizing" class="js-trigger-modal">Scholarhips and Prizing</a></p>
   </section>
 
   <div id="action--step-nav-wrapper" class="action--step-nav">
@@ -34,6 +34,7 @@
     <h3 id="learn">Step 1: Learn</h3>
     <div class="action--description">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
       <ul class="action--faq">
         <li><a href="#modal--faq1" class="js-trigger-modal">Learn more</a></li>
         <li><a href="#modal--faq3" class="js-trigger-modal">FAQs</a></li>
@@ -144,8 +145,8 @@
     </div>
   </section>
 
-  <section class="row callout action--help">
-    <p>Still have questions? E-mail <a href="mailto:#">name@dosomething.org</a>!</p>
+  <section class="row section callout action--help">
+    <p>Still have questions? E-mail <a href="mailto:#">email@dosomething.org</a>!</p>
   </section>
 </div>
 
@@ -191,6 +192,7 @@
 
 <aside id="modal--prizing" class="modal fade-in">
   <div class="modal-content slide-in-fast">
+    <a href="#" class="js-close-modal modal-close-button btn tertiary medium callout">&times;</a>
     <h3>Prizing</h3>
 
     <p><strong>Grand 1</strong></p>
@@ -290,11 +292,6 @@
         $nav.removeClass('fixed');
       }
     });
-
-    //
-    // Hide alert message after
-    //
-    //$('.messages').delay(5000).slideUp(500);
 
   })(jQuery);
 </script>
