@@ -33,27 +33,28 @@
 </head>
 
 <body class="mobile--background">
-<div class="mobile--container">
-  <header class="newchrome--header">
-    <nav class="newchrome--nav">
-      <a class="newchrome--logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
-      <a href="#" class="newchrome--hamburger">&#9776;<span>Menu</span></a>
-    </nav>
-  </header>
 
-  <main class="newchrome--content" role="main">
-    <%= yield %>
-  </main>
+  <div class="mobile--container">
+    <header class="newchrome--header">
+      <nav class="newchrome--nav">
+        <a class="newchrome--logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+        <a href="#" class="newchrome--hamburger">&#9776;<span>Menu</span></a>
+      </nav>
+    </header>
 
-  <footer class="newchrome--footer">
-    <div class="wrapper">
-      <p>A DoSomething.org campaign</p>
-      <p class="newchrome--ds-info">
-        Join over 2.2 million young people taking action. Make the world suck less.
-      </p>
-    </div>
-  </footer>
-</div>
+    <main class="newchrome--content" role="main">
+      <%= yield %>
+    </main>
+
+    <footer class="newchrome--footer">
+      <div class="wrapper">
+        <p>A DoSomething.org campaign</p>
+        <p class="newchrome--ds-info">
+          Join over 2.2 million young people taking action. Make the world suck less.
+        </p>
+      </div>
+    </footer>
+  </div>
 
   <!--[if lt IE 9]>
     <script src="/ie/rem.min.js"></script>

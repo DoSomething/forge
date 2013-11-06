@@ -1,5 +1,7 @@
-<!-- TODO - DELETE THIS -->
-<div id="action--wrapper">
+<div class="messages">
+  <p>Thanks for signing up for <strong>Lorem dat Ipsum</strong>. You're awesome. Now start learning about the campaign!</p>
+  <p><a href="#">Unsign me up for the campaign</a></p>
+</div>
 
 <div class="full-width">
   <img src="/images/placeholders/wallpaper.png" alt="campaign image" class="full-width" style="height: 200px" />
@@ -10,14 +12,14 @@
   </section>
 </div>
 
-<div class="page-width">
+<div class="page-width padded">
 
   <section class="row callout action--cta">
     <h2>Campaign Call to Action</h2>
     <p><a href="#">Scholarhips and Prizing</a></p>
   </section>
 
-  <div id="action--step-nav-wrapper" class="action--step-nav wrapper">
+  <div id="action--step-nav-wrapper" class="action--step-nav">
     <nav id="action--step-nav" class="nav">
       <ul>
         <li class="column always_span_3"><a href="#learn" class="step-button">learn</a></li>
@@ -149,29 +151,29 @@
 
 <aside id="modal--faq1" class="modal fade-in">
   <div class="modal-content slide-in-fast">
-    <a href="#" class="js-close-modal modal-close-button btn secondary medium callout">&times;</a>
+    <a href="#" class="js-close-modal modal-close-button btn tertiary medium callout">&times;</a>
     <h2>More stats on placeholder content:</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
-    <p><a href="#" class="js-close-modal btn secondary medium callout">Got it!</a></p>
+    <p><a href="#" class="js-close-modal btn tertiary medium callout">Got it!</a></p>
   </div>
 </aside>
 
 <aside id="modal--faq2" class="modal fade-in">
   <div class="modal-content slide-in-fast">
-    <a href="#" class="js-close-modal modal-close-button btn secondary medium callout">&times;</a>
+    <a href="#" class="js-close-modal modal-close-button btn tertiary medium callout">&times;</a>
     <h2>Action action lorem tips!</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
-    <p><a href="#" class="js-close-modal btn secondary medium callout">Ipsum lorem!</a></p>
+    <p><a href="#" class="js-close-modal btn tertiary medium callout">Ipsum lorem!</a></p>
   </div>
 </aside>
 
 <aside id="modal--faq3" class="modal fade-in">
   <div class="modal-content slide-in-fast">
-    <a href="#" class="js-close-modal modal-close-button btn secondary medium callout">&times;</a>
+    <a href="#" class="js-close-modal modal-close-button btn tertiary medium callout">&times;</a>
     <h2>Frequently Asked Questions:</h2>
     <h4>Q: Ipsum Questions Lorem</h4>
     <p>Lorem responds: ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
@@ -183,7 +185,7 @@
     <p>Lorem responds: ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
     <h4>Q: Ipsum Questions Lorem</h4>
     <p>Lorem responds: ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt, minima, numquam blanditiis nobis soluta id aliquid eius error ipsam animi quaerat eligendi veritatis at facere quibusdam officia vel. Distinctio!</p>
-    <p><a href="#" class="js-close-modal btn secondary medium callout callout">Got it!</a></p>
+    <p><a href="#" class="js-close-modal btn tertiary medium callout callout">Got it!</a></p>
   </div>
 </aside>
 
@@ -216,8 +218,6 @@
     <p><a href="#" class="js-close-modal btn tertiary medium callout">Got it</a></p>
   </div>
 </aside>
-
-</div> <!-- #action__wrapper -->
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -257,11 +257,11 @@
 
 <script type="text/javascript">
 
-  //
-  // Action Step Scrolling Nav
-  //
-
   (function($) {
+    //
+    // Action Step Scrolling Nav
+    //
+
     var $window = $(window);
     var $nav = $("#action--step-nav");
     var $nav_wrapper = $("#action--step-nav-wrapper");
@@ -290,6 +290,11 @@
         $nav.removeClass('fixed');
       }
     });
+
+    //
+    // Hide alert message after
+    //
+    //$('.messages').delay(5000).slideUp(500);
 
   })(jQuery);
 </script>
