@@ -14,26 +14,19 @@
 
   <section class="row callout action--cta">
     <h2>Campaign Call to Action</h2>
+    <p><a href="#">Scholarhips and Prizing</a></p>
   </section>
 
-  <nav id="action--step-nav-digest" class="row action--step action--step-nav digest">
-    <ul>
-      <li><h3><a href="#learn">1. Learn lorem ipsum dolor</a></h3></li>
-      <li><h3><a href="#plan">2. Plan lorem ipsum dolor</a></h3></li>
-      <li><h3><a href="#do">3. Do It lorem ipsum dolor</a></h3></li>
-      <li><h3><a href="#tell">4. Tell Us ipsum ipsum</a></h3></li>
-      <li><p><a href="#">Scholarhips and Prizing</a></p></li>
-    </li>
-  </nav>
-
-  <nav id="action--step-nav-fixed" class="action--step-nav fixed">
-    <ul>
-      <li class="column always_span_3"><a href="#learn" class="step-button">learn</a></li>
-      <li class="column always_span_3"><a href="#plan" class="step-nav">plan</a></li>
-      <li class="column always_span_3"><a href="#do" class="step-nav">do it</a></li>
-      <li class="column always_span_3"><a href="#tell" class="step-nav">tell us</a></li>
-    </ul>
-  </nav>
+  <div id="action--step-nav-wrapper" class="action--step-nav wrapper">
+    <nav id="action--step-nav" class="nav">
+      <ul>
+        <li class="column always_span_3"><a href="#learn" class="step-button">learn</a></li>
+        <li class="column always_span_3"><a href="#plan" class="step-nav">plan</a></li>
+        <li class="column always_span_3"><a href="#do" class="step-nav">do it</a></li>
+        <li class="column always_span_3"><a href="#tell" class="step-nav">tell us</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <section class="row action--step">
     <h3 id="learn">Step 1: Learn</h3>
@@ -270,16 +263,15 @@
 
   (function($) {
     var $window = $(window);
-    var $digest_nav = $("#action--step-nav-digest");
-    var $fixed_nav = $("#action--step-nav-fixed");
+    var $nav = $("#action--step-nav");
+    var $nav_wrapper = $("#action--step-nav-wrapper");
 
-    // Get pixel position of bottom of $fixed_nav element relative to the top of window
-    var digest_position = $digest_nav.position().top + $digest_nav.height();
-    var scroll = 0;
+    // Get pixel position from the top of $nav element to the top of the window
+    var nav_position = $nav_wrapper.position().top;
 
-    // Check window position on load and display $fixed_nav accordingly
-    if ($window.scrollTop() >= digest_position) {
-      $fixed_nav.show();
+    // Check window position on load and display $nav accordingly
+    if ($window.scrollTop() >= nav_position) {
+      $nav.addClass("fixed");
     }
 
     // Get value of current scroll position
@@ -287,18 +279,16 @@
       // Cache current scroll position
       var scroll_position = $(this).scrollTop();
 
-      // NOTE - Scroll position is set on load
-      // Prevent prematurely firing the callback
-      if (scroll > 0) {
-        // Display persistent nav after user scrolls past "digest" nav
-        if (scroll_position >= digest_position) {
-          $fixed_nav.slideDown(500);
-        }
-        else if (scroll_position <= digest_position) {
-          $fixed_nav.slideUp(500);
-        }
+      console.log("Scroll Position: " + scroll_position);
+      console.log("Fixed Position: " + nav_position);
+
+      // Display persistent nav after user scrolls past "digest" nav
+      if (scroll_position >= nav_position) {
+        $nav.addClass('fixed');
       }
-      scroll++
+      else if (scroll_position <= nav_position) {
+        $nav.removeClass('fixed');
+      }
     });
 
   })(jQuery);
