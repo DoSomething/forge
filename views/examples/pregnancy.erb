@@ -15,7 +15,7 @@
 <div class="page-width padded">
 
   <section class="row callout action--cta">
-    <h2>Campaign Call to Action</h2>
+    <h2>Impregnate your friends’ phone with a phone baby</h2>
     <p><a href="#modal--prizing" class="js-trigger-modal">Scholarhips and Prizing</a></p>
   </section>
 
@@ -31,7 +31,7 @@
   </div>
 
   <section class="row action--step">
-    <h3 id="learn">Step 1: Learn</h3>
+    <h3 id="learn">Learn</h3>
 
     <div class="action--description">
       <p>Almost 1 in 3 girls will become pregnant by the time they turn 20.</p>
@@ -48,7 +48,7 @@
   </section>
 
   <section class="row action--step">
-    <h3 id="plan">Step 2: Plan</h3>
+    <h3 id="plan">Plan</h3>
     <div class="action--description">
       <p>Send this to a friend who needs someone to talk to about these things or maybe someone who doesn’t think/talk about them enough.</p>
       <p>The challenge starts the morning after they accept and lasts for one day. They’ll receive approximately 10 text messages from a sassy phone baby.</p>
@@ -58,58 +58,47 @@
       </p>
 
       <ul class="action--faq">
-        <li><a href="#modal--faq2" class="js-trigger-modal">Check out the Action Guide</a></li>
+        <li><a href="#modal--sms-game-example" class="js-trigger-modal">See an example from the game</a></li>
       </ul>
     </div>
   </section>
 
-  <section class="row action--step"> <h3 id="do">Step 3: Do It</h3>
+  <section class="row action--step"> <h3 id="do">Do It</h3>
     <div class="action--description">
-      <p>Enter your friends’ numbers below and we’ll send them their phone baby.</p>
+      <div id="sms-wrapper">
+        <p>Enter your friends’ numbers below and we’ll send them their phone baby.</p>
 
-      <section style="display: block;" class="sms section" id="sms">
-        <form>
-          <input name="redirect_to" value="mango" type="hidden">
+        <section style="display: block;" class="sms section" id="sms">
+          <form>
+            <input name="redirect_to" value="mango" type="hidden">
 
-          <label class="sms-beta-mobile">Friend's Cell #s:</label>
+            <label class="sms-beta-mobile">Friend's Cell #s:</label>
 
-          <div class="sms-input-wrapper first-fields">
-            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
-            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
-            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
-          </div>
+            <div class="sms-input-wrapper first-fields">
+              <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+              <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+              <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            </div>
 
-          <div class="sms-input-wrapper sectond-fields">
-            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
-            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
-            <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
-          </div>
+            <div class="sms-input-wrapper sectond-fields">
+              <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+              <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+              <input class="sms-input" name="friends[]" placeholder="Friend's cell #:" type="text">
+            </div>
 
-          <input name="opt_in_path" value="mango" type="hidden">
-          <input name="friends_opt_in_path" value="mango" type="hidden">
+            <input name="opt_in_path" value="mango" type="hidden">
+            <input name="friends_opt_in_path" value="mango" type="hidden">
 
-          <a class="btn secondary medium callout" href="#">ipsum send 'em</a>
-          <a id="show-more-fields" class="btn secondary tertiary callout" href="#">invite more friends</a>
+            <a id="sms-submit" class="btn secondary medium callout" href="#">ipsum send 'em</a>
+            <a id="show-more-fields" class="btn secondary tertiary callout" href="#">invite more friends</a>
 
-          <p><a class="official-rules" href="#" target="_blank">Official Rules &amp; Regulations</a></p>
-          <p class="ctia legal">Message &amp; data rates may apply. Text <strong>STOP</strong> to opt-out, <strong>HELP</strong> for help.</p>
-        </form>
-      </section>
+            <p class="ctia legal">Message &amp; data rates may apply. Text <strong>STOP</strong> to opt-out, <strong>HELP</strong> for help.</p>
+          </form>
+        </section>
 
-      <section class="action--sms-example">
-        <h3 class="section-header"><span>Example From the Game:</span></h3>
-        <div class="game-conversation game-ds">
-          <p>Girl, you got any 'fee?</p>
-        </div>
+      </div>
 
-        <div class="game-conversation game-user">
-          <p>Yeah, I got that 'fee. Desmond gave it to me.</p>
-        </div>
-
-        <div class="game-conversation game-ds">
-          <p>Double americano? Lemme get some!</p>
-        </div>
-      </section>
+      <p><a class="official-rules" href="#" target="_blank">Official Rules &amp; Regulations</a></p>
 
       <p>At the end of the experience, they’ll get access to a resource guide on their phone with tons of info about teen pregnancy.</p>
 
@@ -118,7 +107,7 @@
   </section>
 
   <section class="row action--step">
-    <h3 id="tell">Step 4: Tell Us</h3>
+    <h3 id="tell">Tell Us</h3>
     <div class="action--description">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
 
@@ -145,6 +134,27 @@
     <p>Still have questions? E-mail <a href="mailto:#">name@dosomething.org</a>!</p>
   </section>
 </div>
+
+<aside id="modal--sms-game-example" class="modal fade-in">
+  <div class="modal-content slide-in-fast action--sms-example">
+    <a href="#" class="js-close-modal modal-close-button btn tertiary medium callout">&times;</a>
+
+    <h3><span>Example From the Game:</span></h3>
+    <div class="game-conversation game-ds">
+      <p>Girl, you got any 'fee?</p>
+    </div>
+
+    <div class="game-conversation game-user">
+      <p>Yeah, I got that 'fee. Desmond gave it to me.</p>
+    </div>
+
+    <div class="game-conversation game-ds">
+      <p>Double americano? Lemme get some!</p>
+    </div>
+
+    <p><a href="#" class="js-close-modal btn tertiary medium callout">close</a></p>
+  </div>
+</aside>
 
 <aside id="modal--faq1" class="modal fade-in">
   <div class="modal-content slide-in-fast">
@@ -305,6 +315,14 @@
       $secondary_fields.show();
       $show_more_fields.hide();
     });
+
+    //
+    // Hide SMS form after form submission
+    //
+    $('#sms-submit').click(function(event) {
+      $('#sms-wrapper').slideUp(700);
+      event.preventDefault();
+    })
 
   })(jQuery);
 </script>
