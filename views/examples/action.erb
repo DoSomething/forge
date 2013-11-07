@@ -22,10 +22,10 @@
   <div id="action--step-nav-wrapper" class="action--step-nav">
     <nav id="action--step-nav" class="nav">
       <ul>
-        <li class="column always_span_3"><a href="#learn" class="step-button">learn</a></li>
-        <li class="column always_span_3"><a href="#plan" class="step-nav">plan</a></li>
-        <li class="column always_span_3"><a href="#do" class="step-nav">do it</a></li>
-        <li class="column always_span_3"><a href="#tell" class="step-nav">tell us</a></li>
+        <li id="learn-btn" class="column always_span_3"><a href="#learn" class="step-button">learn</a></li>
+        <li id="plan-btn" class="column always_span_3"><a href="#plan" class="step-nav">plan</a></li>
+        <li id="do-btn" class="column always_span_3"><a href="#do" class="step-nav">do it</a></li>
+        <li id="tell-btn" class="column always_span_3"><a href="#tell" class="step-nav">tell us</a></li>
       </ul>
     </nav>
   </div>
@@ -234,7 +234,6 @@
       $((".action--step")).removeClass("action--step-active");
 
       var thisStep = $(this).closest(".action--step");
-      console.log(thisStep);
 
       //thisStep.css("background", "red");
       thisStep.removeClass("action--step-complete");
@@ -268,8 +267,20 @@
     var $nav = $("#action--step-nav");
     var $nav_wrapper = $("#action--step-nav-wrapper");
 
+    var learn_break, plan_break, do_break, tell_break;
+
+    var $learn = $('#learn');
+    var $plan  = $('#plan');
+    var $do    = $('#do');
+    var $tell  = $('#tell');
+
+    learn_break = $learn.position().top - 47;
+    plan_break  = $plan.position().top - 47;
+    do_break    = $do.position().top + 20;
+    tell_break  = $tell.position().top + 20;
+
     // Get pixel position from the top of $nav element to the top of the window
-    var nav_position = $nav_wrapper.position().top;
+    var nav_position = $nav_wrapper.position().top - 2;
 
     // Check window position on load and display $nav accordingly
     if ($window.scrollTop() >= nav_position) {
@@ -278,11 +289,8 @@
 
     // Get value of current scroll position
     $window.scroll(function() {
-      // Cache current scroll position
-      var scroll_position = $(this).scrollTop();
 
-      console.log("Scroll Position: " + scroll_position);
-      console.log("Fixed Position: " + nav_position);
+      var scroll_position = $(this).scrollTop();
 
       // Display persistent nav after user scrolls past "digest" nav
       if (scroll_position >= nav_position) {
@@ -290,7 +298,42 @@
       }
       else if (scroll_position <= nav_position) {
         $nav.removeClass('fixed');
+        $nav.find('li').siblings().removeClass('active');
       }
+
+      if (scroll_position >= learn_break) {
+        $('#learn-btn')
+          .addClass('active')
+          .siblings().removeClass('active');
+      }
+
+      if (scroll_position >= plan_break) {
+        $('#plan-btn')
+          .addClass('active')
+          .siblings().removeClass('active');
+      }
+
+      if (scroll_position >= do_break) {
+        $('#do-btn')
+          .addClass('active')
+          .siblings().removeClass('active');
+      }
+
+      if (scroll_position >= tell_break) {
+        $('#tell-btn')
+          .addClass('active')
+          .siblings().removeClass('active');
+      }
+
+    });
+
+    //
+    // Action Step Nav Highlighting (on click)
+    //
+    $nav.find('li').click(function() {
+      var $this = $(this);
+      $this.addClass('active');
+      $this.siblings().removeClass('active');
     });
 
   })(jQuery);
