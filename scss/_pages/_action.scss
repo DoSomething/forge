@@ -49,6 +49,12 @@
 
 
 .action--step {
+  @include respond-to(phones) {
+    h3, h4, p {
+      margin-left: 6%;
+      margin-right: 6%;
+    }
+  }
 
   .action--widget {
     background: $off-white;
@@ -61,12 +67,11 @@
     display: none;
   }
 
-  @include respond-to(phones) {
-    h3, h4, p {
-      margin-left: 6%;
-      margin-right: 6%;
-    }
+  .header {
+    padding: 60px 0 0;
+    margin: -46px 0 1rem;
   }
+
 }
 
 
