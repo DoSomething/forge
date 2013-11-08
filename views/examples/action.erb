@@ -259,6 +259,7 @@
 <script type="text/javascript">
 
   (function($) {
+
     $.fn.passActive = function() {
         this
           .parent()
@@ -266,100 +267,75 @@
           .siblings().removeClass('active');
     };
 
-    //
-    // Action Step Scrolling Nav
-    //
+    function highlightNav(id, position) {
+      var DS = {};
 
-    var $window = $(window);
-    var $nav = $("#action--step-nav");
-    var $nav_wrapper = $("#action--step-nav-wrapper");
+      // Find all scrolling breakpoints on the page;
+      // Add each breakpoint to the DS object
 
-    var learn_break, plan_break, do_break, tell_break;
+      $('a', $(id)).each(function(index, breakpoint) {
+        var $button = $(breakpoint);
+        var href = $button.attr('href');
+        var $header = $(href);
 
-    var $learn = $('#learn');
-    var $plan  = $('#plan');
-    var $do    = $('#do');
-    var $tell  = $('#tell');
-
-    learn_break = $learn.position().top - 47;
-    plan_break  = $plan.position().top - 47;
-    do_break    = $do.position().top + 20;
-    tell_break  = $tell.position().top + 20;
-
-    var DS = {};
-
-    // Find all scrolling breakpoints on the page;
-    // Add each breakpoint to the DS object
-    // TODO - GIVE THESE VARIABLES BETTER NAMES
-
-    $('a', $('#action--step-nav')).each(function(index, breakpoint) {
-      var $button = $(breakpoint);
-      var href = $button.attr('href');
-      var $header = $(href);
-
-      DS[index] = {
-        header: $header,
-        button: $button,
-        breakpoint : $header.position().top
-      }
-    });
-
-    // Get pixel position from the top of $nav element to the top of the window
-    var nav_position = $nav_wrapper.position().top - 2;
-
-    // Check window position on load and display $nav accordingly
-    if ($window.scrollTop() >= nav_position) {
-      $nav.addClass("fixed");
-    }
-
-    // Get value of current scroll position
-    $window.scroll(function() {
-
-      var scroll_position = $(this).scrollTop();
-
-      // Display persistent nav after user scrolls past "digest" nav
-      if (scroll_position >= nav_position) {
-        $nav.addClass('fixed');
-      }
-      else if (scroll_position <= nav_position) {
-        $nav.removeClass('fixed');
-        $nav.find('li').siblings().removeClass('active');
-      }
+        DS[index] = {
+          header: $header,
+          button: $button,
+          breakpoint : $header.position().top
+        }
+      });
 
       for (var key in DS) {
         if (DS.hasOwnProperty(key)) {
-          if (scroll_position >= DS[key].breakpoint) {
+
+          // nav highlighting (on scroll)
+
+          if (position >= DS[key].breakpoint) {
             DS[key].button.passActive();
           }   
+
+          // nav highlighting (on click)
+
+          DS[key].button.click(function() {
+            $(this).passActive();
+          });
         }   
-      } 
+      }
+    };
 
-      //if (scroll_position >= learn_break) {
-      //  $('#learn-btn').passActive();
-      //}
+    function scrollingNav(id) {
+      var $window = $(window);
+      var $nav = $(id);
 
-      //if (scroll_position >= plan_break) {
-      //  $('#plan-btn').passActive();
-      //}
+      // Get pixel position from the top of $nav element to the top of the window
+      var navPosition = $nav.position().top - 2;
 
-      //if (scroll_position >= do_break) {
-      //  $('#do-btn').passActive();
-      //}
+      // Check window position on load and display $nav accordingly
+      if ($window.scrollTop() >= navPosition) {
+        $nav.addClass("fixed");
+      }
 
-      //if (scroll_position >= tell_break) {
-      //  $('#tell-btn').passActive();
-      //}
+      // Get value of current scroll position
+      $window.scroll(function() {
 
-    });
+        var scrollPosition = $(this).scrollTop();
 
-    //
-    // Action Step Nav Highlighting (on click)
-    //
-    $nav.find('li').click(function() {
-      var $this = $(this);
-      $this.addClass('active');
-      $this.siblings().removeClass('active');
-    });
+        // Display persistent nav after user scrolls past "digest" nav
+        if (scrollPosition >= navPosition) {
+          $nav.addClass('fixed');
+        }
+        else if (scrollPosition <= navPosition) {
+          $nav.removeClass('fixed');
+          $nav.find('li').siblings().removeClass('active');
+        }
+
+        // Pass background highlight to nav buttons on scroll & click
+        highlightNav(id, scrollPosition);
+
+      });
+    };
+
+    scrollingNav('#action--step-nav');
 
   })(jQuery);
 </script>
