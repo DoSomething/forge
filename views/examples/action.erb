@@ -22,7 +22,7 @@
   <div id="action--step-nav-wrapper" class="action--step-nav">
     <nav id="action--step-nav" class="nav">
       <ul>
-        <li id="learn-btn" class="column always_span_3"><a href="#learn" class="step-button">learn</a></li>
+        <li id="learn-btn" class="column always_span_3"><a href="#learn" class="step-nav">learn</a></li>
         <li id="plan-btn" class="column always_span_3"><a href="#plan" class="step-nav">plan</a></li>
         <li id="do-btn" class="column always_span_3"><a href="#do" class="step-nav">do it</a></li>
         <li id="tell-btn" class="column always_span_3"><a href="#tell" class="step-nav">tell us</a></li>
@@ -259,6 +259,13 @@
 <script type="text/javascript">
 
   (function($) {
+    $.fn.passActive = function() {
+        this
+          .parent()
+          .addClass('active')
+          .siblings().removeClass('active');
+    };
+
     //
     // Action Step Scrolling Nav
     //
@@ -278,6 +285,24 @@
     plan_break  = $plan.position().top - 47;
     do_break    = $do.position().top + 20;
     tell_break  = $tell.position().top + 20;
+
+    var DS = {};
+
+    // Find all scrolling breakpoints on the page;
+    // Add each breakpoint to the DS object
+    // TODO - GIVE THESE VARIABLES BETTER NAMES
+
+    $('a', $('#action--step-nav')).each(function(index, breakpoint) {
+      var $button = $(breakpoint);
+      var href = $button.attr('href');
+      var $header = $(href);
+
+      DS[index] = {
+        header: $header,
+        button: $button,
+        breakpoint : $header.position().top
+      }
+    });
 
     // Get pixel position from the top of $nav element to the top of the window
     var nav_position = $nav_wrapper.position().top - 2;
@@ -301,29 +326,29 @@
         $nav.find('li').siblings().removeClass('active');
       }
 
-      if (scroll_position >= learn_break) {
-        $('#learn-btn')
-          .addClass('active')
-          .siblings().removeClass('active');
-      }
+      for (var key in DS) {
+        if (DS.hasOwnProperty(key)) {
+          if (scroll_position >= DS[key].breakpoint) {
+            DS[key].button.passActive();
+          }   
+        }   
+      } 
 
-      if (scroll_position >= plan_break) {
-        $('#plan-btn')
-          .addClass('active')
-          .siblings().removeClass('active');
-      }
+      //if (scroll_position >= learn_break) {
+      //  $('#learn-btn').passActive();
+      //}
 
-      if (scroll_position >= do_break) {
-        $('#do-btn')
-          .addClass('active')
-          .siblings().removeClass('active');
-      }
+      //if (scroll_position >= plan_break) {
+      //  $('#plan-btn').passActive();
+      //}
 
-      if (scroll_position >= tell_break) {
-        $('#tell-btn')
-          .addClass('active')
-          .siblings().removeClass('active');
-      }
+      //if (scroll_position >= do_break) {
+      //  $('#do-btn').passActive();
+      //}
+
+      //if (scroll_position >= tell_break) {
+      //  $('#tell-btn').passActive();
+      //}
 
     });
 
