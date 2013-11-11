@@ -297,7 +297,10 @@
           // nav highlighting (on click)
 
           DS[key].button.click(function() {
-            $(this).passActive();
+            // TODO - Context is really off here. Revisit.
+            console.log($(this).attr('href'));
+            console.log(key);
+            //passActive();
           });
         }   
       }
