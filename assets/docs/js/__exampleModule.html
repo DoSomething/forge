@@ -27,26 +27,14 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>Give a brief description of what your module does. Usage:</p>
+<pre><code class="lang-js">window.DS.ExampleModule.initialize({
+  configuration_option: true
+});
+
+exampleModule.getStatus();</code></pre>
+
             </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="comment">/**
-
-  Give a brief description of what your module does. Usage:
- 
-  ```js
-  window.DS.ExampleModule.initialize({
-    configuration_option: true
-  });
-
-  exampleModule.getStatus();
-  ```
-
-*/</span>
-
-window.DS = window.DS || {};
-window.DS.ExampleModule = <span class="keyword">function</span>() {
-  <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
         
@@ -57,14 +45,13 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>PRIVATE METHODS &amp; VARIABLES:</p>
+              <p>We create the global DS namespace if it doesn&#39;t already exist, and attach our module to it.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> initialized = <span class="literal">false</span>;
-  <span class="keyword">var</span> options = {};
-
-  <span class="function"><span class="keyword">function</span> <span class="title">status</span><span class="params">()</span> {</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre>window.DS = window.DS || {};
+window.DS.ExampleModule = <span class="keyword">function</span>() {
+  <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
         
@@ -75,11 +62,26 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>public method to report status</p>
+              <p>We can track whether a module has been initialized or not in the <code>initialized</code> variable.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> initialized = <span class="literal">false</span>;
+  <span class="keyword">var</span> options = {};
+
+  <span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span><span class="params">()</span> {</span>
+    
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">anotherPrivateFunction</span><span class="params">()</span> {</span>
+    
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">public__Initialize</span><span class="params">()</span> {</span>
+    <span class="keyword">function</span>(opts) {
+      <span class="keyword">var</span> defaults = {
+        configurationOption: <span class="literal">false</span>
+      };</pre></div></div>
             
         </li>
         
@@ -90,26 +92,7 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p> PUBLIC METHODS:</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> {
-    initialize: <span class="keyword">function</span>(opts) {
-      <span class="keyword">var</span> defaults = {
-        configurationOption: <span class="literal">false</span>
-      };</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
-              </div>
-              <p>Override default options with any settings passed during initialization.</p>
+              <p>We override default options with any settings passed during initialization:</p>
 
             </div>
             
@@ -122,29 +105,58 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
         </li>
         
         
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>…</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+      initialized = <span class="literal">true</span>;
+    }
+  }
+
+  <span class="function"><span class="keyword">function</span> <span class="title">public__getStatus</span><span class="params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
         <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p>Do anything else we need to set up this module.
-…</p>
+              <p>We can use the <code>initialized</code> varible to ensure that the module has been initialized before other methods can run.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-      status();
-
-      initialized = <span class="literal">true</span>;
-    },
-
-    getStatus: <span class="keyword">function</span>() {
-      <span class="keyword">if</span>(initialized) {
-        status();
-      }
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span>(initialized) {
+      alert(<span class="string">"We're ready to go!"</span>)
     }
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>We use the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">Revealing Module pattern</a>
+to expose public methods while keeping private methods/variables safe.</p>
 
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> {
+    initialize: public__Initialize,
+    getStatus: public__getStatus
   };
 };</pre></div></div>
             
