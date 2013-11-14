@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>location-finder.coffee</title>
+  <title>__location-finder.coffee</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -15,7 +15,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>location-finder.coffee</h1>
+                  <h1>__location-finder.coffee</h1>
               </div>
           </li>
         
@@ -28,7 +28,8 @@
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
               <p>The location finder module must be initialized before it can be used on a page. Usage:</p>
-<pre><code class="lang-js">  window.initializeLocationFinder({
+<pre><code class="lang-js">  var locFinder = window.DSLocationFinder();
+  locFinder.initialize({
     mode: &#39;default&#39; or &#39;select&#39;,
     endpoint: &#39;&lt;JSON endpoint URL&gt;&#39;,
     validatoin: 
