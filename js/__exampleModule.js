@@ -1,9 +1,9 @@
 //
 //
-// Give a brief description of what your module does. Usage:
+// An example code module. Example usage:
 // 
 // ```js
-// window.DS.ExampleModule.initialize({
+// window.NEUE.ExampleModule.initialize({
 //   configuration_option: true
 // });
 //
