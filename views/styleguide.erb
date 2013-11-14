@@ -30,7 +30,6 @@
             </ul>
           </li>
           <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
-          <li><a href="#code">Code Guidelines</a></li>
           <li><a href="#brand" class="js-jump-scroll">Our Brand</a></li>
         </ul>
       </nav>
@@ -48,44 +47,12 @@
       <ul>
         <li><a href="/example/home">Homepage</a></li>
         <li><a href="/example/blog">Blog Post</a></li>
-        <li><a href="/example/campaigns">Campaigns List</a></li>
         <li><a href="/example/campaign">Campaign Template</a></li>
-        <li>Static pages: <a href="/example/about">About Us</a>, <a href="/example/jobs">Jobs</a>, <a href="/example/internships">Internships</a>, <a href="/example/team">Team</a>, <a href="/example/help">Help</a></li>
-        <li>Error pages: <a href="/example/404">404</a>, <a href="/example/500.html">500</a></li>
       </ul>
     </section>
 
     <section class="row section campaign-section">
       <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
-
-      <style type="text/css">
-        .font-tile {
-          margin: 1rem;
-          border: 1px solid #eee;
-          padding: 1em;
-          border-radius: 2px;
-        }
-
-        .font-tile code {
-          color: rgba(0, 0, 0, 0.5);
-        }
-
-        .color-tile {
-          float: left;
-          width: 45%;
-          margin: 0 2.5% 5%;
-          background: #eee;
-          color: #fff;
-          text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-          padding: 2em 1em;
-          border-radius: 2px;
-          box-sizing: border-box;
-        }
-
-        .color-tile code {
-          color: rgba(255, 255, 255, 0.7);
-        }
-      </style>
       
       <h3>Fonts</h3>
       <p>We use Din Regular for most of our text and headings.</p>
@@ -106,7 +73,7 @@
         Lorem ipsum dolor sit amet. <code>($font-din-condensed, 500)</code>
       </p>
       
-      <!--- BRAAAAAAAAAAAND POWER -->
+
       <h3>Brand Colors</h3>
       <p class="color-tile" data-hex="#18408b">
         <strong>Blue</strong> <code>($blue)
@@ -150,8 +117,6 @@
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
-
-      <!-- not really our brand but kinda? DESIGN. -->
       <h3>Secondary Colors</h3>
       <p>They're not part of our brand, but we're pretty fond of these guys. If you're going to use a color in one of these families, use this one.</p>
       <p class="color-tile" data-hex="#ef4135">
@@ -228,16 +193,7 @@
       <div class="row section">
         <h4 id="grid">3.2 Grid Elements</h4>
         <p>Neue is based on a <strong>fluid 12-column grid</strong> defined in percentages. Columns create vertical divisions in the layout based on consistent proportions. Rows (or fields) create horizontal divisions in the layout.</p>
-        
-        <style>
-          .styleguide-element .column {
-            background: #f4f4f4;
-            border: 1px solid #ddd;
-            color: #666;
-            text-align: center;
-            padding: 0.5rem 0;
-          }
-        </style>
+
         <div class="styleguide-example">
           <% styleguide_block_custom_example '3.2.1 - Columns' %>
           <div class="styleguide-element">
@@ -476,15 +432,6 @@
           </div>
         </div>
         
-        <style>
-          .row-example .row {
-            background: #f4f4f4;
-            border: 1px solid #ddd;
-            color: #666;
-            text-align: center;
-            padding: 0.5rem 0;
-          }
-        </style>
         <div class="row-example">
           <% styleguide_block  '3.2.2 - Rows' do %>
             <div class="row $modifier_class">
@@ -499,15 +446,7 @@
 
       <div class="row section">
         <h4 id="alternates">3.3 Alternate Containers</h4>
-        <style>
-          .styleguide-example .aside {
-            background: #f4f4f4;
-            border: 1px solid #ddd;
-            color: #666;
-            text-align: center;
-            padding: 0.5rem 0;
-          }
-        </style>
+
         <% styleguide_block  '3.3.1 - Aside' do %>
           <div class="aside $modifier_class span_6">
             &hellip;
@@ -806,21 +745,6 @@
     <div class="row section">
       <h4 id="helpers">4.5 Helpers</h4>
       <p>Helpers modify the behavior of an object.</p>
-      
-      <style>
-        .kss-no-padding .styleguide-element {
-          padding: 0;
-        }
-
-        .kss-dark .styleguide-element {
-          background: #666;
-        }
-
-        .kss-min-height .styleguide-element {
-          min-height: 300px;
-        }
-      </style>
-
 
       <div class="kss-no-padding kss-dark kss-min-height">
         <% styleguide_block  '4.5.1 - Full Container Link' do %>
@@ -833,7 +757,6 @@
           <img src="http://www.placekitten.com/g/500/100" alt="" class="full-width-img">
         <% end %>
       </div>
-
 
       <% styleguide_block_without_preview  '4.5.3 - Hide on Phones' do %>
         <div class="is-hidden-on-phones">
@@ -864,58 +787,6 @@
         <h1>&#9632;</h1>
       </div>
     <% end %>
-  </section>
-
-  <section class="row section campaign-section with-copy">
-    <h2 id="code">Code Guidelines</h2>
-    <h4>Design Principles</h4>
-    <ul>
-      <li>We build interfaces <strong>mobile first</strong>. This means we build the mobile layout first and progressively enhance it as the viewport size increases. This means we have one high-performance interface across devices.</li>
-      <li></li>
-    </ul>
-
-    <h4>Organization (Directory Structure)</h4>
-    <p>We have strict rules on where code should be added to Neue to keep things organized. Here's a quick overview:</p>
-    <ul>
-      <li>
-        <strong>assets:</strong> This is where the finished product lives.
-        <ul>
-          <li><strong>images:</strong> images should live in here. keep site-wide image resources in the root directory, and categorize other images either as a <strong>placeholder</strong> or by a section of the website.</li>
-        </ul>
-      </li>
-      <li><strong>coffee:</strong> all scripts should be placed in here. this folder will be compiled into <code>neue.js</code>. vendor scripts (such as jQuery plugins) should be placed in <strong>vendor</strong> and will be concatenated first.</li>
-      <li>
-        <strong>scss:</strong> this is where we make things pretty. If adding SCSS files, be sure to also reference them from <code>neue.scss</code>.
-        <ul>
-          
-          <li><strong>globals:</strong> variables and mix-ins. no styles should be defined here.</li>
-          <li><strong>vendor:</strong> third-party code, such as <a href="http://bourbon.io/">Bourbon</a> or the <a href="http://meyerweb.com/eric/tools/css/reset/">Meyer Reset</a></li>
-          <li><strong>_main:</strong> site-wide styles</li>
-          <li><strong>_patterns:</strong> reusable interface patterns</li>
-          <li><strong>_pages:</strong> override for page-specific styles. All page specific styles should be prefixed, for example: <code>.pagename--classname</code>.</li>
-          <li><strong>_js:</strong> styles used for javascript modules</li>
-          <li><strong>neue.scss:</strong> the "makefile" for our outputted CSS.</li>
-          <li><strong>ie.scss:</strong> any overrides for IE 9 or lower should be located here.</li>
-        </ul>
-      </li>
-    </ul>
-
-    <h4>Style (CSS)</h4>
-    <ul>
-      <li>We write our styles in <a href="http://sass-lang.com/">SCSS</a> syntax.</li>
-      <li>Always use re-usable elements rather than building an interface from scratch. If building an override for a specific page, prefix the class with the page title. For example, <code>.campaign--header</code>.</li>
-      <li>Put spaces before <code>{</code> in property declarations. Put spaces after <code>:</code> in rule declarations.</li>
-      <li>Any <code>$variable</code> or <code>@mixin</code> that is used in more than one file should be put in <code>globals/variables.scss</code>. Otherwise it should be placed at the top of the section where it is used.</li>
-      <li>We use <code>rem</code>s for sizing elements, unless a size should be proportional to the font-size of the element, in which case use <code>em</code>s. Avoid using absolute pixels for sizing.</li>
-      <li>Never style <code>js-</code> prefixed classes. Use <code>is-</code> prefixed styles when CSS and JS interact.</li>
-      <li>Always namespace modifier classes (such as <code>disabled</code>, <code>bigger</code>, <code>fixed</code>, etc) by a class. For example: <code>button.disabled</code>.</li>
-    </ul>
-
-    <h4>Behavior (CoffeeScript/JavaScript)</h4>
-    <ul>
-      <li>All behavior should be written in <a href="http://coffeescript.org/">CoffeeScript</a>. Read the documentation for best practices.</li>
-      <li>Whenever possible, package code into modules which can be conditionally run when needed on a specific page.</li>
-    </ul>
   </section>
 
   <section class="row section campaign-section">
