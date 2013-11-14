@@ -27,8 +27,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Give a brief description of what your module does. Usage:</p>
-<pre><code class="lang-js">window.DS.ExampleModule.initialize({
+              <p>An example code module. Example usage:</p>
+<pre><code class="lang-js">window.NEUE.ExampleModule.initialize({
   configuration_option: true
 });
 
@@ -45,12 +45,12 @@ exampleModule.getStatus();</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>We create the global DS namespace if it doesn&#39;t already exist, and attach our module to it.</p>
+              <p>We create the global NEUE namespace if it doesn&#39;t already exist, and attach our module to it.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>window.DS = window.DS || {};
-window.DS.ExampleModule = <span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre>window.NEUE = window.NEUE || {};
+window.NEUE.ExampleModule = <span class="keyword">function</span>() {
   <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
@@ -70,14 +70,14 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
   <span class="keyword">var</span> options = {};
 
   <span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span><span class="params">()</span> {</span>
-    
+
   }
 
   <span class="function"><span class="keyword">function</span> <span class="title">anotherPrivateFunction</span><span class="params">()</span> {</span>
-    
+
   }
 
-  <span class="function"><span class="keyword">function</span> <span class="title">public__Initialize</span><span class="params">()</span> {</span>
+  <span class="function"><span class="keyword">function</span> <span class="title">publicInitialize</span><span class="params">()</span> {</span>
     <span class="keyword">function</span>(opts) {
       <span class="keyword">var</span> defaults = {
         configurationOption: <span class="literal">false</span>
@@ -120,7 +120,7 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
     }
   }
 
-  <span class="function"><span class="keyword">function</span> <span class="title">public__getStatus</span><span class="params">()</span> {</span></pre></div></div>
+  <span class="function"><span class="keyword">function</span> <span class="title">publicGetStatus</span><span class="params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -136,7 +136,7 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
             </div>
             
             <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span>(initialized) {
-      alert(<span class="string">"We're ready to go!"</span>)
+      alert(<span class="string">"We're ready to go!"</span>);
     }
   }</pre></div></div>
             
@@ -155,8 +155,8 @@ to expose public methods while keeping private methods/variables safe.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> {
-    initialize: public__Initialize,
-    getStatus: public__getStatus
+    initialize: publicInitialize,
+    getStatus: publicgetStatus
   };
 };</pre></div></div>
             
