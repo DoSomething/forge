@@ -86,3 +86,74 @@ h1.styleguide {
   }
 
 /* @end */
+
+/* Custom KSS style overrides: */
+.kss-no-padding .styleguide-element {
+  padding: 0;
+}
+
+.kss-dark .styleguide-element {
+  background: #666;
+}
+
+.kss-min-height .styleguide-element {
+  min-height: 300px;
+}
+
+
+/* Custom Neue stuff: */
+.font-tile {
+  margin: 1rem;
+  border: 1px solid #eee;
+  padding: 1em;
+  border-radius: 2px;
+}
+
+.font-tile code {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.color-tile {
+  float: left;
+  width: 45%;
+  margin: 0 2.5% 5%;
+  background: #eee;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  padding: 2em 1em;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.color-tile code {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.js-color-label {
+  display: block;
+}
+
+/* mock columns/rows/asides for visualizing grid */
+.styleguide-element .column {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  color: #666;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.row-example .row {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  color: #666;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.styleguide-example .aside {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  color: #666;
+  text-align: center;
+  padding: 0.5rem 0;
+}
