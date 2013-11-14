@@ -7,9 +7,9 @@
 //
 //
 
-// Get the global DS object and attach our function to it.
-window.DS = window.DS || {};
-window.DS.pinToTop = function() {
+// Get the global NEUE object and attach our function to it.
+window.NEUE = window.NEUE || {};
+window.NEUE.pinToTop = function() {
   'use strict';
 
   // We cache the element anchor's offset from the top of the page

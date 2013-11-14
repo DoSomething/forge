@@ -12,9 +12,9 @@
 //
 // 
 
-// We create the global DS namespace if it doesn't already exist, and attach our module to it.
-window.DS = window.DS || {};
-window.DS.ExampleModule = function() {
+// We create the global NEUE namespace if it doesn't already exist, and attach our module to it.
+window.NEUE = window.NEUE || {};
+window.NEUE.ExampleModule = function() {
   'use strict';
 
   // We can track whether a module has been initialized or not in the `initialized` variable.
