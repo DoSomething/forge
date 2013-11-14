@@ -1,19 +1,19 @@
-/**
-  
-  Initializes site-wide menu chrome functionality.
-
- */
+//
+//
+//  **Initializes site-wide menu chrome functionality.**
+//
+//
 
 
 $(document).ready(function() {
   'use strict';
 
-  // toggle dropdown menu navigation on mobile
+  // Toggle dropdown menu navigation on mobile:
   $('.js-menu-toggle').on('click', function() {
     $('.main-menu').toggleClass('is-visible-mobile');
   });
   
-  // hide utility bar items when search field is focused
+  // Hide utility bar items when search field is focused:
   $('.search form input[type="search"]').on('focus', function() {
     $('.utility-link').addClass('is-hidden-on-phones');
   });

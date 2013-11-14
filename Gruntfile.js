@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 
     docco: {
       docs: {
-        src: ['js/*.coffee'],
+        src: ['js/*.js'],
         options: {
           output: 'assets/docs'
         }

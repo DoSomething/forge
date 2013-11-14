@@ -1,8 +1,8 @@
-/**
-  
-  Applies a smooth-scroll animation on `.jump-scroll` links.
-
- */
+//
+// 
+//  **Applies a smooth-scroll animation on `.jump-scroll` links.**
+//
+//
 
 $(document).ready(function() {
   'use strict';
@@ -11,7 +11,10 @@ $(document).ready(function() {
     e.preventDefault();
 
     var href = $(this).attr('href');
+    
+    // Animate scroll position to the target of the link:
     $('html,body').animate({scrollTop: $(e.target.hash).offset().top}, 'slow', function() {
+      // Finally, set the correct hash in the address bar.
       window.location.hash = href;
     });
   });

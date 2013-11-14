@@ -1,22 +1,25 @@
-/**
-  
-  Show/hide modals.
-
- */
+//
+//
+//  **Show/hide modals.**
+//
+//
 
 
 $(document).ready(function() {
   'use strict';
 
-  // trigger modal on click
+  // Trigger modal on click:
   $('.js-close-modal').on('click', function(e) {
     e.preventDefault();
-    var href = '#{$(this).attr("href")}';
+    
+    // We find the modal based on the ID in the link's `href`. For example,
+    // `<a href="#modal--faq">Click me</a>` would open `<div id="modal--faq"></div>`.
+    var href = $(e.target.hash);
 
     $('body').addClass('modal-open');
     $(href).show();
 
-    // close modal when 'x' is clicked
+    // Close modal when 'x' is clicked:
     $('.js-close-modal').on('click', function(e) {
       e.preventDefault();
       $(this).closest('.modal').hide();
