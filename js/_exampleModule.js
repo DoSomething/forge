@@ -21,45 +21,46 @@ window.NEUE.ExampleModule = function() {
   var initialized = false;
   var options = {};
 
-  function privateFunction() {
+  function _privateFunction() {
 
   }
 
-  function anotherPrivateFunction() {
+  function _anotherPrivateFunction() {
 
   }
 
-  function publicInitialize() {
-    function(opts) {
-      var defaults = {
-        configurationOption: false
-      };
+  function initialize(opts) {
+    var defaults = {
+      configurationOption: false
+    };
 
-      // We override default options with any settings passed during initialization:
-      if ((typeof opts !== 'undefined' && opts !== null)) {
-        options = $.extend({}, defaults, opts);
-      } else {
-        options = defaults;
-      }
-
-      // ...
-
-      initialized = true;
+    // We override default options with any settings passed during initialization:
+    if ((typeof opts !== 'undefined' && opts !== null)) {
+      options = $.extend({}, defaults, opts);
+    } else {
+      options = defaults;
     }
+
+    // ...
+
+    initialized = true;
   }
 
-  function publicGetStatus() {
+  function getStatus() {
 
     // We can use the `initialized` varible to ensure that the module has been initialized before other methods can run.
     if(initialized) {
-      alert("We're ready to go!");
+      _privateFunction();
+      _anotherPrivateFunction();
+
+      return 'We\'re ready to go!';
     }
   }
 
   // We use the [Revealing Module pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript)
   // to expose public methods while keeping private methods/variables safe.
   return {
-    initialize: publicInitialize,
-    getStatus: publicgetStatus
+    initialize: initialize,
+    getStatus: getStatus
   };
 };
