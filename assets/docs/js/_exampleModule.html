@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>__exampleModule.js</title>
+  <title>_exampleModule.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -15,7 +15,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>__exampleModule.js</h1>
+                  <h1>_exampleModule.js</h1>
               </div>
           </li>
         
@@ -27,8 +27,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Give a brief description of what your module does. Usage:</p>
-<pre><code class="lang-js">window.DS.ExampleModule.initialize({
+              <p>An example code module. Example usage:</p>
+<pre><code class="lang-js">window.NEUE.ExampleModule.initialize({
   configuration_option: true
 });
 
@@ -45,12 +45,12 @@ exampleModule.getStatus();</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>We create the global DS namespace if it doesn&#39;t already exist, and attach our module to it.</p>
+              <p>We create the global NEUE namespace if it doesn&#39;t already exist, and attach our module to it.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>window.DS = window.DS || {};
-window.DS.ExampleModule = <span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre>window.NEUE = window.NEUE || {};
+window.NEUE.ExampleModule = <span class="keyword">function</span>() {
   <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
@@ -69,19 +69,18 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
             <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> initialized = <span class="literal">false</span>;
   <span class="keyword">var</span> options = {};
 
-  <span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span><span class="params">()</span> {</span>
-    
+  <span class="function"><span class="keyword">function</span> <span class="title">_privateFunction</span><span class="params">()</span> {</span>
+
   }
 
-  <span class="function"><span class="keyword">function</span> <span class="title">anotherPrivateFunction</span><span class="params">()</span> {</span>
-    
+  <span class="function"><span class="keyword">function</span> <span class="title">_anotherPrivateFunction</span><span class="params">()</span> {</span>
+
   }
 
-  <span class="function"><span class="keyword">function</span> <span class="title">public__Initialize</span><span class="params">()</span> {</span>
-    <span class="keyword">function</span>(opts) {
-      <span class="keyword">var</span> defaults = {
-        configurationOption: <span class="literal">false</span>
-      };</pre></div></div>
+  <span class="function"><span class="keyword">function</span> <span class="title">initialize</span><span class="params">(opts)</span> {</span>
+    <span class="keyword">var</span> defaults = {
+      configurationOption: <span class="literal">false</span>
+    };</pre></div></div>
             
         </li>
         
@@ -96,11 +95,11 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">'undefined'</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
-        options = $.extend({}, defaults, opts);
-      } <span class="keyword">else</span> {
-        options = defaults;
-      }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">'undefined'</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
+      options = $.extend({}, defaults, opts);
+    } <span class="keyword">else</span> {
+      options = defaults;
+    }</pre></div></div>
             
         </li>
         
@@ -116,11 +115,10 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
             </div>
             
             <div class="content"><div class='highlight'><pre>
-      initialized = <span class="literal">true</span>;
-    }
+    initialized = <span class="literal">true</span>;
   }
 
-  <span class="function"><span class="keyword">function</span> <span class="title">public__getStatus</span><span class="params">()</span> {</span></pre></div></div>
+  <span class="function"><span class="keyword">function</span> <span class="title">getStatus</span><span class="params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -136,7 +134,10 @@ window.DS.ExampleModule = <span class="keyword">function</span>() {
             </div>
             
             <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span>(initialized) {
-      alert(<span class="string">"We're ready to go!"</span>)
+      _privateFunction();
+      _anotherPrivateFunction();
+
+      <span class="keyword">return</span> <span class="string">'We\'re ready to go!'</span>;
     }
   }</pre></div></div>
             
@@ -155,8 +156,8 @@ to expose public methods while keeping private methods/variables safe.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> {
-    initialize: public__Initialize,
-    getStatus: public__getStatus
+    initialize: initialize,
+    getStatus: getStatus
   };
 };</pre></div></div>
             
