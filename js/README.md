@@ -11,7 +11,7 @@ We have some code guidelines to make sure that everyone can work on the same pro
 #### Naming
  - Use `camelCase` when naming objects, functions, and instances.
  - Use `PascalCase` when naming constructors or classes.
- - Use a leading underscore _ when naming private properties, for example: `var _privateProperty = 0;`
+ - Use a leading underscore `_` when naming private properties, for example: `var _privateProperty = 0;`
  - Prefix jQuery object variables with a $. For example, `var $sidebar = $('.sidebar');`.
  - When saving a reference to `this` use `_this`.
  - Always name your functions. This is helpful for stack traces. Ex: `var log = function log(msg) { };`
