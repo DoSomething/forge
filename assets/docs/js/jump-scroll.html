@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>no-touch-hover.coffee</title>
+  <title>jump-scroll.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -15,7 +15,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>no-touch-hover.coffee</h1>
+                  <h1>jump-scroll.js</h1>
               </div>
           </li>
         
@@ -27,15 +27,18 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>removes :hover rules when on touch device</p>
+              <p> <strong>Applies a smooth-scroll animation on <code>.jump-scroll</code> links.</strong></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">if</span> Modernizr.touch
-  ignore = <span class="regexp">/:hover\b/</span>
-  <span class="keyword">try</span>
-    <span class="keyword">for</span> stylesheet <span class="keyword">in</span> document.styleSheets
-      idxs = []</pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+$(document).ready(<span class="keyword">function</span>() {
+  <span class="string">'use strict'</span>;
+
+  $(<span class="string">'.js-jump-scroll'</span>).on(<span class="string">'click'</span>, <span class="keyword">function</span>(e) {
+    e.preventDefault();
+
+    <span class="keyword">var</span> href = $(<span class="keyword">this</span>).attr(<span class="string">'href'</span>);</pre></div></div>
             
         </li>
         
@@ -46,13 +49,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>detect hover rules</p>
+              <p>Animate scroll position to the target of the link:</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">for</span> rule, idx <span class="keyword">in</span> stylesheet.cssRules
-        <span class="keyword">if</span> rule.type <span class="keyword">is</span> CSSRule.STYLE_RULE <span class="keyword">and</span> ignore.test(rule.selectorText)
-          idxs.unshift idx</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">'html,body'</span>).animate({scrollTop: $(e.target.hash).offset().top}, <span class="string">'slow'</span>, <span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -63,11 +64,14 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>delete hover rules</p>
+              <p>Finally, set the correct hash in the address bar.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      stylesheet.deleteRule idx <span class="keyword">for</span> idx <span class="keyword">in</span> idxs</pre></div></div>
+            <div class="content"><div class='highlight'><pre>      window.location.hash = href;
+    });
+  });
+});</pre></div></div>
             
         </li>
         

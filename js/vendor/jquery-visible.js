@@ -26,7 +26,7 @@
 
     };
 
-    $.fn.real_visible = function(partial) {
+    $.fn.realVisible = function(partial) {
       
         var $t            = $(this),
             $w            = $(window),
