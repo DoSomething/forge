@@ -50,7 +50,7 @@ exampleModule.getStatus();</code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>window.NEUE = window.NEUE || {};
-window.NEUE.ExampleModule = <span class="keyword">function</span>() {
+window.NEUE.ExampleModule = (<span class="keyword">function</span>() {
   <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
@@ -159,7 +159,7 @@ to expose public methods while keeping private methods/variables safe.</p>
     initialize: initialize,
     getStatus: getStatus
   };
-};</pre></div></div>
+})();</pre></div></div>
             
         </li>
         

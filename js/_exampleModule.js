@@ -14,7 +14,7 @@
 
 // We create the global NEUE namespace if it doesn't already exist, and attach our module to it.
 window.NEUE = window.NEUE || {};
-window.NEUE.ExampleModule = function() {
+window.NEUE.ExampleModule = (function() {
   'use strict';
 
   // We can track whether a module has been initialized or not in the `initialized` variable.
@@ -63,4 +63,4 @@ window.NEUE.ExampleModule = function() {
     initialize: initialize,
     getStatus: getStatus
   };
-};
+})();
