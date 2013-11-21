@@ -122,7 +122,7 @@
         display: table-row;
         height: 150px;
         text-align: center;
-        
+
         h4 {
           display: table-cell;
           vertical-align: middle;
@@ -410,7 +410,7 @@ ul.location-list {
   overflow: auto;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  
+
 
   .modal-content {
     position: relative;
@@ -422,7 +422,7 @@ ul.location-list {
     margin-right: auto;
     margin-left: auto;
     min-height: 100%;
-    
+
     .modal-close-button {
       position: absolute;
       top: 0.5rem; right: 0.5rem;
@@ -441,7 +441,7 @@ ul.location-list {
       margin-bottom: 5rem;
       min-height: 0;
     }
-  }  
+  }
 }
 
 body.modal-open {

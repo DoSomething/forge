@@ -34,7 +34,7 @@ Requires the JQuery Visible plugin to calculate object visibility.</p>
             
             <div class="content"><div class='highlight'><pre>
 $(document).ready(<span class="keyword">function</span>() {
-  <span class="string">'use strict'</span>;</pre></div></div>
+  <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
         
@@ -45,11 +45,11 @@ $(document).ready(<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>Cache all objects that we want to monitor so that we don&#39;t have to keep checking the DOM.</p>
+              <p>Cache all objects that we want to monitor so that we don&quot;t have to keep checking the DOM.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> allFades = $(<span class="string">'.js-fade-up-on-scroll'</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> allFades = $(<span class="string">".js-fade-up-on-scroll"</span>);</pre></div></div>
             
         </li>
         
@@ -69,7 +69,7 @@ If so, we add the <code>.come-in</code> CSS class to perform the animation.</p>
     allFades.each(<span class="keyword">function</span>(i, el) {
       el = $(el);
       <span class="keyword">if</span>(el.realVisible(<span class="literal">true</span>)) {
-        el.addClass(<span class="string">'come-in'</span>);
+        el.addClass(<span class="string">"come-in"</span>);
       }
     });
   }</pre></div></div>
