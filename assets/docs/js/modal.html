@@ -34,7 +34,7 @@
             <div class="content"><div class='highlight'><pre>
 
 $(document).ready(<span class="keyword">function</span>() {
-  <span class="string">'use strict'</span>;</pre></div></div>
+  <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
         
@@ -49,7 +49,7 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  $(<span class="string">'.js-close-modal'</span>).on(<span class="string">'click'</span>, <span class="keyword">function</span>(e) {
+            <div class="content"><div class='highlight'><pre>  $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
     e.preventDefault();</pre></div></div>
             
         </li>
@@ -61,14 +61,14 @@ $(document).ready(<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>We find the modal based on the ID in the link&#39;s <code>href</code>. For example,
+              <p>We find the modal based on the ID in the link&quot;s <code>href</code>. For example,
 <code>&lt;a href=&quot;#modal--faq&quot;&gt;Click me&lt;/a&gt;</code> would open <code>&lt;div id=&quot;modal--faq&quot;&gt;&lt;/div&gt;</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> href = $(e.target.hash);
 
-    $(<span class="string">'body'</span>).addClass(<span class="string">'modal-open'</span>);
+    $(<span class="string">"body"</span>).addClass(<span class="string">"modal-open"</span>);
     $(href).show();</pre></div></div>
             
         </li>
@@ -80,14 +80,14 @@ $(document).ready(<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>Close modal when ‘x’ is clicked:</p>
+              <p>Close modal when “x” is clicked:</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    $(<span class="string">'.js-close-modal'</span>).on(<span class="string">'click'</span>, <span class="keyword">function</span>(e) {
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
       e.preventDefault();
-      $(<span class="keyword">this</span>).closest(<span class="string">'.modal'</span>).hide();
-      $(<span class="string">'body'</span>).removeClass(<span class="string">'modal-open'</span>);
+      $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>).hide();
+      $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>);
     });
   });
 

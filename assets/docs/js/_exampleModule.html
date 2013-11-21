@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>_exampleModule.js</title>
+  <title>_ExampleModule.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -15,7 +15,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>_exampleModule.js</h1>
+                  <h1>_ExampleModule.js</h1>
               </div>
           </li>
         
@@ -27,14 +27,10 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>An example code module. Example usage:</p>
-<pre><code class="lang-js">window.NEUE.ExampleModule.initialize({
-  configuration_option: true
-});
-
-exampleModule.getStatus();</code></pre>
-
+              
             </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*global Modernizr, _ */</span></pre></div></div>
             
         </li>
         
@@ -45,13 +41,24 @@ exampleModule.getStatus();</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>We create the global NEUE namespace if it doesn&#39;t already exist, and attach our module to it.</p>
+              <p>An example code module. Example usage:</p>
+<pre><code class="lang-js">window.DS.ExampleModule.initialize(&lt;JQuery element&gt;, {
+  initialColor: &quot;blue&quot;
+});
+
+window.DS.ExampleModule.getStatus();</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>window.NEUE = window.NEUE || {};
-window.NEUE.ExampleModule = <span class="keyword">function</span>() {
-  <span class="string">'use strict'</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+!(<span class="keyword">function</span>() {
+  <span class="string">"use strict"</span>;
+
+  window.DS = window.DS || {};
+  window.DS.ExampleModule = window.NEUE.BaseModule.extend({
+    defaultOptions: {
+      initialColor: <span class="string">"pink"</span>
+    },</pre></div></div>
             
         </li>
         
@@ -59,28 +66,16 @@ window.NEUE.ExampleModule = <span class="keyword">function</span>() {
         <li id="section-3">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>We can track whether a module has been initialized or not in the <code>initialized</code> variable.</p>
+              <h4>Events:</h4>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> initialized = <span class="literal">false</span>;
-  <span class="keyword">var</span> options = {};
-
-  <span class="function"><span class="keyword">function</span> <span class="title">_privateFunction</span><span class="params">()</span> {</span>
-
-  }
-
-  <span class="function"><span class="keyword">function</span> <span class="title">_anotherPrivateFunction</span><span class="params">()</span> {</span>
-
-  }
-
-  <span class="function"><span class="keyword">function</span> <span class="title">initialize</span><span class="params">(opts)</span> {</span>
-    <span class="keyword">var</span> defaults = {
-      configurationOption: <span class="literal">false</span>
-    };</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    Events: {
+      <span class="string">".js-example-module-color-btn click"</span>: <span class="string">"showColor"</span>,
+    },</pre></div></div>
             
         </li>
         
@@ -88,18 +83,19 @@ window.NEUE.ExampleModule = <span class="keyword">function</span>() {
         <li id="section-4">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>We override default options with any settings passed during initialization:</p>
+              <h4>State Variables:</h4>
+<ul>
+<li>color: holds current color</li>
+</ul>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">'undefined'</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
-      options = $.extend({}, defaults, opts);
-    } <span class="keyword">else</span> {
-      options = defaults;
-    }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    State: {
+      color: <span class="string">""</span>
+    },</pre></div></div>
             
         </li>
         
@@ -107,18 +103,16 @@ window.NEUE.ExampleModule = <span class="keyword">function</span>() {
         <li id="section-5">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>…</p>
+              <h4>Views:</h4>
+<ul>
+<li>$el</li>
+<li>$colorView</li>
+</ul>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>
-    initialized = <span class="literal">true</span>;
-  }
-
-  <span class="function"><span class="keyword">function</span> <span class="title">getStatus</span><span class="params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -126,20 +120,16 @@ window.NEUE.ExampleModule = <span class="keyword">function</span>() {
         <li id="section-6">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p>We can use the <code>initialized</code> varible to ensure that the module has been initialized before other methods can run.</p>
+              <h4>Templates:</h4>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span>(initialized) {
-      _privateFunction();
-      _anotherPrivateFunction();
-
-      <span class="keyword">return</span> <span class="string">'We\'re ready to go!'</span>;
-    }
-  }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    Templates: {
+      colorView: <span class="string">"#template--example-color"</span>
+    },</pre></div></div>
             
         </li>
         
@@ -147,19 +137,108 @@ window.NEUE.ExampleModule = <span class="keyword">function</span>() {
         <li id="section-7">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p>We use the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">Revealing Module pattern</a>
-to expose public methods while keeping private methods/variables safe.</p>
+              <h4>Initialization:</h4>
+<p>Sets up everything the Location Finder module needs to function.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> {
-    initialize: initialize,
-    getStatus: getStatus
-  };
-};</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    _initialize: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      _.bindAll(<span class="keyword">this</span>, <span class="string">"setColor"</span>, <span class="string">"showColor"</span>, <span class="string">"resetColor"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Create view containers:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">this</span>.Views.$colorView = $(<span class="string">"&lt;div/&gt;"</span>, { className: <span class="string">"color-container"</span> });
+
+      <span class="keyword">this</span>.State.color = <span class="keyword">this</span>.Options.initialColor;
+
+      $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>We&#39;ll append our views to the given element.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        _<span class="keyword">this</span>.Views.$colorView.appendTo(_<span class="keyword">this</span>.$el);
+      });
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <h4>Set Color:</h4>
+<p>A simple setter method.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    setColor: <span class="keyword">function</span>(color) {
+      <span class="keyword">this</span>.State.color = color;
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <h4>Show Color:</h4>
+<p>Shows the current color.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    showColor: <span class="keyword">function</span>() {
+      <span class="keyword">this</span>.Views.$colorView.html( <span class="keyword">this</span>.Templates.colorView({ color: <span class="keyword">this</span>.State.color }) )
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h5">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <h5>Reset Color:</h5>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    resetColor: <span class="keyword">function</span>() {
+      <span class="keyword">this</span>.State.color = <span class="keyword">this</span>.Options.initialColor;
+    },
+  });
+})();</pre></div></div>
             
         </li>
         
