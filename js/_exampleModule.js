@@ -1,65 +1,80 @@
+/*global Modernizr, _ */
+
 //
 //
 // An example code module. Example usage:
 //
 // ```js
-// window.DS.ExampleModule = window.NEUE.BaseModule.extend({
-//
+// window.DS.ExampleModule.initialize(<JQuery element>, {
+//   initialColor: "blue"
 // });
 //
+// window.DS.ExampleModule.getStatus();
 // ```
 //
 //
 
-// We create the global NEUE namespace if it doesn"t already exist, and attach our module to it.
-window.NEUE = window.NEUE || {};
-window.NEUE.ExampleModule = (function() {
+!(function() {
   "use strict";
 
-  // We can track whether a module has been initialized or not in the `initialized` variable.
-  var initialized = false;
-  var options = {};
+  window.DS = window.DS || {};
+  window.DS.ExampleModule = window.NEUE.BaseModule.extend({
+    defaultOptions: {
+      initialColor: "pink"
+    },
 
-  function _privateFunction() {
+    // #### Events: ####
+    Events: {
+      ".js-example-module-color-btn click": "showColor",
+    },
 
-  }
+    // #### State Variables: ####
+    // - color: holds current color
+    State: {
+      color: ""
+    },
 
-  function _anotherPrivateFunction() {
+    // #### Views: ####
+    // - $el
+    // - $colorView
 
-  }
+    // #### Templates: ####
+    Templates: {
+      colorView: "#template--example-color"
+    },
 
-  function initialize(opts) {
-    var defaults = {
-      configurationOption: false
-    };
+    // #### Initialization: ####
+    // Sets up everything the Location Finder module needs to function.
+    _initialize: function() {
+      var _this = this;
+      _.bindAll(this, "setColor", "showColor", "resetColor");
 
-    // We override default options with any settings passed during initialization:
-    if ((typeof opts !== "undefined" && opts !== null)) {
-      options = $.extend({}, defaults, opts);
-    } else {
-      options = defaults;
-    }
+      // Create view containers:
+      this.Views.$colorView = $("<div/>", { className: "color-container" });
 
-    // ...
+      this.State.color = this.Options.initialColor;
 
-    initialized = true;
-  }
+      $(document).ready(function() {
+        // We'll append our views to the given element.
+        _this.Views.$colorView.appendTo(_this.$el);
+      });
+    },
 
-  function getStatus() {
+    // #### Set Color: ####
+    // A simple setter method.
+    setColor: function(color) {
+      this.State.color = color;
+    },
 
-    // We can use the `initialized` varible to ensure that the module has been initialized before other methods can run.
-    if(initialized) {
-      _privateFunction();
-      _anotherPrivateFunction();
+    // #### Show Color: ####
+    // Shows the current color.
+    showColor: function() {
+      this.Views.$colorView.html( this.Templates.colorView({ color: this.State.color }) )
+    },
 
-      return "We're ready to go!";
-    }
-  }
-
-  // We use the [Revealing Module pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript)
-  // to expose public methods while keeping private methods/variables safe.
-  return {
-    initialize: initialize,
-    getStatus: getStatus
-  };
+    // ##### Reset Color: #####
+    resetColor: function() {
+      this.State.color = this.Options.initialColor;
+    },
+  });
 })();

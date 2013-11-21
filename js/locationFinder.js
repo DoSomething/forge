@@ -14,7 +14,7 @@
 //
 //
 
-(function() {
+!(function() {
   "use strict";
 
   window.DS = window.DS || {};
@@ -53,6 +53,7 @@
       locationResult: "#template--locfinder-location"
     },
 
+    // #### Initialization: ####
     // Sets up everything the Location Finder module needs to function.
     _initialize: function() {
       var _this = this;
@@ -78,7 +79,8 @@
       });
     },
 
-    // Public: Switches Form View between the geolocation form & the zip-code form.
+    // #### Toggle Form Type: ####
+    // Switches Form View between the geolocation form & the zip-code form.
     toggleFormType: function() {
       if(this.State.mode === "zip") {
         this.State.mode = "geo";
@@ -89,7 +91,8 @@
       }
     },
 
-    // Public: Finds locations near zip/geolocation depending on mode.
+    // #### Find Location: ####
+    // Finds locations near zip/geolocation depending on mode.
     findLocation: function() {
       if(this.initialized) {
         // We put a loading indicator on the button since the geolocation/AJAX request could each take a while.
@@ -103,14 +106,15 @@
       }
     },
 
+    // ##### Query based on zip-code: #####
     queryZip: function() {
       var _this = this;
-      var zip = this.Views.$formView.find(".js-location-finder-form input[name=\"zip\"]").val();
+      var zip = this.Views.$formView.find("input[name='zip']").val();
 
-      this.State.searchTerm = zip;
-
+      // We check if this is a valid zip-code before querying the API.
       if(zip.match(this.Options.validation)) {
-        console.log("Searchin zip");
+        this.State.searchTerm = zip;
+
         $.get(this.Options.url + "?zip=" + zip)
         .done(function(data) {
           _this.printResults(data);
@@ -118,14 +122,13 @@
         .fail(function() {
           _this.showError("There was a network error. Double-check that you have internet?");
         });
-
-        // We'll remove the loading indicator from the button since we've done the heavy lifting.
-        this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
       } else {
         this.showError("Hmm, make sure you entered a valid zip code.");
       }
     },
 
+    // ##### Query based on geolocation: #####
+    // Triggered if the browser successfully finds the user's latitude & longitude.
     queryGeolocation: function(position) {
       var _this = this;
       var latitude = position.coords.latitude;
@@ -141,16 +144,21 @@
         _this.showError("There was a network error. Double-check that you have internet?");
       });
 
-      // We'll remove the loading indicator from the button since we've done the heavy lifting.
-      this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
-
       console.log("FOUND YA: " + latitude + ", " + longitude + "!!");
     },
 
+    // ##### Geolocation Error Handling: #####
+    // Triggered if the browser encounters an error while trying to geolocate.
     geolocationError: function(err) {
-      this.showError("Geolocation Error: " + err);
+      if(err.code === 1) {
+        this.showError("Sorry, it seems like you might have refused to share your location with us. Try using a zip code instead?");
+      } else {
+        this.showError("We couldn't find your location because of a network error.")
+      }
     },
 
+    // #### Show Error Message: ####
+    // Places an error message in the results view. Used if something goes awry.
     showError: function(errorMessage) {
       this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
       
@@ -159,6 +167,7 @@
       this.Views.$resultsView.slideDown();
     },
 
+    // #### Show Results of Query: ####
     // Prints results to the Results View.
     printResults: function(data) {
       var _this = this;
@@ -171,15 +180,18 @@
         });
 
         _this.Views.$formView.slideUp();
-        _this.Views.$resultsView.slideDown();
+        _this.Views.$resultsView.slideDown(function() {
+          // We'll remove the loading indicator from the button since we've finished showing the result.
+          _this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
+        });
       });
     },
 
+    // #### Reset Form: ####
+    // Hides results and shows form so that user can change their location.
     resetForm: function() {
       this.Views.$resultsView.slideUp();
       this.Views.$formView.slideDown();
     }
-
   });
-
 })();

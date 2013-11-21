@@ -51,7 +51,7 @@ exampleModule.getStatus();</code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>
-(<span class="keyword">function</span>() {
+!(<span class="keyword">function</span>() {
   <span class="string">"use strict"</span>;
 
   window.DS = window.DS || {};
@@ -147,10 +147,11 @@ exampleModule.getStatus();</code></pre>
         <li id="section-7">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p>Sets up everything the Location Finder module needs to function.</p>
+              <h4>Initialization:</h4>
+<p>Sets up everything the Location Finder module needs to function.</p>
 
             </div>
             
@@ -221,10 +222,11 @@ exampleModule.getStatus();</code></pre>
         <li id="section-11">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
-              <p>Public: Switches Form View between the geolocation form &amp; the zip-code form.</p>
+              <h4>Toggle Form Type:</h4>
+<p>Switches Form View between the geolocation form &amp; the zip-code form.</p>
 
             </div>
             
@@ -244,10 +246,11 @@ exampleModule.getStatus();</code></pre>
         <li id="section-12">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
-              <p>Public: Finds locations near zip/geolocation depending on mode.</p>
+              <h4>Find Location:</h4>
+<p>Finds locations near zip/geolocation depending on mode.</p>
 
             </div>
             
@@ -275,23 +278,7 @@ exampleModule.getStatus();</code></pre>
           navigator.geolocation.getCurrentPosition(<span class="keyword">this</span>.queryGeolocation, <span class="keyword">this</span>.geolocationError);
         }
       }
-    },
-
-    queryZip: <span class="keyword">function</span>() {
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
-      <span class="keyword">var</span> zip = <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-form input[name=\"zip\"]"</span>).val();
-
-      <span class="keyword">this</span>.State.searchTerm = zip;
-
-      <span class="keyword">if</span>(zip.match(<span class="keyword">this</span>.Options.validation)) {
-        console.log(<span class="string">"Searchin zip"</span>);
-        $.get(<span class="keyword">this</span>.Options.url + <span class="string">"?zip="</span> + zip)
-        .done(<span class="keyword">function</span>(data) {
-          _<span class="keyword">this</span>.printResults(data);
-        })
-        .fail(<span class="keyword">function</span>() {
-          _<span class="keyword">this</span>.showError(<span class="string">"There was a network error. Double-check that you have internet?"</span>);
-        });</pre></div></div>
+    },</pre></div></div>
             
         </li>
         
@@ -299,20 +286,60 @@ exampleModule.getStatus();</code></pre>
         <li id="section-14">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h5">
                 <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
-              <p>We‘ll remove the loading indicator from the button since we’ve done the heavy lifting.</p>
+              <h5>Query based on zip-code:</h5>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
+            <div class="content"><div class='highlight'><pre>    queryZip: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      <span class="keyword">var</span> zip = <span class="keyword">this</span>.Views.$formView.find(<span class="string">"input[name='zip']"</span>).val();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>We check if this is a valid zip-code before querying the API.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">if</span>(zip.match(<span class="keyword">this</span>.Options.validation)) {
+        <span class="keyword">this</span>.State.searchTerm = zip;
+
+        $.get(<span class="keyword">this</span>.Options.url + <span class="string">"?zip="</span> + zip)
+        .done(<span class="keyword">function</span>(data) {
+          _<span class="keyword">this</span>.printResults(data);
+        })
+        .fail(<span class="keyword">function</span>() {
+          _<span class="keyword">this</span>.showError(<span class="string">"There was a network error. Double-check that you have internet?"</span>);
+        });
       } <span class="keyword">else</span> {
         <span class="keyword">this</span>.showError(<span class="string">"Hmm, make sure you entered a valid zip code."</span>);
       }
-    },
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h5">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <h5>Query based on geolocation:</h5>
+<p>Triggered if the browser successfully finds the user&#39;s latitude &amp; longitude.</p>
 
-    queryGeolocation: <span class="keyword">function</span>(position) {
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    queryGeolocation: <span class="keyword">function</span>(position) {
       <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
       <span class="keyword">var</span> latitude = position.coords.latitude;
       <span class="keyword">var</span> longitude = position.coords.longitude;
@@ -325,31 +352,48 @@ exampleModule.getStatus();</code></pre>
       })
       .fail(<span class="keyword">function</span>() {
         _<span class="keyword">this</span>.showError(<span class="string">"There was a network error. Double-check that you have internet?"</span>);
-      });</pre></div></div>
+      });
+
+      console.log(<span class="string">"FOUND YA: "</span> + latitude + <span class="string">", "</span> + longitude + <span class="string">"!!"</span>);
+    },</pre></div></div>
             
         </li>
         
         
-        <li id="section-15">
+        <li id="section-17">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+              <div class="pilwrap for-h5">
+                <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <p>We‘ll remove the loading indicator from the button since we’ve done the heavy lifting.</p>
+              <h5>Geolocation Error Handling:</h5>
+<p>Triggered if the browser encounters an error while trying to geolocate.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
+            <div class="content"><div class='highlight'><pre>    geolocationError: <span class="keyword">function</span>(err) {
+      <span class="keyword">if</span>(err.code === <span class="number">1</span>) {
+        <span class="keyword">this</span>.showError(<span class="string">"Sorry, it seems like you might have refused to share your location with us. Try using a zip code instead?"</span>);
+      } <span class="keyword">else</span> {
+        <span class="keyword">this</span>.showError(<span class="string">"We couldn't find your location because of a network error."</span>)
+      }
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <h4>Show Error Message:</h4>
+<p>Places an error message in the results view. Used if something goes awry.</p>
 
-      console.log(<span class="string">"FOUND YA: "</span> + latitude + <span class="string">", "</span> + longitude + <span class="string">"!!"</span>);
-    },
-
-    geolocationError: <span class="keyword">function</span>(err) {
-      <span class="keyword">this</span>.showError(<span class="string">"Geolocation Error: "</span> + err);
-    },
-
-    showError: <span class="keyword">function</span>(errorMessage) {
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    showError: <span class="keyword">function</span>(errorMessage) {
       <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
       
       <span class="keyword">this</span>.Views.$resultsView.slideUp();
@@ -360,13 +404,14 @@ exampleModule.getStatus();</code></pre>
         </li>
         
         
-        <li id="section-16">
+        <li id="section-19">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
-              <p>Prints results to the Results View.</p>
+              <h4>Show Results of Query:</h4>
+<p>Prints results to the Results View.</p>
 
             </div>
             
@@ -381,17 +426,45 @@ exampleModule.getStatus();</code></pre>
         });
 
         _<span class="keyword">this</span>.Views.$formView.slideUp();
-        _<span class="keyword">this</span>.Views.$resultsView.slideDown();
-      });
-    },
+        _<span class="keyword">this</span>.Views.$resultsView.slideDown(<span class="keyword">function</span>() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>We‘ll remove the loading indicator from the button since we’ve finished showing the result.</p>
 
-    resetForm: <span class="keyword">function</span>() {
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          _<span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
+        });
+      });
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <h4>Reset Form:</h4>
+<p>Hides results and shows form so that user can change their location.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    resetForm: <span class="keyword">function</span>() {
       <span class="keyword">this</span>.Views.$resultsView.slideUp();
       <span class="keyword">this</span>.Views.$formView.slideDown();
     }
-
   });
-
 })();</pre></div></div>
             
         </li>

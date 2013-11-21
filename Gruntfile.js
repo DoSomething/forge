@@ -45,12 +45,8 @@ module.exports = function(grunt) {
 
     uglify: {
       js: {
-        options: {
-          compress: false,
-          mangle: false
-        },
         files: {
-          "assets/neue.js": ["js/**/*.js", "!js/__*.js"]
+          "assets/neue.js": ["js/**/*.js", "!js/_*.js"]
         }
       }
     },
