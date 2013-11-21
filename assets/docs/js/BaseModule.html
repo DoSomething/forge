@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>BaseModule.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>BaseModule.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/*global _ */</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Base NEUE Module that should be extended when creating other modules. It
+provides some common methods and organization so you don&#39;t have to a lot
+of busywork. See <code>_exampleModule.js</code> for an annotated example implementation.</p>
+<pre><code class="lang-js">window.DS.ExampleModule = window.NEUE.BaseModule.extend({
+
+});</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+(<span class="keyword">function</span>() {
+  <span class="string">"use strict"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>TODO: Perhaps move this to a general configuration file? Not sure if it makes sense here…
+We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _.templateSettings = {
+    evaluate:    <span class="regexp">/\{\{=(.+?)\}\}/g</span>,
+    interpolate: <span class="regexp">/\{\{(.+?)\}\}/g</span>,
+    escape:      <span class="regexp">/\{\{-(.+?)\}\}/g</span>
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>We create the global NEUE namespace if it doesn&quot;t already exist, and attach our module to it.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  window.NEUE = window.NEUE || {};
+
+  window.NEUE.BaseModule = {
+    initialized: <span class="literal">false</span>,
+    
+    Options: {},
+    defaultOptions: {},
+
+    State: {},
+    Views: {},
+    Templates: {},
+    Events: {},
+
+    initialize: <span class="keyword">function</span>(element, opts) {
+      <span class="keyword">this</span>._baseInitialize(element, opts);
+      <span class="keyword">this</span>._initialize();
+
+      <span class="keyword">this</span>.initialized = <span class="literal">true</span>;
+    },
+
+    extend: <span class="keyword">function</span>(extensions) {
+      <span class="keyword">return</span> _.extend(<span class="keyword">this</span>, extensions);
+    },
+
+    _initialize: <span class="keyword">function</span>() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p><strong>You can override this in your module to do some custom initialization.</strong></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    },
+
+    _baseInitialize: <span class="keyword">function</span>(element, opts) {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+
+      <span class="keyword">this</span>.Views.$el = element;
+      <span class="keyword">this</span>.$el = <span class="keyword">this</span>.Views.$el; <span class="comment">// shortcut!</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>We override default options with any settings passed during initialization:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">"undefined"</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
+        <span class="keyword">this</span>.Options = $.extend({}, <span class="keyword">this</span>.defaultOptions, opts);
+      } <span class="keyword">else</span> {
+        <span class="keyword">this</span>.Options = <span class="keyword">this</span>.defaultOptions;
+      }
+
+      $(document).ready(<span class="keyword">function</span>() {
+        _<span class="keyword">this</span>.$el.html(<span class="string">""</span>);
+        _<span class="keyword">this</span>._prepareTemplates();
+        _<span class="keyword">this</span>._bindEvents();
+      });
+    },
+
+    _bindEvents: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> rootElement = <span class="keyword">this</span>.$el;
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+
+      _.each(<span class="keyword">this</span>.Events, <span class="keyword">function</span>(target, trigger) {
+        <span class="keyword">var</span> elementSelector = trigger.split(<span class="string">" "</span>)[<span class="number">0</span>];
+        <span class="keyword">var</span> eventType = trigger.split(<span class="string">" "</span>)[<span class="number">1</span>];
+
+        rootElement.on(eventType, elementSelector, <span class="keyword">function</span>(event) {
+          event.preventDefault();
+          _<span class="keyword">this</span>[target]();
+        });
+
+        console.log(<span class="string">"BOUND: "</span> + elementSelector + <span class="string">" :: "</span> + eventType + <span class="string">" --&gt; "</span> + target);
+      });
+    },
+
+    _prepareTemplates: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+
+      _.each(<span class="keyword">this</span>.Templates, <span class="keyword">function</span>(templateDOM, templateID) {
+        console.log(<span class="string">"CREATING TEMPLATE FUNCTION: "</span> + templateID + <span class="string">" :: "</span> + $(templateDOM).html());
+
+        _<span class="keyword">this</span>.Templates[templateID] = _.template( $(templateDOM).html() );
+      });
+    }
+  };
+
+})();</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

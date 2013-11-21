@@ -17,16 +17,26 @@
 
 <script type="text/template" id="template--locfinder-zip">
   <form action="#" class="js-location-finder-form row">
-    <input id="searchQuery" type="text" maxlength="5" class="short" placeholder="zip code">
+    <input name="zip" type="text" maxlength="5" class="short" placeholder="zip code">
     <a class="js-location-finder-submit btn primary medium">Submit</a>
   </form>
   <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search nearby</a>)</p></div>
 </script>
 
-<script type="text/template" id="template--locfinder-result">
-  <strong>{{name}}</strong><br>
-  {{street}}<br>
-  {{city}}, {{state}} {{zip}}<br>
+<script type="text/template" id="template--locfinder-results">
+  <p>Drop-off points near {{searchTerm}} (<a href="#" class="js-location-finder-reset-form">change</a>): </p>
+
+  <ul class="location-list js-location-finder-results">
+
+  </ul>
+</script>
+
+<script type="text/template" id="template--locfinder-location">
+  <li class="location">
+    <strong>{{name}}</strong><br>
+    {{street}}<br>
+    {{city}}, {{state}} {{zip}}<br>
+  </li>
 </script>
 
 <script type="text/javascript">

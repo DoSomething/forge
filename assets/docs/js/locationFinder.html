@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>locationFinder.js</title>
+  <title>LocationFinder.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -15,7 +15,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>locationFinder.js</h1>
+                  <h1>LocationFinder.js</h1>
               </div>
           </li>
         
@@ -52,7 +52,14 @@ exampleModule.getStatus();</code></pre>
             
             <div class="content"><div class='highlight'><pre>
 (<span class="keyword">function</span>() {
-  <span class="string">"use strict"</span>;</pre></div></div>
+  <span class="string">"use strict"</span>;
+
+  window.DS = window.DS || {};
+  window.DS.LocationFinder = window.NEUE.BaseModule.extend({
+    defaultOptions: {
+      url: <span class="string">"/example-data.json"</span>,
+      validation: <span class="regexp">/(^\d{5}$)/</span>
+    },</pre></div></div>
             
         </li>
         
@@ -60,202 +67,8 @@ exampleModule.getStatus();</code></pre>
         <li id="section-3">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>TODO: Move this somewhere more general
-We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  _.templateSettings = {
-    evaluate:    <span class="regexp">/\{\{=(.+?)\}\}/g</span>,
-    interpolate: <span class="regexp">/\{\{(.+?)\}\}/g</span>,
-    escape:      <span class="regexp">/\{\{-(.+?)\}\}/g</span>
-  };</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-4">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
-              </div>
-              <p>We create the global NEUE namespace if it doesn&quot;t already exist, and attach our module to it.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  window.NEUE = window.NEUE || {};
-
-  window.NEUE.BaseModule = {
-    initialized: <span class="literal">false</span>,
-    
-    Options: {},
-    defaultOptions: {},
-
-    State: {},
-    Views: {},
-    Templates: {},
-    Events: {},
-
-    initialize: <span class="keyword">function</span>(element, opts) {
-      <span class="keyword">this</span>._baseInitialize(element, opts);
-      <span class="keyword">this</span>._initialize();
-
-      <span class="keyword">this</span>.initialized = <span class="literal">true</span>;
-    },
-
-    extend: <span class="keyword">function</span>(extensions) {
-      <span class="keyword">return</span> _.extend(<span class="keyword">this</span>, extensions);
-    },
-
-    _initialize: <span class="keyword">function</span>() {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
-              </div>
-              <p><strong>You can override this in your module to do some custom initialization.</strong></p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    },
-
-    _baseInitialize: <span class="keyword">function</span>(element, opts) {
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
-
-      <span class="keyword">this</span>.Views.$el = element;
-      <span class="keyword">this</span>.$el = <span class="keyword">this</span>.Views.$el; <span class="comment">// shortcut!</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-6">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
-              </div>
-              <p>We override default options with any settings passed during initialization:</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">"undefined"</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
-        <span class="keyword">this</span>.Options = $.extend({}, <span class="keyword">this</span>.defaultOptions, opts);
-      } <span class="keyword">else</span> {
-        <span class="keyword">this</span>.Options = <span class="keyword">this</span>.defaultOptions;
-      }
-
-      $(document).ready(<span class="keyword">function</span>() {
-        _<span class="keyword">this</span>.$el.html(<span class="string">""</span>);
-        _<span class="keyword">this</span>._prepareTemplates();
-        _<span class="keyword">this</span>._bindEvents();
-      });
-    },
-
-    _bindEvents: <span class="keyword">function</span>() {
-      <span class="keyword">var</span> rootElement = <span class="keyword">this</span>.$el;
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
-
-      _.each(<span class="keyword">this</span>.Events, <span class="keyword">function</span>(target, trigger) {
-        <span class="keyword">var</span> elementSelector = trigger.split(<span class="string">" "</span>)[<span class="number">0</span>];
-        <span class="keyword">var</span> eventType = trigger.split(<span class="string">" "</span>)[<span class="number">1</span>];
-
-        rootElement.on(eventType, elementSelector, <span class="keyword">function</span>(event) {
-          event.preventDefault();
-          _<span class="keyword">this</span>[target]();
-        });
-
-        console.log(<span class="string">"BOUND: "</span> + elementSelector + <span class="string">" :: "</span> + eventType + <span class="string">" --&gt; "</span> + target);
-      });
-    },
-
-    _prepareTemplates: <span class="keyword">function</span>() {
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
-
-      _.each(<span class="keyword">this</span>.Templates, <span class="keyword">function</span>(templateDOM, templateID) {
-        console.log(<span class="string">"CREATING TEMPLATE FUNCTION: "</span> + templateID + <span class="string">" :: "</span> + $(templateDOM).html());
-
-        _<span class="keyword">this</span>.Templates[templateID] = _.template( $(templateDOM).html() );
-      });
-    }
-  };</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-7">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
-              </div>
-              <hr>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-8">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
-              </div>
-              <hr>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-9">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
-              </div>
-              <hr>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-10">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-10">&#182;</a>
-              </div>
-              
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-
-
-  window.DS = window.DS || {};
-  window.DS.LocationFinder = window.NEUE.BaseModule.extend({
-    defaultOptions: {
-      url: <span class="string">"/example-data.json"</span>
-    },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-11">
-            <div class="annotation">
-              
               <div class="pilwrap for-h4">
-                <a class="pilcrow" href="#section-11">&#182;</a>
+                <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <h4>Events:</h4>
 
@@ -264,37 +77,40 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
             <div class="content"><div class='highlight'><pre>    Events: {
       <span class="string">".js-location-finder-toggle-form click"</span>: <span class="string">"toggleFormType"</span>,
       <span class="string">".js-location-finder-submit click"</span>: <span class="string">"findLocation"</span>,
-      <span class="string">".js-location-finder-form submit"</span>: <span class="string">"findLocation"</span>
+      <span class="string">".js-location-finder-form submit"</span>: <span class="string">"findLocation"</span>,
+      <span class="string">".js-location-finder-reset-form click"</span>: <span class="string">"resetForm"</span>
     },</pre></div></div>
             
         </li>
         
         
-        <li id="section-12">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap for-h4">
-                <a class="pilcrow" href="#section-12">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <h4>State Variables:</h4>
 <ul>
 <li>mode: “zip” (default), “geo”</li>
+<li>searchTerm: holds current search term</li>
 </ul>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    State: {
-      mode: <span class="string">"zip"</span>
+      mode: <span class="string">"zip"</span>,
+      searchTerm: <span class="string">""</span>
     },</pre></div></div>
             
         </li>
         
         
-        <li id="section-13">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap for-h4">
-                <a class="pilcrow" href="#section-13">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <h4>Views:</h4>
 <ul>
@@ -308,69 +124,66 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
         </li>
         
         
-        <li id="section-14">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap for-h4">
-                <a class="pilcrow" href="#section-14">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <h4>Templates:</h4>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    Templates: {
-      searchFormGeo: <span class="string">"#template--locfinder-geo"</span>,
-      searchFormZip: <span class="string">"#template--locfinder-zip"</span>,
-      locationResult: <span class="string">"#template--locfinder-result"</span>
+      searchViewGeo: <span class="string">"#template--locfinder-geo"</span>,
+      searchViewZip: <span class="string">"#template--locfinder-zip"</span>,
+      resultsView: <span class="string">"#template--locfinder-results"</span>,
+      locationResult: <span class="string">"#template--locfinder-location"</span>
     },</pre></div></div>
             
         </li>
         
         
-        <li id="section-15">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>Sets up everything the Location Finder module needs to function.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    _initialize: <span class="keyword">function</span>() {
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;</pre></div></div>
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      _.bindAll(<span class="keyword">this</span>, <span class="string">"queryZip"</span>, <span class="string">"queryGeolocation"</span>, <span class="string">"geolocationError"</span>, <span class="string">"printResults"</span>);</pre></div></div>
             
         </li>
         
         
-        <li id="section-16">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>Create view containers:</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">this</span>.Views.$formView = $(<span class="string">"&lt;div/&gt;"</span>, {
-        className: <span class="string">"locfinder-form"</span>
-      });
-
-      <span class="keyword">this</span>.Views.$resultsView = $(<span class="string">"&lt;div/&gt;"</span>, {
-        className: <span class="string">"locfinder-results"</span>
-      });
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">this</span>.Views.$formView = $(<span class="string">"&lt;div/&gt;"</span>, { className: <span class="string">"locfinder-form"</span> });
+      <span class="keyword">this</span>.Views.$resultsView = $(<span class="string">"&lt;div/&gt;"</span>, { className: <span class="string">"locfinder-results"</span> });
 
       $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
         
-        <li id="section-17">
+        <li id="section-9">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-17">&#182;</a>
+                <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <p>We&#39;ll append our views to the given element.</p>
 
@@ -382,21 +195,21 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
         </li>
         
         
-        <li id="section-18">
+        <li id="section-10">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-18">&#182;</a>
+                <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
               <p>We‘ll default to the geolocation form if the browser supports it. Otherwise, we just show the ’ol zip code.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="keyword">if</span>(Modernizr.geolocation) {
-          _<span class="keyword">this</span>.Views.$formView.html( _<span class="keyword">this</span>.Templates.searchFormGeo );
+          _<span class="keyword">this</span>.Views.$formView.html( _<span class="keyword">this</span>.Templates.searchViewGeo );
           _<span class="keyword">this</span>.State.mode = <span class="string">"geo"</span>;
         } <span class="keyword">else</span> {
-          _<span class="keyword">this</span>.Views.$formView.html( _<span class="keyword">this</span>.Templates.searchFormZip );
+          _<span class="keyword">this</span>.Views.$formView.html( _<span class="keyword">this</span>.Templates.searchViewZip );
           _<span class="keyword">this</span>.State.mode = <span class="string">"zip"</span>;
         }
       });
@@ -405,11 +218,11 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
         </li>
         
         
-        <li id="section-19">
+        <li id="section-11">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-19">&#182;</a>
+                <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
               <p>Public: Switches Form View between the geolocation form &amp; the zip-code form.</p>
 
@@ -418,68 +231,165 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
             <div class="content"><div class='highlight'><pre>    toggleFormType: <span class="keyword">function</span>() {
       <span class="keyword">if</span>(<span class="keyword">this</span>.State.mode === <span class="string">"zip"</span>) {
         <span class="keyword">this</span>.State.mode = <span class="string">"geo"</span>;
-        <span class="keyword">this</span>.Views.$formView.html(  <span class="keyword">this</span>.Templates.searchFormGeo  );
+        <span class="keyword">this</span>.Views.$formView.html(  <span class="keyword">this</span>.Templates.searchViewGeo  );
       } <span class="keyword">else</span> {
         <span class="keyword">this</span>.State.mode = <span class="string">"zip"</span>;
-        <span class="keyword">this</span>.Views.$formView.html( <span class="keyword">this</span>.Templates.searchFormZip );
+        <span class="keyword">this</span>.Views.$formView.html( <span class="keyword">this</span>.Templates.searchViewZip );
       }
     },</pre></div></div>
             
         </li>
         
         
-        <li id="section-20">
+        <li id="section-12">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-20">&#182;</a>
+                <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
               <p>Public: Finds locations near zip/geolocation depending on mode.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    findLocation: <span class="keyword">function</span>() {
-      <span class="keyword">if</span>(<span class="keyword">this</span>.initialized) {
-        <span class="keyword">if</span>(<span class="keyword">this</span>.State.mode === <span class="string">"zip"</span>) {
-          <span class="keyword">if</span>(query.match(<span class="keyword">this</span>.Options.validation)) {
-            console.log(<span class="string">"Searchin zip"</span>);
-            $.get(<span class="string">"example-data.json?zip="</span> + zip, <span class="keyword">function</span>(data) {
-              <span class="keyword">this</span>._printResults(data);
-            });
-          }
-        } <span class="keyword">else</span> {
-          <span class="keyword">var</span> latitude = <span class="number">70.52</span>;
-          <span class="keyword">var</span> longitude = <span class="number">50.12</span>;
+      <span class="keyword">if</span>(<span class="keyword">this</span>.initialized) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>We put a loading indicator on the button since the geolocation/AJAX request could each take a while.</p>
 
-          <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
-          $.get(<span class="keyword">this</span>.Options.url + <span class="string">"?lat="</span> + latitude + <span class="string">"&amp;long="</span> + longitude, <span class="keyword">function</span>(data) {
-            _<span class="keyword">this</span>._printResults(data);
-          });
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).addClass(<span class="string">"loading"</span>);
+
+        <span class="keyword">if</span>(<span class="keyword">this</span>.State.mode === <span class="string">"zip"</span>) {
+          <span class="keyword">this</span>.queryZip();
+        } <span class="keyword">else</span> {
+          navigator.geolocation.getCurrentPosition(<span class="keyword">this</span>.queryGeolocation, <span class="keyword">this</span>.geolocationError);
         }
       }
+    },
+
+    queryZip: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      <span class="keyword">var</span> zip = <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-form input[name=\"zip\"]"</span>).val();
+
+      <span class="keyword">this</span>.State.searchTerm = zip;
+
+      <span class="keyword">if</span>(zip.match(<span class="keyword">this</span>.Options.validation)) {
+        console.log(<span class="string">"Searchin zip"</span>);
+        $.get(<span class="keyword">this</span>.Options.url + <span class="string">"?zip="</span> + zip)
+        .done(<span class="keyword">function</span>(data) {
+          _<span class="keyword">this</span>.printResults(data);
+        })
+        .fail(<span class="keyword">function</span>() {
+          _<span class="keyword">this</span>.showError(<span class="string">"There was a network error. Double-check that you have internet?"</span>);
+        });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>We‘ll remove the loading indicator from the button since we’ve done the heavy lifting.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
+      } <span class="keyword">else</span> {
+        <span class="keyword">this</span>.showError(<span class="string">"Hmm, make sure you entered a valid zip code."</span>);
+      }
+    },
+
+    queryGeolocation: <span class="keyword">function</span>(position) {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      <span class="keyword">var</span> latitude = position.coords.latitude;
+      <span class="keyword">var</span> longitude = position.coords.longitude;
+
+      <span class="keyword">this</span>.State.searchTerm = <span class="string">"your location"</span>;
+
+      $.get(<span class="keyword">this</span>.Options.url + <span class="string">"?latitude="</span> + latitude + <span class="string">"&amp;longitude="</span> + longitude)
+      .done(<span class="keyword">function</span>(data) {
+        _<span class="keyword">this</span>.printResults(data);
+      })
+      .fail(<span class="keyword">function</span>() {
+        _<span class="keyword">this</span>.showError(<span class="string">"There was a network error. Double-check that you have internet?"</span>);
+      });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>We‘ll remove the loading indicator from the button since we’ve done the heavy lifting.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
+
+      console.log(<span class="string">"FOUND YA: "</span> + latitude + <span class="string">", "</span> + longitude + <span class="string">"!!"</span>);
+    },
+
+    geolocationError: <span class="keyword">function</span>(err) {
+      <span class="keyword">this</span>.showError(<span class="string">"Geolocation Error: "</span> + err);
+    },
+
+    showError: <span class="keyword">function</span>(errorMessage) {
+      <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
+      
+      <span class="keyword">this</span>.Views.$resultsView.slideUp();
+      <span class="keyword">this</span>.Views.$resultsView.html(<span class="string">"&lt;div class=\"messages error\"&gt;"</span> + errorMessage + <span class="string">"&lt;/div&gt;"</span>);
+      <span class="keyword">this</span>.Views.$resultsView.slideDown();
     },</pre></div></div>
             
         </li>
         
         
-        <li id="section-21">
+        <li id="section-16">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
+                <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
               <p>Prints results to the Results View.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    _printResults: <span class="keyword">function</span>(data) {
+            <div class="content"><div class='highlight'><pre>    printResults: <span class="keyword">function</span>(data) {
       <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
-      <span class="keyword">this</span>.Views.$resultsView.html(<span class="string">"Results:"</span>);
 
-      _.each(data.results, <span class="keyword">function</span>(result) {
-        _<span class="keyword">this</span>.Views.$resultsView.append( _<span class="keyword">this</span>.Templates.locationResult(result) );
+      <span class="keyword">this</span>.Views.$resultsView.slideUp(<span class="keyword">function</span>() {
+        _<span class="keyword">this</span>.Views.$resultsView.html( _<span class="keyword">this</span>.Templates.resultsView({searchTerm: _<span class="keyword">this</span>.State.searchTerm }) );
+
+        _.each(data.results, <span class="keyword">function</span>(result) {
+          _<span class="keyword">this</span>.Views.$resultsView.find(<span class="string">".js-location-finder-results"</span>).append( _<span class="keyword">this</span>.Templates.locationResult(result) );
+        });
+
+        _<span class="keyword">this</span>.Views.$formView.slideUp();
+        _<span class="keyword">this</span>.Views.$resultsView.slideDown();
       });
+    },
+
+    resetForm: <span class="keyword">function</span>() {
+      <span class="keyword">this</span>.Views.$resultsView.slideUp();
+      <span class="keyword">this</span>.Views.$formView.slideDown();
     }
+
   });
 
 })();</pre></div></div>

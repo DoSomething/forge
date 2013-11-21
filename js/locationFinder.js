@@ -17,114 +17,27 @@
 (function() {
   "use strict";
 
-  // TODO: Move this somewhere more general
-  // We configure Underscore templating to use brackets (Mustache-style) syntax.
-  _.templateSettings = {
-    evaluate:    /\{\{=(.+?)\}\}/g,
-    interpolate: /\{\{(.+?)\}\}/g,
-    escape:      /\{\{-(.+?)\}\}/g
-  };
-
-  // We create the global NEUE namespace if it doesn"t already exist, and attach our module to it.
-  window.NEUE = window.NEUE || {};
-
-  window.NEUE.BaseModule = {
-    initialized: false,
-    
-    Options: {},
-    defaultOptions: {},
-
-    State: {},
-    Views: {},
-    Templates: {},
-    Events: {},
-
-    initialize: function(element, opts) {
-      this._baseInitialize(element, opts);
-      this._initialize();
-
-      this.initialized = true;
-    },
-
-    extend: function(extensions) {
-      return _.extend(this, extensions);
-    },
-
-    _initialize: function() {
-      // __You can override this in your module to do some custom initialization.__
-    },
-
-    _baseInitialize: function(element, opts) {
-      var _this = this;
-
-      this.Views.$el = element;
-      this.$el = this.Views.$el; // shortcut!
-
-      // We override default options with any settings passed during initialization:
-      if ((typeof opts !== "undefined" && opts !== null)) {
-        this.Options = $.extend({}, this.defaultOptions, opts);
-      } else {
-        this.Options = this.defaultOptions;
-      }
-
-      $(document).ready(function() {
-        _this.$el.html("");
-        _this._prepareTemplates();
-        _this._bindEvents();
-      });
-    },
-
-    _bindEvents: function() {
-      var rootElement = this.$el;
-      var _this = this;
-
-      _.each(this.Events, function(target, trigger) {
-        var elementSelector = trigger.split(" ")[0];
-        var eventType = trigger.split(" ")[1];
-
-        rootElement.on(eventType, elementSelector, function(event) {
-          event.preventDefault();
-          _this[target]();
-        });
-
-        console.log("BOUND: " + elementSelector + " :: " + eventType + " --> " + target);
-      });
-    },
-
-    _prepareTemplates: function() {
-      var _this = this;
-
-      _.each(this.Templates, function(templateDOM, templateID) {
-        console.log("CREATING TEMPLATE FUNCTION: " + templateID + " :: " + $(templateDOM).html());
-
-        _this.Templates[templateID] = _.template( $(templateDOM).html() );
-      });
-    }
-  };
-
-  // ------------------------------------------------------------------------------------------------------------
-  // ------------------------------------------------------------------------------------------------------------
-  // ------------------------------------------------------------------------------------------------------------
-
-
-
   window.DS = window.DS || {};
   window.DS.LocationFinder = window.NEUE.BaseModule.extend({
     defaultOptions: {
-      url: "/example-data.json"
+      url: "/example-data.json",
+      validation: /(^\d{5}$)/
     },
     
     // #### Events: ####   
     Events: {
       ".js-location-finder-toggle-form click": "toggleFormType",
       ".js-location-finder-submit click": "findLocation",
-      ".js-location-finder-form submit": "findLocation"
+      ".js-location-finder-form submit": "findLocation",
+      ".js-location-finder-reset-form click": "resetForm"
     },
 
     // #### State Variables: #### 
     // - mode: "zip" (default), "geo"
+    // - searchTerm: holds current search term
     State: {
-      mode: "zip"
+      mode: "zip",
+      searchTerm: ""
     },
 
     // #### Views: ####
@@ -134,23 +47,20 @@
 
     // #### Templates: ####
     Templates: {
-      searchFormGeo: "#template--locfinder-geo",
-      searchFormZip: "#template--locfinder-zip",
-      locationResult: "#template--locfinder-result"
+      searchViewGeo: "#template--locfinder-geo",
+      searchViewZip: "#template--locfinder-zip",
+      resultsView: "#template--locfinder-results",
+      locationResult: "#template--locfinder-location"
     },
 
     // Sets up everything the Location Finder module needs to function.
     _initialize: function() {
       var _this = this;
+      _.bindAll(this, "queryZip", "queryGeolocation", "geolocationError", "printResults");
 
       // Create view containers:
-      this.Views.$formView = $("<div/>", {
-        className: "locfinder-form"
-      });
-
-      this.Views.$resultsView = $("<div/>", {
-        className: "locfinder-results"
-      });
+      this.Views.$formView = $("<div/>", { className: "locfinder-form" });
+      this.Views.$resultsView = $("<div/>", { className: "locfinder-results" });
 
       $(document).ready(function() {
         // We'll append our views to the given element.
@@ -159,10 +69,10 @@
 
         // We'll default to the geolocation form if the browser supports it. Otherwise, we just show the 'ol zip code.
         if(Modernizr.geolocation) {
-          _this.Views.$formView.html( _this.Templates.searchFormGeo );
+          _this.Views.$formView.html( _this.Templates.searchViewGeo );
           _this.State.mode = "geo";
         } else {
-          _this.Views.$formView.html( _this.Templates.searchFormZip );
+          _this.Views.$formView.html( _this.Templates.searchViewZip );
           _this.State.mode = "zip";
         }
       });
@@ -172,44 +82,104 @@
     toggleFormType: function() {
       if(this.State.mode === "zip") {
         this.State.mode = "geo";
-        this.Views.$formView.html(  this.Templates.searchFormGeo  );
+        this.Views.$formView.html(  this.Templates.searchViewGeo  );
       } else {
         this.State.mode = "zip";
-        this.Views.$formView.html( this.Templates.searchFormZip );
+        this.Views.$formView.html( this.Templates.searchViewZip );
       }
     },
 
     // Public: Finds locations near zip/geolocation depending on mode.
     findLocation: function() {
       if(this.initialized) {
-        if(this.State.mode === "zip") {
-          if(query.match(this.Options.validation)) {
-            console.log("Searchin zip");
-            $.get("example-data.json?zip=" + zip, function(data) {
-              this._printResults(data);
-            });
-          }
-        } else {
-          var latitude = 70.52;
-          var longitude = 50.12;
+        // We put a loading indicator on the button since the geolocation/AJAX request could each take a while.
+        this.Views.$formView.find(".js-location-finder-submit").addClass("loading");
 
-          var _this = this;
-          $.get(this.Options.url + "?lat=" + latitude + "&long=" + longitude, function(data) {
-            _this._printResults(data);
-          });
+        if(this.State.mode === "zip") {
+          this.queryZip();
+        } else {
+          navigator.geolocation.getCurrentPosition(this.queryGeolocation, this.geolocationError);
         }
       }
     },
 
-    // Prints results to the Results View.
-    _printResults: function(data) {
+    queryZip: function() {
       var _this = this;
-      this.Views.$resultsView.html("Results:");
+      var zip = this.Views.$formView.find(".js-location-finder-form input[name=\"zip\"]").val();
 
-      _.each(data.results, function(result) {
-        _this.Views.$resultsView.append( _this.Templates.locationResult(result) );
+      this.State.searchTerm = zip;
+
+      if(zip.match(this.Options.validation)) {
+        console.log("Searchin zip");
+        $.get(this.Options.url + "?zip=" + zip)
+        .done(function(data) {
+          _this.printResults(data);
+        })
+        .fail(function() {
+          _this.showError("There was a network error. Double-check that you have internet?");
+        });
+
+        // We'll remove the loading indicator from the button since we've done the heavy lifting.
+        this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
+      } else {
+        this.showError("Hmm, make sure you entered a valid zip code.");
+      }
+    },
+
+    queryGeolocation: function(position) {
+      var _this = this;
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      this.State.searchTerm = "your location";
+
+      $.get(this.Options.url + "?latitude=" + latitude + "&longitude=" + longitude)
+      .done(function(data) {
+        _this.printResults(data);
+      })
+      .fail(function() {
+        _this.showError("There was a network error. Double-check that you have internet?");
       });
+
+      // We'll remove the loading indicator from the button since we've done the heavy lifting.
+      this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
+
+      console.log("FOUND YA: " + latitude + ", " + longitude + "!!");
+    },
+
+    geolocationError: function(err) {
+      this.showError("Geolocation Error: " + err);
+    },
+
+    showError: function(errorMessage) {
+      this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
+      
+      this.Views.$resultsView.slideUp();
+      this.Views.$resultsView.html("<div class=\"messages error\">" + errorMessage + "</div>");
+      this.Views.$resultsView.slideDown();
+    },
+
+    // Prints results to the Results View.
+    printResults: function(data) {
+      var _this = this;
+
+      this.Views.$resultsView.slideUp(function() {
+        _this.Views.$resultsView.html( _this.Templates.resultsView({searchTerm: _this.State.searchTerm }) );
+
+        _.each(data.results, function(result) {
+          _this.Views.$resultsView.find(".js-location-finder-results").append( _this.Templates.locationResult(result) );
+        });
+
+        _this.Views.$formView.slideUp();
+        _this.Views.$resultsView.slideDown();
+      });
+    },
+
+    resetForm: function() {
+      this.Views.$resultsView.slideUp();
+      this.Views.$formView.slideDown();
     }
+
   });
 
 })();

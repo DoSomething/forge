@@ -3,11 +3,10 @@
 // An example code module. Example usage:
 //
 // ```js
-// window.NEUE.ExampleModule.initialize({
-//   configuration_option: true
+// window.DS.ExampleModule = window.NEUE.BaseModule.extend({
+//
 // });
 //
-// exampleModule.getStatus();
 // ```
 //
 //
