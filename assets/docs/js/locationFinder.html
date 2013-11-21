@@ -42,13 +42,17 @@
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
               <p>An example code module. Example usage:</p>
-<pre><code class="lang-js">window.NEUE.LocationFinder.initialize(&lt;JQuery element&gt;, {
+<pre><code class="lang-js">window.DS.LocationFinder.initialize(&lt;JQuery element&gt;, {
   configuration_option: true
 });
 
 exampleModule.getStatus();</code></pre>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>
+(<span class="keyword">function</span>() {
+  <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
         
@@ -64,11 +68,11 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>_.templateSettings = {
-  evaluate:    <span class="regexp">/\{\{=(.+?)\}\}/g</span>,
-  interpolate: <span class="regexp">/\{\{(.+?)\}\}/g</span>,
-  escape:      <span class="regexp">/\{\{-(.+?)\}\}/g</span>
-};</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  _.templateSettings = {
+    evaluate:    <span class="regexp">/\{\{=(.+?)\}\}/g</span>,
+    interpolate: <span class="regexp">/\{\{(.+?)\}\}/g</span>,
+    escape:      <span class="regexp">/\{\{-(.+?)\}\}/g</span>
+  };</pre></div></div>
             
         </li>
         
@@ -79,13 +83,35 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>We create the global NEUE namespace if it doesn&#39;t already exist, and attach our module to it.</p>
+              <p>We create the global NEUE namespace if it doesn&quot;t already exist, and attach our module to it.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>window.NEUE = window.NEUE || {};
-window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
-  <span class="string">'use strict'</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  window.NEUE = window.NEUE || {};
+
+  window.NEUE.BaseModule = {
+    initialized: <span class="literal">false</span>,
+    
+    Options: {},
+    defaultOptions: {},
+
+    State: {},
+    Views: {},
+    Templates: {},
+    Events: {},
+
+    initialize: <span class="keyword">function</span>(element, opts) {
+      <span class="keyword">this</span>._baseInitialize(element, opts);
+      <span class="keyword">this</span>._initialize();
+
+      <span class="keyword">this</span>.initialized = <span class="literal">true</span>;
+    },
+
+    extend: <span class="keyword">function</span>(extensions) {
+      <span class="keyword">return</span> _.extend(<span class="keyword">this</span>, extensions);
+    },
+
+    _initialize: <span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -96,17 +122,17 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>We can track whether a module has been initialized or not in the <code>initialized</code> variable.</p>
+              <p><strong>You can override this in your module to do some custom initialization.</strong></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> initialized = <span class="literal">false</span>;
-  <span class="keyword">var</span> Options = {};
-  <span class="keyword">var</span> defaultOptions = {
-    url: <span class="string">'/example-data.json'</span>
-  };
-  
-  <span class="keyword">var</span> State = {};</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    },
+
+    _baseInitialize: <span class="keyword">function</span>(element, opts) {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+
+      <span class="keyword">this</span>.Views.$el = element;
+      <span class="keyword">this</span>.$el = <span class="keyword">this</span>.Views.$el; <span class="comment">// shortcut!</span></pre></div></div>
             
         </li>
         
@@ -114,13 +140,53 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-6">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <h4>State Variables:</h4>
-<p>mode: <code>Mode</code> is either “geo” or “zip”</p>
+              <p>We override default options with any settings passed during initialization:</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">"undefined"</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
+        <span class="keyword">this</span>.Options = $.extend({}, <span class="keyword">this</span>.defaultOptions, opts);
+      } <span class="keyword">else</span> {
+        <span class="keyword">this</span>.Options = <span class="keyword">this</span>.defaultOptions;
+      }
+
+      $(document).ready(<span class="keyword">function</span>() {
+        _<span class="keyword">this</span>.$el.html(<span class="string">""</span>);
+        _<span class="keyword">this</span>._prepareTemplates();
+        _<span class="keyword">this</span>._bindEvents();
+      });
+    },
+
+    _bindEvents: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> rootElement = <span class="keyword">this</span>.$el;
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+
+      _.each(<span class="keyword">this</span>.Events, <span class="keyword">function</span>(target, trigger) {
+        <span class="keyword">var</span> elementSelector = trigger.split(<span class="string">" "</span>)[<span class="number">0</span>];
+        <span class="keyword">var</span> eventType = trigger.split(<span class="string">" "</span>)[<span class="number">1</span>];
+
+        rootElement.on(eventType, elementSelector, <span class="keyword">function</span>(event) {
+          event.preventDefault();
+          _<span class="keyword">this</span>[target]();
+        });
+
+        console.log(<span class="string">"BOUND: "</span> + elementSelector + <span class="string">" :: "</span> + eventType + <span class="string">" --&gt; "</span> + target);
+      });
+    },
+
+    _prepareTemplates: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+
+      _.each(<span class="keyword">this</span>.Templates, <span class="keyword">function</span>(templateDOM, templateID) {
+        console.log(<span class="string">"CREATING TEMPLATE FUNCTION: "</span> + templateID + <span class="string">" :: "</span> + $(templateDOM).html());
+
+        _<span class="keyword">this</span>.Templates[templateID] = _.template( $(templateDOM).html() );
+      });
+    }
+  };</pre></div></div>
             
         </li>
         
@@ -128,15 +194,12 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-7">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <h4>Views</h4>
+              <hr>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> $el, $formView, $resultsView;
-  <span class="keyword">var</span> Templates = {};</pre></div></div>
             
         </li>
         
@@ -144,18 +207,12 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-8">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <h4>Events</h4>
+              <hr>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> Events = {
-    <span class="string">'.js-location-finder-toggle-form click'</span>: <span class="string">'toggleFormType'</span>,
-    <span class="string">'.js-location-finder-submit click'</span>: <span class="string">'findLocation'</span>,
-    <span class="string">'.js-location-finder-form submit'</span>: <span class="string">'findLocation'</span>
-  };</pre></div></div>
             
         </li>
         
@@ -166,12 +223,9 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <p>Public: Sets up everything the Location Finder module needs to function.</p>
+              <hr>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="keyword">function</span> <span class="title">initialize</span><span class="params">(element, opts)</span> {</span>
-    $el = element;</pre></div></div>
             
         </li>
         
@@ -182,15 +236,17 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
-              <p>We override default options with any settings passed during initialization:</p>
-
+              
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="keyword">if</span> ((<span class="keyword">typeof</span> opts !== <span class="string">'undefined'</span> &amp;&amp; opts !== <span class="literal">null</span>)) {
-      Options = $.extend({}, defaultOptions, opts);
-    } <span class="keyword">else</span> {
-      Options = defaultOptions;
-    }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+
+
+  window.DS = window.DS || {};
+  window.DS.LocationFinder = window.NEUE.BaseModule.extend({
+    defaultOptions: {
+      url: <span class="string">"/example-data.json"</span>
+    },</pre></div></div>
             
         </li>
         
@@ -198,22 +254,18 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-11">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
-              <p>Create view containers:</p>
+              <h4>Events:</h4>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    $formView = $(<span class="string">'&lt;div/&gt;'</span>, {
-      className: <span class="string">'locfinder-form'</span>
-    });
-
-    $resultsView = $(<span class="string">'&lt;div/&gt;'</span>, {
-      className: <span class="string">'locfinder-results'</span>
-    });
-
-    $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    Events: {
+      <span class="string">".js-location-finder-toggle-form click"</span>: <span class="string">"toggleFormType"</span>,
+      <span class="string">".js-location-finder-submit click"</span>: <span class="string">"findLocation"</span>,
+      <span class="string">".js-location-finder-form submit"</span>: <span class="string">"findLocation"</span>
+    },</pre></div></div>
             
         </li>
         
@@ -221,14 +273,19 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-12">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
-              <p>Clear out the element and place view containers in DOM:</p>
+              <h4>State Variables:</h4>
+<ul>
+<li>mode: “zip” (default), “geo”</li>
+</ul>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      $el.html(<span class="string">''</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    State: {
+      mode: <span class="string">"zip"</span>
+    },</pre></div></div>
             
         </li>
         
@@ -236,16 +293,17 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-13">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
-              <p>Let&#39;s render our templates:</p>
+              <h4>Views:</h4>
+<ul>
+<li>$el</li>
+<li>$formView</li>
+<li>$resultsView</li>
+</ul>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>      Templates.searchFormGeo = _.template( $(<span class="string">'#template--locfinder-geo'</span>).html() );
-      Templates.searchFormZip = _.template( $(<span class="string">'#template--locfinder-zip'</span>).html() );
-      Templates.locationResult = _.template( $(<span class="string">'#template--locfinder-result'</span>).html() );</pre></div></div>
             
         </li>
         
@@ -253,15 +311,18 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
         <li id="section-14">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
-              <p>We&#39;ll append our views to the given element.</p>
+              <h4>Templates:</h4>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      $formView.appendTo($el);
-      $resultsView.appendTo($el);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    Templates: {
+      searchFormGeo: <span class="string">"#template--locfinder-geo"</span>,
+      searchFormZip: <span class="string">"#template--locfinder-zip"</span>,
+      locationResult: <span class="string">"#template--locfinder-result"</span>
+    },</pre></div></div>
             
         </li>
         
@@ -272,17 +333,12 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
-              <p>We‘ll default to the geolocation form if the browser supports it. Otherwise, we just show the ’ol zip code.</p>
+              <p>Sets up everything the Location Finder module needs to function.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">if</span>(Modernizr.geolocation) {
-        $formView.html( Templates.searchFormGeo );
-        State.mode = <span class="string">'geo'</span>;
-      } <span class="keyword">else</span> {
-        $formView.html( Templates.searchFormZip );
-        State.mode = <span class="string">'zip'</span>;
-      }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    _initialize: <span class="keyword">function</span>() {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;</pre></div></div>
             
         </li>
         
@@ -293,31 +349,19 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
-              <p>Bind our events (declared above).</p>
+              <p>Create view containers:</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      _bindEvents(window.NEUE.LocationFinder);
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">this</span>.Views.$formView = $(<span class="string">"&lt;div/&gt;"</span>, {
+        className: <span class="string">"locfinder-form"</span>
+      });
 
-      initialized = <span class="literal">true</span>;
-    });
-  }
+      <span class="keyword">this</span>.Views.$resultsView = $(<span class="string">"&lt;div/&gt;"</span>, {
+        className: <span class="string">"locfinder-results"</span>
+      });
 
-  <span class="function"><span class="keyword">function</span> <span class="title">_bindEvents</span><span class="params">(rootElement)</span> {</span>
-    _.each(Events, <span class="keyword">function</span>(target, trigger, list) {
-      <span class="keyword">var</span> elementSelector = trigger.split(<span class="string">" "</span>)[<span class="number">0</span>];
-      <span class="keyword">var</span> eventType = trigger.split(<span class="string">" "</span>)[<span class="number">1</span>];
-
-      $el.on(eventType, elementSelector, <span class="keyword">function</span>(event) {
-        event.preventDefault();
-        rootElement[target]();
-      })
-
-
-      console.log(elementSelector + <span class="string">" :: "</span> + eventType + <span class="string">" --&gt; "</span> + target);
-
-    });
-  }</pre></div></div>
+      $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -328,19 +372,12 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <p>Public: Switches Form View between the geolocation form &amp; the zip-code form.</p>
+              <p>We&#39;ll append our views to the given element.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="keyword">function</span> <span class="title">toggleFormType</span><span class="params">()</span> {</span>
-    <span class="keyword">if</span>(State.mode === <span class="string">'zip'</span>) {
-      State.mode = <span class="string">'geo'</span>;
-      $formView.html(  Templates.searchFormGeo  );
-    } <span class="keyword">else</span> {
-      State.mode = <span class="string">'zip'</span>;
-      $formView.html( Templates.searchFormZip );
-    }
-  }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        _<span class="keyword">this</span>.Views.$formView.appendTo(_<span class="keyword">this</span>.$el);
+        _<span class="keyword">this</span>.Views.$resultsView.appendTo(_<span class="keyword">this</span>.$el);</pre></div></div>
             
         </li>
         
@@ -351,13 +388,19 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
-              <p>Public: Finds locations near zip/geolocation depending on mode.</p>
+              <p>We‘ll default to the geolocation form if the browser supports it. Otherwise, we just show the ’ol zip code.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="keyword">function</span> <span class="title">findLocation</span><span class="params">()</span> {</span>
-    <span class="keyword">if</span>(initialized) {
-      <span class="keyword">if</span>(State.mode === <span class="string">'zip'</span>) {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">if</span>(Modernizr.geolocation) {
+          _<span class="keyword">this</span>.Views.$formView.html( _<span class="keyword">this</span>.Templates.searchFormGeo );
+          _<span class="keyword">this</span>.State.mode = <span class="string">"geo"</span>;
+        } <span class="keyword">else</span> {
+          _<span class="keyword">this</span>.Views.$formView.html( _<span class="keyword">this</span>.Templates.searchFormZip );
+          _<span class="keyword">this</span>.State.mode = <span class="string">"zip"</span>;
+        }
+      });
+    },</pre></div></div>
             
         </li>
         
@@ -368,19 +411,19 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
-              <p>Doing a zipcode search:</p>
+              <p>Public: Switches Form View between the geolocation form &amp; the zip-code form.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-        <span class="keyword">if</span>(query.match(Options.validation)) {
-          console.log(<span class="string">'Searchin zip'</span>);
-          $.get(<span class="string">'example-data.json?zip='</span> + zip, <span class="keyword">function</span>(data) {
-            _printResults(data);
-          });
-        }
-
-      } <span class="keyword">else</span> {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    toggleFormType: <span class="keyword">function</span>() {
+      <span class="keyword">if</span>(<span class="keyword">this</span>.State.mode === <span class="string">"zip"</span>) {
+        <span class="keyword">this</span>.State.mode = <span class="string">"geo"</span>;
+        <span class="keyword">this</span>.Views.$formView.html(  <span class="keyword">this</span>.Templates.searchFormGeo  );
+      } <span class="keyword">else</span> {
+        <span class="keyword">this</span>.State.mode = <span class="string">"zip"</span>;
+        <span class="keyword">this</span>.Views.$formView.html( <span class="keyword">this</span>.Templates.searchFormZip );
+      }
+    },</pre></div></div>
             
         </li>
         
@@ -391,22 +434,30 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
-              <p>Doing a geolocation search:</p>
+              <p>Public: Finds locations near zip/geolocation depending on mode.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        console.log(<span class="string">'Searchin geostuff'</span>);
+            <div class="content"><div class='highlight'><pre>    findLocation: <span class="keyword">function</span>() {
+      <span class="keyword">if</span>(<span class="keyword">this</span>.initialized) {
+        <span class="keyword">if</span>(<span class="keyword">this</span>.State.mode === <span class="string">"zip"</span>) {
+          <span class="keyword">if</span>(query.match(<span class="keyword">this</span>.Options.validation)) {
+            console.log(<span class="string">"Searchin zip"</span>);
+            $.get(<span class="string">"example-data.json?zip="</span> + zip, <span class="keyword">function</span>(data) {
+              <span class="keyword">this</span>._printResults(data);
+            });
+          }
+        } <span class="keyword">else</span> {
+          <span class="keyword">var</span> latitude = <span class="number">70.52</span>;
+          <span class="keyword">var</span> longitude = <span class="number">50.12</span>;
 
-        <span class="keyword">var</span> latitude = <span class="number">70.52</span>;
-        <span class="keyword">var</span> longitude = <span class="number">50.12</span>;
-
-        $.get(Options.url + <span class="string">'?lat='</span> + latitude + <span class="string">"&amp;long="</span> + longitude, <span class="keyword">function</span>(data) {
-          _printResults(data);
-        });
-
+          <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+          $.get(<span class="keyword">this</span>.Options.url + <span class="string">"?lat="</span> + latitude + <span class="string">"&amp;long="</span> + longitude, <span class="keyword">function</span>(data) {
+            _<span class="keyword">this</span>._printResults(data);
+          });
+        }
       }
-    }
-  }</pre></div></div>
+    },</pre></div></div>
             
         </li>
         
@@ -421,32 +472,16 @@ window.NEUE.LocationFinder = (<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="keyword">function</span> <span class="title">_printResults</span><span class="params">(data)</span> {</span>
-    $resultsView.html(<span class="string">'Results:'</span>);
+            <div class="content"><div class='highlight'><pre>    _printResults: <span class="keyword">function</span>(data) {
+      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      <span class="keyword">this</span>.Views.$resultsView.html(<span class="string">"Results:"</span>);
 
-    _.each(data[<span class="string">'results'</span>], <span class="keyword">function</span>(result) {
-      $resultsView.append( Templates.locationResult(result) );
-    });
-  }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-22">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
-              </div>
-              <p>Reveal public methods.</p>
+      _.each(data.results, <span class="keyword">function</span>(result) {
+        _<span class="keyword">this</span>.Views.$resultsView.append( _<span class="keyword">this</span>.Templates.locationResult(result) );
+      });
+    }
+  });
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> {
-    initialize: initialize,
-    findLocation: findLocation,
-    toggleFormType: toggleFormType
-  };
 })();</pre></div></div>
             
         </li>

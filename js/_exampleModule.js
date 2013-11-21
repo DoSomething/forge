@@ -12,10 +12,10 @@
 //
 //
 
-// We create the global NEUE namespace if it doesn't already exist, and attach our module to it.
+// We create the global NEUE namespace if it doesn"t already exist, and attach our module to it.
 window.NEUE = window.NEUE || {};
 window.NEUE.ExampleModule = (function() {
-  'use strict';
+  "use strict";
 
   // We can track whether a module has been initialized or not in the `initialized` variable.
   var initialized = false;
@@ -35,7 +35,7 @@ window.NEUE.ExampleModule = (function() {
     };
 
     // We override default options with any settings passed during initialization:
-    if ((typeof opts !== 'undefined' && opts !== null)) {
+    if ((typeof opts !== "undefined" && opts !== null)) {
       options = $.extend({}, defaults, opts);
     } else {
       options = defaults;
@@ -53,7 +53,7 @@ window.NEUE.ExampleModule = (function() {
       _privateFunction();
       _anotherPrivateFunction();
 
-      return 'We\'re ready to go!';
+      return "We're ready to go!";
     }
   }
 
