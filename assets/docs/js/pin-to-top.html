@@ -34,6 +34,9 @@ original position in the document while pinned.</p>
 
             </div>
             
+            <div class="content"><div class='highlight'><pre>(<span class="keyword">function</span>($) {
+  <span class="string">"use strict"</span>;</pre></div></div>
+            
         </li>
         
         
@@ -47,9 +50,8 @@ original position in the document while pinned.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>window.NEUE = window.NEUE || {};
-window.NEUE.pinToTop = <span class="keyword">function</span>() {
-  <span class="string">"use strict"</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  window.NEUE = window.NEUE || {};
+  window.NEUE.pinToTop = <span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -64,7 +66,7 @@ window.NEUE.pinToTop = <span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> divTop = $(<span class="string">"#js-pin-to-top-anchor"</span>).offset().top;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> divTop = $(<span class="string">"#js-pin-to-top-anchor"</span>).offset().top;</pre></div></div>
             
         </li>
         
@@ -80,15 +82,15 @@ If we have scrolled past the anchor element, we apply CSS class to pin the eleme
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> stickyRelocate = <span class="keyword">function</span>() {
-    <span class="keyword">if</span> ($(window).scrollTop() &gt; divTop) {
-      $(<span class="string">".js-pin-to-top"</span>).addClass(<span class="string">"is-stuck"</span>);
-    } <span class="keyword">else</span> {
-      $(<span class="string">".js-pin-to-top"</span>).removeClass(<span class="string">"is-stuck"</span>);
-    }
-  };
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> stickyRelocate = <span class="keyword">function</span>() {
+      <span class="keyword">if</span> ($(window).scrollTop() &gt; divTop) {
+        $(<span class="string">".js-pin-to-top"</span>).addClass(<span class="string">"is-stuck"</span>);
+      } <span class="keyword">else</span> {
+        $(<span class="string">".js-pin-to-top"</span>).removeClass(<span class="string">"is-stuck"</span>);
+      }
+    };
 
-  $(window).on(<span class="string">"scroll"</span>, stickyRelocate);</pre></div></div>
+    $(window).on(<span class="string">"scroll"</span>, stickyRelocate);</pre></div></div>
             
         </li>
         
@@ -103,8 +105,10 @@ If we have scrolled past the anchor element, we apply CSS class to pin the eleme
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  stickyRelocate();
-};</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    stickyRelocate();
+  };
+
+})(jQuery);</pre></div></div>
             
         </li>
         

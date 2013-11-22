@@ -80,7 +80,7 @@ of busywork. See <code>_exampleModule.js</code> for an annotated example impleme
             </div>
             
             <div class="content"><div class='highlight'><pre>
-!(<span class="keyword">function</span>() {
+(<span class="keyword">function</span>($) {
   <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
@@ -98,9 +98,9 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  _.templateSettings = {
-    evaluate:    <span class="regexp">/\{\{=(.+?)\}\}/g</span>,
-    interpolate: <span class="regexp">/\{\{(.+?)\}\}/g</span>,
-    escape:      <span class="regexp">/\{\{-(.+?)\}\}/g</span>
+    evaluate:    <span class="regexp">/\{\{#([\s\S]+?)\}\}/g</span>,            <span class="comment">// {{# console.log("blah") }}</span>
+    interpolate: <span class="regexp">/\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g</span>,  <span class="comment">// {{ title }}</span>
+    escape:      <span class="regexp">/\{\{\{([\s\S]+?)\}\}\}/g</span>,         <span class="comment">// {{{ title }}}</span>
   };</pre></div></div>
             
         </li>
@@ -140,10 +140,11 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
         <li id="section-8">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p>We store options in the <code>Options</code> object. This is created by extending the <code>defaultOptions</code> object
+              <h4>Options</h4>
+<p>We store options in the <code>Options</code> object. This is created by extending the <code>defaultOptions</code> object
 with any options passed to the initialize method.</p>
 
             </div>
@@ -157,10 +158,11 @@ with any options passed to the initialize method.</p>
         <li id="section-9">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <p><code>State</code> is a nice place to keep module state information. It has no special behavior.</p>
+              <h4>State</h4>
+<p><code>State</code> is a nice place to keep module state information. It has no special behavior.</p>
 
             </div>
             
@@ -172,10 +174,11 @@ with any options passed to the initialize method.</p>
         <li id="section-10">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
-              <p><code>Views</code> is a nice place to keep your module&#39;s views. Views should be stored as references to jQuery objects.
+              <h4>Views</h4>
+<p><code>Views</code> is a nice place to keep your module&#39;s views. Views should be stored as references to jQuery objects.
 The root element for your module (given in the constructor) is stored as <code>$el</code>.</p>
 
             </div>
@@ -188,25 +191,14 @@ The root element for your module (given in the constructor) is stored as <code>$
         <li id="section-11">
             <div class="annotation">
               
-              <div class="pilwrap ">
+              <div class="pilwrap for-h4">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
-              <p><code>Templates</code> stores your Underscore templates. Templates will be compiled during initialization so they can
+              <h4>Templates</h4>
+<p><code>Templates</code> stores your Underscore templates. Templates will be compiled during initialization so they can
 be used at any point later. Syntax:</p>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-12">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-12">&#182;</a>
-              </div>
-              <pre><code class="lang-js"> Templates: {
-   templateName: &quot;&lt;selector&gt;&quot;,
+<pre><code class="lang-javascript"> Templates: {
+   templateName: <span class="string">"&lt;selector&gt;"</span>,
  }</code></pre>
 
             </div>
@@ -217,16 +209,17 @@ be used at any point later. Syntax:</p>
         </li>
         
         
-        <li id="section-13">
+        <li id="section-12">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-13">&#182;</a>
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
-              <p><code>Events</code> should be used to bind any DOM events your module needs. Events are bound to the root element (<code>$el</code>)
+              <h4>Events</h4>
+<p><code>Events</code> should be used to bind any DOM events your module needs. Events are bound to the root element (<code>$el</code>)
 so that they don&#39;t have to be re-bound as subviews are added and removed from the DOM. Syntax:</p>
-<pre><code>Events: {
-  "&lt;selector&gt; &lt;event&gt;": "&lt;handler&gt;"" 
+<pre><code class="lang-javascript">Events: {
+  <span class="string">"&lt;selector&gt; &lt;event&gt;"</span>: <span class="string">"&lt;handler&gt;"</span>
 }</code></pre>
 
             </div>
@@ -236,21 +229,22 @@ so that they don&#39;t have to be re-bound as subviews are added and removed fro
         </li>
         
         
-        <li id="section-14">
+        <li id="section-13">
             <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-14">&#182;</a>
+              <div class="pilwrap for-h4">
+                <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
-              <p>The <code>initialize</code> function calls Neue&#39;s base module initializer and then a custom initializer if there is one.
+              <h4>Initialize</h4>
+<p>The <code>initialize</code> function calls Neue&#39;s base module initializer and then a custom initializer if there is one.
 Once both have run, it sets the <code>initialized</code> variable to <code>true</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    initialize: <span class="keyword">function</span>(element, opts) {
       <span class="keyword">this</span>._baseInitialize(element, opts);
-      
-      <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>._initialize == <span class="string">'function'</span>) { 
+
+      <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>._initialize === <span class="string">"function"</span>) {
         <span class="keyword">this</span>._initialize();
       }
 
@@ -260,11 +254,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         </li>
         
         
-        <li id="section-15">
+        <li id="section-14">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+                <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
               <p>Just like in Backbone, we extend our modules from this base class.</p>
 
@@ -277,11 +271,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         </li>
         
         
-        <li id="section-16">
+        <li id="section-15">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+                <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
               <p>The base initialization method is run on all modules.</p>
 
@@ -293,11 +287,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         </li>
         
         
-        <li id="section-17">
+        <li id="section-16">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-17">&#182;</a>
+                <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
               <p>We take the element given in the constructor and set it as the base view element.</p>
 
@@ -309,11 +303,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         </li>
         
         
-        <li id="section-18">
+        <li id="section-17">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-18">&#182;</a>
+                <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
               <p>We override default options with any settings passed during initialization:</p>
 
@@ -328,11 +322,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         </li>
         
         
-        <li id="section-19">
+        <li id="section-18">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-19">&#182;</a>
+                <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
               <p>We clear out the contents of the base view element, prepare our templates, and bind events.</p>
 
@@ -348,11 +342,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         </li>
         
         
-        <li id="section-20">
+        <li id="section-19">
             <div class="annotation">
               
               <div class="pilwrap for-h4">
-                <a class="pilcrow" href="#section-20">&#182;</a>
+                <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
               <h4>Bind Events</h4>
 <p>We iterate through the <code>Events</code> object and bind any events defined there to the root element.</p>
@@ -371,19 +365,17 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
           event.preventDefault();
           _<span class="keyword">this</span>[target]();
         });
-
-        console.log(<span class="string">"BOUND: "</span> + elementSelector + <span class="string">" :: "</span> + eventType + <span class="string">" --&gt; "</span> + target);
       });
     },</pre></div></div>
             
         </li>
         
         
-        <li id="section-21">
+        <li id="section-20">
             <div class="annotation">
               
               <div class="pilwrap for-h4">
-                <a class="pilcrow" href="#section-21">&#182;</a>
+                <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
               <h4>Prepare Templates</h4>
 <p>We&#39;ll compile any templates into Underscore template functions.</p>
@@ -395,12 +387,11 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
 
       _.each(<span class="keyword">this</span>.Templates, <span class="keyword">function</span>(templateDOM, templateID) {
         _<span class="keyword">this</span>.Templates[templateID] = _.template( $(templateDOM).html() );
-        console.log(<span class="string">"CREATED TEMPLATE FUNCTION: "</span> + templateID + <span class="string">" :: "</span> + $(templateDOM).html());
       });
     }
   };
 
-})();</pre></div></div>
+})(jQuery);</pre></div></div>
             
         </li>
         
