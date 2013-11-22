@@ -348,33 +348,6 @@ footer.contact {
 }
 
 
-// Used to indicate that the user can scroll (useful on pages with huge content above
-// the fold). Scrolls to main content area on click.
-// ** Must be initialized with `window.initializeScrollIndicatorVisibility();` **
-//
-// Styleguide 4.4.6 - Scroll Indicator Link
-.scroll-indicator-link {
-  position: fixed;
-  bottom: 3rem;
-  color: rgba(255,255,255,0.9);
-  z-index: 11;
-  width:100%;
-  text-align: center;
-  text-decoration: none;
-
-  &:after {
-    content: "\FFEC";
-    position: absolute;
-    bottom: -2.5rem;
-    left: 0;
-    width: 100%;
-    font-size: 2rem;
-    @include animation(bounce 2s ease infinite alternate);
-  }
-}
-
-
-
 // Allows the user to search for locations by zip-code or geolocation. ** Must be initialized
 // with `window.DS.LocationFinder.initialize($("container"), {});`. See `LocationFinder.js`
 // for full documentation **
