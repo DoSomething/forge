@@ -27,18 +27,19 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p> <strong>Applies a smooth-scroll animation on <code>.jump-scroll</code> links.</strong></p>
+              <p> <strong>Applies a smooth-scroll animation on links with the <code>.js-jump-scroll</code> class.</strong></p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-$(document).ready(<span class="keyword">function</span>() {
+(<span class="keyword">function</span>($) {
   <span class="string">"use strict"</span>;
 
-  $(<span class="string">".js-jump-scroll"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
-    e.preventDefault();
+  $(document).ready(<span class="keyword">function</span>() {
+    $(<span class="string">".js-jump-scroll"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
+      e.preventDefault();
 
-    <span class="keyword">var</span> href = $(<span class="keyword">this</span>).attr(<span class="string">"href"</span>);</pre></div></div>
+      <span class="keyword">var</span> href = $(<span class="keyword">this</span>).attr(<span class="string">"href"</span>);</pre></div></div>
             
         </li>
         
@@ -53,7 +54,7 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    $(<span class="string">"html,body"</span>).animate({scrollTop: $(e.target.hash).offset().top}, <span class="string">"slow"</span>, <span class="keyword">function</span>() {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>      $(<span class="string">"html,body"</span>).animate({scrollTop: $(e.target.hash).offset().top}, <span class="string">"slow"</span>, <span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -68,10 +69,12 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      window.location.hash = href;
+            <div class="content"><div class='highlight'><pre>        window.location.hash = href;
+      });
     });
   });
-});</pre></div></div>
+
+})(jQuery);</pre></div></div>
             
         </li>
         

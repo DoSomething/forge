@@ -27,14 +27,16 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p> <strong>Applies a “fade up” animation when the object enters the viewport.</strong>
-Requires the JQuery Visible plugin to calculate object visibility.</p>
+              <p><strong>Applies a “fade up” animation when an object with the <code>.js-fade-up-on-scroll</code>
+class enters the viewport.</strong> Requires the JQuery Visible plugin to calculate
+object visibility.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-$(document).ready(<span class="keyword">function</span>() {
-  <span class="string">"use strict"</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>(<span class="keyword">function</span>($) {
+  <span class="string">"use strict"</span>;
+
+  $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -49,7 +51,7 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> allFades = $(<span class="string">".js-fade-up-on-scroll"</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> allFades = $(<span class="string">".js-fade-up-on-scroll"</span>);</pre></div></div>
             
         </li>
         
@@ -65,14 +67,14 @@ If so, we add the <code>.come-in</code> CSS class to perform the animation.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="keyword">function</span> <span class="title">applyFade</span><span class="params">()</span> {</span>
-    allFades.each(<span class="keyword">function</span>(i, el) {
-      el = $(el);
-      <span class="keyword">if</span>(el.realVisible(<span class="literal">true</span>)) {
-        el.addClass(<span class="string">"come-in"</span>);
-      }
-    });
-  }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="function"><span class="keyword">function</span> <span class="title">applyFade</span><span class="params">()</span> {</span>
+      allFades.each(<span class="keyword">function</span>(i, el) {
+        el = $(el);
+        <span class="keyword">if</span>(el.realVisible(<span class="literal">true</span>)) {
+          el.addClass(<span class="string">"come-in"</span>);
+        }
+      });
+    }</pre></div></div>
             
         </li>
         
@@ -87,9 +89,11 @@ If so, we add the <code>.come-in</code> CSS class to perform the animation.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  applyFade();
-  $(window).scroll(applyFade);
-});</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    applyFade();
+    $(window).scroll(applyFade);
+  });
+
+})(jQuery);</pre></div></div>
             
         </li>
         

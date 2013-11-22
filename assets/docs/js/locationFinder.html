@@ -42,8 +42,8 @@
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
               <p>An example code module. Example usage:</p>
-<pre><code class="lang-js">window.DS.LocationFinder.initialize(&lt;JQuery element&gt;, {
-  configuration_option: true
+<pre><code class="lang-javascript">window.DS.LocationFinder.initialize( $(<span class="string">"something"</span>) , {
+  configuration_option: <span class="literal">true</span>
 });
 
 exampleModule.getStatus();</code></pre>
@@ -51,7 +51,7 @@ exampleModule.getStatus();</code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>
-!(<span class="keyword">function</span>() {
+(<span class="keyword">function</span>($) {
   <span class="string">"use strict"</span>;
 
   window.DS = window.DS || {};
@@ -353,8 +353,6 @@ exampleModule.getStatus();</code></pre>
       .fail(<span class="keyword">function</span>() {
         _<span class="keyword">this</span>.showError(<span class="string">"There was a network error. Double-check that you have internet?"</span>);
       });
-
-      console.log(<span class="string">"FOUND YA: "</span> + latitude + <span class="string">", "</span> + longitude + <span class="string">"!!"</span>);
     },</pre></div></div>
             
         </li>
@@ -375,7 +373,7 @@ exampleModule.getStatus();</code></pre>
       <span class="keyword">if</span>(err.code === <span class="number">1</span>) {
         <span class="keyword">this</span>.showError(<span class="string">"Sorry, it seems like you might have refused to share your location with us. Try using a zip code instead?"</span>);
       } <span class="keyword">else</span> {
-        <span class="keyword">this</span>.showError(<span class="string">"We couldn't find your location because of a network error."</span>)
+        <span class="keyword">this</span>.showError(<span class="string">"We couldn't find your location because of a network error."</span>);
       }
     },</pre></div></div>
             
@@ -395,7 +393,7 @@ exampleModule.getStatus();</code></pre>
             
             <div class="content"><div class='highlight'><pre>    showError: <span class="keyword">function</span>(errorMessage) {
       <span class="keyword">this</span>.Views.$formView.find(<span class="string">".js-location-finder-submit"</span>).removeClass(<span class="string">"loading"</span>);
-      
+
       <span class="keyword">this</span>.Views.$resultsView.slideUp();
       <span class="keyword">this</span>.Views.$resultsView.html(<span class="string">"&lt;div class=\"messages error\"&gt;"</span> + errorMessage + <span class="string">"&lt;/div&gt;"</span>);
       <span class="keyword">this</span>.Views.$resultsView.slideDown();
@@ -465,7 +463,7 @@ exampleModule.getStatus();</code></pre>
       <span class="keyword">this</span>.Views.$formView.slideDown();
     }
   });
-})();</pre></div></div>
+})(jQuery);</pre></div></div>
             
         </li>
         

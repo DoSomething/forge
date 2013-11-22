@@ -27,14 +27,17 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p> <strong>Show/hide modals.</strong></p>
+              <p> <strong>Show/hide modals.</strong> Link should have <code>.js-trigger-modal</code> class, and
+it&#39;s <code>href</code> should point to the hash of the modal. By convention, the
+modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
+(<span class="keyword">function</span>($) {
+  <span class="string">"use strict"</span>;
 
-$(document).ready(<span class="keyword">function</span>() {
-  <span class="string">"use strict"</span>;</pre></div></div>
+  $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -49,8 +52,8 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
-    e.preventDefault();</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-trigger-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
+      e.preventDefault();</pre></div></div>
             
         </li>
         
@@ -66,10 +69,10 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> href = $(e.target.hash);
+            <div class="content"><div class='highlight'><pre>      <span class="keyword">var</span> href = $(e.target.hash);
 
-    $(<span class="string">"body"</span>).addClass(<span class="string">"modal-open"</span>);
-    $(href).show();</pre></div></div>
+      $(<span class="string">"body"</span>).addClass(<span class="string">"modal-open"</span>);
+      $(href).show();</pre></div></div>
             
         </li>
         
@@ -84,14 +87,16 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
-      e.preventDefault();
-      $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>).hide();
-      $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>);
+            <div class="content"><div class='highlight'><pre>      $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
+        e.preventDefault();
+        $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>).hide();
+        $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>);
+      });
     });
+
   });
 
-});</pre></div></div>
+})(jQuery);</pre></div></div>
             
         </li>
         

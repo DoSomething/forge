@@ -16,7 +16,7 @@
 //
 // ---------------------------------------------------------------------------------------------
 
-!(function() {
+(function($) {
   "use strict";
 
   // TODO: Perhaps move this to a general configuration file? Not sure if it makes sense here...
@@ -32,23 +32,30 @@
   window.NEUE.BaseModule = {
     // The `initialized` variable will track if this module has been initialized yet.
     initialized: false,
-    
+
+    // #### Options ####
+    //
     // We store options in the `Options` object. This is created by extending the `defaultOptions` object
     // with any options passed to the initialize method.
     Options: {},
     defaultOptions: {},
 
+    // #### State ####
+    //
     // `State` is a nice place to keep module state information. It has no special behavior.
     State: {},
 
+    // #### Views ####
+    //
     // `Views` is a nice place to keep your module's views. Views should be stored as references to jQuery objects.
     // The root element for your module (given in the constructor) is stored as `$el`.
     Views: {},
 
+    // #### Templates ####
     // `Templates` stores your Underscore templates. Templates will be compiled during initialization so they can
     // be used at any point later. Syntax:
-
-    // ```js
+    //
+    // ```javascript
     //  Templates: {
     //    templateName: "<selector>",
     //  }
@@ -57,23 +64,25 @@
 
     Templates: {},
 
+    // #### Events ####
     // `Events` should be used to bind any DOM events your module needs. Events are bound to the root element (`$el`)
     // so that they don't have to be re-bound as subviews are added and removed from the DOM. Syntax:
-    // ```
+    //
+    // ```javascript
     // Events: {
-    //   "<selector> <event>": "<handler>"" 
+    //   "<selector> <event>": "<handler>"
     // }
     // ```
     //
     Events: {},
 
-
+    // #### Initialize ####
     // The `initialize` function calls Neue's base module initializer and then a custom initializer if there is one.
     // Once both have run, it sets the `initialized` variable to `true`.
     initialize: function(element, opts) {
       this._baseInitialize(element, opts);
-      
-      if (typeof this._initialize == 'function') { 
+
+      if (typeof this._initialize === "function") {
         this._initialize();
       }
 
@@ -108,7 +117,7 @@
       });
     },
 
-    // #### Bind Events #### 
+    // #### Bind Events ####
     // We iterate through the `Events` object and bind any events defined there to the root element.
     _bindEvents: function() {
       var rootElement = this.$el;
@@ -122,21 +131,18 @@
           event.preventDefault();
           _this[target]();
         });
-
-        console.log("BOUND: " + elementSelector + " :: " + eventType + " --> " + target);
       });
     },
 
-    // #### Prepare Templates #### 
+    // #### Prepare Templates ####
     // We'll compile any templates into Underscore template functions.
     _prepareTemplates: function() {
       var _this = this;
 
       _.each(this.Templates, function(templateDOM, templateID) {
         _this.Templates[templateID] = _.template( $(templateDOM).html() );
-        console.log("CREATED TEMPLATE FUNCTION: " + templateID + " :: " + $(templateDOM).html());
       });
     }
   };
 
-})();
+})(jQuery);

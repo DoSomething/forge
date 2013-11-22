@@ -4,8 +4,8 @@
 //
 // An example code module. Example usage:
 //
-// ```js
-// window.DS.LocationFinder.initialize(<JQuery element>, {
+// ```javascript
+// window.DS.LocationFinder.initialize( $("something") , {
 //   configuration_option: true
 // });
 //
@@ -14,7 +14,7 @@
 //
 //
 
-!(function() {
+(function($) {
   "use strict";
 
   window.DS = window.DS || {};
@@ -23,8 +23,8 @@
       url: "/example-data.json",
       validation: /(^\d{5}$)/
     },
-    
-    // #### Events: ####   
+
+    // #### Events: ####
     Events: {
       ".js-location-finder-toggle-form click": "toggleFormType",
       ".js-location-finder-submit click": "findLocation",
@@ -32,7 +32,7 @@
       ".js-location-finder-reset-form click": "resetForm"
     },
 
-    // #### State Variables: #### 
+    // #### State Variables: ####
     // - mode: "zip" (default), "geo"
     // - searchTerm: holds current search term
     State: {
@@ -143,8 +143,6 @@
       .fail(function() {
         _this.showError("There was a network error. Double-check that you have internet?");
       });
-
-      console.log("FOUND YA: " + latitude + ", " + longitude + "!!");
     },
 
     // ##### Geolocation Error Handling: #####
@@ -153,7 +151,7 @@
       if(err.code === 1) {
         this.showError("Sorry, it seems like you might have refused to share your location with us. Try using a zip code instead?");
       } else {
-        this.showError("We couldn't find your location because of a network error.")
+        this.showError("We couldn't find your location because of a network error.");
       }
     },
 
@@ -161,7 +159,7 @@
     // Places an error message in the results view. Used if something goes awry.
     showError: function(errorMessage) {
       this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
-      
+
       this.Views.$resultsView.slideUp();
       this.Views.$resultsView.html("<div class=\"messages error\">" + errorMessage + "</div>");
       this.Views.$resultsView.slideDown();
@@ -194,4 +192,4 @@
       this.Views.$formView.slideDown();
     }
   });
-})();
+})(jQuery);
