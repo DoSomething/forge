@@ -20,7 +20,9 @@
     <input name="zip" type="text" maxlength="5" class="short" placeholder="zip code">
     <a class="js-location-finder-submit btn primary medium">Submit</a>
   </form>
-  <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search nearby</a>)</p></div>
+  {{# if(Modernizr.geolocation) { }}
+    <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search nearby</a>)</p></div>
+  {{# } }}
 </script>
 
 <script type="text/template" id="template--locfinder-results">

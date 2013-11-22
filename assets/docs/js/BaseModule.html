@@ -98,9 +98,9 @@ We configure Underscore templating to use brackets (Mustache-style) syntax.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  _.templateSettings = {
-    evaluate:    <span class="regexp">/\{\{=(.+?)\}\}/g</span>,
-    interpolate: <span class="regexp">/\{\{(.+?)\}\}/g</span>,
-    escape:      <span class="regexp">/\{\{-(.+?)\}\}/g</span>
+    evaluate:    <span class="regexp">/\{\{#([\s\S]+?)\}\}/g</span>,            <span class="comment">// {{# console.log("blah") }}</span>
+    interpolate: <span class="regexp">/\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g</span>,  <span class="comment">// {{ title }}</span>
+    escape:      <span class="regexp">/\{\{\{([\s\S]+?)\}\}\}/g</span>,         <span class="comment">// {{{ title }}}</span>
   };</pre></div></div>
             
         </li>
