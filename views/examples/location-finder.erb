@@ -9,14 +9,14 @@
 </div>
 
 <script type="text/template" id="template--locfinder-geo">
-  <div class="row">
+  <div class="row callout">
     <a class="js-location-finder-submit btn primary medium">Search Near Me</a>
   </div>
   <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search by zip code</a>)</p></div>
 </script>
 
 <script type="text/template" id="template--locfinder-zip">
-  <form action="#" class="js-location-finder-form row">
+  <form action="#" class="js-location-finder-form row callout">
     <input name="zip" type="text" maxlength="5" class="short" placeholder="zip code">
     <a class="js-location-finder-submit btn primary medium">Submit</a>
   </form>
@@ -26,7 +26,7 @@
 </script>
 
 <script type="text/template" id="template--locfinder-results">
-  <p>Drop-off points near <strong>{{searchTerm}}</strong> (<a href="#" class="js-location-finder-reset-form">change</a>): </p>
+  <p>Drop-off points near <strong>{{ searchTerm }}</strong> (<a href="#" class="js-location-finder-reset-form">change</a>): </p>
 
   <ul class="location-list js-location-finder-results">
 
@@ -35,9 +35,9 @@
 
 <script type="text/template" id="template--locfinder-location">
   <li class="location">
-    <strong>{{name}}</strong><br>
-    {{street}}<br>
-    {{city}}, {{state}} {{zip}}<br>
+    <strong>{{ name }}</strong><br>
+    {{ street }}<br>
+    {{ city }}, {{ state }} {{ zip }}<br>
   </li>
 </script>
 
