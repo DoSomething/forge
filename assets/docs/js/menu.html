@@ -32,9 +32,10 @@
             </div>
             
             <div class="content"><div class='highlight'><pre>
+(<span class="keyword">function</span>($) {
+  <span class="string">"use strict"</span>;
 
-$(document).ready(<span class="keyword">function</span>() {
-  <span class="string">"use strict"</span>;</pre></div></div>
+  $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
             
         </li>
         
@@ -49,9 +50,9 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  $(<span class="string">".js-menu-toggle"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>() {
-    $(<span class="string">".main-menu"</span>).toggleClass(<span class="string">"is-visible-mobile"</span>);
-  });</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-menu-toggle"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>() {
+      $(<span class="string">".main-menu"</span>).toggleClass(<span class="string">"is-visible-mobile"</span>);
+    });</pre></div></div>
             
         </li>
         
@@ -66,14 +67,16 @@ $(document).ready(<span class="keyword">function</span>() {
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  $(<span class="string">".search form input[type='search']"</span>).on(<span class="string">"focus"</span>, <span class="keyword">function</span>() {
-    $(<span class="string">".utility-link"</span>).addClass(<span class="string">"is-hidden-on-phones"</span>);
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">".search form input[type='search']"</span>).on(<span class="string">"focus"</span>, <span class="keyword">function</span>() {
+      $(<span class="string">".utility-link"</span>).addClass(<span class="string">"is-hidden-on-phones"</span>);
+    });
+
+    $(<span class="string">".search form input[type='search']"</span>).on(<span class="string">"blur"</span>, <span class="keyword">function</span>() {
+      $(<span class="string">".utility-link"</span>).removeClass(<span class="string">"is-hidden-on-phones"</span>);
+    });
   });
 
-  $(<span class="string">".search form input[type='search']"</span>).on(<span class="string">"blur"</span>, <span class="keyword">function</span>() {
-    $(<span class="string">".utility-link"</span>).removeClass(<span class="string">"is-hidden-on-phones"</span>);
-  });
-});</pre></div></div>
+})(jQuery);</pre></div></div>
             
         </li>
         

@@ -30,7 +30,7 @@
               
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="comment">/*global Modernizr, _ */</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="comment">/*global _ */</span></pre></div></div>
             
         </li>
         
@@ -42,16 +42,16 @@
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
               <p>An example code module. Example usage:</p>
-<pre><code class="lang-js">window.DS.ExampleModule.initialize(&lt;JQuery element&gt;, {
-  initialColor: &quot;blue&quot;
+<pre><code class="lang-javascript">window.DS.ExampleModule.initialize(<span class="xml"><span class="tag">&lt;<span class="title">JQuery</span> <span class="attribute">element</span>&gt;</span>, {
+  initialColor: "blue"
 });
 
-window.DS.ExampleModule.getStatus();</code></pre>
+window.DS.ExampleModule.getStatus();</span></code></pre>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-!(<span class="keyword">function</span>() {
+(<span class="keyword">function</span>($) {
   <span class="string">"use strict"</span>;
 
   window.DS = window.DS || {};
@@ -218,7 +218,7 @@ window.DS.ExampleModule.getStatus();</code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>    showColor: <span class="keyword">function</span>() {
-      <span class="keyword">this</span>.Views.$colorView.html( <span class="keyword">this</span>.Templates.colorView({ color: <span class="keyword">this</span>.State.color }) )
+      <span class="keyword">this</span>.Views.$colorView.html( <span class="keyword">this</span>.Templates.colorView({ color: <span class="keyword">this</span>.State.color }) );
     },</pre></div></div>
             
         </li>
@@ -238,7 +238,7 @@ window.DS.ExampleModule.getStatus();</code></pre>
       <span class="keyword">this</span>.State.color = <span class="keyword">this</span>.Options.initialColor;
     },
   });
-})();</pre></div></div>
+})(jQuery);</pre></div></div>
             
         </li>
         

@@ -1,10 +1,10 @@
-/*global Modernizr, _ */
+/*global _ */
 
 //
 //
 // An example code module. Example usage:
 //
-// ```js
+// ```javascript
 // window.DS.ExampleModule.initialize(<JQuery element>, {
 //   initialColor: "blue"
 // });
@@ -14,7 +14,7 @@
 //
 //
 
-!(function() {
+(function($) {
   "use strict";
 
   window.DS = window.DS || {};
@@ -69,7 +69,7 @@
     // #### Show Color: ####
     // Shows the current color.
     showColor: function() {
-      this.Views.$colorView.html( this.Templates.colorView({ color: this.State.color }) )
+      this.Views.$colorView.html( this.Templates.colorView({ color: this.State.color }) );
     },
 
     // ##### Reset Color: #####
@@ -77,4 +77,4 @@
       this.State.color = this.Options.initialColor;
     },
   });
-})();
+})(jQuery);
