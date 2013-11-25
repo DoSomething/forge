@@ -19,14 +19,6 @@
 (function($) {
   "use strict";
 
-  // TODO: Perhaps move this to a general configuration file? Not sure if it makes sense here...
-  // We configure Underscore templating to use brackets (Mustache-style) syntax.
-  _.templateSettings = {
-    evaluate:    /\{\{#([\s\S]+?)\}\}/g,            // {{# console.log("blah") }}
-    interpolate: /\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g,  // {{ title }}
-    escape:      /\{\{\{([\s\S]+?)\}\}\}/g,         // {{{ title }}}
-  };
-
   // We create the global NEUE namespace if it doesn"t already exist, and attach BaseModule to it.
   window.NEUE = window.NEUE || {};
   window.NEUE.BaseModule = {
