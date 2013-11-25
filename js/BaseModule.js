@@ -89,9 +89,14 @@
       this.initialized = true;
     },
 
-    // Just like in Backbone, we extend our modules from this base class.
+    // We extend our modules from this base class.
     extend: function(extensions) {
-      return _.extend(this, extensions);
+      var parent = this;
+      var child = {};
+
+      _.extend(child, parent, extensions);
+
+      return child;
     },
 
     // The base initialization method is run on all modules.
