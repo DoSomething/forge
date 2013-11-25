@@ -40,13 +40,14 @@ module.exports = function(grunt) {
             jshintrc: true,
             reporter: require("jshint-stylish")
         },
-        all: ["js/**/*.js", "!js/vendor/**/*.js", "test/**/*.js"]
+        all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "test/**/*.js"]
     },
 
     uglify: {
       js: {
         files: {
-          "assets/neue.js": ["js/**/*.js", "!js/_*.js"]
+          "assets/neue.js": ["js/**/*.js", "!js/_*.js"],
+          "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
         }
       }
     },
