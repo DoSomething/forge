@@ -1,3 +1,4 @@
+/* jshint node:true */
 "use strict";
 
 module.exports = function(grunt) {
@@ -10,7 +11,7 @@ module.exports = function(grunt) {
         tasks: ["sass:dist"]
       },
       js: {
-        files: ["js/vendor/**/*.js", "js/**/*.js"],
+        files: ["js/vendor/**/*.js", "js/**/*.js", "js-app/**/*.js"],
         tasks: ["jshint:all", "uglify:js", "docco"]
       },
       livereload: {
@@ -29,24 +30,29 @@ module.exports = function(grunt) {
           "assets/ie.css": "scss/ie.scss"
         },
         options: {
-          style: "compressed"
+
         }
       }
     },
 
     jshint: {
-        options: {
-            force: true,
-            jshintrc: true,
-            reporter: require("jshint-stylish")
-        },
-        all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "test/**/*.js"]
+      options: {
+        force: true,
+        jshintrc: true,
+        reporter: require("jshint-stylish")
+      },
+      all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "test/**/*.js"]
     },
 
     uglify: {
+      options: {
+        // mangle: false,
+        // compress: false,
+        // beautify: true
+      },
       js: {
         files: {
-          "assets/neue.js": ["js/**/*.js", "!js/_*.js"],
+          "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
           "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
         }
       }
