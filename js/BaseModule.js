@@ -176,7 +176,7 @@ var NEUE = NEUE || {};
         this.Options = this.defaultOptions;
       }
 
-      this.State = new NEUE.State({}, this),
+      this.State = new NEUE.State({}, this);
 
       // We clear out the contents of the base view element, prepare our templates, and bind events.
       $(document).ready(function() {
