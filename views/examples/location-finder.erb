@@ -12,7 +12,7 @@
   <div class="row callout">
     <a class="js-location-finder-submit btn primary medium">Search Near Me</a>
   </div>
-  <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search by zip code</a>)</p></div>
+  <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-mode">search by zip code</a>)</p></div>
 </script>
 
 <script type="text/template" id="template--locfinder-zip">
@@ -21,7 +21,7 @@
     <a class="js-location-finder-submit btn primary medium">Submit</a>
   </form>
   {{# if(Modernizr.geolocation) { }}
-    <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search nearby</a>)</p></div>
+    <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-mode">search nearby</a>)</p></div>
   {{# } }}
 </script>
 
@@ -42,5 +42,5 @@
 </script>
 
 <script type="text/javascript">
-  window.DS.LocationFinder.initialize($("#locfinder"), {});
+  DS.LocationFinder.initialize($("#locfinder"), {});
 </script>

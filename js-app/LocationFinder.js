@@ -1,4 +1,4 @@
-/*global Modernizr, _ */
+/* global NEUE */
 
 //
 //
@@ -14,11 +14,12 @@
 //
 //
 
+var DS = window.DS || {};
+
 (function($) {
   "use strict";
 
-  window.DS = window.DS || {};
-  window.DS.LocationFinder = window.NEUE.BaseModule.extend({
+  DS.LocationFinder = NEUE.BaseModule.extend({
     defaultOptions: {
       url: "/example-data.json",
       validation: /(^\d{5}$)/
@@ -26,7 +27,7 @@
 
     // #### Events: ####
     Events: {
-      ".js-location-finder-toggle-form click": "toggleFormType",
+      ".js-location-finder-toggle-mode click": "toggleMode",
       ".js-location-finder-submit click": "findLocation",
       ".js-location-finder-form submit": "findLocation",
       ".js-location-finder-reset-form click": "resetForm"
@@ -35,10 +36,10 @@
     // #### State Variables: ####
     // - mode: "zip" (default), "geo"
     // - searchTerm: holds current search term
-    State: {
-      mode: "zip",
-      searchTerm: ""
-    },
+    // State: new NEUE.State({
+    //   mode: "zip",
+    //   searchTerm: ""
+    // }, this),
 
     // #### Views: ####
     // - $el
@@ -57,7 +58,12 @@
     // Sets up everything the Location Finder module needs to function.
     _initialize: function() {
       var _this = this;
-      _.bindAll(this, "queryZip", "queryGeolocation", "geolocationError", "printResults");
+      _.bindAll(this, "onModeChange", "queryZip", "queryGeolocation", "geolocationError", "printResults");
+
+      _this.State.reset({
+        mode: "zip",
+        searchTerm: ""
+      });
 
       // Create view containers:
       this.Views.$formView = $("<div/>", { className: "locfinder-form" });
@@ -68,26 +74,32 @@
         _this.Views.$formView.appendTo(_this.$el);
         _this.Views.$resultsView.appendTo(_this.$el);
 
+        _this.State.bindEvent("mode", "onModeChange");
+
         // We'll default to the geolocation form if the browser supports it. Otherwise, we just show the 'ol zip code.
         if(Modernizr.geolocation) {
-          _this.Views.$formView.html( _this.Templates.searchViewGeo );
-          _this.State.mode = "geo";
+          _this.State.set("mode", "geo");
         } else {
-          _this.Views.$formView.html( _this.Templates.searchViewZip );
-          _this.State.mode = "zip";
+          _this.State.set("mode", "zip");
         }
       });
     },
 
+    onModeChange: function() {
+      if(this.State.get("mode") === "zip") {
+        this.Views.$formView.html( this.Templates.searchViewZip );
+      } else {
+        this.Views.$formView.html( this.Templates.searchViewGeo );
+      }
+    },
+
     // #### Toggle Form Type: ####
     // Switches Form View between the geolocation form & the zip-code form.
-    toggleFormType: function() {
-      if(this.State.mode === "zip") {
-        this.State.mode = "geo";
-        this.Views.$formView.html(  this.Templates.searchViewGeo  );
+    toggleMode: function() {
+      if(this.State.get("mode") === "zip") {
+        this.State.set("mode", "geo");
       } else {
-        this.State.mode = "zip";
-        this.Views.$formView.html( this.Templates.searchViewZip );
+        this.State.set("mode", "zip");
       }
     },
 
@@ -98,7 +110,7 @@
         // We put a loading indicator on the button since the geolocation/AJAX request could each take a while.
         this.Views.$formView.find(".js-location-finder-submit").addClass("loading");
 
-        if(this.State.mode === "zip") {
+        if(this.State.get("mode") === "zip") {
           this.queryZip();
         } else {
           navigator.geolocation.getCurrentPosition(this.queryGeolocation, this.geolocationError);
@@ -113,7 +125,7 @@
 
       // We check if this is a valid zip-code before querying the API.
       if(zip.match(this.Options.validation)) {
-        this.State.searchTerm = zip;
+        _this.State.set("searchTerm", zip);
 
         $.get(this.Options.url + "?zip=" + zip)
         .done(function(data) {
@@ -134,7 +146,7 @@
       var latitude = position.coords.latitude;
       var longitude = position.coords.longitude;
 
-      this.State.searchTerm = "your location";
+      this.State.set("searchTerm", "your location");
 
       $.get(this.Options.url + "?latitude=" + latitude + "&longitude=" + longitude)
       .done(function(data) {
@@ -171,7 +183,7 @@
       var _this = this;
 
       this.Views.$resultsView.slideUp(function() {
-        _this.Views.$resultsView.html( _this.Templates.resultsView({searchTerm: _this.State.searchTerm }) );
+        _this.Views.$resultsView.html( _this.Templates.resultsView({searchTerm: _this.State.get("searchTerm") }) );
 
         _.each(data.results, function(result) {
           _this.Views.$resultsView.find(".js-location-finder-results").append( _this.Templates.locationResult(result) );

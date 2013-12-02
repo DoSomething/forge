@@ -1,5 +1,3 @@
-/*global _ */
-
 //
 //
 // Base NEUE Module that should be extended when creating other modules. It
@@ -16,20 +14,13 @@
 //
 // ---------------------------------------------------------------------------------------------
 
+var NEUE = NEUE || {};
+
 (function($) {
   "use strict";
 
-  // TODO: Perhaps move this to a general configuration file? Not sure if it makes sense here...
-  // We configure Underscore templating to use brackets (Mustache-style) syntax.
-  _.templateSettings = {
-    evaluate:    /\{\{#([\s\S]+?)\}\}/g,            // {{# console.log("blah") }}
-    interpolate: /\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g,  // {{ title }}
-    escape:      /\{\{\{([\s\S]+?)\}\}\}/g,         // {{{ title }}}
-  };
-
   // We create the global NEUE namespace if it doesn"t already exist, and attach BaseModule to it.
-  window.NEUE = window.NEUE || {};
-  window.NEUE.BaseModule = {
+  NEUE.BaseModule = {
     // The `initialized` variable will track if this module has been initialized yet.
     initialized: false,
 
@@ -42,8 +33,7 @@
 
     // #### State ####
     //
-    // `State` is a nice place to keep module state information. It has no special behavior.
-    State: {},
+    // `State` is a nice place to keep module state information.
 
     // #### Views ####
     //
@@ -89,9 +79,14 @@
       this.initialized = true;
     },
 
-    // Just like in Backbone, we extend our modules from this base class.
+    // We extend our modules from this base class.
     extend: function(extensions) {
-      return _.extend(this, extensions);
+      var parent = this;
+      var child = {};
+
+      _.extend(child, parent, extensions);
+
+      return child;
     },
 
     // The base initialization method is run on all modules.
@@ -108,6 +103,8 @@
       } else {
         this.Options = this.defaultOptions;
       }
+
+      this.State = new NEUE.State({}, this);
 
       // We clear out the contents of the base view element, prepare our templates, and bind events.
       $(document).ready(function() {
