@@ -16,5 +16,10 @@
     "strict": true,
     "trailing": true,
     "smarttabs": true,
-    "jquery": true
+    "predef": [
+      "_",
+      "$",
+      "jQuery",
+      "Modernizr"
+    ]
 }
