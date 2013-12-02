@@ -30,7 +30,7 @@ module.exports = function(grunt) {
           "assets/ie.css": "scss/ie.scss"
         },
         options: {
-
+          style: "compressed"
         }
       }
     },
