@@ -397,12 +397,19 @@ ul.location-list {
 
     .modal-close-button {
       position: absolute;
-      top: 0.5rem; right: 0.5rem;
+      top: 0.5rem; right: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      opacity: 0.5;
       text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+      }
     }
 
     h2 {
-      padding-right: 3rem;
       margin-bottom: 1rem;
     }
 
