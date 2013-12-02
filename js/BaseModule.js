@@ -1,4 +1,74 @@
-/*global _ */
+// Keeps track of state for modules. Can trigger events on state changes.
+
+var NEUE = NEUE || {};
+
+(function() {
+  "use strict";
+
+  // We create the global NEUE namespace if it doesn"t already exist, and attach BaseModule to it.
+  NEUE.State = function State(initialState, context) {
+    var state = {};
+    var bindings = {};
+    var _this = context;
+
+    if(initialState) {
+      state = initialState;
+    }
+
+    var reset = function reset(array) {
+      state = array;
+    };
+
+    var set = function set(key, value) {
+      // Set the key to the provided value. Trigger any events bound to changing that key.
+      state[key] = value;
+
+      if(bindings[key]) {
+        for(var i = 0; i < bindings[key].length; i++) {
+          var func = _this[bindings[key][i]];
+          if (func && _.isFunction(func)) {
+            func();
+          }
+        }
+      }
+
+    };
+
+
+    var get = function get(key) {
+      // Return the value of the given key, if it exists.
+      return state[key];
+    };
+
+    var bindEvent = function bindEvent(key, callback) {
+      // Add callback function to array of callbacks for event, if it exists. Otherwise, add the first one.
+      // TODO: Check if function
+
+      if (bindings[key]) {
+        bindings[key].push(callback);
+      } else {
+        bindings[key] = [callback];
+      }
+    };
+
+    var unbindEvent = function unbindEvent(key, callback) {
+      // TODO
+    };
+
+
+    return {
+      reset: reset,
+      set: set,
+      get: get,
+      bindEvent: bindEvent,
+      unbindEvent: unbindEvent
+    };
+  };
+
+})();
+
+
+
 
 //
 //
@@ -16,12 +86,13 @@
 //
 // ---------------------------------------------------------------------------------------------
 
+var NEUE = NEUE || {};
+
 (function($) {
   "use strict";
 
   // We create the global NEUE namespace if it doesn"t already exist, and attach BaseModule to it.
-  window.NEUE = window.NEUE || {};
-  window.NEUE.BaseModule = {
+  NEUE.BaseModule = {
     // The `initialized` variable will track if this module has been initialized yet.
     initialized: false,
 
@@ -34,8 +105,7 @@
 
     // #### State ####
     //
-    // `State` is a nice place to keep module state information. It has no special behavior.
-    State: {},
+    // `State` is a nice place to keep module state information.
 
     // #### Views ####
     //
@@ -105,6 +175,8 @@
       } else {
         this.Options = this.defaultOptions;
       }
+
+      this.State = new NEUE.State({}, this),
 
       // We clear out the contents of the base view element, prepare our templates, and bind events.
       $(document).ready(function() {
