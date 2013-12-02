@@ -31,10 +31,9 @@ var DS = DS || {};
     },
 
     // #### State Variables: ####
+    // - user: name of the current user
     // - color: holds current color
-    State: {
-      color: ""
-    },
+    // - fruit: holds current fruit
 
     // #### Views: ####
     // - $el
@@ -50,6 +49,14 @@ var DS = DS || {};
     _initialize: function() {
       var _this = this;
       _.bindAll(this, "setColor", "showColor", "resetColor");
+
+      // We can either set a bunch of initial state values using the `reset`
+      // method, or just add them as needed with `set`.
+      this.State.reset({
+        user: "Bill",
+        color: "blue",
+        fruit: "banana"
+      });
 
       // Create view containers:
       this.Views.$colorView = $("<div/>", { className: "color-container" });
