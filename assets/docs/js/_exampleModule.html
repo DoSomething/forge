@@ -51,10 +51,12 @@ window.DS.ExampleModule.getStatus();</span></code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>
+<span class="keyword">var</span> DS = DS || {};
+
 (<span class="keyword">function</span>($) {
   <span class="string">"use strict"</span>;
 
-  window.DS = window.DS || {};
+
   window.DS.ExampleModule = window.NEUE.BaseModule.extend({
     defaultOptions: {
       initialColor: <span class="string">"pink"</span>

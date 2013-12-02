@@ -14,10 +14,12 @@
 //
 //
 
+var DS = DS || {};
+
 (function($) {
   "use strict";
 
-  window.DS = window.DS || {};
+
   window.DS.ExampleModule = window.NEUE.BaseModule.extend({
     defaultOptions: {
       initialColor: "pink"
