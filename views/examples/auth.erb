@@ -1,7 +1,7 @@
 <div class="page-width">
   <div class="row section callout">
     <h1>Authorization Example</h1>
-    <a href="#modal--auth" class="btn primary large js-trigger-modal">Sign In</a>
+    <p>Click the "Sign In" button in the utility bar.</p>
   </div>
 
   <div class="row section with-copy">
@@ -30,51 +30,97 @@
   </div>
 </div>
 
-<aside id="modal--auth" class="modal fade-in">
-  NOPE.
-</aside>
-
-<script id="template--auth-login" type="text/template">
-  <div class="row callout">
-    <h2>Log in to get started!</h2>
-  </div>
-  <form action="#">
-    <div class="row">
-      <label for="username">Email or Cell #</label>
-      <input type="text" name="username" placeholder="(email or cell)">
-
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="(password)">
-    </div>
+<div id="modal--auth-login" class="modal">
+  <div class="modal-content login">
+    <span href="#" class="icon-lock modal-secure-button js-security-info"><span>Secure Connection</span></span>
+    <a href="#" class="js-close-modal modal-close-button">&times;</a>
 
     <div class="row callout">
-      <a class="js-next-login-step btn primary medium">Log In</a>
+      <h2 class="js-auth-heading">Log in to get started!</h2>
     </div>
-  </form>
-</script>
+    <form id="auth-form" action="https://localhost:8889/login">
+      <div class="row">
+        <div class="column span_6">
+          <div class="is-registration-field">
+            <label for="first_name">First Name:</label>
+            <input id="first_name" type="text" name="first_name" placeholder="(What do we call you?)">
+          </div>
+        </div>
 
-<script id="template--auth-register" type="text/template">
-  <div class="row callout">
-    <h2>Create an account to sign up for Grandparents Gone Wild!</h2>
+        <div class="column span_6">
+          <div class="is-registration-field">
+            <label for="birthday">Birthday:</label>
+            <input id="birthday" type="text" name="birthday" placeholder="01/01/1992">
+          </div>
+        </div>
+
+        <div class="column span_12">
+          <label for="username">Email</label>
+          <input id="username" type="text" name="username" placeholder="your_email@example.com">
+
+          <div class="is-registration-field">
+            <label for="cell">Cell #:</label>
+            <input id="cell" type="text" name="cell" placeholder="(555) 555-5555">
+          </div>
+
+          <label for="password">Password</label>
+          <input id="password"  type="password" name="password" placeholder="(password)">
+
+          <div class="is-registration-field">
+            <label for="confirm_password">Confirm Password:</label>
+            <input id="confirm_password"  type="password" name="confirm_password" placeholder="(just double-checking!)">
+          </div>
+        </div>
+      </div>
+
+      <div class="row callout">
+        <input type="submit" class="js-submit-link btn primary medium" value="Log In">
+      </div>
+
+      <div class="row section callout">
+        <a href="" class="js-toggle-register">Create a DoSomething.org Account</a>
+      </div>
+
+      <div class="row section callout is-registration-field">
+        <p class="legal">Clicking "Register" won't sell your soul, but it means you agree to our <a href="#">terms of service</a> &amp; <a href="#">privacy policy</a> &amp; to receive our weekly update. Message &amp; data rates may apply. You can always text STOP to opt-out, HELP for help.</p>
+      </div>
+    </form>
   </div>
-  <form action="#">
-    <div class="row">
-      <label for="username">Email</label>
-      <input type="text" name="username" placeholder="(email)">
+</div>
 
-      <label for="username">Cell # (optional)</label>
-      <input type="text" name="username" placeholder="(cell)">
+<style>
+  .is-registration-field {
+    display: none;
+  }
+</style>
 
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="(password)">
-    </div>
+<script>
 
-    <div class="row callout">
-      <a class="js-next-login-step btn primary medium">Register</a>
-    </div>
-  </form>
-</script>
+  $(".js-toggle-register").on("click", function(e) {
+    e.preventDefault();
+    var parent_modal = $(this).closest(".modal-content");
+    var action = parent_modal.find("form").attr("action");
 
-<script type="text/javascript">
-  window.DS.Auth.initialize($("#modal--auth"), {});
+    $(window).scrollTop();
+
+    console.log($(this));
+
+    if(action.match(/login/)) {
+      // we're in register-mode; let's switch to just logging in
+      parent_modal.find(".js-auth-heading").text("Get started by registering for DoSomething.org!");
+      parent_modal.find(".is-registration-field").slideDown();
+      parent_modal.find(".js-submit-link").val("Register");
+      parent_modal.find("form").attr("action", "https://localhost:8889/register");
+      $(this).text("I already have an account.");
+    } else {
+      // we're in login-mode; let's switch to registering
+      parent_modal.find(".js-auth-heading").text("Log in to get started!");
+      parent_modal.find(".is-registration-field").slideUp();
+      parent_modal.find(".js-submit-link").val("Log In");
+      parent_modal.find("form").attr("action", "https://localhost:8889/login");
+      $(this).text("Create a DoSomething.org Account");
+    }
+
+  });
+
 </script>
