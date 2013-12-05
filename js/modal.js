@@ -19,13 +19,27 @@
       var href = $(e.target.hash);
 
       $("body").addClass("modal-open");
+
       $(href).show();
+      $(href).addClass("animated fadeIn");
+      $(href).find(".modal-content").addClass("animated fadeInUp");
 
       // Close modal when "x" is clicked:
       $(".js-close-modal").on("click", function(e) {
         e.preventDefault();
-        $(this).closest(".modal").hide();
+
+        var modal = $(this).closest(".modal");
+        modal.find(".modal-content").addClass("fadeOutDown");
+        modal.addClass("fadeOut");
+
         $("body").removeClass("modal-open");
+
+        modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
+          modal.hide();
+
+          modal.removeClass("animated fadeIn fadeOut");
+          modal.find(".modal-content").removeClass("animated fadeInUp fadeOutDown");
+        });
       });
     });
 
