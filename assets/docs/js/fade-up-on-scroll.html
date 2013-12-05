@@ -33,10 +33,10 @@ object visibility.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>(<span class="keyword">function</span>($) {
+            <div class="content"><div class='highlight'><pre>(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
   <span class="string">"use strict"</span>;
 
-  $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
+  $(document).ready(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -47,7 +47,7 @@ object visibility.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>Cache all objects that we want to monitor so that we don&quot;t have to keep checking the DOM.</p>
+              <p>Cache all objects that we want to monitor so that we don”t have to keep checking the DOM.</p>
 
             </div>
             
@@ -68,7 +68,7 @@ If so, we add the <code>.come-in</code> CSS class to perform the animation.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>    <span class="function"><span class="keyword">function</span> <span class="title">applyFade</span><span class="params">()</span> {</span>
-      allFades.each(<span class="keyword">function</span>(i, el) {
+      allFades.each(<span class="function"><span class="keyword">function</span><span class="params">(i, el)</span> {</span>
         el = $(el);
         <span class="keyword">if</span>(el.realVisible(<span class="literal">true</span>)) {
           el.addClass(<span class="string">"come-in"</span>);
