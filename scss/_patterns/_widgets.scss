@@ -371,11 +371,12 @@ ul.location-list {
 
 // Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
 //
-// Styleguide 4.4.7 - Modal (Popup)
+// Styleguide 4.4.8 - Modal (Popup)
 .modal {
   display: none;
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
+  background: #333; // if rgba isn't supported
   background: rgba(0,0,0,0.5);
   z-index: 9998;
   //display: none;
@@ -406,6 +407,48 @@ ul.location-list {
 
       &:hover {
         opacity: 1;
+      }
+    }
+
+    .modal-secure-button {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      opacity: 0.5;
+      @include transition(opacity 0.5s);
+
+      span {
+        display: none;
+        font-size: 0.75rem;
+        background: #333;
+        color: #fff;
+        padding: 0.15rem 0.5rem 0.3rem;
+        border-radius: $sm-border-radius;
+        opacity: 0;
+        @include transition(opacity 0.5s);
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          border-style: solid;
+          border-width: 6px;
+          border-color: transparent #333 transparent transparent;
+          top: 6px;
+          left: 6px;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+
+        span {
+          display: inline-block;
+          opacity: 1;
+        }
       }
     }
 
