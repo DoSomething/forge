@@ -9,7 +9,7 @@ get '/' do
   erb :styleguide
 end
 
-get '/examples/*.html' do
+get '/example/*.html' do
   send_file "views/examples/#{params[:splat].first}.html"
 end
 
