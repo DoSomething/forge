@@ -1,7 +1,8 @@
 /* jshint ignore:start */
 
-module("Validation");
+// module("Validation");
 
-test("Should respond correctly to birthdays", function() {
-  // ...
-});
+// test("Should respond correctly to birthdays", function() {
+//   // ...
+
+// });
