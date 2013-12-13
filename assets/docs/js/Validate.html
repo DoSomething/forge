@@ -38,7 +38,27 @@ of the form element.</p>
 <span class="keyword">var</span> NEUE = NEUE || {};
 
 (<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-  <span class="string">"use strict"</span>;</pre></div></div>
+  <span class="string">"use strict"</span>;
+
+  NEUE.Validate = {
+    Tests: {
+      BIRTHDAY: <span class="function"><span class="keyword">function</span><span class="params">(inputString)</span> {</span>
+        <span class="keyword">var</span> statusType = <span class="string">""</span>; <span class="comment">// either "SUCCESS" or "ERROR"</span>
+        <span class="keyword">var</span> statusFlag = <span class="string">""</span>; <span class="comment">// all-caps flag such as "OLD", "TOO_YOUNG", "INVALID"</span>
+
+        <span class="keyword">var</span> birthday = inputString.split(<span class="string">"/"</span>);
+        <span class="keyword">var</span> inputMonth = parseInt(birthday[<span class="number">0</span>]);
+        <span class="keyword">var</span> inputDay = parseInt(birthday[<span class="number">1</span>]);
+        <span class="keyword">var</span> inputYear = parseInt(birthday[<span class="number">2</span>]);
+        <span class="keyword">var</span> inputDate = <span class="keyword">new</span> Date(inputYear, inputMonth, inputDay);
+
+        <span class="keyword">var</span> now = <span class="keyword">new</span> Date();
+        <span class="keyword">var</span> todaysYear = now.getFullYear();
+        <span class="keyword">var</span> todaysMonth = now.getMonth() + <span class="number">1</span>;
+        <span class="keyword">var</span> todaysDay = now.getDate();
+
+        <span class="keyword">var</span> coppaYear = todaysYear - <span class="number">13</span>;
+        <span class="keyword">var</span> coppaDate = <span class="keyword">new</span> Date(coppaYear, todaysMonth, todaysDay);</pre></div></div>
             
         </li>
         
@@ -49,10 +69,11 @@ of the form element.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>NEUE.Validate = {
-  Tests: {},</p>
+              <p>Are they born yet, and not an old person?</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">if</span>(inputYear &gt; <span class="number">1970</span> &amp;&amp; inputDate.getTime() &lt;= now.getTime()) {</pre></div></div>
             
         </li>
         
@@ -63,9 +84,12 @@ of the form element.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>  addTest: function(name, callback) {</p>
+              <p>Is it their birthday?</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>          <span class="keyword">if</span> (inputMonth === todaysMonth &amp;&amp; inputDay === todaysDay) {
+            statusFlag = <span class="string">"BIRTHDAY"</span>;</pre></div></div>
             
         </li>
         
@@ -76,10 +100,13 @@ of the form element.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>  }
-};</p>
+              <p>Do they require a parent’s consent (COPPA)?</p>
 
             </div>
+            
+            <div class="content"><div class='highlight'><pre>          } <span class="keyword">else</span> <span class="keyword">if</span> (inputDate &lt; coppaDate ) {
+            statusFlag = <span class="string">"NEED_PARENT"</span>;
+          } <span class="keyword">else</span> {</pre></div></div>
             
         </li>
         
@@ -89,6 +116,61 @@ of the form element.</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Otherwise, we’ll return their age.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="keyword">var</span> age = todaysYear - birthday[<span class="number">2</span>];
+            statusFlag = age;
+          }
+
+          statusType = <span class="string">"SUCCESS"</span>;
+        } <span class="keyword">else</span> <span class="keyword">if</span> (inputYear &gt; <span class="number">1900</span>) {
+          statusFlag = <span class="string">"OLD"</span>;
+          statusType = <span class="string">"SUCCESS"</span>;
+        } <span class="keyword">else</span> {
+          statusFlag = <span class="string">"INVALID"</span>;
+          statusType = <span class="string">"ERROR"</span>;
+        }
+
+        <span class="keyword">if</span>(statusType === <span class="string">"SUCCESS"</span>) {
+
+        }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>alright, lets return what we found:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">return</span> {
+          flag: statusFlag,
+          status: statusType
+        };
+      }
+    },
+
+    addTest: <span class="function"><span class="keyword">function</span><span class="params">(name, callback)</span> {</span>
+      <span class="keyword">return</span> [name, callback];
+    }
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>$(“body”).on(“form”, “submit”, function(event) {
   event.preventDefault();
@@ -100,11 +182,11 @@ of the form element.</p>
         </li>
         
         
-        <li id="section-6">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>console.log(“OH YEAH”);</p>
 

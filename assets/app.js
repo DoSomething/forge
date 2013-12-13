@@ -1,1 +1,139 @@
-var DS=DS||{};!function(){"use strict";_.templateSettings={evaluate:/\{\{#([\s\S]+?)\}\}/g,interpolate:/\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g,escape:/\{\{\{([\s\S]+?)\}\}\}/g}}();var DS=DS||{};!function(a){"use strict";DS.Auth=NEUE.BaseModule.extend({defaultOptions:{},Events:{".js-next-login-step click":"nextLoginStep"},Templates:{loginView:"#template--auth-login",registerView:"#template--auth-register"},_initialize:function(){var b=this;_.bindAll(this,"nextLoginStep"),this.Views.$modalView=a("<div/>"),this.Views.$modalView.addClass("modal-content slide-in-fast"),this.Views.$modalView.append('<a class="modal-close-button js-close-modal" href="#">&times;</a>'),this.Views.$modalView.append(a("<div/>").addClass("js-modal-content")),this.Views.$loginView=a("<div/>",{className:"login-form"}),this.Views.$registerView=a("<div/>",{className:"register-form"}),a(document).ready(function(){b.$el.html(b.Views.$modalView),b.Views.$modalView.find(".js-modal-content").html(b.Views.$loginView),b.Views.$loginView.html(b.Templates.loginView)})},nextLoginStep:function(){console.log("YO"),this.Views.$modalView.find(".js-modal-content").html(this.Views.$registerView),this.Views.$registerView.html(this.Templates.registerView)}})}(jQuery);var DS=window.DS||{};!function(a){"use strict";DS.LocationFinder=NEUE.BaseModule.extend({defaultOptions:{url:"/example-data.json",validation:/(^\d{5}$)/},Events:{".js-location-finder-toggle-mode click":"toggleMode",".js-location-finder-submit click":"findLocation",".js-location-finder-form submit":"findLocation",".js-location-finder-reset-form click":"resetForm"},Templates:{searchViewGeo:"#template--locfinder-geo",searchViewZip:"#template--locfinder-zip",resultsView:"#template--locfinder-results",locationResult:"#template--locfinder-location"},_initialize:function(){var b=this;_.bindAll(this,"onModeChange","queryZip","queryGeolocation","geolocationError","printResults"),b.State.reset({mode:"zip",searchTerm:""}),this.Views.$formView=a("<div/>",{className:"locfinder-form"}),this.Views.$resultsView=a("<div/>",{className:"locfinder-results"}),a(document).ready(function(){b.Views.$formView.appendTo(b.$el),b.Views.$resultsView.appendTo(b.$el),b.State.bindEvent("mode","onModeChange"),Modernizr.geolocation?b.State.set("mode","geo"):b.State.set("mode","zip")})},onModeChange:function(){"zip"===this.State.get("mode")?this.Views.$formView.html(this.Templates.searchViewZip):this.Views.$formView.html(this.Templates.searchViewGeo)},toggleMode:function(){"zip"===this.State.get("mode")?this.State.set("mode","geo"):this.State.set("mode","zip")},findLocation:function(){this.initialized&&(this.Views.$formView.find(".js-location-finder-submit").addClass("loading"),"zip"===this.State.get("mode")?this.queryZip():navigator.geolocation.getCurrentPosition(this.queryGeolocation,this.geolocationError))},queryZip:function(){var b=this,c=this.Views.$formView.find("input[name='zip']").val();c.match(this.Options.validation)?(b.State.set("searchTerm",c),a.get(this.Options.url+"?zip="+c).done(function(a){b.printResults(a)}).fail(function(){b.showError("There was a network error. Double-check that you have internet?")})):this.showError("Hmm, make sure you entered a valid zip code.")},queryGeolocation:function(b){var c=this,d=b.coords.latitude,e=b.coords.longitude;this.State.set("searchTerm","your location"),a.get(this.Options.url+"?latitude="+d+"&longitude="+e).done(function(a){c.printResults(a)}).fail(function(){c.showError("There was a network error. Double-check that you have internet?")})},geolocationError:function(a){1===a.code?this.showError("Sorry, it seems like you might have refused to share your location with us. Try using a zip code instead?"):this.showError("We couldn't find your location because of a network error.")},showError:function(a){this.Views.$formView.find(".js-location-finder-submit").removeClass("loading"),this.Views.$resultsView.slideUp(),this.Views.$resultsView.html('<div class="messages error">'+a+"</div>"),this.Views.$resultsView.slideDown()},printResults:function(a){var b=this;this.Views.$resultsView.slideUp(function(){b.Views.$resultsView.html(b.Templates.resultsView({searchTerm:b.State.get("searchTerm")})),_.each(a.results,function(a){b.Views.$resultsView.find(".js-location-finder-results").append(b.Templates.locationResult(a))}),b.Views.$formView.slideUp(),b.Views.$resultsView.slideDown(function(){b.Views.$formView.find(".js-location-finder-submit").removeClass("loading")})})},resetForm:function(){this.Views.$resultsView.slideUp(),this.Views.$formView.slideDown()}})}(jQuery);
+var DS = DS || {};
+
+(function() {
+    "use strict";
+    _.templateSettings = {
+        evaluate: /\{\{#([\s\S]+?)\}\}/g,
+        interpolate: /\{\{[^#\{]([\s\S]+?)[^\}]\}\}/g,
+        escape: /\{\{\{([\s\S]+?)\}\}\}/g
+    };
+})();
+
+var DS = window.DS || {};
+
+(function($) {
+    "use strict";
+    DS.LocationFinder = NEUE.BaseModule.extend({
+        defaultOptions: {
+            url: "/example-data.json",
+            validation: /(^\d{5}$)/
+        },
+        Events: {
+            ".js-location-finder-toggle-mode click": "toggleMode",
+            ".js-location-finder-submit click": "findLocation",
+            ".js-location-finder-form submit": "findLocation",
+            ".js-location-finder-reset-form click": "resetForm"
+        },
+        Templates: {
+            searchViewGeo: "#template--locfinder-geo",
+            searchViewZip: "#template--locfinder-zip",
+            resultsView: "#template--locfinder-results",
+            locationResult: "#template--locfinder-location"
+        },
+        _initialize: function() {
+            var _this = this;
+            _.bindAll(this, "onModeChange", "queryZip", "queryGeolocation", "geolocationError", "printResults");
+            _this.State.reset({
+                mode: "zip",
+                searchTerm: ""
+            });
+            this.Views.$formView = $("<div/>", {
+                className: "locfinder-form"
+            });
+            this.Views.$resultsView = $("<div/>", {
+                className: "locfinder-results"
+            });
+            $(document).ready(function() {
+                _this.Views.$formView.appendTo(_this.$el);
+                _this.Views.$resultsView.appendTo(_this.$el);
+                _this.State.bindEvent("mode", "onModeChange");
+                if (Modernizr.geolocation) {
+                    _this.State.set("mode", "geo");
+                } else {
+                    _this.State.set("mode", "zip");
+                }
+            });
+        },
+        onModeChange: function() {
+            if (this.State.get("mode") === "zip") {
+                this.Views.$formView.html(this.Templates.searchViewZip);
+            } else {
+                this.Views.$formView.html(this.Templates.searchViewGeo);
+            }
+        },
+        toggleMode: function() {
+            if (this.State.get("mode") === "zip") {
+                this.State.set("mode", "geo");
+            } else {
+                this.State.set("mode", "zip");
+            }
+        },
+        findLocation: function() {
+            if (this.initialized) {
+                this.Views.$formView.find(".js-location-finder-submit").addClass("loading");
+                if (this.State.get("mode") === "zip") {
+                    this.queryZip();
+                } else {
+                    navigator.geolocation.getCurrentPosition(this.queryGeolocation, this.geolocationError);
+                }
+            }
+        },
+        queryZip: function() {
+            var _this = this;
+            var zip = this.Views.$formView.find("input[name='zip']").val();
+            if (zip.match(this.Options.validation)) {
+                _this.State.set("searchTerm", zip);
+                $.get(this.Options.url + "?zip=" + zip).done(function(data) {
+                    _this.printResults(data);
+                }).fail(function() {
+                    _this.showError("There was a network error. Double-check that you have internet?");
+                });
+            } else {
+                this.showError("Hmm, make sure you entered a valid zip code.");
+            }
+        },
+        queryGeolocation: function(position) {
+            var _this = this;
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            this.State.set("searchTerm", "your location");
+            $.get(this.Options.url + "?latitude=" + latitude + "&longitude=" + longitude).done(function(data) {
+                _this.printResults(data);
+            }).fail(function() {
+                _this.showError("There was a network error. Double-check that you have internet?");
+            });
+        },
+        geolocationError: function(err) {
+            if (err.code === 1) {
+                this.showError("Sorry, it seems like you might have refused to share your location with us. Try using a zip code instead?");
+            } else {
+                this.showError("We couldn't find your location because of a network error.");
+            }
+        },
+        showError: function(errorMessage) {
+            this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
+            this.Views.$resultsView.slideUp();
+            this.Views.$resultsView.html('<div class="messages error">' + errorMessage + "</div>");
+            this.Views.$resultsView.slideDown();
+        },
+        printResults: function(data) {
+            var _this = this;
+            this.Views.$resultsView.slideUp(function() {
+                _this.Views.$resultsView.html(_this.Templates.resultsView({
+                    searchTerm: _this.State.get("searchTerm")
+                }));
+                _.each(data.results, function(result) {
+                    _this.Views.$resultsView.find(".js-location-finder-results").append(_this.Templates.locationResult(result));
+                });
+                _this.Views.$formView.slideUp();
+                _this.Views.$resultsView.slideDown(function() {
+                    _this.Views.$formView.find(".js-location-finder-submit").removeClass("loading");
+                });
+            });
+        },
+        resetForm: function() {
+            this.Views.$resultsView.slideUp();
+            this.Views.$formView.slideDown();
+        }
+    });
+})(jQuery);
