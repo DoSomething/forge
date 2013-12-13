@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      dist: {
+      prod: {
         files: {
           "assets/neue.css": "scss/neue.scss",
           "assets/neue.dev.css": "scss/neue.dev.scss",
@@ -45,6 +45,16 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmetrics: {
+      dist: {
+        src: [
+          "assets/neue.css",
+          "assets/neue.dev.css",
+          "assets/ie.css"
+        ]
+      }
+    },
+
     jshint: {
       options: {
         force: true,
@@ -59,7 +69,7 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      dist: {
+      prod: {
         options: {
           report: "gzip"
         },
@@ -97,7 +107,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask("dist", ["sass:dist", "jshint:all", "uglify:dist", "qunit", "docco"]);
+  grunt.registerTask("prod", ["sass:prod", "cssmetrics:dist", "jshint:all", "uglify:prod", "qunit", "docco"]);
   grunt.registerTask("build", ["sass:dev", "jshint:all", "uglify:dev", "qunit", "docco"]);
   grunt.registerTask("default", ["build", "watch"]);
 
@@ -107,6 +117,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-qunit");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks('grunt-css-metrics');
   grunt.loadNpmTasks("grunt-docco2");
   grunt.loadNpmTasks("grunt-bump");
 };

@@ -11,6 +11,7 @@
     "grunt-docco2": "~0.1.5",
     "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-qunit": "~0.3.0",
-    "jshint-stylish": "~0.1.4"
+    "jshint-stylish": "~0.1.4",
+    "grunt-css-metrics": "~0.1.2"
   }
 }
