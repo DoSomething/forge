@@ -23,7 +23,7 @@
 
   <!-- NOTE: these should really be loaded at the end of the <body> tag for performance.
        We're loading them here so that we can use inline scripts for quick mock-ups. -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/jquery.min.js"></script>
   <script type="text/javascript" src="/neue.js"></script>
   <script type="text/javascript" src="/app.js"></script>
 
@@ -171,6 +171,18 @@
     </div>
   </footer>
 </div>
+
+
+<div id="modal--auth-login" class="modal" data-href="/example/login">
+  <div class="modal-content login">
+    <span href="#" class="icon-lock modal-secure-button js-security-info"><span>Secure Connection</span></span>
+    <a href="#" class="js-close-modal modal-close-button">&times;</a>
+
+    <%= erb :login_form %>
+  </div>
+</div>
+
+
 
 <!--[if lt IE 9]>
   <script src="/ie/rem.min.js"></script>

@@ -1,8 +1,8 @@
-/*    ____  _____    _   __              
-     / __ \/ ___/   / | / /__  __  _____ 
+/*    ____  _____    _   __
+     / __ \/ ___/   / | / /__  __  _____
     / / / /\__ \   /  |/ / _ \/ / / / _ \
    / /_/ /___/ /  / /|  /  __/ /_/ /  __/
-  /_____//____/  /_/ |_/\___/\__,_/\___/ 
+  /_____//____/  /_/ |_/\___/\__,_/\___/
                                           */
 
 /** Declaration of global variables and mixins */
@@ -10,6 +10,7 @@
 @import "globals/variables";
 @import "globals/mixins";
 @import "globals/din";
+@import "globals/icomoon";
 
 /** Basic interface and layout building blocks */
 @import "vendor/reset";
@@ -26,6 +27,7 @@
 @import "_patterns/widgets";
 
 /** Supporting styles for JS features. */
+@import "_js/auth";
 @import "_js/location-finder";
 @import "_js/pin-to-top";
 @import "_js/toggle-video";

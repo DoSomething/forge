@@ -1,5 +1,5 @@
 <div class="row callout">
-  <h2 class="js-auth-heading">Log in to get started!</h2>
+  <h2 class="js-auth-heading">Sign in to get started!</h2>
 </div>
 <form id="auth-form" action="https://localhost:8889/login">
   <div class="row">
@@ -11,7 +11,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="first_name" type="text" name="first_name" placeholder="(What do we call you?)">
+        <input id="first_name" tabindex="1" type="text" name="first_name" placeholder="(What do we call you?)">
       </div>
     </div>
 
@@ -23,7 +23,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="birthday" type="text" name="birthday" placeholder="MM/DD/YYYY">
+        <input id="birthday" tabindex="2" type="text" name="birthday" placeholder="MM/DD/YYYY">
       </div>
     </div>
   </div>
@@ -35,34 +35,59 @@
           <div class="message"></div>
         </div>
       </label>
-      <input id="username" type="text" name="username" placeholder="your_email@example.com">
+      <input id="username" tabindex="3" type="text" name="username" placeholder="your_email@example.com">
 
       <div class="is-registration-field">
-        <label for="cell">Cell # <em>(optional)</em></label>
-        <input id="cell" type="text" name="cell" placeholder="(555) 555-5555">
+        <div id="parent_email_field" style="display: none;">
+          <label for="parent_email">
+            <div class="innerLabel">
+              <div class="label">Parent's Email</div>
+              <div class="message"></div>
+            </div>
+          </label>
+          <input id="parent_email" tabindex="4" type="text" name="parent_email" placeholder="parent_email@example.com">
+        </div>
+      </div>
+
+      <div class="is-registration-field">
+        <label for="cell">
+          <div class="innerLabel">
+            <div class="label">Cell # <em>(optional)</em></div>
+            <div class="message"></div>
+          </div>
+        </label>
+        <input id="cell" tabindex="5" type="text" name="cell" placeholder="(555) 555-5555">
       </div>
 
       <label for="password">
+        <div class="forgot-password"><a href="/example/forgot" tabindex="9">Forgot Password?</a></div>
         <div class="innerLabel">
           <div class="label">Password</div>
+
           <div class="message"></div>
         </div>
       </label>
-      <input id="password"  type="password" name="password" placeholder="(password)">
+      <input id="password" tabindex="6" type="password" name="password" placeholder="(password)">
 
       <div class="is-registration-field">
-        <label for="confirm_password">Confirm Password</label>
-        <input id="confirm_password"  type="password" name="confirm_password" placeholder="(just double-checking!)">
+        <label for="confirm_password">
+          <div class="innerLabel">
+            <div class="label">Confirm Password</div>
+
+            <div class="message"></div>
+          </div>
+        </label>
+        <input id="confirm_password" tabindex="7" type="password" name="confirm_password" placeholder="(just double-checking!)">
       </div>
     </div>
   </div>
 
   <div class="row callout">
-    <input type="submit" class="js-submit-link btn primary medium" value="Log In">
+    <input type="submit" tabindex="8" class="js-submit-link btn primary medium" value="Sign In">
   </div>
 
   <div class="row section callout">
-    <a href="#" class="js-toggle-register">Create a DoSomething.org Account</a>
+    <a href="#" tabindex="10" class="js-toggle-register">Create a DoSomething.org Account</a>
   </div>
 
   <div class="row callout is-registration-field">
@@ -72,71 +97,6 @@
 
 
 <script>
-  $("input").on("blur", function() {
-    var msg = $('label[for="'+$(this).attr('id')+'"]').find(".message");
-    msg.removeClass("error success");
-
-    console.log( $(this).val() );
-
-    if( $(this).attr('id') === "username" ) {
-
-      if($(this).val() === "david@dfurnes.com") {
-        msg.addClass("success");
-        msg.text("Look's good!");
-      } else {
-        msg.addClass("error");
-        msg.text("That's not an email address!");
-      }
-
-    } else if ( $(this).attr('id') === "first_name" ) {
-      var inputName = $(this).val();
-
-      if( inputName !== "" ) {
-        var capitalizedName = $(this).val().charAt(0).toUpperCase() + $(this).val().slice(1);
-        msg.addClass("success");
-        msg.text("Hey " + capitalizedName + "!");
-      } else {
-        msg.addClass("error");
-        msg.text("We need your first name!");
-      }
-
-    } else if ( $(this).attr('id') === "birthday" ) {
-
-      var birthday = $(this).val().split("/");
-      birthday[0] = parseInt(birthday[0]);
-      birthday[1] = parseInt(birthday[1]);
-      birthday[2] = parseInt(birthday[2]);
-
-      var now = new Date();
-      var today_year = now.getFullYear();
-      var today_month = now.getMonth() + 1;
-      var today_day = now.getDate();
-
-      if (birthday[0] === today_month && birthday[1] === today_day) {
-        msg.addClass("success");
-        msg.text("Wow, happy birthday!");
-      } else if( birthday[2] < today_year) {
-        msg.addClass("success");
-
-        var age = today_year - birthday[2];
-
-        msg.text(age + ", cool!");
-      } else if (birthday[2] > 1890 && birthday[2] < 1990) {
-        msg.addClass("success");
-        msg.text("Yikes, you're old!");
-      } else {
-        msg.addClass("error");
-        msg.text("That doesn't seem right.");
-      }
-
-    }
 
 
-
-    $('label[for="'+$(this).attr('id')+'"]').addClass("showMessage");
-  });
-
-  $("input").on("focus", function() {
-    $('label[for="'+$(this).attr('id')+'"]').removeClass("showMessage");
-  });
 </script>
