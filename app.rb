@@ -15,7 +15,7 @@ end
 
 get '/example/*' do
   # some examples don't inherit the normal layout
-  if ["login", "500"].include?(params[:splat][0])
+  if ["login", "forgot", "500"].include?(params[:splat][0])
     render :erb, :"examples/#{params[:splat][0]}", layout: false
   else
     render_layout
