@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title><%= yield_content :title %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <link rel="stylesheet" href="/neue.dev.css" media="screen, projection" type="text/css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
+  <meta property="og:site_name" content="Do Something">
+  <meta property="fb:app_id" content="105775762330">
+  <meta property="og:url" content="http://www.dosomething.org/front">
+  <meta property="og:image" content="http://files.dosomething.org/files/styles/thumbnail/public/garland_logo_0.png">
+  <meta property="og:title" content="DoSomething.org">
+  <meta property="og:description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
+  <meta property="og:type" content="non_profit">
+
+  <meta property="description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
+
+  <!-- NOTE: these should really be loaded at the end of the <body> tag for performance.
+       We're loading them here so that we can use inline scripts for quick mock-ups. -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/neue.js"></script>
+  <script type="text/javascript" src="/app.js"></script>
+
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="/ie.css" type="text/css" />
+    <script src="/ie/html5shiv.min.js"></script>
+    <script src="/ie/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<div id="modal--auth-login" class="modal" style="display: block">
+  <div class="modal-content login">
+    <%= erb :login_form %>
+  </div>
+</div>
+
+</body>
+</html>

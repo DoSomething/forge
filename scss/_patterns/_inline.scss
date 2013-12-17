@@ -37,8 +37,12 @@ img.bordered {
   a {
     color: $light-gray;
 
-    &:hover, &:visited {
+    &:hover {
       color: $off-black;
+    }
+
+    &:visited {
+      color: $light-gray;
     }
   }
 }
@@ -91,7 +95,7 @@ img.bordered {
         font-size: 0.8em;
       }
     }
-    
+
     &.bad {
       li:before {
         content: "\2718";

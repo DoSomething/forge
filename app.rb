@@ -9,12 +9,17 @@ get '/' do
   erb :styleguide
 end
 
-get '/examples/*.html' do
+get '/example/*.html' do
   send_file "views/examples/#{params[:splat].first}.html"
 end
 
 get '/example/*' do
- render_layout
+  # some examples don't inherit the normal layout
+  if ["login", "forgot", "500"].include?(params[:splat][0])
+    render :erb, :"examples/#{params[:splat][0]}", layout: false
+  else
+    render_layout
+  end
 end
 
 helpers do

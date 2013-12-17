@@ -1,0 +1,19 @@
+  .is-registration-field {
+    display: none;
+  }
+
+  .is-login-field {
+
+  }
+
+  label {
+    position: relative;
+  }
+
+
+  .forgot-password {
+    position: absolute;
+    top: 0;
+    right: 1.5em;
+    z-index: 100;
+  }

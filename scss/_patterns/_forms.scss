@@ -5,7 +5,41 @@ label {
   float: left;
   clear: both;
   width: 100%;
-  margin: 1em 1em 0.5em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 1em 1em 0.25em;
+  height: 1.25em;
+  overflow: hidden;
+
+  .innerLabel {
+    position: relative;
+    @include transition(top 0.5s);
+  }
+
+  &.showMessage {
+    .innerLabel {
+      top: -1.25em;
+    }
+  }
+
+  em {
+    font-style: normal;
+    color: $dark-gray;
+  }
+
+  .message {
+    &.error {
+      color: $red;
+    }
+
+    &.warning {
+      color: $dark-gray;
+    }
+
+    &.success {
+      color: $green;
+    }
+  }
 }
 
 
@@ -40,7 +74,7 @@ input[type="text"], input[type="search"], input[type="password"] {
     width: 300px;
 
     @include respond-to(phones) {
-      width: 140px;  
+      width: 140px;
     }
   }
 }
@@ -382,7 +416,7 @@ $bg-bad: #ffe0e0;
     background: $bg-bad;
 
     &:before {
-      content: $unicode-bad; 
+      content: $unicode-bad;
       position: absolute;
       left: 1.5em;
       color: darken($bg-bad, 15%);
