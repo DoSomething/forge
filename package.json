@@ -12,6 +12,7 @@
     "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-qunit": "~0.3.0",
     "jshint-stylish": "~0.1.4",
-    "grunt-css-metrics": "~0.1.2"
+    "grunt-css-metrics": "~0.1.2",
+    "grunt-shell": "~0.6.1"
   }
 }

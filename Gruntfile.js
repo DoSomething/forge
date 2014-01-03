@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ["js/vendor/**/*.js", "js/**/*.js", "js-app/**/*.js", "tests/**/*.js"],
-        tasks: ["jshint:all", "uglify:dev", "qunit", "docco"]
+        tasks: ["jshint:all", "uglify:dev"]
       },
       livereload: {
         files: ["*.html", "assets/**/*.{js,json}", "assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}"],
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         jshintrc: true,
         reporter: require("jshint-stylish")
       },
-      all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "tests/**/*.js", "!tests/lib/**/*.js"]
+      all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "tests/**/*.js", "!tests/wraith/**/*.js", "!tests/lib/**/*.js"]
     },
 
     qunit: {
@@ -104,12 +104,29 @@ module.exports = function(grunt) {
       options: {
         pushTo: "origin"
       }
+    },
+
+    shell: {
+      wraith: {
+        command: 'cd tests/wraith && rake && open tests/wraith/ds/gallery.html',
+        options: {
+          stdout: true
+        }
+      }
     }
+
   });
 
-  grunt.registerTask("prod", ["sass:prod", "cssmetrics:dist", "jshint:all", "uglify:prod", "qunit", "docco"]);
-  grunt.registerTask("build", ["sass:dev", "jshint:all", "uglify:dev", "qunit", "docco"]);
+  // dev build tasks
   grunt.registerTask("default", ["build", "watch"]);
+  grunt.registerTask("test", ["test:css", "test:js"]);
+  grunt.registerTask("test:css", ["shell:wraith"]);
+  grunt.registerTask("test:js", ["qunit"]);
+
+  grunt.registerTask("build", ["sass:dev", "jshint:all", "uglify:dev"]);
+
+  // run this before pushing code to master – minifies css/js
+  grunt.registerTask("prod", ["sass:prod", "cssmetrics:dist", "jshint:all", "uglify:prod", "qunit", "docco"]);
 
 
   grunt.loadNpmTasks("grunt-contrib-sass");
@@ -120,4 +137,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css-metrics');
   grunt.loadNpmTasks("grunt-docco2");
   grunt.loadNpmTasks("grunt-bump");
+  grunt.loadNpmTasks('grunt-shell');
 };
