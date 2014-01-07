@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     sass: {
       compile: {
         files: {
-          "assets/neue.css": "scss/neue.scss",
+          "tmp/neue.css": "scss/neue.scss",
           "assets/neue.dev.css": "scss/neue.dev.scss",
           "assets/ie.css": "scss/ie.scss"
         },
@@ -38,13 +38,13 @@ module.exports = function(grunt) {
     cssmin: {
       minify: {
         options: {
-          report: true
+          report: 'gzip'
         },
-        files: [
-          "assets/neue.css",
-          "assets/neue.dev.css",
-          "assets/ie.css"
-        ]
+        files: {
+          "assets/neue.css": ["tmp/neue.css"],
+          "assets/neue.dev.css": ["assets/neue.dev.css"],
+          "assets/ie.css": ["assets/ie.css"]
+        }
       }
     },
 
