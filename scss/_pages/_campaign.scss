@@ -1,11 +1,10 @@
 // common
-
 .campaign-section {
   padding-bottom: 2rem;
   border-bottom: 1px solid $off-white;
 
   &:last-of-type {
-    border-bottom: none;
+    border-bottom: 0;
   }
 }
 
@@ -33,7 +32,7 @@
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 
   .header-sponsors,
