@@ -16,7 +16,7 @@
   &.video-play-link {
     &:before {
       content: '\25B6';
-      border: 5px solid rgba(255,255,255,0.7);
+      border: 5px solid rgba(255, 255, 255, 0.7);
       position: absolute;
       top: 40%;
       left: 50%;
@@ -26,7 +26,7 @@
       margin-left: -40px;
       border-radius: 160px;
       text-align: center;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       font-size: 40px;
       padding-top: 13px;
       padding-left: 6px;
@@ -34,8 +34,8 @@
     }
 
     &:hover:before {
-      color: rgba(255,255,255,1);
-      border: 5px solid rgba(255,255,255,1);
+      color: rgba(255, 255, 255, 1);
+      border: 5px solid rgba(255, 255, 255, 1);
     }
   }
 

@@ -39,8 +39,8 @@
     position: absolute;
     bottom: 0; left: 0;
     width: 100%;
-    background: rgb(0,181,224);
-    background: rgba(0,181,224,0.4);
+    background: rgb(0, 181, 224);
+    background: rgba(0, 181, 224, 0.4);
     text-align: center;
     padding: 1.5rem;
     @include box-sizing(border-box);
@@ -49,7 +49,7 @@
       color: #fff;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     }
 
     h4 {
@@ -57,7 +57,7 @@
       font-size: 1.25rem;
       font-weight: 500;
       text-transform: uppercase;
-      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     }
 
     &.purple {
@@ -107,7 +107,7 @@
     @include respond-to(widescreens_and_tablets) {
       &:hover {
         .headline {
-          left: 0; bottom: 0px;
+          left: 0; bottom: 0;
         }
       }
     }
@@ -267,8 +267,8 @@ footer.sponsor {
   @include respond-to(phones) {
     display: block;
     border-top: 1px solid $light-gray;
-    margin: -4rem 0px 0px;
-    padding: 4rem 0px 0px;
+    margin: -4rem 0 0;
+    padding: 4rem 0 0;
   }
 
   img {
@@ -363,7 +363,7 @@ ul.location-list {
     border-bottom: 1px solid $light-gray;
 
     &:last-of-type {
-      border-bottom: none;
+      border-bottom: 0;
     }
   }
 }
@@ -376,10 +376,8 @@ ul.location-list {
   display: none;
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: #333; // if rgba isn't supported
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 9998;
-  //display: none;
   overflow: auto;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

@@ -1,5 +1,3 @@
-/** ACTION STEP PAGE **/
-
 // TODO - DELETE THIS WRAPPER
 //        ONCE A FONT IS SELECTED
 
@@ -10,9 +8,9 @@
 }
 
 .newchrome--footer-wrapper {
-  margin: -55px 0px 0px;
+  margin: -55px 0 0;
   @media only screen and (max-width: 321px) {
-    margin: -20px 0 0 0;
+    margin: -20px 0 0;
   }
 }
 
@@ -112,14 +110,13 @@
 }
 
 
-/** ACTION STAGE CONCEPT **/
+// ACTION STAGE CONCEPT
 
 .action--header {
   color: #fff;
   text-align: center;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.75);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
 }
-
 
 .action--stage {
   .action--widget {

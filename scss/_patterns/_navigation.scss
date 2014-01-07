@@ -72,7 +72,7 @@ nav.breadcrumbs {
   }
 
   &.vertical {
-    font-size: 1.1em; /* decreasing font size, starting at 1em */
+    font-size: 1.1em; // decreasing font size, starting at 1em
     text-align: left;
 
     ul {
@@ -82,7 +82,7 @@ nav.breadcrumbs {
 
     li {
       display: block;
-      margin: 0.5rem 0; 
+      margin: 0.5rem 0;
     }
   }
 }
