@@ -9,6 +9,7 @@ gem 'sass', '3.2.12'
 
 gem 'thin', '~> 1.6.0'
 
+gem 'scss-lint', '0.15.0'
 group :development do
   gem "pry"
   gem "pry-nav"

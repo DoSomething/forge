@@ -112,6 +112,11 @@ module.exports = function(grunt) {
         options: {
           stdout: true
         }
+      scsslint: {
+        command: 'scss-lint scss/ --config .scss-lint.yaml',
+        options: {
+          stdout: true
+        }
       }
     }
 
@@ -123,11 +128,10 @@ module.exports = function(grunt) {
   grunt.registerTask("test:css", ["shell:wraith"]);
   grunt.registerTask("test:js", ["qunit"]);
 
-  grunt.registerTask("build", ["sass:dev", "jshint:all", "uglify:dev"]);
+  grunt.registerTask("build", ["sass:compile", "jshint:all", "shell:scsslint", "uglify:dev"]);
 
   // run this before pushing code to master – minifies css/js
-  grunt.registerTask("prod", ["sass:prod", "cssmetrics:dist", "jshint:all", "uglify:prod", "qunit", "docco"]);
-
+  grunt.registerTask("prod", ["sass:compile", "cssmin:minify", "shell:scsslint", "jshint:all", "uglify:prod", "qunit", "docco"]);
 
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-jshint");
