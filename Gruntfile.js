@@ -23,31 +23,24 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      prod: {
+      compile: {
         files: {
           "assets/neue.css": "scss/neue.scss",
           "assets/neue.dev.css": "scss/neue.dev.scss",
           "assets/ie.css": "scss/ie.scss"
         },
         options: {
-          style: "compressed"
-        }
-      },
-      dev: {
-        files: {
-          "assets/neue.css": "scss/neue.scss",
-          "assets/neue.dev.css": "scss/neue.dev.scss",
-          "assets/ie.css": "scss/ie.scss"
-        },
-        options: {
-          lineNumbers: true
+          sourceComments: "normal"
         }
       }
     },
 
-    cssmetrics: {
-      dist: {
-        src: [
+    cssmin: {
+      minify: {
+        options: {
+          report: true
+        },
+        files: [
           "assets/neue.css",
           "assets/neue.dev.css",
           "assets/ie.css"
@@ -112,6 +105,7 @@ module.exports = function(grunt) {
         options: {
           stdout: true
         }
+      },
       scsslint: {
         command: 'scss-lint scss/ --config .scss-lint.yaml',
         options: {
@@ -133,12 +127,12 @@ module.exports = function(grunt) {
   // run this before pushing code to master – minifies css/js
   grunt.registerTask("prod", ["sass:compile", "cssmin:minify", "shell:scsslint", "jshint:all", "uglify:prod", "qunit", "docco"]);
 
-  grunt.loadNpmTasks("grunt-contrib-sass");
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-qunit");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks('grunt-css-metrics');
   grunt.loadNpmTasks("grunt-docco2");
   grunt.loadNpmTasks("grunt-bump");
   grunt.loadNpmTasks('grunt-shell');
