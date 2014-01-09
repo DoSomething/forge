@@ -163,7 +163,7 @@ var NEUE = NEUE || {};
         fieldLabel.find(".message").text(message);
       }
 
-      fieldLabel.addClass("showMessage");
+      fieldLabel.addClass("show-message");
     }
 
     $(el).on("focus", hideValidationMessage);
@@ -171,7 +171,7 @@ var NEUE = NEUE || {};
 
   var hideValidationMessage = function hideValidationMessage() {
     var fieldLabel = $("label[for='" + $(this).attr("id") + "']");
-    fieldLabel.removeClass("showMessage");
+    fieldLabel.removeClass("show-message");
   };
 
   $(document).ready(function() {
@@ -225,7 +225,7 @@ var NEUE = NEUE || {};
 
       if( $(".innerLabel .message.error").length > 0) {
         // there are errors on the form
-        modalContent.removeClass("wobble fadeIn fadeInUp");
+        modalContent.removeClass("wobble fade-in fade-in-up");
         modalContent.addClass("wobble");
         setTimeout(function() {
           modalContent.removeClass("wobble");
