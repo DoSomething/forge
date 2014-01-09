@@ -23,8 +23,8 @@
       $(href).show();
 
       if(Modernizr.cssanimations) {
-        $(href).addClass("animated fadeIn");
-        $(href).find(".modal-content").addClass("animated fadeInUp");
+        $(href).addClass("animated fade-in");
+        $(href).find(".modal-content").addClass("animated fade-in-up");
       }
 
       // Close modal when "x" is clicked:
@@ -33,16 +33,16 @@
         var modal = $(this).closest(".modal");
 
         if(Modernizr.cssanimations) {
-          modal.find(".modal-content").addClass("fadeOutDown");
-          modal.addClass("fadeOut");
+          modal.find(".modal-content").addClass("fade-out-down");
+          modal.addClass("fade-out");
 
           $("body").removeClass("modal-open");
 
           modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
             modal.hide();
 
-            modal.removeClass("animated fadeIn fadeOut");
-            modal.find(".modal-content").removeClass("animated fadeInUp fadeOutDown");
+            modal.removeClass("animated fade-in fade-out");
+            modal.find(".modal-content").removeClass("animated fade-in-up fade-out-down");
           });
         } else {
           modal.hide();
