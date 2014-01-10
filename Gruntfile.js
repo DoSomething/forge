@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ["scss/**/*.{scss,sass}"],
-        tasks: ["sass:dist"]
+        tasks: ["sass:compile"]
       },
       js: {
-        files: ["js/vendor/**/*.js", "js/**/*.js", "js-app/**/*.js"],
-        tasks: ["jshint:all", "uglify:js", "docco"]
+        files: ["js/vendor/**/*.js", "js/**/*.js", "js-app/**/*.js", "tests/**/*.js"],
+        tasks: ["jshint:all", "uglify:dev"]
       },
       livereload: {
         files: ["*.html", "assets/**/*.{js,json}", "assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}"],
@@ -23,14 +23,27 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      dist: {
+      compile: {
         files: {
-          "assets/neue.css": "scss/neue.scss",
+          "tmp/neue.css": "scss/neue.scss",
           "assets/neue.dev.css": "scss/neue.dev.scss",
           "assets/ie.css": "scss/ie.scss"
         },
         options: {
-          style: "compressed"
+          sourceComments: "normal"
+        }
+      }
+    },
+
+    cssmin: {
+      minify: {
+        options: {
+          report: 'gzip'
+        },
+        files: {
+          "assets/neue.css": ["tmp/neue.css"],
+          "assets/neue.dev.css": ["assets/neue.dev.css"],
+          "assets/ie.css": ["assets/ie.css"]
         }
       }
     },
@@ -41,16 +54,29 @@ module.exports = function(grunt) {
         jshintrc: true,
         reporter: require("jshint-stylish")
       },
-      all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "test/**/*.js"]
+      all: ["js/**/*.js", "js-app/**/*.js", "!js/vendor/**/*.js", "tests/**/*.js", "!tests/wraith/**/*.js", "!tests/lib/**/*.js"]
+    },
+
+    qunit: {
+      all: ["tests/*.html"]
     },
 
     uglify: {
-      options: {
-        // mangle: false,
-        // compress: false,
-        // beautify: true
+      prod: {
+        options: {
+          report: "gzip"
+        },
+        files: {
+          "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
+          "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
+        }
       },
-      js: {
+      dev: {
+        options: {
+          mangle: false,
+          compress: false,
+          beautify: true
+        },
         files: {
           "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
           "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
@@ -71,16 +97,43 @@ module.exports = function(grunt) {
       options: {
         pushTo: "origin"
       }
+    },
+
+    shell: {
+      wraith: {
+        command: 'cd tests/wraith && rake && open tests/wraith/ds/gallery.html',
+        options: {
+          stdout: true
+        }
+      },
+      scsslint: {
+        command: 'scss-lint scss/ --config .scss-lint.yaml',
+        options: {
+          stdout: true
+        }
+      }
     }
+
   });
 
-  grunt.registerTask("build", ["sass:dist", "jshint:all", "uglify:js", "docco"]);
+  // dev build tasks
   grunt.registerTask("default", ["build", "watch"]);
+  grunt.registerTask("test", ["test:css", "test:js"]);
+  grunt.registerTask("test:css", ["shell:wraith"]);
+  grunt.registerTask("test:js", ["qunit"]);
 
-  grunt.loadNpmTasks("grunt-contrib-sass");
+  grunt.registerTask("build", ["sass:compile", "jshint:all", "shell:scsslint", "uglify:dev"]);
+
+  // run this before pushing code to master – minifies css/js
+  grunt.registerTask("prod", ["sass:compile", "cssmin:minify", "shell:scsslint", "jshint:all", "uglify:prod", "qunit", "docco"]);
+
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-contrib-qunit");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-docco2");
   grunt.loadNpmTasks("grunt-bump");
+  grunt.loadNpmTasks('grunt-shell');
 };

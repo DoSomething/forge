@@ -9,25 +9,19 @@ get '/' do
   erb :styleguide
 end
 
-get '/examples/*.html' do
+get '/example/*.html' do
   send_file "views/examples/#{params[:splat].first}.html"
 end
 
 get '/example/*' do
- render_layout
+  render_layout
 end
 
 helpers do
   # Layout Handling (parse path and serve proper layout)
   def render_layout
     splat = params[:splat][0]
-    splat_sanitized = splat.slice(4..-1)
-
-    if splat.slice(0,4) == "new/"
-      render :erb, :"examples/#{splat_sanitized}", layout: :new_layout
-    else
-      render :erb, :"examples/#{splat}", layout: :drupal_layout
-    end
+    render :erb, :"examples/#{splat}", layout: :drupal_layout
   end
 
   # Generates a styleguide block. A little bit evil with @_out_buf, but

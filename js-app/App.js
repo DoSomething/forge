@@ -16,9 +16,4 @@ var DS = DS || {};
     escape:      /\{\{\{([\s\S]+?)\}\}\}/g,         // {{{ title }}}
   };
 
-  // ## State: ##
-  // `DS.State.Server` holds the (initial) application state according to the server.
-  // `DS.State.Client` can hold local state that doesn't need to (or isn't ready to) be synced to the server.
-
-
 })();

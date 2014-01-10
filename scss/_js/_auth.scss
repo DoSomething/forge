@@ -1,0 +1,14 @@
+.is-registration-field {
+  display: none;
+}
+
+label {
+  position: relative;
+}
+
+.forgot-password {
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+  z-index: 100;
+}
