@@ -52,7 +52,7 @@ label {
 // Styleguide 4.1.2 - Text Input Fields
 input[type="text"], input[type="search"], input[type="password"] {
   width: 100%;
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-size: 1rem;
   border: 1px solid $light-gray;
   border-radius: 5px;
@@ -93,7 +93,7 @@ input[type="search"] {
 // Styleguide 4.1.4 - Text Area Fields
 textarea {
   width: 100%;
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-size: 1rem;
   border: 1px solid $light-gray;
   border-radius: $lg-border-radius;
@@ -135,7 +135,7 @@ textarea {
   padding: 0.5em 1em 0.3em;
   cursor: pointer;
   color: $off-black;
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
@@ -243,7 +243,7 @@ textarea {
     padding: 0.40rem 1em 0.25rem;
     cursor: default;
     color: lighten($off-white, 10%);
-    font-family: $font-din-regular;
+    font-family: $font-proxima-nova;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
