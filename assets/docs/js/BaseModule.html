@@ -28,7 +28,7 @@
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
               <p>Base NEUE Module that should be extended when creating other modules. It
-provides some common methods and organization so you don&#39;t have to a lot
+provides some common methods and organization so you don’t have to a lot
 of busywork. See <code>_exampleModule.js</code> for an annotated example implementation.</p>
 
             </div>
@@ -39,10 +39,10 @@ of busywork. See <code>_exampleModule.js</code> for an annotated example impleme
         <li id="section-2">
             <div class="annotation">
               
-              <div class="pilwrap for-h2">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <h2>Features</h2>
+              <h2 id="features">Features</h2>
 <ul>
 <li>Handles initializing modules, including overriding default options if necessary.</li>
 <li>Provides a standard location to keep state information, views, templates, and events.</li>
@@ -68,7 +68,7 @@ of busywork. See <code>_exampleModule.js</code> for an annotated example impleme
             <div class="content"><div class='highlight'><pre>
 <span class="keyword">var</span> NEUE = NEUE || {};
 
-(<span class="keyword">function</span>($) {
+(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
   <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
@@ -80,7 +80,7 @@ of busywork. See <code>_exampleModule.js</code> for an annotated example impleme
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>We create the global NEUE namespace if it doesn&quot;t already exist, and attach BaseModule to it.</p>
+              <p>We create the global NEUE namespace if it doesn”t already exist, and attach BaseModule to it.</p>
 
             </div>
             
@@ -107,10 +107,10 @@ of busywork. See <code>_exampleModule.js</code> for an annotated example impleme
         <li id="section-6">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <h4>Options</h4>
+              <h4 id="options">Options</h4>
 <p>We store options in the <code>Options</code> object. This is created by extending the <code>defaultOptions</code> object
 with any options passed to the initialize method.</p>
 
@@ -125,10 +125,10 @@ with any options passed to the initialize method.</p>
         <li id="section-7">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <h4>State</h4>
+              <h4 id="state">State</h4>
 <p><code>State</code> is a nice place to keep module state information.</p>
 
             </div>
@@ -139,11 +139,11 @@ with any options passed to the initialize method.</p>
         <li id="section-8">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <h4>Views</h4>
-<p><code>Views</code> is a nice place to keep your module&#39;s views. Views should be stored as references to jQuery objects.
+              <h4 id="views">Views</h4>
+<p><code>Views</code> is a nice place to keep your module’s views. Views should be stored as references to jQuery objects.
 The root element for your module (given in the constructor) is stored as <code>$el</code>.</p>
 
             </div>
@@ -156,10 +156,10 @@ The root element for your module (given in the constructor) is stored as <code>$
         <li id="section-9">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <h4>Templates</h4>
+              <h4 id="templates">Templates</h4>
 <p><code>Templates</code> stores your Underscore templates. Templates will be compiled during initialization so they can
 be used at any point later. Syntax:</p>
 <pre><code class="lang-javascript"> Templates: {
@@ -177,12 +177,12 @@ be used at any point later. Syntax:</p>
         <li id="section-10">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
-              <h4>Events</h4>
+              <h4 id="events">Events</h4>
 <p><code>Events</code> should be used to bind any DOM events your module needs. Events are bound to the root element (<code>$el</code>)
-so that they don&#39;t have to be re-bound as subviews are added and removed from the DOM. Syntax:</p>
+so that they don’t have to be re-bound as subviews are added and removed from the DOM. Syntax:</p>
 <pre><code class="lang-javascript">Events: {
   <span class="string">"&lt;selector&gt; &lt;event&gt;"</span>: <span class="string">"&lt;handler&gt;"</span>
 }</code></pre>
@@ -197,16 +197,16 @@ so that they don&#39;t have to be re-bound as subviews are added and removed fro
         <li id="section-11">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
-              <h4>Initialize</h4>
-<p>The <code>initialize</code> function calls Neue&#39;s base module initializer and then a custom initializer if there is one.
+              <h4 id="initialize">Initialize</h4>
+<p>The <code>initialize</code> function calls Neue’s base module initializer and then a custom initializer if there is one.
 Once both have run, it sets the <code>initialized</code> variable to <code>true</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    initialize: <span class="keyword">function</span>(element, opts) {
+            <div class="content"><div class='highlight'><pre>    initialize: <span class="function"><span class="keyword">function</span><span class="params">(element, opts)</span> {</span>
       <span class="keyword">this</span>._baseInitialize(element, opts);
 
       <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>._initialize === <span class="string">"function"</span>) {
@@ -229,7 +229,7 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    extend: <span class="keyword">function</span>(extensions) {
+            <div class="content"><div class='highlight'><pre>    extend: <span class="function"><span class="keyword">function</span><span class="params">(extensions)</span> {</span>
       <span class="keyword">var</span> parent = <span class="keyword">this</span>;
       <span class="keyword">var</span> child = {};
 
@@ -251,8 +251,8 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    _baseInitialize: <span class="keyword">function</span>(element, opts) {
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    _baseInitialize: <span class="function"><span class="keyword">function</span><span class="params">(element, opts)</span> {</span>
+      <span class="keyword">var</span> _this = <span class="keyword">this</span>;</pre></div></div>
             
         </li>
         
@@ -304,10 +304,10 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      $(document).ready(<span class="keyword">function</span>() {
-        _<span class="keyword">this</span>.$el.html(<span class="string">""</span>);
-        _<span class="keyword">this</span>._prepareTemplates();
-        _<span class="keyword">this</span>._bindEvents();
+            <div class="content"><div class='highlight'><pre>      $(document).ready(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        _this.$el.html(<span class="string">""</span>);
+        _this._prepareTemplates();
+        _this._bindEvents();
       });
     },</pre></div></div>
             
@@ -317,25 +317,25 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         <li id="section-17">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <h4>Bind Events</h4>
+              <h4 id="bind-events">Bind Events</h4>
 <p>We iterate through the <code>Events</code> object and bind any events defined there to the root element.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    _bindEvents: <span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre>    _bindEvents: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
       <span class="keyword">var</span> rootElement = <span class="keyword">this</span>.$el;
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+      <span class="keyword">var</span> _this = <span class="keyword">this</span>;
 
-      _.each(<span class="keyword">this</span>.Events, <span class="keyword">function</span>(target, trigger) {
+      _.each(<span class="keyword">this</span>.Events, <span class="function"><span class="keyword">function</span><span class="params">(target, trigger)</span> {</span>
         <span class="keyword">var</span> elementSelector = trigger.split(<span class="string">" "</span>)[<span class="number">0</span>];
         <span class="keyword">var</span> eventType = trigger.split(<span class="string">" "</span>)[<span class="number">1</span>];
 
-        rootElement.on(eventType, elementSelector, <span class="keyword">function</span>(event) {
+        rootElement.on(eventType, elementSelector, <span class="function"><span class="keyword">function</span><span class="params">(event)</span> {</span>
           event.preventDefault();
-          _<span class="keyword">this</span>[target]();
+          _this[target]();
         });
       });
     },</pre></div></div>
@@ -346,19 +346,19 @@ Once both have run, it sets the <code>initialized</code> variable to <code>true<
         <li id="section-18">
             <div class="annotation">
               
-              <div class="pilwrap for-h4">
+              <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
-              <h4>Prepare Templates</h4>
-<p>We&#39;ll compile any templates into Underscore template functions.</p>
+              <h4 id="prepare-templates">Prepare Templates</h4>
+<p>We’ll compile any templates into Underscore template functions.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    _prepareTemplates: <span class="keyword">function</span>() {
-      <span class="keyword">var</span> _<span class="keyword">this</span> = <span class="keyword">this</span>;
+            <div class="content"><div class='highlight'><pre>    _prepareTemplates: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+      <span class="keyword">var</span> _this = <span class="keyword">this</span>;
 
-      _.each(<span class="keyword">this</span>.Templates, <span class="keyword">function</span>(templateDOM, templateID) {
-        _<span class="keyword">this</span>.Templates[templateID] = _.template( $(templateDOM).html() );
+      _.each(<span class="keyword">this</span>.Templates, <span class="function"><span class="keyword">function</span><span class="params">(templateDOM, templateID)</span> {</span>
+        _this.Templates[templateID] = _.template( $(templateDOM).html() );
       });
     }
   };

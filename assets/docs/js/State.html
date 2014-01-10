@@ -34,7 +34,7 @@
             <div class="content"><div class='highlight'><pre>
 <span class="keyword">var</span> NEUE = NEUE || {};
 
-(<span class="keyword">function</span>() {
+(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
   <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
@@ -46,14 +46,14 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>We create the global NEUE namespace if it doesn&quot;t already exist, and attach BaseModule to it.</p>
+              <p>We create the global NEUE namespace if it doesn”t already exist, and attach BaseModule to it.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>  NEUE.State = <span class="function"><span class="keyword">function</span> <span class="title">State</span><span class="params">(initialState, context)</span> {</span>
     <span class="keyword">var</span> state = {};
     <span class="keyword">var</span> bindings = {};
-    <span class="keyword">var</span> _<span class="keyword">this</span> = context;
+    <span class="keyword">var</span> _this = context;
 
     <span class="keyword">if</span>(initialState) {
       state = initialState;
@@ -82,7 +82,7 @@
 
       <span class="keyword">if</span>(bindings[key]) {
         <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; bindings[key].length; i++) {
-          <span class="keyword">var</span> func = _<span class="keyword">this</span>[bindings[key][i]];
+          <span class="keyword">var</span> func = _this[bindings[key][i]];
           <span class="keyword">if</span> (func &amp;&amp; _.isFunction(func)) {
             func();
           }

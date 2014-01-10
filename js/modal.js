@@ -19,13 +19,35 @@
       var href = $(e.target.hash);
 
       $("body").addClass("modal-open");
+
       $(href).show();
+
+      if(Modernizr.cssanimations) {
+        $(href).addClass("animated fade-in");
+        $(href).find(".modal-content").addClass("animated fade-in-up");
+      }
 
       // Close modal when "x" is clicked:
       $(".js-close-modal").on("click", function(e) {
         e.preventDefault();
-        $(this).closest(".modal").hide();
-        $("body").removeClass("modal-open");
+        var modal = $(this).closest(".modal");
+
+        if(Modernizr.cssanimations) {
+          modal.find(".modal-content").addClass("fade-out-down");
+          modal.addClass("fade-out");
+
+          $("body").removeClass("modal-open");
+
+          modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
+            modal.hide();
+
+            modal.removeClass("animated fade-in fade-out");
+            modal.find(".modal-content").removeClass("animated fade-in-up fade-out-down");
+          });
+        } else {
+          modal.hide();
+        }
+
       });
     });
 
