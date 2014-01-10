@@ -34,7 +34,7 @@ original position in the document while pinned.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>(<span class="keyword">function</span>($) {
+            <div class="content"><div class='highlight'><pre>(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
   <span class="string">"use strict"</span>;</pre></div></div>
             
         </li>
@@ -51,7 +51,7 @@ original position in the document while pinned.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  window.NEUE = window.NEUE || {};
-  window.NEUE.pinToTop = <span class="keyword">function</span>() {</pre></div></div>
+  window.NEUE.pinToTop = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -62,7 +62,7 @@ original position in the document while pinned.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>We cache the element anchor&quot;s offset from the top of the page</p>
+              <p>We cache the element anchor”s offset from the top of the page</p>
 
             </div>
             
@@ -82,7 +82,7 @@ If we have scrolled past the anchor element, we apply CSS class to pin the eleme
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> stickyRelocate = <span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">var</span> stickyRelocate = <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
       <span class="keyword">if</span> ($(window).scrollTop() &gt; divTop) {
         $(<span class="string">".js-pin-to-top"</span>).addClass(<span class="string">"is-stuck"</span>);
       } <span class="keyword">else</span> {

@@ -6,7 +6,7 @@
   margin: 0 auto;
 }
 
-/** Gray utility bar at the top of the site */
+// Gray utility bar at the top of the site
 nav.utility {
   background: $off-black;
   color: #fff;
@@ -86,7 +86,7 @@ form.search input[type="search"]:focus .js-menu-toggle {
 }
 
 
-/** Logo & primary navigation/dropdowns */
+// Logo & primary navigation/dropdowns
 .masthead-wrapper {
   background: $blue;
   width: 100%;
@@ -190,7 +190,7 @@ nav.masthead {
       position: absolute;
       top: 2em;
       background: #000;
-      background: rgba(0,0,0, 0.7);
+      background: rgba(0, 0, 0, 0.7);
       width: 120%;
       margin: 1px;
       left: -2em;
@@ -214,7 +214,7 @@ nav.masthead {
           padding: 0.5em 2em;
           &:hover {
             color: $gold;
-            background: rgba(0,0,0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
           }
         }
       }
@@ -222,7 +222,7 @@ nav.masthead {
   }
 }
 
-/** Toggles first-level menu to appear when clicked on mobile */
+// Toggles first-level menu to appear when clicked on mobile.
 .js-menu-toggle {
   display: none;
   margin-left: 100px;
@@ -232,7 +232,7 @@ nav.masthead {
   }
 }
 
-/** Footer (miscellaneous links) */
+// Footer (miscellaneous links)
 .footer-wrapper {
   width: 100%;
   background: $off-black;

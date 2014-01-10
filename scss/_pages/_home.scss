@@ -1,4 +1,4 @@
-/** Top introductory banner on homepage */
+// Top introductory banner on homepage
 .full-width.wallpaper.ds-intro {
   color: #fff;
   background-image: url('images/bg-intro.jpg');
@@ -18,8 +18,8 @@
       margin-bottom: 1rem;
       @include respond-to(widescreens_and_tablets) {
         font-size: 2rem;
-        border-bottom: 4px solid rgb(255,255,255);
-        border-bottom: 4px solid rgba(255,255,255,0.5);
+        border-bottom: 4px solid rgb(255, 255, 255);
+        border-bottom: 4px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 0.3em;
       }
     }
@@ -30,7 +30,7 @@
   }
 }
 
-/** Sponsor logo */
+// Sponsor logos
 .homepage-sponsors {
   h4 {
     color: $light-gray;
@@ -61,14 +61,14 @@
     }
   }
 
-  .sprite-HRB {
+  .sprite-hrb {
     width: 120px;
     @include respond-to(phones) {
       width: 60px;
     }
   }
 
-  .sprite-HRB { @include responsive-sprite(-5px, -5px); }
+  .sprite-hrb { @include responsive-sprite(-5px, -5px); }
   .sprite-aeropostale { @include responsive-sprite(-135px, -5px); }
   .sprite-channel-one { @include responsive-sprite(-5px, -85px); }
   .sprite-fastweb { @include responsive-sprite(-115px, -85px); }

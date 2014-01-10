@@ -1,5 +1,3 @@
-/* This section includes re-usable layout/grid elements */
-
 // Full width centered page wrapper. Resizes fluidly from $max-width as viewport width decreases.
 //
 // .wallpaper - Full width "banners" for page designs. Has style overrides for text.
@@ -31,7 +29,7 @@
   }
 }
 
-// Container for page sections. Fills viewport up until $max-width - 100.
+// Container for page sections. Fills viewport up until $max-width - 100px.
 //
 // Styleguide 3.1.2 - Page-width Container
 .page-width {

@@ -39,8 +39,8 @@
     position: absolute;
     bottom: 0; left: 0;
     width: 100%;
-    background: rgb(0,181,224);
-    background: rgba(0,181,224,0.4);
+    background: rgb(0, 181, 224);
+    background: rgba(0, 181, 224, 0.4);
     text-align: center;
     padding: 1.5rem;
     @include box-sizing(border-box);
@@ -49,7 +49,7 @@
       color: #fff;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     }
 
     h4 {
@@ -57,7 +57,7 @@
       font-size: 1.25rem;
       font-weight: 500;
       text-transform: uppercase;
-      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     }
 
     &.purple {
@@ -107,7 +107,7 @@
     @include respond-to(widescreens_and_tablets) {
       &:hover {
         .headline {
-          left: 0; bottom: 0px;
+          left: 0; bottom: 0;
         }
       }
     }
@@ -267,8 +267,8 @@ footer.sponsor {
   @include respond-to(phones) {
     display: block;
     border-top: 1px solid $light-gray;
-    margin: -4rem 0px 0px;
-    padding: 4rem 0px 0px;
+    margin: -4rem 0 0;
+    padding: 4rem 0 0;
   }
 
   img {
@@ -363,7 +363,7 @@ ul.location-list {
     border-bottom: 1px solid $light-gray;
 
     &:last-of-type {
-      border-bottom: none;
+      border-bottom: 0;
     }
   }
 }
@@ -371,14 +371,13 @@ ul.location-list {
 
 // Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
 //
-// Styleguide 4.4.7 - Modal (Popup)
+// Styleguide 4.4.8 - Modal (Popup)
 .modal {
   display: none;
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 9998;
-  //display: none;
   overflow: auto;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -406,6 +405,48 @@ ul.location-list {
 
       &:hover {
         opacity: 1;
+      }
+    }
+
+    .modal-secure-button {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      opacity: 0.5;
+      @include transition(opacity 0.5s);
+
+      span {
+        display: none;
+        font-size: 0.75rem;
+        background: #333;
+        color: #fff;
+        padding: 0.15rem 0.5rem 0.3rem;
+        border-radius: $sm-border-radius;
+        opacity: 0;
+        @include transition(opacity 0.5s);
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          border-style: solid;
+          border-width: 6px;
+          border-color: transparent #333 transparent transparent;
+          top: 6px;
+          left: 6px;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+
+        span {
+          display: inline-block;
+          opacity: 1;
+        }
       }
     }
 
