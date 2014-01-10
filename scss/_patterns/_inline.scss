@@ -21,7 +21,7 @@ figcaption {
 // Styleguide 4.2.2 - Bordered image style
 img.bordered {
   border: 5px solid #fff;
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   @include box-sizing(border-box);
 }
 
@@ -37,8 +37,12 @@ img.bordered {
   a {
     color: $light-gray;
 
-    &:hover, &:visited {
+    &:hover {
       color: $off-black;
+    }
+
+    &:visited {
+      color: $light-gray;
     }
   }
 }
@@ -91,7 +95,7 @@ img.bordered {
         font-size: 0.8em;
       }
     }
-    
+
     &.bad {
       li:before {
         content: "\2718";
@@ -115,7 +119,6 @@ img.bordered {
   position: relative;
   padding-bottom: 54%;
   padding-top: 30px;
-  height: 0;
   overflow: hidden;
   max-width: 100%;
   height: auto;

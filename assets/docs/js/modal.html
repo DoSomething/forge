@@ -28,16 +28,16 @@
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
               <p> <strong>Show/hide modals.</strong> Link should have <code>.js-trigger-modal</code> class, and
-it&#39;s <code>href</code> should point to the hash of the modal. By convention, the
+it’s <code>href</code> should point to the hash of the modal. By convention, the
 modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>
-(<span class="keyword">function</span>($) {
+(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
   <span class="string">"use strict"</span>;
 
-  $(document).ready(<span class="keyword">function</span>() {</pre></div></div>
+  $(document).ready(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -52,7 +52,7 @@ modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-trigger-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-trigger-modal"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
       e.preventDefault();</pre></div></div>
             
         </li>
@@ -64,7 +64,7 @@ modal ID should be prefixed with <code>modal--</code>.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>We find the modal based on the ID in the link&quot;s <code>href</code>. For example,
+              <p>We find the modal based on the ID in the link”s <code>href</code>. For example,
 <code>&lt;a href=&quot;#modal--faq&quot;&gt;Click me&lt;/a&gt;</code> would open <code>&lt;div id=&quot;modal--faq&quot;&gt;&lt;/div&gt;</code>.</p>
 
             </div>
@@ -72,7 +72,13 @@ modal ID should be prefixed with <code>modal--</code>.</p>
             <div class="content"><div class='highlight'><pre>      <span class="keyword">var</span> href = $(e.target.hash);
 
       $(<span class="string">"body"</span>).addClass(<span class="string">"modal-open"</span>);
-      $(href).show();</pre></div></div>
+
+      $(href).show();
+
+      <span class="keyword">if</span>(Modernizr.cssanimations) {
+        $(href).addClass(<span class="string">"animated fadeIn"</span>);
+        $(href).find(<span class="string">".modal-content"</span>).addClass(<span class="string">"animated fadeInUp"</span>);
+      }</pre></div></div>
             
         </li>
         
@@ -87,10 +93,26 @@ modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>(e) {
+            <div class="content"><div class='highlight'><pre>      $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
         e.preventDefault();
-        $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>).hide();
-        $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>);
+        <span class="keyword">var</span> modal = $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>);
+
+        <span class="keyword">if</span>(Modernizr.cssanimations) {
+          modal.find(<span class="string">".modal-content"</span>).addClass(<span class="string">"fadeOutDown"</span>);
+          modal.addClass(<span class="string">"fadeOut"</span>);
+
+          $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>);
+
+          modal.one(<span class="string">"webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+            modal.hide();
+
+            modal.removeClass(<span class="string">"animated fadeIn fadeOut"</span>);
+            modal.find(<span class="string">".modal-content"</span>).removeClass(<span class="string">"animated fadeInUp fadeOutDown"</span>);
+          });
+        } <span class="keyword">else</span> {
+          modal.hide();
+        }
+
       });
     });
 
