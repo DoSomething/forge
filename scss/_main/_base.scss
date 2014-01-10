@@ -8,7 +8,7 @@ html {
 body {
   height: 100%;
   background: #fff;
-  font: 18px/1.4 $font-din-regular;
+  font: 18px/1.4 $font-proxima-nova;
 }
 
 // Various heading weights.
@@ -17,15 +17,15 @@ body {
 //
 // Styleguide 1.1 - Headings
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-weight: 600;
 
   &.section-header {
     font-weight: 500;
     text-align: center;
     text-transform: capitalize;
-    padding: 0 0 0.5em 0;
-    margin: 0 auto 1.5em auto;
+    padding: 0 0 0.5em;
+    margin: 0 auto 1.5em;
     letter-spacing: 0.1em;
     color: $dark-gray;
 

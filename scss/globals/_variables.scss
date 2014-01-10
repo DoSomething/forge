@@ -16,16 +16,16 @@ $purple: #a9218e;
 $orange: #2eb393;
 $hot-pink: #e20177;
 
-$btn-color: #FFCB15;
-$btn-hover: #FEB800;
-$btn-border: $btn-hover;
+$btn-color: #ffcb15;
+$btn-hover: #feb800;
+$btn-border: #feb800;
 $btn-gray: #ccc;
 
 // Fonts
 // ------------------
 $font-sans: "Trebuchet MS", sans-serif;
-$font-din-condensed: din-condensed, "HelveticaNeue-CondensedBold", "Arial Narrow", Arial, $font-sans;
-$font-din-regular: din-regular, $font-sans;
+$font-proxima-nova: "Proxima Nova", $font-sans;
+$font-hand-written: "Engineer";
 
 // Dimensions
 // ------------------
@@ -38,6 +38,6 @@ $lg-border-radius: 5px; // used for primary interactive elements (buttons, etc)
 // Keyframes
 // ------------------
 @include keyframes(rotation) {
- from { @include transform(rotate(0deg));}
- to { @include transform(rotate(359deg));}
+  from { @include transform(rotate(0)); }
+  to { @include transform(rotate(359deg)); }
 }

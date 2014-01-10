@@ -6,7 +6,7 @@
   margin: 0 auto;
 }
 
-/** Gray utility bar at the top of the site */
+// Gray utility bar at the top of the site
 nav.utility {
   background: $off-black;
   color: #fff;
@@ -32,7 +32,7 @@ nav.utility {
   }
 
   a {
-    font-family: $font-din-condensed;
+    font-family: $font-proxima-nova;
     color: $light-gray;
     text-decoration: none;
     text-transform: uppercase;
@@ -86,7 +86,7 @@ form.search input[type="search"]:focus .js-menu-toggle {
 }
 
 
-/** Logo & primary navigation/dropdowns */
+// Logo & primary navigation/dropdowns
 .masthead-wrapper {
   background: $blue;
   width: 100%;
@@ -164,7 +164,7 @@ nav.masthead {
       color: $gold;
       width: 24%;
       font-size: 1.8rem;
-      font-family: $font-din-condensed;
+      font-family: $font-proxima-nova;
       font-weight: 500;
       text-decoration: none;
       text-transform: uppercase;
@@ -190,7 +190,7 @@ nav.masthead {
       position: absolute;
       top: 2em;
       background: #000;
-      background: rgba(0,0,0, 0.7);
+      background: rgba(0, 0, 0, 0.7);
       width: 120%;
       margin: 1px;
       left: -2em;
@@ -207,14 +207,14 @@ nav.masthead {
         a {
           display: block;
           color: #fff;
-          font-family: $font-din-condensed;
+          font-family: $font-proxima-nova;
           font-size: 1.2rem;
           font-weight: 500;
           text-decoration: none;
           padding: 0.5em 2em;
           &:hover {
             color: $gold;
-            background: rgba(0,0,0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
           }
         }
       }
@@ -222,7 +222,7 @@ nav.masthead {
   }
 }
 
-/** Toggles first-level menu to appear when clicked on mobile */
+// Toggles first-level menu to appear when clicked on mobile.
 .js-menu-toggle {
   display: none;
   margin-left: 100px;
@@ -232,7 +232,7 @@ nav.masthead {
   }
 }
 
-/** Footer (miscellaneous links) */
+// Footer (miscellaneous links)
 .footer-wrapper {
   width: 100%;
   background: $off-black;
@@ -245,7 +245,7 @@ footer.main {
   margin: 0 auto;
 
   h4 {
-    font-family: $font-din-condensed;
+    font-family: $font-proxima-nova;
     color: #fff;
     font-size: 22px;
     text-transform: uppercase;
@@ -270,7 +270,7 @@ footer.main {
 
   a {
     color: $light-gray;
-    font-family: $font-din-condensed;
+    font-family: $font-proxima-nova;
     font-size: 0.9rem;
     text-decoration: none;
 
