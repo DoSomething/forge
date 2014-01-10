@@ -11,13 +11,13 @@ label {
   height: 1.25em;
   overflow: hidden;
 
-  .innerLabel {
+  .inner-label {
     position: relative;
     @include transition(top 0.5s);
   }
 
-  &.showMessage {
-    .innerLabel {
+  &.show-message {
+    .inner-label {
       top: -1.25em;
     }
   }
@@ -52,7 +52,7 @@ label {
 // Styleguide 4.1.2 - Text Input Fields
 input[type="text"], input[type="search"], input[type="password"] {
   width: 100%;
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-size: 1rem;
   border: 1px solid $light-gray;
   border-radius: 5px;
@@ -93,7 +93,7 @@ input[type="search"] {
 // Styleguide 4.1.4 - Text Area Fields
 textarea {
   width: 100%;
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-size: 1rem;
   border: 1px solid $light-gray;
   border-radius: $lg-border-radius;
@@ -127,17 +127,15 @@ textarea {
 //
 // Styleguide 4.1.5 - Buttons
 .btn {
-  /* base/default (secondary) appearance */
   display: inline-block;
   clear: both;
   background: $btn-color;
   border: 1px solid $btn-border;
-
   margin: 0.25rem;
   padding: 0.5em 1em 0.3em;
   cursor: pointer;
   color: $off-black;
-  font-family: $font-din-regular;
+  font-family: $font-proxima-nova;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
@@ -165,14 +163,14 @@ textarea {
     text-decoration: none;
   }
 
-  /* secondary appearance */
+  // secondary appearance
   &.secondary {
     background: $light-gray;
-    color: $dark_gray;
+    color: $dark-gray;
     font-weight: 500;
     text-transform: none;
     text-decoration: none;
-    border: none;
+    border: 0;
 
     &:hover {
       background-color: none;
@@ -193,14 +191,14 @@ textarea {
     }
   }
 
-  /* tertiary appearance */
+  // tertiary appearance
   &.tertiary {
     background: none;
-    color: $dark_gray;
+    color: $dark-gray;
     font-weight: 500;
     text-transform: none;
     text-decoration: underline;
-    border: none;
+    border: 0;
 
     &:hover {
       background-color: none;
@@ -221,7 +219,7 @@ textarea {
     }
   }
 
-  /* sizes */
+  // sizes
   &.small {
     font-size: 0.75rem;
   }
@@ -235,7 +233,7 @@ textarea {
     font-weight: 600;
   }
 
-  /* disabled state */
+  // disabled state
   &[disabled="disabled"], &.disabled {
     clear: both;
     background: $off-white;
@@ -245,7 +243,7 @@ textarea {
     padding: 0.40rem 1em 0.25rem;
     cursor: default;
     color: lighten($off-white, 10%);
-    font-family: $font-din-regular;
+    font-family: $font-proxima-nova;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
@@ -266,7 +264,7 @@ textarea {
     }
   }
 
-  /** Must be used on an <a> or <button> element. Will not work on <input>. **/
+  // NOTE: Must be used on an <a> or <button> element. Will not work on <input>.
   &.loading {
     position: relative;
     background: $off-white;
@@ -287,35 +285,35 @@ textarea {
     &:before {
       content: "";
       display: block;
-      height:1.5em;
-      width:1.5em;
-      margin:0 auto;
-      position:absolute;
+      height: 1.5em;
+      width: 1.5em;
+      margin: 0 auto;
+      position: absolute;
       top: 50%;
       left: 50%;
       margin-top: -0.75em;
       margin-left: -0.75em;
-      border:0.3em solid $light-gray;
-      border-radius:100%;
+      border: 0.3em solid $light-gray;
+      border-radius: 100%;
       @include box-sizing(border-box);
     }
 
     &:after {
       content: "";
       display: block;
-      height:1.5em;
-      width:1.5em;
-      margin:0 auto;
-      position:absolute;
+      height: 1.5em;
+      width: 1.5em;
+      margin: 0 auto;
+      position: absolute;
       top: 50%;
       left: 50%;
       margin-top: -0.75em;
       margin-left: -0.75em;
-      border:0.3em solid darken($light-gray, 10%);
-      border-left:0.3em solid transparent;
-      border-bottom:0.3em solid transparent;
-      border-right:0.3em solid transparent;
-      border-radius:100%;
+      border: 0.3em solid darken($light-gray, 10%);
+      border-left: 0.3em solid transparent;
+      border-bottom: 0.3em solid transparent;
+      border-right: 0.3em solid transparent;
+      border-radius: 100%;
       @include box-sizing(border-box);
       @include animation(rotation 1.5s infinite linear);
     }
@@ -347,28 +345,28 @@ select {
 //
 // Styleguide 4.1.7 - Loading Spinner
 .spinner {
-   height:30px;
-   width:30px;
-   margin:0 auto;
-   position:relative;
-   @include animation(rotation 1.5s infinite linear);
-   border:6px solid $light-gray;
-   border-radius:100%;
+  height: 30px;
+  width: 30px;
+  margin: 0 auto;
+  position: relative;
+  @include animation(rotation 1.5s infinite linear);
+  border: 6px solid $light-gray;
+  border-radius: 100%;
 }
 
 .spinner:before {
-   content:"";
-   display:block;
-   position:absolute;
-   left:-6px;
-   top:-6px;
-   height:100%;
-   width:100%;
-   border:6px solid darken($light-gray, 10%);
-   border-left:6px solid transparent;
-   border-bottom:6px solid transparent;
-   border-right:6px solid transparent;
-   border-radius:100%;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  height: 100%;
+  width: 100%;
+  border: 6px solid darken($light-gray, 10%);
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-radius: 100%;
 }
 
 // Status message styles. These should be used to provide feedback to the user for
@@ -385,7 +383,7 @@ $bg-good: #dbfbd5;
 $bg-meh: #fcf6e5;
 $bg-bad: #ffe0e0;
 
-.messages { /* Drupal default "meh" */
+.messages { // Drupal's default message class
   position: relative;
   padding: 1em 1em 1em 3.5em;
   margin: 0.5rem;
@@ -400,8 +398,8 @@ $bg-bad: #ffe0e0;
     color: darken($bg-meh, 10%);
   }
 
-  &.status, /* Default "success" message for Drupal */
-  &.success /* Default "success" message for rational people */ {
+  &.status,   // Default "success" message for Drupal
+  &.success { // Default "success" message for rational people
     background: $bg-good;
 
     &:before {
@@ -412,7 +410,7 @@ $bg-bad: #ffe0e0;
     }
   }
 
-  &.error { /* Drupal default "error" */
+  &.error { // Drupal default "error"
     background: $bg-bad;
 
     &:before {

@@ -1,36 +1,34 @@
-/*    ____  _____    _   __
-     / __ \/ ___/   / | / /__  __  _____
-    / / / /\__ \   /  |/ / _ \/ / / / _ \
-   / /_/ /___/ /  / /|  /  __/ /_/ /  __/
-  /_____//____/  /_/ |_/\___/\__,_/\___/
-                                          */
+//       ____  _____    _   __
+//      / __ \/ ___/   / | / /__  __  _____
+//     / / / /\__ \   /  |/ / _ \/ / / / _ \
+//    / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+//   /_____//____/  /_/ |_/\___/\__,_/\___/
+//
 
-/** Declaration of global variables and mixins */
+// Declaration of global variables and mixins
 @import "vendor/bourbon/bourbon";
 @import "globals/variables";
 @import "globals/mixins";
-@import "globals/din";
-@import "globals/icomoon";
+@import "globals/fonts";
 
-/** Basic interface and layout building blocks */
+// Basic interface and layout building blocks
 @import "vendor/reset";
 @import "_main/base";
 @import "_main/chrome";
 @import "_main/layout";
 @import "_main/animations";
 
-/** Interface patterns */
+// Interface patterns
 @import "_patterns/forms";
 @import "_patterns/inline";
 @import "_patterns/helpers";
 @import "_patterns/navigation";
 @import "_patterns/widgets";
 
-/** Supporting styles for JS features. */
+// Supporting styles for JS features
 @import "_js/auth";
 @import "_js/location-finder";
 @import "_js/pin-to-top";
-@import "_js/toggle-video";
 
-/** Overrides for specific pages */
+// Overrides for specific pages
 @import "_pages/home";
