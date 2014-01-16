@@ -1,4 +1,6 @@
-box: wercker/ubuntu12.04-webessentials@0.0.12
+box: wercker/nodejs
+services:
+  - dfurnes/box-node-ruby@0.0.5
 build:
   steps:
     - npm-install
