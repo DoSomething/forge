@@ -1,0 +1,9 @@
+box: wercker/ruby
+services:
+    - mies/rethinkdb
+build:
+    steps:
+        - npm-install
+        - bundle-install
+        - grunt:
+            tasks: lint test
