@@ -1,4 +1,7 @@
 # DS Neue
+
+[![wercker status](https://app.wercker.com/status/9c3905a0a14be38a75d857e1f7ffdeda "wercker status")](https://app.wercker.com/project/bykey/9c3905a0a14be38a75d857e1f7ffdeda)
+
 This is DS Neue, our interface framework and style guide. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.
 
  - **Typography**: Content is the basis of our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.

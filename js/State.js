@@ -51,8 +51,11 @@ var NEUE = NEUE || {};
       }
     };
 
-    var unbindEvent = function unbindEvent(key, callback) {
-      // TODO
+    var unbindEvent = function unbindEvent(key) {
+      // TODO: Handle cases where multiple callbacks are bound to a single key
+      if(bindings[key]) {
+        delete bindings.key;
+      }
     };
 
     // We use the Revealing Module pattern to make sure that state is only accessed through getters/setters.
