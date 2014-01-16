@@ -1,6 +1,4 @@
-box: wercker/nodejs
-services:
-  - dfurnes/grunt@0.0.2
+box: wercker/ubuntu12.04-webessentials@0.0.12
 build:
   steps:
     - npm-install
