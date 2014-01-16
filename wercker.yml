@@ -1,7 +1,8 @@
-box: wercker/ubuntu12.04-webessentials@1.0.0
+services:
+  - dfurnes/grunt@0.0.1
 build:
-    steps:
-        - npm-install
-        - bundle-install
-        - grunt:
-            tasks: lint test
+  steps:
+    - npm-install
+    - bundle-install
+    - grunt:
+        tasks: lint test
