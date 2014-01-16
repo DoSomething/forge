@@ -1,6 +1,4 @@
-box: wercker/ruby
-services:
-    - mies/rethinkdb
+box: wercker/ubuntu12.04-webessentials@1.0.0
 build:
     steps:
         - npm-install
