@@ -1,0 +1,29 @@
+{
+  "name": "pattern-library",
+  "version": "2.6.4",
+  "main": ["assets/neue.css", "assets/neue.js"],
+  "ignore": [
+    "app.rb",
+    "assets/docs/**/*",
+    "kss/**/*",
+    "source/**/*",
+    "config.ru",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.js",
+    "js/**/*",
+    "scss/**/*",
+    "tests/**/*",
+    "views/**/*",
+    ".jshintrc",
+    "wercker.yml",
+    ".editorconfig",
+    ".gitignore",
+    ".jshintrc",
+    ".ruby-version",
+    ".scss-lint.yaml"
+  ],
+  "dependencies": {
+    "jquery": "1.10.2",
+  }
+}
