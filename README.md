@@ -12,7 +12,7 @@ This is DS Neue, our interface framework and style guide. Neue is made up of fou
 Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork this repository and use it as a starting point for your own website and style guide.
 
 # Usage
-You can get your own copy of the latest version of the Pattern Library by [downloading a release](https://github.com/DoSomething/ds-neue/releases) or by using [Bower](http://bower.io):
+You can get your own copy of the Pattern Library by [downloading a release](https://github.com/DoSomething/ds-neue/releases) or by using [Bower](http://bower.io):
 
 ```
 bower install git@github.com:DoSomething/ds-neue.git
