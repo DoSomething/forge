@@ -155,16 +155,16 @@
     <section class="row section campaign-section">
       <h2 id="typography">Typography</h2>
       <% styleguide_block  '1.1 - Headings' do %>
-        <h1 class="$modifier_class"><span>Heading</span></h1>
+        <h1><span>Heading</span></h1>
         <p>Lorem ipsum dolor sit amet.</p>
 
-        <h2 class="$modifier_class"><span>Heading</span></h2>
+        <h2><span>Heading</span></h2>
         <p>Lorem ipsum dolor sit amet.</p>
 
-        <h3 class="$modifier_class"><span>Heading</span></h3>
+        <h3><span>Heading</span></h3>
         <p>Lorem ipsum dolor sit amet.</p>
 
-        <h4 class="$modifier_class"><span>Heading</span></h4>
+        <h4><span>Heading</span></h4>
         <p>Lorem ipsum dolor sit amet.</p>
       <% end %>
 
@@ -609,154 +609,7 @@
     <div class="row section">
       <h4 id="widgets">4.4 Widgets</h4>
 
-      <% styleguide_block '4.4.1 - Banners' do %>
-        <section class="row section banner">
-          <p>
-            <span>Do the things! Win the points!</span>
-            <a class="left btn primary large" href="#">Do This</a>
-          </p>
-        </section>
-      <% end %>
-
-      <% styleguide_block '4.4.2 - Feature Blocks' do %>
-          <div class="row">
-            <div class="column span_12 feature-block fixed" style="background-image: url('/images/placeholders/feature.jpg');">
-            <a class="full-link" href="/bully"><span>Do This</span></a>
-            <div class="headline big blue">
-              <h3>Invite friends to stand up to bullying with the Bully Text.</h3>
-              <a href="/bully" class="btn primary large">Do This</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row feature-block" style="background-image: url('/images/placeholders/banner.jpg');">
-          <a href="#" class="full-link"><span>Do This</span></a>
-          <div class="description">
-            <h2>Birthday Mail</h2>
-            <p>Create an awesome birthday card for a child or teen experiencing homelessness.</p>
-          </div>
-          <p class="action"><a href="#" class="btn primary medium">Do This</a></p>
-        </div>
-      <% end %>
-
-      <% styleguide_block '4.4.3 - Conversation Bubbles' do %>
-        <div class="game-conversation $modifier_class">
-          <p>Girl, you got any 'fee?</p>
-        </div>
-      <% end %>
-
-      <% styleguide_block '4.4.4 - Image Gallery' do %>
-        <div class="gallery-image">
-          <img src="http://www.placekitten.com/g/960/500" alt="">
-        </div>
-
-        <ul class="gallery-thumbs">
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/220/220" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/240/240" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/250/250" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/260/260" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/270/270" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/400/400" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/200/200" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/300/300" alt="" /></a>
-          </li>
-          <li class="gallery-thumb">
-            <a href="#" title=""><img src="http://www.placekitten.com/g/320/320" alt="" /></a>
-          </li>
-        </ul>
-      <% end %>
-
-      <% styleguide_block '4.4.5 - Timeline Module' do %>
-        <div class="timeline-divider">AUG</div>
-        <ul class="timeline">
-          <li class="event">
-            <div class="event-wrapper">
-              <a href="#" class="full-link"><span>Pics For Pets</span></a>
-              <div class="title full-link-delegate"><a href="#">Pics For Pets</a></div>
-              <div class="description">You helped homeless pets get adopted by sharing pics.</div>
-            </div>
-          </li>
-
-          <li class="event">
-            <div class="event-wrapper">
-              <a href="#" class="full-link"><span>Undocumented For A Day</span></a>
-              <div class="title full-link-delegate"><a href="#">Undocumented For A Day</a></div>
-              <div class="description">45,146 people took the Undocumented For A Day experience to learn about the struggles of undocumented immigrants.</div>
-            </div>
-          </li>
-        </ul>
-
-        <div class="timeline-divider">JUL</div>
-        <ul class="timeline">
-          <li class="event">
-            <div class="event-wrapper">
-              <a href="#" class="full-link"><span>Pregnancy Text</span></a>
-              <div class="title full-link-delegate"><a href="#">Pregnancy Text</a></div>
-              <div class="description">You got your friends talking about teen pregnancy and over 120,000 phone babies were born.</div>
-            </div>
-          </li>
-        </ul>
-      <% end %>
-
-      <% styleguide_block '4.4.7 - Location Finder' do %>
-        <div id="locfinder" class="aside span_8">
-
-        </div>
-
-        <script type="text/template" id="template--locfinder-geo">
-          <div class="row callout">
-            <a class="js-location-finder-submit btn primary medium">Search Near Me</a>
-          </div>
-          <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search by zip code</a>)</p></div>
-        </script>
-
-        <script type="text/template" id="template--locfinder-zip">
-          <form action="#" class="js-location-finder-form row callout">
-            <input name="zip" type="text" maxlength="5" class="short" placeholder="zip code">
-            <a class="js-location-finder-submit btn primary medium">Submit</a>
-          </form>
-          {{# if(Modernizr.geolocation) { }}
-            <div class="row"><p class="callout legal">(or <a href="#" class="js-location-finder-toggle-form">search nearby</a>)</p></div>
-          {{# } }}
-        </script>
-
-        <script type="text/template" id="template--locfinder-results">
-          <p>Drop-off points near <strong>{{ searchTerm }}</strong> (<a href="#" class="js-location-finder-reset-form">change</a>): </p>
-
-          <ul class="location-list js-location-finder-results">
-
-          </ul>
-        </script>
-
-        <script type="text/template" id="template--locfinder-location">
-          <li class="location">
-            <strong>{{ name }}</strong><br>
-            {{ street }}<br>
-            {{ city }}, {{ state }} {{ zip }}<br>
-          </li>
-        </script>
-      <% end %>
-    </div>
-
-    <% styleguide_block '4.4.8 - Modal (Popup)' do %>
+    <% styleguide_block '4.4.1 - Modal (Popup)' do %>
       <div class="modal" id="modal--example">
         <div class="modal-content">
           <a href="#" class="js-close-modal modal-close-button">&times;</a>
