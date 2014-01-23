@@ -1,105 +1,16 @@
-// Triggers a fade-up animation when the element enters the viewport.
-//
-// Styleguide 5.1 - Fade up on Scroll
-.js-fade-up-on-scroll {
-  opacity: 0;
-}
-
-.come-in {
-  @include transform(translateY(150px));
-  @include animation(come-in 2s ease forwards);
-  @include transition(opacity 0.25s);
-  opacity: 1;
-}
-
-.come-in:nth-child(odd) {
-  @include animation-duration(1.5s); // so animation on multiple items are staggered
-}
-
-.already-visible {
-  @include transform(translateY(0));
-  @include animation(none);
-  opacity: 1;
-}
-
-@include keyframes(come-in) {
-  to { @include transform(translateY(0)); }
-}
-
-// Element subtly bounces to grab the users attention.
-//
-// Styleguide 5.2 - Bounce
-.animation-bounce {
-  @include animation(bounce 1.5s ease infinite alternate);
-}
-
-@include keyframes(bounce) {
-  to { @include transform(translateY(10px)); }
-}
-
-// Element subtly bounces to grab the users attention.
-//
-// Styleguide 5.3 - Slide In (Fast)
-.slide-in-fast {
-  @include transform(translateY(150px));
-  @include animation(slide-in-fast 0.25s ease forwards);
-  @include transition(opacity 0.25s);
-  opacity: 0;
-}
-
-@include keyframes(slide-in-fast) {
-  to { @include transform(translateY(0)); opacity: 1; }
-}
-
-// Element subtly bounces to grab the users attention.
-//
-// Styleguide 5.2 - Fade In
-.fade-in {
-  @include animation(fade-in 0.25s ease forwards);
-  @include transition(opacity 0.25s);
-  opacity: 0;
-}
-
-@include keyframes(fade-in) {
-  to { opacity: 1; }
-}
-
-
-// -----------------------------------------------------------------
-
-.animated {
+// Default animation settings. May be overriden in specific animation classes.
+%animated {
   @include animation-fill-mode(both);
   @include animation-duration(0.5s);
 }
 
-.animated.hinge {
-  @include animation-duration(0.5s);
-}
 
-@include keyframes(tada) {
-  0% { transform: scale(1); }
-  10%, 20% { transform: scale(0.9) rotate(-3deg); }
-  30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
-  40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
-  100% { transform: scale(1) rotate(0); }
-}
-
-.tada {
-  @include animation-name(tada);
-}
-
-@include keyframes(wobble) {
-  0% { transform: translateX(0); }
-  15% { transform: translateX(-25%) rotate(-5deg); }
-  30% { transform: translateX(20%) rotate(3deg); }
-  45% { transform: translateX(-15%) rotate(-3deg); }
-  60% { transform: translateX(10%) rotate(2deg); }
-  75% { transform: translateX(-5%) rotate(-1deg); }
-  100% { transform: translateX(0); }
-}
-
-.wobble {
-  @include animation-name(wobble);
+// Element fades in.
+//
+// Styleguide 5.1 - Fade In
+.fade-in {
+  @extend %animated;
+  @include animation-name(fadeIn);
 }
 
 @include keyframes(fadeIn) {
@@ -107,8 +18,13 @@
   100% {opacity: 1;}
 }
 
-.fade-in {
-  @include animation-name(fadeIn);
+
+// Element fades in and up.
+//
+// Styleguide 5.2 - Fade In Up
+.fade-in-up {
+  @extend %animated;
+  @include animation-name(fadeInUp);
 }
 
 @include keyframes(fadeInUp) {
@@ -123,8 +39,13 @@
   }
 }
 
-.fade-in-up {
-  @include animation-name(fadeInUp);
+
+// Element fades out.
+//
+// Styleguide 5.3 - Fade Out
+.fade-out {
+  @extend %animated;
+  @include animation-name(fadeOut);
 }
 
 @include keyframes(fadeOut) {
@@ -132,8 +53,13 @@
   100% {opacity: 0;}
 }
 
-.fade-out {
-  @include animation-name(fadeOut);
+
+// Element fades out and down.
+//
+// Styleguide 5.4 - Fade Out Down
+.fade-out-down {
+  @extend %animated;
+  @include animation-name(fadeOutDown);
 }
 
 @include keyframes(fadeOutDown) {
@@ -148,6 +74,55 @@
   }
 }
 
-.fade-out-down {
-  @include animation-name(fadeOutDown);
+
+// "Wiggle" animation used to pull the user's attention to an element.
+//
+// Styleguide 5.5 - Tada
+.tada {
+  @extend %animated;
+  @include animation-name(tada);
+}
+
+@include keyframes(tada) {
+  0% { transform: scale(1); }
+  10%, 20% { transform: scale(0.9) rotate(-3deg); }
+  30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+  40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+
+// Kind of like a "womp womp".
+//
+// Styleguide 5.6 - Wobble
+.wobble {
+  @extend %animated;
+  @include animation-duration(1s);
+  @include animation-name(wobble);
+}
+
+@include keyframes(wobble) {
+  0% { @include transform(translateX(0)); }
+  15% { @include transform(translateX(-25%) rotate(-5deg)); }
+  30% { @include transform(translateX(20%) rotate(3deg)); }
+  45% { @include transform(translateX(-15%) rotate(-3deg)); }
+  60% { @include transform(translateX(10%) rotate(2deg)); }
+  75% { @include transform(translateX(-5%) rotate(-1deg)); }
+  100% { @include transform(translateX(0)); }
+}
+
+
+// Shake animation (similar to OS X convention for form errors).
+//
+// Styleguide 5.7 - Fade In
+@include keyframes(shake) {
+	0%, 100% { @include transform(translateX(0)); }
+	10%, 30%, 50%, 70%, 90% { @include transform(translateX(-10px));}
+	20%, 40%, 60%, 80% { @include transform(translateX(10px));}
+}
+
+.shake {
+  @extend %animated;
+  @include animation-duration(1s);
+  @include animation-name(shake);
 }
