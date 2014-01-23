@@ -25,8 +25,7 @@ module.exports = function(grunt) {
     sass: {
       compile: {
         files: {
-          "tmp/neue.css": "scss/neue.scss",
-          "assets/neue.dev.css": "scss/neue.dev.scss",
+          "assets/neue.css": "scss/neue.scss",
           "assets/ie.css": "scss/ie.scss"
         },
         options: {
@@ -41,8 +40,7 @@ module.exports = function(grunt) {
           report: 'gzip'
         },
         files: {
-          "assets/neue.css": ["tmp/neue.css"],
-          "assets/neue.dev.css": ["assets/neue.dev.css"],
+          "assets/neue.css": ["assets/neue.css"],
           "assets/ie.css": ["assets/ie.css"]
         }
       }
