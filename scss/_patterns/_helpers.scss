@@ -58,19 +58,3 @@
     @include background-image(linear-gradient($btn-hover, $btn-color));
   }
 }
-
-// Keeps an image at 100% width of the container.
-//
-// Styleguide 4.5.2 - Full-Width Image
-img.full-width-img {
-  width: 100%;
-}
-
-// Hides content on phones. (Not mobile first so that we can ensure the `display: none` will always hide element.)
-//
-// Styleguide 4.5.3 - Hide on Phones
-@include respond-to(phones) {
-  .is-hidden-on-phones {
-    display: none !important;
-  }
-}
