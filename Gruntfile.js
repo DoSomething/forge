@@ -67,8 +67,7 @@ module.exports = function(grunt) {
           report: "gzip"
         },
         files: {
-          "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
-          "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
+          "assets/neue.js": ["js/**/*.js"],
         }
       },
       dev: {
@@ -78,8 +77,7 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
-          "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
+          "assets/neue.js": ["js/**/*.js"],
         }
       }
     },
@@ -95,6 +93,8 @@ module.exports = function(grunt) {
 
     bump: {
       options: {
+        files: ['package.json', 'bower.json'],
+        commitFiles: ['package.json', 'bower.json'],
         pushTo: "origin"
       }
     },
@@ -116,16 +116,21 @@ module.exports = function(grunt) {
 
   });
 
-  // dev build tasks
+
   grunt.registerTask("default", ["build", "watch"]);
+
+  // code linting
+  grunt.registerTask("lint", ["jshint:all", "shell:scsslint"]);
+
+  // testing
   grunt.registerTask("test", ["test:css", "test:js"]);
   grunt.registerTask("test:css", ["shell:wraith"]);
   grunt.registerTask("test:js", ["qunit"]);
 
-  grunt.registerTask("build", ["sass:compile", "jshint:all", "shell:scsslint", "uglify:dev"]);
+  // build
+  grunt.registerTask("build", ["lint", "sass:compile", "uglify:dev"]);
+  grunt.registerTask("prod", ["lint", "sass:compile", "cssmin:minify", "uglify:prod", "qunit", "docco"]); // run before pushing code to master – minifies css/js
 
-  // run this before pushing code to master – minifies css/js
-  grunt.registerTask("prod", ["sass:compile", "cssmin:minify", "shell:scsslint", "jshint:all", "uglify:prod", "qunit", "docco"]);
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');

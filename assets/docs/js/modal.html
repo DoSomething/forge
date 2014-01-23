@@ -34,10 +34,10 @@ modal ID should be prefixed with <code>modal--</code>.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>
-(<span class="function"><span class="keyword">function</span><span class="params">($)</span> {</span>
-  <span class="string">"use strict"</span>;
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($)</span> {</span>
+<span class="hljs-pi">  "use strict"</span>;
 
-  $(document).ready(<span class="function"><span class="keyword">function</span><span class="params">()</span> {</span></pre></div></div>
+  $(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -52,7 +52,7 @@ modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    $(<span class="string">".js-trigger-modal"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
+            <div class="content"><div class='highlight'><pre>    $(<span class="hljs-string">".js-trigger-modal"</span>).on(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
       e.preventDefault();</pre></div></div>
             
         </li>
@@ -69,15 +69,15 @@ modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="keyword">var</span> href = $(e.target.hash);
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">var</span> href = $(e.target.hash);
 
-      $(<span class="string">"body"</span>).addClass(<span class="string">"modal-open"</span>);
+      $(<span class="hljs-string">"body"</span>).addClass(<span class="hljs-string">"modal-open"</span>);
 
       $(href).show();
 
-      <span class="keyword">if</span>(Modernizr.cssanimations) {
-        $(href).addClass(<span class="string">"animated fadeIn"</span>);
-        $(href).find(<span class="string">".modal-content"</span>).addClass(<span class="string">"animated fadeInUp"</span>);
+      <span class="hljs-keyword">if</span>(Modernizr.cssanimations) {
+        $(href).addClass(<span class="hljs-string">"animated fade-in"</span>);
+        $(href).find(<span class="hljs-string">".modal-content"</span>).addClass(<span class="hljs-string">"animated fade-in-up"</span>);
       }</pre></div></div>
             
         </li>
@@ -93,23 +93,23 @@ modal ID should be prefixed with <code>modal--</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      $(<span class="string">".js-close-modal"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
+            <div class="content"><div class='highlight'><pre>      $(<span class="hljs-string">".js-close-modal"</span>).on(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
         e.preventDefault();
-        <span class="keyword">var</span> modal = $(<span class="keyword">this</span>).closest(<span class="string">".modal"</span>);
+        <span class="hljs-keyword">var</span> modal = $(<span class="hljs-keyword">this</span>).closest(<span class="hljs-string">".modal"</span>);
 
-        <span class="keyword">if</span>(Modernizr.cssanimations) {
-          modal.find(<span class="string">".modal-content"</span>).addClass(<span class="string">"fadeOutDown"</span>);
-          modal.addClass(<span class="string">"fadeOut"</span>);
+        <span class="hljs-keyword">if</span>(Modernizr.cssanimations) {
+          modal.find(<span class="hljs-string">".modal-content"</span>).addClass(<span class="hljs-string">"fade-out-down"</span>);
+          modal.addClass(<span class="hljs-string">"fade-out"</span>);
 
-          $(<span class="string">"body"</span>).removeClass(<span class="string">"modal-open"</span>);
+          $(<span class="hljs-string">"body"</span>).removeClass(<span class="hljs-string">"modal-open"</span>);
 
-          modal.one(<span class="string">"webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+          modal.one(<span class="hljs-string">"webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
             modal.hide();
 
-            modal.removeClass(<span class="string">"animated fadeIn fadeOut"</span>);
-            modal.find(<span class="string">".modal-content"</span>).removeClass(<span class="string">"animated fadeInUp fadeOutDown"</span>);
+            modal.removeClass(<span class="hljs-string">"animated fade-in fade-out"</span>);
+            modal.find(<span class="hljs-string">".modal-content"</span>).removeClass(<span class="hljs-string">"animated fade-in-up fade-out-down"</span>);
           });
-        } <span class="keyword">else</span> {
+        } <span class="hljs-keyword">else</span> {
           modal.hide();
         }
 

@@ -1,0 +1,9 @@
+box: wercker/nodejs
+services:
+  - dfurnes/box-node-ruby@0.0.5
+build:
+  steps:
+    - npm-install
+    - bundle-install
+    - grunt:
+        tasks: lint test
