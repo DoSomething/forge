@@ -65,18 +65,6 @@ input[type="text"], input[type="search"], input[type="password"] {
     border: 1px solid $gold;
     box-shadow: 0 0 3px $gold;
   }
-
-  &.short {
-    width: 175px;
-  }
-
-  &.medium {
-    width: 300px;
-
-    @include respond-to(phones) {
-      width: 140px;
-    }
-  }
 }
 
 // Specific style rules for search input fields.

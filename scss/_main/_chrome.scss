@@ -54,12 +54,11 @@ nav.utility {
   margin-top: -5px;
 
   input[type="search"] {
+    border: 0;
+    cursor: pointer;
     width: 10px;
     font-size: 0.9rem;
-    border: 0;
-    background: $off-black url('images/search.png') no-repeat 12px 6px;
-    background-size: 18px 45px;
-    cursor: pointer;
+    @include retina-image('images/search.png', 12px 6px);
     @include transition(width 0.25s, background-color 0.25s);
 
     &:focus {
@@ -71,10 +70,6 @@ nav.utility {
       @include respond-to(phones) {
         margin-right: -40px;
       }
-    }
-
-    @include high-dpi {
-      background-image: url('images/search_2x.png');
     }
   }
 }
