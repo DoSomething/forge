@@ -67,8 +67,7 @@ module.exports = function(grunt) {
           report: "gzip"
         },
         files: {
-          "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
-          "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
+          "assets/neue.js": ["js/**/*.js"],
         }
       },
       dev: {
@@ -78,8 +77,7 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          "assets/neue.js": ["js/vendor/*.js", "js/**/*.js", "!js/_*.js"],
-          "assets/app.js": ["js-app/**/*.js", "!js-app/_*.js"]
+          "assets/neue.js": ["js/**/*.js"],
         }
       }
     },
@@ -95,6 +93,7 @@ module.exports = function(grunt) {
 
     bump: {
       options: {
+        files: ['package.json', 'bower.json'],
         pushTo: "origin"
       }
     },
