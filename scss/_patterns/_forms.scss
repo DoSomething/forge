@@ -59,12 +59,8 @@ input[type="text"], input[type="search"], input[type="password"] {
   padding: 0.5em 1em 0.3em;
   margin: 0 0 0.5em;
   @include box-sizing(border-box);
+  @include highlight-on-focus;
   -webkit-appearance: none;
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
 }
 
 // Specific style rules for search input fields.
@@ -89,12 +85,7 @@ textarea {
   margin: 0 0 0.5em;
   resize: vertical;
   @include box-sizing(border-box);
-
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
+  @include highlight-on-focus;
 }
 
 
@@ -321,12 +312,7 @@ select {
   height: 34px;
   border: 1px solid $light-gray;
   @include box-sizing(border-box);
-
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
+  @include highlight-on-focus;
 }
 
 // Spinner to indicate loading content.
