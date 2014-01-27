@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, src: ["assets/images/**", "!images/**/*.{png,jpg,jpeg,gif}"], dest: "dist/"},
+          {expand: true, src: ["assets/images/**", "!images/**/*"], dest: "dist/"},
           {expand: true, src: ["assets/kss/**"], dest: "dist/"},
           {expand: true, src: ["assets/fonts/**"], dest: "dist/"},
           {src: "scss/helpers.scss", dest: "dist/helpers.scss"},
@@ -70,8 +70,9 @@ module.exports = function(grunt) {
       bundle: {
         files: [{
           expand: true,
-          src: ["assets/images/**/*.{png,jpg,jpeg,gif}"],
-          dest: "dist/assets/images/"
+          cwd: "assets/images/",
+          src: ["**/*.{png,jpg,jpeg,gif}"],
+          dest: "dist/assets/images"
         }]
       }
     },
@@ -201,7 +202,7 @@ module.exports = function(grunt) {
 
   // build
   grunt.registerTask("build", ["lint", "sass:compile", "imagemin", "uglify:dev", "copy:main", "docco"]);
-  grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "imagemin", "copy:main", "uglify:prod"]); // used when preparing code for distribution
+  grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "copy:main", "imagemin", "uglify:prod"]); // used when preparing code for distribution
 
   // deploy
   grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function(versionType) {
