@@ -1,17 +1,25 @@
-//       ____  _____    _   __
-//      / __ \/ ___/   / | / /__  __  _____
-//     / / / /\__ \   /  |/ / _ \/ / / / _ \
-//    / /_/ /___/ /  / /|  /  __/ /_/ /  __/
-//   /_____//____/  /_/ |_/\___/\__,_/\___/
+//                 ____  _____    _   __
+//                / __ \/ ___/   / | / /__  __  _____
+//               / / / /\__ \   /  |/ / _ \/ / / / _ \
+//              / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+//             /_____//____/  /_/ |_/\___/\__,_/\___/
+//
+//   =============== Base Styles/Pattern Library ===============
+//
+//   This is the build file for the Neue Pattern Library. It
+//   should include base layout and reusable patterns for the
+//   Neue deliverable.
+//
+//   Any app-specific styles should live in their respective
+//   project repo, and can import "imports.scss" for access to
+//   Neue's variables and helpers.
 //
 
-// Declaration of global variables and mixins
-@import "vendor/bourbon/bourbon";
-@import "globals/variables";
-@import "globals/mixins";
-@import "globals/fonts";
+// We'll start by importing our SCSS variables & helpers.
+@import "helpers";
 
 // Basic interface and layout building blocks
+@import "globals/fonts";
 @import "vendor/reset";
 @import "_main/base";
 @import "_main/chrome";
