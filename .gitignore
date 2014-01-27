@@ -1,3 +1,9 @@
+# Ignore build directory
+dist/
+
+# Vim stuff
+*.swp
+
 # SASS stuff
 .sass-cache
 
@@ -30,6 +36,4 @@ log/
 tmp/
 
 
-# Ignore build files
-assets/bin/
-assets/*.map
+
