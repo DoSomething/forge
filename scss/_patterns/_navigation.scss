@@ -25,7 +25,7 @@ nav.breadcrumbs {
   }
 
   a {
-    color: $dark-gray;
+    color: $med-gray;
     text-decoration: none;
 
     &:hover {
@@ -66,7 +66,7 @@ nav.breadcrumbs {
     }
 
     &.active {
-      background: $off-white;
+      background: $light-gray;
       border-radius: $lg-border-radius;
     }
   }

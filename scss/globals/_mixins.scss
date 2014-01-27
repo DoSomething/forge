@@ -35,3 +35,12 @@
   background-position: $pos-x $pos-y;
   @include respond-to(phones) { background-position: $pos-x/2 $pos-y/2; }
 }
+
+// Border highlight on input focus
+@mixin highlight-on-focus {
+  &:focus {
+    outline: 0;
+    border: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
+}
