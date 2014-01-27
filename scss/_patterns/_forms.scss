@@ -24,20 +24,20 @@ label {
 
   em {
     font-style: normal;
-    color: $dark-gray;
+    color: $med-gray;
   }
 
   .message {
     &.error {
-      color: $red;
+      color: $light-yellow;
     }
 
     &.warning {
-      color: $dark-gray;
+      color: $med-gray;
     }
 
     &.success {
-      color: $green;
+      color: $light-green;
     }
   }
 }
@@ -59,24 +59,8 @@ input[type="text"], input[type="search"], input[type="password"] {
   padding: 0.5em 1em 0.3em;
   margin: 0 0 0.5em;
   @include box-sizing(border-box);
+  @include highlight-on-focus;
   -webkit-appearance: none;
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
-
-  &.short {
-    width: 175px;
-  }
-
-  &.medium {
-    width: 300px;
-
-    @include respond-to(phones) {
-      width: 140px;
-    }
-  }
 }
 
 // Specific style rules for search input fields.
@@ -101,12 +85,7 @@ textarea {
   margin: 0 0 0.5em;
   resize: vertical;
   @include box-sizing(border-box);
-
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
+  @include highlight-on-focus;
 }
 
 
@@ -134,7 +113,7 @@ textarea {
   margin: 0.25rem;
   padding: 0.5em 1em 0.3em;
   cursor: pointer;
-  color: $off-black;
+  color: $copy-color;
   font-family: $font-proxima-nova;
   font-weight: 600;
   text-align: center;
@@ -154,19 +133,19 @@ textarea {
   &:active {
     outline: 0;
     background: $btn-color;
-    color: lighten($off-black, 10);
+    color: lighten($copy-color, 10);
     @include background-image(linear-gradient($btn-hover, $btn-color));
   }
   &:link, &:active, &:hover {
     // overrides for default <a> styling
-    color: $off-black;
+    color: $copy-color;
     text-decoration: none;
   }
 
   // secondary appearance
   &.secondary {
     background: $light-gray;
-    color: $dark-gray;
+    color: $med-gray;
     font-weight: 500;
     text-transform: none;
     text-decoration: none;
@@ -185,8 +164,8 @@ textarea {
 
     &:active {
       outline: 0;
-      background: $off-white;
-      color: lighten($off-black, 10);
+      background: $light-gray;
+      color: lighten($copy-color, 10);
       box-shadow: none;
     }
   }
@@ -194,7 +173,7 @@ textarea {
   // tertiary appearance
   &.tertiary {
     background: none;
-    color: $dark-gray;
+    color: $med-gray;
     font-weight: 500;
     text-transform: none;
     text-decoration: underline;
@@ -213,8 +192,8 @@ textarea {
 
     &:active {
       outline: 0;
-      background: $off-white;
-      color: lighten($off-black, 10);
+      background: $light-gray;
+      color: lighten($copy-color, 10);
       box-shadow: none;
     }
   }
@@ -236,13 +215,13 @@ textarea {
   // disabled state
   &[disabled="disabled"], &.disabled {
     clear: both;
-    background: $off-white;
-    border: 1px solid $off-white;
+    background: $light-gray;
+    border: 1px solid $light-gray;
     margin: 0 auto;
     margin: 0.25rem;
     padding: 0.40rem 1em 0.25rem;
     cursor: default;
-    color: lighten($off-white, 10%);
+    color: lighten($light-gray, 10%);
     font-family: $font-proxima-nova;
     font-weight: 600;
     text-align: center;
@@ -251,14 +230,14 @@ textarea {
     border-radius: $lg-border-radius;
 
     &:hover {
-      background: $off-white;
+      background: $light-gray;
       box-shadow: none;
     }
 
     &:active {
       outline: 0;
-      background: $off-white;
-      color: lighten($off-white, 10%);
+      background: $light-gray;
+      color: lighten($light-gray, 10%);
 
       box-shadow: none;
     }
@@ -267,19 +246,19 @@ textarea {
   // NOTE: Must be used on an <a> or <button> element. Will not work on <input>.
   &.loading {
     position: relative;
-    background: $off-white;
-    border: 2px solid $off-white;
-    color: $off-white; // hiding the text, but keeping it in the background to preserve dimensions
+    background: $light-gray;
+    border: 2px solid $light-gray;
+    color: $light-gray; // hiding the text, but keeping it in the background to preserve dimensions
     box-shadow: none;
     cursor: default;
     @include user-select(none);
 
     &:hover {
-      background: $off-white;
+      background: $light-gray;
     }
 
     &:active {
-      color: $off-white;
+      color: $light-gray;
     }
 
     &:before {
@@ -333,12 +312,7 @@ select {
   height: 34px;
   border: 1px solid $light-gray;
   @include box-sizing(border-box);
-
-  &:focus {
-    outline: 0;
-    border: 1px solid $gold;
-    box-shadow: 0 0 3px $gold;
-  }
+  @include highlight-on-focus;
 }
 
 // Spinner to indicate loading content.
@@ -376,12 +350,6 @@ select {
 // .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
 // Styleguide 4.1.8 - Status Banners
-$unicode-good: "\2714";
-$unicode-meh: "\2691";
-$unicode-bad: "\2718";
-$bg-good: #dbfbd5;
-$bg-meh: #fcf6e5;
-$bg-bad: #ffe0e0;
 
 .messages { // Drupal's default message class
   position: relative;
@@ -389,35 +357,35 @@ $bg-bad: #ffe0e0;
   margin: 0.5rem;
   text-align: left;
   border-radius: $sm-border-radius;
-  background: $bg-meh;
+  background: $light-yellow;
 
   &:before {
-    content: $unicode-meh;
+    content: $unicode-flag;
     position: absolute;
     left: 1.5em;
-    color: darken($bg-meh, 10%);
+    color: darken($light-yellow, 10%);
   }
 
   &.status,   // Default "success" message for Drupal
   &.success { // Default "success" message for rational people
-    background: $bg-good;
+    background: $light-green;
 
     &:before {
-      content: $unicode-good;
+      content: $unicode-check;
       position: absolute;
       left: 1.5em;
-      color: darken($bg-good, 15%);
+      color: darken($light-green, 15%);
     }
   }
 
   &.error { // Drupal default "error"
-    background: $bg-bad;
+    background: $light-red;
 
     &:before {
-      content: $unicode-bad;
+      content: $unicode-cross;
       position: absolute;
       left: 1.5em;
-      color: darken($bg-bad, 15%);
+      color: darken($light-red, 15%);
     }
   }
 }

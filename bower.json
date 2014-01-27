@@ -1,6 +1,6 @@
 {
   "name": "pattern-library",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "main": ["assets/neue.css", "assets/neue.js"],
   "ignore": [
     "app.rb",
@@ -11,10 +11,10 @@
     "Gemfile",
     "Gemfile.lock",
     "Gruntfile.js",
-    "js/**/*",
-    "scss/**/*",
-    "tests/**/*",
-    "views/**/*",
+    "js/",
+    "scss/",
+    "tests/",
+    "views/",
     ".jshintrc",
     "wercker.yml",
     ".editorconfig",

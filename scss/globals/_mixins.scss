@@ -30,15 +30,17 @@
   }
 }
 
-// Shortcut for writing media query targeting high-DPI screens.
-//
-// Compatible in IE9+, Chrome 4+, Firefox 3.5+, Safari 3.1+.
-@mixin high-dpi {
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dppx) { @content; }
-}
-
 // Shortcut for writing sprites that scale down on mobile displays.
 @mixin responsive-sprite($pos-x, $pos-y) {
   background-position: $pos-x $pos-y;
   @include respond-to(phones) { background-position: $pos-x/2 $pos-y/2; }
+}
+
+// Border highlight on input focus
+@mixin highlight-on-focus {
+  &:focus {
+    outline: 0;
+    border: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
 }

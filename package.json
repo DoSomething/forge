@@ -1,6 +1,6 @@
 {
   "name": "ds-neue",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",

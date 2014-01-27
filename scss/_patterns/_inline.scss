@@ -10,7 +10,7 @@ figure {
 }
 
 figcaption {
-  color: $dark-gray;
+  color: $med-gray;
   font-size: 0.8rem;
   text-align: center;
   padding: 0 1rem 1.5rem;
@@ -38,11 +38,11 @@ img.bordered {
     color: $light-gray;
 
     &:hover {
-      color: $off-black;
+      color: lighten($light-gray, 10%);
     }
 
     &:visited {
-      color: $light-gray;
+      color: lighten($light-gray, 10%);
     }
   }
 }
@@ -52,7 +52,7 @@ img.bordered {
 //
 // Styleguide 4.2.4 - Pullquote
 .pullquote {
-  color: $light-blue;
+  color: $purple;
   font-size: 1.5rem;
   @include respond-to(tablets) {
     font-size: 1.5rem;
