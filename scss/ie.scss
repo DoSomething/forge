@@ -1,9 +1,16 @@
-// Overrides for Internet Explorer.
-// Abandon hope, all ye who enter here.
+//                 ____  _____    _   __
+//                / __ \/ ___/   / | / /__  __  _____
+//               / / / /\__ \   /  |/ / _ \/ / / / _ \
+//              / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+//             /_____//____/  /_/ |_/\___/\__,_/\___/
+//
+//   ==================== Internet Explorer ====================
+//
+//   Overrides for Internet Explorer 8 and lower. Abandon hope,
+//   all ye who enter here. This is where standards go to die.
+//
 
-@import "vendor/bourbon/bourbon";
-@import "globals/variables";
-@import "globals/mixins";
+@import "helpers";
 
 form.search {
   input[type="search"] {
