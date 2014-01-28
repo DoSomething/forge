@@ -1,7 +1,0 @@
-.is-stuck {
-  @include respond-to(widescreens_and_tablets) {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-  }
-}
