@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/content_for'
 require 'kss'
 
-set :public_folder, Proc.new { File.join(root, "assets") }
+set :public_folder, Proc.new { File.join(root, "dist") }
 
 get '/' do
   @styleguide = Kss::Parser.new('scss/')
