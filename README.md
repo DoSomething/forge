@@ -35,6 +35,8 @@ You can also run the styleguide on your local machine! Here's the steps:
   3. Run `rackup` to start the server (or just link to Pow).
   4. Check it out in your browser!
 
+Check the [Deployment](https://github.com/DoSomething/ds-neue/wiki/Deployments) page on the wiki for instructions to deploy a new version of the Pattern Library. You must be a collaborator on the repo to deploy new versions.
+
 # Code Guidelines
 Code guidelines for SCSS and JavaScript can be found as a `README` within their respective directories in the repo. We also use [JSHint](http://www.jshint.com/) to keep our JavaScript neat and tidy.
 
