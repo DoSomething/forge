@@ -5,22 +5,22 @@
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 400;
-  src: url('fonts/proxima-nova/ProximaNova-Reg.eot');
-  src: url('fonts/proxima-nova/ProximaNova-Reg.eot?') format('eot'), url('fonts/proxima-nova/ProximaNova-Reg.woff') format('woff');
+  src: url('assets/fonts/proxima-nova/ProximaNova-Regular.eot');
+  src: url('assets/fonts/proxima-nova/ProximaNova-Regular.eot?') format('eot'), url('assets/fonts/proxima-nova/ProximaNova-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 600;
-  src: url('fonts/proxima-nova/ProximaNova-SBold.eot');
-  src: url('fonts/proxima-nova/ProximaNova-SBold.eot?') format('eot'), url('fonts/proxima-nova/ProximaNova-SBold.woff') format('woff');
+  src: url('assets/fonts/proxima-nova/ProximaNova-SBold.eot');
+  src: url('assets/fonts/proxima-nova/ProximaNova-SBold.eot?') format('eot'), url('assets/fonts/proxima-nova/ProximaNova-SBold.woff') format('woff');
 }
 
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 700;
-  src: url('fonts/proxima-nova/ProximaNova-Bold.eot');
-  src: url('fonts/proxima-nova/ProximaNova-Bold.eot?') format('eot'), url('fonts/proxima-nova/ProximaNova-Bold.woff') format('woff');
+  src: url('assets/fonts/proxima-nova/ProximaNova-Bold.eot');
+  src: url('assets/fonts/proxima-nova/ProximaNova-Bold.eot?') format('eot'), url('assets/fonts/proxima-nova/ProximaNova-Bold.woff') format('woff');
 }
 
 // ------------
@@ -30,7 +30,7 @@
 @font-face {
   font-family: "Engineer";
   font-weight: 400;
-  src: url("fonts/engineer/LEngineer-Regular.otf");
+  src: url("assets/fonts/engineer/LEngineer-Regular.otf");
 }
 
 // ---------------------
@@ -39,11 +39,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon/icomoon.eot');
-  src: url('fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-    url('fonts/icomoon/icomoon.ttf') format('truetype'),
-    url('fonts/icomoon/icomoon.woff') format('woff'),
-    url('fonts/icomoon/icomoon.svg#icomoon') format('svg');
+  src: url('assets/fonts/icomoon/icomoon.eot');
+  src: url('assets/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/icomoon/icomoon.ttf') format('truetype'),
+    url('assets/fonts/icomoon/icomoon.woff') format('woff'),
+    url('assets/fonts/icomoon/icomoon.svg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
