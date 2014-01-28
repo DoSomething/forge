@@ -1,0 +1,24 @@
+//                 ____  _____    _   __
+//                / __ \/ ___/   / | / /__  __  _____
+//               / / / /\__ \   /  |/ / _ \/ / / / _ \
+//              / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+//             /_____//____/  /_/ |_/\___/\__,_/\___/
+//
+//   ========================= Helpers =========================
+//
+//   We keep all of our SCSS variables and mixins in this file,
+//   so they can be used by Neue but also imported elsewhere
+//   for use in app-specific code.
+//
+//   ** WARNING ** Nothing in this file should render CSS! This
+//   file is exclusively for pre-processor variables and mixins.
+//
+
+
+// We use Bourbon for base SCSS helpers.
+// http://bourbon.io/docs/
+@import "vendor/bourbon/bourbon";
+
+// We define some of our own variables and mixins to keep things DRY.
+@import "globals/variables";
+@import "globals/mixins";
