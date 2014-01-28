@@ -30,8 +30,13 @@ $btn-gray: #ccc;
 
 // Families
 $font-sans: "Trebuchet MS", sans-serif;
-$font-proxima-nova: "Proxima Nova", $font-sans;
+$font-proxima-nova: "Proxima Nova";
 $font-hand-written: "Engineer";
+
+// Weights
+$weight-normal: 400;
+$weight-sbold: 600;
+$weight-bold: 700;
 
 // Sizes
 $font-largest: 3.157rem;
@@ -44,7 +49,7 @@ $font-smaller: 0.563rem;
 $font-smallest: 0.422rem;
 
 // Colors
-$font-color: #444;
+$copy-color: #444;
 
 // Unicode
 $unicode-check: "\2714";
