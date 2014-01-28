@@ -14,7 +14,7 @@
 
 form.search {
   input[type="search"] {
-    color: $off-black;
+    color: $copy-color;
     padding-top: 8px;
     padding-bottom: 6px;
   }
@@ -22,7 +22,7 @@ form.search {
 
 form.search {
   input[type="search"] {
-    background: $off-black url('images/search.png') no-repeat 12px 6px;
+    background: $med-gray url('images/search.png') no-repeat 12px 6px;
 
     &:hover {
       background-position: 12px -21px;
