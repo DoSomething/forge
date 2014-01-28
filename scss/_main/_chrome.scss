@@ -1,11 +1,3 @@
-// CSS for interface chrome (containers, "application-level" menus, etc.)
-
-.wrapper {
-  @include flex-width;
-  position: relative;
-  margin: 0 auto;
-}
-
 // Gray utility bar at the top of the site
 nav.utility {
   background: $dark-gray;
@@ -58,7 +50,7 @@ nav.utility {
     cursor: pointer;
     width: 10px;
     font-size: 0.9rem;
-    @include retina-image('images/search.png', 12px 6px);
+    @include retina-image('assets/images/search.png', 12px 6px);
     @include transition(width 0.25s, background-color 0.25s);
 
     &:focus {
