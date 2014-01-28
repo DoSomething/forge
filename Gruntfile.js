@@ -133,6 +133,12 @@ module.exports = function(grunt) {
     checkrepo: {
       clean: {
         clean: true, // Require repo to be clean (no unstaged changes)
+      },
+      validtag: {
+        tag: {
+          valid: '<%= pkg.version %>', // check if pkg.version is valid semantic version
+          lt: '<%= pkg.version %>' // check if highest repo tag is lower than pkg.version
+        }
       }
     },
 
@@ -205,8 +211,8 @@ module.exports = function(grunt) {
   grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "copy:main", "imagemin", "uglify:prod"]); // used when preparing code for distribution
 
   // deploy
-  grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function(versionType) {
-    grunt.task.run("checkbranch:master", "test:js", "lint", "prod", "checkrepo:clean", "bump:" + (versionType || "patch"), "shell:dist");
+  grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function() {
+    grunt.task.run("checkbranch:master", "checkbranch:validtag", "test:js", "lint", "prod", "checkrepo:clean", "shell:dist");
   });
 
 
