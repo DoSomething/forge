@@ -40,9 +40,4 @@
       b: parseInt(result[3], 16)
     } : null;
   }
-
-
-  jQuery(document).ready(function() {
-    window.DS.LocationFinder.initialize(jQuery("#locfinder"), {});
-  });
 })(jQuery);
