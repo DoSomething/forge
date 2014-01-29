@@ -53,10 +53,10 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, src: ["assets/images/**", "!images/**/*"], dest: "dist/"},
+          {expand: true, src: ["assets/images/**"], dest: "dist/"},
           {expand: true, src: ["assets/kss/**"], dest: "dist/"},
           {expand: true, src: ["assets/fonts/**"], dest: "dist/"},
-          {src: "scss/helpers.scss", dest: "dist/helpers.scss"},
+          {expand: true, src: ["scss/**"], dest: "dist/"},
           {src: "README.md", dest: "dist/README.md"},
           {src: "LICENSE", dest: "dist/LICENSE"},
           {src: "bower.json", dest: "dist/bower.json"},
