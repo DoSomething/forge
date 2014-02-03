@@ -1,15 +1,16 @@
 @import "../vendor/neat/neat-helpers";
 
-// Set up grid measurements.
+// Set up grid measurements (using desktop dimensions to
+// calculate, but they'll get made into percentages).
 $column: 80px;
 $gutter: 20px;
-$grid-columns: 12;
 $max-width: 1200px;
 
-// Breakpoints:
-$tablet: new-breakpoint(max-width 768px 8);
-$mobile: new-breakpoint(max-width 480px 4);
+$grid-columns: 6; // mobile first, dude
 
+// Breakpoints:
+$tablet: new-breakpoint(min-width 768px 12); // 12 columns
+$desktop: new-breakpoint(max-width 1080px 12); // 12 columns
 
 // Development
 // $visual-grid: true;
