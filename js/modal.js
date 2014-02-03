@@ -1,6 +1,6 @@
 //
 //
-//  **Show/hide modals.** Link should have `.js-trigger-modal` class, and
+//  **Show/hide modals.** Link should have `.js-modal-link` class, and
 // it's `href` should point to the hash of the modal. By convention, the
 // modal ID should be prefixed with `modal--`.
 //
@@ -9,43 +9,64 @@
 (function($) {
   "use strict";
 
+  var modalIsOpen = false;
+  var $modal, $modalContent;
+
   $(document).ready(function() {
     // Trigger modal on click:
-    $(".js-trigger-modal").on("click", function(e) {
+    $("body").on("click", ".js-modal-link", function(e) {
       e.preventDefault();
 
-      // We find the modal based on the ID in the link"s `href`. For example,
-      // `<a href="#modal--faq">Click me</a>` would open `<div id="modal--faq"></div>`.
-      var href = $(e.target.hash);
+      var href;
+      if( $(this).data("cached-modal") ) {
+        href = $(this).data("cached-modal");
+      } else if ( e.target.hash.charAt(0) === "#"  ) {
+        // We find the modal based on the ID in the link"s `href`. For example,
+        // `<a class="js-modal-link" href="#modal--faq">Click me</a>` would open `<div id="modal--faq"></div>`.
+        href = $(e.target.hash);
+      } else {
+        // TODO We should handle AJAX loading things in.
+      }
 
-      $("body").addClass("modal-open");
+      if( !modalIsOpen ) {
+        // create modal in DOM
+        $modal = $("<div class='modal'></div>");
+        $modalContent = $("<div class='modal-content'></div>");
+        $modal.append($modalContent);
+        $modalContent.html( $(href).html() );
 
-      $(href).show();
+        // set up overlay and show modal
+        $("body").addClass("modal-open");
+        $("body").append($modal);
+        $modal.addClass("fade-in");
+        $modalContent.addClass("fade-in-up");
+        $modal.show();
 
-      if(Modernizr.cssanimations) {
-        $(href).addClass("animated fade-in");
-        $(href).find(".modal-content").addClass("animated fade-in-up");
+        modalIsOpen = true;
+
+      } else {
+        // modal is already open, so just replace current content
+
+        $modalContent.html( $(href).html() );
       }
 
       // Close modal when "x" is clicked:
-      $(".js-close-modal").on("click", function(e) {
+      $modal.on("click", ".js-close-modal", function(e) {
         e.preventDefault();
-        var modal = $(this).closest(".modal");
 
         if(Modernizr.cssanimations) {
-          modal.find(".modal-content").addClass("fade-out-down");
-          modal.addClass("fade-out");
+          $modalContent.addClass("fade-out-down");
+          $modal.addClass("fade-out");
 
           $("body").removeClass("modal-open");
 
-          modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
-            modal.hide();
-
-            modal.removeClass("animated fade-in fade-out");
-            modal.find(".modal-content").removeClass("animated fade-in-up fade-out-down");
+          $modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
+            $modal.remove();
+            modalIsOpen = false;
           });
         } else {
-          modal.hide();
+          $("body").removeClass("modal-open");
+          $modal.remove();
         }
 
       });

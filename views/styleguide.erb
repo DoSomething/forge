@@ -270,17 +270,25 @@
     <div class="row section">
       <h4 id="widgets">4.4 Widgets</h4>
 
-    <% styleguide_block '4.4.1 - Modal (Popup)' do %>
-      <div class="modal" id="modal--example">
-        <div class="modal-content">
-          <a href="#" class="js-close-modal modal-close-button">&times;</a>
-          <h2>Example Content</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
-        </div>
+      <% styleguide_block '4.4.1 - Modal (Popup)' do %>
+
+      <a href="#modal--example" class="js-modal-link">Show example modal</a> or <a href="http://www.google.com" data-cached-modal="#modal--example" class="js-modal-link">alternative syntax</a>
+
+
+
+      <div class="cached-modal" id="modal--example">
+        <a href="#" class="js-close-modal modal-close-button">&times;</a>
+        <h2>Example Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let's take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
       </div>
 
-      <a href="#modal--example" class="js-trigger-modal">Show example modal</a>
-
+      <div class="cached-modal" id="modal--pagetwo">
+        <a href="#" class="js-close-modal modal-close-button">&times;</a>
+        <h2>Page 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+        <a href="#" class="btn js-close-modal">Alright, got it.</a>
+      </div>
     <% end %>
 
     <div class="row section">
