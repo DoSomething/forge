@@ -7,9 +7,13 @@
 
 
 .sidebar {
-  @include span-columns(4);
+  @include media($tablet) {
+    @include span-columns(3);
+  }
 }
 
 .sidebar-content {
-  @include span-columns(8);
+  @include media($tablet) {
+    @include span-columns(9);
+  }
 }
