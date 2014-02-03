@@ -17,26 +17,16 @@
     $("body").on("click", ".js-modal-link", function(e) {
       e.preventDefault();
 
-      console.log( $(e.target.hash) );
-
       var href;
       if( $(this).data("cached-modal") ) {
-
         href = $(this).data("cached-modal");
-
       } else if ( e.target.hash.charAt(0) === "#"  ) {
-
         // We find the modal based on the ID in the link"s `href`. For example,
         // `<a class="js-modal-link" href="#modal--faq">Click me</a>` would open `<div id="modal--faq"></div>`.
         href = $(e.target.hash);
-
       } else {
-
         // TODO We should handle AJAX loading things in.
-
       }
-
-      console.log(modalIsOpen);
 
       if( !modalIsOpen ) {
         // create modal in DOM
@@ -56,8 +46,6 @@
 
       } else {
         // modal is already open, so just replace current content
-
-        console.log( $modalContent );
 
         $modalContent.html( $(href).html() );
       }
