@@ -59,7 +59,6 @@ var ValidationFunctions = ValidationFunctions || {};
       var age = Math.floor( (now - birthDate) / 31536000000 );
       // 31536000000 milliseconds in a year! math!
 
-
       if (age < 0)  {
         return done({
           success: false,
@@ -100,7 +99,6 @@ var ValidationFunctions = ValidationFunctions || {};
           message: "That doesn't seem right."
         });
       }
-
     },
 
 
@@ -128,7 +126,6 @@ var ValidationFunctions = ValidationFunctions || {};
             });
           }
         });
-
       } else {
         return done({
           success: false,
@@ -144,7 +141,6 @@ var ValidationFunctions = ValidationFunctions || {};
           success: true,
           message: "Keep it secret, keep it safe!"
         });
-
       } else {
         return done({
           success: false,
@@ -152,7 +148,6 @@ var ValidationFunctions = ValidationFunctions || {};
         });
       }
     }
-
   };
 
   $(document).ready(function() {
@@ -175,7 +170,6 @@ var ValidationFunctions = ValidationFunctions || {};
       e.preventDefault();
 
       var $field = $(this);
-
       var fieldValue = $field.val();
       var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
 
@@ -183,10 +177,7 @@ var ValidationFunctions = ValidationFunctions || {};
       // Don't validate empty form fields, that's just rude.
       if($fieldLabel && fieldValue !== "") {
         var validationFunction = $(this).data("validate");
-        if( validationFunction !== "" &&
-            ValidationFunctions[validationFunction] &&
-            typeof( ValidationFunctions[validationFunction] ) === "function" )
-        {
+        if( hasValidationFunction(validationFunction) ) {
           // once we know this is a valid validation (heh), let's do it.
           ValidationFunctions[validationFunction](fieldValue, function(result) {
             showValidationMessage($fieldLabel, result);
@@ -203,7 +194,6 @@ var ValidationFunctions = ValidationFunctions || {};
         var $form = $(this);
         var $validationFields = $form.find(".js-validate").filter("[data-validate-required]");
         var validationResults = [];
-        // debugger;
 
         $validationFields.each(function() {
           var $field = $(this);
@@ -212,12 +202,8 @@ var ValidationFunctions = ValidationFunctions || {};
 
           var validationFunction = $(this).data("validate");
 
-          if( validationFunction !== "" &&
-              ValidationFunctions[validationFunction] &&
-              typeof( ValidationFunctions[validationFunction] ) === "function" )
-          {
+          if( hasValidationFunction(validationFunction) ) {
             ValidationFunctions[validationFunction](fieldValue, function(result) {
-              // debugger;
               validationResults.push(showValidationMessage($fieldLabel, result));
               if(validationResults.length === $validationFields.length) {
                 // we've validated all that can be validated
@@ -276,6 +262,15 @@ var ValidationFunctions = ValidationFunctions || {};
       return result.success;
     }
   });
+
+  // Checks if function exists in the ValidationFunctions object
+  function hasValidationFunction(name) {
+    if( name !== "" && ValidationFunctions[name] && typeof( ValidationFunctions[name] ) === "function" ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 
 })(jQuery);
