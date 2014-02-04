@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ["js/**/*.js", "tests/**/*.js"],
-        tasks: ["jshint:all", "uglify:dev"]
+        tasks: ["jshint:all", "uglify:dev", "test:js"]
       },
       images: {
         files: ["assets/images/**/*.{png,jpg,jpeg,gif}"],
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
   grunt.registerTask("test:js", ["qunit"]);
 
   // build
-  grunt.registerTask("build", ["lint", "sass:compile", "imagemin", "uglify:dev", "copy:main", "docco"]);
+  grunt.registerTask("build", ["lint", "sass:compile", "imagemin", "uglify:dev", "copy:main", "docco", "test:js"]);
   grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "copy:main", "imagemin", "uglify:prod"]); // used when preparing code for distribution
 
   // deploy
