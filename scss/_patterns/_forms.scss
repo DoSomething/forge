@@ -6,9 +6,9 @@ label {
   clear: both;
   width: 100%;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 1em 1em 0.25em;
-  height: 1.25em;
+  height: 1.5em;
   overflow: hidden;
 
   .inner-label {
@@ -18,7 +18,7 @@ label {
 
   &.show-message {
     .inner-label {
-      top: -1.25em;
+      top: -1.5em;
     }
   }
 
@@ -29,7 +29,7 @@ label {
 
   .message {
     &.error {
-      color: $light-yellow;
+      color: $red;
     }
 
     &.warning {
@@ -37,7 +37,7 @@ label {
     }
 
     &.success {
-      color: $light-green;
+      color: $purple;
     }
   }
 }
