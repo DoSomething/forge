@@ -1,8 +1,11 @@
 //
 //
-// Form validation logic. Form element is validated
-// based on `data-validate` attribute, and validation
-// output is placed in corresponding <label>.
+// Form validation logic. Form element is validated based on
+// `data-validate` attribute, and validation output is placed
+// in corresponding <label>. Use `js-validate-required`
+// attribute to validate field before submission.
+//
+// Input field must have `.js-validate` class.
 //
 //
 
@@ -16,12 +19,12 @@ var ValidationFunctions = ValidationFunctions || {};
   ValidationFunctions = {
     name: function(string, done) {
       if( string !== "" ) {
-        done({
+        return done({
           success: true,
           message: "Hey, " + string + "!"
         });
       } else {
-        done({
+        return done({
           success: false,
           message: "We need your first name."
         });
@@ -44,7 +47,7 @@ var ValidationFunctions = ValidationFunctions || {};
         birthDay = parseInt(birthday[2]);
         birthYear = parseInt(birthday[0]);
       } else {
-        done({
+        return done({
           success: false,
           message: "Enter your birthday MM/DD/YYYY!"
         });
@@ -58,41 +61,41 @@ var ValidationFunctions = ValidationFunctions || {};
 
 
       if (age < 0)  {
-        done({
+        return done({
           success: false,
           message: "Are you a time traveller?"
         });
       } else if( age > 0 && age <= 13 ) {
-        done({
+        return done({
           success: false,
           message: "You need to be 13+ to join, sorry!"
         });
       } else if( age > 13 && age <= 24) {
-        
+
         if (birthDate.getMonth() === now.getMonth() && now.getDate() === birthDate.getDate() ) {
-          done({
+          return done({
             success: true,
             message: "Wow, happy birthday!"
           });
         } else {
-          done({
+          return done({
             success: true,
             message: "Cool, " + age + "!"
           });
         }
 
       } else if (age > 24 && age < 130) {
-        done({
+        return done({
           success: true,
           message: "Yikes, you're old!"
         });
       } else if (string === "") {
-        done({
+        return done({
           success: false,
           message: "We need your birthday."
         });
       } else {
-        done({
+        return done({
           success: false,
           message: "That doesn't seem right."
         });
@@ -113,13 +116,13 @@ var ValidationFunctions = ValidationFunctions || {};
                     "aim.com", "ymail.com", "rocketmail.com", "bellsouth.net", "cox.net", "charter.net", "me.com",
                     "earthlink.net", "optonline.net", "dosomething.org"],
           suggested: function(s) {
-            done({
+            return done({
               success: true,
               suggestion: s
             });
           },
           empty: function() {
-            done({
+            return done({
               success: true,
               message: "Great, thanks!"
             });
@@ -127,7 +130,7 @@ var ValidationFunctions = ValidationFunctions || {};
         });
 
       } else {
-        done({
+        return done({
           success: false,
           message: "We need a valid email."
         });
@@ -137,13 +140,13 @@ var ValidationFunctions = ValidationFunctions || {};
 
     password: function(string, done) {
       if(string.length > 6) {
-        done({
+        return done({
           success: true,
           message: "Keep it secret, keep it safe!"
         });
 
       } else {
-        done({
+        return done({
           success: false,
           message: "Must be 6+ characters."
         });
@@ -167,16 +170,15 @@ var ValidationFunctions = ValidationFunctions || {};
       }
     });
 
-    // Validate on blur 
+    // Validate on blur
     $("body").on("blur", ".js-validate", function(e) {
       e.preventDefault();
 
-      var field = $(this);
-      
-      var fieldValue = field.val();
-      var $fieldLabel = $("label[for='" + field.attr("id") + "']");
-      var $fieldMessage = $fieldLabel.find(".message");
-      
+      var $field = $(this);
+
+      var fieldValue = $field.val();
+      var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
+
       // Don't validate if we don't have a label to show results in.
       // Don't validate empty form fields, that's just rude.
       if($fieldLabel && fieldValue !== "") {
@@ -187,41 +189,93 @@ var ValidationFunctions = ValidationFunctions || {};
         {
           // once we know this is a valid validation (heh), let's do it.
           ValidationFunctions[validationFunction](fieldValue, function(result) {
-            if(result.message) {
-              $fieldMessage.text(result.message);
-
-              if(result.success === true) {
-                $fieldMessage.removeClass("success error warning");
-                $fieldMessage.addClass("success");
-              } else {
-                $fieldMessage.removeClass("success error warning");
-                $fieldMessage.addClass("error");
-              }
-            }
-
-            if(result.suggestion) {
-              $fieldMessage.html("Did you mean <a href='#' class='js-mailcheck-fix'>" + result.suggestion.full + "</a>?");
-              $fieldMessage.removeClass("success error warning");
-              $fieldMessage.addClass("warning");
-            }
-
-            $fieldLabel.addClass("show-message");
-
-            $(".js-mailcheck-fix").on("click", function(e) {
-              e.preventDefault();
-
-              var $field = $("#" + $(this).closest("label").attr("for") );
-              $field.val( $(this).text() );
-              $field.trigger("blur");
-            });
-
-            field.on("focus", function() {
-              $fieldLabel.removeClass("show-message");
-            });
+            showValidationMessage($fieldLabel, result);
           });
         }
       }
     });
+
+    // Validate form on submit
+    $("form").on("submit", function(e, isValidated) {
+      if(isValidated === true) {
+        return true;
+      } else {
+        var $form = $(this);
+        var $validationFields = $form.find(".js-validate").filter("[data-validate-required]");
+        var validationResults = [];
+        // debugger;
+
+        $validationFields.each(function() {
+          var $field = $(this);
+          var fieldValue = $field.val();
+          var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
+
+          var validationFunction = $(this).data("validate");
+
+          if( validationFunction !== "" &&
+              ValidationFunctions[validationFunction] &&
+              typeof( ValidationFunctions[validationFunction] ) === "function" )
+          {
+            ValidationFunctions[validationFunction](fieldValue, function(result) {
+              // debugger;
+              validationResults.push(showValidationMessage($fieldLabel, result));
+              if(validationResults.length === $validationFields.length) {
+                // we've validated all that can be validated
+                $form.trigger("submit", true);
+              }
+            });
+          }
+        });
+
+        if($validationFields.length === 0) {
+          // if there are no fields to be validated, submit!
+          $form.trigger("submit", true);
+        }
+
+        return false; // don't submit form, wait for callback with `true` parameter
+      }
+    });
+
+    function showValidationMessage($fieldLabel, result) {
+      var $field = $("#" + $fieldLabel.attr("for"));
+      var $fieldMessage = $fieldLabel.find(".message");
+
+      $field.removeClass("shake");
+      $fieldMessage.removeClass("success error warning");
+
+      if(result.message) {
+        $fieldMessage.text(result.message);
+
+        if(result.success === true) {
+          $fieldMessage.addClass("success");
+        } else {
+          $field.addClass("shake");
+          $fieldMessage.addClass("error");
+        }
+      }
+
+      if(result.suggestion) {
+        $fieldMessage.html("Did you mean <a href='#' class='js-mailcheck-fix'>" + result.suggestion.full + "</a>?");
+        $fieldMessage.addClass("warning");
+      }
+
+      $fieldLabel.addClass("show-message");
+
+      $(".js-mailcheck-fix").on("click", function(e) {
+        e.preventDefault();
+
+        var $field = $("#" + $(this).closest("label").attr("for"));
+        $field.val($(this).text());
+        $field.trigger("blur");
+      });
+
+      $field.on("focus", function() {
+        $fieldLabel.removeClass("show-message");
+      });
+
+      return result.success;
+    }
   });
+
 
 })(jQuery);
