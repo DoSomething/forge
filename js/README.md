@@ -28,7 +28,6 @@ We have some code guidelines to make sure that everyone can work on the same pro
  - Use `// TODO: ` to annotate solutions to problems.
 
 #### Modules
- - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren"t errors in production when the scripts get concatenated. ([Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933))
  - The file should be named with `camelCase` and match the name of the single export.
  - Always declare `"use strict";` at the top of the module.
  - See `_exampleModule.js` for a working example.
