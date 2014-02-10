@@ -29,35 +29,23 @@ h1 {
   font-weight: $weight-bold;
 
   @include respond-to(tablets) {
-    font-size: $font-larger;
-  }
-}
-
-h2 {
-  font-size: $font-larger;
-  font-weight: $weight-bold;
-
-  @include respond-to(tablets) {
     font-size: $font-large;
   }
 }
 
-h3 {
+h2 {
   font-size: $font-large;
-  font-weight: $weight-sbold;
+  font-weight: $weight-bold;
+}
 
-  @include respond-to(widescreens) {
-    font-size: $font-medium;
-  }
+h3 {
+  font-size: $font-medium;
+  font-weight: $weight-sbold;
 }
 
 h4 {
-  font-size: $font-medium;
+  font-size: $font-regular;
   font-weight: $weight-sbold;
-
-  @include respond-to(widescreens) {
-    font-size: $font-regular;
-  }
 }
 
 // Inline text elements.

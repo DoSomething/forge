@@ -21,9 +21,9 @@
 // Basic interface and layout building blocks
 @import "globals/fonts";
 @import "vendor/reset";
+@import "_main/layout";
 @import "_main/base";
 @import "_main/chrome";
-@import "_main/layout";
 @import "_main/animations";
 
 // Interface patterns

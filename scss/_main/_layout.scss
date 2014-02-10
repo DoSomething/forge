@@ -1,19 +1,27 @@
-// Sidebar and content pattern
-// TODO : Where does this belong?
-
-.container {
+/* Bourbon Neat outer-container mixin with support for outer gutters. */
+@mixin outer-container-margin {
   @include outer-container;
-}
-
-
-.sidebar {
-  @include media($tablet) {
-    @include span-columns(3);
+  max-width: $max-width;
+  padding: 0 flex-gutter($grid-columns) / 2;
+  @include box-sizing(content-box);
+  @each $breakpoint in $visual-grid-breakpoints {
+    @if $breakpoint != nil {
+      @include media($breakpoint) {
+        padding: 0 flex-gutter($grid-columns);
+      }
+    }
   }
 }
 
-.sidebar-content {
+div[role="main"] {
+  @include outer-container-margin;
+}
+
+.page {
   @include media($tablet) {
-    @include span-columns(9);
+    @include span-columns(8);
+    @include shift(2);
   }
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }

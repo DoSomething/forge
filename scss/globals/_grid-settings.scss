@@ -13,4 +13,6 @@ $tablet: new-breakpoint(min-width 768px 12); // 12 columns
 $desktop: new-breakpoint(max-width 1080px 12); // 12 columns
 
 // Development
-// $visual-grid: true;
+$visual-grid: true;
+$visual-grid-index: front;
+$visual-grid-color: #fcc;
