@@ -7,7 +7,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 
@@ -18,14 +17,12 @@
   <meta property="og:title" content="DoSomething.org">
   <meta property="og:description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
   <meta property="og:type" content="non_profit">
-
   <meta property="description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
 
-  <!-- NOTE: these should really be loaded at the end of the <body> tag for performance.
-       We're loading them here so that we can use inline scripts for quick mock-ups. -->
+  <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
+
   <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="/neue.js"></script>
-
 
   <!--[if lt IE 9]>
     <link rel="stylesheet" href="/ie.css" type="text/css" />
@@ -35,83 +32,29 @@
 
 </head>
 <body>
-<nav id="top" class="utility">
-  <div class="page-width">
-    <a href="#" class="utility-link js-menu-toggle">Menu</a>
-    <ul class="utility-links">
-      <li class="search">
-      <form action="#">
-        <input name="query" type="search">
-      </form>
-      </li>
-      <li><a class="utility-link" href="#">Help</a></li>
-      <li><a href="#modal--auth-login" class="utility-link js-trigger-modal">Sign In</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="masthead-wrapper">
-  <nav class="masthead">
+<div class="nav--wrapper">
+  <nav class="main">
     <a class="logo" href="http://www.dosomething.org"><img src="/assets/images/ds-logo.png" alt="DoSomething.org"></a>
     <ul class="main-menu">
       <li>
-        <a class="menu-link" href="/about">About Us</a>
-        <ul class="dropdown">
-          <li><a href="/about/who-we-are">Who We Are</a></li>
-          <li><a href="/about/why-become-a-member">Why Become a Member?</a></li>
-          <li><a href="/about/team">Staff Bios</a></li>
-          <li><a href="/about/team/jobs">Jobs</a></li>
-          <li><a href="/about/team/internships">Internships</a></li>
-          <li><a href="/about/international">International</a></li>
-        </ul>
+        <a href="#">
+          <strong>Explore Campaigns</strong>
+          <span>Do Something to help</span>
+        </a>
       </li>
+
       <li>
-        <a class="menu-link" href="/campaigns">Campaigns</a>
-        <ul class="dropdown">
-          <li><a href="/women">25,000 Women</a></li>
-          <li><a href="http://pics.dosomething.org">Pics for Pets</a></li>
-          <li><a href="/hunt">The Hunt</a></li>
-          <li><a href="/iheartdad">I Heart Dad</a></li>
-          <li><a href="/undocumented">Undocumented</a></li>
-          <li><a href="/thumbwars">Thumb Wars</a></li>
-          <li><a href="/puppy">Puppy Text</a></li>
-          <li><a href="/baby">Pregnancy Text</a></li>
-          <li><a href="/band">Band Together</a></li>
-          <li><a href="/past-campaigns">Past Campaigns</a></li>
-        </ul>
+        <a href="#">
+          <strong>What is Do Something?</strong>
+          <span>Any cause, any time, anywhere</span>
+        </a>
       </li>
-      <li>
-        <a class="menu-link" href="/causes">Causes</a>
-        <ul class="dropdown">
-          <li><a href="/cause/animals">Animals</a></li>
-          <li><a href="/cause/bullying-and-violence">Bullying &amp; Violence</a></li>
-          <li><a href="/cause/disasters">Disasters</a></li>
-          <li><a href="/cause/discrimination">Discrimination</a></li>
-          <li><a href="/cause/education">Education</a></li>
-          <li><a href="/cause/environment">Environment</a></li>
-          <li><a href="/cause/homelessness-and-poverty">Homelessness &amp; Poverty</a></li>
-          <li><a href="/cause/human-rights">Human Rights</a></li>
-          <li><a href="/cause/our-troops">Our Troops</a></li>
-          <li><a href="/cause/physical-and-mental-health">Physical &amp; Mental Health</a></li>
-          <li><a href="/cause/sex-and-relationships">Sex &amp; Relationships</a></li>
-          <li><a href="/resources">All Resources</a></li>
-        </ul>
-      </li>
-      <li>
-        <a class="menu-link" href="/awesome-things">Awesome-Things</a>
-        <ul class="dropdown">
-          <li><a href="/scholarships">Scholarships</a></li>
-          <li><a href="/petitions">Petitions</a></li>
-          <li><a href="/quizzes">Quizzes</a></li>
-          <li><a href="/clubs">Clubs</a></li>
-          <li><a href="/awards">Do Something Awards</a></li>
-          <li><a href="/grants">Grants</a></li>
-          <li><a href="/bootcamp">Boot Camp</a></li>
-          <li><a href="/blog">Blog Center</a></li>
-          <li><a href="/projects">Projects</a></li>
-        </ul>
-      </li>
-    </ul>
+   </ul>
+    <div class="secondary-nav">
+      <form action="/search/?s=#" method="get" accept-charset="utf-8">
+        <input type="search" name="s" id="search" value="" placeholder="Search..." />
+      </form>
+    </div>
   </nav>
 </div>
 
@@ -119,57 +62,58 @@
   <%= yield %>
 </div>
 
-<div class="footer-wrapper">
+<div class="footer--wrapper">
   <footer class="main">
-    <div class="footer-col">
-      <h4>Connect</h4>
+    <div class="logo">
+      <a href="http://www.dosomething.org"><img src="/assets/images/ds-logo.png" alt="DoSomething.org"></a>
+    </div>
+    <div class="social">
       <ul>
-        <li><a href="/help">Help Center</a></li>
-        <li><a href="/tipsandtools/hotlines">Crisis Hotlines</a></li>
-        <li><a href="http://www.facebook.com/dosomething">Like Us on Facebook</a></li>
-        <li><a href="https://twitter.com/#!/dosomething">Follow Us on Twitter</a></li>
+        <li><a class="social-link" title="dosomething on Facebook" href="#">&#xe600;</a></li>
+        <li><a class="social-link" title="@dosomething on Twitter" href="#">&#xe603;</a></li>
+        <li><a class="social-link" title="@dosomething on Tumblr" href="#">&#xe602;</a></li>
+        <li><a class="social-link" title="@dosomething on Instagram" href="#">&#xe604;</a></li>
+        <li><a class="social-link" title="dosomething1 on YouTube" href="#">&#xe601;</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Show Your Love</h4>
+    <div class="col help">
+      <h4>Help</h4>
       <ul>
-        <li><a href="http://store.dosomething.org/">Wear Your Love</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="/rss">RSS Feed</a></li>
+         <li><a href="#">Contact</a></li>
+         <li><a href="#">Hotlines</a></li>
+         <li><a href="#">FAQ</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Popular Stuff</h4>
+    <div class="col knowus">
+      <h4>Get to Know Us</h4>
       <ul>
-        <li><a href="/awards">Do Something Awards</a></li>
-        <li><a href="/scholarships">Scholarships</a></li>
-        <li><a href="/clubs">Clubs</a></li>
-        <li><a href="/grants">Grants</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">TMI Agency</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Our Peeps</h4>
+    <div class="col about">
+      <h4>About</h4>
       <ul>
-        <li><a href="//www.tmiagency.org/">TMI Agency</a></li>
-        <li><a href="/about/partners">Partners</a></li>
-        <li><a href="/about/team/board">Board of Directors</a></li>
-        <li><a href="/yac">Youth Advisory Council</a></li>
-        <li><a href="/ds-virtual">#DSVirtual</a></li>
+        <li><a href="#">What is Do Something?</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Scholarships</a></li>
+        <li><a href="#">Jobs &amp; Internships</a></li>
+        <li><a href="#">Old People</a></li>
+        <li><a href="#">Sexy Financials</a></li>
+        <li><a href="#">International</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Random Stuff</h4>
-      <ul>
-        <li><a href="/faqs">FAQ</a></li>
-        <li><a href="/sitemap">Sitemap</a></li>
-        <li><a href="/about/stats">Mind-Blowing Stats</a></li>
-        <li><a href="/our-sexy-financials-and-impact">Sexy Financials and Impact</a></li>
-        <li><a href="/oldpeople">Old People</a></li>
-        <li><a href="/about/privacy">Privacy Policy</a></li>
-        <li><a href="/about/terms-of-service">Terms of Service</a></li>
+
+    <div class="subfooter">
+      <div class="tagline"><strong>Any cause, any time, anywhere.</strong> Join over 2.5 million young people taking action.</div>
+      <ul class="utility">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
       </ul>
     </div>
   </footer>
+
 </div>
 
 
