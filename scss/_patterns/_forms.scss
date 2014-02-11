@@ -67,9 +67,9 @@ input[type="text"], input[type="search"], input[type="password"] {
 //
 // Styleguide 4.1.3 - Search Fields
 input[type="search"] {
-  padding: 0.3em 0.3em 0.1em 36px;
+  padding: 0.25rem 0.25rem 0.25rem 36px;
   border-radius: 2em; // fully rounded borders indicate search box
-  background: #fff url('assets/images/search.png') no-repeat 16px 8px;
+  background: #fff url('assets/images/search.png') no-repeat 16px 6px;
 }
 
 // Multi-line textarea fields.

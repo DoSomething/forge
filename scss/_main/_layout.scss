@@ -19,7 +19,7 @@ div[role="main"] {
 
 .page {
   @include media($tablet) {
-    @include span-columns(8);
+    @include span-columns(12);
     @include shift(2);
   }
   margin-top: 6rem;
