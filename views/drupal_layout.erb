@@ -20,15 +20,7 @@
   <meta property="description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
 
   <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
-
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="/neue.js"></script>
-
-  <!--[if lt IE 9]>
-    <link rel="stylesheet" href="/ie.css" type="text/css" />
-    <script src="/ie/html5shiv.min.js"></script>
-    <script src="/ie/respond.min.js"></script>
-  <![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" href="/ie.css" type="text/css" /><![endif]-->
 
 </head>
 <body>
@@ -49,11 +41,17 @@
           <span>Any cause, any time, anywhere</span>
         </a>
       </li>
-   </ul>
+    </ul>
+
     <div class="secondary-nav">
-      <form action="/search/?s=#" method="get" accept-charset="utf-8">
-        <input type="search" name="s" id="search" value="" placeholder="Search..." />
-      </form>
+      <ul>
+        <li class="searchfield">
+          <form action="/search/?s=#" method="get" accept-charset="utf-8">
+            <input type="search" name="s" id="search" value="" placeholder="Search..." />
+          </form>
+        </li>
+        <li><a class="secondary-nav-item" href="#">Log In</a></li>
+      </ul>
     </div>
   </nav>
 </div>
@@ -79,7 +77,7 @@
     <div class="col help">
       <h4>Help</h4>
       <ul>
-         <li><a href="#">Contact</a></li>
+         <li><a href="#">Contact Us</a></li>
          <li><a href="#">Hotlines</a></li>
          <li><a href="#">FAQ</a></li>
       </ul>
@@ -106,7 +104,7 @@
     </div>
 
     <div class="subfooter">
-      <div class="tagline"><strong>Any cause, any time, anywhere.</strong> Join over 2.5 million young people taking action.</div>
+      <div class="tagline"><strong><a href="#">Join 2.5 million young people.</a></strong> Any cause, anytime, anywhere. *mic drop*</div>
       <ul class="utility">
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">Terms of Service</a></li>
@@ -126,11 +124,8 @@
   </div>
 </div>
 
-
-
-<!--[if lt IE 9]>
-  <script src="/ie/rem.min.js"></script>
-<![endif]-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="/neue.js"></script>
 
 </body>
 </html>
