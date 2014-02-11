@@ -14,12 +14,12 @@
     });
 
     // Hide utility bar items when search field is focused:
-    $(".search form input[type='search']").on("focus", function() {
-      $(".utility-link").addClass("is-hidden-on-phones");
+    $(".secondary-nav input[type='search']").on("focus", function() {
+      $(".secondary-nav-item").addClass("is-hidden-on-tablets");
     });
 
-    $(".search form input[type='search']").on("blur", function() {
-      $(".utility-link").removeClass("is-hidden-on-phones");
+    $(".secondary-nav input[type='search']").on("blur", function() {
+      $(".secondary-nav-item").removeClass("is-hidden-on-tablets");
     });
   });
 
