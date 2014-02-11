@@ -85,11 +85,52 @@
 
   .secondary-nav {
     float: right;
-    width: 200px;
     padding: 1rem 0;
+
+    ul {
+      float: right;
+      display: block;
+    }
+
+    li {
+      float: left;
+      margin-left: 0.75rem;
+    }
 
     input[type="search"] {
       margin-bottom: 0;
+      @include transition(width 0.25s);
+
+      @include media($tablet) {
+        border: 0;
+        width: 32px;
+
+        &:focus {
+          width: 140px;
+          border: 1px solid $off-black;
+        }
+      }
+
+      @include media($desktop) {
+        width: 140px;
+        border: 1px solid $off-black;
+
+        &:focus {
+          width: 200px;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      color: $off-black;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0.15rem;
+
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
 }
