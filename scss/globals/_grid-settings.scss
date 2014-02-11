@@ -6,11 +6,11 @@ $column: 80px;
 $gutter: 20px;
 $max-width: 1200px;
 
-$grid-columns: 6; // mobile first, dude
+$grid-columns: 8; // mobile first, dude
 
 // Breakpoints:
-$tablet: new-breakpoint(min-width 768px 12); // 12 columns
-$desktop: new-breakpoint(min-width 1080px 12); // 12 columns
+$tablet: new-breakpoint(min-width 768px 16); // 16 columns
+$desktop: new-breakpoint(min-width 1080px 16); // 16 columns
 
 // Development
 $visual-grid: true;
