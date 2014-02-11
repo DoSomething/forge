@@ -96,7 +96,7 @@ module.exports = function(grunt) {
           report: "gzip"
         },
         files: {
-          "dist/neue.js": ["js/**/*.js", "!js/polyfills/**/*.js"],
+          "dist/neue.js": ["js/vendor/**/*.js", "js/**/*.js"]
         }
       },
       dev: {
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          "dist/neue.js": ["js/**/*.js", "!js/polyfills/**/*.js"],
+          "dist/neue.js": ["js/vendor/**/*.js", "js/**/*.js"]
         }
       }
     },
