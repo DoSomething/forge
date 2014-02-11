@@ -2,15 +2,21 @@
 
 // Set up grid measurements (using desktop dimensions to
 // calculate, but they'll get made into percentages).
-$column: 80px;
-$gutter: 20px;
+$column: 59px;
+$gutter: 16px;
+
+// max width beyond which the grid shall not pass
 $max-width: 1200px;
 
 $grid-columns: 8; // mobile first, dude
 
 // Breakpoints:
-$tablet: new-breakpoint(min-width 768px 16); // 16 columns
-$desktop: new-breakpoint(min-width 1080px 16); // 16 columns
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1080px;
+
+// Media contexts
+$tablet: new-breakpoint(min-width $tablet-breakpoint 16); // 16 columns
+$desktop: new-breakpoint(min-width $desktop-breakpoint 16); // 16 columns
 
 // Development
 // $visual-grid: true;
