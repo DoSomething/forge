@@ -10,7 +10,7 @@ $grid-columns: 6; // mobile first, dude
 
 // Breakpoints:
 $tablet: new-breakpoint(min-width 768px 12); // 12 columns
-$desktop: new-breakpoint(max-width 1080px 12); // 12 columns
+$desktop: new-breakpoint(min-width 1080px 12); // 12 columns
 
 // Development
 $visual-grid: true;
