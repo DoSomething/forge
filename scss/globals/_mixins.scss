@@ -1,12 +1,3 @@
-// Makes element full-width up until the defined maximum page width.
-//
-// Compatible in IE7+, Chrome 4+, Firefox 2+, Safari 3.1+.
-@mixin flex-width {
-  max-width: $break-large - 100px;
-  width: 100%;
-}
-
-
 // Shortcut for writing media query targeting different types of devices.
 //
 // $media - String specifying the device(s) which this media query should apply to (options: widescreens, widescreens_and_tablets, tablets, tablets_and_phones, phones).
