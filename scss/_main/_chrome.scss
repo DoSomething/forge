@@ -28,8 +28,8 @@
         background: none; 
         margin-top: 3.5rem;
 
-        @include media(min-device-height 960px) {
-          margin-top: 4rem;
+       @include media($tall-mobile) { 
+          margin-top: 5rem;
         }
       }
 
