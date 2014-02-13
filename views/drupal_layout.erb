@@ -27,36 +27,39 @@
 <div class="nav--wrapper">
   <nav class="main">
     <a class="logo" href="http://www.dosomething.org"><img src="/assets/images/ds-logo.png" alt="DoSomething.org"></a>
-    <ul class="main-menu">
-      <li>
-        <a href="#">
-          <strong>Explore Campaigns</strong>
-          <span>Do Something to help</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="#">
-          <strong>What is Do Something?</strong>
-          <span>Any cause, any time, anywhere</span>
-        </a>
-      </li>
-    </ul>
-
-    <div class="secondary-nav">
-      <ul>
-        <li class="searchfield">
-          <form action="/search/?s=#" method="get" accept-charset="utf-8">
-            <input type="search" name="s" id="search" value="" placeholder="Search..." />
-          </form>
+    <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
+    <div class="menu">
+      <ul class="primary-nav">
+        <li>
+          <a href="#">
+            <strong>Explore Campaigns</strong>
+            <span>Lorem ipsum dolor.</span>
+          </a>
         </li>
-        <li><a class="secondary-nav-item" href="#">Log In</a></li>
+
+        <li>
+          <a href="#">
+            <strong>What is Do Something?</strong>
+            <span>Sit amet consequeter.</span>
+          </a>
+        </li>
       </ul>
+
+      <div class="secondary-nav">
+        <ul>
+          <li class="searchfield">
+            <form action="/search/?s=#" method="get" accept-charset="utf-8">
+              <input type="search" name="s" id="search" value="" placeholder="Search..." />
+            </form>
+          </li>
+          <li><a class="secondary-nav-item" href="#">Log In</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </div>
 
-<div role="main">
+<div role="main" class="wrapper">
   <%= yield %>
 </div>
 
