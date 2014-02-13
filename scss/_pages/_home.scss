@@ -1,35 +1,3 @@
-// Top introductory banner on homepage
-.full-width.wallpaper.ds-intro {
-  color: #fff;
-  background-image: url('images/bg-intro.jpg');
-  padding: 3rem 1rem 2rem;
-
-  .page-width.with-copy {
-    h1, p {
-      max-width: 35rem;
-      text-align: left;
-      padding: 0;
-    }
-
-    h1 {
-      font-family: $font-proxima-nova;
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
-      @include respond-to(widescreens_and_tablets) {
-        font-size: 2rem;
-        border-bottom: 4px solid rgb(255, 255, 255);
-        border-bottom: 4px solid rgba(255, 255, 255, 0.5);
-        padding-bottom: 0.3em;
-      }
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-}
-
 // Sponsor logos
 .homepage-sponsors {
   h4 {
@@ -51,20 +19,21 @@
     background-image: url(images/sponsors.png);
     background-repeat: no-repeat;
     display: inline-block;
-    width: 100px;
-    height: 70px;
+    background-size: 175px 160px;
+    width: 50px;
+    height: 35px;
     margin: 0 1rem;
-    @include respond-to(phones) {
-      background-size: 175px 160px;
-      width: 50px;
-      height: 35px;
+    @include media($tablet) {
+      background-size: 350px 320px;
+      width: 100px;
+      height: 70px;
     }
   }
 
   .sprite-hrb {
-    width: 120px;
-    @include respond-to(phones) {
-      width: 60px;
+    width: 60px;
+    @include media($tablet) {
+      width: 120px;
     }
   }
 

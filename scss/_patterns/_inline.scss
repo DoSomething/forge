@@ -53,13 +53,12 @@ img.bordered {
 // Styleguide 4.2.4 - Pullquote
 .pullquote {
   color: $purple;
-  font-size: 1.5rem;
-  @include respond-to(tablets) {
+  width: 95%;
+  font-size: 1.25rem;
+
+  @include media($tablet) {
+    width: auto;
     font-size: 1.5rem;
-  }
-  @include respond-to(phones) {
-    width: 95%;
-    font-size: 1.25rem;
   }
 
   cite {
