@@ -9,8 +9,8 @@
 
   $(document).ready(function() {
     // Toggle dropdown menu navigation on mobile:
-    $(".js-menu-toggle").on("click", function() {
-      $(".main-menu").toggleClass("is-visible-mobile");
+    $(".js-toggle-mobile-menu").on("click", function() {
+      $(".nav--wrapper .main").toggleClass("is-visible");
     });
 
     // Hide utility bar items when search field is focused:
