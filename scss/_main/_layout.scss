@@ -48,21 +48,3 @@ body {
   margin-top: 6rem;
   margin-bottom: 3rem;
 }
-
-.is-hidden-on-mobile {
-  @include media(max-width $tablet-breakpoint) {
-    display: none !important;
-  }
-}
-
-.is-hidden-on-tablets {
-  @include media(min-width $tablet-breakpoint, max-width $desktop-breakpoint) {
-    display: none !important;
-  }
-}
-
-.is-hidden-on-tablets {
-  @include media(min-width $desktop-breakpoint) {
-    display: none !important;
-  }
-}
