@@ -25,10 +25,10 @@
         position: static;
         width: auto;
         height: auto;
-        background: none; 
+        background: none;
         margin-top: 3.5rem;
 
-       @include media($tall-mobile) { 
+       @include media($tall-mobile) {
           margin-top: 5rem;
         }
       }
@@ -82,7 +82,7 @@
       font-size: 1rem;
       text-align: center;
       padding: 1rem 0;
-      
+
       // we can increase padding a bit if we're on a taller screen
       // ex: iPhone 5 (vs iPhone 4)
       @include media(min-device-height 960px) {
@@ -151,16 +151,27 @@
         float: left;
         color: $off-black;
         text-align: left;
-        padding: 0.75rem 0.7rem 0.75rem 0;
+        padding: 0.75rem 1rem 0.75rem 0;
       }
+
+      @include media($desktop) {
+        padding: 0.75rem 1.5rem 0.75rem 0;
+      }
+    }
+
+    .secondary-nav-item:first-of-type {
+      padding-left: 1rem;
+      border-left: 3px solid $off-black;
+      border-radius: 0;
     }
 
     input[type="search"] {
       margin-bottom: 0;
+      background-color: transparent;
       @include transition(width 0.5s);
 
       @include media($tablet) {
-        width: 140px;
+        width: 110px;
         border: 1px solid $off-black;
       }
 
@@ -200,18 +211,63 @@
   width: 100%;
   background: $off-black;
 
+  .searchfield {
+    padding: 0;
+
+    input[type="search"] {
+      color: #fff;
+      border: 0;
+      margin: 0;
+      padding: 0.75rem 0 0.7rem 42px;
+      border-radius: 0;
+      background-color: $med-gray;
+      @include retina-image('assets/images/search_light', 18px 18px)
+    }
+
+    @include media($tablet) {
+      display: none;
+    }
+  }
+
   .main {
     @include outer-container-margin;
     margin: 0 auto;
 
     h4 {
+      position: relative;
       color: #fff;
       margin-bottom: 0;
+      padding: 0 0.25rem;
+      margin: 0;
+      cursor: pointer;
+
+      &:after {
+        @include icomoon-icon;
+        content: '\e608';
+        color: $med-gray;
+        font-size: 32px;
+        position: absolute;
+        right: 0;
+        top: -0.2rem;
+        @include transform( rotate(0deg) );
+        @include transition-property(transform);
+        @include transition-duration(0.25s);
+      }
+
+      @include media($tablet) {
+        cursor: auto;
+        margin: 1rem 0 0.5rem;
+        &:after {
+          content: '';
+        }
+      }
     }
 
     ul {
+      height: auto;
       list-style-type: none;
-      padding: 0;
+      padding: 0.25rem;
+      @include transition(height 0.25s, padding 0.5s);
     }
 
     li {
@@ -220,50 +276,113 @@
     }
 
     a {
+      display: block;
       color: $light-gray;
       font-family: $font-proxima-nova;
       font-size: $font-small;
       text-decoration: none;
+      padding: 0.25rem 0;
+
+      @include media($tablet) {
+        padding: 0;
+      }
 
       &:hover {
         color: #fff;
         text-decoration: underline;
       }
     }
-
   }
 
   .logo {
-    @include pad(1.25rem 0 0);
+    display: none;
+
+    @include media($tablet) {
+      display: block;
+      padding: 1.25rem 0 0;
+      @include span-columns(2);
+    }
 
     img {
       width: 80px;
       height: 70px;
     }
-
-    @include media($tablet) {
-      @include span-columns(2);
-
-    }
   }
 
   .col {
+    padding: 0.5rem 0;
     @include media($tablet) {
       @include span-columns(3);
       margin-bottom: 2rem;
     }
+
+    &.is-collapsed {
+      h4:after {
+        @include transform( rotate(-90deg) );
+      }
+
+      ul {
+        overflow: hidden;
+        padding: 0 0.25rem;
+        height: 0;
+      }
+
+      @include media($tablet) {
+        h4:after {
+          content: '';
+        }
+
+        ul {
+          height: auto;
+          padding: 0.25rem;
+          @include transition(none);
+        }
+      }
+    }
+  }
+
+  .help, .knowus, .about {
+    border-top: 1px solid $dark-gray;
+
+    @include media($tablet) {
+      border-top: 0;
+      border-bottom: 0;
+    }
   }
 
   .about {
+    border-bottom: 1px solid $dark-gray;
+
     @include media($tablet) {
+      border-bottom: 0;
       @include omega;
     }
   }
 
   .social {
+    text-align: center;
+
+    &.mobile {
+      padding-top: 1rem;
+
+      @include media($tablet) {
+        display: none;
+      }
+    }
+
+    &.tablet {
+      display: none;
+
+      @include media($tablet) {
+        display: block;
+      }
+    }
+
     @include media($tablet) {
       float: left;
+      border-top: 0;
       margin-top: 1.65rem;
+      text-align: left;
       @include span-columns(5);
     }
 
@@ -290,11 +409,11 @@
     display: block;
     clear: both;
     font-size: $font-small;
-    border-top: 1px solid $dark-gray;
+    padding: 0.5rem 0 1rem;
     @include row;
-    @include pad(0.5rem 0 1rem);
 
     a {
+      display: inline;
       color: $med-gray;
     }
 
