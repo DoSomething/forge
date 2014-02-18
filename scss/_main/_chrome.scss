@@ -28,7 +28,7 @@
         background: none;
         margin-top: 4rem;
 
-       @include media($tall-mobile) {
+        @include media($tall-mobile) {
           margin-top: 5rem;
         }
       }
@@ -189,7 +189,7 @@
       padding: 0.5rem 2rem;
       text-decoration: none;
 
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
 
@@ -222,7 +222,7 @@
       padding: 0.75rem 0 0.7rem 42px;
       border-radius: 0;
       background-color: $med-gray;
-      @include retina-image('assets/images/search_light', 18px 18px)
+      @include retina-image("assets/images/search_light", 18px 18px)
     }
 
     @include media($tablet) {
@@ -244,13 +244,13 @@
 
       &:after {
         @include icomoon-icon;
-        content: '\e608';
+        content: "\e609";
         color: $med-gray;
         font-size: 32px;
         position: absolute;
         right: 0;
         top: -0.2rem;
-        @include transform( rotate(0deg) );
+        @include transform(rotate(0));
         @include transition-property(transform);
         @include transition-duration(0.25s);
       }
@@ -319,7 +319,7 @@
 
     &.is-collapsed {
       h4:after {
-        @include transform( rotate(-90deg) );
+        @include transform(rotate(-90deg));
       }
 
       ul {

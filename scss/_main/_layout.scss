@@ -1,19 +1,7 @@
-/* Bourbon Neat outer-container mixin with support for outer gutters. */
-@mixin outer-container-margin {
-  @include outer-container;
-  max-width: $max-width;
-  padding: 0 flex-gutter($grid-columns) / 2;
-  @include box-sizing(content-box);
-  @each $breakpoint in $visual-grid-breakpoints {
-    @if $breakpoint != nil {
-      @include media($breakpoint) {
-        padding: 0 flex-gutter($grid-columns);
-      }
-    }
-  }
-}
-
-// Wrapper, main content
+// Wrapper for main content. This lets flexbox stretch the footer to the bottom
+// of the viewport on supported browsers.
+//
+// Styleguide X.X
 .wrapper {
   @include outer-container-margin;
   -webkit-box-flex: 1;
@@ -25,21 +13,16 @@
 
 body {
   // flexbox stuff to keep footer at bottom
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  @include prefixer(flex-direction, column, webkit ms);
   min-height: 100%;
 }
 
+// Basic wrapper for text content. Centers on grid and adds proper margin
+// for floating header. 
+//
+// Styleguide X.X
 .page {
   @include media($tablet) {
     @include span-columns(12);
