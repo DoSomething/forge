@@ -1,48 +1,51 @@
-// only enable hover effects on non-touch devices (prevents bug where users had to double-tap to search)
-// this is pulled out of the below markup because of a bug with JS snippet not finding it if nested
-.no-touch .search form input[type="search"]:hover {
-  background-position: 12px -21px;
-}
-
-.search form {
-  float: left;
-  margin-top: -5px;
-
-  input[type="search"] {
-    border: 0;
-    cursor: pointer;
-    width: 10px;
-    font-size: 0.9rem;
-    @include retina-image('assets/images/search.png', 12px 6px);
-    @include transition(width 0.25s, background-color 0.25s);
-
-    &:focus {
-      width: 200px;
-      cursor: text;
-      background-color: #fff;
-      background-position: 12px 6px !important; // to override hover styles when focused
-
-      @include respond-to(phones) {
-        margin-right: -40px;
-      }
-    }
-  }
-}
-
-
 // Logo & primary navigation/dropdowns
 .nav--wrapper {
+  // we place the nav above the content so that it can
+  // be layered on top of headers, etc
   position: absolute;
   top: 0;
   width: 100%;
 
   .main {
-    @include outer-container-margin;
-    margin-top: 1rem;
+    @include media($tablet) {
+      @include outer-container-margin;
+      margin-top: 1.35135%;
+    }
+
+    &.is-visible {
+      display: block;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $off-black;
+
+      .menu {
+        display: block;
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        margin-top: 4rem;
+
+        @include media($tall-mobile) {
+          margin-top: 5rem;
+        }
+      }
+
+      .hamburger {
+        color: #fff;
+      }
+    }
   }
 
   .logo {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+
     @include media($tablet) {
+      position: static;
       @include span-columns(2);
     }
 
@@ -52,24 +55,62 @@
     }
   }
 
-  .main-menu {
-    li {
-      float: left;
+  .hamburger {
+    float: right;
+    color: $off-black;
+    font-size: 32px;
+    text-decoration: none;
+    margin: 0.5rem;
+    @include icomoon-icon;
+
+    @include media($tablet) {
+      display: none;
+    }
+  }
+
+  .menu {
+    display: none;
+
+    @include media($tablet) {
       display: block;
-      margin-right: 5.59492%;
-      padding: 0.5rem 0;
+    }
+  }
+
+  .primary-nav {
+    li {
       line-height: 1.4;
+      font-size: 1rem;
+      text-align: center;
+      padding: 1rem 0;
+
+      // we can increase padding a bit if we're on a taller screen
+      @include media($tall-mobile) {
+        padding: 0.75rem 0;
+      }
+
+      @include media($tablet) {
+        float: left;
+        display: block;
+        text-align: left;
+        margin: 0 5.59492% 0 0;
+        padding: 0.5rem 0;
+        border-bottom: 0;
+      }
     }
 
     a {
       display: block;
-      color: $off-black;
+      color: #fff;
       text-decoration: none;
 
       &:hover {
         strong {
           text-decoration: underline;
         }
+      }
+
+      @include media($tablet) {
+        color: $off-black;
       }
     }
 
@@ -78,60 +119,95 @@
     }
 
     span {
-      font-size: $font-small;
       text-transform: uppercase;
+      font-size: $font-small;
     }
   }
 
   .secondary-nav {
-    float: right;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 1rem 0;
 
-    ul {
+    @include media($tablet) {
+      position: static;
+      width: auto;
+      padding: 0;
       float: right;
+    }
+
+    ul {
       display: block;
     }
 
     li {
-      float: left;
-      margin-left: 0.75rem;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+
+      @include media($tablet) {
+        float: left;
+        color: $off-black;
+        text-align: left;
+        padding: 0.75rem 1rem 0.75rem 0;
+      }
+
+      @include media($desktop) {
+        padding: 0.75rem 1.5rem 0.75rem 0;
+      }
+    }
+
+    .secondary-nav-item:first-of-type {
+      @include media($tablet) {
+        padding-left: 1rem;
+        border-left: 3px solid $off-black;
+        border-radius: 0;
+      }
     }
 
     input[type="search"] {
       margin-bottom: 0;
-      @include transition(width 0.25s);
+      @include transition(width 0.5s);
 
       @include media($tablet) {
-        border: 0;
-        width: 32px;
-
-        &:focus {
-          width: 140px;
-          border: 1px solid $off-black;
-        }
+        width: 110px;
+        border: 1px solid $off-black;
+        background-color: transparent;
       }
 
       @include media($desktop) {
-        width: 140px;
-        border: 1px solid $off-black;
-
-        &:focus {
-          width: 200px;
-        }
+        width: 200px;
       }
     }
 
     a {
-      display: block;
-      color: $off-black;
-      font-weight: bold;
+      display: inline;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border-radius: $sm-border-radius;
+      padding: 0.5rem 2rem;
       text-decoration: none;
-      margin: 0.15rem;
 
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
+
+      @include media($tablet) {
+        display: block;
+        background: none;
+        color: $off-black;
+        font-weight: bold;
+        text-decoration: none;
+        margin: 0.15rem;
+        padding: 0;
+      }
     }
+  }
+
+  // Clear floats so messages drop in below navigation.
+  .messages {
+    clear: both;
   }
 }
 
@@ -140,21 +216,64 @@
 .footer--wrapper {
   width: 100%;
   background: $off-black;
-  overflow: hidden;
+
+  .searchfield {
+    padding: 0;
+
+    input[type="search"] {
+      color: #fff;
+      border: 0;
+      margin: 0;
+      padding: 0.75rem 0 0.7rem 42px;
+      border-radius: 0;
+      background-color: $med-gray;
+      @include retina-image("assets/images/search_light", 18px 18px)
+    }
+
+    @include media($tablet) {
+      display: none;
+    }
+  }
 
   .main {
     @include outer-container-margin;
     margin: 0 auto;
 
-
     h4 {
+      position: relative;
       color: #fff;
       margin-bottom: 0;
+      padding: 0 0.25rem;
+      margin: 0;
+      cursor: pointer;
+
+      &:after {
+        @include icomoon-icon;
+        content: "\e609";
+        color: $med-gray;
+        font-size: 32px;
+        position: absolute;
+        right: 0;
+        top: -0.2rem;
+        @include transform(rotate(0));
+        @include transition-property(transform);
+        @include transition-duration(0.25s);
+      }
+
+      @include media($tablet) {
+        cursor: auto;
+        margin: 1rem 0 0.5rem;
+        &:after {
+          content: '';
+        }
+      }
     }
 
     ul {
+      height: auto;
       list-style-type: none;
-      padding: 0;
+      padding: 0.25rem;
+      @include transition(height 0.25s, padding 0.5s);
     }
 
     li {
@@ -163,50 +282,113 @@
     }
 
     a {
+      display: block;
       color: $light-gray;
       font-family: $font-proxima-nova;
       font-size: $font-small;
       text-decoration: none;
+      padding: 0.25rem 0;
+
+      @include media($tablet) {
+        padding: 0;
+      }
 
       &:hover {
         color: #fff;
         text-decoration: underline;
       }
     }
-
   }
 
   .logo {
-    @include pad(1.25rem 0 0);
+    display: none;
+
+    @include media($tablet) {
+      display: block;
+      padding: 1.25rem 0 0;
+      @include span-columns(2);
+    }
 
     img {
       width: 80px;
       height: 70px;
     }
-
-    @include media($tablet) {
-      @include span-columns(2);
-
-    }
   }
 
   .col {
+    padding: 0.5rem 0;
     @include media($tablet) {
       @include span-columns(3);
       margin-bottom: 2rem;
     }
+
+    &.is-collapsed {
+      h4:after {
+        @include transform(rotate(-90deg));
+      }
+
+      ul {
+        overflow: hidden;
+        padding: 0 0.25rem;
+        height: 0;
+      }
+
+      @include media($tablet) {
+        h4:after {
+          content: '';
+        }
+
+        ul {
+          height: auto;
+          padding: 0.25rem;
+          @include transition(none);
+        }
+      }
+    }
+  }
+
+  .help, .knowus, .about {
+    border-top: 1px solid $dark-gray;
+
+    @include media($tablet) {
+      border-top: 0;
+      border-bottom: 0;
+    }
   }
 
   .about {
+    border-bottom: 1px solid $dark-gray;
+
     @include media($tablet) {
+      border-bottom: 0;
       @include omega;
     }
   }
 
   .social {
+    text-align: center;
+
+    &.mobile {
+      padding-top: 1rem;
+
+      @include media($tablet) {
+        display: none;
+      }
+    }
+
+    &.tablet {
+      display: none;
+
+      @include media($tablet) {
+        display: block;
+      }
+    }
+
     @include media($tablet) {
       float: left;
+      border-top: 0;
       margin-top: 1.65rem;
+      text-align: left;
       @include span-columns(5);
     }
 
@@ -216,12 +398,11 @@
     }
 
     .social-link {
-      font-family: 'icomoon';
+      @include icomoon-icon;
       font-size: 24px;
       color: $med-gray;
       text-decoration: none;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+
 
       &:hover {
         color: $light-gray;
@@ -234,11 +415,11 @@
     display: block;
     clear: both;
     font-size: $font-small;
-    border-top: 1px solid $dark-gray;
+    padding: 0.5rem 0 1rem;
     @include row;
-    @include pad(0.5rem 0 1rem);
 
     a {
+      display: inline;
       color: $med-gray;
     }
 

@@ -18,6 +18,9 @@ $desktop-breakpoint: 1080px;
 $tablet: new-breakpoint(min-width $tablet-breakpoint 16); // 16 columns
 $desktop: new-breakpoint(min-width $desktop-breakpoint 16); // 16 columns
 
+// Additional media queries
+$tall-mobile: min-device-height 960px;
+
 // Development
 // $visual-grid: true;
 $visual-grid-index: front;

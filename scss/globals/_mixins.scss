@@ -1,39 +1,22 @@
-// Makes element full-width up until the defined maximum page width.
-//
-// Compatible in IE7+, Chrome 4+, Firefox 2+, Safari 3.1+.
-@mixin flex-width {
-  max-width: $break-large - 100px;
-  width: 100%;
-}
-
-
-// Shortcut for writing media query targeting different types of devices.
-//
-// $media - String specifying the device(s) which this media query should apply to (options: widescreens, widescreens_and_tablets, tablets, tablets_and_phones, phones).
-//
-// Compatible in IE9+, Chrome 4+, Firefox 3.5+, Safari 3.1+.
-@mixin respond-to($media) {
-  @if $media == phones {
-    @media only screen and (max-width: $break-small) { @content; }
-  }
-  @else if $media == tablets_and_phones {
-    @media only screen and (max-width: $break-large - 1) { @content; }
-  }
-  @else if $media == tablets {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
-  }
-  @else if $media == widescreens_and_tablets {
-    @media only screen and (min-width: $break-small + 1) { @content; }
-  }
-  @else if $media == widescreens {
-    @media only screen and (min-width: $break-large) { @content; }
+// Bourbon Neat outer-container mixin with support for outer gutters.
+@mixin outer-container-margin {
+  @include outer-container;
+  max-width: $max-width;
+  padding: 0 flex-gutter($grid-columns) / 2;
+  @include box-sizing(content-box);
+  @each $breakpoint in $visual-grid-breakpoints {
+    @if $breakpoint != nil {
+      @include media($breakpoint) {
+        padding: 0 flex-gutter($grid-columns);
+      }
+    }
   }
 }
 
 // Shortcut for writing sprites that scale down on mobile displays.
 @mixin responsive-sprite($pos-x, $pos-y) {
-  background-position: $pos-x $pos-y;
-  @include respond-to(phones) { background-position: $pos-x/2 $pos-y/2; }
+  background-position: $pos-x/2 $pos-y/2;
+  @include media($tablet) { background-position: $pos-x $pos-y; }
 }
 
 // Border highlight on input focus
