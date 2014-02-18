@@ -1,3 +1,18 @@
+// Bourbon Neat outer-container mixin with support for outer gutters.
+@mixin outer-container-margin {
+  @include outer-container;
+  max-width: $max-width;
+  padding: 0 flex-gutter($grid-columns) / 2;
+  @include box-sizing(content-box);
+  @each $breakpoint in $visual-grid-breakpoints {
+    @if $breakpoint != nil {
+      @include media($breakpoint) {
+        padding: 0 flex-gutter($grid-columns);
+      }
+    }
+  }
+}
+
 // Shortcut for writing sprites that scale down on mobile displays.
 @mixin responsive-sprite($pos-x, $pos-y) {
   background-position: $pos-x/2 $pos-y/2;
