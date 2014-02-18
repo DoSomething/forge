@@ -204,6 +204,11 @@
       }
     }
   }
+
+  // Clear floats so messages drop in below navigation.
+  .messages {
+    clear: both;
+  }
 }
 
 
