@@ -48,7 +48,7 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+@mixin icomoon-icon {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -63,11 +63,14 @@
 }
 
 .icon-pencil:before {
+  @include icomoon-icon;
   content: "\e600";
 }
 .icon-lock:before {
+  @include icomoon-icon;
   content: "\e601";
 }
 .icon-search:before {
+  @include icomoon-icon;
   content: "\e602";
 }

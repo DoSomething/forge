@@ -83,7 +83,7 @@
       margin-bottom: 1rem;
     }
 
-    @include respond-to(widescreens_and_tablets) {
+    @include media($tablet) {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       max-width: 600px;
       margin-top: 5rem;

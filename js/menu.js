@@ -9,18 +9,18 @@
 
   $(document).ready(function() {
     // Toggle dropdown menu navigation on mobile:
-    $(".js-menu-toggle").on("click", function() {
-      $(".main-menu").toggleClass("is-visible-mobile");
+    $(".js-toggle-mobile-menu").on("click", function() {
+      $(".nav--wrapper .main").toggleClass("is-visible");
     });
 
-    // Hide utility bar items when search field is focused:
-    $(".secondary-nav input[type='search']").on("focus", function() {
-      $(".secondary-nav-item").addClass("is-hidden-on-tablets");
+    // Hide footer on mobile until clicked
+    $(".footer--wrapper .col").addClass("is-collapsed");
+    $(".js-footer-col h4").on("click", function() {
+      if( window.matchMedia("screen and (max-width: 768px)").matches ) {
+        $(this).closest(".col").toggleClass("is-collapsed");
+      }
     });
 
-    $(".secondary-nav input[type='search']").on("blur", function() {
-      $(".secondary-nav-item").removeClass("is-hidden-on-tablets");
-    });
   });
 
 })(jQuery);

@@ -6,7 +6,6 @@ html {
 }
 
 body {
-  height: 100%;
   background: #fff;
   font-family: $font-proxima-nova, $font-sans;
   font-size: $font-regular;
@@ -28,7 +27,7 @@ h1 {
   font-size: $font-largest;
   font-weight: $weight-bold;
 
-  @include respond-to(tablets) {
+  @include media($tablet) {
     font-size: $font-large;
   }
 }
