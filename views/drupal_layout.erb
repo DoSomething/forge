@@ -49,7 +49,7 @@
         <ul>
           <li class="searchfield">
             <form action="/search/?s=#" method="get" accept-charset="utf-8">
-              <input type="search" name="s" id="search" value="" placeholder="Search..." />
+              <input type="search" name="s" id="search" value="" />
             </form>
           </li>
           <li><a class="secondary-nav-item" href="#">Log In</a></li>
@@ -64,11 +64,14 @@
 </div>
 
 <div class="footer--wrapper">
+  <form class="searchfield" action="/search/?s=#" method="get" accept-charset="utf-8">
+    <input type="search" name="s" id="search" value="" placeholder="Search" />
+  </form>
   <footer class="main">
     <div class="logo">
       <a href="http://www.dosomething.org"><img src="/assets/images/ds-logo.png" alt="DoSomething.org"></a>
     </div>
-    <div class="social">
+    <div class="social tablet">
       <ul>
         <li><a class="social-link" title="dosomething on Facebook" href="#">&#xe600;</a></li>
         <li><a class="social-link" title="@dosomething on Twitter" href="#">&#xe603;</a></li>
@@ -77,7 +80,7 @@
         <li><a class="social-link" title="dosomething1 on YouTube" href="#">&#xe601;</a></li>
       </ul>
     </div>
-    <div class="col help">
+    <div class="col help js-footer-col">
       <h4>Help</h4>
       <ul>
          <li><a href="#">Contact Us</a></li>
@@ -85,7 +88,7 @@
          <li><a href="#">FAQ</a></li>
       </ul>
     </div>
-    <div class="col knowus">
+    <div class="col knowus js-footer-col">
       <h4>Get to Know Us</h4>
       <ul>
         <li><a href="#">Partners</a></li>
@@ -93,7 +96,7 @@
         <li><a href="#">TMI Agency</a></li>
       </ul>
     </div>
-    <div class="col about">
+    <div class="col about js-footer-col">
       <h4>About</h4>
       <ul>
         <li><a href="#">What is Do Something?</a></li>
@@ -106,8 +109,18 @@
       </ul>
     </div>
 
+    <div class="social mobile">
+      <ul>
+        <li><a class="social-link" title="dosomething on Facebook" href="#">&#xe600;</a></li>
+        <li><a class="social-link" title="@dosomething on Twitter" href="#">&#xe603;</a></li>
+        <li><a class="social-link" title="@dosomething on Tumblr" href="#">&#xe602;</a></li>
+        <li><a class="social-link" title="@dosomething on Instagram" href="#">&#xe604;</a></li>
+        <li><a class="social-link" title="dosomething1 on YouTube" href="#">&#xe601;</a></li>
+      </ul>
+    </div>
+
     <div class="subfooter">
-      <div class="tagline"><strong><a href="#">Join 2.5 million young people.</a></strong> Any cause, anytime, anywhere. *mic drop*</div>
+      <div class="tagline">Any cause, anytime, anywhere. *mic drop*</div>
       <ul class="utility">
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">Terms of Service</a></li>
