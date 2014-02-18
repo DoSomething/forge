@@ -371,8 +371,10 @@ select {
     background: $light-green;
 
     &:before {
+      @include icomoon-icon;
       content: $unicode-check;
       position: absolute;
+      top: 1.25em;
       left: 1.5em;
       color: darken($light-green, 15%);
     }
@@ -382,8 +384,10 @@ select {
     background: $light-red;
 
     &:before {
-      content: $unicode-cross;
+      @include icomoon-icon;
+      content: $unicode-error;
       position: absolute;
+      top: 1.25em;
       left: 1.5em;
       color: darken($light-red, 15%);
     }
