@@ -26,7 +26,7 @@
         width: auto;
         height: auto;
         background: none;
-        margin-top: 3.5rem;
+        margin-top: 4rem;
 
        @include media($tall-mobile) {
           margin-top: 5rem;
@@ -84,8 +84,7 @@
       padding: 1rem 0;
 
       // we can increase padding a bit if we're on a taller screen
-      // ex: iPhone 5 (vs iPhone 4)
-      @include media(min-device-height 960px) {
+      @include media($tall-mobile) {
         padding: 0.75rem 0;
       }
 
@@ -160,19 +159,21 @@
     }
 
     .secondary-nav-item:first-of-type {
-      padding-left: 1rem;
-      border-left: 3px solid $off-black;
-      border-radius: 0;
+      @include media($tablet) {
+        padding-left: 1rem;
+        border-left: 3px solid $off-black;
+        border-radius: 0;
+      }
     }
 
     input[type="search"] {
       margin-bottom: 0;
-      background-color: transparent;
       @include transition(width 0.5s);
 
       @include media($tablet) {
         width: 110px;
         border: 1px solid $off-black;
+        background-color: transparent;
       }
 
       @include media($desktop) {
