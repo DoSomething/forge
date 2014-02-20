@@ -11,7 +11,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="first_name" tabindex="1" type="text" name="first_name" placeholder="(What do we call you?)">
+        <input id="first_name" tabindex="1" type="text" name="first_name" class="js-validate" data-validate="name" placeholder="(What do we call you?)">
       </div>
     </div>
 
@@ -23,7 +23,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="birthday" tabindex="2" type="text" name="birthday" placeholder="MM/DD/YYYY">
+        <input id="birthday" tabindex="2" type="text" name="birthday" class="js-validate" data-validate="birthday" placeholder="MM/DD/YYYY">
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
           <div class="message"></div>
         </div>
       </label>
-      <input id="username" tabindex="3" type="text" name="username" placeholder="your_email@example.com">
+      <input id="username" tabindex="3" type="text" name="username" class="js-validate" data-validate="email" placeholder="your_email@example.com">
 
       <div class="is-registration-field">
         <div id="parent_email_field" style="display: none;">
@@ -45,7 +45,7 @@
               <div class="message"></div>
             </div>
           </label>
-          <input id="parent_email" tabindex="4" type="text" name="parent_email" placeholder="parent_email@example.com">
+          <input id="parent_email" tabindex="4" type="text" name="parent_email" class="js-validate" data-validate="email" placeholder="parent_email@example.com">
         </div>
       </div>
 
@@ -67,7 +67,7 @@
           <div class="message"></div>
         </div>
       </label>
-      <input id="password" tabindex="6" type="password" name="password" placeholder="(password)">
+      <input id="password" tabindex="6" type="password" name="password" class="js-validate" data-validate="password"  placeholder="(password)">
 
       <div class="is-registration-field">
         <label for="confirm_password">
