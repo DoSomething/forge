@@ -52,7 +52,7 @@
               <input type="search" name="s" id="search" value="" />
             </form>
           </li>
-          <li><a class="secondary-nav-item" href="#">Log In</a></li>
+          <li><a class="secondary-nav-item js-modal-link" data-cached-modal="#modal--auth-login" href="#">Log In</a></li>
         </ul>
       </div>
     </div>
@@ -133,12 +133,8 @@
 
 
 <div id="modal--auth-login" class="modal" data-href="/example/login">
-  <div class="modal-content login">
-    <span href="#" class="icon-lock modal-secure-button js-security-info"><span>Secure Connection</span></span>
-    <a href="#" class="js-close-modal modal-close-button">&times;</a>
-
-    <%= erb :login_form %>
-  </div>
+  <a href="#" class="js-close-modal modal-close-button">&times;</a>
+  <%= erb :login_form %>
 </div>
 
   <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
