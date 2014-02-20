@@ -7,29 +7,21 @@
 //
 // Input field must have `.js-validate` class.
 //
+// If adding input fields to the DOM after load, run NEUE.Validation.prepareFormLabels
+//
 //
 
 var NEUE = NEUE || {};
 NEUE.Validation = NEUE.Validation || {};
 NEUE.Validation.Functions = NEUE.Validation.Functions || {};
+NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
 (function($) {
   "use strict";
 
   $(document).ready(function() {
-    // Prepare the label in the DOM if its not already there.
-    $(".js-validate").each(function() {
-      var field = $(this);
-      var $fieldLabel = $("label[for='" + field.attr("id") + "']");
-
-      if($fieldLabel.find(".inner-label").length === 0) {
-        var $innerLabel = $("<div class='inner-label'></div>");
-        $innerLabel.append("<div class='label'>" + $fieldLabel.html() + "</div>");
-        $innerLabel.append("<div class='message'></div>");
-
-        $fieldLabel.html($innerLabel);
-      }
-    });
+    // Prepare the labels on any `.js-validate` fields in the DOM at load
+    NEUE.Validation.prepareFormLabels($("body"));
 
     // Validate on blur
     $("body").on("blur", ".js-validate", function(e) {
@@ -45,7 +37,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
         var validationFunction = $(this).data("validate");
         if( hasValidationFunction(validationFunction) ) {
           // once we know this is a valid validation (heh), let's do it.
-          ValidationFunctions[validationFunction](fieldValue, function(result) {
+          NEUE.Validation.Functions[validationFunction](fieldValue, function(result) {
             showValidationMessage($fieldLabel, result);
           });
         }
@@ -53,7 +45,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
     });
 
     // Validate form on submit
-    $("form").on("submit", function(e, isValidated) {
+    $("body").on("submit", "form", function(e, isValidated) {
       if(isValidated === true) {
         return true;
       } else {
@@ -69,7 +61,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
           var validationFunction = $(this).data("validate");
 
           if( hasValidationFunction(validationFunction) ) {
-            ValidationFunctions[validationFunction](fieldValue, function(result) {
+            NEUE.Validation.Functions[validationFunction](fieldValue, function(result) {
               validationResults.push(showValidationMessage($fieldLabel, result));
               if(validationResults.length === $validationFields.length) {
                 // we've validated all that can be validated
@@ -129,14 +121,32 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
     }
   });
 
-  // Checks if function exists in the ValidationFunctions object
+  // Checks if function exists in the NEUE.Validation.Functions object
   function hasValidationFunction(name) {
-    if( name !== "" && ValidationFunctions[name] && typeof( ValidationFunctions[name] ) === "function" ) {
+    if( name !== "" && NEUE.Validation.Functions[name] && typeof( NEUE.Validation.Functions[name] ) === "function" ) {
       return true;
     } else {
       return false;
     }
   }
+
+  // Prepares form label DOM to display validation messages
+  NEUE.Validation.prepareFormLabels = function($parent) {
+    var $fields = $parent.find(".js-validate");
+
+    $fields.each(function() {
+      var field = $(this);
+      var $fieldLabel = $("label[for='" + field.attr("id") + "']");
+
+      if($fieldLabel.find(".inner-label").length === 0) {
+        var $innerLabel = $("<div class='inner-label'></div>");
+        $innerLabel.append("<div class='label'>" + $fieldLabel.html() + "</div>");
+        $innerLabel.append("<div class='message'></div>");
+
+        $fieldLabel.html($innerLabel);
+      }
+    });
+  };
 
 
 })(jQuery);
