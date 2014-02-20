@@ -3,6 +3,7 @@
 html {
   height: 100%;
   font-size: 18px;
+  background: $light-gray;
 }
 
 body {
@@ -12,6 +13,9 @@ body {
   font-weight: $weight-normal;
   line-height: 1.5;
   color: $copy-color;
+  max-width: $max-width;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 // Various heading weights.
