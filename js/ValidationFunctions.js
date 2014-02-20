@@ -107,7 +107,6 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       }
     },
 
-
     email: function(string, done) {
       // basic regex sanity check
       if ( string.toUpperCase().match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]+$/) ) {
@@ -139,7 +138,6 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
         });
       }
     },
-
 
     password: function(string, done) {
       if(string.length > 6) {
