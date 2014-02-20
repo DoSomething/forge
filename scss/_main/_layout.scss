@@ -4,23 +4,18 @@
 // Styleguide X.X
 .wrapper {
   @include outer-container-margin;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -ms-flex: 1;
   flex: 1;
 }
 
 body {
   // flexbox stuff to keep footer at bottom
-  display: -webkit-flex;
   display: flex;
-  @include prefixer(flex-direction, column, webkit ms);
+  flex-direction: column;
   min-height: 100%;
 }
 
 // Basic wrapper for text content. Centers on grid and adds proper margin
-// for floating header. 
+// for floating header.
 //
 // Styleguide X.X
 .page {
