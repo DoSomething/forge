@@ -6,6 +6,7 @@ We've structured our CSS to make sure that it doesn't become unmanageable as it 
   - _patterns: Reusable interface patterns
   - _pages: Page-specific styles.
   - neue.scss: The "Makefile" for our outputted CSS.
+  - helpers.scss: All variables and mixins are compiled here for inclusion in Neue and app stylesheets.
   - ie.scss: Any overrides for IE 9 or lower should be located here.
 
 ## Coding Style
@@ -14,12 +15,13 @@ We've structured our CSS to make sure that it doesn't become unmanageable as it 
  - Put spaces before `{` in rule declarations. Put spaces after `:` in property declarations.
  - Use hex color codes (for example, `#000` or `#18408b`) unless using `rgba`.
  - Use rems for sizing elements, unless a size should be proportional to the font-size of the element, in which case use ems. Avoid using absolute pixels for sizing.
- - Use `//` for comment blocks (instead of /* */).
- - Document styles with KSS.
+ - Use `//` for comment blocks (instead of `/* */`).
+ - Document styles with [KSS](https://github.com/kneath/kss).
 
 ## Style Structure
  - Any $variable or @mixin that is used in more than one file should be put in globals/variables.scss. Otherwise it should be placed at the top of the section where it is used.
- - Always use re-usable elements rather than building an interface from scratch. If building an override for a specific page, prefix the class with the page title. For example, `.campaign--header`.
+ - We use [Bourbon Neat](http://neat.bourbon.io/) mixins to fit our interface to a fluid semantic grid. Use grid mixins to fit containers to the grid rather than writing your own layout rules.
+ - Always use re-usable elements rather than building an interface from scratch. All top-level styles should be namespaced with their module name. For example, `.campaign--wrapper`. Nested style declarations do not need to be namespaced.
  - Never style `js-` prefixed classes. Use `is-` prefixed styles when CSS and JS interact.
 
 
