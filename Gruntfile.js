@@ -212,7 +212,7 @@ module.exports = function(grunt) {
 
   // deploy
   grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function() {
-    grunt.task.run("checkbranch:master", "checkrepo:validtag", "test:js", "lint", "prod", "checkrepo:clean", "shell:dist");
+    grunt.task.run("checkbranch:master", "checkrepo:validtag", "prod", "test:js", "lint", "checkrepo:clean", "shell:dist");
   });
 
 
