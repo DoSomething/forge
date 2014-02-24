@@ -46,15 +46,4 @@
   &:hover ~ .full-link-delegate a {
     text-decoration: underline;
   }
-
-  &:hover ~ .headline .btn {
-    background: $btn-hover;
-    @include background-image(linear-gradient($btn-color, $btn-hover));
-  }
-
-  &:active ~ .headline .btn {
-    background: $btn-color;
-    color: lighten(#333, 10);
-    @include background-image(linear-gradient($btn-hover, $btn-color));
-  }
 }
