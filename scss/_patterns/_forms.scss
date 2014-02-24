@@ -110,10 +110,10 @@ textarea {
   clear: both;
   background: $btn-color;
   border: 0;
-  margin: 0.25rem;
+  margin: 0.25rem 0;
   padding: 0.5em 1em 0.3em;
   cursor: pointer;
-  color: $copy-color;
+  color: #fff;
   font-family: $font-proxima-nova;
   font-weight: 600;
   text-align: center;
@@ -122,23 +122,21 @@ textarea {
   text-shadow: none;
   border-radius: $lg-border-radius;
   -webkit-appearance: none;
+
+  @include highlight-on-focus;
+
   &:hover {
-    background: $btn-hover;
-    @include background-image(linear-gradient($btn-color, $btn-hover));
+    background: lighten($btn-color, 6%);
   }
-  &:focus {
-    outline: 0;
-    box-shadow: 0 0 5px $blue;
-  }
+
   &:active {
     outline: 0;
-    background: $btn-color;
-    color: lighten($copy-color, 10);
-    @include background-image(linear-gradient($btn-hover, $btn-color));
+    background: darken($btn-color, 6%);
   }
+
   &:link, &:active, &:hover {
     // overrides for default <a> styling
-    color: $copy-color;
+    color: #fff;
     text-decoration: none;
   }
 
@@ -146,7 +144,6 @@ textarea {
   &.secondary {
     background: $light-gray;
     color: $med-gray;
-    font-weight: 500;
     text-transform: none;
     text-decoration: none;
     border: 0;
@@ -154,11 +151,6 @@ textarea {
     &:hover {
       background-color: none;
       color: #000;
-      box-shadow: none;
-    }
-
-    &:focus {
-      outline: 0;
       box-shadow: none;
     }
 
@@ -182,11 +174,6 @@ textarea {
     &:hover {
       background-color: none;
       color: #000;
-      box-shadow: none;
-    }
-
-    &:focus {
-      outline: 0;
       box-shadow: none;
     }
 
