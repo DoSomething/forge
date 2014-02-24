@@ -3,14 +3,29 @@
 //
 // Styleguide X.X
 .wrapper {
-  @include outer-container-margin;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
   flex: 1;
 }
 
 body {
   // flexbox stuff to keep footer at bottom
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
   flex-direction: column;
+
+  min-height: 100vh;
+}
+
+// Override triggered by Modernizr test to fix Flexbox issue in IE10
+.flexbox-ie10 body {
+  display: block;
   min-height: 100%;
 }
 
