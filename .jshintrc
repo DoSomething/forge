@@ -13,14 +13,16 @@
     "regexp": true,
     "undef": true,
     "unused": true,
+    "globals": {
+        "module": false,
+        "require": false,
+        "$": false,
+        "_": false,
+        "Modernizr": false,
+        "jQuery": false
+    },
     "strict": true,
     "trailing": true,
     "smarttabs": true,
-    "expr": true,
-    "predef": [
-      "_",
-      "$",
-      "jQuery",
-      "Modernizr"
-    ]
+    "expr": true
 }
