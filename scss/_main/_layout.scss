@@ -3,11 +3,11 @@
 //
 // Styleguide X.X
 .wrapper {
-  display: block;
-  overflow: hidden;
+  display: block; // Fixes display issue in IE11 where <main> does not default to block.
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
+  @include outer-container;
 }
 
 body {
@@ -34,10 +34,11 @@ body {
 //
 // Styleguide X.X
 .page {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+
   @include media($tablet) {
     @include span-columns(12);
     @include shift(2);
   }
-  margin-top: 6rem;
-  margin-bottom: 3rem;
 }
