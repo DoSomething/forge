@@ -36,6 +36,12 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
       if($fieldLabel && fieldValue !== "") {
         var validationFunction = $(this).data("validate");
         if( hasValidationFunction(validationFunction) ) {
+        if(validationFunction === "match") {
+          // the validation function requires an extra argument
+          var secondFieldValue = $($field.data("validate-match")).val();
+          NEUE.Validation.Functions[validationFunction](fieldValue, secondFieldValue, function(result) {
+            callback($fieldLabel, result);
+          });
           // once we know this is a valid validation (heh), let's do it.
           NEUE.Validation.Functions[validationFunction](fieldValue, function(result) {
             showValidationMessage($fieldLabel, result);
