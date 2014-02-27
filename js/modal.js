@@ -2,7 +2,11 @@
 //
 //  **Show/hide modals.** Link should have `.js-modal-link` class, and
 // it's `href` should point to the hash of the modal. By convention, the
-// modal ID should be prefixed with `modal--`.
+// modal ID should be prefixed with `modal--` like so:
+//
+// <script type="text/cached-modal" id="modal--login">
+//    <!-- content -->
+// </script>
 //
 //
 
@@ -25,7 +29,7 @@
         // `<a class="js-modal-link" href="#modal--faq">Click me</a>` would open `<div id="modal--faq"></div>`.
         href = $(e.target.hash);
       } else {
-        // TODO We should handle AJAX loading things in.
+        // @TODO: We should handle AJAX loading things in.
       }
 
       if( !modalIsOpen ) {
@@ -49,6 +53,10 @@
 
         $modalContent.html( $(href).html() );
       }
+
+      // We'll set up form validation markup for anything in the modal (since it isn't in the DOM on load)
+      // @TODO: Should be providing an event that other modules can hook into (so the Validation Module would take care of this).
+      NEUE.Validation.prepareFormLabels($modalContent);
 
       // Close modal when "x" is clicked:
       $modal.on("click", ".js-close-modal", function(e) {
