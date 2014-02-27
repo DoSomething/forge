@@ -11,7 +11,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="first_name" tabindex="1" type="text" name="first_name" class="js-validate" data-validate="name" placeholder="(What do we call you?)">
+        <input id="first_name" tabindex="1" type="text" name="first_name" class="js-validate" data-validate-required data-validate="name" placeholder="(What do we call you?)">
       </div>
     </div>
 
@@ -23,7 +23,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="birthday" tabindex="2" type="text" name="birthday" class="js-validate" data-validate="birthday" placeholder="MM/DD/YYYY">
+        <input id="birthday" tabindex="2" type="text" name="birthday" class="js-validate" data-validate-required data-validate="birthday" placeholder="MM/DD/YYYY">
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
           <div class="message"></div>
         </div>
       </label>
-      <input id="username" tabindex="3" type="text" name="username" class="js-validate" data-validate="email" placeholder="your_email@example.com">
+      <input id="username" tabindex="3" type="text" name="username" class="js-validate" data-validate-required data-validate="email" placeholder="your_email@example.com">
 
       <div class="is-registration-field">
         <div id="parent_email_field" style="display: none;">
@@ -60,14 +60,14 @@
       </div>
 
       <label for="password">
-        <div class="forgot-password"><a href="/example/forgot" tabindex="9">Forgot Password?</a></div>
+        <!-- <div class="forgot-password"><a href="/example/forgot" tabindex="9">Forgot Password?</a></div> -->
         <div class="inner-label">
           <div class="label">Password</div>
 
           <div class="message"></div>
         </div>
       </label>
-      <input id="password" tabindex="6" type="password" name="password" class="js-validate" data-validate="password"  placeholder="(password)">
+      <input id="password" tabindex="6" type="password" name="password" class="js-validate" data-validate-required data-validate="password" data-validate-trigger="#confirm_password"  placeholder="(password)">
 
       <div class="is-registration-field">
         <label for="confirm_password">
@@ -77,7 +77,7 @@
             <div class="message"></div>
           </div>
         </label>
-        <input id="confirm_password" tabindex="7" type="password" name="confirm_password" placeholder="(just double-checking!)">
+        <input id="confirm_password" tabindex="7" type="password" class="js-validate" data-validate-required data-validate="match" data-validate-match="#password" name="confirm_password" placeholder="(just double-checking!)">
       </div>
     </div>
   </div>
