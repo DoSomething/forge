@@ -151,6 +151,20 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
           message: "Must be 6+ characters."
         });
       }
+    },
+
+    match: function(string, secondString, done) {
+      if(string === secondString && string !== "") {
+        return done({
+          success: true,
+          message: "Looks good!"
+        });
+      } else {
+        return done({
+          success: false,
+          message: "That doesn't match."
+        });
+      }
     }
   };
 
