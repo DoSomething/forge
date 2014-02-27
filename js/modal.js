@@ -10,6 +10,8 @@
 //
 //
 
+var NEUE = NEUE || {};
+
 (function($) {
   "use strict";
 
