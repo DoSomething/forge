@@ -165,6 +165,27 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
           message: "That doesn't match."
         });
       }
+    },
+
+    phone: function(string, done) {
+      // Matches server-side validation from `dosomething_user_valid_cell()` in `dosomething_user.module`.
+      var sanitizedNumber = string.replace(/[^0-9]/g, "");
+      var isValidFormat = /^(?:\+?1([\-\s\.]{1})?)?\(?([0-9]{3})\)?(?:[\-\s\.]{1})?([0-9]{3})(?:[\-\s\.]{1})?([0-9]{4})/.test(string);
+      var allRepeatingDigits = /([0-9]{1})\1{9,}/.test(sanitizedNumber);
+      var hasRepeatingFives = /555/.test(string);
+
+      if(isValidFormat && !allRepeatingDigits && !hasRepeatingFives) {
+        return done({
+          success: true,
+          message: "Thanks!"
+        });
+      } else {
+        return done({
+          success: false,
+          message: "Enter a valid telephone number."
+        });
+      }
+
     }
   };
 
