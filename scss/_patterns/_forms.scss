@@ -78,7 +78,7 @@ input[type="search"] {
 textarea {
   width: 100%;
   font-family: $font-proxima-nova;
-  font-size: 1rem;
+  font-size: $font-medium;
   border: 1px solid $light-gray;
   border-radius: $lg-border-radius;
   padding: 0.5em 1em 0.3em;
@@ -116,7 +116,7 @@ textarea {
   color: #fff;
   font-family: $font-proxima-nova;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: $font-regular;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -188,16 +188,16 @@ textarea {
 
   // sizes
   &.small {
-    font-size: 0.75rem;
+    font-size: $font-small;
   }
 
   &.medium {
-    font-size: 1rem;
+    font-size: $font-regular;
   }
 
   &.large {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: $font-medium;
+    font-weight: $weight-sbold;
   }
 
   // disabled state
