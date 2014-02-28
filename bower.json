@@ -1,5 +1,5 @@
 {
-  "name": "pattern-library",
+  "name": "neue",
   "version": "3.0.15",
   "main": ["assets/neue.css", "assets/neue.js"],
   "ignore": [
