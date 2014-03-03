@@ -24,8 +24,20 @@ body {
 // .section-header - Stylized headers. Requires an inline span element for text underline.
 //
 // Styleguide 1.1 - Headings
-h1, h2, h3, h4, p, small {
+// @TODO - Could we move all these hard-coded version values into variables? Looks really  manual.
+h1,
+h2,
+h3 {
   margin: 1.5rem 0;
+}
+
+h4 {
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+p,
+small {
+  margin: 0 0 1.5rem 0;
 }
 
 h1 {
