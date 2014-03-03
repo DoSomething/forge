@@ -74,3 +74,47 @@ test("Passwords", function() {
   });
 });
 
+test("Match", function() {
+  NEUE.Validation.Functions.match("dog", "cat", function(result) {
+    ok(result.success == false, "should reject if different strings");
+  });
+
+  NEUE.Validation.Functions.match("dog", "Dog", function(result) {
+    ok(result.success == false, "should reject if different capitalization");
+  });
+
+  NEUE.Validation.Functions.match("dog", "dog ", function(result) {
+    ok(result.success == false, "should reject if different spacing");
+  });
+
+  NEUE.Validation.Functions.match("super$ecure19", "super$ecure19", function(result) {
+    ok(result.success == true, "should accept if the same");
+  });
+});
+
+test("Phone numbers", function() {
+  NEUE.Validation.Functions.phone("123-456-7890", function(result) {
+    ok(result.success == true, "should accept 10-digit number with dashes");
+  });
+
+  NEUE.Validation.Functions.phone("123.456 7890", function(result) {
+    ok(result.success == true, "should accept 10-digit number with dot and space");
+  });
+
+  NEUE.Validation.Functions.phone("1 (123) 456-7890", function(result) {
+    ok(result.success == true, "should accept 11-digit US number");
+  });
+
+  NEUE.Validation.Functions.phone("123-555-9942", function(result) {
+    ok(result.success == false, "should reject number with repeating digits");
+  });
+
+  NEUE.Validation.Functions.phone("1 902 #@@ 1234", function(result) {
+    ok(result.success == false, "should reject number with invalid symbols");
+  });
+
+  NEUE.Validation.Functions.phone("999 999 9999", function(result) {
+    ok(result.success == false, "should reject number with all repeating digits");
+  });
+});
+
