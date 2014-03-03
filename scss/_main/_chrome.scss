@@ -4,6 +4,7 @@
   // be layered on top of headers, etc
   position: absolute;
   top: 0;
+  z-index: 1;
   width: 100%;
   max-width: $max-width;
 
