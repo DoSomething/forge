@@ -1,0 +1,85 @@
+// Helper styles for JS carousel pattern
+
+.js-carousel {
+  position: relative;
+
+  // wraps the collection of images ("slides")
+  .carousel-wrapper {
+    float: left;
+    width: 100%;
+  }
+
+  // wraps the increment & decrement buttons 
+  .prev-wrapper,
+  .next-wrapper {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .prev-wrapper {
+    left: -25px;
+  }
+
+  .next-wrapper {
+    right: 0;
+  }
+
+  // increment & decrement buttons
+  .prev-button,
+  .next-button {
+    position: relative;
+    top: 33.3333%;
+    height: 0;
+    width: 0;
+    border: 25px solid #fff;
+    border-radius: 25px;
+
+    // prevent icons from highlighting when double clicked
+    @include user-select;
+
+    // arrow icon nested inside each button
+    span.arrow {
+      font-size: 40px;
+      line-height: 10px;
+      color: $purple;
+      position: absolute;
+      top: -18px;
+
+      @include icomoon-icon;
+    }
+  }
+
+  .prev-button {
+    left: 0;
+
+    .arrow {
+      left: -22px;
+    }
+  }
+
+  .next-button {
+    right: 0;
+
+    .arrow {
+      right: -24px;
+    }
+  }
+
+  // individual image
+  figure.slide {
+    display: none;
+    border: 6px solid #fff;
+    padding: 0;
+
+    img {
+      display: block;
+    }
+  }
+
+  .slide.visible {
+    display: block;
+  }
+}
+
