@@ -38,10 +38,10 @@ img.bordered {
     font-size: 0.75rem;
     color: $light-gray;
     margin: 0 0 1em;
+    color: $light-gray;
   }
 
   a {
-    color: $light-gray; // Override default anchor color
 
     &:hover {
       color: lighten($light-gray, 10%);
