@@ -106,12 +106,6 @@
       color: #fff;
       text-decoration: none;
 
-      &:hover {
-        strong {
-          text-decoration: underline;
-        }
-      }
-
       @include media($tablet) {
         color: $off-black;
       }
@@ -191,10 +185,6 @@
       border-radius: $sm-border-radius;
       padding: 0.5rem 2rem;
       text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
 
       @include media($tablet) {
         display: block;
