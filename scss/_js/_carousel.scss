@@ -1,15 +1,12 @@
 // Helper styles for JS carousel pattern
 
-.js-carousel {
+// wraps the collection of images ("slides")
+.carousel-wrapper {
+  float: left;
+  width: 100%;
   position: relative;
 
-  // wraps the collection of images ("slides")
-  .carousel-wrapper {
-    float: left;
-    width: 100%;
-  }
-
-  // wraps the increment & decrement buttons 
+  // wraps the increment & decrement buttons
   .prev-wrapper,
   .next-wrapper {
     position: absolute;
@@ -82,4 +79,3 @@
     display: block;
   }
 }
-
