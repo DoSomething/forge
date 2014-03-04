@@ -26,17 +26,22 @@ img.bordered {
 }
 
 
-// Legal text (a.k.a. the fine print). Use a `small` element for semantics.
+// Legal text (a.k.a. the fine print).
 //
 // Styleguide 4.2.3 - Legal Text
 .legal {
-  font-size: 0.75rem;
-  color: $light-gray;
-  margin: 0 0 1em;
+
+  a,
+  p,
+  small,
+  strong,
+  sup {
+    font-size: $font-small;
+    margin: 0 0 1em;
+    color: $light-gray;
+  }
 
   a {
-    color: $light-gray;
-
     &:hover {
       color: lighten($light-gray, 10%);
     }
