@@ -2,9 +2,12 @@
 
 // wraps the collection of images ("slides")
 .carousel-wrapper {
-  float: left;
-  width: 100%;
   position: relative;
+
+  .slide-wrapper{
+    float: left;
+    width: 100%;
+  }
 
   // wraps the increment & decrement buttons
   .prev-wrapper,
