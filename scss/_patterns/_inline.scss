@@ -31,6 +31,7 @@ img.bordered {
 // Styleguide 4.2.3 - Legal Text
 .legal {
 
+  a,
   p,
   small,
   strong,
@@ -41,7 +42,6 @@ img.bordered {
   }
 
   a {
-
     &:hover {
       color: lighten($light-gray, 10%);
     }
