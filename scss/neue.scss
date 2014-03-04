@@ -30,11 +30,12 @@
 @import "_patterns/forms";
 @import "_patterns/inline";
 @import "_patterns/helpers";
+@import "_patterns/highlight";
 @import "_patterns/navigation";
 @import "_patterns/widgets";
 
 // Supporting styles for JS features
-@import "_js/modal";
+@import "_js/carousel";
 
 // Overrides for specific pages
 @import "_pages/home";
