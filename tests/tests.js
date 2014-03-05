@@ -16,10 +16,15 @@ test("Name", function() {
 test("Birthdays", function() {
   var now = new Date();
   var birthday_date = (now.getMonth() + 1) + "/" + now.getDate() + "/1990";
+  var user_9_years_old = Math.min(now.getMonth() + 2, 12) + "/" + now.getDate() + "/" + (now.getFullYear() - 10);
   var user_19_years_old = Math.min(now.getMonth() + 2, 12) + "/" + now.getDate() + "/" + (now.getFullYear() - 20);
 
   NEUE.Validation.Functions.birthday(birthday_date, function(result) {
     ok(result.message == "Wow, happy birthday!", "should wish me a happy birthday");
+  });
+
+  NEUE.Validation.Functions.birthday(user_9_years_old, function(result) {
+    ok(result.message == "Wow, you're 9!", "should tell young users their age");
   });
 
   NEUE.Validation.Functions.birthday(user_19_years_old, function(result) {
