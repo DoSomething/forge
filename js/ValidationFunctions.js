@@ -70,17 +70,17 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
           success: false,
           message: "Are you a time traveller?"
         });
-      } else if( age > 0 && age <= 13 ) {
-        return done({
-          success: false,
-          message: "You need to be 13+ to join, sorry!"
-        });
-      } else if( age > 13 && age <= 24) {
+      } else if( age > 0 && age <= 25  ) {
 
         if (birthDate.getMonth() === now.getMonth() && now.getDate() === birthDate.getDate() ) {
           return done({
             success: true,
             message: "Wow, happy birthday!"
+          });
+        } else if ( age < 10) {
+          return done({
+            success: true,
+            message: "Wow, you're " + age + "!"
           });
         } else {
           return done({
@@ -89,7 +89,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
           });
         }
 
-      } else if (age > 24 && age < 130) {
+      } else if (age > 25 && age < 130) {
         return done({
           success: true,
           message: "Yikes, you're old!"
