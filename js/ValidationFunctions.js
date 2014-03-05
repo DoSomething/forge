@@ -71,11 +71,15 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
         });
       }
 
-      // create date objects
+      // calculate age
+      // Source: http://stackoverflow.com/questions/4060004/calculate-age-in-javascript#answer-7091965
       var birthDate = new Date(birthYear, birthMonth - 1, birthDay);
       var now = new Date();
-      var age = Math.floor( (now - birthDate) / 31536000000 );
-      // 31536000000 milliseconds in a year! math!
+      var age = now.getFullYear() - birthDate.getFullYear();
+      var m = now.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && now.getDate() < birthDate.getDate())) {
+        age--;
+      }
 
       if (age < 0)  {
         return done({
