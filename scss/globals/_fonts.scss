@@ -37,13 +37,15 @@
 //  ICOMOON (ICON FONT)
 // ---------------------
 
+$ICOMOON_REVISION: 1;
+
 @font-face {
   font-family: 'icomoon';
-  src: url('assets/fonts/icomoon/icomoon.eot');
-  src: url('assets/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-    url('assets/fonts/icomoon/icomoon.ttf') format('truetype'),
-    url('assets/fonts/icomoon/icomoon.woff') format('woff'),
-    url('assets/fonts/icomoon/icomoon.svg#icomoon') format('svg');
+  src: url('assets/fonts/icomoon/icomoon.eot?#{$ICOMOON_REVISION}');
+  src: url('assets/fonts/icomoon/icomoon.eot?#{$ICOMOON_REVISION}#iefix') format('embedded-opentype'),
+    url('assets/fonts/icomoon/icomoon.ttf?#{$ICOMOON_REVISION}') format('truetype'),
+    url('assets/fonts/icomoon/icomoon.woff?#{$ICOMOON_REVISION}') format('woff'),
+    url('assets/fonts/icomoon/icomoon.svg?#{$ICOMOON_REVISION}#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
