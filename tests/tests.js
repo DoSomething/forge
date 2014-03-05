@@ -47,6 +47,18 @@ test("Birthdays", function() {
     ok(result.message == "Are you a time traveller?", "should reject users with future birthdates");
   });
 
+  NEUE.Validation.Functions.birthday("61/12/1990", function(result) {
+    ok(result.success == false, "should reject users with invalid month values");
+  });
+
+  NEUE.Validation.Functions.birthday("12/42/1990", function(result) {
+    ok(result.success == false, "should reject users with day value greater than 31");
+  });
+
+  NEUE.Validation.Functions.birthday("10/25/90", function(result) {
+    ok(result.success == false, "should reject dates with two-digit years");
+  });
+
 });
 
 

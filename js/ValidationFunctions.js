@@ -40,18 +40,13 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
     birthday: function(string, done) {
       var birthday, birthMonth, birthDay, birthYear;
 
-      if( string.match(/[0-9]*\/[0-9]*\/[0-9]*/) ) {
+      // parse date from string
+      if( /^\d{1,2}\/\d{1,2}\/\d{4}$/.test(string) ) {
         // default, typed by user MM/DD/YYYY
         birthday = string.split("/");
         birthMonth = parseInt(birthday[0]);
         birthDay = parseInt(birthday[1]);
         birthYear = parseInt(birthday[2]);
-      } else if( string.match(/[0-9]*\-[0-9]*\-[0-9]*/) )  {
-        // output from HTML5 date picker
-        birthday = string.split("-");
-        birthMonth = parseInt(birthday[1]);
-        birthDay = parseInt(birthday[2]);
-        birthYear = parseInt(birthday[0]);
       } else {
         return done({
           success: false,
@@ -59,9 +54,26 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
         });
       }
 
+      // fail if incorrect month
+      if (birthMonth > 12) {
+        return done({
+          success: false,
+          message: "That doesn't seem right."
+        });
+      }
+
+      // fail if incorrect day
+      // @TODO: Doesn't account for non-31 day months or leap years... meh.
+      if (birthDay > 31) {
+        return done({
+          success: false,
+          message: "That doesn't seem right."
+        });
+      }
+
+      // create date objects
       var birthDate = new Date(birthYear, birthMonth - 1, birthDay);
       var now = new Date();
-
       var age = Math.floor( (now - birthDate) / 31536000000 );
       // 31536000000 milliseconds in a year! math!
 
