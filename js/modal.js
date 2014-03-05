@@ -49,10 +49,8 @@ var NEUE = NEUE || {};
         $modal.show();
 
         modalIsOpen = true;
-
       } else {
         // modal is already open, so just replace current content
-
         $modalContent.html( $(href).html() );
       }
 
@@ -70,7 +68,7 @@ var NEUE = NEUE || {};
 
           $("body").removeClass("modal-open");
 
-          $modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
+          $modal.one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
             $modal.remove();
             modalIsOpen = false;
           });
