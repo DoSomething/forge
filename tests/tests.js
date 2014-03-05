@@ -16,10 +16,15 @@ test("Name", function() {
 test("Birthdays", function() {
   var now = new Date();
   var birthday_date = (now.getMonth() + 1) + "/" + now.getDate() + "/1990";
+  var user_9_years_old = Math.min(now.getMonth() + 2, 12) + "/" + now.getDate() + "/" + (now.getFullYear() - 10);
   var user_19_years_old = Math.min(now.getMonth() + 2, 12) + "/" + now.getDate() + "/" + (now.getFullYear() - 20);
 
   NEUE.Validation.Functions.birthday(birthday_date, function(result) {
     ok(result.message == "Wow, happy birthday!", "should wish me a happy birthday");
+  });
+
+  NEUE.Validation.Functions.birthday(user_9_years_old, function(result) {
+    ok(result.message == "Wow, you're 9!", "should tell young users their age");
   });
 
   NEUE.Validation.Functions.birthday(user_19_years_old, function(result) {
@@ -40,6 +45,18 @@ test("Birthdays", function() {
 
   NEUE.Validation.Functions.birthday("1/15/2095", function(result) {
     ok(result.message == "Are you a time traveller?", "should reject users with future birthdates");
+  });
+
+  NEUE.Validation.Functions.birthday("61/12/1990", function(result) {
+    ok(result.success == false, "should reject users with invalid month values");
+  });
+
+  NEUE.Validation.Functions.birthday("12/42/1990", function(result) {
+    ok(result.success == false, "should reject users with day value greater than 31");
+  });
+
+  NEUE.Validation.Functions.birthday("10/25/90", function(result) {
+    ok(result.success == false, "should reject dates with two-digit years");
   });
 
 });
