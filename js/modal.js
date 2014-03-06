@@ -50,21 +50,8 @@ var NEUE = NEUE || {};
 
         modalIsOpen = true;
 
-        //  **This fixes an issue with `position:fixed` and the virtual keyboard 
-        //  on Mobile Safari.** Since this is a browser bug, we're forced to use
-        //  browser-detection here, and should look into removing this as soon
-        //  as this is fixed in the future. Yes, it is gross.
-        if(  /iPhone|iPad|iPod/i.test(window.navigator.userAgent) ) {
-          console.log("here we go");
-          setTimeout(function () {
-            $modal.css({ "position": "absolute", "overflow": "visible", "height": $(document).height() + "px" });
-            $modalContent.css({ "margin-top": $(document).scrollTop() + "px" });
-          }, 0);
-        }
-
       } else {
         // modal is already open, so just replace current content
-
         $modalContent.html( $(href).html() );
       }
 
@@ -82,7 +69,7 @@ var NEUE = NEUE || {};
 
           $("body").removeClass("modal-open");
 
-          $modal.one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function() {
+          $modal.one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
             $modal.remove();
             modalIsOpen = false;
           });
