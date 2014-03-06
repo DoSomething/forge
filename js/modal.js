@@ -50,12 +50,11 @@ var NEUE = NEUE || {};
 
         modalIsOpen = true;
 
-        //  **This fixes an issue with `position:fixed` and the virtual keyboard 
+        //  **This fixes an issue with `position:fixed` and the virtual keyboard
         //  on Mobile Safari.** Since this is a browser bug, we're forced to use
         //  browser-detection here, and should look into removing this as soon
         //  as this is fixed in the future. Yes, it is gross.
         if(  /iPhone|iPad|iPod/i.test(window.navigator.userAgent) ) {
-          console.log("here we go");
           setTimeout(function () {
             $modal.css({ "position": "absolute", "overflow": "visible", "height": $(document).height() + "px" });
             $modalContent.css({ "margin-top": $(document).scrollTop() + "px" });
