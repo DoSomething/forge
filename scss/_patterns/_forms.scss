@@ -108,7 +108,7 @@ textarea {
 .btn {
   display: inline-block;
   clear: both;
-  background: $btn-color;
+  background: $blue;
   border: 0;
   margin: 0.25rem 0;
   padding: 0.5em 1em 0.3em;
@@ -127,12 +127,12 @@ textarea {
   @include highlight-on-focus;
 
   &:hover {
-    background: lighten($btn-color, 6%);
+    background: lighten($blue, 6%);
   }
 
   &:active {
     outline: 0;
-    background: darken($btn-color, 6%);
+    background: darken($blue, 6%);
   }
 
   &:link, &:active, &:hover {
@@ -143,22 +143,20 @@ textarea {
 
   // secondary appearance
   &.secondary {
-    background: $light-gray;
-    color: $med-gray;
-    text-transform: none;
+    background: $off-black;
+    color: #fff;
+    text-transform: uppercase;
     text-decoration: none;
     border: 0;
 
     &:hover {
-      background-color: none;
-      color: #000;
+      background: lighten($off-black, 6%);
       box-shadow: none;
     }
 
     &:active {
       outline: 0;
-      background: $light-gray;
-      color: lighten($copy-color, 10);
+      background: darken($off-black, 3%);
       box-shadow: none;
     }
   }
