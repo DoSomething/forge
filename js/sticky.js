@@ -67,6 +67,4 @@
     $(window).on("resize", preparePage);
   });
 
-
-
 })(jQuery);
