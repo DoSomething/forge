@@ -5,14 +5,11 @@
 //
 //
 
-var NEUE = NEUE || {};
-NEUE.Sticky = {};
-
 (function($) {
   "use strict";
 
   var divs = [];
-  
+
   // Prepare markup and register divs with scroll handler
   function prepareSticky(div) {
     // Calculate the element's offset from the top of the page while anchored
@@ -46,13 +43,13 @@ NEUE.Sticky = {};
     $(".js-sticky").each(function(index, div) {
       prepareSticky(div);
     });
-    
+
     $(window).on("scroll", scrollSticky);
 
     // Run once on initialization, in case page is already scrolled on load.
     scrollSticky();
   });
 
-  
+
 
 })(jQuery);
