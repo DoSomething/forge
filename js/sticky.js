@@ -15,8 +15,6 @@ NEUE.Sticky = {};
   
   // Prepare markup and register divs with scroll handler
   function prepareSticky(div) {
-    console.log("PREPARING");
-    console.log(div);
     // Calculate the element's offset from the top of the page while anchored
     var divOffset = $(div).offset().top;
 
@@ -28,8 +26,6 @@ NEUE.Sticky = {};
 
     // Add jQuery object and offset value to divs array
     divs.push(divObj);
-    console.log("PREPARED:");
-    console.log(divs);
   }
 
   // Scroll handler: pins/unpins divs on scroll event
