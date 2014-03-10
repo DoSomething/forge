@@ -1,0 +1,22 @@
+// Classes to support Neue's "pin to top" behavior in sticky.js
+
+.is-stuck {
+	// position: -webkit-sticky;
+	// position: -moz-sticky;
+	// position: -ms-sticky;
+	// position: -o-sticky;
+	// position: sticky;
+  position: fixed;
+  top: 0;
+}
+
+// .fixedsticky-withoutfixedfixed .fixedsticky-on,
+// .fixed-supported .fixedsticky-on {
+// 	position: fixed;
+// }
+// .fixedsticky-dummy {
+// 	display: none;
+// }
+// .fixedsticky-on + .fixedsticky-dummy {
+// 	display: block;
+// }
