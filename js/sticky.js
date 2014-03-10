@@ -64,6 +64,7 @@
 
     // Run once on initialization, in case page is already scrolled on load.
     scrollSticky();
+    $(window).on("resize", preparePage);
   });
 
 
