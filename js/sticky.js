@@ -19,6 +19,15 @@
 
   var divs = [];
 
+  // Prepare all `.js-sticky` divs on the page.
+  function preparePage() {
+    divs = [];
+
+    $(".js-sticky").each(function(index, div) {
+      prepareSticky(div);
+    });
+  }
+
   // Prepare markup and register divs with scroll handler
   function prepareSticky(div) {
     // Calculate the element's offset from the top of the page while anchored
@@ -49,9 +58,7 @@
 
   // Attach our functions to their respective events.
   $(document).ready(function() {
-    $(".js-sticky").each(function(index, div) {
-      prepareSticky(div);
-    });
+    preparePage();
 
     $(window).on("scroll", scrollSticky);
 
