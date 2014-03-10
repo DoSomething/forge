@@ -19,14 +19,14 @@
     var divObj = {
       $el: $(div),
       offset: divOffset
-    }
+    };
 
     // Add jQuery object and offset value to divs array
     divs.push(divObj);
   }
 
   // Scroll handler: pins/unpins divs on scroll event
-  function scrollSticky(div) {
+  function scrollSticky() {
     $.each(divs, function(index, div) {
       // Compare the distance to the top of the page with the distance scrolled.
       // For each div: if we've scrolled past it's offset, pin it to top.
