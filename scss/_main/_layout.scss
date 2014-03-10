@@ -51,6 +51,11 @@ body {
   margin-bottom: 3rem;
   @include media($tablet) {
     @include span-columns(4);
+
+    nav.is-stuck {
+      position: fixed;
+      top: 0;
+    }
   }
 }
 
