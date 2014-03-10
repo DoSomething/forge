@@ -43,3 +43,21 @@ body {
     @include shift(2);
   }
 }
+
+
+// Basic layout classes, used in styleguide.
+.sidebar {
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+  @include media($tablet) {
+    @include span-columns(4);
+  }
+}
+
+.sidebar-content {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  @include media($tablet) {
+    @include span-columns(12);
+  }
+}
