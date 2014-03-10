@@ -41,6 +41,9 @@
 
     // Add jQuery object and offset value to divs array
     divs.push(divObj);
+
+    // Now that we're ready, let's calculate how stickies should be displayed
+    scrollSticky();
   }
 
   // Scroll handler: pins/unpins divs on scroll event
@@ -61,9 +64,6 @@
     preparePage();
 
     $(window).on("scroll", scrollSticky);
-
-    // Run once on initialization, in case page is already scrolled on load.
-    scrollSticky();
     $(window).on("resize", preparePage);
   });
 
