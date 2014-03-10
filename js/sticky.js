@@ -1,7 +1,16 @@
 //
 //
 //  **Pins an element to the top of the screen on scroll.**
-//  Requires pinned element to have `.js-sticky` class.
+//  Requires pinned element to have `.js-sticky` class, and have
+//  a ".is-stuck" modifier class in its CSS (which allows
+//  customized sticky behavior based on media queries). Example:
+//
+//  .sidebar {
+//    &.is-stuck {
+//      position: fixed;
+//      top: 0;
+//    }
+//  }
 //
 //
 
