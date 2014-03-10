@@ -3,11 +3,10 @@
 <html class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>Style Guide | DoSomething.org</title>
+  <title><%= yield_content :title %></title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 
@@ -18,63 +17,126 @@
   <meta property="og:title" content="DoSomething.org">
   <meta property="og:description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
   <meta property="og:type" content="non_profit">
-
   <meta property="description" content="DoSomething.org is the country's largest organization for young people and social change with 2,000,000 members and counting.">
 
-  <!--[if lt IE 9]>
-    <link rel="stylesheet" href="/ie.css" type="text/css" />
-    <script src="/ie/html5shiv.min.js"></script>
-    <script src="/ie/respond.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="/neue.css" media="screen, projection" type="text/css">
+  <!--[if lt IE 9]><link rel="stylesheet" href="/ie.css" type="text/css" /><![endif]-->
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js" type="text/javascript"></script><![endif]-->
 
   <link rel="stylesheet" href="/assets/kss/kss.css">
 </head>
 <body>
-<nav id="top" class="utility">
-  <div class="page-width">
-    <a href="#" class="utility-link js-menu-toggle">Menu</a>
-    <ul class="utility-links">
-      <li><a class="utility-link" href="https://github.com/DoSomething/ds-neue">View On Github</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="masthead-wrapper">
-  <nav class="masthead">
+<div class="nav--wrapper">
+  <nav class="main">
     <a class="logo" href="http://www.dosomething.org"><img src="/assets/images/ds-logo.png" alt="DoSomething.org"></a>
-    <ul class="main-menu">
-      <li>
-        <a class="menu-link" href="//sites.google.com/a/dosomething.org/tech/">Tech Wiki</a>
-      </li>
-      <li>
-        <a class="menu-link" href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">UX Wiki</a>
-      </li>
-      <li>
-        <a class="menu-link active" href="//styleguide.dosomething.org">Styleguide</a>
-      </li>
-    </ul>
+    <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
+    <div class="menu">
+      <ul class="primary-nav">
+        <li>
+          <a href="//sites.google.com/a/dosomething.org/tech/">
+            <strong>Tech Wiki</strong>
+            <span>Drupal-land</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
+            <strong>Product Wiki</strong>
+            <span>Specs, mocks, etc.</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="//styleguide.dosomething.org">
+            <strong>Pattern Library</strong>
+            <span>Interface toolkit</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="secondary-nav">
+        <ul>
+          <li><a href="https://github.com/DoSomething/ds-neue">View On Github</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </div>
 
-<div role="main" class="wrapper">
+<main class="wrapper">
   <%= yield %>
+</main>
+
+<div class="footer--wrapper">
+  <form class="searchfield" action="/search/?s=#" method="get" accept-charset="utf-8">
+    <input type="search" name="s" id="search" value="" placeholder="Search" />
+  </form>
+  <footer class="main">
+    <div class="logo">
+      <a href="http://www.dosomething.org"><img src="/assets/images/ds-logo.png" alt="DoSomething.org"></a>
+    </div>
+    <div class="social tablet">
+      <ul>
+        <li><a class="social-link" title="dosomething on Facebook" href="#">&#xe600;</a></li>
+        <li><a class="social-link" title="@dosomething on Twitter" href="#">&#xe603;</a></li>
+        <li><a class="social-link" title="@dosomething on Tumblr" href="#">&#xe602;</a></li>
+        <li><a class="social-link" title="@dosomething on Instagram" href="#">&#xe604;</a></li>
+        <li><a class="social-link" title="dosomething1 on YouTube" href="#">&#xe601;</a></li>
+      </ul>
+    </div>
+    <div class="col help js-footer-col">
+      <h4>Help</h4>
+      <ul>
+         <li><a href="#">Contact Us</a></li>
+         <li><a href="#">Hotlines</a></li>
+         <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="col knowus js-footer-col">
+      <h4>Get to Know Us</h4>
+      <ul>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">TMI Agency</a></li>
+      </ul>
+    </div>
+    <div class="col about js-footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">What is Do Something?</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Scholarships</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Internships</a></li>
+        <li><a href="#">Old People</a></li>
+        <li><a href="#">Sexy Financials</a></li>
+        <li><a href="#">International</a></li>
+      </ul>
+    </div>
+
+    <div class="social mobile">
+      <ul>
+        <li><a class="social-link" title="dosomething on Facebook" href="#">&#xe600;</a></li>
+        <li><a class="social-link" title="@dosomething on Twitter" href="#">&#xe603;</a></li>
+        <li><a class="social-link" title="@dosomething on Tumblr" href="#">&#xe602;</a></li>
+        <li><a class="social-link" title="@dosomething on Instagram" href="#">&#xe604;</a></li>
+        <li><a class="social-link" title="dosomething1 on YouTube" href="#">&#xe601;</a></li>
+      </ul>
+    </div>
+
+    <div class="subfooter">
+      <div class="tagline">Any cause, anytime, anywhere. *mic drop*</div>
+      <ul class="utility">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
 </div>
-<br>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/neue.js"></script>
-<script type="text/javascript" src="assets/kss/kss.js"></script>
-<script type="text/javascript" src="assets/kss/kss-colortiles.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    window.NEUE.pinToTop();
-  });
-</script>
-
-<!--[if lt IE 9]>
-  <script src="/ie/rem.min.js"></script>
-<![endif]-->
 
 </body>
 </html>
