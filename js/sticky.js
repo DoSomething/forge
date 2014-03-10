@@ -1,7 +1,16 @@
 //
 //
 //  **Pins an element to the top of the screen on scroll.**
-//  Requires pinned element to have `.js-sticky` class.
+//  Requires pinned element to have `.js-sticky` class, and have
+//  a ".is-stuck" modifier class in its CSS (which allows
+//  customized sticky behavior based on media queries). Example:
+//
+//  .sidebar {
+//    &.is-stuck {
+//      position: fixed;
+//      top: 0;
+//    }
+//  }
 //
 //
 
@@ -9,6 +18,15 @@
   "use strict";
 
   var divs = [];
+
+  // Prepare all `.js-sticky` divs on the page.
+  function preparePage() {
+    divs = [];
+
+    $(".js-sticky").each(function(index, div) {
+      prepareSticky(div);
+    });
+  }
 
   // Prepare markup and register divs with scroll handler
   function prepareSticky(div) {
@@ -19,14 +37,17 @@
     var divObj = {
       $el: $(div),
       offset: divOffset
-    }
+    };
 
     // Add jQuery object and offset value to divs array
     divs.push(divObj);
+
+    // Now that we're ready, let's calculate how stickies should be displayed
+    scrollSticky();
   }
 
   // Scroll handler: pins/unpins divs on scroll event
-  function scrollSticky(div) {
+  function scrollSticky() {
     $.each(divs, function(index, div) {
       // Compare the distance to the top of the page with the distance scrolled.
       // For each div: if we've scrolled past it's offset, pin it to top.
@@ -40,16 +61,10 @@
 
   // Attach our functions to their respective events.
   $(document).ready(function() {
-    $(".js-sticky").each(function(index, div) {
-      prepareSticky(div);
-    });
+    preparePage();
 
     $(window).on("scroll", scrollSticky);
-
-    // Run once on initialization, in case page is already scrolled on load.
-    scrollSticky();
+    $(window).on("resize", preparePage);
   });
-
-
 
 })(jQuery);
