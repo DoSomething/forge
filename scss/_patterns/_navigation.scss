@@ -65,9 +65,9 @@ nav.breadcrumbs {
       text-decoration: underline;
     }
 
-    &.active {
-      background: $light-gray;
-      border-radius: $lg-border-radius;
+    &.active, &.is-active {
+      color: #000;
+      font-weight: $weight-bold;
     }
   }
 
