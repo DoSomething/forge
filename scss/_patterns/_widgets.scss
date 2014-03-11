@@ -1,6 +1,7 @@
 // Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
 //
 // Styleguide 4.4.1 - Modal (Popup)
+
 .modal {
   display: none;
   position: fixed;
@@ -17,20 +18,25 @@
     width: 600px;
     z-index: 1050;
     width: auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     margin-right: auto;
     margin-left: auto;
 
     .modal-close-button {
       position: absolute;
-      top: 0.5rem; right: 1rem;
-      font-size: 1.5rem;
+      top: 0.5rem; right: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #333;
       opacity: 0.5;
       text-decoration: none;
 
       &:hover {
+        opacity: 1;
+      }
+
+      &.white {
+        color: #fff;
         opacity: 1;
       }
     }

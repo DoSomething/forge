@@ -46,6 +46,7 @@ var NEUE = NEUE || {};
         $("body").append($modal);
         $modal.addClass("fade-in");
         $modalContent.addClass("fade-in-up");
+        $modalContent.addClass( $(href).attr("class") );
         $modal.show();
 
         modalIsOpen = true;
