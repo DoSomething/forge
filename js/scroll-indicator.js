@@ -45,7 +45,7 @@
     $.each(links, function(index, link) {
       // In reverse order (moving up the nav from the bottom), check whether
       // we've scrolled past the link's target. If so, set active and stop.
-      var windowOffset = $(window).scrollTop() + link.$el.height() * 2;
+      var windowOffset = $(window).scrollTop() + link.$el.height();
       if (windowOffset > link.targetOffset) {
         $(".js-scroll-indicator").removeClass("is-active");
         link.$el.addClass("is-active");
