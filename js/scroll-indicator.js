@@ -18,7 +18,6 @@
 
     $(".js-scroll-indicator").each(function(index, link) {
       prepareIndicator(link);
-      console.log("FOUND ONE");
     });
   }
 
@@ -43,8 +42,6 @@
 
   // Scroll handler: highlights the furthest link the user has passed
   function updateScrollIndicators() {
-    console.log(links);
-
     $.each(links, function(index, link) {
       // In reverse order (moving up the nav from the bottom), check whether
       // we've scrolled past the link's target. If so, set active and stop.
