@@ -357,4 +357,11 @@ select {
   &.error {
     background: $red;
   }
+
+  .message-close-button {
+    @include close-parent;
+
+    top: 0.4rem;
+    opacity: 0.7; // Match opacity to parent copy style
+  }
 }
