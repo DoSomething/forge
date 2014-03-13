@@ -48,3 +48,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// Pattern for creating the close "x" for all
+// modals, dialogs and system status messages
+@mixin close-parent {
+  position: absolute;
+  top: 0.5rem; right: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  opacity: 0.5;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.white {
+    color: #fff;
+  }
+}

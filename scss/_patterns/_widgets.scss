@@ -23,22 +23,7 @@
     margin-left: auto;
 
     .modal-close-button {
-      position: absolute;
-      top: 0.5rem; right: 1.5rem;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #333;
-      opacity: 0.5;
-      text-decoration: none;
-
-      &:hover {
-        opacity: 1;
-      }
-
-      &.white {
-        color: #fff;
-        opacity: 1;
-      }
+      @include close-parent;
     }
 
     .modal-secure-button {
