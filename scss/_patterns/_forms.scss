@@ -339,43 +339,13 @@ select {
 
 .messages { // Drupal's default message class
   position: relative;
-  padding: 1em 1em 1em 3.5em;
   margin: 0.5rem;
   text-align: left;
   border-radius: $sm-border-radius;
-  background: $light-yellow;
+  background: $purple;
+  color: #fff;
 
-  &:before {
-    content: $unicode-flag;
-    position: absolute;
-    left: 1.5em;
-    color: darken($light-yellow, 10%);
-  }
-
-  &.status,   // Default "success" message for Drupal
-  &.success { // Default "success" message for rational people
-    background: $light-green;
-
-    &:before {
-      @include icomoon-icon;
-      content: $unicode-check;
-      position: absolute;
-      top: 1.25em;
-      left: 1.5em;
-      color: darken($light-green, 15%);
-    }
-  }
-
-  &.error { // Drupal default "error"
-    background: $light-red;
-
-    &:before {
-      @include icomoon-icon;
-      content: $unicode-error;
-      position: absolute;
-      top: 1.25em;
-      left: 1.5em;
-      color: darken($light-red, 15%);
-    }
+  &.error {
+    background: $red;
   }
 }
