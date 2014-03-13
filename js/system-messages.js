@@ -22,7 +22,7 @@ var NEUE = NEUE || {};
   $(document).ready(function() {
 
     var message      = "div.messages";
-    var messageClose = "<a href=\"#\" class=\"js-close-message message-close-button white\">x</a>";
+    var messageClose = "<a href=\"#\" class=\"js-close-message message-close-button white\">×</a>";
 
     // Create message close button
     $(message).append(messageClose);
