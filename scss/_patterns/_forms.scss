@@ -339,11 +339,20 @@ select {
 
 .messages { // Drupal's default message class
   position: relative;
-  margin: 0.5rem;
+  margin: 0;
+  padding: 1rem 1.5rem;
   text-align: left;
   border-radius: $sm-border-radius;
   background: $purple;
   color: #fff;
+  color: rgba(255, 255, 255, 0.7);
+
+  b,
+  strong {
+    font-weight: 800;
+    color: #fff;
+    padding: 0 0.3rem 0;
+  }
 
   &.error {
     background: $red;
