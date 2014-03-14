@@ -122,12 +122,15 @@
     }
 
     span {
-      display: none;
+      text-transform: uppercase;
+      font-size: $font-small;
+
+      @include media($tablet) {
+        display: none;
+      }
 
       @include media($desktop) {
         display: block;
-        text-transform: uppercase;
-        font-size: $font-small;
       }
     }
   }
@@ -136,12 +139,12 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-right: 2rem;
 
     @include media($tablet) {
       position: static;
-      width: auto;
-      padding: 0 1rem;
       float: right;
+      width: auto;
     }
 
     ul {
@@ -149,26 +152,36 @@
     }
 
     li {
-      color: #fff;
+      line-height: 1.4;
+      font-size: 1rem;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 0;
+      margin: 1rem;
+      box-sizing: border-box;
 
       @include media($tablet) {
         float: left;
-        color: $off-black;
+        display: block;
         text-align: left;
-        padding: 1rem 1rem 1rem 0;
+        padding: 1.25rem 0;
+        margin: 0 1rem;
+        border-bottom: 0;
+      }
+
+      @include media($desktop) {
+        padding: 1.15rem 0;
       }
     }
 
     input[type="search"] {
-      margin-bottom: 0;
+      margin-top: -0.25rem;
       @include transition(width 0.5s);
 
       @include media($tablet) {
         width: 150px;
         border: 1px solid $off-black;
         background-color: transparent;
+        // margin: 0;
       }
 
       @include media($desktop) {
@@ -177,28 +190,15 @@
     }
 
     a {
-      display: inline;
-      background: rgba(0, 0, 0, 0.5);
+      display: block;
       color: #fff;
-      border-radius: $sm-border-radius;
-      padding: 0.5rem 2rem;
+      font-weight: bold;
       text-decoration: none;
 
       @include media($tablet) {
-        display: block;
-        background: none;
         color: $off-black;
-        font-weight: bold;
-        text-decoration: none;
-        margin: 0.15rem;
-        padding: 0;
       }
     }
-  }
-
-  // Clear floats so messages drop in below navigation.
-  .messages {
-    clear: both;
   }
 }
 
@@ -228,8 +228,11 @@
 
   .main {
     @include outer-container;
-    padding: 1rem;
     margin: 0 auto;
+
+    @include media($tablet) {
+      padding: 1rem;
+    }
 
     h4 {
       position: relative;
