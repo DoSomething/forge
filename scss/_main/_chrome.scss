@@ -10,8 +10,8 @@
 
   .main {
     @include media($tablet) {
-      @include outer-container-margin;
-      margin-top: 1.35135%;
+      @include outer-container;
+      padding: 1rem;
     }
 
     &.is-visible {
@@ -226,14 +226,14 @@
   }
 
   .main {
-    @include outer-container-margin;
+    @include outer-container;
     margin: 0 auto;
 
     h4 {
       position: relative;
       color: #fff;
       margin-bottom: 0;
-      padding: 0 0.25rem;
+      padding: 0 1rem;
       margin: 0;
       cursor: pointer;
 
@@ -243,7 +243,7 @@
         color: $med-gray;
         font-size: 32px;
         position: absolute;
-        right: 0;
+        right: 0.25rem;
         top: -0.2rem;
         @include transform(rotate(0));
         @include transition-property(transform);
@@ -277,7 +277,7 @@
       font-family: $font-proxima-nova;
       font-size: $font-small;
       text-decoration: none;
-      padding: 0.25rem 0;
+      padding: 0.25rem 0.75rem;
 
       @include media($tablet) {
         padding: 0;
