@@ -227,6 +227,7 @@
 
   .main {
     @include outer-container;
+    padding: 1rem;
     margin: 0 auto;
 
     h4 {
@@ -253,6 +254,7 @@
       @include media($tablet) {
         cursor: auto;
         margin: 1rem 0 0.5rem;
+        padding: 0;
         &:after {
           content: '';
         }
@@ -264,6 +266,10 @@
       list-style-type: none;
       padding: 0.25rem;
       @include transition(height 0.25s, padding 0.5s);
+
+      @include media($tablet) {
+        padding: 0;
+      }
     }
 
     li {
@@ -279,13 +285,13 @@
       text-decoration: none;
       padding: 0.25rem 0.75rem;
 
-      @include media($tablet) {
-        padding: 0;
-      }
-
       &:hover {
         color: #fff;
         text-decoration: underline;
+      }
+
+      @include media($tablet) {
+        padding: 0;
       }
     }
   }
@@ -330,7 +336,7 @@
 
         ul {
           height: auto;
-          padding: 0.25rem;
+          padding: 0;
           @include transition(none);
         }
       }
