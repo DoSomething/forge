@@ -64,5 +64,6 @@ body {
   margin-bottom: 3rem;
   @include media($tablet) {
     @include span-columns(12);
+    @include omega;
   }
 }
