@@ -1,15 +1,16 @@
 //
 //
-// Form validation logic. Form element is validated based on
-// `data-validate` attribute, and validation output is placed
-// in corresponding <label>.
+// **Client-side form validation logic.** Form element is validated based
+// on `data-validate` attribute, and validation output is placed in
+// corresponding <label>.
 //
 //  - Input field must have `.js-validate` class.
-//  - Adding a `data-validate-trigger` attribute to *any* field will trigger another field's validation
-//    on blur (by specifying the ID of the other field).
-//  - Use `data-validate-match` attribute to ID of field to check equality with "match" validator.
+//  - Adding a `data-validate-trigger` attribute to *any* field will trigger
+//    another field's validation on blur (by specifying the ID of the other field).
+//  - Use `data-validate-match` attribute to ID of field to check equality with
+//    "match" validator.
 //  - Use `js-validate-required` attribute to validate field before submission.
-//  - If adding input fields to the DOM after load, run NEUE.Validation.prepareFormLabels
+//  - If adding input fields to the DOM after load, run `NEUE.Validation.prepareFormLabels`
 //
 //
 
@@ -34,10 +35,10 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
         validate($(this), $(this).data("validate"));
       }
 
-      
+
       if( $(this).data("validate-trigger") ) {
         var $otherField = $($(this).data("validate-trigger"));
-        
+
         if($otherField.val() !== "") {
           validate($otherField, $otherField.data("validate"));
         }
@@ -51,7 +52,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
       var fieldValue = $field.val();
       var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
-      
+
       // Don't validate if we don't have a label to show results in / validation function doesn't exist
       if( $fieldLabel && hasValidationFunction(validationFunction) ) {
         if(validationFunction === "match") {
@@ -83,7 +84,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
             if( showValidationMessage($fieldLabel, result) ) {
               validatedResults.push(true);
             }
-            
+
             if(validatedResults.length === $validationFields.length) {
               // we've validated all that can be validated
               $form.trigger("submit", true);
@@ -100,6 +101,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
       }
     });
 
+    // Show validation message in markup
     function showValidationMessage($fieldLabel, result) {
       var $field = $("#" + $fieldLabel.attr("for"));
       var $fieldMessage = $fieldLabel.find(".message");

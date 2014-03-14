@@ -50,7 +50,8 @@ body {
   margin-top: 8rem;
   margin-bottom: 3rem;
   @include media($tablet) {
-    @include span-columns(4);
+    @include span-columns(3);
+    @include omega;
 
     nav.is-stuck {
       position: fixed;
@@ -63,6 +64,7 @@ body {
   margin-top: 6rem;
   margin-bottom: 3rem;
   @include media($tablet) {
-    @include span-columns(12);
+    @include shift(2);
+    @include span-columns(10);
   }
 }
