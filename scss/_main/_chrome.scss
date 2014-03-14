@@ -207,24 +207,6 @@
   width: 100%;
   background: #000;
 
-  .searchfield {
-    padding: 0;
-
-    input[type="search"] {
-      color: #fff;
-      border: 0;
-      margin: 0;
-      padding: 0.75rem 0 0.7rem 42px;
-      border-radius: 0;
-      background-color: $med-gray;
-      @include retina-image("assets/images/search_light", 18px 18px)
-    }
-
-    @include media($tablet) {
-      display: none;
-    }
-  }
-
   .main {
     @include outer-container-margin;
     margin: 0 auto;
@@ -287,21 +269,6 @@
         color: #fff;
         text-decoration: underline;
       }
-    }
-  }
-
-  .logo {
-    display: none;
-
-    @include media($tablet) {
-      display: block;
-      padding: 1.25rem 0 0;
-      @include span-columns(2);
-    }
-
-    img {
-      width: 80px;
-      height: 70px;
     }
   }
 
