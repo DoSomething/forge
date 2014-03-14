@@ -11,7 +11,7 @@
   .main {
     @include media($tablet) {
       @include outer-container;
-      padding: 1rem;
+      padding: 1rem 0;
     }
 
     &.is-visible {
@@ -49,6 +49,8 @@
 
     @include media($tablet) {
       position: static;
+      padding: 0 1rem;
+      text-align: center;
       @include span-columns(2);
     }
 
@@ -134,12 +136,11 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 1rem 0;
 
     @include media($tablet) {
       position: static;
       width: auto;
-      padding: 0;
+      padding: 0 1rem;
       float: right;
     }
 
