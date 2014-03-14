@@ -65,11 +65,3 @@ $break-large: 1160px;
 $sm-border-radius: 2px; // for accent (images, text fields, etc)
 $lg-border-radius: 5px; // used for primary interactive elements (buttons, etc)
 
-// ------------
-//  Animations
-// ------------
-
-@include keyframes(rotation) {
-  from { @include transform(rotate(0)); }
-  to { @include transform(rotate(359deg)); }
-}
