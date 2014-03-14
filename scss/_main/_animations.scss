@@ -126,3 +126,19 @@
   @include animation-duration(1s);
   @include animation-name(shake);
 }
+
+
+// Simple rotation (for spinners, etc.)
+//
+// Styleguide 5.8 - Rotation
+@include keyframes(rotation) {
+  from { @include transform(rotate(0)); }
+  to { @include transform(rotate(359deg)); }
+}
+
+.rotation {
+  @extend %animated;
+  @include animation-duration(1s);
+  @include animation-name(rotation);
+}
+
