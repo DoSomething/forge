@@ -124,28 +124,6 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
     },
 
     email: function(string, done) {
-      // basic sanity check
-      function isValidEmailSyntax(string) {
-        var email = string.toUpperCase();
-        if( email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]+$/) ) {
-          var lastChar = "";
-          for(var i = 0, len = email.length; i < len; i++) {
-            // fail if we see two dots or dashes in a row
-            console.log(lastChar, email[i], i);
-            if(lastChar === email[i] === ".") {
-              console.log("KILLED", i);
-              return false;
-            }
-
-            lastChar = email[i];
-          }
-
-          return true;
-        }
-
-        return false;
-      }
-
       if ( isValidEmailSyntax(string) ) {
         // we use mailcheck.js to find some common email mispellings
         Kicksend.mailcheck.run({
@@ -222,8 +200,29 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
           message: "Enter a valid telephone number."
         });
       }
-
     }
   };
+
+
+  // Basic sanity check used by email validation
+  // This won't catch everything, but should prevent validating some simple mistakes
+  function isValidEmailSyntax(string) {
+    var email = string.toUpperCase();
+    if( email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]+$/) ) {
+      var lastChar = "";
+      for(var i = 0, len = email.length; i < len; i++) {
+        // fail if we see two dots in a row
+        if(lastChar === "."  && email[i] === ".") {
+          return false;
+        }
+
+        lastChar = email[i];
+      }
+
+      return true;
+    }
+
+    return false;
+  }
 
 })();
