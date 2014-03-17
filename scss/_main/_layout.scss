@@ -1,35 +1,3 @@
-// Wrapper for main content. This lets flexbox stretch the footer to the bottom
-// of the viewport on supported browsers.
-//
-// Styleguide X.X
-.wrapper {
-  display: block; // Fixes display issue in IE11 where <main> does not default to block.
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  width: 100%;
-  @include outer-container;
-}
-
-body {
-  // flexbox stuff to keep footer at bottom
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-
-  min-height: 100vh;
-}
-
-// Override triggered by Modernizr test to fix Flexbox issue in IE10
-.flexbox-ie10 body {
-  display: block;
-  min-height: 100%;
-}
-
 // Basic wrapper for text content. Centers on grid and adds proper margin
 // for floating header.
 //
