@@ -204,6 +204,7 @@
 
 // Main content wrapper
 .wrapper {
+  position: relative;
   width: 100%;
   @include outer-container;
 }
