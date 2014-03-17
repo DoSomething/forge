@@ -78,6 +78,12 @@ small {
 
 a {
   color: $blue;
+  font-weight: $weight-sbold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 strong, b {
