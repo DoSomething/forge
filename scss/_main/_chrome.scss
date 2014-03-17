@@ -202,6 +202,11 @@
   }
 }
 
+// Main content wrapper
+.wrapper {
+  width: 100%;
+  @include outer-container;
+}
 
 // Footer
 .footer--wrapper {
@@ -361,7 +366,11 @@
 
     li {
       display: inline-block;
-      margin-right: 16px;
+      margin-right: 0;
+
+      @include media($tablet) {
+        margin-right: 16px;
+      }
     }
 
     .social-link {
