@@ -1,6 +1,6 @@
 {
   "name": "neue",
-  "version": "3.0.25",
+  "version": "3.0.26",
   "main": ["assets/neue.css", "assets/neue.js"],
   "ignore": [
     ".jshintrc",
