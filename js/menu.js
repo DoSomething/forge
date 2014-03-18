@@ -10,7 +10,7 @@
   $(document).ready(function() {
     // Toggle dropdown menu navigation on mobile:
     $(".js-toggle-mobile-menu").on("click", function() {
-      $(".nav--wrapper .main").toggleClass("is-visible");
+      $(".chrome--nav").toggleClass("is-visible");
     });
 
     // Hide footer on mobile until clicked
