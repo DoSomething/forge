@@ -155,7 +155,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
     },
 
     password: function(string, done) {
-      if(string.length > 6) {
+      if(string.length >= 6) {
         return done({
           success: true,
           message: "Keep it secret, keep it safe!"
