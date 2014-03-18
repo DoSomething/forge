@@ -1,44 +1,41 @@
 // Logo & primary navigation/dropdowns
-.nav--wrapper {
+.chrome--nav {
   // we place the nav above the content so that it can
   // be layered on top of headers, etc
+  display: block;
   position: absolute;
   top: 0;
-  z-index: 1;
   width: 100%;
-  max-width: $max-width;
+  z-index: 1;
 
-  .main {
-    @include media($tablet) {
-      @include outer-container;
-      padding: 1rem 0;
+  @include media($tablet) {
+    padding: 1rem 0;
+  }
+
+  &.is-visible {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $off-black;
+    z-index: 9997; // above everything else, below modals
+
+    .menu {
+      display: block;
+      position: static;
+      width: auto;
+      height: auto;
+      background: none;
+      margin-top: 4rem;
+
+      @include media($tall-mobile) {
+        margin-top: 5rem;
+      }
     }
 
-    &.is-visible {
-      display: block;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: $off-black;
-      z-index: 9997; // above everything else, below modals
-
-      .menu {
-        display: block;
-        position: static;
-        width: auto;
-        height: auto;
-        background: none;
-        margin-top: 4rem;
-
-        @include media($tall-mobile) {
-          margin-top: 5rem;
-        }
-      }
-
-      .hamburger {
-        color: #fff;
-      }
+    .hamburger {
+      color: #fff;
     }
   }
 
@@ -202,11 +199,12 @@
   }
 }
 
+
 // Main content wrapper
 .wrapper {
   position: relative;
+  display: block;
   width: 100%;
-  @include outer-container;
 }
 
 // Footer
