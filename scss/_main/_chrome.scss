@@ -171,7 +171,7 @@
       @include transition(width 0.5s);
 
       @include media($tablet) {
-        width: 150px;
+        width: 100px;
         border: 1px solid $off-black;
         background-color: transparent;
         // margin: 0;
