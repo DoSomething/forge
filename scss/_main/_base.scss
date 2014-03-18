@@ -84,6 +84,11 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  &.secondary {
+    font-weight: 400;
+    text-decoration: underline;
+  }
 }
 
 strong, b {
