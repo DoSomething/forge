@@ -1,12 +1,8 @@
 // Logo & primary navigation/dropdowns
 .chrome--nav {
-  // we place the nav above the content so that it can
-  // be layered on top of headers, etc
   display: block;
-  position: absolute;
-  top: 0;
   width: 100%;
-  z-index: 1;
+  margin-bottom: 2rem;
 
   @include media($tablet) {
     padding: 1rem 0;
