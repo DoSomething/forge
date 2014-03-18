@@ -15,7 +15,7 @@
 
 // Basic layout classes, used in styleguide.
 .sidebar {
-  margin-top: 8rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
   @include media($tablet) {
     @include span-columns(3);
@@ -29,7 +29,7 @@
 }
 
 .sidebar-content {
-  margin-top: 6rem;
+  margin-top: 0;
   margin-bottom: 3rem;
   @include media($tablet) {
     @include shift(2);

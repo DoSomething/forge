@@ -59,17 +59,16 @@ module.exports = function(grunt) {
       }
     },
 
-
-    imagemin: {
-      bundle: {
-        files: [{
-          expand: true,
-          cwd: "assets/images/",
-          src: ["**/*.{png,jpg,jpeg,gif}"],
-          dest: "dist/assets/images"
-        }]
-      }
-    },
+    // imagemin: {
+    //   bundle: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: "assets/images/",
+    //       src: ["**/*.{png,jpg,jpeg,gif}"],
+    //       dest: "dist/assets/images"
+    //     }]
+    //   }
+    // },
 
     jshint: {
       options: {
@@ -212,7 +211,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-contrib-imagemin");
+  // grunt.loadNpmTasks("grunt-contrib-imagemin");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-qunit");

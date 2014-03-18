@@ -1,6 +1,4 @@
-box: wercker/nodejs
-services:
-  - dfurnes/box-node-ruby@0.0.5
+box: bikeexchange/exchangegroup@0.0.15
 build:
   steps:
     - npm-install
