@@ -21,7 +21,7 @@ body {
 
 // Various heading weights.
 //
-// .banner - Stylized headers. Inline span element may be used for proper indenting of text.
+// .banner - Stylized header banners.
 //
 // Styleguide 1.1 - Headings
 h1, h2, h3, h4 {
@@ -35,13 +35,7 @@ h1, h2, h3, h4 {
     color: #fff;
     line-height: 1.25;
     text-transform: uppercase;
-    margin: 0;
-    padding: 0;
-
-    span {
-      // Style this in your local SCSS to line inner text
-      // up with the grid!
-    }
+    padding: 0.1em 0 0 0.25em
   }
 }
 
