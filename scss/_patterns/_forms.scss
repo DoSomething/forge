@@ -144,7 +144,8 @@ textarea {
 
   // secondary appearance
   &.secondary {
-    background: $off-black;
+    background: $dark-gray;
+    font-weight: $weight-bold;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
@@ -165,12 +166,14 @@ textarea {
   // tertiary appearance
   &.tertiary {
     background: none;
-    color: $blue;
+    color: $dark-gray;
     font-weight: 500;
     text-transform: none;
+    text-decoration: underline;
     border: 0;
 
     &:hover {
+      color: $off-black;
       background-color: none;
       box-shadow: none;
       text-decoration: underline;
