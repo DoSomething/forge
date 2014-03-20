@@ -1,8 +1,6 @@
 // Utility class to make links fill their parent container. Also applies button hover
 // effects to buttons that are direct children of the parent container.
 //
-// .video-play-link - Turns container into a "play" button.
-//
 // Styleguide 4.5.1 - Full Container Link
 .full-link {
   position: absolute;
@@ -12,32 +10,6 @@
   width: 100%;
   height: 100%;
   z-index: 10;
-
-  &.video-play-link {
-    &:before {
-      content: '\25B6';
-      border: 5px solid rgba(255, 255, 255, 0.7);
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      display: block;
-      width: 80px;
-      height: 80px;
-      margin-left: -40px;
-      border-radius: 160px;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 40px;
-      padding-top: 13px;
-      padding-left: 6px;
-      @include box-sizing(border-box);
-    }
-
-    &:hover:before {
-      color: rgba(255, 255, 255, 1);
-      border: 5px solid rgba(255, 255, 255, 1);
-    }
-  }
 
   span {
     display: none;
