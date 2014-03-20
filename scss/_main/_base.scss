@@ -25,6 +25,8 @@ body {
 //
 // Styleguide 1.1 - Headings
 h1 {
+h1, h2, h3, h4 {
+  clear: both;
   color: $purple;
   font-size: $font-largest;
   font-weight: $weight-bold;
