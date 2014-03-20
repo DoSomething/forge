@@ -24,26 +24,16 @@ body {
 // .section-header - Stylized headers. Requires an inline span element for text underline.
 //
 // Styleguide 1.1 - Headings
-h1,
-h2,
-h3 {
-  color: $purple;
-  margin: 1.5rem 0;
-}
-
-h4 {
-  color: $dark-gray;
-  margin: 1.5rem 0 0.5rem;
-}
-
 p,
 small {
   margin: 0 0 1.5rem;
 }
 
 h1 {
+  color: $purple;
   font-size: $font-largest;
   font-weight: $weight-bold;
+  margin: 1.5rem 0;
 
   @include media($tablet) {
     font-size: $font-large;
@@ -51,18 +41,25 @@ h1 {
 }
 
 h2 {
+  color: $purple;
   font-size: $font-large;
   font-weight: $weight-bold;
+  margin: 1.5rem 0;
 }
 
 h3 {
+  color: $purple;
   font-size: $font-medium;
   font-weight: $weight-sbold;
+  margin: 1.5rem 0;
 }
 
 h4 {
+  color: $dark-gray;
   font-size: $font-regular;
   font-weight: $weight-sbold;
+  margin: 1.5rem 0 0.5rem;
+}
 }
 
 // Inline text elements.
