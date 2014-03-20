@@ -332,12 +332,13 @@ select {
 // Status message styles. These should be used to provide feedback to the user for
 // events that occur outside the normal application flow (such as form validation errors).
 //
-// .success - Used when something goes according to plan. (Also applies to `.status` class for Drupal projects.)
+// <mark>Close button is added using JavaScript. See "system-messages.js".</mark>
+//
 // .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
 // Styleguide 4.1.8 - Status Banners
 
-.messages { // Drupal's default message class
+.messages {
   position: relative;
   width: 100%;
   background: $purple;
