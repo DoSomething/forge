@@ -3,7 +3,7 @@
 html {
   height: 100%;
   font-size: 16px;
-  background: $dark-gray;
+  background: $light-gray;
 }
 
 body {
@@ -104,7 +104,7 @@ a {
   }
 
   &.secondary {
-    font-weight: 400;
+    font-weight: $weight-normal;
     text-decoration: underline;
   }
 }
