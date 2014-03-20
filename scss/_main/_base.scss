@@ -32,6 +32,11 @@ h1 {
 
   @include media($tablet) {
     font-size: $font-large;
+h1 {
+  font-size: $font-largest;
+
+  &.hero {
+    font-size: $font-hero;
   }
 }
 
