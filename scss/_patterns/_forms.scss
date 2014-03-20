@@ -99,10 +99,12 @@ textarea {
 // :active            - "Pushed" button state
 // .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
 // .loading           - AJAX loading animation. Used when loading results inline. <mark>Must be used on &lt;a&gt; or &lt;button&gt; tag. Will not work with &lt;input&gt; tags.
-// .small             - A tiny button.
-// .medium            - (Default) A normal button size.
-// .large             - A large button. Suitable for call-to-action or other important buttons.
+// .tiny              - A tiny button.
+// .small             - A smaller button, suitable for use as an interface element.
+// .medium            - (Default) A normal call-to-action button size.
+// .large             - A large button.
 // .secondary         - Should be used if not the main call-to-action on a page.
+// .tertiary          - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
 //
 // Styleguide 4.1.5 - Buttons
 .btn {
@@ -111,19 +113,18 @@ textarea {
   background: $blue;
   border: 0;
   margin: 0.25rem 0;
-  padding: 0.5em 1em 0.3em;
+  padding: 0.5em 1em 0.4em;
   cursor: pointer;
   color: #fff;
   font-family: $font-proxima-nova;
-  font-weight: 600;
-  font-size: $font-regular;
+  font-weight: $weight-bold;
+  font-size: $font-medium;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $lg-border-radius;
   -webkit-appearance: none;
-
   @include highlight-on-focus;
 
   &:hover {
@@ -164,38 +165,39 @@ textarea {
   // tertiary appearance
   &.tertiary {
     background: none;
-    color: $med-gray;
+    color: $blue;
     font-weight: 500;
     text-transform: none;
-    text-decoration: underline;
     border: 0;
 
     &:hover {
       background-color: none;
-      color: #000;
       box-shadow: none;
+      text-decoration: underline;
     }
 
     &:active {
       outline: 0;
-      background: $light-gray;
-      color: lighten($copy-color, 10);
+      background-color: none;
       box-shadow: none;
     }
   }
 
   // sizes
-  &.small {
+  &.tiny {
     font-size: $font-small;
   }
 
-  &.medium {
+  &.small {
     font-size: $font-regular;
   }
 
-  &.large {
+  &.medium { /* default */
     font-size: $font-medium;
-    font-weight: $weight-sbold;
+  }
+
+  &.large {
+    font-size: $font-large;
   }
 
   // disabled state
