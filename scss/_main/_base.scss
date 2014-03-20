@@ -21,19 +21,31 @@ body {
 
 // Various heading weights.
 //
-// .section-header - Stylized headers. Requires an inline span element for text underline.
+// .banner - Stylized headers. Inline span element may be used for proper indenting of text.
 //
 // Styleguide 1.1 - Headings
-h1 {
 h1, h2, h3, h4 {
   clear: both;
   color: $purple;
-  font-size: $font-largest;
   font-weight: $weight-bold;
   margin: 1.5rem 0;
 
-  @include media($tablet) {
-    font-size: $font-large;
+  &.banner {
+    background: #000;
+    color: #fff;
+    line-height: 1.25;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+
+    span {
+      // Style this in your local SCSS to line inner text
+      // up with the grid!
+    }
+  }
+}
+
+
 h1 {
   font-size: $font-largest;
 
@@ -43,17 +55,12 @@ h1 {
 }
 
 h2 {
-  color: $purple;
   font-size: $font-large;
-  font-weight: $weight-bold;
-  margin: 1.5rem 0;
 }
 
 h3 {
-  color: $purple;
   font-size: $font-medium;
   font-weight: $weight-sbold;
-  margin: 1.5rem 0;
 }
 
 h4 {
@@ -62,7 +69,6 @@ h4 {
   font-weight: $weight-sbold;
   margin: 1.5rem 0 0.5rem;
 }
-
 
 // List of items with no ordering.
 //
