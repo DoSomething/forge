@@ -55,6 +55,21 @@ h4 {
   font-weight: $weight-sbold;
   margin: 1.5rem 0 0.5rem;
 }
+
+
+// List of items with no ordering.
+//
+// Styleguide 1.2.1 - Unordered Lists
+ul {
+  list-style-type: square;
+  padding-left: 4em;
+}
+
+// List of items with numerical ordering.
+//
+// Styleguide 1.2.2 - Ordered Lists
+ol {
+  // @TODO
 }
 
 // Inline text elements.
