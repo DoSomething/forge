@@ -82,7 +82,8 @@ ul {
 //
 // Styleguide 1.2.2 - Ordered Lists
 ol {
-  // @TODO
+  list-style-type: decimal;
+  padding-left: 4em;
 }
 
 // Inline text elements.
