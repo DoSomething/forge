@@ -1,5 +1,5 @@
   <article class="sidebar-content">
-    <section class="row section campaign-section with-copy">
+    <section class="row section styleguide-section with-copy">
       <h1>DS Neue Style Guide</h1>
 
       <p><mark>The style guide may become out-of-date while we make some big changes. Stay tuned for updates.</mark></p>
@@ -14,7 +14,7 @@
       </ul>
     </section>
 
-    <section class="row section campaign-section">
+    <section class="row section styleguide-section">
       <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
 
       <h3>Fonts</h3>
@@ -112,7 +112,7 @@
       </div>
     </section>
 
-    <section class="row section campaign-section">
+    <section class="row section styleguide-section">
       <h2 id="typography">Typography</h2>
       <% styleguide_block  '1.1 - Headings' do %>
         <h1><span>Heading</span></h1>
@@ -128,18 +128,34 @@
         <p>Lorem ipsum dolor sit amet.</p>
       <% end %>
 
-      <% styleguide_block  '1.2 - Inline Elements' do %>
+      <% styleguide_block  '1.2.1 - Unordered Lists' do %>
+        <ul>
+          <li>Norway</li>
+          <li>Sweden</li>
+          <li>Finland</li>
+        </ul>
+      <% end %>
+
+      <% styleguide_block  '1.2.2 - Ordered Lists' do %>
+        <ol>
+          <li>Norway</li>
+          <li>Sweden</li>
+          <li>Finland</li>
+        </ol>
+      <% end %>
+
+      <% styleguide_block  '1.3 - Inline Elements' do %>
         <p>Lorem <em>italic</em> dolor <mark>important</mark> amet.
         This is some <strong>bold</strong> text and a <a href="#">link</a>.</p>
       <% end %>
     </section>
 
-    <section class="row section campaign-section">
+    <section class="row section styleguide-section">
       <h2 id="layout">Layout</h2>
       <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 12-column grid. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation deatils.</p>
     </section>
 
-  <section class="row section campaign-section">
+  <section class="row section styleguide-section">
     <h2 id="patterns">Patterns</h2>
 
     <div class="row section">
@@ -205,17 +221,6 @@
       <% styleguide_block  '4.2.4 - Pullquote' do %>
         <p class="pullquote">Lorem ipsum dolor sit aquote.</p>
       <% end %>
-
-      <div class="with-copy">
-        <% styleguide_block  '4.2.5 - List styles' do %>
-          <ul class="$modifier_class">
-            <li>One item</li>
-            <li>Two item</li>
-            <li>Three item</li>
-          </ul>
-        <% end %>
-      </div>
-
     </div>
 
     <div class="row section">
@@ -278,13 +283,13 @@
     </div>
   </section>
 
-  <section class="row section campaign-section">
+  <section class="row section styleguide-section">
     <h2 id="animation">Animation</h2>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
 
     <p>See <code>animation.scss</code> for details. Preview coming soon.</p>
 
-  <section class="row section campaign-section with-copy">
+  <section class="row section styleguide-section with-copy">
     <h2 id="interaction">Interaction</h2>
     <p>Neue includes some helper scripts for interactivity. While any application-specific logic should live within its own codebase, you can find the logic that powers some of our reusable patterns here:</p>
     <ul>
