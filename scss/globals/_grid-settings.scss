@@ -1,5 +1,9 @@
 @import "../vendor/neat/neat-helpers";
 
+// We set box-sizing on elements in `base.scss` instead to avoid
+// repeating markup each time we include `helpers.scss`
+$border-box-sizing: false;
+
 // Set up grid measurements (using desktop dimensions to
 // calculate, but they'll get made into percentages).
 $column: 59px;
