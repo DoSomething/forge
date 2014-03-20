@@ -24,14 +24,15 @@ body {
 // .section-header - Stylized headers. Requires an inline span element for text underline.
 //
 // Styleguide 1.1 - Headings
-// @TODO - Could we move all these hard-coded version values into variables? Looks really  manual.
 h1,
 h2,
 h3 {
+  color: $purple;
   margin: 1.5rem 0;
 }
 
 h4 {
+  color: $dark-gray;
   margin: 1.5rem 0 0.5rem;
 }
 
