@@ -19,6 +19,9 @@ $light-yellow: #fcf6e5;
 $light-red: #ffe0e0;
 $red: #ff4747;
 
+// Body copy
+$copy-color: #444;
+
 // ------------
 //  Typography
 // ------------
@@ -34,6 +37,7 @@ $weight-sbold: 600;
 $weight-bold: 700;
 
 // Sizes
+$font-hero: 4rem;
 $font-largest: 3.157rem;
 $font-larger: 2.369rem;
 $font-large: 1.777rem;
@@ -42,9 +46,6 @@ $font-regular: 1rem;
 $font-small: 0.75rem;
 $font-smaller: 0.563rem;
 $font-smallest: 0.422rem;
-
-// Colors
-$copy-color: #444;
 
 // Unicode
 $unicode-check: "\e60b";

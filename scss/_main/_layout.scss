@@ -3,7 +3,6 @@
 //
 // Styleguide X.X
 .page {
-  margin-top: 6rem;
   margin-bottom: 3rem;
 
   @include media($tablet) {
@@ -15,7 +14,7 @@
 
 // Basic layout classes, used in styleguide.
 .sidebar {
-  margin-top: 8rem;
+  margin-top: 4rem; // keep top of sidebar inline with body text under a <h1>
   margin-bottom: 3rem;
   @include media($tablet) {
     @include span-columns(3);
@@ -29,7 +28,7 @@
 }
 
 .sidebar-content {
-  margin-top: 6rem;
+  margin-top: 0;
   margin-bottom: 3rem;
   @include media($tablet) {
     @include shift(2);
