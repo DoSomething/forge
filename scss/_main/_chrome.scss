@@ -267,7 +267,7 @@
       display: block;
       color: $light-gray;
       font-family: $font-proxima-nova;
-      font-size: $font-small;
+      font-size: 0.9rem;
       text-decoration: none;
       padding: 0.25rem 0.75rem;
 
@@ -336,7 +336,7 @@
     text-align: center;
 
     &.mobile {
-      padding-top: 1rem;
+      padding: 0.5rem 0;
 
       @include media($tablet) {
         display: none;
@@ -386,27 +386,25 @@
     display: block;
     clear: both;
     font-size: $font-small;
+    border-top: 1px solid $dark-gray;
     padding: 0.5rem 0;
     @include row;
 
     a {
       display: inline;
       color: $med-gray;
-    }
-
-    .tagline {
-      display: none;
-
-      @include media($tablet) {
-        display: block;
-        float: left;
-        text-align: left;
-      }
+      font-size: 1em;
     }
 
     .utility {
       text-align: center;
       list-style-type: none;
+
+      @include media($tablet) {
+        float: right;
+        text-align: left;
+        margin-right: 0.75rem;
+      }
 
       li {
         display: inline;
@@ -415,12 +413,8 @@
       a {
         margin: 0 0.5rem;
         @include media($tablet) {
-          margin: 0 0 0 1rem;
+          margin: 0 1rem 0 0;
         }
-      }
-
-      @include media($tablet) {
-        float: right;
       }
     }
   }

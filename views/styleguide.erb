@@ -1,5 +1,5 @@
   <article class="sidebar-content">
-    <section class="row section campaign-section with-copy">
+    <section class="row section styleguide-section with-copy">
       <h1>DS Neue Style Guide</h1>
 
       <p><mark>The style guide may become out-of-date while we make some big changes. Stay tuned for updates.</mark></p>
@@ -14,69 +14,57 @@
       </ul>
     </section>
 
-    <section class="row section campaign-section">
+    <section class="row section styleguide-section">
       <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
 
-      <h3>Fonts</h3>
-      <p>We use Din Regular for most of our text and headings.</p>
-      <p class="font-tile" style="font-family: 'din-regular'; font-weight: 400; ">
-        Lorem ipsum dolor sit amet. <code>($font-din-regular, 400)</code>
+     <h3>Fonts</h3>
+      <p>We use Proxima Nova for all of our text and headings.</p>
+      <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 400; ">
+        Lorem ipsum dolor sit amet. <code>($font-proxima-nova, 400)</code>
       </p>
 
-      <p class="font-tile" style="font-family: 'din-regular'; font-weight: 500; ">
-        Lorem ipsum dolor sit amet. <code>($font-din-regular, 500)</code>
+      <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 600; ">
+        Lorem ipsum dolor sit amet. <code>($font-proxima-nova, 600)</code>
       </p>
 
-      <p class="font-tile" style="font-family: 'din-regular'; font-weight: 600; ">
-        Lorem ipsum dolor sit amet. <code>($font-din-regular, 600)</code>
+      <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 700; ">
+        Lorem ipsum dolor sit amet. <code>($font-proxima-nova, 700)</code>
       </p>
-
-      <p>We use Din Condensed for special elements and headings. It should only be used at bigger font sizes for legibility.</p>
-      <p class="font-tile" style="font-family: 'din-condensed'; font-weight: 500; font-size: 2rem;">
-        Lorem ipsum dolor sit amet. <code>($font-din-condensed, 500)</code>
-      </p>
-
 
       <h3>Brand Colors</h3>
-      <p class="color-tile" data-hex="#18408b">
+      <p class="color-tile" data-hex="#23b7fb">
         <strong>Blue</strong> <code>($blue)
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
-      <p class="color-tile" data-hex="#00b5e0">
-        <strong>Light Blue</strong> <code>($light-blue)
+      <p class="color-tile" data-hex="#4e2b63">
+        <strong>Purple</strong> <code>($purple)
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
       <p class="color-tile" data-hex="#fed100">
-        <strong>Gold</strong> <code>($gold)
-        <span class="js-color-label">&hellip;</span></code>
-      </p>
-
-      <p class="color-tile" data-hex="#f6e816">
         <strong>Yellow</strong> <code>($yellow)
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
-      <!-- 4 Shades of Gray -->
       <h3>Gray Tones</h3>
-      <p class="color-tile" data-hex="#333131">
+      <p class="color-tile" data-hex="#222">
         <strong>Off Black</strong> <code>($off-black)
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
-      <p class="color-tile" data-hex="#666">
+      <p class="color-tile" data-hex="#333">
         <strong>Dark Gray</strong> <code>($dark-gray)
+        <span class="js-color-label">&hellip;</span></code>
+      </p>
+
+      <p class="color-tile" data-hex="#555">
+        <strong>Medium Gray</strong> <code>($med-gray)
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
       <p class="color-tile" data-hex="#ddd">
         <strong>Light Gray</strong> <code>($light-gray)
-        <span class="js-color-label">&hellip;</span></code>
-      </p>
-
-      <p class="color-tile" data-hex="#f4f4f4">
-        <strong>Off White</strong> <code>($off-white)
         <span class="js-color-label">&hellip;</span></code>
       </p>
 
@@ -112,34 +100,50 @@
       </div>
     </section>
 
-    <section class="row section campaign-section">
+    <section class="row section styleguide-section">
       <h2 id="typography">Typography</h2>
       <% styleguide_block  '1.1 - Headings' do %>
-        <h1><span>Heading</span></h1>
+        <h1 class="$modifier_class"><span>Heading</span></h1>
         <p>Lorem ipsum dolor sit amet.</p>
 
-        <h2><span>Heading</span></h2>
+        <h2 class="$modifier_class"><span>Heading</span></h2>
         <p>Lorem ipsum dolor sit amet.</p>
 
-        <h3><span>Heading</span></h3>
+        <h3 class="$modifier_class"><span>Heading</span></h3>
         <p>Lorem ipsum dolor sit amet.</p>
 
-        <h4><span>Heading</span></h4>
+        <h4 class="$modifier_class"><span>Heading</span></h4>
         <p>Lorem ipsum dolor sit amet.</p>
       <% end %>
 
-      <% styleguide_block  '1.2 - Inline Elements' do %>
+      <% styleguide_block  '1.2.1 - Unordered Lists' do %>
+        <ul>
+          <li>Norway</li>
+          <li>Sweden</li>
+          <li>Finland</li>
+        </ul>
+      <% end %>
+
+      <% styleguide_block  '1.2.2 - Ordered Lists' do %>
+        <ol>
+          <li>Norway</li>
+          <li>Sweden</li>
+          <li>Finland</li>
+        </ol>
+      <% end %>
+
+      <% styleguide_block  '1.3 - Inline Elements' do %>
         <p>Lorem <em>italic</em> dolor <mark>important</mark> amet.
         This is some <strong>bold</strong> text and a <a href="#">link</a>.</p>
       <% end %>
     </section>
 
-    <section class="row section campaign-section">
+    <section class="row section styleguide-section">
       <h2 id="layout">Layout</h2>
       <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 12-column grid. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation deatils.</p>
     </section>
 
-  <section class="row section campaign-section">
+  <section class="row section styleguide-section">
     <h2 id="patterns">Patterns</h2>
 
     <div class="row section">
@@ -205,17 +209,6 @@
       <% styleguide_block  '4.2.4 - Pullquote' do %>
         <p class="pullquote">Lorem ipsum dolor sit aquote.</p>
       <% end %>
-
-      <div class="with-copy">
-        <% styleguide_block  '4.2.5 - List styles' do %>
-          <ul class="$modifier_class">
-            <li>One item</li>
-            <li>Two item</li>
-            <li>Three item</li>
-          </ul>
-        <% end %>
-      </div>
-
     </div>
 
     <div class="row section">
@@ -251,7 +244,7 @@
 
 
 
-      <div class="cached-modal" id="modal--example">
+      <script type="text/cached-modal" id="modal--example">
         <a href="#" class="js-close-modal modal-close-button">&times;</a>
         <h2>Example Content</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let's take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
@@ -263,7 +256,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
         <a href="#" class="btn js-close-modal">Alright, got it.</a>
-      </div>
+      </script>
     <% end %>
 
     <div class="row section">
@@ -278,13 +271,13 @@
     </div>
   </section>
 
-  <section class="row section campaign-section">
+  <section class="row section styleguide-section">
     <h2 id="animation">Animation</h2>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
 
     <p>See <code>animation.scss</code> for details. Preview coming soon.</p>
 
-  <section class="row section campaign-section with-copy">
+  <section class="row section styleguide-section with-copy">
     <h2 id="interaction">Interaction</h2>
     <p>Neue includes some helper scripts for interactivity. While any application-specific logic should live within its own codebase, you can find the logic that powers some of our reusable patterns here:</p>
     <ul>
