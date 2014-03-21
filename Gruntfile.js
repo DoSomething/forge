@@ -223,7 +223,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-checkbranch");
   grunt.loadNpmTasks("grunt-checkrepo");
-  grunt.loadNpmTasks("grunt-docco2");
+  grunt.loadNpmTasks("grunt-docco");
   grunt.loadNpmTasks("grunt-bump");
   grunt.loadNpmTasks("grunt-shell");
   grunt.loadNpmTasks("grunt-lintspaces");
