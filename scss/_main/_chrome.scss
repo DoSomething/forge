@@ -241,8 +241,9 @@
         cursor: auto;
         margin: 1rem 0 0.5rem;
         padding: 0;
+
         &:after {
-          content: '';
+          content: "";
         }
       }
     }
@@ -284,6 +285,7 @@
 
   .col {
     padding: 0.5rem 0;
+
     @include media($tablet) {
       @include span-columns(3);
       margin-bottom: 2rem;
@@ -302,7 +304,7 @@
 
       @include media($tablet) {
         h4:after {
-          content: '';
+          content: "";
         }
 
         ul {
@@ -412,6 +414,7 @@
 
       a {
         margin: 0 0.5rem;
+
         @include media($tablet) {
           margin: 0 1rem 0 0;
         }
