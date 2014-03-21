@@ -29,5 +29,8 @@
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/grunt build"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "^0.4.0"
   }
 }
