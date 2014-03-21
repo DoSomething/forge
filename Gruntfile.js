@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ["scss/**/*.{scss,sass}"],
-        tasks: ["sass:compile"]
+        tasks: ["shell:scsslint", "lintspaces:scss", "sass:compile"]
       },
       js: {
         files: ["js/**/*.js", "tests/**/*.js"],
-        tasks: ["jshint:all", "uglify:dev", "test:js"]
+        tasks: ["jshint:all", "lintspaces:js", "uglify:dev", "test:js"]
       },
       images: {
         files: ["assets/images/**/*.{png,jpg,jpeg,gif}"],
@@ -136,6 +136,21 @@ module.exports = function(grunt) {
       }
     },
 
+    lintspaces: {
+      js: {
+        src: ["js/**/*.js", "!js/vendor/**/*.js"],
+        options: {
+          editorconfig: '.editorconfig'
+        }
+      },
+      scss: {
+        src: ["scss/**/*.scss", "!scss/vendor/**/*.scss"],
+        options: {
+          editorconfig: '.editorconfig'
+        }
+      }
+    },
+
     shell: {
       wraith: {
         command: "cd tests/wraith && rake && open tests/wraith/ds/gallery.html",
@@ -145,7 +160,7 @@ module.exports = function(grunt) {
       },
 
       scsslint: {
-        command: "scss-lint scss/ --config .scss-lint.yaml",
+        command: "scss-lint ./scss/ --config ./.scss-lint.yaml",
         options: {
           stdout: true
         }
@@ -193,7 +208,7 @@ module.exports = function(grunt) {
   grunt.registerTask("default", ["build", "watch"]);
 
   // code linting
-  grunt.registerTask("lint", ["jshint:all", "shell:scsslint"]);
+  grunt.registerTask("lint", ["jshint:all", "lintspaces:js", "shell:scsslint", "lintspaces:scss"]);
 
   // testing
   grunt.registerTask("test", ["test:css", "test:js"]);
@@ -223,4 +238,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-docco2");
   grunt.loadNpmTasks("grunt-bump");
   grunt.loadNpmTasks("grunt-shell");
+  grunt.loadNpmTasks("grunt-lintspaces");
 };

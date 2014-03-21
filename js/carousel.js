@@ -56,8 +56,8 @@ var NEUE = NEUE || {};
 
     // Increment or decrement slide position based on user"s request
     direction === "prev" ? decrementCounter() : incrementCounter();
-     
-    // Assign "visible" class to the requested slide 
+
+    // Assign "visible" class to the requested slide
     $("#slide" + counter).addClass("visible");
   }
 

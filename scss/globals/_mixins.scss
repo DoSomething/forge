@@ -4,10 +4,26 @@
   padding: 0 1.5rem;
 }
 
+// Calculate rgba() fallback value for older browsers.
+//
+// Examples:
+// @include rgba(background-color, $blue, 0.8);
+// @include rgba(background-color, #23b8fc, 0.5);
+// @include rgba(background-color, rgb(35, 184, 252), 0.5);
+//
+@mixin rgba($property, $color: #000, $value:0.5) {
+  #{$property}: rgb(red($color), green($color), blue($color));
+  #{$property}: rgba($color, $value);
+}
+
+
 // Shortcut for writing sprites that scale down on mobile displays.
 @mixin responsive-sprite($pos-x, $pos-y) {
   background-position: $pos-x/2 $pos-y/2;
-  @include media($tablet) { background-position: $pos-x $pos-y; }
+
+  @include media($tablet) {
+    background-position: $pos-x $pos-y;
+  }
 }
 
 // Border highlight on input focus
