@@ -195,7 +195,7 @@ textarea {
     font-size: $font-regular;
   }
 
-  &.medium { /* default */
+  &.medium { // default
     font-size: $font-medium;
   }
 
@@ -347,18 +347,17 @@ select {
   position: relative;
   width: 100%;
   background: $purple;
-  color: #fff;
-  color: rgba(255, 255, 255, 0.7);
   text-align: left;
   margin: 0;
   padding: 1rem 4rem 1rem 1.5rem;
+  @include rgba(color, #fff, 0.7);
   @include outer-container;
 
   b,
   strong {
     font-weight: 800;
     color: #fff;
-    padding: 0 0.3rem 0;
+    padding: 0 0.3rem;
   }
 
   a {
