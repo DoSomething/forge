@@ -64,6 +64,13 @@ linters:
   SortedProperties:
     enabled: false
 
+  StringQuotes:
+    enabled: true
+    style: double_quotes
+
+  UrlQuotes:
+    enabled: true
+
   SpaceAfterComma:
     enabled: true
 
