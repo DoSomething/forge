@@ -15,8 +15,8 @@ module.exports = function(grunt) {
         tasks: ["jshint:all", "lintspaces:js", "uglify:dev", "test:js"]
       },
       images: {
-        files: ["assets/images/**/*.{png,jpg,jpeg,gif}"],
-        tasks: ["imagemin"]
+        files: ["assets/**/*"],
+        tasks: ["copy"]
       }
     },
 
@@ -56,18 +56,6 @@ module.exports = function(grunt) {
           {src: "bower.json", dest: "dist/bower.json"},
           {src: "package.json", dest: "dist/package.json"}
         ]
-      }
-    },
-
-
-    imagemin: {
-      bundle: {
-        files: [{
-          expand: true,
-          cwd: "assets/images/",
-          src: ["**/*.{png,jpg,jpeg,gif}"],
-          dest: "dist/assets/images"
-        }]
       }
     },
 
@@ -228,7 +216,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks("grunt-sass");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
-  grunt.loadNpmTasks("grunt-contrib-imagemin");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-qunit");
