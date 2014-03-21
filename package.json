@@ -25,8 +25,5 @@
     "grunt-checkbranch": "~0.2.2",
     "grunt-checkrepo": "~0.1.0",
     "grunt-lintspaces": "~0.4.1"
-  },
-  "scripts": {
-    "postinstall": "./node_modules/.bin/grunt"
   }
 }
