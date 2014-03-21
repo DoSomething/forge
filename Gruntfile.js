@@ -160,6 +160,14 @@ module.exports = function(grunt) {
 
       dist: {
         command: [
+          // checkout master, rebase and push
+          "git checkout master",
+          "git rebase dev",
+          "git push origin master",
+
+          // push to heroku
+          "git push heroku master",
+
           // destroy current dist branch
           "git branch -D dist",
           "git push origin :dist",
@@ -181,7 +189,7 @@ module.exports = function(grunt) {
           "git push origin dist --tags",
 
           // and finally, bring us back to the master branch
-          "git checkout master"
+          "git checkout dev"
         ].join("&&"),
         options: {
           stdout: true,
@@ -206,11 +214,17 @@ module.exports = function(grunt) {
   // build
   grunt.registerTask("build", ["lint", "sass:compile", "uglify:dev", "copy:main", "docco", "test:js"]);
   grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "copy:main", "uglify:prod"]); // used when preparing code for distribution
-  grunt.registerTask("heroku:development", ["prod"]);
 
   // deploy
   grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function() {
-    grunt.task.run("checkbranch:master", "checkrepo:validtag", "prod", "test:js", "lint", "checkrepo:clean", "shell:dist");
+    // 1. Check that we're on "dev"
+    // 2. Check that the current tag is valid.
+    // 3. Compile for production before testing.
+    // 4. Test and lint to catch any potential errors.
+    // 5. Check that the repo is clean, since we're about to do some *serious shit*.
+    // 6. Go crazy (i.e. run "shell:dist" task).
+
+    grunt.task.run("checkbranch:dev", "checkrepo:validtag", "prod", "test:js", "lint", "checkrepo:clean", "shell:dist");
   });
 
 
