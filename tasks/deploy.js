@@ -1,5 +1,15 @@
 module.exports = function(grunt) {
-  grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function() {
+  grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function(ver) {
+    // Bump semantic version. Default to incrementing 'patch'.
+    validBumps = ["patch", "minor", "major"];
+    ver = ver || "patch";
+
+    if( validBumps.indexOf(ver) === -1 ) {
+      throw grunt.util.error("Invalid bump type: choose 'deploy:patch' (default), 'deploy:minor', or 'deploy:major'.");
+    }
+
+    grunt.task.run("bump:" + ver);
+
     // 1. Check that we're on "dev"
     // 2. Check that the current tag is valid.
     // 3. Compile for production before testing.
