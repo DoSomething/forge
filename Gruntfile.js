@@ -218,6 +218,7 @@ module.exports = function(grunt) {
   // build
   grunt.registerTask("build", ["lint", "sass:compile", "uglify:dev", "copy:main", "docco", "test:js"]);
   grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "copy:main", "uglify:prod"]); // used when preparing code for distribution
+  grunt.registerTask("heroku", ["prod"]);
 
   // deploy
   grunt.registerTask("deploy", "Runs tests and lints code, compiles for production, deploys master to the dist branch, and makes a git tag.", function() {
