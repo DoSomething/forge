@@ -31,6 +31,9 @@
     "postinstall": "./node_modules/.bin/grunt build"
   },
   "devDependencies": {
-    "load-grunt-tasks": "^0.4.0"
+    "load-grunt-tasks": "^0.4.0",
+    "glob": "^3.2.9",
+    "load-grunt-config": "^0.8.0-beta.1",
+    "path": "^0.4.9"
   }
 }
