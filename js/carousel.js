@@ -3,6 +3,7 @@
 //  **Image Carousel** Adds simple "previous/next" functionality
 //  to slide deck-style image galleries with the following markup:
 //
+//  ```html
 //  <div class="js-carousel gallery">
 //    <div id="prev" class="prev-wrapper">
 //      <div class="prev-button"><span class="arrow">&#xe605;</span></div>
@@ -19,6 +20,7 @@
 //      <div class="next-button"><span class="arrow">&#xe60a;</span></div>
 //    </div>
 //  </div>
+//  ```
 //
 
 var NEUE = NEUE || {};
