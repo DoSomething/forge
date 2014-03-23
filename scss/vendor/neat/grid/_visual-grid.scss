@@ -7,35 +7,46 @@
   background-image: unquote("linear-gradient(left, #{$values})");
 }
 
-@if $visual-grid == true or $visual-grid == yes {
-  body:before {
-    content: '';
-    display: inline-block;
-    @include grid-column-gradient(gradient-stops($grid-columns));
-    height: 100%;
-    left: 0;
-    margin: 0 auto;
-    max-width: $max-width;
-    opacity: $visual-grid-opacity;
-    position: fixed;
-    right: 0;
-    width: 100%;
-    pointer-events: none;
 
-    @if $visual-grid-index == back {
-      z-index: -1;
-    }
+@mixin grid-overlay {
+  content: '';
+  display: inline-block;
+  @include grid-column-gradient(gradient-stops($grid-columns));
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  max-width: $max-width;
+  opacity: $visual-grid-opacity;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
 
-    @else if $visual-grid-index == front {
-      z-index: 9999;
-    }
+  @if $visual-grid-index == back {
+    z-index: -1;
+  }
 
-    @each $breakpoint in $visual-grid-breakpoints {
-      @if $breakpoint != nil {
-        @include media($breakpoint) {
-          @include grid-column-gradient(gradient-stops($grid-columns));
-        }
+  @else if $visual-grid-index == front {
+    z-index: 9999;
+  }
+
+  @each $breakpoint in $visual-grid-breakpoints {
+    @if $breakpoint != nil {
+      @include media($breakpoint) {
+        @include grid-column-gradient(gradient-stops($grid-columns));
       }
     }
+  }
+}
+
+@if $visual-grid == true or $visual-grid == yes {
+  body:before {
+    @include grid-overlay;
+  }
+}
+
+@if $visual-grid == class {
+  body.show-visual-grid:before {
+    @include grid-overlay;
   }
 }

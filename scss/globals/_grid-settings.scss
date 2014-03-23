@@ -26,6 +26,6 @@ $desktop: new-breakpoint(min-width $desktop-breakpoint 16); // 16 columns
 $tall-mobile: min-device-height 960px;
 
 // Development
-// $visual-grid: true;
+$visual-grid: class;
 $visual-grid-index: front;
 $visual-grid-color: #fcc;
