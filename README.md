@@ -26,7 +26,7 @@ bower install git@github.com:DoSomething/neue.git#3.1.1
 
 # Contributing
 The latest version of the pattern library is always available online at [neue.dosomething.org](http://neue.dosomething.org/).
-You can also run the styleguide on your local machine! Here's the steps:
+You can also run the pattern library on your local machine! Here's the steps:
 
   1. Clone this repository.
   2. Run `bundle install` and `npm install` to configure dependencies.
