@@ -1,17 +1,8 @@
   <article class="sidebar-content">
     <section class="row section styleguide-section with-copy">
-      <h1>DS Neue Style Guide</h1>
+      <h1>Neue Pattern Library</h1>
 
-      <p><mark>The style guide may become out-of-date while we make some big changes. Stay tuned for updates.</mark></p>
-
-      <p>This is a living styleguide. It catalogues the re-usable classes included in the DS Neue framework. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.</p>
-
-      <p>Check out these full-page mocks to see Neue in action:</p>
-      <ul>
-        <li><a href="/example/home">Homepage</a></li>
-        <li><a href="/example/blog">Blog Post</a></li>
-        <li><a href="/example/campaign">Campaign Template</a></li>
-      </ul>
+      <p>This is Neue, our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.</p>
     </section>
 
     <section class="row section styleguide-section">
@@ -120,7 +111,9 @@
 
     <section class="row section styleguide-section">
       <h2 id="layout">Layout</h2>
-      <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 12-column grid. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation deatils.</p>
+      <img src="/assets/kss/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
+      <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 16-column grid. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation details. See <a href="https://github.com/DoSomething/neue/blob/dev/scss/globals/_grid-settings.scss"><code>_grid-settings.scss</code></a> for grid settings and breakpoints.</p>
+      <p>Drag the <a href="javascript:jQuery('body').toggleClass('show-visual-grid');" class="btn secondary tiny">Grid Bookmarklet</a> to your bookmarks toolbar and click to toggle a grid overlay on any Neue-powered DoSomething.org website. Or just click to try it out on this page!</p>
     </section>
 
   <section class="row section styleguide-section">
@@ -255,20 +248,20 @@
     <h2 id="animation">Animation</h2>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
 
-    <p>See <code>animation.scss</code> for details. Preview coming soon.</p>
+    <p>See <a href="https://github.com/DoSomething/neue/blob/dev/scss/_main/_animations.scss"><code>animation.scss</code></a> for details. Preview coming soon.</p>
 
   <section class="row section styleguide-section with-copy">
     <h2 id="interaction">Interaction</h2>
     <p>Neue includes some helper scripts for interactivity. While any application-specific logic should live within its own codebase, you can find the logic that powers some of our reusable patterns here:</p>
     <ul>
-      <li><a href="/docs/js/jump-scroll.html">jump-scroll.js</a>: Applies a smooth-scroll animation on links with the <code>.js-jump-scroll</code> class.</li>
-      <li><a href="/docs/js/scroll-indicator.html">scroll-indicator.js</a>: Indicates current section in nav on scroll.</li>
-      <li><a href="/docs/js/menu.html">menu.js</a>: Initializes site-wide menu chrome functionality.</li>
-      <li><a href="/docs/js/modal.html">modal.js</a>: Show/hide modals.</li>
-      <li><a href="/docs/js/sticky.html">sticky.js</a>: Pins an element to the top of the screen on scroll.</li>
-      <li><a href="/docs/js/validation.html">validation.js</a>: Client-side form validation logic.</li>
-      <li><a href="/docs/js/ValidationFunctions.html">ValidationFunctions.js</a>: Individual validation checks (name, email, etc.)</li>
-      <li><a href="/docs/js/carousel.html">carousel.js</a>: Carousel (image gallery) behavior.</li>
+      <li><a href="/docs/jump-scroll.html">jump-scroll.js</a>: Applies a smooth-scroll animation on links with the <code>.js-jumpscroll</code> class.</li>
+      <li><a href="/docs/scroll-indicator.html">scroll-indicator.js</a>: Indicates current section in nav on scroll.</li>
+      <li><a href="/docs/menu.html">menu.js</a>: Initializes site-wide menu chrome functionality.</li>
+      <li><a href="/docs/modal.html">modal.js</a>: Show/hide modals.</li>
+      <li><a href="/docs/sticky.html">sticky.js</a>: Pins an element to the top of the screen on scroll.</li>
+      <li><a href="/docs/validation.html">validation.js</a>: Client-side form validation logic.</li>
+      <li><a href="/docs/ValidationFunctions.html">ValidationFunctions.js</a>: Individual validation checks (name, email, etc.)</li>
+      <li><a href="/docs/carousel.html">carousel.js</a>: Carousel (image gallery) behavior.</li>
     </ul>
   </section>
 
@@ -277,7 +270,7 @@
   <div class="sidebar">
     <nav class="tabs vertical js-sticky">
       <ul>
-        <li><a href="#fonts-and-colors" class="js-scroll-indicator js-jump-scroll">Colors &amp; Fonts</a></li>
+        <li><a href="#fonts-and-colors" class="js-scroll-indicator js-jump-scroll">Fonts &amp; Colors</a></li>
         <li><a href="#typography" class="js-scroll-indicator js-jump-scroll">Typography</a></li>
         <li><a href="#layout" class="js-scroll-indicator js-jump-scroll">Layout</a></li>
         <li>
