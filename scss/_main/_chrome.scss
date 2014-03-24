@@ -39,6 +39,8 @@
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
+    float: left;
+    padding: 0.5rem;
 
     @include media($tablet) {
       position: static;
@@ -59,6 +61,7 @@
     font-size: 32px;
     text-decoration: none;
     margin: 0.5rem;
+    padding: 1rem;
     @include icomoon-icon;
 
     @include media($tablet) {
