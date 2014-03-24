@@ -56,7 +56,7 @@ input[type="text"], input[type="search"], input[type="password"] {
   font-size: 1rem;
   border: 1px solid $light-gray;
   border-radius: 5px;
-  padding: 0.5em 1em 0.3em;
+  padding: 0.5em 1em 0.5em;
   margin: 0 0 0.5em;
   @include box-sizing(border-box);
   @include highlight-on-focus;
@@ -75,8 +75,8 @@ input[type="text"], input[type="search"], input[type="password"] {
 //
 // Styleguide 4.1.3 - Search Fields
 input[type="search"] {
-  padding: 0.25rem 0 0.2rem 28px;
-  background: #fff no-repeat 12px;
+  padding-left: 32px;
+  background: #fff no-repeat 12px 50%;
   @include retina-image('assets/images/search', 18px 18px)
 }
 
