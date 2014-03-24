@@ -168,7 +168,12 @@
 
     input[type="search"] {
       margin-top: -0.25rem;
+      background-image: url("assets/images/search_dark.png");
       @include transition(width 0.5s);
+
+      @include hidpi {
+        background-image: image-url("assets/images/search_dark@2x.png");
+      }
 
       @include media($tablet) {
         width: 100px;
