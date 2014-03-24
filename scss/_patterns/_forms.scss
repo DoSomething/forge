@@ -61,6 +61,14 @@ input[type="text"], input[type="search"], input[type="password"] {
   @include box-sizing(border-box);
   @include highlight-on-focus;
   -webkit-appearance: none;
+
+  &.short {
+    max-width: 80px;
+  }
+
+  &.medium {
+    max-width: 200px;
+  }
 }
 
 // Specific style rules for search input fields.
@@ -78,7 +86,6 @@ input[type="search"] {
 textarea {
   width: 100%;
   font-family: $font-proxima-nova;
-  font-size: $font-medium;
   border: 1px solid $light-gray;
   border-radius: $lg-border-radius;
   padding: 0.5em 1em 0.3em;
