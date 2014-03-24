@@ -1,13 +1,9 @@
-@mixin grid-column-gradient($values...) {
-  background-image: deprecated-webkit-gradient(linear, left top, left bottom, $values);
-  background-image:  -webkit-linear-gradient(left, $values);
-  background-image:     -moz-linear-gradient(left, $values);
-  background-image:      -ms-linear-gradient(left, $values);
-  background-image:       -o-linear-gradient(left, $values);
-  background-image: unquote("linear-gradient(left, #{$values})");
-}
+// We define our own grid overlay in here. This allows us to
+// nest it under a class (so it can be toggled on-demand), and
+// prevent it from being included twice when helpers.css is
+// imported into client app CSS.
 
-@if $visual-grid == true or $visual-grid == yes {
+body.show-visual-grid:before {
   content: '';
   display: inline-block;
   @include grid-column-gradient(gradient-stops($grid-columns));
@@ -37,5 +33,3 @@
     }
   }
 }
-
-
