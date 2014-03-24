@@ -161,3 +161,7 @@ h1.styleguide {
 .styleguide-section {
   clear: both;
 }
+
+.styleguide-section img {
+  max-width: 100%;
+}
