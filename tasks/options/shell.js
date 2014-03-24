@@ -1,6 +1,6 @@
 module.exports = {
-  wraith: {
-    command: "cd tests/wraith && rake && open tests/wraith/ds/gallery.html",
+  scsslint: {
+    command: "scss-lint ./scss/ --config ./.scss-lint.yaml",
     options: {
       stdout: true
     }
