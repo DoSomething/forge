@@ -26,6 +26,8 @@ $desktop: new-breakpoint(min-width $desktop-breakpoint 16); // 16 columns
 $tall-mobile: min-device-height 960px;
 
 // Development
-$visual-grid: class;
+// @NOTE: We define the grid in neue.css so it doesn't get duplicated in
+// client app CSS. It can be toggled with a bookmarklet - see pattern
+// library for documentation!
 $visual-grid-index: front;
 $visual-grid-color: #fcc;
