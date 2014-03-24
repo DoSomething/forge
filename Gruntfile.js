@@ -7,7 +7,11 @@ module.exports = function(grunt) {
 
   // Load plugin configuration from `tasks/options`.
   require('load-grunt-config')(grunt, {
-    configPath: require('path').join(process.cwd(), 'tasks/options')
+    configPath: require('path').join(process.cwd(), 'tasks/options'),
+    init: true,
+    config: {
+      pkg: grunt.file.readJSON("package.json")
+    }
   });
 };
 
