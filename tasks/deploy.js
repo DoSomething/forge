@@ -8,15 +8,14 @@ module.exports = function(grunt) {
       throw grunt.util.error("Invalid bump type: choose 'deploy:patch' (default), 'deploy:minor', or 'deploy:major'.");
     }
 
-    grunt.task.run("bump:" + ver);
+    // 1. Bump version using grunt-bump.
+    // 2. Check that we're on "dev"
+    // 3. Check that the current tag is valid.
+    // 4. Compile for production before testing.
+    // 5. Test and lint to catch any potential errors.
+    // 6. Check that the repo is clean, since we're about to do some *serious shit*.
+    // 7. Go crazy (i.e. run "shell:dist" task).
 
-    // 1. Check that we're on "dev"
-    // 2. Check that the current tag is valid.
-    // 3. Compile for production before testing.
-    // 4. Test and lint to catch any potential errors.
-    // 5. Check that the repo is clean, since we're about to do some *serious shit*.
-    // 6. Go crazy (i.e. run "shell:dist" task).
-
-    grunt.task.run("checkbranch:dev", "checkrepo:validtag", "prod", "test:js", "lint", "checkrepo:clean", "shell:dist");
+    grunt.task.run("bump:" + ver, "checkbranch:dev", "checkrepo:validtag", "prod", "test:js", "lint", "checkrepo:clean", "shell:dist");
   });
 }
