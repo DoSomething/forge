@@ -37,7 +37,7 @@ img.bordered {
   sup {
     font-size: $font-small;
     margin: 0 0 1em;
-    color: #aaa; // @TODO - This is a non-standard gray. Is it useful elsewhere?
+    color: $med-gray;
   }
 
   a {
