@@ -30,23 +30,26 @@ img.bordered {
 //
 // Styleguide 4.2.3 - Legal Text
 .legal {
+  font-size: $font-small;
+  color: $med-gray;
+
   a,
   p,
   small,
   strong,
   sup {
-    font-size: $font-small;
-    margin: 0 0 1em;
-    color: $med-gray;
+    margin: 0;
   }
 
   a {
+    color: $med-gray;
+
     &:hover {
-      color: lighten($light-gray, 10%);
+      color: lighten($med-gray, $color-tint);
     }
 
-    &:visited {
-      color: lighten($light-gray, 10%);
+    &:active {
+      color: darken($med-gray, $color-tint);
     }
   }
 }
