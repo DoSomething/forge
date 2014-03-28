@@ -34,6 +34,12 @@ var NEUE = NEUE || {};
         // @TODO: We should handle AJAX loading things in.
       }
 
+      // If Google Analytics is set up, we fire an event to track that a
+      // modal has been opened.
+      if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+        _gaq.push(["_trackEvent", "Modal", "Open", href, null, true]);
+      }
+
       if( !modalIsOpen ) {
         // create modal in DOM
         $modal = $("<div class='modal'></div>");
@@ -73,6 +79,12 @@ var NEUE = NEUE || {};
       // Close modal when "x" is clicked:
       $modal.on("click", ".js-close-modal", function(e) {
         e.preventDefault();
+
+        // If Google Analytics is set up, we fire an event to track that a
+        // modal has been closed.
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+          _gaq.push(["_trackEvent", "Modal", "Close", href, null, true]);
+        }
 
         if(Modernizr.cssanimations) {
           $modalContent.addClass("fade-out-down");

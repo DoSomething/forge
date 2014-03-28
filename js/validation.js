@@ -73,6 +73,14 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
     // Validate form on submit
     $("body").on("submit", "form", function(e, isValidated) {
       if(isValidated === true) {
+        // we're ready to submit the form
+
+        // If Google Analytics is set up, we fire an event to
+        // mark that the form has been successfully submitted
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+          _gaq.push(["_trackEvent", "Form", "Submitted", $(this).attr("id"), null, false]);
+        }
+
         return true;
       } else {
         var $form = $(this);
@@ -88,6 +96,15 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
             if(validatedResults.length === $validationFields.length) {
               // we've validated all that can be validated
               $form.trigger("submit", true);
+            } else {
+              // some validation errors exist on the form
+
+              // If Google Analytics is set up, we fire an event to
+              // mark that the form had some errors
+              if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+                _gaq.push(["_trackEvent", "Form", "Validation Error on submit", $(this).attr("id"), null, true]);
+              }
+
             }
           });
         });
@@ -118,11 +135,24 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
           $field.addClass("shake");
           $fieldMessage.addClass("error");
         }
+
+        // If Google Analytics is set up, we fire an event to
+        // mark that a suggestion has been made
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+          _gaq.push(["_trackEvent", "Form", "Inline Validation Error", $fieldLabel.attr("for"), null, true]);
+        }
       }
 
       if(result.suggestion) {
         $fieldMessage.html("Did you mean <a href='#' class='js-mailcheck-fix'>" + result.suggestion.full + "</a>?");
         $fieldMessage.addClass("warning");
+
+
+        // If Google Analytics is set up, we fire an event to
+        // mark that a suggestion has been made
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+          _gaq.push(["_trackEvent", "Form", "Mailcheck Suggestion", result.suggestion.domain, null, true]);
+        }
       }
 
       $fieldLabel.addClass("show-message");
@@ -133,6 +163,13 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
         var $field = $("#" + $(this).closest("label").attr("for"));
         $field.val($(this).text());
         $field.trigger("blur");
+
+        // If Google Analytics is set up, we fire an event to
+        // mark that a suggestion has been made
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+          _gaq.push(["_trackEvent", "Form", "Mailcheck Suggestion Used", $(this).text(), null, true]);
+        }
+
       });
 
       $field.on("focus", function() {
