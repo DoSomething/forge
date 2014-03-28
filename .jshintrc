@@ -19,7 +19,8 @@
         "$": false,
         "_": false,
         "Modernizr": false,
-        "jQuery": false
+        "jQuery": false,
+        "_gaq": false
     },
     "strict": true,
     "trailing": true,
