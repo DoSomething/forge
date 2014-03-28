@@ -51,6 +51,13 @@ var NEUE = NEUE || {};
 
         modalIsOpen = true;
 
+
+        // If Google Analytics is set up, we fire an event to track that a
+        // modal has been opened.
+        if(typeof _gaq === "function") {
+          _gaq.push(["_trackEvent", "Modal", "Open", href, null, true]);
+        }
+
         //  **This fixes an issue with `position:fixed` and the virtual keyboard
         //  on Mobile Safari.** Since this is a browser bug, we're forced to use
         //  browser-detection here, and should look into removing this as soon
@@ -73,6 +80,12 @@ var NEUE = NEUE || {};
       // Close modal when "x" is clicked:
       $modal.on("click", ".js-close-modal", function(e) {
         e.preventDefault();
+
+        // If Google Analytics is set up, we fire an event to track that a
+        // modal has been closed.
+        if(typeof _gaq === "function") {
+          _gaq.push(["_trackEvent", "Modal", "Close", href, null, true]);
+        }
 
         if(Modernizr.cssanimations) {
           $modalContent.addClass("fade-out-down");
