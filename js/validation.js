@@ -77,7 +77,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
         // If Google Analytics is set up, we fire an event to
         // mark that the form has been successfully submitted
-        if(typeof _gaq === "function") {
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
           _gaq.push(["_trackEvent", "Form", "Submitted", $(this).attr("id"), null, false]);
         }
 
@@ -101,7 +101,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
               // If Google Analytics is set up, we fire an event to
               // mark that the form had some errors
-              if(typeof _gaq === "function") {
+              if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
                 _gaq.push(["_trackEvent", "Form", "Validation Error on submit", $(this).attr("id"), null, true]);
               }
 
@@ -138,7 +138,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
         // If Google Analytics is set up, we fire an event to
         // mark that a suggestion has been made
-        if(typeof _gaq === "function") {
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
           _gaq.push(["_trackEvent", "Form", "Inline Validation Error", $fieldLabel.attr("for"), null, true]);
         }
       }
@@ -150,7 +150,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
         // If Google Analytics is set up, we fire an event to
         // mark that a suggestion has been made
-        if(typeof _gaq === "function") {
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
           _gaq.push(["_trackEvent", "Form", "Mailcheck Suggestion", result.suggestion.domain, null, true]);
         }
       }
@@ -166,7 +166,7 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
         // If Google Analytics is set up, we fire an event to
         // mark that a suggestion has been made
-        if(typeof _gaq === "function") {
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
           _gaq.push(["_trackEvent", "Form", "Mailcheck Suggestion Used", $(this).text(), null, true]);
         }
 

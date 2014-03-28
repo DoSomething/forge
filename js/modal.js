@@ -34,6 +34,12 @@ var NEUE = NEUE || {};
         // @TODO: We should handle AJAX loading things in.
       }
 
+      // If Google Analytics is set up, we fire an event to track that a
+      // modal has been opened.
+      if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+        _gaq.push(["_trackEvent", "Modal", "Open", href, null, true]);
+      }
+
       if( !modalIsOpen ) {
         // create modal in DOM
         $modal = $("<div class='modal'></div>");
@@ -50,13 +56,6 @@ var NEUE = NEUE || {};
         $modal.show();
 
         modalIsOpen = true;
-
-
-        // If Google Analytics is set up, we fire an event to track that a
-        // modal has been opened.
-        if(typeof _gaq === "function") {
-          _gaq.push(["_trackEvent", "Modal", "Open", href, null, true]);
-        }
 
         //  **This fixes an issue with `position:fixed` and the virtual keyboard
         //  on Mobile Safari.** Since this is a browser bug, we're forced to use
@@ -83,7 +82,7 @@ var NEUE = NEUE || {};
 
         // If Google Analytics is set up, we fire an event to track that a
         // modal has been closed.
-        if(typeof _gaq === "function") {
+        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
           _gaq.push(["_trackEvent", "Modal", "Close", href, null, true]);
         }
 
