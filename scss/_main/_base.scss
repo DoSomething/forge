@@ -104,7 +104,12 @@ a {
   text-decoration: none;
 
   &:hover {
+    color: lighten($blue, $color-tint);
     text-decoration: underline;
+  }
+
+  &:active {
+    color: darken($blue, $color-tint);
   }
 
   &.secondary {

@@ -136,12 +136,12 @@ textarea {
   @include highlight-on-focus;
 
   &:hover {
-    background: lighten($blue, 6%);
+    background: lighten($blue, $color-tint);
   }
 
   &:active {
     outline: 0;
-    background: darken($blue, 6%);
+    background: darken($blue, $color-tint);
   }
 
   &:link, &:active, &:hover {
@@ -160,13 +160,13 @@ textarea {
     border: 0;
 
     &:hover {
-      background: lighten($off-black, 6%);
+      background: lighten($off-black, $color-tint);
       box-shadow: none;
     }
 
     &:active {
       outline: 0;
-      background: darken($off-black, 3%);
+      background: darken($off-black, $color-tint);
       box-shadow: none;
     }
   }
