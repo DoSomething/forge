@@ -38,6 +38,8 @@ img.bordered {
   small,
   strong,
   sup {
+    font-size: $font-small;
+    color: $med-gray;
     margin: 0;
   }
 
