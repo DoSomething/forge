@@ -30,7 +30,6 @@ body {
 // Styleguide 1.1 - Headings
 h1, h2, h3, h4 {
   clear: both;
-  color: $purple;
   font-weight: $weight-bold;
   margin: 1.5rem 0;
 
@@ -43,6 +42,13 @@ h1, h2, h3, h4 {
   }
 }
 
+h1, h2 {
+  color: $purple;
+}
+
+h3, h4 {
+  color: $dark-gray;
+}
 
 h1 {
   font-size: $font-largest;
