@@ -14,7 +14,7 @@
     });
 
     // Hide footer on mobile until clicked
-    $(".footer--wrapper .col").addClass("is-collapsed");
+    $(".chrome--footer .col").addClass("is-collapsed");
     $(".js-footer-col h4").on("click", function() {
       if( window.matchMedia("screen and (max-width: 768px)").matches ) {
         $(this).closest(".col").toggleClass("is-collapsed");
