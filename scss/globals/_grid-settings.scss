@@ -19,6 +19,7 @@ $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1080px;
 
 // Media contexts
+$mobile: new-breakpoint(max-width $tablet-breakpoint 8); // 8 columns [default]
 $tablet: new-breakpoint(min-width $tablet-breakpoint 16); // 16 columns
 $desktop: new-breakpoint(min-width $desktop-breakpoint 16); // 16 columns
 

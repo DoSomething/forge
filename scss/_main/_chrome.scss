@@ -5,36 +5,38 @@
   margin-bottom: 2rem;
   overflow: hidden;
 
-  @include media($tablet) {
-    padding: 1rem 0;
-  }
-
-  &.is-visible {
-    display: block;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: $off-black;
-    z-index: 9997; // above everything else, below modals
-
-    .menu {
-      clear: both;
+  @include media($mobile) {
+    body &.is-visible {
       display: block;
-      position: static;
-      width: auto;
-      height: auto;
-      background: none;
-      margin-top: 4rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $off-black;
+      z-index: 9997; // above everything else, below modals
 
-      @include media($tall-mobile) {
-        margin-top: 5rem;
+      .menu {
+        clear: both;
+        display: block;
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        margin-top: 4rem;
+
+        @include media($tall-mobile) {
+          margin-top: 5rem;
+        }
+      }
+
+      .hamburger {
+        color: #fff;
       }
     }
+  }
 
-    .hamburger {
-      color: #fff;
-    }
+  @include media($tablet) {
+    padding: 1rem 0;
   }
 
   .logo {
@@ -223,8 +225,6 @@
   width: 100%;
   background: #000;
   margin: 0 auto;
-
-  @include outer-container;
 
   @include media($tablet) {
     padding: 1rem;
