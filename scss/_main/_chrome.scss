@@ -45,8 +45,10 @@
 
     @include media($tablet) {
       position: static;
+      min-width: 96px;
       padding: 0 1rem;
       text-align: center;
+
       @include span-columns(2);
     }
 
@@ -97,13 +99,14 @@
         float: left;
         display: block;
         text-align: left;
-        margin: 0 5.59492% 0 0;
+        margin: 0 3.5% 0 0;
         padding: 1.25rem 0;
         border-bottom: 0;
       }
 
       @include media($desktop) {
         padding: 0.75rem 0;
+        margin: 0 5% 0 0;
       }
     }
 
@@ -119,11 +122,12 @@
 
     strong {
       display: block;
+      font-size: $font-regular;
     }
 
     span {
       text-transform: uppercase;
-      font-size: $font-small;
+      font-size: $font-smaller;
 
       @include media($tablet) {
         display: none;
@@ -139,7 +143,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-right: 2rem;
+    margin-right: 1rem;
 
     @include media($tablet) {
       position: static;
@@ -166,7 +170,7 @@
         display: block;
         text-align: left;
         padding: 0.75rem 0;
-        margin: 0 1rem;
+        margin: 0 0 0 1rem;
         border-bottom: 0;
       }
 
@@ -187,7 +191,7 @@
       }
 
       @include media($tablet) {
-        width: 100px;
+        width: 110px;
         border: 1px solid $off-black;
         background-color: transparent;
       }
