@@ -36,13 +36,13 @@ var NEUE = NEUE || {};
 
       // If Google Analytics is set up, we fire an event to track that a
       // modal has been opened.
-      if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+      if(typeof(_gaq) !== "undefined" || _gaq !== null) {
         _gaq.push(["_trackEvent", "Modal", "Open", href, null, true]);
       }
 
       if( !modalIsOpen ) {
         // create modal in DOM
-        $modal = $("<div class='modal'></div>");
+        $modal = $("<div class=\"modal\"></div>");
         $modalContent = $("<div class='modal-content'></div>");
         $modal.append($modalContent);
         $modalContent.html( $(href).html() );
@@ -82,7 +82,7 @@ var NEUE = NEUE || {};
 
         // If Google Analytics is set up, we fire an event to track that a
         // modal has been closed.
-        if(typeof(_gaq) !== 'undefined' || _gaq !== null) {
+        if(typeof(_gaq) !== "undefined" || _gaq !== null) {
           _gaq.push(["_trackEvent", "Modal", "Close", href, null, true]);
         }
 
