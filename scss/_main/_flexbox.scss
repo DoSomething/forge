@@ -1,6 +1,6 @@
 // Wrapper for footer content. This lets flexbox stretch the footer to the bottom
 // of the viewport on supported browsers.
-.footer--wrapper {
+.chrome--footer {
   @include media($tablet) {
     display: block; // Fixes display issue in IE11 where <main> does not default to block.
     -webkit-box-flex: 1;
