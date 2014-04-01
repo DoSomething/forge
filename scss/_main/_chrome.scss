@@ -99,13 +99,14 @@
         float: left;
         display: block;
         text-align: left;
-        margin: 0 5.59492% 0 0;
+        margin: 0 3.5% 0 0;
         padding: 1.25rem 0;
         border-bottom: 0;
       }
 
       @include media($desktop) {
         padding: 0.75rem 0;
+        margin: 0 5% 0 0;
       }
     }
 
@@ -121,12 +122,12 @@
 
     strong {
       display: block;
-      font-size: 16px;
+      font-size: $font-regular;
     }
 
     span {
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: $font-smaller;
 
       @include media($tablet) {
         display: none;
@@ -190,7 +191,7 @@
       }
 
       @include media($tablet) {
-        width: 100px;
+        width: 110px;
         border: 1px solid $off-black;
         background-color: transparent;
       }
