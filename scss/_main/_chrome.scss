@@ -45,8 +45,10 @@
 
     @include media($tablet) {
       position: static;
+      min-width: 96px;
       padding: 0 1rem;
       text-align: center;
+
       @include span-columns(2);
     }
 
@@ -119,11 +121,12 @@
 
     strong {
       display: block;
+      font-size: 16px;
     }
 
     span {
       text-transform: uppercase;
-      font-size: $font-small;
+      font-size: 12px;
 
       @include media($tablet) {
         display: none;
@@ -139,7 +142,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-right: 2rem;
+    margin-right: 1rem;
 
     @include media($tablet) {
       position: static;
@@ -166,7 +169,7 @@
         display: block;
         text-align: left;
         padding: 0.75rem 0;
-        margin: 0 1rem;
+        margin: 0 0 0 1rem;
         border-bottom: 0;
       }
 
