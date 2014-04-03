@@ -4,7 +4,7 @@ module.exports = {
       report: "gzip"
     },
     files: {
-      "dist/neue.js": ["js/vendor/**/*.js", "js/**/*.js"]
+      "dist/neue.min.js": ["js/vendor/**/*.js", "js/**/*.js"]
     }
   },
   dev: {
