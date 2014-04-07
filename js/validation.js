@@ -17,17 +17,35 @@
 var NEUE = NEUE || {};
 NEUE.Validation = NEUE.Validation || {};
 NEUE.Validation.Functions = NEUE.Validation.Functions || {};
-NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
 
 (function($) {
   "use strict";
 
+  // Prepares form label DOM to display validation messages
+  NEUE.Validation.prepareFormLabels = function($parent) {
+    var $fields = $parent.find(".js-validate");
+
+    $fields.each(function() {
+      var field = $(this);
+      var $fieldLabel = $("label[for='" + field.attr("id") + "']");
+
+      if($fieldLabel.find(".inner-label").length === 0) {
+        var $innerLabel = $("<div class='inner-label'></div>");
+        $innerLabel.append("<div class='label'>" + $fieldLabel.html() + "</div>");
+        $innerLabel.append("<div class='message'></div>");
+
+        $fieldLabel.html($innerLabel);
+      }
+    });
+  };
+
   $(document).ready(function() {
     // Prepare the labels on any `.js-validate` fields in the DOM at load
-    NEUE.Validation.prepareFormLabels($("body"));
+    var $body = $("body");
+    NEUE.Validation.prepareFormLabels($body);
 
     // Validate on blur
-    $("body").on("blur", ".js-validate", function(e) {
+    $body.on("blur", ".js-validate", function(e) {
       e.preventDefault();
 
       // Don't validate empty form fields, that's just rude.
@@ -188,24 +206,5 @@ NEUE.Validation.prepareFormLabels = NEUE.Validation.prepareFormLabels || {};
       return false;
     }
   }
-
-  // Prepares form label DOM to display validation messages
-  NEUE.Validation.prepareFormLabels = function($parent) {
-    var $fields = $parent.find(".js-validate");
-
-    $fields.each(function() {
-      var field = $(this);
-      var $fieldLabel = $("label[for='" + field.attr("id") + "']");
-
-      if($fieldLabel.find(".inner-label").length === 0) {
-        var $innerLabel = $("<div class='inner-label'></div>");
-        $innerLabel.append("<div class='label'>" + $fieldLabel.html() + "</div>");
-        $innerLabel.append("<div class='message'></div>");
-
-        $fieldLabel.html($innerLabel);
-      }
-    });
-  };
-
 
 })(jQuery);
