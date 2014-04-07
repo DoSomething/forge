@@ -1,7 +1,10 @@
 module.exports = {
   prod: {
     options: {
-      report: "gzip"
+      report: "gzip",
+      mangle: {
+        except: ["$"]
+      }
     },
     files: {
       "dist/neue.min.js": ["js/vendor/**/*.js", "js/**/*.js"]
