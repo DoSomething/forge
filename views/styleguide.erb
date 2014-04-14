@@ -123,8 +123,11 @@
       <h4 id="forms">4.1 Forms</h4>
 
       <% styleguide_block  '4.1.1 - Form Labels' do %>
-        <label>Label</label>
-        <input type="text">
+        <!-- .show-message and .message classes and markup generated dynamically -->
+        <label class="show-message">
+          <div class="message $modifier_class">Label</div>
+        </label>
+        <input class="$modifier_class" type="text">
       <% end %>
 
       <% styleguide_block  '4.1.2 - Text Input Fields' do %>
