@@ -78,14 +78,6 @@ input[type="text"], input[type="search"], input[type="password"] {
   &.error {
     border-color: $error;
   }
-
-  &.warning {
-    border-color: $warning;
-  }
-
-  &.success {
-    border-color: $success;
-  }
 }
 
 // Specific style rules for search input fields.
