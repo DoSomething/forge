@@ -141,16 +141,18 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       var $field = $("#" + $fieldLabel.attr("for"));
       var $fieldMessage = $fieldLabel.find(".message");
 
-      $field.removeClass("shake");
+      $field.removeClass("success error warning shake");
       $fieldMessage.removeClass("success error warning");
 
       if(result.message) {
         $fieldMessage.text(result.message);
 
         if(result.success === true) {
+          $field.addClass("success");
           $fieldMessage.addClass("success");
         } else {
           $field.addClass("shake");
+          $field.addClass("error");
           $fieldMessage.addClass("error");
         }
 
@@ -162,7 +164,8 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       }
 
       if(result.suggestion) {
-        $fieldMessage.html("Did you mean <a href='#' class='js-mailcheck-fix'>" + result.suggestion.full + "</a>?");
+        $fieldMessage.html("Did you mean " + result.suggestion.full + "? <a href='#' class='js-mailcheck-fix'>Fix it!</a>");
+        $field.addClass("warning");
         $fieldMessage.addClass("warning");
 
 
@@ -191,6 +194,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       });
 
       $field.on("focus", function() {
+        $field.removeClass("warning error success shake");
         $fieldLabel.removeClass("show-message");
       });
 
