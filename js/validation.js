@@ -191,6 +191,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       });
 
       $field.on("focus", function() {
+        $field.removeClass("warning error success shake");
         $fieldLabel.removeClass("show-message");
       });
 
