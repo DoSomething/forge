@@ -164,7 +164,7 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       }
 
       if(result.suggestion) {
-        $fieldMessage.html("Did you mean <a href='#' class='js-mailcheck-fix'>" + result.suggestion.full + "</a>?");
+        $fieldMessage.html("Did you mean " + result.suggestion.full + "? <a href='#' class='js-mailcheck-fix'>Fix it!</a>");
         $field.addClass("warning");
         $fieldMessage.addClass("warning");
 
