@@ -1,4 +1,8 @@
-// Labels for form elements.
+// Labels for form elements. Optional validation styles triggered by client-side validation.
+//
+// .success    - Successful form validation
+// .warning    - Warning form validation (not an error, but worth double-checking).
+// .error      - Something's wrong!
 //
 // Styleguide 4.1.1 - Form Labels
 label {
@@ -29,15 +33,15 @@ label {
 
   .message {
     &.error {
-      color: $red;
+      color: $error;
     }
 
     &.warning {
-      color: $med-gray;
+      color: $warning;
     }
 
     &.success {
-      color: $purple;
+      color: $success;
     }
   }
 }
@@ -58,6 +62,7 @@ input[type="text"], input[type="search"], input[type="password"] {
   border-radius: 5px;
   padding: 0.5em 1em;
   margin: 0 0 0.5em;
+  @include transition(border 0.5s);
   @include box-sizing(border-box);
   @include highlight-on-focus;
   -webkit-appearance: none;
@@ -68,6 +73,18 @@ input[type="text"], input[type="search"], input[type="password"] {
 
   &.medium {
     max-width: 200px;
+  }
+
+  &.error {
+    border-color: $error;
+  }
+
+  &.warning {
+    border-color: $warning;
+  }
+
+  &.success {
+    border-color: $success;
   }
 }
 
@@ -374,7 +391,7 @@ select {
   }
 
   &.error {
-    background: $red;
+    background: $error;
   }
 
   .message-close-button {
