@@ -231,6 +231,13 @@
         <h2>Page 2</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+        <form action="#">
+          <label for="name">Name</label>
+          <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+
+          <label for="confirmName">Confirm Name</label>
+          <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+        </form>
         <a href="#" class="btn js-close-modal">Alright, got it.</a>
       </script>
     <% end %>
