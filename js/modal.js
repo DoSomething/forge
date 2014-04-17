@@ -25,6 +25,11 @@ var NEUE = NEUE || {};
     // The content of the modal.
     var $modalContent = null;
 
+    // Return a boolean if modal is open or not
+    var isOpen = function() {
+      return modalIsOpen;
+    }
+
     // Click handler for opening a new modal
     var _openHandler = function(event) {
       event.preventDefault();
@@ -144,6 +149,7 @@ var NEUE = NEUE || {};
 
     // Expose public API for NEUE.Modal
     return {
+      isOpen: isOpen,
       open: open,
       close: close
     };
