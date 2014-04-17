@@ -96,6 +96,11 @@ var NEUE = NEUE || {};
         return;
       }
 
+      // Only close if this modal has a close button
+      if(NEUE.Modal.$modalContent.find(".js-close-modal").length === 0) {
+        return;
+      }
+
       // Override default link behavior.
       event.preventDefault();
 
