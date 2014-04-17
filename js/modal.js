@@ -145,7 +145,7 @@ var NEUE = NEUE || {};
 
       // Remove URL hash for modal from browser
       if(window.location.hash === $reference) {
-        window.location.hash = "";
+        window.location.hash = "_";
       }
 
       // If Google Analytics is set up, we fire an event to track that a
