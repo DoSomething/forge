@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>modal.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="ValidationFunctions.html">
+                ValidationFunctions.js
+              </a>
+            
+              
+              <a class="source" href="carousel.html">
+                carousel.js
+              </a>
+            
+              
+              <a class="source" href="flexbox-fix.html">
+                flexbox-fix.js
+              </a>
+            
+              
+              <a class="source" href="jump-scroll.html">
+                jump-scroll.js
+              </a>
+            
+              
+              <a class="source" href="menu.html">
+                menu.js
+              </a>
+            
+              
+              <a class="source" href="modal.html">
+                modal.js
+              </a>
+            
+              
+              <a class="source" href="scroll-indicator.html">
+                scroll-indicator.js
+              </a>
+            
+              
+              <a class="source" href="sticky.html">
+                sticky.js
+              </a>
+            
+              
+              <a class="source" href="system-messages.html">
+                system-messages.js
+              </a>
+            
+              
+              <a class="source" href="validation.html">
+                validation.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>modal.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p> <strong>Show/hide modals.</strong> Link should have <code>.js-modal-link</code> class, and
+it’s <code>href</code> should point to the hash of the modal. By convention, the
+modal ID should be prefixed with <code>modal--</code> like so:</p>
+<script type="text/cached-modal" id="modal--login">
+   <!-- content -->
+</script>
+
+
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> NEUE = NEUE || {};
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($)</span> {</span>
+<span class="hljs-pi">  "use strict"</span>;
+
+  NEUE.Modal = (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>We can only have one modal open at a time; we track that here.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> modalIsOpen = <span class="hljs-literal">false</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>The modal container (including background overlay).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> $modal = <span class="hljs-literal">null</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>The content of the modal.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> $modalContent = <span class="hljs-literal">null</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Reference to current modal source</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> $reference = <span class="hljs-literal">null</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Return a boolean if modal is open or not</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> isOpen = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">return</span> modalIsOpen;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Click handler for opening a new modal</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> _openHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+      event.preventDefault();
+      <span class="hljs-keyword">var</span> href = <span class="hljs-string">""</span>;
+
+      <span class="hljs-keyword">if</span>( $(<span class="hljs-keyword">this</span>).data(<span class="hljs-string">"cached-modal"</span>) ) {
+        href = $($(<span class="hljs-keyword">this</span>).data(<span class="hljs-string">"cached-modal"</span>));
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( event.target.hash.charAt(<span class="hljs-number">0</span>) === <span class="hljs-string">"#"</span>  ) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>We find the modal based on the ID in the link”s <code>href</code>. For example,
+<code>&lt;a class=&quot;js-modal-link&quot; href=&quot;#modal--faq&quot;&gt;Click me&lt;/a&gt;</code> would open <code>&lt;div id=&quot;modal--faq&quot;&gt;&lt;/div&gt;</code>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        href = $(event.target.hash);
+      } <span class="hljs-keyword">else</span> {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>@TODO: We should handle AJAX loading things in.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      }
+
+      open(href);
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Open a new modal
+@param {jQuery}  el         Element that will be placed inside the modal.
+@param {boolean} animated   Use animation for opening the modal (default – true);</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> open = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($el, animated)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Default arguments</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      animated = <span class="hljs-keyword">typeof</span> animated !== <span class="hljs-string">"undefined"</span> ? animated : <span class="hljs-literal">true</span>;
+
+      <span class="hljs-keyword">var</span> id = $el.attr(<span class="hljs-string">"id"</span>);
+      <span class="hljs-keyword">if</span>(id) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Save ID of modal for future reference</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $reference = <span class="hljs-string">"#"</span> + id;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Set URL hash in the browser</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        window.location.hash = <span class="hljs-string">"#"</span> + id;
+      } <span class="hljs-keyword">else</span> {
+        $reference = <span class="hljs-string">""</span>;
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>If Google Analytics is set up, we fire an event to track that a
+modal has been opened.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span>(_gaq) !== <span class="hljs-string">"undefined"</span> &amp;&amp; _gaq !== <span class="hljs-literal">null</span>) {
+        _gaq.push([<span class="hljs-string">"_trackEvent"</span>, <span class="hljs-string">"Modal"</span>, <span class="hljs-string">"Open"</span>, $reference, <span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>]);
+      }
+
+      <span class="hljs-keyword">if</span>( !modalIsOpen ) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>create modal in DOM</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $modal = $(<span class="hljs-string">"&lt;div class=\"modal\"&gt;&lt;/div&gt;"</span>);
+        $modalContent = $(<span class="hljs-string">"&lt;div class='modal-content'&gt;&lt;/div&gt;"</span>);
+        $modal.append($modalContent);
+        $modalContent.html( $el.html() );</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>set up overlay and show modal</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $(<span class="hljs-string">"body"</span>).addClass(<span class="hljs-string">"modal-open"</span>);
+        $(<span class="hljs-string">"body"</span>).append($modal);
+
+        <span class="hljs-keyword">if</span>(animated &amp;&amp; Modernizr.cssanimations) {
+          $modal.addClass(<span class="hljs-string">"fade-in"</span>);
+          $modalContent.addClass(<span class="hljs-string">"fade-in-up"</span>);
+          $modalContent.addClass( $el.attr(<span class="hljs-string">"class"</span>) );
+        }
+
+        $modal.show();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>Bind events to close Modal</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $modal.on(<span class="hljs-string">"click"</span>, <span class="hljs-string">".js-close-modal"</span>, _closeHandler);
+        $modal.on(<span class="hljs-string">"click"</span>, _closeHandler);
+
+        modalIsOpen = <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p> <strong>This fixes an issue with <code>position:fixed</code> and the virtual keyboard
+ on Mobile Safari.</strong> Since this is a browser bug, we’re forced to use
+ browser-detection here, and should look into removing this as soon
+ as this is fixed in the future. Yes, it is gross.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span>(  <span class="hljs-regexp">/iPhone|iPad|iPod/i</span>.test(window.navigator.userAgent) ) {
+          setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            $modal.css({ <span class="hljs-string">"position"</span>: <span class="hljs-string">"absolute"</span>, <span class="hljs-string">"overflow"</span>: <span class="hljs-string">"visible"</span>, <span class="hljs-string">"height"</span>: $(document).height() + <span class="hljs-string">"px"</span> });
+            $modalContent.css({ <span class="hljs-string">"margin-top"</span>: $(document).scrollTop() + <span class="hljs-string">"px"</span> });
+          }, <span class="hljs-number">0</span>);
+        }
+      } <span class="hljs-keyword">else</span> {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>modal is already open, so just replace current content</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $modalContent.html( $($el).html() );
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>We’ll set up form validation markup for anything in the modal (since it isn’t in the DOM on load)
+@TODO: Should be providing an event that other modules can hook into (so the Validation Module would take care of this).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      NEUE.Validation.prepareFormLabels($modalContent);
+    };
+
+    <span class="hljs-keyword">var</span> _closeHandler = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>Don’t let the event bubble.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span>(event.target !== <span class="hljs-keyword">this</span>) {
+        <span class="hljs-keyword">return</span>;
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>Only close if this modal has a close button</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span>($modalContent.find(<span class="hljs-string">".js-close-modal"</span>).length === <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span>;
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>Override default link behavior.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      event.preventDefault();
+
+      close();
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>Close modal
+@param {boolean} animated   Use animatation for closing the modal (default – true);</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> close = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(animated)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>Default arguments</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      animated = <span class="hljs-keyword">typeof</span> animated !== <span class="hljs-string">"undefined"</span> ? animated : <span class="hljs-literal">true</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>Remove URL hash for modal from browser</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span>(window.location.hash === $reference) {
+        window.location.hash = <span class="hljs-string">"_"</span>;
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>If Google Analytics is set up, we fire an event to track that a
+modal has been closed.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span>(_gaq) !== <span class="hljs-string">"undefined"</span> &amp;&amp; _gaq !== <span class="hljs-literal">null</span>) {
+        _gaq.push([<span class="hljs-string">"_trackEvent"</span>, <span class="hljs-string">"Modal"</span>, <span class="hljs-string">"Close"</span>, $reference, <span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>]);
+      }
+
+      <span class="hljs-keyword">if</span>(animated &amp;&amp; Modernizr.cssanimations) {
+        $modalContent.addClass(<span class="hljs-string">"fade-out-down"</span>);
+        $modal.addClass(<span class="hljs-string">"fade-out"</span>);
+
+        $(<span class="hljs-string">"body"</span>).removeClass(<span class="hljs-string">"modal-open"</span>);
+
+        $modal.one(<span class="hljs-string">"webkitAnimationEnd oanimationend msAnimationEnd animationend"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+          $modal.remove();
+          modalIsOpen = <span class="hljs-literal">false</span>;
+        });
+      } <span class="hljs-keyword">else</span> {
+        $(<span class="hljs-string">"body"</span>).removeClass(<span class="hljs-string">"modal-open"</span>);
+        $modal.remove();
+        modalIsOpen = <span class="hljs-literal">false</span>;
+      }
+    };
+
+    $(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <p>Attach modal handler to <code>.js-modal-link</code> elements on click</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      $(<span class="hljs-string">"body"</span>).on(<span class="hljs-string">"click"</span>, <span class="hljs-string">".js-modal-link"</span>, _openHandler);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <p>If there’s a hash in the URL, let’s check if its a modal and load it</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">var</span> hash = window.location.hash;
+      <span class="hljs-keyword">if</span>(hash &amp;&amp; $(hash) &amp;&amp; $(hash).attr(<span class="hljs-string">"type"</span>) === <span class="hljs-string">"text/cached-modal"</span> ) {
+        open($(hash), <span class="hljs-literal">false</span>);
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <p>Close modal events are bound on modal initialization.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <p>Expose public API for NEUE.Modal</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> {
+      isOpen: isOpen,
+      open: open,
+      close: close
+    };
+  })();
+
+
+})(jQuery);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

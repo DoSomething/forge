@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>carousel.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="ValidationFunctions.html">
+                ValidationFunctions.js
+              </a>
+            
+              
+              <a class="source" href="carousel.html">
+                carousel.js
+              </a>
+            
+              
+              <a class="source" href="flexbox-fix.html">
+                flexbox-fix.js
+              </a>
+            
+              
+              <a class="source" href="jump-scroll.html">
+                jump-scroll.js
+              </a>
+            
+              
+              <a class="source" href="menu.html">
+                menu.js
+              </a>
+            
+              
+              <a class="source" href="modal.html">
+                modal.js
+              </a>
+            
+              
+              <a class="source" href="scroll-indicator.html">
+                scroll-indicator.js
+              </a>
+            
+              
+              <a class="source" href="sticky.html">
+                sticky.js
+              </a>
+            
+              
+              <a class="source" href="system-messages.html">
+                system-messages.js
+              </a>
+            
+              
+              <a class="source" href="validation.html">
+                validation.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>carousel.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p> <strong>Image Carousel</strong> Adds simple “previous/next” functionality
+ to slide deck-style image galleries with the following markup:</p>
+<pre><code class="lang-html"> <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-carousel gallery"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"prev"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"prev-wrapper"</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"prev-button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"arrow"</span>&gt;</span>&amp;#xe605;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"carousel-wrapper"</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"slide0"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slide"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"./img/example_img0.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"slide1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slide"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"./img/example_img1.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"slide2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slide"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"./img/example_img2.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"slide3"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"slide"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"./img/example_img3.jpg"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"next"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"next-wrapper"</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"next-button"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"arrow"</span>&gt;</span>&amp;#xe60a;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> NEUE = NEUE || {};
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($)</span> {</span>
+<span class="hljs-pi">  "use strict"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Show first image</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $(<span class="hljs-string">"#slide0"</span>).addClass(<span class="hljs-string">"visible"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Make carousel stateful</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Cache carousel buttons</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> $buttons = $(<span class="hljs-string">"#prev, #next"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Decrement counter</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrementCounter</span><span class="hljs-params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>If first slide is shown, restart loop
+Else, show previous slide</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    counter === <span class="hljs-number">0</span> ? counter = <span class="hljs-number">2</span> : counter--;
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Increment counter</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">incrementCounter</span><span class="hljs-params">()</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>If last slide is shown, restart loop
+Else, show next slide</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    counter === <span class="hljs-number">2</span> ? counter = <span class="hljs-number">0</span> : counter++;
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Toggle slide visibility</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showCurrentSlide</span><span class="hljs-params">( direction )</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Remove “visibile” class from the current slide</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    $(<span class="hljs-string">"#slide"</span> + counter).removeClass(<span class="hljs-string">"visible"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Increment or decrement slide position based on user”s request</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    direction === <span class="hljs-string">"prev"</span> ? decrementCounter() : incrementCounter();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Assign “visible” class to the requested slide</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    $(<span class="hljs-string">"#slide"</span> + counter).addClass(<span class="hljs-string">"visible"</span>);
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Bind click event to carousel buttons</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $buttons.click(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    showCurrentSlide( $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">"id"</span>) );
+  });
+
+})(jQuery);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>scroll-indicator.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="ValidationFunctions.html">
+                ValidationFunctions.js
+              </a>
+            
+              
+              <a class="source" href="carousel.html">
+                carousel.js
+              </a>
+            
+              
+              <a class="source" href="flexbox-fix.html">
+                flexbox-fix.js
+              </a>
+            
+              
+              <a class="source" href="jump-scroll.html">
+                jump-scroll.js
+              </a>
+            
+              
+              <a class="source" href="menu.html">
+                menu.js
+              </a>
+            
+              
+              <a class="source" href="modal.html">
+                modal.js
+              </a>
+            
+              
+              <a class="source" href="scroll-indicator.html">
+                scroll-indicator.js
+              </a>
+            
+              
+              <a class="source" href="sticky.html">
+                sticky.js
+              </a>
+            
+              
+              <a class="source" href="system-messages.html">
+                system-messages.js
+              </a>
+            
+              
+              <a class="source" href="validation.html">
+                validation.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>scroll-indicator.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p> <strong>Indicates current section in nav on scroll.</strong> Applies an <code>.is-active</code>
+ class when the specified <code>href</code> reaches the top of the viewport.</p>
+<p> Triggered by a <code>.js-scroll-indicator</code> on a link.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($)</span> {</span>
+<span class="hljs-pi">  "use strict"</span>;
+
+  <span class="hljs-keyword">var</span> links = [];</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Prepare all <code>.js-scroll-indicator</code> links on the page.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">preparePage</span><span class="hljs-params">()</span> {</span>
+    links = [];
+
+    $(<span class="hljs-string">".js-scroll-indicator"</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index, link)</span> {</span>
+      prepareIndicator(link);
+    });
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Registers links and their targets with scroll handler</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareIndicator</span><span class="hljs-params">(link)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Calculate the element’s offset from the top of the page while anchored</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> linkTarget = $(link).attr(<span class="hljs-string">"href"</span>);
+    <span class="hljs-keyword">var</span> linkTargetOffset = $(linkTarget).offset().top;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Create the data structure that we’ll store this stuff in</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> linkObj = {
+      $el: $(link),
+      targetOffset: linkTargetOffset
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Add jQuery object and offset value to links array</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    links.push(linkObj);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Now that we’re ready, let’s calculate how stickies should be displayed</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    updateScrollIndicators();
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Scroll handler: highlights the furthest link the user has passed</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateScrollIndicators</span><span class="hljs-params">()</span> {</span>
+    $.each(links, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index, link)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>In reverse order (moving up the nav from the bottom), check whether
+we’ve scrolled past the link’s target. If so, set active and stop.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">var</span> windowOffset = $(window).scrollTop() + link.$el.height();
+      <span class="hljs-keyword">if</span> (windowOffset &gt; link.targetOffset) {
+        $(<span class="hljs-string">".js-scroll-indicator"</span>).removeClass(<span class="hljs-string">"is-active"</span>);
+        link.$el.addClass(<span class="hljs-string">"is-active"</span>);
+        <span class="hljs-keyword">return</span>;
+      }
+    });
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Attach our functions to their respective events.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    preparePage();
+
+    $(window).on(<span class="hljs-string">"scroll"</span>, updateScrollIndicators);
+    $(window).on(<span class="hljs-string">"resize"</span>, preparePage);
+  });
+
+})(jQuery);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
