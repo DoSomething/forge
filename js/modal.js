@@ -118,6 +118,13 @@ var NEUE = NEUE || {};
       // We'll set up form validation markup for anything in the modal (since it isn't in the DOM on load)
       // @TODO: Should be providing an event that other modules can hook into (so the Validation Module would take care of this).
       NEUE.Validation.prepareFormLabels($modalContent);
+      // If Drupal has some messages on the screen, move them inside the modal
+      var $messages = $(".messages");
+      var $messagesClone = $modalContent.find(".js-messages-clone");
+      if($messagesClone && $messages.length ) {
+        $messagesClone.addClass("modal-messages");
+        $messagesClone.html( $messages[0].outerHTML );
+      }
     };
 
     var _closeHandler = function(event) {
