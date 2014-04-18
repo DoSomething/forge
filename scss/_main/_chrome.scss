@@ -126,7 +126,6 @@
     }
 
     span {
-      text-transform: uppercase;
       font-size: $font-smaller;
 
       @include media($tablet) {
