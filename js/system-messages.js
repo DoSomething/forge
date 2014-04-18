@@ -19,19 +19,36 @@ var NEUE = NEUE || {};
 (function($) {
   "use strict";
 
-  $(document).ready(function() {
-
-    var message      = "div.messages";
+  NEUE.Messages = (function() {
     var messageClose = "<a href=\"#\" class=\"js-close-message message-close-button white\">×</a>";
 
-    // Create message close button
-    $(message).append(messageClose);
+    /**
+    * Adds a close button to system message banner, with optional callback.
+    *
+    * @param {jQuery}   $messages  Object containing message divs to be modified.
+    * @param {function} callback   Callback fired after message is closed.
+    */
+    var attachCloseButton = function($messages, callback) {
+      // Create message close button
+      $messages.append(messageClose);
 
-    // Close message when "x" is clicked:
-    $(".js-close-message").on("click", function(e) {
-      e.preventDefault();
+      // Close message when "x" is clicked:
+      $messages.on("click", ".js-close-message", function(event) {
+        event.preventDefault();
+        $(this).parent(".messages").slideUp();
 
-      $(this).parent(message).slideUp();
-    });
+        if(callback && typeof callback === "function") {
+          callback();
+        }
+      });
+    };
+
+    return {
+      attachCloseButton: attachCloseButton
+    };
+  })();
+
+  $(document).ready(function() {
+    NEUE.Messages.attachCloseButton( $(".messages") );
   });
 })(jQuery);
