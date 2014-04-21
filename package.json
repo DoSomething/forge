@@ -34,6 +34,6 @@
     "postinstall": "./node_modules/.bin/grunt build"
   },
   "devDependencies": {
-
+    "grunt-contrib-requirejs": "^0.4.3"
   }
 }
