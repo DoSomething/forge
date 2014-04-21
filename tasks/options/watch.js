@@ -5,7 +5,7 @@ module.exports = {
   },
   js: {
     files: ["js/**/*.js", "tests/**/*.js"],
-    tasks: ["jshint:all", "lintspaces:js", "uglify:dev", "test:js", "doc:js"]
+    tasks: ["jshint:all", "uglify:dev", "test:js", "doc:js"]
   },
   images: {
     files: ["assets/**/*"],
