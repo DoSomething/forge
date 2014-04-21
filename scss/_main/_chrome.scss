@@ -126,7 +126,6 @@
     }
 
     span {
-      text-transform: uppercase;
       font-size: $font-smaller;
 
       @include media($tablet) {
@@ -177,6 +176,10 @@
       @include media($desktop) {
         padding: 0.75rem 0;
       }
+    }
+
+    .searchfield {
+      margin-left: 0;
     }
 
     input[type="search"] {
