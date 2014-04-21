@@ -1,18 +1,16 @@
-//
-//
-//  **System Messages.** Will create a close ("X") button
-//  for users with JavaScript enabled that uses the following
-//  syntax to hook into this function:
-//
-//  <div class="js-message">Alert! You win.</div>>
-//
-//  This will produce the following markup after the script executes:
-//
-//  <div class="js-message">Alert! You win.
-//    <a href="#" class="js-close-message">x</a>
-//  </div>>
-//
-//
+/**
+ * System Messages. Will create a close ("X") button
+ * for users with JavaScript enabled that uses the following
+ * syntax to hook into this function:
+ *
+ * @example
+ * //  <div class="js-message">Alert! You win.</div>
+ *
+ * @returns
+ * // <div class="js-message">Alert! You win.
+ * //   <a href="#" class="js-close-message">x</a>
+ * // </div>
+ */
 
 var NEUE = NEUE || {};
 
