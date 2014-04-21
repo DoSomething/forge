@@ -1,18 +1,17 @@
-//
-//
-// **Client-side form validation logic.** Form element is validated based
-// on `data-validate` attribute, and validation output is placed in
-// corresponding <label>.
-//
-//  - Input field must have `.js-validate` class.
-//  - Adding a `data-validate-trigger` attribute to *any* field will trigger
-//    another field's validation on blur (by specifying the ID of the other field).
-//  - Use `data-validate-match` attribute to ID of field to check equality with
-//    "match" validator.
-//  - Use `js-validate-required` attribute to validate field before submission.
-//  - If adding input fields to the DOM after load, run `NEUE.Validation.prepareFormLabels`
-//
-//
+/**
+ * Client-side form validation logic. Form element is validated based
+ * on `data-validate` attribute, and validation output is placed in
+ * corresponding `<label>`.
+ *
+ * ## Usage:
+ * - Input field must have `.js-validate` class.
+ * - Adding a `data-validate-trigger` attribute to *any* field will trigger
+ *   another field's validation on blur (by specifying the ID of the other field).
+ * - Use `data-validate-match` attribute to ID of field to check equality with
+ *   "match" validator.
+ * - Use `js-validate-required` attribute to validate field before submission.
+ * - If adding input fields to the DOM after load, run `NEUE.Validation.prepareFormLabels`
+ */
 
 var NEUE = NEUE || {};
 NEUE.Validation = NEUE.Validation || {};
@@ -21,7 +20,10 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
 (function($) {
   "use strict";
 
-  // Prepares form label DOM to display validation messages
+  /**
+   * Prepares form label DOM to display validation messages
+   * @param {jQuery} $parent Parent element to find & initialize labels within.
+   */
   NEUE.Validation.prepareFormLabels = function($parent) {
     var $fields = $parent.find(".js-validate");
 
@@ -63,6 +65,13 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       }
     });
 
+    /**
+     * Validate field with given function.
+     *
+     * @param {jQuery}    $field                       Field to validate contents of.
+     * @param {function}  validationFunction           Function to validate field contents with
+     * @param {function}  [cb=showValidationMessage]   Callback function that receives validation result.
+     */
     function validate($field, validationFunction, cb) {
       var callback = cb || function($fieldLabel, result) {
         showValidationMessage($fieldLabel, result);
@@ -88,55 +97,12 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
       }
     }
 
-    // Validate form on submit
-    $("body").on("submit", "form", function(e, isValidated) {
-      if(isValidated === true) {
-        // we're ready to submit the form
-
-        // If Google Analytics is set up, we fire an event to
-        // mark that the form has been successfully submitted
-        if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-          _gaq.push(["_trackEvent", "Form", "Submitted", $(this).attr("id"), null, false]);
-        }
-
-        return true;
-      } else {
-        var $form = $(this);
-        var $validationFields = $form.find(".js-validate").filter("[data-validate-required]");
-        var validatedResults = [];
-
-        $validationFields.each(function() {
-          validate($(this), $(this).data("validate"), function($fieldLabel, result) {
-            if( showValidationMessage($fieldLabel, result) ) {
-              validatedResults.push(true);
-            }
-
-            if(validatedResults.length === $validationFields.length) {
-              // we've validated all that can be validated
-              $form.trigger("submit", true);
-            } else {
-              // some validation errors exist on the form
-
-              // If Google Analytics is set up, we fire an event to
-              // mark that the form had some errors
-              if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-                _gaq.push(["_trackEvent", "Form", "Validation Error on submit", $(this).attr("id"), null, true]);
-              }
-
-            }
-          });
-        });
-
-        if($validationFields.length === 0) {
-          // if there are no fields to be validated, submit!
-          $form.trigger("submit", true);
-        }
-
-        return false; // don't submit form, wait for callback with `true` parameter
-      }
-    });
-
-    // Show validation message in markup
+    /**
+     * Show validation message in markup.
+     *
+     * @param {jQuery} $fieldLabel Label to display validation message within.
+     * @param {Object} result      Object containing `success` and either `message` or `suggestion`
+     */
     function showValidationMessage($fieldLabel, result) {
       var $field = $("#" + $fieldLabel.attr("for"));
       var $fieldMessage = $fieldLabel.find(".message");
@@ -200,15 +166,71 @@ NEUE.Validation.Functions = NEUE.Validation.Functions || {};
 
       return result.success;
     }
-  });
 
-  // Checks if function exists in the NEUE.Validation.Functions object
-  function hasValidationFunction(name) {
-    if( name !== "" && NEUE.Validation.Functions[name] && typeof( NEUE.Validation.Functions[name] ) === "function" ) {
-      return true;
-    } else {
-      return false;
+
+    /**
+     * Checks if function exists in the NEUE.Validation.Functions object.
+     *
+     * @param {string} name  Name of validation function
+     */
+    function hasValidationFunction(name) {
+      if( name !== "" && NEUE.Validation.Functions[name] && typeof( NEUE.Validation.Functions[name] ) === "function" ) {
+        return true;
+      } else {
+        return false;
+      }
     }
-  }
+
+
+    /**
+     * Validate form on submit.
+     */
+    $("body").on("submit", "form", function(e, isValidated) {
+      if(isValidated === true) {
+        // we're ready to submit the form
+
+        // If Google Analytics is set up, we fire an event to
+        // mark that the form has been successfully submitted
+        if(typeof(_gaq) !== "undefined" && _gaq !== null) {
+          _gaq.push(["_trackEvent", "Form", "Submitted", $(this).attr("id"), null, false]);
+        }
+
+        return true;
+      } else {
+        var $form = $(this);
+        var $validationFields = $form.find(".js-validate").filter("[data-validate-required]");
+        var validatedResults = [];
+
+        $validationFields.each(function() {
+          validate($(this), $(this).data("validate"), function($fieldLabel, result) {
+            if( showValidationMessage($fieldLabel, result) ) {
+              validatedResults.push(true);
+            }
+
+            if(validatedResults.length === $validationFields.length) {
+              // we've validated all that can be validated
+              $form.trigger("submit", true);
+            } else {
+              // some validation errors exist on the form
+
+              // If Google Analytics is set up, we fire an event to
+              // mark that the form had some errors
+              if(typeof(_gaq) !== "undefined" && _gaq !== null) {
+                _gaq.push(["_trackEvent", "Form", "Validation Error on submit", $(this).attr("id"), null, true]);
+              }
+
+            }
+          });
+        });
+
+        if($validationFields.length === 0) {
+          // if there are no fields to be validated, submit!
+          $form.trigger("submit", true);
+        }
+
+        return false; // don't submit form, wait for callback with `true` parameter
+      }
+    });
+  });
 
 })(jQuery);
