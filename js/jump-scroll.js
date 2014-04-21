@@ -1,8 +1,6 @@
-//
-//
-//  **Applies a smooth-scroll animation on links with the `.js-jump-scroll` class.**
-//
-//
+/**
+ * Applies a smooth-scroll animation on links with the `.js-jump-scroll` class.
+ */
 
 (function($) {
   "use strict";
