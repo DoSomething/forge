@@ -1,8 +1,6 @@
-//
-//
-//  **Initializes site-wide menu chrome functionality.**
-//
-//
+/**
+ * Initializes site-wide menu chrome functionality.
+ */
 
 (function($) {
   "use strict";

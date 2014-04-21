@@ -1,11 +1,9 @@
-//
-//
-//  **Indicates current section in nav on scroll.** Applies an `.is-active`
-//  class when the specified `href` reaches the top of the viewport.
-//
-//  Triggered by a `.js-scroll-indicator` on a link.
-//
-//
+/**
+ * Indicates current section in nav on scroll. Applies an `.is-active`
+ * class when the specified `href` reaches the top of the viewport.
+ *
+ * Triggered by a `.js-scroll-indicator` on a link.
+ */
 
 (function($) {
   "use strict";

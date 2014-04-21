@@ -1,14 +1,14 @@
-//
-//
-//  **Show/hide modals.** Link should have `.js-modal-link` class, and
-// it's `href` should point to the hash of the modal. By convention, the
-// modal ID should be prefixed with `modal--` like so:
-//
-// <script type="text/cached-modal" id="modal--login">
-//    <!-- content -->
-// </script>
-//
-//
+/**
+ * Show/hide modals. Link should have `.js-modal-link` class, and
+ * it's `href` should point to the hash of the modal. By convention, the
+ * modal ID should be prefixed with `modal--` like so:
+ *
+ * @example
+ * // <script type="text/cached-modal" id="modal--login">
+ * //   <!-- content -->
+ * // </script>
+ *
+ */
 
 var NEUE = NEUE || {};
 
@@ -39,10 +39,15 @@ var NEUE = NEUE || {};
       var href = "";
 
       if( $(this).data("cached-modal") ) {
+        // Preferred method: We load the modal specified in the `data-cached-modal` attribute.
+        // This allows `href` to act as a backup if JS is disabled. For example,
+        // `<a class="js-modal-link" data-cached-modal="#modal--faq" href="faq.html">Click</a>`
+        // would open a modal with the contents of `<div id="modal--faq"></div>`.
         href = $($(this).data("cached-modal"));
       } else if ( event.target.hash.charAt(0) === "#"  ) {
         // We find the modal based on the ID in the link"s `href`. For example,
-        // `<a class="js-modal-link" href="#modal--faq">Click me</a>` would open `<div id="modal--faq"></div>`.
+        // `<a class="js-modal-link" href="#modal--faq">Click me</a>` would open
+        // `<div id="modal--faq"></div>`.
         href = $(event.target.hash);
       } else {
         // @TODO: We should handle AJAX loading things in.
@@ -51,9 +56,11 @@ var NEUE = NEUE || {};
       open(href);
     };
 
-    // Open a new modal
-    // @param {jQuery}  el         Element that will be placed inside the modal.
-    // @param {boolean} animated   Use animation for opening the modal (default – true);
+    /**
+     * Open a new modal
+     * @param {jQuery}  el                Element that will be placed inside the modal.
+     * @param {boolean} [animated=true]   Use animation for opening the modal.
+     */
     var open = function($el, animated) {
       // Default arguments
       animated = typeof animated !== "undefined" ? animated : true;
@@ -125,6 +132,7 @@ var NEUE = NEUE || {};
       }, 1000);
 
       // If Drupal has some messages on the screen, move them inside the modal
+      // @TODO: We need a better solution for this.
       var $messages = $(".messages");
       var $messagesClone = $modalContent.find(".js-messages-clone");
       if($messagesClone && $messages.length ) {
@@ -150,8 +158,10 @@ var NEUE = NEUE || {};
       close();
     };
 
-    // Close modal
-    // @param {boolean} animated   Use animatation for closing the modal (default – true);
+    /**
+     * Close the active modal.
+     * @param {boolean} [animated=true] Use animation for closing the modal.
+     */
     var close = function(animated) {
       // Default arguments
       animated = typeof animated !== "undefined" ? animated : true;
