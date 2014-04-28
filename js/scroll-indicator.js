@@ -5,8 +5,10 @@
  * Triggered by a `.js-scroll-indicator` on a link.
  */
 
-(function($) {
+define(function(require) {
   "use strict";
+
+  var $ = require("jquery");
 
   var links = [];
 
@@ -53,11 +55,11 @@
   }
 
   // Attach our functions to their respective events.
-  $(document).ready(function() {
+  $(function() {
     preparePage();
 
     $(window).on("scroll", updateScrollIndicators);
     $(window).on("resize", preparePage);
   });
 
-})(jQuery);
+});
