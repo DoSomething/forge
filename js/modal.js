@@ -14,8 +14,8 @@
 define(function(require) {
   "use strict";
 
-  var $ = require("jquery");
-  require("neue/vendor/modernizr");
+  var $ = window.jQuery;
+  var Modernizr = window.Modernizr;
 
   var Validation = require("neue/validation");
 

@@ -2,10 +2,10 @@
  * Initializes site-wide menu chrome functionality.
  */
 
-define(function(require) {
+define(function() {
   "use strict";
 
-  var $ = require("jquery");
+  var $ = window.jQuery;
 
   $(function() {
     // Toggle dropdown menu navigation on mobile:

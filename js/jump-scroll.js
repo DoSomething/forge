@@ -2,10 +2,10 @@
  * Applies a smooth-scroll animation on links with the `.js-jump-scroll` class.
  */
 
-define(function(require) {
+define(function() {
   "use strict";
 
-  var $ = require("jquery");
+  var $ = window.jQuery;
 
   $(function() {
     $(".js-jump-scroll").on("click", function(event) {
