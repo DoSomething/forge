@@ -15,8 +15,10 @@
  *
  */
 
-(function($) {
+define(function(require) {
   "use strict";
+
+  var $ = require("jquery");
 
   var divs = [];
 
@@ -61,11 +63,10 @@
   }
 
   // Attach our functions to their respective events.
-  $(document).ready(function() {
+  $(function() {
     preparePage();
 
     $(window).on("scroll", scrollSticky);
     $(window).on("resize", preparePage);
   });
-
-})(jQuery);
+});

@@ -1,15 +1,13 @@
-//
-//
-//  **Tests for IE flexbox support, and if so apply a fix.**
-//
-//  For more information:
-//  http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
-//
-//
+/**
+ * Tests for IE flexbox support, and if so apply a fix.
+ *
+ * @see http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
+ */
 
-(function() {
+define(function(require) {
   "use strict";
 
-  Modernizr.addTest("flexbox-ie10", Modernizr.testAllProps("flexAlign", "end", true));
+  require("./vendor/modernizr");
 
-})();
+  Modernizr.addTest("flexbox-ie10", Modernizr.testAllProps("flexAlign", "end", true));
+});
