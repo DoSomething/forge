@@ -1,12 +1,14 @@
 module.exports = {
   compile: {
     options: {
-      baseUrl: "js",
-      name: "../bower_components/almond/almond",
-      include: "main",
+      name: "bower_components/almond/almond",
+      paths: {
+        "neue": "js"
+      },
+      include: "neue/main",
       out: "dist/neue.js",
-      optimize: "none"
+      optimize: "none",
+      wrap: true
     }
-
   }
 }
