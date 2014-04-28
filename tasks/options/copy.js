@@ -5,6 +5,7 @@ module.exports = {
       { expand: true, src: ["assets/kss/**"], dest: "dist/" },
       { expand: true, src: ["assets/fonts/**"], dest: "dist/" },
       { expand: true, src: ["scss/**"], dest: "dist/" },
+      { expand: true, src: ["js/**"], dest: "dist/" },
       { src: "README.md", dest: "dist/README.md" },
       { src: "LICENSE", dest: "dist/LICENSE" },
       { src: "bower.json", dest: "dist/bower.json" },
