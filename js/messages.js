@@ -13,10 +13,10 @@
  * // </div>
  */
 
-define(function(require) {
+define(function() {
   "use strict";
 
-  var $ = require("jquery");
+  var $ = window.jQuery;
 
   var messageClose = "<a href=\"#\" class=\"js-close-message message-close-button white\">×</a>";
 

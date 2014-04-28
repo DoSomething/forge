@@ -24,10 +24,10 @@
  *
  */
 
-define(function(require) {
+define(function() {
   "use strict";
 
-  var $ = require("jquery");
+  var $ = window.jQuery;
 
   $(function() {
     // Show first image

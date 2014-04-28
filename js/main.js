@@ -4,15 +4,10 @@
  * a NEUE global variable attached to the window.
  */
 
-define("jquery", function() {
+define("neue/main", function() {
   "use strict";
 
-  // Shim jQuery so we can access it as an AMD module
-  return window.jQuery;
-});
-
-define("main", function(require) {
-  "use strict";
+  require("neue/vendor/modernizr");
 
   // Attach modules to window
   window.NEUE = {
@@ -30,4 +25,4 @@ define("main", function(require) {
 });
 
 // Start everything up!
-require("main");
+require("neue/main");

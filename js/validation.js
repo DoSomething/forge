@@ -21,10 +21,10 @@
  * - If adding input fields to the DOM after load, run `prepareFormLabels`
  */
 
-define(function(require) {
+define(function() {
   "use strict";
 
-  var $ = require("jquery");
+  var $ = window.jQuery;
 
   var validationFunctions = [];
 
