@@ -15,9 +15,9 @@ define(function(require) {
   "use strict";
 
   var $ = require("jquery");
-  require("./vendor/modernizr");
+  require("neue/vendor/modernizr");
 
-  var Validation = require("./validation");
+  var Validation = require("neue/validation");
 
   // We can only have one modal open at a time; we track that here.
   var modalIsOpen = false;

@@ -16,22 +16,18 @@ define("main", function(require) {
 
   // Attach modules to window
   window.NEUE = {
-    Modal: require("./modal"),
-    Validation: require("./validation"),
-    Messages: require("./messages"),
-    Carousel: require("./carousel"),
-    Flexbox: require("./flexbox-fix"),
-    JumpScroll: require("./jump-scroll"),
-    Menu: require("./menu"),
-    ScrollIndicator: require("./scroll-indicator"),
-    Sticky: require("./sticky")
+    Modal: require("neue/modal"),
+    Validation: require("neue/validation"),
+    Messages: require("neue/messages"),
+    Carousel: require("neue/carousel"),
+    JumpScroll: require("neue/jump-scroll"),
+    Menu: require("neue/menu"),
+    ScrollIndicator: require("neue/scroll-indicator"),
+    Sticky: require("neue/sticky")
   };
 
   return window.NEUE;
 });
-
-// // Attach extra validation functions
-// require("./validations/match");
 
 // Start everything up!
 require("main");
