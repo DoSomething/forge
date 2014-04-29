@@ -135,7 +135,7 @@ define(function() {
     }
 
     if(result.suggestion) {
-      $fieldMessage.html("Did you mean " + result.suggestion.full + "? <a href='#' class='js-mailcheck-fix'>Fix it!</a>");
+      $fieldMessage.html("Did you mean " + result.suggestion.full + "? <a href='#' data-suggestion='" + result.suggestion.full + "'class='js-mailcheck-fix'>Fix it!</a>");
       $field.addClass("warning");
       $fieldMessage.addClass("warning");
 
@@ -153,7 +153,7 @@ define(function() {
       e.preventDefault();
 
       var $field = $("#" + $(this).closest("label").attr("for"));
-      $field.val($(this).text());
+      $field.val($(this).data("suggestion"));
       $field.trigger("blur");
 
       // If Google Analytics is set up, we fire an event to
