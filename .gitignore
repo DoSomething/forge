@@ -1,6 +1,9 @@
 # Ignore build directory
 dist/
 
+# Ignore bower components
+bower_components/
+
 # Vim stuff
 *.swp
 

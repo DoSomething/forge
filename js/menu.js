@@ -2,10 +2,12 @@
  * Initializes site-wide menu chrome functionality.
  */
 
-(function($) {
+define(function() {
   "use strict";
 
-  $(document).ready(function() {
+  var $ = window.jQuery;
+
+  $(function() {
     // Toggle dropdown menu navigation on mobile:
     $(".js-toggle-mobile-menu").on("click", function() {
       $(".chrome--nav").toggleClass("is-visible");
@@ -18,7 +20,5 @@
         $(this).closest(".js-footer-col").toggleClass("is-collapsed");
       }
     });
-
   });
-
-})(jQuery);
+});
