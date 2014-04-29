@@ -14,12 +14,8 @@
     "undef": true,
     "unused": true,
     "globals": {
-        "module": false,
         "require": false,
-        "$": false,
-        "_": false,
-        "Modernizr": false,
-        "jQuery": false,
+        "define": false,
         "_gaq": false
     },
     "strict": true,
