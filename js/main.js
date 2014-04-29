@@ -4,7 +4,7 @@
  * a NEUE global variable attached to the window.
  */
 
-define("neue/main", function() {
+define(function(require) {
   "use strict";
 
   require("neue/vendor/modernizr");
@@ -23,6 +23,3 @@ define("neue/main", function() {
 
   return window.NEUE;
 });
-
-// Start everything up!
-require("neue/main");

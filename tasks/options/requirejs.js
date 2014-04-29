@@ -6,6 +6,7 @@ module.exports = {
         "neue": "js"
       },
       include: "neue/main",
+      insertRequire: ["neue/main"],
       out: "dist/neue.js",
       optimize: "none",
       wrap: true
