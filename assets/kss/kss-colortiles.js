@@ -7,7 +7,9 @@
       swapColorLabels($(this));
     });
 
-    $(".color-tile").click(function() {
+    $(".color-tile").on("dblclick", function(event) {
+      event.preventDefault();
+
       $(".color-tile").each(function() {
         swapColorLabels($(this));
       });
