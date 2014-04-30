@@ -87,7 +87,7 @@ define(function(require) {
     if( !modalIsOpen ) {
       // create modal in DOM
       $modal = $("<div class=\"modal\"></div>");
-      $modalContent = $("<div class='modal-content'></div>");
+      $modalContent = $("<div></div>");
       $modal.append($modalContent);
       $modalContent.html( $el.html() );
 
@@ -98,8 +98,12 @@ define(function(require) {
       if(animated && Modernizr.cssanimations) {
         $modal.addClass("fade-in");
         $modalContent.addClass("fade-in-up");
-        $modalContent.addClass( $el.attr("class") );
       }
+
+      // copy classes from modal source
+      $modalContent.removeClass();
+      $modalContent.addClass("modal-content");
+      $modalContent.addClass( $el.attr("class") );
 
       $modal.show();
 
@@ -121,6 +125,9 @@ define(function(require) {
       }
     } else {
       // modal is already open, so just replace current content
+      $modalContent.removeClass();
+      $modalContent.addClass("modal-content");
+      $modalContent.addClass( $el.attr("class") );
       $modalContent.html( $($el).html() );
     }
 
