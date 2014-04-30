@@ -12,6 +12,7 @@ define(function(require) {
   // Attach modules to window
   window.NEUE = {
     Carousel: require("neue/carousel"),
+    Events: require("neue/events"),
     JumpScroll: require("neue/jump-scroll"),
     Menu: require("neue/menu"),
     Messages: require("neue/messages"),
