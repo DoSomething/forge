@@ -15,7 +15,6 @@ define(function() {
   var subUid = -1;
 
   var publish = function(topic, args) {
-    console.log("Published event: " + topic);
     if (!topics[topic]) {
       return false;
     }
@@ -33,7 +32,6 @@ define(function() {
   };
 
   var subscribe = function(topic, func) {
-    console.log("Subscribed to event: " + topic);
     if (!topics[topic]) {
       topics[topic] = [];
     }
