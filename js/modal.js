@@ -16,8 +16,7 @@ define(function(require) {
 
   var $ = window.jQuery;
   var Modernizr = window.Modernizr;
-
-  var Validation = require("neue/validation");
+  var Events = require("neue/events");
 
   // We can only have one modal open at a time; we track that here.
   var modalIsOpen = false;
@@ -88,7 +87,7 @@ define(function(require) {
     if( !modalIsOpen ) {
       // create modal in DOM
       $modal = $("<div class=\"modal\"></div>");
-      $modalContent = $("<div class='modal-content'></div>");
+      $modalContent = $("<div></div>");
       $modal.append($modalContent);
       $modalContent.html( $el.html() );
 
@@ -99,8 +98,12 @@ define(function(require) {
       if(animated && Modernizr.cssanimations) {
         $modal.addClass("fade-in");
         $modalContent.addClass("fade-in-up");
-        $modalContent.addClass( $el.attr("class") );
       }
+
+      // copy classes from modal source
+      $modalContent.removeClass();
+      $modalContent.addClass("modal-content");
+      $modalContent.addClass( $el.attr("class") );
 
       $modal.show();
 
@@ -122,12 +125,17 @@ define(function(require) {
       }
     } else {
       // modal is already open, so just replace current content
+      $modalContent.removeClass();
+      $modalContent.addClass("modal-content");
+      $modalContent.addClass( $el.attr("class") );
       $modalContent.html( $($el).html() );
     }
 
-    // We'll set up form validation markup for anything in the modal (since it isn't in the DOM on load)
-    // @TODO: Should be providing an event that other modules can hook into (so the Validation Module would take care of this).
-    Validation.prepareFormLabels($modalContent);
+
+
+    // We provide an event that other modules can hook into to perform custom functionality when
+    // a modal opens (such as preparing things that are added to the DOM, etc.)
+    Events.publish("Modal:opened", $modalContent);
 
     // If Drupal has some messages on the screen, move them inside the modal
     // @TODO: We need a better solution for this.
