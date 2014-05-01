@@ -25,6 +25,7 @@ define(function() {
   "use strict";
 
   var $ = window.jQuery;
+  var Events = require("neue/events");
 
   var validationFunctions = [];
 
@@ -237,11 +238,14 @@ define(function() {
     }
   });
 
-
   $(function() {
     // Prepare the labels on any `.js-validate` fields in the DOM at load
     var $body = $("body");
     prepareFormLabels($body);
+
+    Events.subscribe("Modal:opened", function(topic, args) {
+      prepareFormLabels(args);
+    });
 
     // Validate on blur
     $body.on("blur", ".js-validate", function(e) {
