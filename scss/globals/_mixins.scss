@@ -69,3 +69,16 @@
     color: #fff;
   }
 }
+
+
+
+/**
+ * Hide only visually, but have it available for screenreaders.
+ * @mixin visually-hidden
+ * @mixin visually-restored
+ *
+ * @param $position: absolute
+ */
+
+@mixin visually-hidden($position:absolute) { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: $position; width: 1px; }
+@mixin visually-restored($position:static) { clip: auto; height: auto; margin: auto; overflow: visible; position: $position; width: auto; }
