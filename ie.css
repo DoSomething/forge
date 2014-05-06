@@ -1,0 +1,26 @@
+/**
+ * Hide only visually, but have it available for screenreaders.
+ * @mixin visually-hidden
+ * @mixin visually-restored
+ *
+ * @param $position: absolute
+ */
+/* line 16, /Users/david/Sites/neue/scss/ie.scss */
+form.search input[type="search"] {
+  color: #444;
+  padding-top: 8px;
+  padding-bottom: 6px; }
+
+/* line 24, /Users/david/Sites/neue/scss/ie.scss */
+form.search input[type="search"] {
+  background: #999 url('images/search.png') no-repeat 12px 6px; }
+  /* line 27, /Users/david/Sites/neue/scss/ie.scss */
+  form.search input[type="search"]:hover {
+    background-position: 12px -21px; }
+  /* line 31, /Users/david/Sites/neue/scss/ie.scss */
+  form.search input[type="search"]:focus {
+    background-position: 12px 6px; }
+
+/* line 40, /Users/david/Sites/neue/scss/ie.scss */
+.timeline li:before {
+  display: none; }
