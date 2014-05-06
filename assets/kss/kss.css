@@ -110,7 +110,11 @@ h1.styleguide {
 }
 
 .font-tile code {
+  display: inline-block;
+  float: right;
   color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  line-height: 1.5rem;
 }
 
 .color-tile {
