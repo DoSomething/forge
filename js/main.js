@@ -7,8 +7,6 @@
 define(function(require) {
   "use strict";
 
-  require("neue/vendor/modernizr");
-
   // Attach modules to window
   window.NEUE = {
     Carousel: require("neue/carousel"),
