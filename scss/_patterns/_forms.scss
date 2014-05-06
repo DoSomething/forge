@@ -317,7 +317,9 @@ input[type="submit"] {
 select {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 41px;
+  font-size: 1rem;
+  font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
   @include box-sizing(border-box);
   @include highlight-on-focus;
