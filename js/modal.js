@@ -144,6 +144,7 @@ define(function(require) {
     if($messagesClone && $messages.length ) {
       $messagesClone.addClass("modal-messages");
       $messagesClone.html( $messages[0].outerHTML );
+      $messagesClone.find(".js-close-message").remove();
     }
   };
 
