@@ -223,7 +223,7 @@
       <script type="text/cached-modal" id="modal--example">
         <a href="#" class="js-close-modal modal-close-button">&times;</a>
         <h2>Example Content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let's take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
       </script>
 
       <script type="text/cached-modal" id="modal--pagetwo">
@@ -254,6 +254,84 @@
     </div>
   </section>
 
+  <div class="row section">
+    <h4 id="cta">4.6 CTA</h4>
+
+    <div class="kss-no-padding">
+    <% styleguide_block  '4.6.1 - CTA' do %>
+      <div class="cta">
+        <div class="wrapper">
+          <h2 class="__message">Miscreant! You should pay homage to our future kitten overlords:</h2>
+          <a href="#" class="btn medium">Support Our Kittens</a>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="row section">
+    <h4 id="tile">4.7 Tile</h4>
+    <% styleguide_block  '4.7.1 - Tile' do %>
+      <article class="tile">
+        <a class="wrapper" href="#">
+          <div class="tile--meta">
+            <h1 class="__title">Kitten Overlords</h1>
+            <p class="__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+          </div>
+          <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
+        </a>
+      </article>
+    <% end %>
+  </div>
+
+  <div class="row section">
+    <h4 id="gallery">4.8 Gallery</h4>
+    <% styleguide_block  '4.8.1 - Gallery' do %>
+      <ul class="gallery $modifier_class">
+        <li>
+          <article class="tile">
+            <a class="wrapper" href="#">
+              <div class="tile--meta">
+                <h1 class="__title">Kitten Overlord</h1>
+              </div>
+              <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+            </a>
+          </article>
+        </li>
+        <li>
+          <article class="tile">
+            <a class="wrapper" href="#">
+              <div class="tile--meta">
+                <h1 class="__title">Kitten Overlord</h1>
+              </div>
+              <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+            </a>
+          </article>
+        </li>
+        <li>
+          <article class="tile">
+            <a class="wrapper" href="#">
+              <div class="tile--meta">
+                <h1 class="__title">Kitten Overlord</h1>
+              </div>
+              <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+            </a>
+          </article>
+        </li>
+        <li class="empty -mono">
+          <div class="wrapper">
+            <div class="__message">
+              <div class="wrapper">
+                <p>Gah! Nothing to see here.</p>
+                <a href="/campaigns">Move Along</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
   <section class="row section styleguide-section">
     <h2 id="animation">Animation</h2>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
@@ -281,6 +359,9 @@
             <li><a href="#navigation" class="js-scroll-indicator js-jump-scroll">Navigation</a></li>
             <li><a href="#widgets" class="js-scroll-indicator js-jump-scroll">Widgets</a></li>
             <li><a href="#helpers" class="js-scroll-indicator js-jump-scroll">Helpers</a></li>
+            <li><a href="#cta" class="js-scroll-indicator js-jump-scroll">CTA</a></li>
+            <li><a href="#tile" class="js-scroll-indicator js-jump-scroll">Tile</a></li>
+            <li><a href="#gallery" class="js-scroll-indicator js-jump-scroll">Gallery</a></li>
           </ul>
         </li>
         <li><a href="#animation" class="js-scroll-indicator js-jump-scroll">Animation</a></li>

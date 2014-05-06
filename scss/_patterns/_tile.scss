@@ -1,3 +1,8 @@
+// Module class for tile blocks that can be placed in multiple contexts on a page. Specifically used for campaign tiles, but can be used for other content as well.
+// A tile block usually contains an image with a title and a tagline.
+//
+// Styleguide 4.7.1 - Tile
+
 .tile {
   height: 0;
   padding-bottom: 100%;
