@@ -11,6 +11,13 @@ This is Neue, our interface framework and pattern library. Neue is made up of fo
 
 Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork this repository and use it as a starting point for your own website and style guide.
 
+# Requirements
+### Dependencies
+Neue requires [jQuery](http://jquery.com) 1.7.2+ and the included [Modernizr](http://modernizr.com) build (see `js/vendor/modernizr.js`).
+
+### Browser Support
+Neue supports Chrome 31+, Safari 5+, Firefox 20+, Android 4+, iOS 5+, and IE8+ (with polyfills). For IE8 support, you'll need to include polyfills to support HTML5 elements, media queries, and rem CSS units. See [HTML5Shiv](aFarkas/html5shiv), [Respond.js](scottjehl/Respond), and [REM-Unit-Polyfill](chuckcarpenter/REM-unit-polyfill) for details.
+
 # Usage
 You can get your own copy of Neue by [downloading a release](https://github.com/DoSomething/ds-neue/releases) or by using [Bower](http://bower.io):
 
@@ -18,18 +25,16 @@ You can get your own copy of Neue by [downloading a release](https://github.com/
 bower install git@github.com:DoSomething/neue.git
 ```
 
-If you want to specify a specific version to install, you can do that as well:
+Include the bundled `neue.css` and `neue.js` in your page. Be sure to include the bundled `js/vendor/modernizr.js` in your page's `<head>`. That's it! Check out the online [pattern library](http://neue.dosomething.org/) and start building.
 
-```
-bower install git@github.com:DoSomething/neue.git#3.1.1
-```
+You can also integrate Neue into your SCSS/AMD build process. See [Advanced Usage](wiki/Advanced-Usage).
 
 # Contributing
 The latest version of the pattern library is always available online at [neue.dosomething.org](http://neue.dosomething.org/).
 You can also run the pattern library on your local machine! Here's the steps:
 
   1. Clone this repository.
-  2. Run `bundle install` and `npm install` to configure dependencies.
+  2. Run `bower install`, `bundle install`, and `npm install` to configure dependencies. Yikes.
   3. Run `grunt` to build CSS and JS from source (and watch for changes).
   3. Run `rackup` to start the server (or just link to Pow).
   4. Check it out in your browser!
