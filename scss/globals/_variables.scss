@@ -30,9 +30,8 @@ $color-tint: 10%;
 // ------------
 
 // Families
-$font-sans: "Trebuchet MS", sans-serif;
-$font-proxima-nova: "Proxima Nova";
-$font-hand-written: "CoveredGrace";
+$font-proxima-nova: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-handwritten: "CoveredGrace", cursive;
 
 // Weights
 $weight-normal: 400;
