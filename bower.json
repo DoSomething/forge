@@ -1,6 +1,6 @@
 {
   "name": "neue",
-  "version": "3.9.2",
+  "version": "3.9.3",
   "main": [
     "assets/neue.css",
     "assets/neue.js"
