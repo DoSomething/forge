@@ -175,7 +175,7 @@ define(function(require) {
 
     // Remove URL hash for modal from browser
     if(window.location.hash === $reference) {
-      window.location.hash = "_";
+      window.location.hash = "/";
     }
 
     // If Google Analytics is set up, we fire an event to track that a
