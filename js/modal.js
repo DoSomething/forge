@@ -207,7 +207,7 @@ define(function(require) {
 
     //If there's a hash in the URL, let's check if its a modal and load it
     var hash = window.location.hash;
-    if(hash && $(hash) && $(hash).attr("type") === "text/cached-modal" ) {
+    if(hash && hash !== "#/" && $(hash) && $(hash).attr("type") === "text/cached-modal" ) {
       open($(hash), false);
     }
 
