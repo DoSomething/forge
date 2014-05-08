@@ -46,24 +46,34 @@ define(function() {
         $fieldLabel.html($innerLabel);
       }
 
+      // Attempt to validate (for case where field is pre-filled)
+      validateField( $(this) );
+
       // Validate on blur
       $field.on("blur", function(event) {
         event.preventDefault();
-
-        // Don't validate empty form fields, that's just rude.
-        if($(this).val() !== "") {
-          validate($(this), $(this).data("validate"));
-        }
-
-        if( $(this).data("validate-trigger") ) {
-          var $otherField = $($(this).data("validate-trigger"));
-
-          if($otherField.val() !== "") {
-            validate($otherField, $otherField.data("validate"));
-          }
-        }
+        validateField( $(this) );
       });
     });
+  };
+
+  /**
+   * Trigger a validation on a form element.
+   * @param {jQuery} $el Form element to be validated.
+   */
+  var validateField = function($field) {
+    // Don't validate empty form fields, that's just rude.
+    if($field.val() !== "") {
+      _validate($field, $field.data("validate"));
+    }
+
+    if( $field.data("validate-trigger") ) {
+      var $otherField = $($field.data("validate-trigger"));
+
+      if($otherField.val() !== "") {
+        _validate($otherField, $otherField.data("validate"));
+      }
+    }
   };
 
 
@@ -94,7 +104,7 @@ define(function() {
    * @param {function}  validationFunction           Function to validate field contents with
    * @param {function}  [cb=showValidationMessage]   Callback function that receives validation result.
    */
-  function validate($field, validationFunction, cb) {
+  function _validate($field, validationFunction, cb) {
     var callback = cb || function($fieldLabel, result) {
       showValidationMessage($fieldLabel, result);
     };
@@ -224,7 +234,7 @@ define(function() {
       var validatedResults = [];
 
       $validationFields.each(function() {
-        validate($(this), $(this).data("validate"), function($fieldLabel, result) {
+        _validate($(this), $(this).data("validate"), function($fieldLabel, result) {
           if( showValidationMessage($fieldLabel, result) ) {
             validatedResults.push(true);
           }
