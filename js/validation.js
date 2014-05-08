@@ -12,13 +12,13 @@
  * prompt the user "Did you mean {suggestion}?".
  *
  * ## Usage Notes:
- * - Input field must have `.js-validate` class.
+ * - Input field must have `data-validate` attribute.
  * - Adding a `data-validate-trigger` attribute to *any* field will trigger
  *   another field's validation on blur (by specifying the ID of the other field).
  * - Use `data-validate-match` attribute to ID of field to check equality with
  *   "match" validator.
- * - Use `js-validate-required` attribute to validate field before submission.
- * - If adding input fields to the DOM after load, run `prepareFormLabels`
+ * - Use `data-validate-required` attribute to validate field before submission.
+ * - If adding input fields to the DOM after load, run `prepareFields`
  */
 
 define(function() {
@@ -30,15 +30,13 @@ define(function() {
   var validationFunctions = [];
 
   /**
-   * Prepares form label DOM to display validation messages
-   * @param {jQuery} $parent Parent element to find & initialize labels within.
+   * Prepares form label DOM to display validation messages & register event handler
+   * @param {jQuery} $fields Fields to register validation handlers to.
    */
-  var prepareFormLabels = function($parent) {
-    var $fields = $parent.find(".js-validate");
-
+  var prepareFields = function($fields) {
     $fields.each(function() {
-      var field = $(this);
-      var $fieldLabel = $("label[for='" + field.attr("id") + "']");
+      var $field = $(this);
+      var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
 
       if($fieldLabel.find(".inner-label").length === 0) {
         var $innerLabel = $("<div class='inner-label'></div>");
@@ -47,6 +45,24 @@ define(function() {
 
         $fieldLabel.html($innerLabel);
       }
+
+      // Validate on blur
+      $field.on("blur", function(event) {
+        event.preventDefault();
+
+        // Don't validate empty form fields, that's just rude.
+        if($(this).val() !== "") {
+          validate($(this), $(this).data("validate"));
+        }
+
+        if( $(this).data("validate-trigger") ) {
+          var $otherField = $($(this).data("validate-trigger"));
+
+          if($otherField.val() !== "") {
+            validate($otherField, $otherField.data("validate"));
+          }
+        }
+      });
     });
   };
 
@@ -204,7 +220,7 @@ define(function() {
       return true;
     } else {
       var $form = $(this);
-      var $validationFields = $form.find(".js-validate").filter("[data-validate-required]");
+      var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
       var validatedResults = [];
 
       $validationFields.each(function() {
@@ -239,31 +255,15 @@ define(function() {
   });
 
   $(function() {
-    // Prepare the labels on any `.js-validate` fields in the DOM at load
+    // Prepare the labels on any `[data-validate]` fields in the DOM at load
     var $body = $("body");
-    prepareFormLabels($body);
+    var $validationFields = $body.find("[data-validate]");
+    prepareFields($validationFields);
 
     Events.subscribe("Modal:opened", function(topic, args) {
-      prepareFormLabels(args);
+      prepareFields(args.find("[data-validate]"));
     });
 
-    // Validate on blur
-    $body.on("blur", ".js-validate", function(e) {
-      e.preventDefault();
-
-      // Don't validate empty form fields, that's just rude.
-      if($(this).val() !== "") {
-        validate($(this), $(this).data("validate"));
-      }
-
-      if( $(this).data("validate-trigger") ) {
-        var $otherField = $($(this).data("validate-trigger"));
-
-        if($otherField.val() !== "") {
-          validate($otherField, $otherField.data("validate"));
-        }
-      }
-    });
   });
 
   // Register the "match" validation.
@@ -282,7 +282,7 @@ define(function() {
   });
 
   return {
-    prepareFormLabels: prepareFormLabels,
+    prepareFields: prepareFields,
     registerValidationFunction: registerValidationFunction,
     Functions: validationFunctions
   };
