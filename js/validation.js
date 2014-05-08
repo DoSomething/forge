@@ -47,7 +47,9 @@ define(function() {
       }
 
       // Attempt to validate (for case where field is pre-filled)
-      validateField( $(this) );
+      validateField( $(this), false, function($fieldLabel, result) {
+        showValidationMessage($fieldLabel, result, false);
+      } );
 
       // Validate on blur
       $field.on("blur", function(event) {
@@ -59,19 +61,47 @@ define(function() {
 
   /**
    * Trigger a validation on a form element.
-   * @param {jQuery} $el Form element to be validated.
+   * @param {jQuery}   $field                             Form element to be validated.
+   * @param {jQuery}   [force = false]                    Force validation (even on empty fields).
+   * @param {function} [callback=showValidationMessage]   Callback function that receives validation result
    */
-  var validateField = function($field) {
+  var validateField = function($field, force, callback) {
+    // Default arguments
+    force = typeof force !== "undefined" ? force : true;
+    callback = callback || function($fieldLabel, result) {
+      showValidationMessage($fieldLabel, result);
+    };
+
+    // Get field info
+    var fieldValue = $field.val();
+    var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
+    var validationFunction = $field.data("validate");
+
     // Don't validate empty form fields, that's just rude.
-    if($field.val() !== "") {
-      _validate($field, $field.data("validate"));
-    }
+    if(force || fieldValue !== "") {
+      // If field is set to trigger another field's validation, do that
+      if( $field.data("validate-trigger") ) {
+        var $otherField = $($field.data("validate-trigger"));
 
-    if( $field.data("validate-trigger") ) {
-      var $otherField = $($field.data("validate-trigger"));
+        if($otherField.val() !== "") {
+          validateField($otherField);
+        }
+      }
 
-      if($otherField.val() !== "") {
-        _validate($otherField, $otherField.data("validate"));
+      // Don't validate if we don't have a label to show results in / validation function doesn't exist
+      if( $fieldLabel && hasValidationFunction(validationFunction) ) {
+        if(validationFunction === "match") {
+          // the "match" validation function requires an extra argument
+          var secondFieldValue = $($field.data("validate-match")).val();
+          validationFunctions[validationFunction](fieldValue, secondFieldValue, function(result) {
+            callback($fieldLabel, result);
+          });
+        } else {
+          // once we know this is a valid validation (heh), let's do it.
+          validationFunctions[validationFunction](fieldValue, function(result) {
+            callback($fieldLabel, result);
+          });
+        }
       }
     }
   };
@@ -96,68 +126,47 @@ define(function() {
     validationFunctions[name] = fn;
   };
 
-
-  /**
-   * Validate field with given function.
-   *
-   * @param {jQuery}    $field                       Field to validate contents of.
-   * @param {function}  validationFunction           Function to validate field contents with
-   * @param {function}  [cb=showValidationMessage]   Callback function that receives validation result.
-   */
-  function _validate($field, validationFunction, cb) {
-    var callback = cb || function($fieldLabel, result) {
-      showValidationMessage($fieldLabel, result);
-    };
-
-    var fieldValue = $field.val();
-    var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
-
-    // Don't validate if we don't have a label to show results in / validation function doesn't exist
-    if( $fieldLabel && hasValidationFunction(validationFunction) ) {
-      if(validationFunction === "match") {
-        // the "match" validation function requires an extra argument
-        var secondFieldValue = $($field.data("validate-match")).val();
-        validationFunctions[validationFunction](fieldValue, secondFieldValue, function(result) {
-          callback($fieldLabel, result);
-        });
-      } else {
-        // once we know this is a valid validation (heh), let's do it.
-        validationFunctions[validationFunction](fieldValue, function(result) {
-          callback($fieldLabel, result);
-        });
-      }
-    }
-  }
-
   /**
    * Show validation message in markup.
    *
-   * @param {jQuery} $fieldLabel Label to display validation message within.
-   * @param {Object} result      Object containing `success` and either `message` or `suggestion`
+   * @param {jQuery} $fieldLabel         Label to display validation message within.
+   * @param {Object} result              Object containing `success` and either `message` or `suggestion`
+   * @param {jQuery} [useCustom = true]  Use custom validation message from `result` variable.
    */
-  function showValidationMessage($fieldLabel, result) {
+  function showValidationMessage($fieldLabel, result, useCustom) {
+    // Default arguments
+    useCustom = typeof useCustom !== "undefined" ? useCustom : true;
+
     var $field = $("#" + $fieldLabel.attr("for"));
     var $fieldMessage = $fieldLabel.find(".message");
 
     $field.removeClass("success error warning shake");
     $fieldMessage.removeClass("success error warning");
 
-    if(result.message) {
-      $fieldMessage.text(result.message);
-
-      if(result.success === true) {
-        $field.addClass("success");
-        $fieldMessage.addClass("success");
-      } else {
-        $field.addClass("shake");
-        $field.addClass("error");
-        $fieldMessage.addClass("error");
-      }
+    // Highlight/animate field
+    if(result.success === true) {
+      $field.addClass("success");
+      $fieldMessage.addClass("success");
+    } else {
+      $field.addClass("shake");
+      $field.addClass("error");
+      $fieldMessage.addClass("error");
 
       // If Google Analytics is set up, we fire an event to
-      // mark that a suggestion has been made
+      // mark that an error has occurred
       if(typeof(_gaq) !== "undefined" && _gaq !== null) {
         _gaq.push(["_trackEvent", "Form", "Inline Validation Error", $fieldLabel.attr("for"), null, true]);
+      }
+    }
+
+    // Show validation message
+    if(useCustom && result.message) {
+      $fieldMessage.text(result.message);
+    } else {
+      if(result.success) {
+        $fieldMessage.html( $fieldLabel.find(".label").html() + " – got it!" );
+      } else {
+        $fieldMessage.html( "We need your " + $fieldLabel.find(".label").html() + "." );
       }
     }
 
@@ -234,7 +243,7 @@ define(function() {
       var validatedResults = [];
 
       $validationFields.each(function() {
-        _validate($(this), $(this).data("validate"), function($fieldLabel, result) {
+        validateField($(this), false, function($fieldLabel, result) {
           if( showValidationMessage($fieldLabel, result) ) {
             validatedResults.push(true);
           }
