@@ -16,7 +16,7 @@ define(function(require) {
 
   var $ = window.jQuery;
   var Modernizr = window.Modernizr;
-  var Events = require("neue/events");
+  var Events = require("./events");
 
   // We can only have one modal open at a time; we track that here.
   var modalIsOpen = false;
@@ -207,7 +207,7 @@ define(function(require) {
 
     //If there's a hash in the URL, let's check if its a modal and load it
     var hash = window.location.hash;
-    if(hash && $(hash) && $(hash).attr("type") === "text/cached-modal" ) {
+    if(hash && hash !== "#/" && $(hash) && $(hash).attr("type") === "text/cached-modal" ) {
       open($(hash), false);
     }
 
