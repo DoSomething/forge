@@ -25,7 +25,7 @@ define(function() {
   "use strict";
 
   var $ = window.jQuery;
-  var Events = require("neue/events");
+  var Events = require("./events");
 
   var validationFunctions = [];
 
