@@ -271,6 +271,21 @@ define(function(require) {
     }
   });
 
+  // Register the "match" validation.
+  registerValidationFunction("match", function(string, secondString, done) {
+    if(string === secondString && string !== "") {
+      return done({
+        success: true,
+        message: "Looks good!"
+      });
+    } else {
+      return done({
+        success: false,
+        message: "That doesn't match."
+      });
+    }
+  });
+
   $(function() {
     // Prepare the labels on any `[data-validate]` fields in the DOM at load
     prepareFields( $("body").find("[data-validate]") );
