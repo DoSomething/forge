@@ -237,7 +237,7 @@ define(function(require) {
       return true;
     } else {
       var $form = $(this);
-      var $validationFields = $form.find("[data-validate]");
+      var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
       var validatedResults = [];
 
       $validationFields.each(function() {
