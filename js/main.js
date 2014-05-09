@@ -9,15 +9,15 @@ define(function(require) {
 
   // Attach modules to window
   window.NEUE = {
-    Carousel: require("neue/carousel"),
-    Events: require("neue/events"),
-    JumpScroll: require("neue/jump-scroll"),
-    Menu: require("neue/menu"),
-    Messages: require("neue/messages"),
-    Modal: require("neue/modal"),
-    ScrollIndicator: require("neue/scroll-indicator"),
-    Sticky: require("neue/sticky"),
-    Validation: require("neue/validation")
+    Carousel: require("./carousel"),
+    Events: require("./events"),
+    JumpScroll: require("./jump-scroll"),
+    Menu: require("./menu"),
+    Messages: require("./messages"),
+    Modal: require("./modal"),
+    ScrollIndicator: require("./scroll-indicator"),
+    Sticky: require("./sticky"),
+    Validation: require("./validation")
   };
 
   return window.NEUE;
