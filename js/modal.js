@@ -16,7 +16,7 @@ define(function(require) {
 
   var $ = window.jQuery;
   var Modernizr = window.Modernizr;
-  var Events = require("neue/events");
+  var Events = require("./events");
 
   // We can only have one modal open at a time; we track that here.
   var modalIsOpen = false;
