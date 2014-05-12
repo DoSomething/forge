@@ -164,12 +164,11 @@
     }
   }
 
-  .sponsor { //background-color: pink;
+  .sponsor {
     padding: 1rem 0 0.5rem;
 
     @include media($tablet) {
       bottom: 0;
-      // float: right;
       padding: 0;
       position: absolute;
       right: 0;
