@@ -1,0 +1,20 @@
+// Module class for applying intrinsic ratio solution to embedded videos to make them responsive.
+//
+// Styleguide 4.9.1 - Video
+
+.video {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe {
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+}
