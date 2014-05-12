@@ -12,20 +12,24 @@
 
   @include clearfix();
 
+
+  // Mosaic Gallery styles
   &.-mosaic {
+
     background-color: #000;
-  }
 
-  > li {
+    > li {
 
-    @include media(450px) {  // @TODO: custom mq; address when more mq's added.
-      float: left;
-      width: 50%;
+      @include media(450px) {  // @TODO: custom mq; address when more mq's added.
+        float: left;
+        width: 50%;
+      }
+
+      @include media($tablet) {  // @TODO: custom mq; address when more mq's added.
+        width: 25%;
+      }
     }
 
-    @include media($tablet) {  // @TODO: custom mq; address when more mq's added.
-      width: 25%;
-    }
   }
 
 

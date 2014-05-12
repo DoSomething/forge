@@ -1,0 +1,39 @@
+// Module for applying styles to sponsorship badges.
+//
+
+.sponsor {
+  position: relative;
+
+  @include media($tablet) {
+    display: table;
+  }
+
+  .__copy {
+    @include rgba(color, #fff, 0.7);
+
+    font-size: $font-small;
+    font-weight: $weight-bold;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 0.5rem;
+    text-transform: uppercase;
+
+    @include media($tablet) {
+      display: table-cell;
+      padding: 0 0.5rem 0 0;
+      vertical-align: bottom;
+    }
+  }
+
+  img {
+    display: block;
+    height: 4rem;
+    margin: 0 auto;
+
+    @include media($tablet) {
+      display: table-cell;
+      margin: 0;
+    }
+  }
+
+}
