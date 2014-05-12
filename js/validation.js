@@ -31,33 +31,12 @@ define(function(require) {
     $fields.each(function() {
       var $field = $(this);
 
-      if($field.prop("tagName") === "INPUT") {
-        // If [data-validate] is set on a <label> element, prepare it's
-        // associated label, and attach a "blur" event to trigger validation
-        prepareLabel( $("label[for='" + $field.attr("id") + "']") );
+      prepareLabel( $("label[for='" + $field.attr("id") + "']") );
 
-        $field.on("blur", function(event) {
-          event.preventDefault();
-          validateField( $(this) );
-        });
-      } else if($field.prop("tagName") === "FIELDSET") {
-        // If [data-validate] is set on a <fieldset> element, prepare all
-        // <labels> inside fieldset, and attach blur/change event to all fields
-        // inside fieldset.
-        $field.find("label").each(function() {
-          prepareLabel( $(this) );
-        })
-
-        $field.find("input, textarea").on("blur", function(event) {
-          event.preventDefault();
-          validateField( $field );
-        });
-
-        $field.find("select").on("change", function(event) {
-          event.preventDefault();
-          validateField( $field );
-        });
-      }
+      $field.on("blur", function(event) {
+        event.preventDefault();
+        validateField( $field );
+      });
     });
   };
 
@@ -77,7 +56,7 @@ define(function(require) {
   }
 
   /**
-   * Trigger a validation on a form element or fieldset.
+   * Trigger a validation on a form element.
    * @param {jQuery}   $field                            Form element to be validated.
    * @param {jQuery}   [force = false]                   Force validation (even on empty fields).
    * @param {function} [callback=showValidationMessage]  Callback function that receives validation result
@@ -97,38 +76,24 @@ define(function(require) {
       return;
     }
 
-    if($field.prop("tagName") === "INPUT") {
-      // Get field info
-      var fieldValue = $field.val();
-      var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
+    // Get field info
+    var fieldValue = $field.val();
+    var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
 
-
-      // Finally, let's not validate blank fields unless forced to
-      if(force || $field.val() !== "") {
-
-        validations[validation].fn(fieldValue, function(result) {
-          callback($fieldLabel, result);
-        });
-
-      }
-    } else if($field.prop("tagName") === "FIELDSET") {
-      var fieldSetContents = $field.find("input, textarea, select");
-      validations[validation].fn( fieldSetContents , function(result) {
-        //@TODO: Look through returned JSON, and if corresponds to child element, show message on it's label
-
+    // Finally, let's not validate blank fields unless forced to
+    if(force || $field.val() !== "") {
+      validations[validation].fn(fieldValue, function(result) {
         callback($fieldLabel, result);
       });
     }
   };
-
 
   /**
    * Register a new validation.
    *
    * @param {String}    name              The name function will be referenced by in `data-validate` attribute.
    * @param {Object}    validation        Collection of validation rules to apply
-   * @param {Function}  [validation.fn]   Custom validation, with callback `done(success[boolean], suggestion[string])`.
-   *
+   * @param {Function}  [validation.fn]   Custom validation, with callback `done({success: [boolean], message: [string], suggestion: [string]})`.
    */
   var registerValidation = function(name, validation) {
     if(validations[name]) {
@@ -171,11 +136,7 @@ define(function(require) {
       $field.addClass("error");
       $fieldMessage.addClass("error");
 
-      // If Google Analytics is set up, we fire an event to
-      // mark that an error has occurred
-      if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-        _gaq.push(["_trackEvent", "Form", "Inline Validation Error", $fieldLabel.attr("for"), null, true]);
-      }
+      Events.publish("Validation:InlineError", $fieldLabel.attr("for"));
     }
 
     // Show validation message
@@ -188,12 +149,7 @@ define(function(require) {
       $field.addClass("warning");
       $fieldMessage.addClass("warning");
 
-
-      // If Google Analytics is set up, we fire an event to
-      // mark that a suggestion has been made
-      if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-        _gaq.push(["_trackEvent", "Form", "Mailcheck Suggestion", result.suggestion.domain, null, true]);
-      }
+      Events.publish("Validation:Suggestion", result.suggestion.domain);
     }
 
     $fieldLabel.addClass("show-message");
@@ -207,10 +163,7 @@ define(function(require) {
 
       // If Google Analytics is set up, we fire an event to
       // mark that a suggestion has been made
-      if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-        _gaq.push(["_trackEvent", "Form", "Mailcheck Suggestion Used", $(this).text(), null, true]);
-      }
-
+      Events.publish("Validation:SuggestionUsed", $(this).text() );
     });
 
     $field.on("focus", function() {
@@ -226,14 +179,8 @@ define(function(require) {
    */
   $("body").on("submit", "form", function(e, isValidated) {
     if(isValidated === true) {
+      // completed a previous runthrough & validated;
       // we're ready to submit the form
-
-      // If Google Analytics is set up, we fire an event to
-      // mark that the form has been successfully submitted
-      if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-        _gaq.push(["_trackEvent", "Form", "Submitted", $(this).attr("id"), null, false]);
-      }
-
       return true;
     } else {
       var $form = $(this);
@@ -249,15 +196,13 @@ define(function(require) {
           if(validatedResults.length === $validationFields.length) {
             // we've validated all that can be validated
             $form.trigger("submit", true);
+            Events.publish("Validation:Submitted", $(this).attr("id") );
           } else {
             // some validation errors exist on the form
 
             // If Google Analytics is set up, we fire an event to
             // mark that the form had some errors
-            if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-              _gaq.push(["_trackEvent", "Form", "Validation Error on submit", $(this).attr("id"), null, true]);
-            }
-
+            Events.publish("Validation:SubmitError", $(this).attr("id") );
           }
         });
       });
