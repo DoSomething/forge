@@ -53,7 +53,7 @@ define(function(require) {
 
       $label.html($innerLabel);
     }
-  }
+  };
 
   /**
    * Trigger a validation on a form element.
@@ -109,7 +109,7 @@ define(function(require) {
   var registerValidationFunction = function(name, func) {
     var v = {
       fn: func
-    }
+    };
 
     registerValidation(name, v);
   };
@@ -172,7 +172,7 @@ define(function(require) {
     });
 
     return result.success;
-  }
+  };
 
   /**
    * Validate form on submit.
