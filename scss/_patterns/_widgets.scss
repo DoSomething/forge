@@ -29,37 +29,6 @@
       margin: 5rem auto;
     }
 
-    .modal-secure-button {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-      opacity: 0.5;
-      @include transition(opacity 0.5s);
-
-      span {
-        display: none;
-        font-size: 0.75rem;
-        background: #333;
-        color: #fff;
-        padding: 0.15rem 0.5rem 0.3rem;
-        border-radius: $sm-border-radius;
-        opacity: 0;
-        @include transition(opacity 0.5s);
-
-        &:after {
-          content: "";
-          position: absolute;
-          display: block;
-          border-style: solid;
-          border-width: 6px;
-          border-color: transparent #333 transparent transparent;
-          top: 6px;
-          left: 6px;
-        }
-      }
 
       &:hover {
         opacity: 1;
