@@ -30,6 +30,9 @@ define(function(require) {
   // Reference to current modal source
   var $reference = null;
 
+  // Whether this modal can be closed by the user
+  var closeable = false;
+
   // Return a boolean if modal is open or not
   var isOpen = function() {
     return modalIsOpen;
@@ -131,7 +134,34 @@ define(function(require) {
       $modalContent.html( $($el).html() );
     }
 
+    // We add a "close" button programmatically
+    // @param [data-modal-close=true]
+    switch ( $el.attr("data-modal-close") ) {
+      case "skip":
+        // Add a skip button, which delegates to the submitting the form with the given ID
+        var $skipForm = $( $el.attr("data-modal-skip-form") );
+        var $skipLink = $("<a href='#' class='js-close-modal modal-close-button -alt'>skip</a>");
+        $modalContent.prepend( $skipLink );
+        $skipLink.on("click", function() {
+          $skipForm.submit();
+        });
+        closeable = false; // cannot close modal by clicking background
+        break;
 
+      case "yes":
+      case "true":
+      case "1":
+        $modalContent.prepend("<a href='#' class='js-close-modal modal-close-button'>&#215;</a>");
+        closeable = true;
+        break;
+      default:
+        closeable = false;
+    }
+
+    var closeClass = $el.attr("data-modal-close-class");
+    if(closeClass) {
+      $modalContent.find(".js-close-modal").addClass(closeClass);
+    }
 
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
@@ -154,8 +184,8 @@ define(function(require) {
       return;
     }
 
-    // Only close if this modal has a close button
-    if($modalContent.find(".js-close-modal").length === 0) {
+    // Only close on clicking overlay if this modal has a "x" close button
+    if(!closeable) {
       return;
     }
 
