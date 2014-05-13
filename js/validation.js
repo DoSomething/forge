@@ -64,8 +64,8 @@ define(function(require) {
   var validateField = function($field, force, callback) {
     // Default arguments
     force = typeof force !== "undefined" ? force : false;
-    callback = typeof callback !== "undefined" ? callback : function($fieldLabel, result) {
-      showValidationMessage($fieldLabel, result);
+    callback = typeof callback !== "undefined" ? callback : function($field, result) {
+      showValidationMessage($field, result);
     };
 
     var validation = $field.data("validate");
@@ -83,7 +83,7 @@ define(function(require) {
     // Finally, let's not validate blank fields unless forced to
     if(force || $field.val() !== "") {
       validations[validation].fn(fieldValue, function(result) {
-        callback($fieldLabel, result);
+        callback($field, result);
       });
     }
   };
@@ -120,8 +120,8 @@ define(function(require) {
    * @param {jQuery} $fieldLabel         Label to display validation message within.
    * @param {Object} result              Object containing `success` and either `message` or `suggestion`
    */
-  var showValidationMessage = function($fieldLabel, result) {
-    var $field = $("#" + $fieldLabel.attr("for"));
+  var showValidationMessage = function($field, result) {
+    var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
     var $fieldMessage = $fieldLabel.find(".message");
 
     $field.removeClass("success error warning shake");
@@ -244,6 +244,7 @@ define(function(require) {
     prepareFields: prepareFields,
     registerValidation: registerValidation,
     registerValidationFunction: registerValidationFunction,
+    showValidationMessage: showValidationMessage,
     Validations: validations
   };
 });
