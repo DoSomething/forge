@@ -20,8 +20,6 @@
     padding: 2rem 1.5rem;
     margin: 0;
 
-    .modal-close-button {
-      @include close-parent;
     @include media($tablet) {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       max-width: 600px;
@@ -29,13 +27,15 @@
       margin: 5rem auto;
     }
 
+    .modal-close-button {
+      @include close-parent;
 
-      &:hover {
-        opacity: 1;
+      &.-alt {
+        font-size: 1rem;
+        top: 1.25rem;
 
-        span {
-          display: inline-block;
-          opacity: 1;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
