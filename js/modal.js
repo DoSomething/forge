@@ -64,13 +64,18 @@ define(function(require) {
   /**
    * Open a new modal
    * @param {jQuery}  $el                 Element that will be placed inside the modal.
-   * @param {boolean} [animated=true]     Use animation for opening the modal.
-   * @param {boolean} [closeButton]       Override `data-modal-close` attribute.
+   * @param {boolean} [options.animated=true]     Use animation for opening the modal.
+   * @param {boolean} [options.closeButton]       Override `data-modal-close` attribute.
+   * @param {boolean} [options.skipForm]          Override `data-modal-skip-form` attribute.
    */
-  var open = function($el, animated, closeButton) {
+  var open = function($el, options) {
+    debugger;
+
     // Default arguments
-    animated = typeof animated !== "undefined" ? animated : true;
-    closeButton = typeof closeButton !== "undefined" ? closeButton : $el.attr("data-modal-close");
+    options = options || {};
+    options.animated = typeof options.animated !== "undefined" ? options.animated : true;
+    options.closeButton = typeof options.closeButton !== "undefined" ? options.closeButton : $el.attr("data-modal-close");
+    options.skipForm = typeof options.skipForm !== "undefined" ? options.skipForm : $el.attr("data-modal-skip-form");
 
     var id = $el.attr("id");
     if(id) {
@@ -100,7 +105,7 @@ define(function(require) {
       $("body").addClass("modal-open");
       $("body").append($modal);
 
-      if(animated && Modernizr.cssanimations) {
+      if(options.animated && Modernizr.cssanimations) {
         $modal.addClass("fade-in");
         $modalContent.addClass("fade-in-up");
       }
@@ -138,10 +143,10 @@ define(function(require) {
 
     // We add a "close" button programmatically
     // @param [data-modal-close=true]
-    switch (closeButton) {
+    switch (options.closeButton) {
       case "skip":
         // Add a skip button, which delegates to the submitting the form with the given ID
-        var $skipForm = $( $el.attr("data-modal-skip-form") );
+        var $skipForm = $( options.skipForm );
         var $skipLink = $("<a href='#' class='js-close-modal modal-close-button -alt'>skip</a>");
         $modalContent.prepend( $skipLink );
         $skipLink.on("click", function(event) {
