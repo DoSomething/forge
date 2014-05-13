@@ -244,6 +244,7 @@ define(function(require) {
     prepareFields: prepareFields,
     registerValidation: registerValidation,
     registerValidationFunction: registerValidationFunction,
+    showValidationMessage: showValidationMessage,
     Validations: validations
   };
 });
