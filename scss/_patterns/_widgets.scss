@@ -15,15 +15,18 @@
   .modal-content {
     position: relative;
     background: #fff;
-    width: 600px;
     z-index: 1050;
     width: auto;
     padding: 2rem 1.5rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0;
 
     .modal-close-button {
       @include close-parent;
+    @include media($tablet) {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      min-height: 0;
+      margin: 5rem auto;
     }
 
     .modal-secure-button {
@@ -72,12 +75,6 @@
       margin-bottom: 1rem;
     }
 
-    @include media($tablet) {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
-      margin-top: 5rem;
-      margin-bottom: 5rem;
-      min-height: 0;
     }
   }
 }
