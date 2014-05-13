@@ -1,4 +1,6 @@
 // Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
+// - [data-modal-close]: set to "true" to include a close button on the modal, or "skip" to delegate a skip form action
+// - [data-modal-skip-form]: selector for a skip `form` element to submit upon clicking the "skip" link
 //
 // Styleguide 4.4.1 - Modal (Popup)
 
@@ -15,69 +17,46 @@
   .modal-content {
     position: relative;
     background: #fff;
-    width: 600px;
     z-index: 1050;
     width: auto;
     padding: 2rem 1.5rem;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0;
+    word-wrap: break-word;
+
+    @include media($tablet) {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      min-height: 0;
+      margin: 5rem auto;
+    }
 
     .modal-close-button {
       @include close-parent;
-    }
 
-    .modal-secure-button {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-      opacity: 0.5;
-      @include transition(opacity 0.5s);
+      &.-alt {
+        font-size: 1rem;
+        top: 1.35rem;
 
-      span {
-        display: none;
-        font-size: 0.75rem;
-        background: #333;
-        color: #fff;
-        padding: 0.15rem 0.5rem 0.3rem;
-        border-radius: $sm-border-radius;
-        opacity: 0;
-        @include transition(opacity 0.5s);
-
-        &:after {
-          content: "";
-          position: absolute;
-          display: block;
-          border-style: solid;
-          border-width: 6px;
-          border-color: transparent #333 transparent transparent;
-          top: 6px;
-          left: 6px;
-        }
-      }
-
-      &:hover {
-        opacity: 1;
-
-        span {
-          display: inline-block;
-          opacity: 1;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
 
     h2 {
       margin-bottom: 1rem;
+
+      &.banner {
+        // fit this guy to edge of modal
+        margin: -2rem -1.5rem 1rem;
+      }
     }
 
-    @include media($tablet) {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
-      margin-top: 5rem;
-      margin-bottom: 5rem;
-      min-height: 0;
+    // Ensure modal images do not break out of their
+    // parent containers on mobile
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }

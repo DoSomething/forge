@@ -30,6 +30,9 @@ define(function(require) {
   // Reference to current modal source
   var $reference = null;
 
+  // Whether this modal can be closed by the user
+  var closeable = false;
+
   // Return a boolean if modal is open or not
   var isOpen = function() {
     return modalIsOpen;
@@ -60,12 +63,19 @@ define(function(require) {
 
   /**
    * Open a new modal
-   * @param {jQuery}  el                Element that will be placed inside the modal.
-   * @param {boolean} [animated=true]   Use animation for opening the modal.
+   * @param {jQuery}  $el                 Element that will be placed inside the modal.
+   * @param {boolean} [options.animated=true]     Use animation for opening the modal.
+   * @param {boolean} [options.closeButton]       Override `data-modal-close` attribute.
+   * @param {boolean} [options.skipForm]          Override `data-modal-skip-form` attribute.
    */
-  var open = function($el, animated) {
+  var open = function($el, options) {
+    debugger;
+
     // Default arguments
-    animated = typeof animated !== "undefined" ? animated : true;
+    options = options || {};
+    options.animated = typeof options.animated !== "undefined" ? options.animated : true;
+    options.closeButton = typeof options.closeButton !== "undefined" ? options.closeButton : $el.attr("data-modal-close");
+    options.skipForm = typeof options.skipForm !== "undefined" ? options.skipForm : $el.attr("data-modal-skip-form");
 
     var id = $el.attr("id");
     if(id) {
@@ -95,7 +105,7 @@ define(function(require) {
       $("body").addClass("modal-open");
       $("body").append($modal);
 
-      if(animated && Modernizr.cssanimations) {
+      if(options.animated && Modernizr.cssanimations) {
         $modal.addClass("fade-in");
         $modalContent.addClass("fade-in-up");
       }
@@ -131,7 +141,35 @@ define(function(require) {
       $modalContent.html( $($el).html() );
     }
 
+    // We add a "close" button programmatically
+    // @param [data-modal-close=true]
+    switch (options.closeButton) {
+      case "skip":
+        // Add a skip button, which delegates to the submitting the form with the given ID
+        var $skipForm = $( options.skipForm );
+        var $skipLink = $("<a href='#' class='js-close-modal modal-close-button -alt'>skip</a>");
+        $modalContent.prepend( $skipLink );
+        $skipLink.on("click", function(event) {
+          event.preventDefault();
+          $skipForm.submit();
+        });
+        closeable = false; // cannot close modal by clicking background
+        break;
 
+      case "yes":
+      case "true":
+      case "1":
+        $modalContent.prepend("<a href='#' class='js-close-modal modal-close-button'>&#215;</a>");
+        closeable = true;
+        break;
+      default:
+        closeable = false;
+    }
+
+    var closeClass = $el.attr("data-modal-close-class");
+    if(closeClass) {
+      $modalContent.find(".js-close-modal").addClass(closeClass);
+    }
 
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
@@ -154,8 +192,8 @@ define(function(require) {
       return;
     }
 
-    // Only close if this modal has a close button
-    if($modalContent.find(".js-close-modal").length === 0) {
+    // Only close on clicking overlay if this modal has a "x" close button
+    if(!closeable) {
       return;
     }
 
