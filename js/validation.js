@@ -117,7 +117,7 @@ define(function(require) {
   /**
    * Show validation message in markup.
    *
-   * @param {jQuery} $fieldLabel         Label to display validation message within.
+   * @param {jQuery} $field              Field to display validation message for.
    * @param {Object} result              Object containing `success` and either `message` or `suggestion`
    */
   var showValidationMessage = function($field, result) {
@@ -188,7 +188,9 @@ define(function(require) {
       var validatedResults = [];
 
       $validationFields.each(function() {
-        validateField($(this), function($fieldLabel, result) {
+        validateField($(this), true, function($field, result) {
+          showValidationMessage($field, result);
+
           if( result.success ) {
             validatedResults.push(true);
           }
