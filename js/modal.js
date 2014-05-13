@@ -63,12 +63,14 @@ define(function(require) {
 
   /**
    * Open a new modal
-   * @param {jQuery}  el                Element that will be placed inside the modal.
-   * @param {boolean} [animated=true]   Use animation for opening the modal.
+   * @param {jQuery}  $el                 Element that will be placed inside the modal.
+   * @param {boolean} [animated=true]     Use animation for opening the modal.
+   * @param {boolean} [closeButton]       Override `data-modal-close` attribute.
    */
-  var open = function($el, animated) {
+  var open = function($el, animated, closeButton) {
     // Default arguments
     animated = typeof animated !== "undefined" ? animated : true;
+    closeButton = typeof closeButton !== "undefined" ? closeButton : $el.attr("data-modal-close");
 
     var id = $el.attr("id");
     if(id) {
@@ -136,13 +138,14 @@ define(function(require) {
 
     // We add a "close" button programmatically
     // @param [data-modal-close=true]
-    switch ( $el.attr("data-modal-close") ) {
+    switch (closeButton) {
       case "skip":
         // Add a skip button, which delegates to the submitting the form with the given ID
         var $skipForm = $( $el.attr("data-modal-skip-form") );
         var $skipLink = $("<a href='#' class='js-close-modal modal-close-button -alt'>skip</a>");
         $modalContent.prepend( $skipLink );
-        $skipLink.on("click", function() {
+        $skipLink.on("click", function(event) {
+          event.preventDefault();
           $skipForm.submit();
         });
         closeable = false; // cannot close modal by clicking background
