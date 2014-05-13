@@ -20,14 +20,14 @@
 
     @include media($tablet) {
       display: table-cell;
-      padding: 0 0.5rem 0 0;
+      padding: 0 0.5rem 0.25rem 0;
       vertical-align: bottom;
     }
   }
 
   img {
     display: block;
-    height: 4rem;
+    height: 50px;
     margin: 0 auto;
 
     @include media($tablet) {
