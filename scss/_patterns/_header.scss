@@ -140,7 +140,7 @@
       float: left;
     }
 
-    form {
+    > .btn, form {
       @include media($tablet) {
         float: left;
       }
@@ -152,6 +152,12 @@
     display: block;
     margin: 1.5rem auto 0;
     max-width: 150px;
+
+    &.medium {
+      @include media($tablet) {
+        margin: 0;
+      }
+    }
 
     &.large {
       font-size: $font-medium;
