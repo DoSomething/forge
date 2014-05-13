@@ -19,6 +19,7 @@
     width: auto;
     padding: 2rem 1.5rem;
     margin: 0;
+    word-wrap: break-word;
 
     @include media($tablet) {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -42,8 +43,18 @@
 
     h2 {
       margin-bottom: 1rem;
+
+      &.banner {
+        // fit this guy to edge of modal
+        margin: -2rem -1.5rem 1rem;
+      }
     }
 
+    // Ensure modal images do not break out of their
+    // parent containers on mobile
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
