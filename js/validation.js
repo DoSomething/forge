@@ -183,6 +183,7 @@ define(function(require) {
     } else {
       var $form = $(this);
       var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
+      var $failingCustomValidators = $form.find("[data-validate-custom=false]");
       var validatedResults = [];
 
       $validationFields.each(function() {
@@ -203,7 +204,7 @@ define(function(require) {
           }
       });
 
-      if($validationFields.length === 0) {
+      if($validationFields.length === 0 && $failingCustomValidators.length === 0) {
         // if there are no fields to be validated, submit!
         $form.trigger("submit", true);
       }
