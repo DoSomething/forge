@@ -69,8 +69,6 @@ define(function(require) {
    * @param {boolean} [options.skipForm]          Override `data-modal-skip-form` attribute.
    */
   var open = function($el, options) {
-    debugger;
-
     // Default arguments
     options = options || {};
     options.animated = typeof options.animated !== "undefined" ? options.animated : true;

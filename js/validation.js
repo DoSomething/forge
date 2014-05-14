@@ -78,8 +78,6 @@ define(function(require) {
 
     // Get field info
     var fieldValue = $field.val();
-    var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
-
     // Finally, let's not validate blank fields unless forced to
     if(force || $field.val() !== "") {
       validations[validation].fn(fieldValue, function(result) {
