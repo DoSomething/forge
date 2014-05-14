@@ -191,14 +191,11 @@ define(function(require) {
     }
 
     // Only close on clicking overlay if this modal has a "x" close button
-    if(!closeable) {
-      return;
+    if( $(this).hasClass("js-close-modal") || closeable ) {
+      // Override default link behavior.
+      event.preventDefault();
+      close();
     }
-
-    // Override default link behavior.
-    event.preventDefault();
-
-    close();
   };
 
   /**
