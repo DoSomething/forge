@@ -103,6 +103,10 @@ textarea {
   resize: vertical;
   @include box-sizing(border-box);
   @include highlight-on-focus;
+
+  &.error {
+    border-color: $error;
+  }
 }
 
 
@@ -323,6 +327,10 @@ select {
   border: 1px solid $light-gray;
   @include box-sizing(border-box);
   @include highlight-on-focus;
+
+  &.error {
+    border-color: $error;
+  }
 }
 
 // Spinner to indicate loading content.
