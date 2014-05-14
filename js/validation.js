@@ -189,22 +189,18 @@ define(function(require) {
         validateField($(this), true, function($field, result) {
           showValidationMessage($field, result);
 
-          if( result.success ) {
+          if(result.success) {
             validatedResults.push(true);
           }
-
-          if(validatedResults.length === $validationFields.length) {
+        });
+      }).promise().done(function() {
+          if(validatedResults.length === $validationFields.length  && $failingCustomValidators.length === 0) {
             // we've validated all that can be validated
-            $form.trigger("submit", true);
             Events.publish("Validation:Submitted", $(this).attr("id") );
+            $form.trigger("submit", true);
           } else {
-            // some validation errors exist on the form
-
-            // If Google Analytics is set up, we fire an event to
-            // mark that the form had some errors
             Events.publish("Validation:SubmitError", $(this).attr("id") );
           }
-        });
       });
 
       if($validationFields.length === 0) {
