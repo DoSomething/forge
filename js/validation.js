@@ -172,36 +172,75 @@ define(function(require) {
     return result.success;
   };
 
+
+  /**
+   * Disable form submission.
+   * @param {jQuery} $form Form to disable submission for.
+   */
+  var disableFormSubmit = function($form) {
+    // Prevent double-submissions
+    var $submitButton = $form.find(":submit");
+
+    // Disable that guy
+    $submitButton.attr("disabled", true);
+
+    // If <button>, add a loading style
+    if($submitButton.prop("tagName") === "BUTTON") {
+      // Neue's `.loading` class only works on <a> or <button> :(
+      $submitButton.addClass("loading");
+    }
+  }
+
+
+  /**
+   * Re-enable form submission.
+   * @param {jQuery} $form Form to enable submission for.
+   */
+  var enableFormSubmit = function($form) {
+    var $submitButton = $form.find(":submit");
+    $submitButton.attr("disabled", false);
+    $submitButton.removeClass("loading disabled");
+  }
+
+
   /**
    * Validate form on submit.
    */
   $("body").on("submit", "form", function(e, isValidated) {
+    var $form = $(this);
+    disableFormSubmit($form);
+
     if(isValidated === true) {
       // completed a previous runthrough & validated;
       // we're ready to submit the form
       return true;
     } else {
-      var $form = $(this);
       var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
-      var $failingCustomValidators = $form.find("[data-validate-custom=false]");
+      var $customValidators = $form.find("[data-validate-custom]");
       var validatedResults = [];
 
+      var i = 0;
       $validationFields.each(function() {
         validateField($(this), true, function($field, result) {
+          i++;
           showValidationMessage($field, result);
 
           if(result.success) {
             validatedResults.push(true);
           }
-        });
-      }).promise().done(function() {
-          if(validatedResults.length === $validationFields.length  && $failingCustomValidators.length === 0) {
-            // we've validated all that can be validated
-            Events.publish("Validation:Submitted", $(this).attr("id") );
-            $form.trigger("submit", true);
-          } else {
-            Events.publish("Validation:SubmitError", $(this).attr("id") );
+
+          // Once we're done validating all fields, check status of form
+          if(i === $validationFields.length) {
+            if(validatedResults.length === $validationFields.length) {
+              // we've validated all that can be validated
+              Events.publish("Validation:Submitted", $(this).attr("id") );
+              $form.trigger("submit", true);
+            } else {
+              Events.publish("Validation:SubmitError", $(this).attr("id") );
+              enableFormSubmit($form);
+            }
           }
+        });
       });
 
       if($validationFields.length === 0 && $failingCustomValidators.length === 0) {
