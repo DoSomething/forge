@@ -4,16 +4,47 @@
 // Styleguide 4.7.1 - Tile
 
 .tile {
+  > .wrapper {
+    display: block;
+    overflow: hidden;
+  }
+}
+
+
+.tile--figure {
+  padding-bottom: 1.5rem;
+  text-align: center;
+
+  img {
+    @include fluid-image();
+    margin: 0 auto 1rem;
+  }
+
+  .__title {
+    color: $dark-gray;
+    line-height: 1.1;
+    margin: 0 0 0.5rem;
+  }
+
+  .__description {
+    line-height: 1.2;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+.tile--campaign {
   height: 0;
   padding-bottom: 100%;
   position: relative;
 
   > .wrapper {
     background-color: #fff;
-    display: block;
     height: 100%;
     left: 0;
-    overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
@@ -41,15 +72,19 @@
     display: block;
     width: 100%;
   }
-}
+
+  .tile--meta {
+    bottom: 0;
+    color: #fff;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
 
 
-.tile--meta {
-  bottom: 0;
-  color: #fff;
-  padding: 1rem;
-  position: absolute;
-  width: 100%;
+    .no-cssgradients & {
+      background: transparent neue-image-url('black-gradient.png') 0 bottom repeat-x;
+    }
+  }
 
   .__title {
     color: inherit;
@@ -70,7 +105,6 @@
     text-shadow: 0 1px 3px rgba(black, 0.3);
   }
 
-  .no-cssgradients & {
-    background: transparent neue-image-url('black-gradient.png') 0 bottom repeat-x;
-  }
 }
+
+
