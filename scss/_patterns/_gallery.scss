@@ -95,24 +95,40 @@
         padding-bottom: 25%;
       }
     }
+
+    .__message {
+      display: table;
+      height: 100%;
+      padding: 1rem;
+      text-align: center;
+      width: 100%;
+
+      > .wrapper {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      p {
+        line-height: 1.3;
+        margin: 0.25rem;
+      }
+    }
   }
 
 
-  .__message {
-    display: table;
-    height: 100%;
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
+  &.-triad {
 
-    > .wrapper {
-      display: table-cell;
-      vertical-align: middle;
+    > li {
+      @include media($tablet) {
+        @include span-columns(4 of 12);
+        @include omega(3n);  // @TODO: Not supported in IE8; use classes as fallback?
+
+        &:nth-child(4n) {  // @TODO: Not supported in IE8; use classes as fallback?
+          clear: left;
+        }
+      }
     }
 
-    p {
-      line-height: 1.3;
-      margin: 0.25rem;
-    }
   }
 }
+
