@@ -76,13 +76,29 @@ define(function(require) {
       return;
     }
 
-    // Get field info
-    var fieldValue = $field.val();
-    // Finally, let's not validate blank fields unless forced to
-    if(force || $field.val() !== "") {
-      validations[validation].fn(fieldValue, function(result) {
-        callback($field, result);
-      });
+    switch( $field.prop("tagName") ) {
+      // For <input>, <select>, and <textarea> tags we provide
+      // the field's value as a string
+      case "INPUT":
+      case "SELECT":
+      case "TEXTAREA":
+        // Get field info
+        var fieldValue = $field.val();
+
+        // Finally, let's not validate blank fields unless forced to
+        if(force || $field.val() !== "") {
+          validations[validation].fn(fieldValue, function(result) {
+            callback($field, result);
+          });
+        }
+
+        break;
+
+      // For all other tags, we pass the element directly
+      default:
+        validations[validation].fn($field, function(result) {
+          callback($field, result);
+        });
     }
   };
 
