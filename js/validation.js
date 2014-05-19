@@ -207,7 +207,7 @@ define(function(require) {
       // Neue's `.loading` class only works on <a> or <button> :(
       $submitButton.addClass("loading");
     }
-  }
+  };
 
 
   /**
@@ -218,7 +218,7 @@ define(function(require) {
     var $submitButton = $form.find(":submit");
     $submitButton.attr("disabled", false);
     $submitButton.removeClass("loading disabled");
-  }
+  };
 
 
   /**
