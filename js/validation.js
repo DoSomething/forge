@@ -146,9 +146,14 @@ define(function(require) {
       $field.addClass("success");
       $fieldMessage.addClass("success");
     } else {
-      $field.addClass("shake");
       $field.addClass("error");
       $fieldMessage.addClass("error");
+
+      if(  $field.prop("tagName") === "INPUT"
+      || $field.prop("tagName") === "SELECT"
+      || $field.prop("tagName") === "TEXTAREA") {
+        $field.addClass("shake");
+      }
 
       Events.publish("Validation:InlineError", $fieldLabel.attr("for"));
     }
