@@ -76,29 +76,23 @@ define(function(require) {
       return;
     }
 
-    switch( $field.prop("tagName") ) {
-      // For <input>, <select>, and <textarea> tags we provide
-      // the field's value as a string
-      case "INPUT":
-      case "SELECT":
-      case "TEXTAREA":
-        // Get field info
-        var fieldValue = $field.val();
+    // For <input>, <select>, and <textarea> tags we provide
+    // the field's value as a string
+    if( isFormField($field) ) {
+      // Get field info
+      var fieldValue = $field.val();
 
-        // Finally, let's not validate blank fields unless forced to
-        if(force || $field.val() !== "") {
-          validations[validation].fn(fieldValue, function(result) {
-            callback($field, result);
-          });
-        }
-
-        break;
-
-      // For all other tags, we pass the element directly
-      default:
-        validations[validation].fn($field, function(result) {
+      // Finally, let's not validate blank fields unless forced to
+      if(force || $field.val() !== "") {
+        validations[validation].fn(fieldValue, function(result) {
           callback($field, result);
         });
+      }
+    } else {
+      // For all other tags, we pass the element directly
+      validations[validation].fn($field, function(result) {
+        callback($field, result);
+      });
     }
   };
 
@@ -149,9 +143,7 @@ define(function(require) {
       $field.addClass("error");
       $fieldMessage.addClass("error");
 
-      if(  $field.prop("tagName") === "INPUT"
-      || $field.prop("tagName") === "SELECT"
-      || $field.prop("tagName") === "TEXTAREA") {
+      if( isFormField($field) ) {
         $field.addClass("shake");
       }
 
@@ -220,6 +212,15 @@ define(function(require) {
     $submitButton.removeClass("loading disabled");
   };
 
+  /**
+   * Returns whether element is <input>, <select>, or <textarea>.
+   * @param {jQuery} $el  Element to check type of.
+   * @return {boolean}
+   */
+  var isFormField = function($el) {
+    var tag = $el.prop("tagName");
+    return ( tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA" );
+  };
 
   /**
    * Validate form on submit.
