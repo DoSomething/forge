@@ -76,11 +76,21 @@ define(function(require) {
       return;
     }
 
-    // Get field info
-    var fieldValue = $field.val();
-    // Finally, let's not validate blank fields unless forced to
-    if(force || $field.val() !== "") {
-      validations[validation].fn(fieldValue, function(result) {
+    // For <input>, <select>, and <textarea> tags we provide
+    // the field's value as a string
+    if( isFormField($field) ) {
+      // Get field info
+      var fieldValue = $field.val();
+
+      // Finally, let's not validate blank fields unless forced to
+      if(force || $field.val() !== "") {
+        validations[validation].fn(fieldValue, function(result) {
+          callback($field, result);
+        });
+      }
+    } else {
+      // For all other tags, we pass the element directly
+      validations[validation].fn($field, function(result) {
         callback($field, result);
       });
     }
@@ -91,7 +101,7 @@ define(function(require) {
    *
    * @param {String}    name              The name function will be referenced by in `data-validate` attribute.
    * @param {Object}    validation        Collection of validation rules to apply
-   * @param {Function}  [validation.fn]   Custom validation, with callback `done({success: [boolean], message: [string], suggestion: [string]})`.
+   * @param {Function}  [validation.fn]   Custom validation
    */
   var registerValidation = function(name, validation) {
     if(validations[name]) {
@@ -130,9 +140,12 @@ define(function(require) {
       $field.addClass("success");
       $fieldMessage.addClass("success");
     } else {
-      $field.addClass("shake");
       $field.addClass("error");
       $fieldMessage.addClass("error");
+
+      if( isFormField($field) ) {
+        $field.addClass("shake");
+      }
 
       Events.publish("Validation:InlineError", $fieldLabel.attr("for"));
     }
@@ -144,9 +157,6 @@ define(function(require) {
 
     if(result.suggestion) {
       $fieldMessage.html("Did you mean " + result.suggestion.full + "? <a href='#' data-suggestion='" + result.suggestion.full + "'class='js-mailcheck-fix'>Fix it!</a>");
-      $field.addClass("warning");
-      $fieldMessage.addClass("warning");
-
       Events.publish("Validation:Suggestion", result.suggestion.domain);
     }
 
@@ -172,37 +182,83 @@ define(function(require) {
     return result.success;
   };
 
+
+  /**
+   * Disable form submission.
+   * @param {jQuery} $form Form to disable submission for.
+   */
+  var disableFormSubmit = function($form) {
+    // Prevent double-submissions
+    var $submitButton = $form.find(":submit");
+
+    // Disable that guy
+    $submitButton.attr("disabled", true);
+
+    // If <button>, add a loading style
+    if($submitButton.prop("tagName") === "BUTTON") {
+      // Neue's `.loading` class only works on <a> or <button> :(
+      $submitButton.addClass("loading");
+    }
+  };
+
+
+  /**
+   * Re-enable form submission.
+   * @param {jQuery} $form Form to enable submission for.
+   */
+  var enableFormSubmit = function($form) {
+    var $submitButton = $form.find(":submit");
+    $submitButton.attr("disabled", false);
+    $submitButton.removeClass("loading disabled");
+  };
+
+  /**
+   * Returns whether element is <input>, <select>, or <textarea>.
+   * @param {jQuery} $el  Element to check type of.
+   * @return {boolean}
+   */
+  var isFormField = function($el) {
+    var tag = $el.prop("tagName");
+    return ( tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA" );
+  };
+
   /**
    * Validate form on submit.
    */
-  $("body").on("submit", "form", function(e, isValidated) {
+  $("body").on("submit", "form", function(event, isValidated) {
+    var $form = $(this);
+    disableFormSubmit($form);
+
     if(isValidated === true) {
       // completed a previous runthrough & validated;
       // we're ready to submit the form
       return true;
     } else {
-      var $form = $(this);
+      event.preventDefault();
+
       var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
-      var validatedResults = [];
+      var validatedFields = 0;
+      var validatedResults = 0;
 
       $validationFields.each(function() {
         validateField($(this), true, function($field, result) {
+          validatedFields++;
           showValidationMessage($field, result);
 
-          if( result.success ) {
-            validatedResults.push(true);
+          if(result.success) {
+            validatedResults++;
           }
 
-          if(validatedResults.length === $validationFields.length) {
-            // we've validated all that can be validated
-            $form.trigger("submit", true);
-            Events.publish("Validation:Submitted", $(this).attr("id") );
-          } else {
-            // some validation errors exist on the form
-
-            // If Google Analytics is set up, we fire an event to
-            // mark that the form had some errors
-            Events.publish("Validation:SubmitError", $(this).attr("id") );
+          // Once we're done validating all fields, check status of form
+          if(validatedFields === $validationFields.length) {
+            if(validatedResults === $validationFields.length) {
+              // we've validated all that can be validated
+              Events.publish("Validation:Submitted", $(this).attr("id") );
+              $form.trigger("submit", true);
+            } else {
+              Events.publish("Validation:SubmitError", $(this).attr("id") );
+              enableFormSubmit($form);
+            }
           }
         });
       });
@@ -244,6 +300,7 @@ define(function(require) {
     prepareFields: prepareFields,
     registerValidation: registerValidation,
     registerValidationFunction: registerValidationFunction,
+    validateField: validateField,
     showValidationMessage: showValidationMessage,
     Validations: validations
   };
