@@ -165,9 +165,6 @@ define(function(require) {
 
     if(result.suggestion) {
       $fieldMessage.html("Did you mean " + result.suggestion.full + "? <a href='#' data-suggestion='" + result.suggestion.full + "'class='js-mailcheck-fix'>Fix it!</a>");
-      $field.addClass("warning");
-      $fieldMessage.addClass("warning");
-
       Events.publish("Validation:Suggestion", result.suggestion.domain);
     }
 
