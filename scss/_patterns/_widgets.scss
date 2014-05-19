@@ -32,6 +32,7 @@
 
     .modal-close-button {
       @include close-parent;
+      color: #aaa;
 
       &.-alt {
         font-size: 1rem;
