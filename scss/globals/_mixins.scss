@@ -54,19 +54,15 @@
 // modals, dialogs and system status messages
 @mixin close-parent {
   position: absolute;
-  top: 0.5rem; right: 1.5rem;
-  font-size: 2rem;
+  top: 0.25rem; right: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  color: $dark-gray;
   opacity: 0.5;
   text-decoration: none;
 
   &:hover {
     opacity: 1;
-  }
-
-  &.white {
-    color: #fff;
   }
 }
 
