@@ -19,7 +19,7 @@
       "define": false,
       "console": false,
       "jQuery": false,
-      "$": false,
+      "$": false
     },
     "strict": true,
     "trailing": true,
