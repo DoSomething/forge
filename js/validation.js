@@ -107,7 +107,7 @@ define(function(require) {
    *
    * @param {String}    name              The name function will be referenced by in `data-validate` attribute.
    * @param {Object}    validation        Collection of validation rules to apply
-   * @param {Function}  [validation.fn]   Custom validation, with callback `done({success: [boolean], message: [string], suggestion: [string]})`.
+   * @param {Function}  [validation.fn]   Custom validation
    */
   var registerValidation = function(name, validation) {
     if(validations[name]) {
@@ -224,7 +224,7 @@ define(function(require) {
   /**
    * Validate form on submit.
    */
-  $("body").on("submit", "form", function(e, isValidated) {
+  $("body").on("submit", "form", function(event, isValidated) {
     var $form = $(this);
     disableFormSubmit($form);
 
@@ -233,23 +233,24 @@ define(function(require) {
       // we're ready to submit the form
       return true;
     } else {
-      var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
-      var $customValidators = $form.find("[data-validate-custom]");
-      var validatedResults = [];
+      event.preventDefault();
 
-      var i = 0;
+      var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
+      var validatedFields = 0;
+      var validatedResults = 0;
+
       $validationFields.each(function() {
         validateField($(this), true, function($field, result) {
-          i++;
+          validatedFields++;
           showValidationMessage($field, result);
 
           if(result.success) {
-            validatedResults.push(true);
+            validatedResults++;
           }
 
           // Once we're done validating all fields, check status of form
-          if(i === $validationFields.length) {
-            if(validatedResults.length === $validationFields.length) {
+          if(validatedFields === $validationFields.length) {
+            if(validatedResults === $validationFields.length) {
               // we've validated all that can be validated
               Events.publish("Validation:Submitted", $(this).attr("id") );
               $form.trigger("submit", true);
@@ -261,7 +262,7 @@ define(function(require) {
         });
       });
 
-      if($validationFields.length === 0 && $failingCustomValidators.length === 0) {
+      if($validationFields.length === 0) {
         // if there are no fields to be validated, submit!
         $form.trigger("submit", true);
       }
@@ -298,6 +299,7 @@ define(function(require) {
     prepareFields: prepareFields,
     registerValidation: registerValidation,
     registerValidationFunction: registerValidationFunction,
+    validateField: validateField,
     showValidationMessage: showValidationMessage,
     Validations: validations
   };
