@@ -70,6 +70,13 @@ define(function(require) {
 
     var validation = $field.data("validate");
 
+    // Trigger any other linked validation
+    var validationTrigger = $field.data("validate-trigger");
+    if(validationTrigger) {
+      validateField( $(validationTrigger) );
+    }
+
+
     // Don't validate if validation doesn't exist
     if(!validations[validation]) {
       console.error("A validation with the name "+ validation + " has not been registered.");
@@ -84,15 +91,29 @@ define(function(require) {
 
       // Finally, let's not validate blank fields unless forced to
       if(force || $field.val() !== "") {
-        validations[validation].fn(fieldValue, function(result) {
-          callback($field, result);
-        });
+        if(validation === "match") {
+          var $matchField = $($field.data("validate-match"));
+          validations[validation].fn(fieldValue, $matchField.val(), function(result) {
+            callback($field, result);
+          });
+        } else {
+          validations[validation].fn(fieldValue, function(result) {
+            callback($field, result);
+          });
+        }
       }
     } else {
       // For all other tags, we pass the element directly
-      validations[validation].fn($field, function(result) {
-        callback($field, result);
-      });
+        if(validation === "match") {
+          var $matchField = $($field.data("validate-match"));
+          validations[validation].fn($field, $matchField, function(result) {
+            callback($field, result);
+          });
+        } else {
+          validations[validation].fn($field, function(result) {
+            callback($field, result);
+          });
+        }
     }
   };
 
