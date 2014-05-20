@@ -18,7 +18,7 @@ body {
   font-family: $font-proxima-nova;
   font-size: $font-regular;
   font-weight: $weight-normal;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -36,9 +36,12 @@ h1, h2, h3, h4 {
   &.banner {
     background: #000;
     color: #fff;
-    line-height: 1.5;
     text-transform: uppercase;
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem 0;
+
+    @include media($tablet) {
+      padding: 0.5rem;
+    }
   }
 }
 
