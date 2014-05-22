@@ -1,0 +1,46 @@
+// Module for applying styles to the Info Bar typically found in page footer.
+//
+
+.info-bar {
+  color: #fff;
+  @include rgba('background', #000, 0.5);
+
+  > .wrapper {
+    padding: 1rem;
+    @include clearfix();
+
+    @include media($tablet) {
+      @include span-columns(12);
+      @include shift(2);
+      float: none;
+      padding: 1rem 0;
+    }
+  }
+
+  a {
+    color: #fff;
+    font-weight: $weight-normal;
+  }
+
+  div + div {
+    margin-top: 0.5rem;
+  }
+
+  .help {
+    border: 0 none; // @TODO: Inherited style to remove.
+  }
+
+  @include media($tablet) {
+    div + div {
+      margin-top: 0;
+    }
+
+    .help {
+      float: right;
+    }
+
+    .sponsor {
+      float: left;
+    }
+  }
+}
