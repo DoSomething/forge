@@ -66,6 +66,26 @@
 
   @include linear-gradient($purple 35%, rgba(#000, .60) 100%);
 
+  // @TODO: There's a better solution for this, but need a quick solution for now (2014.05.22).
+  &.-sponsored {
+    .__subtitle {
+      @include media($tablet) {
+        width: 75%;
+      }
+    }
+  }
+
+  .sponsor {
+    padding: 1rem 0 0.5rem;
+
+    @include media($tablet) {
+      bottom: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
 }
 
 
