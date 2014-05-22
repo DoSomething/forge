@@ -90,10 +90,10 @@ define(function(require) {
       var fieldValue = $field.val();
 
       // Finally, let's not validate blank fields unless forced to
-      if(force || $field.val() !== "") {
+      if(force || fieldValue !== "") {
         if(validation === "match") {
-          var $matchField = $($field.data("validate-match"));
-          validations[validation].fn(fieldValue, $matchField.val(), function(result) {
+          var matchFieldValue = $($field.data("validate-match")).val();
+          validations[validation].fn(fieldValue, matchFieldValue, function(result) {
             callback($field, result);
           });
         } else {
@@ -248,7 +248,13 @@ define(function(require) {
    */
   $("body").on("submit", "form", function(event, isValidated) {
     var $form = $(this);
+    var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
+
     disableFormSubmit($form);
+
+    if($validationFields.length === 0) {
+      return true;
+    }
 
     if(isValidated === true) {
       // completed a previous runthrough & validated;
@@ -257,7 +263,6 @@ define(function(require) {
     } else {
       event.preventDefault();
 
-      var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
       var validatedFields = 0;
       var validatedResults = 0;
 
@@ -283,11 +288,6 @@ define(function(require) {
           }
         });
       });
-
-      if($validationFields.length === 0) {
-        // if there are no fields to be validated, submit!
-        $form.trigger("submit", true);
-      }
 
       return false; // don't submit form, wait for callback with `true` parameter
     }
