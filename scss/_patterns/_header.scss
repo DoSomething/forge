@@ -57,6 +57,17 @@
     text-shadow: 0 1px 3px rgba(#000, 0.3);
   }
 
+  .sponsor {
+    padding: 1rem 0 0.5rem;
+
+    @include media($tablet) {
+      bottom: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
 }
 
 
@@ -72,17 +83,6 @@
       @include media($tablet) {
         width: 75%;
       }
-    }
-  }
-
-  .sponsor {
-    padding: 1rem 0 0.5rem;
-
-    @include media($tablet) {
-      bottom: 0;
-      padding: 0;
-      position: absolute;
-      right: 0;
     }
   }
 
@@ -187,17 +187,6 @@
         margin: 0;
         max-width: 100%;
       }
-    }
-  }
-
-  .sponsor {
-    padding: 1rem 0 0.5rem;
-
-    @include media($tablet) {
-      bottom: 0;
-      padding: 0;
-      position: absolute;
-      right: 0;
     }
   }
 
