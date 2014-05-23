@@ -18,6 +18,10 @@
   img {
     @include fluid-image();
     margin: 0 auto 1rem;
+
+    @include media($desktop) {
+      width: 100%;
+    }
   }
 
   .__title {
