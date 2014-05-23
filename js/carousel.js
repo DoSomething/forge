@@ -34,7 +34,8 @@ define(function() {
     $("#slide0").addClass("visible");
 
     // Make carousel stateful
-    var counter = 0;
+    var counter = 0,
+        totalCount = $('.slide').length - 1;
 
     // Cache carousel buttons
     var $buttons = $("#prev, #next");
@@ -43,14 +44,14 @@ define(function() {
     function decrementCounter() {
       // If first slide is shown, restart loop
       // Else, show previous slide
-      counter === 0 ? counter = 2 : counter--;
+      counter === 0 ? counter = totalCount : counter--;
     }
 
     // Increment counter
     function incrementCounter() {
       // If last slide is shown, restart loop
       // Else, show next slide
-      counter === 2 ? counter = 0 : counter++;
+      counter === totalCount ? counter = 0 : counter++;
     }
 
     // Toggle slide visibility
