@@ -13,7 +13,7 @@
  * //    <div class="carousel-wrapper">
  * //      <figure id="slide0" class="slide"><img src="./img/example_img0.jpg" /></figure>
  * //      <figure id="slide1" class="slide"><img src="./img/example_img1.jpg" /></figure>
- * //      <figure id="slide2" class="slide"><img src="./img/example_img2.jpg" /></figure>
+ * //      <figure id="slidetotalCount" class="slide"><img src="./img/example_img2.jpg" /></figure>
  * //      <figure id="slide3" class="slide"><img src="./img/example_img3.jpg" /></figure>
  * //    </div>
  * //
@@ -34,7 +34,8 @@ define(function() {
     $("#slide0").addClass("visible");
 
     // Make carousel stateful
-    var counter = 0;
+    var counter = 0,
+        totalCount = $('.slide').length - 1;
 
     // Cache carousel buttons
     var $buttons = $("#prev, #next");
@@ -43,14 +44,14 @@ define(function() {
     function decrementCounter() {
       // If first slide is shown, restart loop
       // Else, show previous slide
-      counter === 0 ? counter = 2 : counter--;
+      counter === 0 ? counter = totalCount : counter--;
     }
 
     // Increment counter
     function incrementCounter() {
       // If last slide is shown, restart loop
       // Else, show next slide
-      counter === 2 ? counter = 0 : counter++;
+      counter === totalCount ? counter = 0 : counter++;
     }
 
     // Toggle slide visibility
