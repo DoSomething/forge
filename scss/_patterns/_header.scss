@@ -170,13 +170,8 @@
 
   // @TODO: May be a better way to handle the oversized button on mobile; maybe address this in btn module?
   .btn {
-    display: inline-block;
     margin: 1.5rem auto 0;
     max-width: 250px;
-
-    // @include media($tablet) {
-    //   display: block;
-    // }
 
     &.medium {
       @include media($tablet) {
