@@ -3,7 +3,8 @@
 
 .info-bar {
   color: #fff;
-  @include rgba('background', #000, 0.5);
+  background-color: #7f7f7f;
+  background-color: rgba(0,0,0,0.5);
 
   > .wrapper {
     padding: 1rem;
