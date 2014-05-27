@@ -121,14 +121,32 @@
     > li {
       @include media($tablet) {
         @include span-columns(4 of 12);
-        @include omega(3n);  // @TODO: Not supported in IE8; use classes as fallback?
+        @include omega(3n);
 
-        &:nth-child(4n) {  // @TODO: Not supported in IE8; use classes as fallback?
+        &:nth-child(4n) {
           clear: left;
         }
       }
     }
 
+  }
+
+  .ie8 & {
+    &.-triad {
+      > li {
+        @include media($tablet) {
+          // Last-child not supported in IE8; using class as fallback.
+          &.-third {
+            margin-right: 0;
+          }
+
+          // Nth-child not supported in IE8; using class as fallback.
+          &.-first {
+            clear: left;
+          }
+        }
+      }
+    }
   }
 }
 
