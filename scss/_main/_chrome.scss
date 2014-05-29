@@ -35,6 +35,10 @@
     }
   }
 
+  a {
+    text-shadow: 0 1px 0 rgba(#fff, 0.2);
+  }
+
   @include media($tablet) {
     padding: 1rem 0;
   }
@@ -190,6 +194,7 @@
     }
 
     input[type="search"] {
+      box-shadow: 0 1px 0 rgba(#fff, 0.2);
       margin: 0.2rem 0;
       padding-top: 0.3rem;
       padding-bottom: 0.3rem;
