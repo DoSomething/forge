@@ -104,16 +104,16 @@ define(function(require) {
       }
     } else {
       // For all other tags, we pass the element directly
-        if(validation === "match") {
-          var $matchField = $($field.data("validate-match"));
-          validations[validation].fn($field, $matchField, function(result) {
-            callback($field, result);
-          });
-        } else {
-          validations[validation].fn($field, function(result) {
-            callback($field, result);
-          });
-        }
+      if(validation === "match") {
+        var $matchField = $($field.data("validate-match"));
+        validations[validation].fn($field, $matchField, function(result) {
+          callback($field, result);
+        });
+      } else {
+        validations[validation].fn($field, function(result) {
+          callback($field, result);
+        });
+      }
     }
   };
 

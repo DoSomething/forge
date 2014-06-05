@@ -61,7 +61,7 @@ linters:
   SingleLinePerSelector:
     enabled: false
 
-  SortedProperties:
+  PropertySortOrder:
     enabled: false
 
   StringQuotes:

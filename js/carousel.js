@@ -35,7 +35,7 @@ define(function() {
 
     // Make carousel stateful
     var counter = 0,
-        totalCount = $('.slide').length - 1;
+        totalCount = $(".slide").length - 1;
 
     // Cache carousel buttons
     var $buttons = $("#prev, #next");
