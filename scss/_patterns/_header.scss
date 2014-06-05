@@ -42,7 +42,7 @@
     color: #fff;
     font-size: $font-regular;
     font-weight: normal;
-    line-height: 1.3  ;
+    line-height: 1.3;
     margin: 0 0 1rem;
 
     @include media($tablet) {
@@ -68,126 +68,119 @@
     }
   }
 
-}
+  // Default header banner styling.
+  &.-basic {
+    @include linear-gradient($purple 35%, rgba(#000, .60) 100%);
 
+    // @TODO: There's a better solution for this, but need a quick solution for now (2014.05.22).
+    &.-sponsored {
+      .__subtitle {
+        @include media($tablet) {
+          width: 75%;
+        }
+      }
+    }
 
+  }
 
-// Default header banner styling.
-[role="banner"].-basic {
+  // Hero image header banner styling.
+  &.-hero {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 465px;
+    padding-bottom: 1.5rem;
+    padding-top: 12rem;
 
-  @include linear-gradient($purple 35%, rgba(#000, .60) 100%);
+    @include media($tablet) {
+      height: 620px;
+    }
 
-  // @TODO: There's a better solution for this, but need a quick solution for now (2014.05.22).
-  &.-sponsored {
+    > .wrapper {
+      @include media($tablet) {
+        bottom: 1.5rem;
+        position: absolute;
+      }
+    }
+
+    &:before {
+      bottom: 0;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      @include linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
+
+      @include media($tablet) {
+        @include linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
+      }
+    }
+
+    .no-cssgradients & {
+      &:before {
+        background: transparent image-url("black-gradient.png") 0 bottom repeat-x;
+      }
+    }
+
     .__subtitle {
       @include media($tablet) {
-        width: 75%;
+        margin-bottom: 0.5rem;
       }
     }
-  }
 
-}
-
-
-
-// Hero image header banner styling.
-[role="banner"].-hero {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 465px;
-  padding-bottom: 1.5rem;
-  padding-top: 12rem;
-
-  @include media($tablet) {
-    height: 620px;
-  }
-
-  > .wrapper {
-    @include media($tablet) {
-      bottom: 1.5rem;
-      position: absolute;
-    }
-  }
-
-  &:before {
-    bottom: 0;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    @include linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
-
-    @include media($tablet) {
-      @include linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
-    }
-  }
-
-  .no-cssgradients & {
-    &:before {
-      background: transparent image-url('black-gradient.png') 0 bottom repeat-x;
-    }
-  }
-
-  .__subtitle {
-    @include media($tablet) {
+    .__date {
+      color: #fff;
+      font-size: $font-small;
       margin-bottom: 0.5rem;
-    }
-  }
 
-  .__date {
-    color: #fff;
-    font-size: $font-small;
-    margin-bottom: 0.5rem;
-
-    @include media($tablet) {
-      font-size: $font-regular;
-      float: left;
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  .__subtitle + .__date {
-    margin-top: -0.5rem ;
-  }
-
-  .__signup {
-    @include media($tablet) {
-      clear: left;
-      float: left;
-      width: 50%;
-    }
-
-    > .btn, form {
       @include media($tablet) {
+        font-size: $font-regular;
         float: left;
+        margin-bottom: 1.5rem;
+      }
+
+      & + .__subtitle {
+        margin-top: -0.5rem;
+      }
+    }
+
+    .__signup {
+      @include media($tablet) {
+        clear: left;
+        float: left;
+        width: 50%;
+      }
+
+      > .btn, form {
+        @include media($tablet) {
+          float: left;
+        }
+      }
+    }
+
+    // @TODO: May be a better way to handle the oversized button on mobile; maybe address this in btn module?
+    .btn {
+      margin: 1.5rem auto 0;
+      max-width: 250px;
+
+      &.medium {
+        @include media($tablet) {
+          margin: 0;
+        }
+      }
+
+      &.large {
+        font-size: $font-medium;
+
+        @include media($tablet) {
+          font-size: $font-large;
+          margin: 0;
+          max-width: 100%;
+        }
       }
     }
   }
-
-  // @TODO: May be a better way to handle the oversized button on mobile; maybe address this in btn module?
-  .btn {
-    margin: 1.5rem auto 0;
-    max-width: 250px;
-
-    &.medium {
-      @include media($tablet) {
-        margin: 0;
-      }
-    }
-
-    &.large {
-      font-size: $font-medium;
-
-      @include media($tablet) {
-        font-size: $font-large;
-        margin: 0;
-        max-width: 100%;
-      }
-    }
-  }
-
 }

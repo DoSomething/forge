@@ -4,7 +4,7 @@
 // imported into client app CSS.
 
 body.show-visual-grid:before {
-  content: '';
+  content: "";
   display: inline-block;
   @include grid-column-gradient(gradient-stops($grid-columns));
   height: 100%;

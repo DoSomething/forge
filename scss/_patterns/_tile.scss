@@ -55,7 +55,7 @@
 
     &:before {
       bottom: 0;
-      content: '';
+      content: "";
       display: block;
       height: 100%;
       position: absolute;
@@ -67,7 +67,7 @@
   .no-cssgradients & {
     > .wrapper {
       &:before {
-        background: transparent neue-image-url('black-gradient.png') 0 bottom repeat-x;
+        background: transparent neue-image-url("black-gradient.png") 0 bottom repeat-x;
       }
     }
   }
@@ -86,7 +86,7 @@
 
 
     .no-cssgradients & {
-      background: transparent neue-image-url('black-gradient.png') 0 bottom repeat-x;
+      background: transparent neue-image-url("black-gradient.png") 0 bottom repeat-x;
     }
   }
 
@@ -113,7 +113,7 @@
 
   .__title,
   .__tagline {
-    text-shadow: 0 1px 3px rgba(black, 0.3);
+    text-shadow: 0 1px 3px rgba(#000, 0.3);
   }
 
 
@@ -121,5 +121,4 @@
     opacity: 0.45;
   }
 }
-
 
