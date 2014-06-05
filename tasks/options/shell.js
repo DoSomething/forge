@@ -1,8 +1,4 @@
 module.exports = {
-  clean: {
-    command: "rm -rf dist/*"
-  },
-
   dist: {
     command: [
       // checkout master, rebase and push
