@@ -4,5 +4,5 @@ module.exports = function(grunt) {
 
   // The `prod` build task is used when building for production. Since compiled assets
   // are ignored in version control, this is run in Continuous Integration on deploy.
-  grunt.registerTask("prod", ["shell:clean", "sass:compile", "cssmin:minify", "copy:main", "requirejs:compile", "uglify:prod"]);
+  grunt.registerTask("prod", ["clean:dist", "sass:compile", "cssmin:minify", "copy:main", "requirejs:compile", "uglify:prod"]);
 }
