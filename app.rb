@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/content_for'
+require 'sinatra/export'
 require 'kss'
 
 set :public_folder, Proc.new { File.join(root, "dist") }
