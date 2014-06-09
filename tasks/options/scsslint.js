@@ -1,5 +1,5 @@
 module.exports = {
-  scss: [
+  all: [
     'scss/**/*.scss',
   ],
 
