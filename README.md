@@ -1,4 +1,4 @@
-# DS Neue
+# DS Neue [![Build Status](https://travis-ci.org/DoSomething/neue.svg?branch=dev)](https://travis-ci.org/DoSomething/neue)
 This is Neue, our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.
 
  - **Typography**: Content is the basis of our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.
