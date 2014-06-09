@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - "2.1.1"
+before_script:
+  - npm install
+script:
+  - npm test

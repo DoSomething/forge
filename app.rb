@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/content_for'
 require 'kss'
 
 set :public_folder, Proc.new { File.join(root, "dist") }
@@ -9,21 +8,7 @@ get '/' do
   erb :styleguide
 end
 
-get '/example/*.html' do
-  send_file "views/examples/#{params[:splat].first}.html"
-end
-
-get '/example/*' do
-  render_layout
-end
-
 helpers do
-  # Layout Handling (parse path and serve proper layout)
-  def render_layout
-    splat = params[:splat][0]
-    render :erb, :"examples/#{splat}", layout: :drupal_layout
-  end
-
   # Generates a styleguide block. A little bit evil with @_out_buf, but
   # if you're using something like Rails, you can write a much cleaner helper
   # very easily.

@@ -14,8 +14,6 @@
     "grunt-cli": "^0.1.13",
     "grunt-contrib-watch": "^0.5.3",
     "grunt-sass": "^0.11.0",
-    "grunt-contrib-cssmin": "^0.7.0",
-    "grunt-contrib-uglify": "^0.2.4",
     "grunt-bump": "^0.0.11",
     "grunt-contrib-jshint": "^0.7.1",
     "grunt-contrib-qunit": "^0.3.0",
@@ -29,9 +27,11 @@
     "grunt-contrib-requirejs": "^0.4.3",
     "bower": "^1.3.3",
     "grunt-contrib-clean": "^0.5.0",
-    "grunt-scss-lint": "^0.1.11"
+    "grunt-scss-lint": "^0.1.11",
+    "time-grunt": "^0.3.2"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt build"
+    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt build",
+    "test": "./node_modules/.bin/grunt travis"
   }
 }
