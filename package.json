@@ -31,6 +31,7 @@
     "time-grunt": "^0.3.2"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt build"
+    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt build",
+    "test": "./node_modules/.bin/grunt travis"
   }
 }
