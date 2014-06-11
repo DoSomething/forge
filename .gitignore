@@ -1,17 +1,16 @@
 # Ignore build directory
 dist/
 
-# Ignore bower components
+# Ignore dependencies
 bower_components/
+node_modules
+npm-debug.log
 
 # Vim stuff
 *.swp
 
 # SASS stuff
 .sass-cache
-
-# Wraith (testing) stuff
-tests/wraith/ds
 
 # OS X stuff
 .DS_Store
@@ -25,10 +24,6 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# NPM ignores
-npm-debug.log
-node_modules
 
 # editor ignores
 *.sublime-workspace
