@@ -4,7 +4,7 @@ module.exports = {
       baseUrl: "dist/",
       name: "../bower_components/almond/almond",
       paths: {
-        "neue": "js"
+        "neue": "../js"
       },
       include: "neue/main",
       insertRequire: ["neue/main"],

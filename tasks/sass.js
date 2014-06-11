@@ -1,8 +1,8 @@
 module.exports = {
   compile: {
     files: {
-      "dist/neue.css": "dist/scss/neue.scss",
-      "dist/ie.css": "dist/scss/ie.scss"
+      "dist/neue.css": "scss/neue.scss",
+      "dist/ie.css": "scss/ie.scss"
     },
     options: {
       outputStyle: "compressed",

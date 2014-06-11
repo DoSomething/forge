@@ -1,16 +1,16 @@
 /* jshint node:true */
 "use strict";
 
+var path = require('path');
+
 module.exports = function(grunt) {
   // Measure the time each task takes to run
   require('time-grunt')(grunt);
 
-  // Load tasks from `/tasks`
-  grunt.loadTasks('tasks');
-
-  // Load plugin configuration from `tasks/options`.
+  // Load plugin configuration from `tasks/`
+  // See `aliases.yaml` for task aliases.
   require('load-grunt-config')(grunt, {
-    configPath: require('path').join(process.cwd(), 'tasks/options'),
+    configPath: path.join(process.cwd(), 'tasks'),
     init: true,
     config: {
       pkg: grunt.file.readJSON("package.json")
