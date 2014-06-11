@@ -1,0 +1,28 @@
+# The default task!
+default:
+  - lint
+  - build
+  - test
+  - watch
+
+# Lint source files
+lint:
+  - 'jshint:all'
+  - 'scsslint:all'
+
+# Run tests!
+test:
+  - 'qunit:all'
+
+# Build CSS and JS to `dist/` folder.
+build:
+  - 'clean:dist'
+  - 'copy:assets'
+  - 'sass:compile'
+  - 'requirejs:compile'
+
+# Determines whether a build passes or fails on GitHub.
+travis:
+  - lint
+  - test
+
