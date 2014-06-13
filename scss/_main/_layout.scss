@@ -1,17 +1,3 @@
-// Basic wrapper for text content. Centers on grid and adds proper margin
-// for floating header.
-//
-// Styleguide X.X
-.page {
-  margin-bottom: 3rem;
-
-  @include media($tablet) {
-    @include span-columns(12);
-    @include shift(2);
-  }
-}
-
-
 // Basic layout classes, used in styleguide.
 .sidebar {
   margin-top: 4rem; // keep top of sidebar inline with body text under a <h1>
