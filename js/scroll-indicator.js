@@ -17,24 +17,26 @@ define(function() {
     links = [];
 
     $(".js-scroll-indicator").each(function(index, link) {
-      prepareIndicator(link);
+      prepareIndicator( $(link) );
     });
   }
 
   // Registers links and their targets with scroll handler
-  function prepareIndicator(link) {
+  function prepareIndicator($link) {
     // Calculate the element's offset from the top of the page while anchored
-    var linkTarget = $(link).attr("href");
-    var linkTargetOffset = $(linkTarget).offset().top;
+    var $linkTarget = $( $link.attr("href") );
+    if( $linkTarget.length ) {
+      var linkTargetOffset = $linkTarget.offset().top;
 
-    // Create the data structure that we'll store this stuff in
-    var linkObj = {
-      $el: $(link),
-      targetOffset: linkTargetOffset
-    };
+      // Create the data structure that we'll store this stuff in
+      var linkObj = {
+        $el: $link,
+        targetOffset: linkTargetOffset
+      };
 
-    // Add jQuery object and offset value to links array
-    links.push(linkObj);
+      // Add jQuery object and offset value to links array
+      links.push(linkObj);
+    }
 
     // Now that we're ready, let's calculate how stickies should be displayed
     updateScrollIndicators();
