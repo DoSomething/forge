@@ -1,7 +1,7 @@
   <article class="sidebar-content">
     <section class="styleguide-section">
       <h1 class="intro-neue">It's time for something neue.</h1>
-      <p>This is Neue, our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.</p>
+      <p>This is <a href="https://www.github.com/dosomething/neue">Neue</a>, our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.</p>
     </section>
 
     <section class="styleguide-section">
@@ -123,205 +123,188 @@
   <section class="styleguide-section">
     <h2 id="patterns">Patterns</h2>
 
-    <div>
-      <h4 id="forms">4.1 Forms</h4>
-
-      <% styleguide_block  '4.1.1 - Form Labels' do %>
-        <!-- .show-message and .message classes and markup generated dynamically -->
-        <label class="show-message">
-          <div class="message $modifier_class">Label</div>
-        </label>
-        <input class="$modifier_class" type="text">
-      <% end %>
-
-      <% styleguide_block  '4.1.2 - Text Input Fields' do %>
-        <input type="text" class="$modifier_class">
-        <input type="text" class="$modifier_class" placeholder="placeholder">
-      <% end %>
-
-      <% styleguide_block  '4.1.3 - Search Fields' do %>
-        <input type="search" placeholder="Search...">
-      <% end %>
-
-      <% styleguide_block  '4.1.4 - Text Area Fields' do %>
-        <textarea name="textarea" placeholder="Write something here..."></textarea>
-      <% end %>
-
-      <% styleguide_block  '4.1.5 - Buttons' do %>
-        <a class="btn $modifier_class">Example Button</a>
-      <% end %>
-
-      <% styleguide_block  '4.1.6 - Select Boxes' do %>
-        <select class="$modifier_class">
-          <option>Awesome Things</option>
-          <option>Popular Things</option>
-          <option>Random Things</option>
-        </select>
-      <% end %>
-
-      <% styleguide_block  '4.1.7 - Loading Spinner' do %>
-        <div class="spinner"></div>
-      <% end %>
-
-      <% styleguide_block '4.1.8 - Status Banners' do %>
-        <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
-      <% end %>
-    </div>
-
-    <div>
-      <h4 id="inline">4.2 Inline</h4>
-
-      <% styleguide_block  '4.2.1 - Figures' do %>
-        <figure>
-          <img src="http://www.placekitten.com/g/600/400" alt="a kitten">
-          <figcaption>This is a kitten. It is not to be trusted.</figcaption>
-        </figure>
-      <% end %>
-
-      <% styleguide_block  '4.2.2 - Bordered image style' do %>
-        <img class="bordered" src="http://www.placekitten.com/g/300/200" alt="another kitten">
-      <% end %>
-
-      <% styleguide_block  '4.2.3 - Legal Text' do %>
-        <p class="legal">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
-      <% end %>
-
-      <% styleguide_block  '4.2.4 - Pullquote' do %>
-        <p class="pullquote">Lorem ipsum dolor sit aquote.</p>
-      <% end %>
-    </div>
-
-    <div>
-      <h4 id="navigation">4.3 Navigation</h4>
-
-      <% styleguide_block  '4.3.1 - Tabs' do %>
-        <nav class="tabs $modifier_class">
-          <ul>
-            <li><a class="active" href="#">Section One</a></li>
-            <li><a href="#">Section Two</a></li>
-            <li><a href="#">Section Three</a></li>
-          </ul>
-        </nav>
-      <% end %>
-    </div>
-
-    <div>
-      <h4 id="widgets">4.4 Widgets</h4>
-
-      <% styleguide_block '4.4.1 - Modal (Popup)' do %>
-
-      <a href="#modal--example" class="js-modal-link">Show example modal</a> or <a href="http://www.google.com" data-cached-modal="#modal--example" class="js-modal-link">alternative syntax</a>
-
-      <script type="text/cached-modal" id="modal--example" data-modal-close="true" data-modal-close-class="white">
-        <h2 class="banner">Example Content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
-      </script>
-
-      <script type="text/cached-modal" id="modal--pagetwo" data-modal-close="skip" data-modal-skip-form="#skip-form">
-        <h2>Page 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
-        <form action="#">
-          <label for="name">Name</label>
-          <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
-
-          <label for="confirmName">Confirm Name</label>
-          <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
-
-          <div class="form-actions">
-            <input type="submit" class="btn">
-          </div>
-        </form>
-        <form action="http://www.google.com" id="skip-form">
-          <div class="form-actions">
-            <input type="submit" value="Skip" class="btn tertiary">
-          </div>
-        </form>
-      </script>
+    <h4 id="forms">4.1 Forms</h4>
+    <% styleguide_block  '4.1.1 - Form Labels' do %>
+      <!-- .show-message and .message classes and markup generated dynamically -->
+      <label class="show-message">
+        <div class="message $modifier_class">Label</div>
+      </label>
+      <input class="$modifier_class" type="text">
     <% end %>
-  </section>
 
-  <div>
-    <h4 id="cta">4.6 CTA</h4>
+    <% styleguide_block  '4.1.2 - Text Input Fields' do %>
+      <input type="text" class="$modifier_class">
+      <input type="text" class="$modifier_class" placeholder="placeholder">
+    <% end %>
 
-    <% styleguide_block  '4.6.1 - CTA' do %>
-      <div class="cta">
-        <div class="wrapper">
-          <h2 class="__message">Miscreant! You should pay homage to our future kitten overlords:</h2>
-          <a href="#" class="btn medium">Support Our Kittens</a>
+    <% styleguide_block  '4.1.3 - Search Fields' do %>
+      <input type="search" placeholder="Search...">
+    <% end %>
+
+    <% styleguide_block  '4.1.4 - Text Area Fields' do %>
+      <textarea name="textarea" placeholder="Write something here..."></textarea>
+    <% end %>
+
+    <% styleguide_block  '4.1.5 - Buttons' do %>
+      <a class="btn $modifier_class">Example Button</a>
+    <% end %>
+
+    <% styleguide_block  '4.1.6 - Select Boxes' do %>
+      <select class="$modifier_class">
+        <option>Awesome Things</option>
+        <option>Popular Things</option>
+        <option>Random Things</option>
+      </select>
+    <% end %>
+
+    <% styleguide_block  '4.1.7 - Loading Spinner' do %>
+      <div class="spinner"></div>
+    <% end %>
+
+    <% styleguide_block '4.1.8 - Status Banners' do %>
+      <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
+    <% end %>
+
+    <h4 id="inline">4.2 Inline</h4>
+    <% styleguide_block  '4.2.1 - Figures' do %>
+      <figure>
+        <img src="http://www.placekitten.com/g/600/400" alt="a kitten">
+        <figcaption>This is a kitten. It is not to be trusted.</figcaption>
+      </figure>
+    <% end %>
+
+    <% styleguide_block  '4.2.2 - Bordered image style' do %>
+      <img class="bordered" src="http://www.placekitten.com/g/300/200" alt="another kitten">
+    <% end %>
+
+    <% styleguide_block  '4.2.3 - Legal Text' do %>
+      <p class="legal">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
+    <% end %>
+
+    <% styleguide_block  '4.2.4 - Pullquote' do %>
+      <p class="pullquote">Lorem ipsum dolor sit aquote.</p>
+    <% end %>
+
+    <h4 id="navigation">4.3 Navigation</h4>
+
+    <% styleguide_block  '4.3.1 - Tabs' do %>
+      <nav class="tabs $modifier_class">
+        <ul>
+          <li><a class="active" href="#">Section One</a></li>
+          <li><a href="#">Section Two</a></li>
+          <li><a href="#">Section Three</a></li>
+        </ul>
+      </nav>
+    <% end %>
+
+    <h4 id="widgets">4.4 Widgets</h4>
+    <% styleguide_block '4.4.1 - Modal (Popup)' do %>
+    <a href="#modal--example" class="js-modal-link">Show example modal</a> or <a href="http://www.google.com" data-cached-modal="#modal--example" class="js-modal-link">alternative syntax</a>
+
+    <script type="text/cached-modal" id="modal--example" data-modal-close="true" data-modal-close-class="white">
+      <h2 class="banner">Example Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
+    </script>
+
+    <script type="text/cached-modal" id="modal--pagetwo" data-modal-close="skip" data-modal-skip-form="#skip-form">
+      <h2>Page 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+      <form action="#">
+        <label for="name">Name</label>
+        <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+
+        <label for="confirmName">Confirm Name</label>
+        <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+
+        <div class="form-actions">
+          <input type="submit" class="btn">
         </div>
+      </form>
+      <form action="http://www.google.com" id="skip-form">
+        <div class="form-actions">
+          <input type="submit" value="Skip" class="btn tertiary">
+        </div>
+      </form>
+    </script>
+  <% end %>
+
+  <h4 id="cta">4.6 CTA</h4>
+  <% styleguide_block  '4.6.1 - CTA' do %>
+    <div class="cta">
+      <div class="wrapper">
+        <h2 class="__message">Miscreant! You should pay homage to our future kitten overlords:</h2>
+        <a href="#" class="btn medium">Support Our Kittens</a>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
-  <div>
-    <h4 id="tile">4.7 Tile</h4>
-    <% styleguide_block  '4.7.1 - Tile' do %>
-      <article class="tile tile--campaign">
-        <a class="wrapper" href="#">
-          <div class="tile--meta">
-            <h1 class="__title">Kitten Overlords</h1>
-            <p class="__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
-          </div>
-          <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
-        </a>
-      </article>
-    <% end %>
-  </div>
+  <h4 id="tile">4.7 Tile</h4>
+  <% styleguide_block  '4.7.1 - Tile' do %>
+    <article class="tile tile--campaign">
+      <a class="wrapper" href="#">
+        <div class="tile--meta">
+          <h1 class="__title">Kitten Overlords</h1>
+          <p class="__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+        </div>
+        <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
+      </a>
+    </article>
+  <% end %>
 
-  <div>
-    <h4 id="gallery">4.8 Gallery</h4>
-    <% styleguide_block  '4.8.1 - Gallery' do %>
-      <ul class="gallery -mosaic">
-        <li>
-          <article class="tile tile--campaign">
-            <a class="wrapper" href="#">
-              <div class="tile--meta">
-                <h1 class="__title">Kitten Overlord</h1>
-              </div>
-              <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
-            </a>
-          </article>
-        </li>
-        <li>
-          <article class="tile tile--campaign">
-            <a class="wrapper" href="#">
-              <div class="tile--meta">
-                <h1 class="__title">Kitten Overlord</h1>
-              </div>
-              <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
-            </a>
-          </article>
-        </li>
-        <li>
-          <article class="tile tile--campaign">
-            <a class="wrapper" href="#">
-              <div class="tile--meta">
-                <h1 class="__title">Kitten Overlord</h1>
-              </div>
-              <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
-            </a>
-          </article>
-        </li>
-        <li class="empty -mono">
-          <div class="wrapper">
-            <div class="__message">
-              <div class="wrapper">
-                <p>Gah! Nothing to see here.</p>
-                <a href="#">Move Along</a>
-              </div>
+  <h4 id="gallery">4.8 Gallery</h4>
+  <% styleguide_block  '4.8.1 - Gallery' do %>
+    <ul class="gallery -mosaic">
+      <li>
+        <article class="tile tile--campaign">
+          <a class="wrapper" href="#">
+            <div class="tile--meta">
+              <h1 class="__title">Kitten Overlord</h1>
+            </div>
+            <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="tile tile--campaign">
+          <a class="wrapper" href="#">
+            <div class="tile--meta">
+              <h1 class="__title">Kitten Overlord</h1>
+            </div>
+            <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="tile tile--campaign">
+          <a class="wrapper" href="#">
+            <div class="tile--meta">
+              <h1 class="__title">Kitten Overlord</h1>
+            </div>
+            <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+          </a>
+        </article>
+      </li>
+      <li class="empty -mono">
+        <div class="wrapper">
+          <div class="__message">
+            <div class="wrapper">
+              <p>Gah! Nothing to see here.</p>
+              <a href="#">Move Along</a>
             </div>
           </div>
-        </li>
-      </ul>
-    <% end %>
-  </div>
+        </div>
+      </li>
+    </ul>
+  <% end %>
+  </section>
 
   <section class="styleguide-section">
     <h2 id="animation">Animation</h2>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
 
     <p>See <a href="https://github.com/DoSomething/neue/blob/dev/scss/_main/_animations.scss"><code>animation.scss</code></a> for details. Preview coming soon.</p>
+  </section>
 
   <section class="styleguide-section with-copy">
     <h2 id="interaction">Interaction</h2>
@@ -333,7 +316,6 @@
   <div class="sidebar">
     <nav class="tabs vertical js-sticky">
       <ul>
-        <li><a href="#top" class="js-scroll-indicator js-jump-scroll">Introduction</a></li>
         <li><a href="#fonts-and-colors" class="js-scroll-indicator js-jump-scroll">Fonts &amp; Colors</a></li>
         <li><a href="#typography" class="js-scroll-indicator js-jump-scroll">Typography</a></li>
         <li><a href="#layout" class="js-scroll-indicator js-jump-scroll">Layout</a></li>
@@ -344,7 +326,6 @@
             <li><a href="#inline" class="js-scroll-indicator js-jump-scroll">Inline</a></li>
             <li><a href="#navigation" class="js-scroll-indicator js-jump-scroll">Navigation</a></li>
             <li><a href="#widgets" class="js-scroll-indicator js-jump-scroll">Widgets</a></li>
-            <li><a href="#helpers" class="js-scroll-indicator js-jump-scroll">Helpers</a></li>
             <li><a href="#cta" class="js-scroll-indicator js-jump-scroll">CTA</a></li>
             <li><a href="#tile" class="js-scroll-indicator js-jump-scroll">Tile</a></li>
             <li><a href="#gallery" class="js-scroll-indicator js-jump-scroll">Gallery</a></li>
