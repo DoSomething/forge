@@ -14,7 +14,13 @@
     ".scss-lint.yaml"
   ],
   "dependencies": {
-    "jquery": ">=1.7.2",
-    "almond": "~0.2.9"
+    "jquery": ">=1.7.2"
+  },
+  "devDependencies": {
+    "almond": "~0.2.9",
+    "REM-unit-polyfill": "~1.2.5",
+    "html5shiv": "~3.7.2",
+    "respond": "~1.4.2",
+    "highlightjs": "~8.0.0"
   }
 }
