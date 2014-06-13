@@ -162,34 +162,21 @@ h1.styleguide {
 }
 
 .styleguide--footer {
-  position: relative;
   clear: both;
-  text-align: center;
-  color: #999;
-  padding: 2rem 1rem;
-}
-
-.styleguide--footer:before {
-  font-family: serif;
-  content: "&";
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  transform: rotate(180deg);
   display: block;
-  height: 28px;
-  font-size: 24px;
-  text-align: center;
-  position: absolute;
-  top: -13px;
-  background: #fff;
-  width: 10%;
-  left: 45%;
-  color: #ddd;
-  line-height: 1;
+  width: 61.66667%;
+  margin-left: 12.77778%;
+  padding-bottom: 2rem;
 }
 
+.styleguide--footer p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
 
-
+.styleguide--footer a {
+  color: #666;
+}
 
 header[role="banner"].-styleguide {
   background: url("grid_2x.png");
@@ -209,3 +196,4 @@ header[role="banner"].-styleguide {
 .intro-neue {
   font-weight: 400;
 }
+

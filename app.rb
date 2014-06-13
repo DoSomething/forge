@@ -22,7 +22,7 @@ helpers do
   # very easily.
   def styleguide_block(section, &block)
     # Initializes a Markdown parser
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, highlight: true)
 
     @section = @styleguide.section(section)
     @description = markdown.render(@section.description)
