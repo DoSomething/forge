@@ -13,13 +13,13 @@
   .prev-wrapper,
   .next-wrapper {
     position: absolute;
-    width: 25px;
+    width: 37px;
     height: 100%;
     cursor: pointer;
   }
 
   .prev-wrapper {
-    left: -25px;
+    left: 0;
   }
 
   .next-wrapper {
@@ -52,7 +52,7 @@
   }
 
   .prev-button {
-    left: 0;
+    left: -13px;
 
     .arrow {
       left: -22px;
