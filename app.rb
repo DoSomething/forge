@@ -1,6 +1,11 @@
 require 'sinatra'
 require 'kss'
 
+set :public_folder, Proc.new { File.join(root) }
+set :views, Proc.new { File.join(root, "styleguide") }
+
+
+
 get '/' do
   @styleguide = Kss::Parser.new('scss/')
   erb :styleguide
