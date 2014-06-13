@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Pattern Library | DoSomething.org</title>
+
+  <script type="text/javascript" src="/js/vendor/modernizr.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/apple-touch-icon-precomposed.png">
+
+  <link rel="stylesheet" href="/dist/neue.css" media="screen, projection" type="text/css">
+  <!--[if lt IE 9]><link rel="stylesheet" href="/ie.css" type="text/css" /><![endif]-->
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js" type="text/javascript"></script><![endif]-->
+
+  <link rel="stylesheet" href="/styleguide/assets/kss.css">
+</head>
+<body>
+<div id="top" class="chrome--wrapper">
+  <nav class="chrome--nav white floating">
+    <a class="logo" href="http://www.dosomething.org"><img src="/styleguide/assets/ds-logo.png" alt="DoSomething.org"></a>
+    <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
+    <div class="menu">
+      <ul class="primary-nav">
+        <li>
+          <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
+            <strong>Product Wiki</strong>
+            <span>Specs, mocks, etc.</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="//brand.dosomething.org">
+            <strong>Brand Guide</strong>
+            <span>Style, Tone, and Voice</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="//neue.dosomething.org">
+            <strong>Pattern Library</strong>
+            <span>Interface framework</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="secondary-nav">
+        <ul>
+          <li><a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+  <header role="banner" class="-basic -styleguide">
+    <div class="wrapper">
+      <h1 class="__title">Pattern Library</h1>
+    </div>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+</div>
+
+
+<footer class="styleguide--footer">
+  Any pattern, anytime, anywhere.
+</footer>
+
+</div>
+
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/dist/neue.js"></script>
+<script type="text/javascript" src="/styleguide/assets/kss.js"></script>
+<script type="text/javascript" src="/styleguide/assets/kss-colortiles.js"></script>
+<script type="text/javascript" src="/styleguide/assets/styleguide-domain-tip.js"></script>
+
+<link rel="stylesheet" href="/bower_components/highlightjs/styles/github.css" media="screen, projection" type="text/css">
+<script type="text/javascript" src="/bower_components/highlightjs/highlight.pack.js"></script>
+<script type="text/javascript">
+  hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

@@ -1,11 +1,10 @@
   <article class="sidebar-content">
-    <section class="row section styleguide-section with-copy">
-      <h1>Neue Pattern Library</h1>
-
+    <section class="styleguide-section">
+      <h1 class="intro-neue">It's time for something neue.</h1>
       <p>This is Neue, our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.</p>
     </section>
 
-    <section class="row section styleguide-section">
+    <section class="styleguide-section">
       <h2 id="fonts-and-colors">Fonts &amp; Colors</h2>
 
      <h3>Fonts</h3>
@@ -72,11 +71,11 @@
      </p>
 
      <div class="styleguide-section">
-       <p class="callout"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
+       <p class="kss-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
      </div>
     </section>
 
-    <section class="row section styleguide-section">
+    <section class="styleguide-section">
       <h2 id="typography">Typography</h2>
       <% styleguide_block  '1.1 - Headings' do %>
         <h1 class="$modifier_class"><span>Heading</span></h1>
@@ -114,17 +113,17 @@
       <% end %>
     </section>
 
-    <section class="row section styleguide-section">
+    <section class="styleguide-section">
       <h2 id="layout">Layout</h2>
-      <img src="/assets/kss/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
+      <img src="/styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
       <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 16-column grid. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation details. See <a href="https://github.com/DoSomething/neue/blob/dev/scss/globals/_grid-settings.scss"><code>_grid-settings.scss</code></a> for grid settings and breakpoints.</p>
       <p>Drag the <a href="javascript:(function(){jQuery('body').toggleClass('show-visual-grid')})();" class="btn secondary tiny">Grid Bookmarklet</a> to your bookmarks toolbar and click to toggle a grid overlay on any Neue-powered DoSomething.org website. Or just click to try it out on this page!</p>
     </section>
 
-  <section class="row section styleguide-section">
+  <section class="styleguide-section">
     <h2 id="patterns">Patterns</h2>
 
-    <div class="row section">
+    <div>
       <h4 id="forms">4.1 Forms</h4>
 
       <% styleguide_block  '4.1.1 - Form Labels' do %>
@@ -145,7 +144,7 @@
       <% end %>
 
       <% styleguide_block  '4.1.4 - Text Area Fields' do %>
-        <textarea name="textarea">Write something here</textarea>
+        <textarea name="textarea" placeholder="Write something here..."></textarea>
       <% end %>
 
       <% styleguide_block  '4.1.5 - Buttons' do %>
@@ -169,7 +168,7 @@
       <% end %>
     </div>
 
-    <div class="row section">
+    <div>
       <h4 id="inline">4.2 Inline</h4>
 
       <% styleguide_block  '4.2.1 - Figures' do %>
@@ -180,7 +179,7 @@
       <% end %>
 
       <% styleguide_block  '4.2.2 - Bordered image style' do %>
-        <img class="bordered" src="http://www.placekitten.com/g/300/300" alt="another kitten">
+        <img class="bordered" src="http://www.placekitten.com/g/300/200" alt="another kitten">
       <% end %>
 
       <% styleguide_block  '4.2.3 - Legal Text' do %>
@@ -192,20 +191,10 @@
       <% end %>
     </div>
 
-    <div class="row section">
+    <div>
       <h4 id="navigation">4.3 Navigation</h4>
 
-      <% styleguide_block  '4.3.1 - Breadcrumbs' do %>
-        <nav class="breadcrumbs">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Category</a></li>
-          </ul>
-        </nav>
-      <% end %>
-
-      <% styleguide_block  '4.3.2 - Tabs' do %>
+      <% styleguide_block  '4.3.1 - Tabs' do %>
         <nav class="tabs $modifier_class">
           <ul>
             <li><a class="active" href="#">Section One</a></li>
@@ -216,7 +205,7 @@
       <% end %>
     </div>
 
-    <div class="row section">
+    <div>
       <h4 id="widgets">4.4 Widgets</h4>
 
       <% styleguide_block '4.4.1 - Modal (Popup)' do %>
@@ -250,23 +239,11 @@
         </form>
       </script>
     <% end %>
-
-    <div class="row section">
-      <h4 id="helpers">4.5 Helpers</h4>
-      <p>Helpers modify the behavior of an object.</p>
-
-      <div class="kss-no-padding kss-dark kss-min-height">
-        <% styleguide_block  '4.5.1 - Full Container Link' do %>
-          <a href="#" class="full-link $modifier_class"><span>Do This</span></a>
-        <% end %>
-      </div>
-    </div>
   </section>
 
-  <div class="row section">
+  <div>
     <h4 id="cta">4.6 CTA</h4>
 
-    <div class="kss-no-padding">
     <% styleguide_block  '4.6.1 - CTA' do %>
       <div class="cta">
         <div class="wrapper">
@@ -275,10 +252,9 @@
         </div>
       </div>
     <% end %>
-    </div>
   </div>
 
-  <div class="row section">
+  <div>
     <h4 id="tile">4.7 Tile</h4>
     <% styleguide_block  '4.7.1 - Tile' do %>
       <article class="tile tile--campaign">
@@ -293,7 +269,7 @@
     <% end %>
   </div>
 
-  <div class="row section">
+  <div>
     <h4 id="gallery">4.8 Gallery</h4>
     <% styleguide_block  '4.8.1 - Gallery' do %>
       <ul class="gallery -mosaic">
@@ -341,13 +317,13 @@
     <% end %>
   </div>
 
-  <section class="row section styleguide-section">
+  <section class="styleguide-section">
     <h2 id="animation">Animation</h2>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
 
     <p>See <a href="https://github.com/DoSomething/neue/blob/dev/scss/_main/_animations.scss"><code>animation.scss</code></a> for details. Preview coming soon.</p>
 
-  <section class="row section styleguide-section with-copy">
+  <section class="styleguide-section with-copy">
     <h2 id="interaction">Interaction</h2>
     <p>Neue includes some helper scripts for interactivity. While any application-specific logic should live within its own codebase, you can find the logic that powers some of our reusable patterns <a href="https://github.com/DoSomething/neue/blob/dev/js/">here</a>.</p>
   </section>
@@ -357,6 +333,7 @@
   <div class="sidebar">
     <nav class="tabs vertical js-sticky">
       <ul>
+        <li><a href="#top" class="js-scroll-indicator js-jump-scroll">Introduction</a></li>
         <li><a href="#fonts-and-colors" class="js-scroll-indicator js-jump-scroll">Fonts &amp; Colors</a></li>
         <li><a href="#typography" class="js-scroll-indicator js-jump-scroll">Typography</a></li>
         <li><a href="#layout" class="js-scroll-indicator js-jump-scroll">Layout</a></li>
