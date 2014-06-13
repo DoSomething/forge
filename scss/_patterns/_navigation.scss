@@ -1,48 +1,9 @@
-// Used to indicate position on sub-pages. This helps the user orient themself.
-//
-// Styleguide 4.3.1 - Breadcrumbs
-nav.breadcrumbs {
-  margin: 1.65rem;
-  text-align: center;
-
-  ul {
-    list-style-type: none;
-    margin-left: auto;
-    padding-left: 0;
-  }
-
-  li {
-    display: inline;
-
-    &:after {
-      font-family: $font-proxima-nova;
-      content: ">";
-      color: $light-gray;
-      padding: 0 1em;
-    }
-
-    &:last-of-type:after {
-      display: none;
-    }
-  }
-
-  a {
-    color: $med-gray;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-
 // Used to navigate between sections/panels/pages within an interface. Apply `.active` class to
 // link element for "active" state.
 //
 // .vertical - Vertical tab layout (for use in a sidebar).
 //
-// Styleguide 4.3.2 - Tabs
+// Styleguide 4.3.1 - Tabs
 .tabs {
   padding: 3.25rem 0; // aligns top edge with top of <p> below an <h1> element
   font-size: 1.1rem;
