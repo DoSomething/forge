@@ -2,19 +2,18 @@
 //
 // Styleguide 4.2.1 - Figures
 figure {
+  text-align: center;
   padding: 2.5% 0;
 
   img {
-    margin: 0 auto;
     max-width: 100%;
   }
-}
 
-figcaption {
-  color: $med-gray;
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 0 1rem 1.5rem;
+  figcaption {
+    color: $med-gray;
+    font-size: $font-small;
+    padding: 0 1rem 1.5rem;
+  }
 }
 
 // Stylized "polaroid" image, with a thick border and subtle shadow.
