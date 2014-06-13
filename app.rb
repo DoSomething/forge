@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'kss'
+require 'json'
 
 set :public_folder, Proc.new { File.join(root) }
 set :views, Proc.new { File.join(root, "styleguide") }
@@ -7,6 +8,9 @@ set :views, Proc.new { File.join(root, "styleguide") }
 
 
 get '/' do
+  @package = JSON.parse( File.read('package.json') )
+  @version = "v#{@package["version"]}"
+
   @styleguide = Kss::Parser.new('scss/')
   erb :styleguide
 end
