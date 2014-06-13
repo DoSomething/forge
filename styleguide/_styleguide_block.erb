@@ -1,0 +1,29 @@
+<div class="styleguide-example">
+
+  <h3><a class="js-jump-scroll" href="#<%= @link %>" id="<%= @link %>"><%= @section.section %></a> <em><%= @section.filename %></em></h3>
+  <div class="styleguide-example-content">
+    <div class="styleguide-description">
+    <%= @description %>
+    <% if @section.modifiers.any? %>
+      <ul class="styleguide-modifier">
+        <% @section.modifiers.each do |modifier| %>
+          <li><strong><%= modifier.name %></strong> - <%= modifier.description %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
+    <div class="styleguide-element">
+      <%= @example_html %>
+    </div>
+    <% @section.modifiers.each do |modifier| %>
+      <div class="styleguide-element styleguide-modifier">
+        <span class="styleguide-modifier-name"><%= modifier.name %></span>
+        <%= @example_html.gsub('$modifier_class', " #{modifier.class_name}") %>
+      </div>
+    <% end %>
+    <div class="styleguide-html">
+      <pre class="styleguide-code"><code class="html"><%= @escaped_html %></code></pre>
+    </div>
+  </div>
+
+</div>

@@ -119,7 +119,7 @@ textarea {
 // :focus             - Focus state for users navigating the page using tab keys.
 // :active            - "Pushed" button state
 // .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
-// .loading           - AJAX loading animation. Used when loading results inline. <mark>Must be used on &lt;a&gt; or &lt;button&gt; tag. Will not work with &lt;input&gt; tags.
+// .loading           - AJAX loading animation. Used when loading results inline. ==Must be used on `a` or `button`. Will not work with `input` elements.==
 // .tiny              - A tiny button.
 // .small             - A smaller button, suitable for use as an interface element.
 // .medium            - (Default) A normal call-to-action button size.

@@ -1,9 +1,17 @@
 require 'sinatra'
 require 'kss'
+require 'json'
+require 'redcarpet'
 
-set :public_folder, Proc.new { File.join(root, "dist") }
+set :public_folder, Proc.new { File.join(root) }
+set :views, Proc.new { File.join(root, "styleguide") }
+
+
 
 get '/' do
+  @package = JSON.parse( File.read('package.json') )
+  @version = "v#{@package["version"]}"
+
   @styleguide = Kss::Parser.new('scss/')
   erb :styleguide
 end
@@ -13,7 +21,12 @@ helpers do
   # if you're using something like Rails, you can write a much cleaner helper
   # very easily.
   def styleguide_block(section, &block)
+    # Initializes a Markdown parser
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, highlight: true)
+
     @section = @styleguide.section(section)
+    @description = markdown.render(@section.description)
+    @link = @section.section.scan(/\d/)[0,3].join();
     @example_html = capture{ block.call }
     @escaped_html = ERB::Util.html_escape @example_html
     @_out_buf << erb(:_styleguide_block)
