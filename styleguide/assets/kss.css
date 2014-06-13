@@ -11,6 +11,7 @@ h1.styleguide {
   margin: 15px 0 50px;
   background: rgba(255, 255, 255, 0.5); }
   .styleguide-example-content {
+    border-radius: 2px;
     border: 1px solid #ddd; }
   .styleguide-example > h3 {
     margin: 0;
@@ -98,19 +99,23 @@ h1.styleguide {
 
 /* Custom Neue stuff: */
 .font-tile {
+  font-size: 1.5rem;
   margin: 1rem;
-  border: 1px solid #eee;
-  padding: 1em;
+  padding: 1rem;
   border-radius: 2px;
   text-align: center;
+  background: #f1f1f1;
+  border: 1px solid #ddd;
 }
 
 .font-tile code {
   display: block;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.7rem;
+  color: #999;
   font-weight: 400;
   line-height: 1.5rem;
   text-align: center;
+  padding-top: 0.25rem;
 }
 
 @media screen and (min-width: 960px) {
