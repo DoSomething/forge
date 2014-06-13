@@ -35,12 +35,43 @@
     }
   }
 
-  a {
-    text-shadow: 0 1px 0 rgba(#fff, 0.2);
-  }
-
   @include media($tablet) {
     padding: 1rem 0;
+  }
+
+  // Applies styles to make nav text white
+  &.white {
+    .hamburger {
+      color: #fff !important;
+    }
+
+    a {
+      text-shadow: 0 1px 3px rgba(#000, 0.3);
+      color: #fff !important;
+    }
+
+    .secondary-nav input[type="search"] {
+      color: #fff;
+      border: 1px solid #fff;
+      box-shadow: 0 1px 3px rgba(#000, 0.3);
+      background-image: neue-image-url("search_light.png");
+
+      @include hidpi {
+        background-image: neue-image-url("search_light@2x.png");
+      }
+    }
+  }
+
+  // Applies styles to make nav float over content wrapper
+  &.floating {
+    position: absolute;
+    top: 0;
+    margin-bottom: 0;
+    z-index: 1;
+  }
+
+  a {
+    text-shadow: 0 1px 0 rgba(#fff, 0.2);
   }
 
   .logo {
@@ -127,6 +158,7 @@
     strong {
       display: block;
       font-size: $font-regular;
+      font-weight: $weight-bold;
 
       @include media($tablet) {
         > span { display: none; }
