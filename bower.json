@@ -2,9 +2,6 @@
   "name": "neue",
   "version": "4.0.1",
   "main": [
-    "assets/neue.css",
-    "assets/neue.js"
-  ],
   "ignore": [
     ".jshintrc",
     ".editorconfig",
@@ -12,6 +9,8 @@
     ".jshintrc",
     ".ruby-version",
     ".scss-lint.yaml"
+    "dist/neue.css",
+    "dist/neue.min.js"
   ],
   "dependencies": {
     "jquery": ">=1.7.2"
