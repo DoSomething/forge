@@ -2,13 +2,6 @@
   "name": "neue",
   "version": "4.0.1",
   "main": [
-  "ignore": [
-    ".jshintrc",
-    ".editorconfig",
-    ".gitignore",
-    ".jshintrc",
-    ".ruby-version",
-    ".scss-lint.yaml"
     "dist/neue.css",
     "dist/neue.min.js"
   ],
