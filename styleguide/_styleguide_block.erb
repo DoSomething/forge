@@ -3,14 +3,14 @@
   <h3><a class="js-jump-scroll" href="#<%= @link %>" id="<%= @link %>"><%= @section.section %></a> <em><%= @section.filename %></em></h3>
   <div class="styleguide-example-content">
     <div class="styleguide-description">
-      <p><%= @description %></p>
-      <% if @section.modifiers.any? %>
-        <ul class="styleguide-modifier">
-          <% @section.modifiers.each do |modifier| %>
-            <li><strong><%= modifier.name %></strong> - <%= modifier.description %></li>
-          <% end %>
-        </ul>
-      <% end %>
+    <%= @description %>
+    <% if @section.modifiers.any? %>
+      <ul class="styleguide-modifier">
+        <% @section.modifiers.each do |modifier| %>
+          <li><strong><%= modifier.name %></strong> - <%= modifier.description %></li>
+        <% end %>
+      </ul>
+    <% end %>
     </div>
     <div class="styleguide-element">
       <%= @example_html %>
