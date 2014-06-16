@@ -31,25 +31,6 @@ helpers do
     @_out_buf << erb(:_styleguide_block)
   end
 
-  def styleguide_block_without_preview(section, &block)
-    @section = @styleguide.section(section)
-    @example_html = capture{ block.call }
-    @escaped_html = ERB::Util.html_escape @example_html
-    @_out_buf << erb(:_styleguide_block_without_preview)
-  end
-
-  def styleguide_block_without_modifiers(section, &block)
-    @section = @styleguide.section(section)
-    @example_html = capture{ block.call }
-    @escaped_html = ERB::Util.html_escape @example_html
-    @_out_buf << erb(:_styleguide_block_without_modifiers)
-  end
-
-  def styleguide_block_custom_example(section)
-    @section = @styleguide.section(section)
-    @_out_buf << erb(:_styleguide_block_custom_example)
-  end
-
   # Captures the result of a block within an erb template without spitting it
   # to the output buffer.
   def capture(&block)
