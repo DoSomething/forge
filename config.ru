@@ -1,2 +1,2 @@
-require './app'
+require './styleguide/app'
 run Sinatra::Application
