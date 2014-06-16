@@ -1,19 +1,18 @@
 require 'sinatra'
+require 'sinatra/export'
 require 'kss'
 require 'json'
 require 'redcarpet'
 
-set :public_folder, Proc.new { File.join(root) }
-set :views, Proc.new { File.join(root, "styleguide") }
-
-
+set :public_folder, Proc.new { File.join(root, "..") }
+set :views, Proc.new { File.join(root) }
 
 get '/' do
   @package = JSON.parse( File.read('package.json') )
   @version = "v#{@package["version"]}"
 
   @styleguide = Kss::Parser.new('scss/')
-  erb :styleguide
+  erb :index
 end
 
 helpers do
@@ -30,25 +29,6 @@ helpers do
     @example_html = capture{ block.call }
     @escaped_html = ERB::Util.html_escape @example_html
     @_out_buf << erb(:_styleguide_block)
-  end
-
-  def styleguide_block_without_preview(section, &block)
-    @section = @styleguide.section(section)
-    @example_html = capture{ block.call }
-    @escaped_html = ERB::Util.html_escape @example_html
-    @_out_buf << erb(:_styleguide_block_without_preview)
-  end
-
-  def styleguide_block_without_modifiers(section, &block)
-    @section = @styleguide.section(section)
-    @example_html = capture{ block.call }
-    @escaped_html = ERB::Util.html_escape @example_html
-    @_out_buf << erb(:_styleguide_block_without_modifiers)
-  end
-
-  def styleguide_block_custom_example(section)
-    @section = @styleguide.section(section)
-    @_out_buf << erb(:_styleguide_block_custom_example)
   end
 
   # Captures the result of a block within an erb template without spitting it
