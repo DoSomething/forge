@@ -1,6 +1,6 @@
 // Basic layout classes, used in styleguide.
 .sidebar {
-  margin-top: 7rem; // keep top of sidebar inline with body text under a <h1>
+  margin-top: 0.5rem; // keep top of sidebar inline with body text
   margin-bottom: 3rem;
 
   @include media($tablet) {
