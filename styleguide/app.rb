@@ -12,7 +12,7 @@ get '/' do
   @version = "v#{@package["version"]}"
 
   @styleguide = Kss::Parser.new('scss/')
-  erb :styleguide
+  erb :index
 end
 
 helpers do
