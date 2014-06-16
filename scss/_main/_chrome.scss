@@ -54,10 +54,10 @@
       color: #fff;
       border: 1px solid #fff;
       box-shadow: 0 1px 3px rgba(#000, 0.3);
-      background-image: neue-image-url("search_light.png");
+      background-image: url("assets/images/search_light.png");
 
       @include hidpi {
-        background-image: neue-image-url("search_light@2x.png");
+        background-image: url("assets/images/search_light@2x.png");
       }
     }
   }
@@ -234,7 +234,7 @@
       @include transition(width 0.5s);
 
       @include hidpi {
-        background-image: image-url("assets/images/search_dark@2x.png");
+        background-image: url("assets/images/search_dark@2x.png");
       }
 
       @include media($tablet) {
