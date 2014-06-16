@@ -1,12 +1,11 @@
 require 'sinatra'
+require 'sinatra/export'
 require 'kss'
 require 'json'
 require 'redcarpet'
 
-set :public_folder, Proc.new { File.join(root) }
-set :views, Proc.new { File.join(root, "styleguide") }
-
-
+set :public_folder, Proc.new { File.join(root, "..") }
+set :views, Proc.new { File.join(root) }
 
 get '/' do
   @package = JSON.parse( File.read('package.json') )
