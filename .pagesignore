@@ -1,0 +1,33 @@
+# Ignore dependencies
+node_modules
+npm-debug.log
+
+# Vim stuff
+*.swp
+
+# SASS stuff
+.sass-cache
+
+# OS X stuff
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# editor ignores
+*.sublime-workspace
+*.sublime-project
+
+# rack/pow stuff
+log/
+tmp/
+
+
+
