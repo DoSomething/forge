@@ -12,12 +12,12 @@
 
 
 .tile--figure {
-  padding-bottom: 1.5rem;
+  padding-bottom: 27px;
   text-align: center;
 
   img {
     @include fluid-image();
-    margin: 0 auto 1rem;
+    margin: 0 auto 18px;
 
     @include media($desktop) {
       width: 100%;
@@ -27,7 +27,7 @@
   .__title {
     color: $dark-gray;
     line-height: 1.1;
-    margin: 0 0 0.5rem;
+    margin: 0 0 9px;
   }
 
   .__description {
@@ -80,7 +80,7 @@
   .tile--meta {
     bottom: 0;
     color: #fff;
-    padding: 1rem;
+    padding: 18px;
     position: absolute;
     width: 100%;
 
@@ -94,7 +94,7 @@
     color: inherit;
     font-size: $font-medium;
     line-height: 1.2;
-    margin: 0 0 0.25rem;
+    margin: 0 0 4px;
   }
 
   .__tagline {

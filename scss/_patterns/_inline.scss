@@ -12,7 +12,7 @@ figure {
   figcaption {
     color: $med-gray;
     font-size: $font-small;
-    padding: 0 1rem 1.5rem;
+    padding: 0 18px 27px;
   }
 }
 
@@ -62,11 +62,11 @@ img.bordered {
 .pullquote {
   color: $purple;
   width: 95%;
-  font-size: 1.25rem;
+  font-size: 22px;
 
   @include media($tablet) {
     width: auto;
-    font-size: 1.5rem;
+    font-size: 27px;
   }
 
   cite {
