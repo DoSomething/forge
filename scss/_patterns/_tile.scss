@@ -90,6 +90,37 @@
     }
   }
 
+  .__flag {
+    background-color: red;
+    color: #000;
+    font-size: 14px;
+    font-weight: $weight-sbold;
+    left: 0;
+    line-height: 1;
+    padding: em(4,14) em(8,14);
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 1;
+
+    @include media($desktop) {
+      font-size: 18px;
+    }
+
+    &.-staff-pick {
+      background-color: $yellow;
+    }
+  }
+
+
+  // .flag {
+  //   z-index: 1;
+  //   font-size: 0.75rem;
+  //   font-weight: $weight-sbold;
+  //   padding: 0.2em 0.5em;
+  // }
+
+
   .__title {
     color: inherit;
     font-size: $font-medium;
