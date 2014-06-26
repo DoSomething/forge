@@ -15,12 +15,12 @@
     font-weight: $weight-bold;
     line-height: 1;
     margin: 0;
-    padding: 0 0 0.5rem;
+    padding: 0 0 9px;
     text-transform: uppercase;
 
     @include media($tablet) {
       display: table-cell;
-      padding: 0 0.5rem 0.25rem 0;
+      padding: 0 9px 4px 0;
       vertical-align: bottom;
     }
   }

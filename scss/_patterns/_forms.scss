@@ -9,7 +9,7 @@ label {
   float: left;
   clear: both;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 16px;
   font-weight: 600;
   margin: 1em 0 0.25em;
   height: 1.5em;
@@ -57,7 +57,7 @@ label {
 input[type="text"], input[type="search"], input[type="password"] {
   width: 100%;
   font-family: $font-proxima-nova;
-  font-size: 1rem;
+  font-size: 18px;
   border: 1px solid $light-gray;
   border-radius: 5px;
   padding: 0.5em 1em;
@@ -109,19 +109,13 @@ textarea {
 
 
 // Button styles for both input and anchor buttons. Suitable for all-purpose use. Defaults
-// to `.primary` class. The primary (yellow) button style should be used in moderation -
-// it is meant to call action to the primary call-to-action on a page and overuse dilutes
-// its power.
+// to `.primary` class.
 //
 // :hover             - Suble hover state (will not be displayed on touch interfaces)
 // :focus             - Focus state for users navigating the page using tab keys.
 // :active            - "Pushed" button state
 // .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
 // .loading           - AJAX loading animation. Used when loading results inline. ==Must be used on `a` or `button`. Will not work with `input` elements.==
-// .tiny              - A tiny button.
-// .small             - A smaller button, suitable for use as an interface element.
-// .medium            - (Default) A normal call-to-action button size.
-// .large             - A large button.
 // .secondary         - Should be used if not the main call-to-action on a page.
 // .tertiary          - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
 //
@@ -131,7 +125,7 @@ textarea {
   clear: both;
   background: $blue;
   border: 0;
-  margin: 0.25rem 0;
+  margin: 4px 0;
   padding: 0.5em 1em 0.4em;
   cursor: pointer;
   color: #fff;
@@ -273,7 +267,7 @@ textarea {
       border-bottom: 0.3em solid transparent;
       border-right: 0.3em solid transparent;
       border-radius: 100%;
-      @include animation(rotation 1.5s infinite linear);
+      @include animation(rotation infinite 1.5s linear);
     }
   }
 }
@@ -289,10 +283,9 @@ select {
   display: block;
   width: 100%;
   height: 41px;
-  font-size: 1rem;
+  font-size: 18px;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
-  @include box-sizing(border-box);
   @include highlight-on-focus;
 
   &.error {
@@ -308,7 +301,7 @@ select {
   width: 30px;
   margin: 0 auto;
   position: relative;
-  @include animation(rotation 1.5s infinite linear);
+  @include animation(rotation infinite 1.5s linear);
   border: 6px solid $light-gray;
   border-radius: 100%;
 }
@@ -331,7 +324,7 @@ select {
 // Status message styles. These should be used to provide feedback to the user for
 // events that occur outside the normal application flow (such as form validation errors).
 //
-// <mark>Close button is added using JavaScript. See "system-messages.js".</mark>
+// ==Close button is added using JavaScript. See "system-messages.js".==
 //
 // .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
@@ -343,19 +336,18 @@ select {
   background: $purple;
   text-align: left;
   margin: 0;
-  padding: 1rem 4rem 1rem 1.5rem;
+  padding: 18px 72px 18px 27px;
   @include rgba(color, #fff, 0.7);
-  @include outer-container;
 
   b,
   strong {
-    font-weight: 800;
+    font-weight: $weight-bold;
     color: #fff;
-    padding: 0 0.3rem;
+    padding: 0 5px;
   }
 
   a {
-    font-weight: 800;
+    font-weight: $weight-bold;
     color: #fff;
   }
 
