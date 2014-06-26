@@ -1,0 +1,42 @@
+.polaroid {
+  padding: 0;
+  position: relative;
+
+  @include media($tablet) {
+    height: 210px;
+    left: 104%;
+    position: absolute;
+    top: 6.5rem;
+    width: 180px;
+
+    @include transform(rotate(-3deg));
+
+    &:after {
+      background-image: image-url("campaign-polaroid-frame.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 170px;
+      content: "";
+      height: 210px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 180px;
+    }
+  }
+
+
+  img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+
+    @include media($tablet) {
+      left: 10px;
+      margin: 0;
+      max-width: 160px;
+      top: 13px;
+    }
+  }
+
+}
