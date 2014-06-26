@@ -63,7 +63,6 @@ input[type="text"], input[type="search"], input[type="password"] {
   padding: 0.5em 1em;
   margin: 0 0 0.5em;
   @include transition(border 0.5s);
-  @include box-sizing(border-box);
   @include highlight-on-focus;
   -webkit-appearance: none;
 
@@ -101,7 +100,6 @@ textarea {
   padding: 0.5em 1em 0.3em;
   margin: 0 0 0.5em;
   resize: vertical;
-  @include box-sizing(border-box);
   @include highlight-on-focus;
 
   &.error {
@@ -274,7 +272,6 @@ textarea {
       margin-left: -0.75em;
       border: 0.3em solid $light-gray;
       border-radius: 100%;
-      @include box-sizing(border-box);
     }
 
     &:after {
@@ -293,7 +290,6 @@ textarea {
       border-bottom: 0.3em solid transparent;
       border-right: 0.3em solid transparent;
       border-radius: 100%;
-      @include box-sizing(border-box);
       @include animation(rotation 1.5s infinite linear);
     }
   }
