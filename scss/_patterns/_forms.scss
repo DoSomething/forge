@@ -205,23 +205,6 @@ textarea {
     }
   }
 
-  // sizes
-  &.tiny {
-    font-size: $font-small;
-  }
-
-  &.small {
-    font-size: $font-regular;
-  }
-
-  &.medium { // default
-    font-size: $font-medium;
-  }
-
-  &.large {
-    font-size: $font-large;
-  }
-
   // disabled state
   &[disabled], &.disabled {
     background: $light-gray;
