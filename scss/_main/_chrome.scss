@@ -2,7 +2,7 @@
 .chrome--nav {
   display: block;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 36px;
   overflow: hidden;
 
   @include media($mobile) {
@@ -22,10 +22,10 @@
         width: auto;
         height: auto;
         background: none;
-        margin-top: 4rem;
+        margin-top: 72px;
 
         @include media($tall-mobile) {
-          margin-top: 5rem;
+          margin-top: 90px;
         }
       }
 
@@ -36,7 +36,7 @@
   }
 
   @include media($tablet) {
-    padding: 1rem 0;
+    padding: 18px 0;
   }
 
   // Applies styles to make nav text white
@@ -76,12 +76,12 @@
 
   .logo {
     float: left;
-    padding: 0.5rem;
+    padding: 9px;
 
     @include media($tablet) {
       position: static;
       min-width: 96px;
-      padding: 0 1rem;
+      padding: 0 18px;
       text-align: center;
 
       @include span-columns(2);
@@ -98,8 +98,8 @@
     color: $off-black;
     font-size: 32px;
     text-decoration: none;
-    margin: 0.5rem;
-    padding: 1rem 0.5rem;
+    margin: 9px;
+    padding: 18px 9px;
     @include icomoon-icon;
 
     @include media($tablet) {
@@ -121,13 +121,13 @@
 
     li {
       line-height: 1.4;
-      font-size: 1rem;
+      font-size: 18px;
       text-align: center;
-      padding: 1rem 0;
+      padding: 18px 0;
 
       // we can increase padding a bit if we're on a taller screen
       @include media($tall-mobile) {
-        padding: 0.75rem 0;
+        padding: 12px 0;
       }
 
       @include media($tablet) {
@@ -135,12 +135,12 @@
         display: block;
         text-align: left;
         margin: 0 3.5% 0 0;
-        padding: 1.25rem 0;
+        padding: 22px 0;
         border-bottom: 0;
       }
 
       @include media($desktop) {
-        padding: 0.75rem 0;
+        padding: 12px 0;
         margin: 0 5% 0 0;
       }
     }
@@ -170,7 +170,7 @@
     }
 
     span {
-      font-size: $font-smaller;
+      font-size: $font-small;
 
       @include media($tablet) {
         display: none;
@@ -186,7 +186,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-right: 1rem;
+    margin-right: 18px;
 
     @include media($tablet) {
       position: static;
@@ -203,33 +203,33 @@
 
     li {
       line-height: 1.4;
-      font-size: 1rem;
+      font-size: 18px;
       text-align: center;
-      padding: 1.5rem 0;
+      padding: 27px 0;
       box-sizing: border-box;
 
       @include media($tablet) {
         float: left;
         display: block;
         text-align: left;
-        padding: 0.75rem 0;
+        padding: 12px 0;
         border-bottom: 0;
       }
 
       @include media($desktop) {
-        padding: 0.75rem 0;
+        padding: 12px 0;
       }
     }
 
     .searchfield {
-      padding-right: 0.5rem;
+      padding-right: 9px;
     }
 
     input[type="search"] {
       box-shadow: 0 1px 0 rgba(#fff, 0.2);
-      margin: 0.2rem 0;
-      padding-top: 0.3rem;
-      padding-bottom: 0.3rem;
+      margin: 0.36px 0;
+      padding-top: 5px;
+      padding-bottom: 5px;
       background-image: url("assets/images/search_dark.png");
       @include transition(width 0.5s);
 
@@ -253,7 +253,7 @@
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      padding: 0.5rem 0.75rem;
+      padding: 9px 14px;
 
       @include media($tablet) {
         color: $off-black;
@@ -269,8 +269,8 @@
           &:after {
             background-color: #fff;
             content: "";
-            height: 1rem;
-            margin-top: -0.5rem;
+            height: 18px;
+            margin-top: -9px;
             position: absolute;
             right: 0;
             top: 50%;
@@ -298,14 +298,14 @@
   margin: 0 auto;
 
   @include media($tablet) {
-    padding: 1rem;
+    padding: 18px;
   }
 
   h4 {
     position: relative;
     color: #fff;
     margin-bottom: 0;
-    padding: 0 1rem;
+    padding: 0 18px;
     margin: 0;
     cursor: pointer;
 
@@ -315,8 +315,8 @@
       color: $med-gray;
       font-size: 32px;
       position: absolute;
-      right: 0.25rem;
-      top: -0.2rem;
+      right: 4px;
+      top: -0.36px;
       @include transform(rotate(0));
       @include transition-property(transform);
       @include transition-duration(0.25s);
@@ -324,7 +324,7 @@
 
     @include media($tablet) {
       cursor: auto;
-      margin: 1rem 0 0.5rem;
+      margin: 18px 0 9px;
       padding: 0;
 
       &:after {
@@ -336,7 +336,7 @@
   ul {
     height: auto;
     list-style-type: none;
-    padding: 0.25rem;
+    padding: 4px;
     @include transition(height 0.25s, padding 0.5s);
 
     @include media($tablet) {
@@ -345,17 +345,17 @@
   }
 
   li {
-    line-height: 1rem;
-    margin-bottom: 0.25rem;
+    line-height: 18px;
+    margin-bottom: 4px;
   }
 
   a {
     display: block;
     color: $light-gray;
     font-family: $font-proxima-nova;
-    font-size: 0.9rem;
+    font-size: 16px;
     text-decoration: none;
-    padding: 0.25rem 0.75rem;
+    padding: 4px 14px;
 
     &:hover {
       color: #fff;
@@ -369,11 +369,11 @@
 }
 
 .col {
-  padding: 0.5rem 0;
+  padding: 9px 0;
 
   @include media($tablet) {
     @include span-columns(3);
-    margin-bottom: 2rem;
+    margin-bottom: 36px;
   }
 
   &.is-collapsed {
@@ -383,7 +383,7 @@
 
     ul {
       overflow: hidden;
-      padding: 0 0.25rem;
+      padding: 0 4px;
       height: 0;
     }
 
@@ -423,7 +423,7 @@
   text-align: center;
 
   &.mobile {
-    padding: 0.5rem 0;
+    padding: 9px 0;
 
     @include media($tablet) {
       display: none;
@@ -441,7 +441,7 @@
   @include media($tablet) {
     float: left;
     border-top: 0;
-    margin-top: 1.65rem;
+    margin-top: 30px;
     text-align: left;
     @include span-columns(7);
   }
@@ -474,7 +474,7 @@
   clear: both;
   font-size: $font-small;
   border-top: 1px solid $dark-gray;
-  padding: 0.5rem 0;
+  padding: 9px 0;
   @include row;
 
   a {
@@ -490,7 +490,7 @@
     @include media($tablet) {
       float: right;
       text-align: left;
-      margin-right: 0.75rem;
+      margin-right: 14px;
     }
 
     li {
@@ -498,10 +498,10 @@
     }
 
     a {
-      margin: 0 0.5rem;
+      margin: 0 9px;
 
       @include media($tablet) {
-        margin: 0 1rem 0 0;
+        margin: 0 18px 0 0;
       }
     }
   }

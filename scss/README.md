@@ -13,8 +13,8 @@ We've structured our CSS to make sure that it doesn't become unmanageable as it 
  - We write our styles in [SCSS](http://sass-lang.com/) syntax.
  - Use soft-tabs with a two space indent.
  - Put spaces before `{` in rule declarations. Put spaces after `:` in property declarations.
- - Use hex color codes (for example, `#000` or `#18408b`) unless using `rgba`.
- - Use rems for sizing elements, unless a size should be proportional to the font-size of the element, in which case use ems. Avoid using absolute pixels for sizing.
+ - Use hex color codes (for example, `#000` or `#18408b`).
+ - Use pixels for sizing elements, unless a size should be proportional to the font-size of the element, in which case use ems.
  - Use `//` for comment blocks (instead of `/* */`).
  - Document styles with [KSS](https://github.com/kneath/kss).
 
@@ -33,7 +33,7 @@ Here's some nice CSS:
 //
 // Styleguide 4.7.1 - Formatted Message
 .styleguide--format {
-  background: rgba(0,0,0,0.5);
+  background: rgba(#000, 0.5);
   border: 1px solid #0f0;
   color: #000;
   
@@ -42,7 +42,7 @@ Here's some nice CSS:
   }
 
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 16px;
   }
 }
 ```

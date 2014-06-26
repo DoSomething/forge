@@ -1,7 +1,7 @@
 // Consistent indentation for elements in the mobile views to allow for full-width images, formes, etc.
 // @TODO - This method scales terribly; revisit.
 @mixin section-padding {
-  padding: 0 1.5rem;
+  padding: 0 27px;
 }
 
 // Calculate rgba() fallback value for older browsers.
@@ -54,8 +54,8 @@
 // modals, dialogs and system status messages
 @mixin close-parent {
   position: absolute;
-  top: 0.25rem; right: 1.5rem;
-  font-size: 2.5rem;
+  top: 4px; right: 27px;
+  font-size: 45px;
   font-weight: bold;
   color: $dark-gray;
   opacity: 0.5;

@@ -7,14 +7,14 @@
   @include rgba(background-color, #000, 0.5, #7f7f7f);
 
   > .wrapper {
-    padding: 1rem;
+    padding: 18px;
     @include clearfix();
 
     @include media($tablet) {
       @include span-columns(12);
       @include shift(2);
       float: none;
-      padding: 1rem 0;
+      padding: 18px 0;
     }
   }
 
@@ -25,7 +25,7 @@
   }
 
   div + div {
-    margin-top: 0.5rem;
+    margin-top: 9px;
   }
 
   .help {

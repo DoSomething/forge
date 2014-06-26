@@ -4,7 +4,7 @@
 [role="banner"] {
   background-color: $purple;
   overflow: hidden;
-  padding: 8rem 1rem 1.5rem;
+  padding: 144px 18px 27px;
   position: relative;
 
   @include media($tablet) {
@@ -51,9 +51,9 @@
 
   .__title {
     color: #fff;
-    font-size: 2rem;
+    font-size: 36px;
     line-height: 1;
-    margin: 0 0 0.5rem;
+    margin: 0 0 9px;
 
     @include media($tablet) {
       font-size: $font-hero;
@@ -68,7 +68,7 @@
 
     @include media($tablet) {
       font-size: $font-medium;
-      margin-bottom: 1.5rem;
+      margin-bottom: 27px;
     }
   }
 
@@ -79,7 +79,7 @@
   }
 
   .sponsor {
-    padding: 1rem 0 0.5rem;
+    padding: 18px 0 9px;
 
     @include media($tablet) {
       bottom: 0;
@@ -109,8 +109,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 465px;
-    padding-bottom: 1.5rem;
-    padding-top: 12rem;
+    padding-bottom: 28px;
+    padding-top: 216px;
 
     &:before {
       @include linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
@@ -126,30 +126,30 @@
 
     > .wrapper {
       @include media($tablet) {
-        bottom: 1.5rem;
+        bottom: 27px;
         position: absolute;
       }
     }
 
     .__subtitle {
       @include media($tablet) {
-        margin-bottom: 0.5rem;
+        margin-bottom: 9px;
       }
     }
 
     .__date {
       color: #fff;
       font-size: $font-small;
-      margin-bottom: 0.5rem;
+      margin-bottom: 9px;
 
       @include media($tablet) {
         font-size: $font-regular;
         float: left;
-        margin-bottom: 1.5rem;
+        margin-bottom: 27px;
       }
 
       & + .__subtitle {
-        margin-top: -0.5rem;
+        margin-top: -9px;
       }
     }
 
@@ -169,7 +169,7 @@
 
     // @TODO: May be a better way to handle the oversized button on mobile; maybe address this in btn module?
     .btn {
-      margin: 1.5rem auto 0;
+      margin: 27px auto 0;
       max-width: 250px;
 
       &.medium {

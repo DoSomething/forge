@@ -20,7 +20,7 @@
     background: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     width: auto;
-    padding: 2rem 1.5rem;
+    padding: 36px 27px;
     margin: 0;
     word-wrap: break-word;
     z-index: 1050;
@@ -28,7 +28,7 @@
     @include media($tablet) {
       max-width: 600px;
       min-height: 0;
-      margin: 5rem auto;
+      margin: 90px auto;
     }
 
     .modal-close-button {
@@ -37,8 +37,8 @@
       top: 0;
 
       &.-alt {
-        font-size: 1rem;
-        top: 1rem;
+        font-size: 18px;
+        top: 18px;
 
         &:hover {
           text-decoration: underline;
@@ -47,11 +47,11 @@
     }
 
     h2 {
-      padding: 0.5rem 4rem 0.5rem 1.5rem;
+      padding: 9px 72px 9px 27px;
 
       &.banner {
         // fit this guy to edge of modal
-        margin: -2rem -1.5rem 1rem;
+        margin: -36px -27px 18px;
       }
     }
 
