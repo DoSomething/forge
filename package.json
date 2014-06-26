@@ -9,29 +9,29 @@
     "type": "git",
     "url": "https://github.com/DoSomething/neue.git"
   },
-  "dependencies": {
-    "grunt": "^0.4.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-watch": "^0.5.3",
-    "grunt-sass": "^0.11.0",
-    "grunt-bump": "^0.0.14",
-    "grunt-contrib-jshint": "^0.7.1",
-    "grunt-contrib-qunit": "^0.3.0",
-    "jshint-stylish": "^0.1.5",
-    "grunt-shell": "^0.6.1",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-checkbranch": "^0.2.2",
-    "grunt-checkrepo": "^0.1.0",
-    "load-grunt-config": "^0.8.0",
-    "glob": "^3.2.9",
-    "grunt-contrib-requirejs": "^0.4.3",
-    "bower": "^1.3.3",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-scss-lint": "^0.1.11",
-    "time-grunt": "^0.3.2"
-  },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt build",
     "test": "./node_modules/.bin/grunt travis"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "glob": "^3.2.9",
+    "grunt": "^0.4.1",
+    "grunt-bump": "^0.0.14",
+    "grunt-checkbranch": "^0.2.2",
+    "grunt-checkrepo": "^0.1.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.7.1",
+    "grunt-contrib-qunit": "^0.3.0",
+    "grunt-contrib-requirejs": "^0.4.3",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-sass": "^0.11.0",
+    "grunt-scss-lint": "^0.1.11",
+    "grunt-shell": "^0.6.1",
+    "jshint-stylish": "^0.1.5",
+    "load-grunt-config": "^0.8.0",
+    "time-grunt": "^0.3.2"
   }
 }
