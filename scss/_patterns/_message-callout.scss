@@ -1,0 +1,149 @@
+.message-callout {
+  position: relative;
+
+  .__copy {
+    display: inline-block;
+    padding: 1rem 0.5rem;
+    position: relative;
+
+    @include media($tablet) {
+      margin: 0;
+    }
+
+    p {
+      color: #000;
+      font: 1.5rem/1.3 $font-handwritten, cursive;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      margin: 0;
+      text-transform: lowercase;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+  }
+
+  &.-white {
+    .__copy {
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+
+  // Class indicates callout is positioned below item it's pointing at.
+  &.-below {
+    padding-top: 1rem;
+
+    .__copy {
+
+      // Arrow Up
+      &:before {
+        background: image-url("callout-arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
+        height: 38px;
+        right: -5px;
+        top: -15px;
+        width: 25px;
+      }
+    }
+
+    &.-white {
+      .__copy {
+        &:before {
+          background-image: image-url("callout-arrow-up-white.png");
+        }
+      }
+    }
+  }
+
+
+  // Class indicates callout is positioned above item it's pointing at.
+  &.-above {
+    .__copy {
+      &:before {
+        background: image-url("callout-arrow-down-black.png") 50% 50% / 14px no-repeat transparent;
+        height: 50px;
+        right: -20px;
+        bottom: -15px;
+        width: 20px;
+      }
+    }
+
+    &.-white {
+      .__copy {
+        &:before {
+          background-image: image-url("callout-arrow-down-white.png");
+        }
+      }
+    }
+  }
+
+
+  &.-right {
+    left: 8rem; // Default value: override this value for specific scenarios.
+    bottom: 0;
+    position: absolute;
+
+    .__copy {
+      padding-left: 45px;
+
+      &:before {
+        background: image-url("callout-arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
+        height: 19px;
+        left: 0;
+        margin-top: -9px;
+        right: auto;
+        top: 50%;
+        width: 38px;
+      }
+    }
+
+    &.-white {
+      .__copy {
+        &:before {
+          background-image: image-url("callout-arrow-left-white.png");
+        }
+      }
+    }
+  }
+
+
+  // Class applies to a callout that starts below or above an item on mobile, but then switches to positon to the right of item.
+  &.-dynamic-right {
+    @include media($tablet) {
+      left: 8rem;  // Default value: override this value for specific scenarios.
+      padding-top: 0;
+      position: absolute;
+
+      .__copy {
+        left: 0;
+        padding-left: 45px;
+
+        &:before {
+          background: image-url("callout-arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
+          height: 19px;
+          left: 0;
+          margin-top: -9px;
+          right: auto;
+          top: 50%;
+          width: 38px;
+        }
+      }
+    }
+
+    @include media($tablet) {
+      &.-white {
+        .__copy {
+          &:before {
+            background-image: image-url("callout-arrow-left-white.png");
+          }
+        }
+      }
+    }
+  }
+
+}
