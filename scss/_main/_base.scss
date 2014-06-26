@@ -6,7 +6,7 @@
 // Base HTML elements
 html {
   height: 100%;
-  font-size: 18px;
+  font-size: $font-regular;
   background: $light-gray;
 }
 
@@ -32,16 +32,16 @@ h1, h2, h3, h4 {
   clear: both;
   color: $purple;
   font-weight: $weight-bold;
-  margin: 1.5rem 0;
+  margin: 27px 0;
 
   &.banner {
     background: #000;
     color: #fff;
     text-transform: uppercase;
-    padding: 0.5rem 0;
+    padding: 9px 0;
 
     @include media($tablet) {
-      padding: 0.5rem;
+      padding: 9px;
     }
   }
 }
@@ -68,7 +68,7 @@ h4 {
   color: $dark-gray;
   font-size: $font-regular;
   font-weight: $weight-sbold;
-  margin: 1.5rem 0 0.5rem;
+  margin: 27px 0 9px;
 }
 
 // List of items with no ordering.
@@ -93,12 +93,12 @@ ol {
 p {
   font-size: $font-regular;
   color: $copy-color;
-  margin: 0 0 1.5rem;
+  margin: 0 0 27px;
 }
 
 small {
   font-size: $font-small;
-  margin: 0 0 1.5rem;
+  margin: 0 0 27px;
 }
 
 a {
@@ -143,7 +143,7 @@ code {
 sup {
   display: inline-block;
   position: relative;
-  top: -0.4rem;
+  top: -0.4em;
   font-size: 0.6em;
   padding: 0;
 }

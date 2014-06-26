@@ -11,7 +11,6 @@
   "devDependencies": {
     "jquery": "1.8.3",
     "almond": "~0.2.9",
-    "REM-unit-polyfill": "~1.2.5",
     "html5shiv": "~3.7.2",
     "respond": "~1.4.2",
     "highlightjs": "~8.0.0"
