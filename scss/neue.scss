@@ -18,9 +18,11 @@
 // We'll start by importing our SCSS variables & helpers.
 @import "helpers";
 
+// CSS Reset
+@import "vendor/reset";
+
 // Basic interface and layout building blocks
 @import "globals/fonts";
-@import "vendor/reset";
 @import "_main/base";
 @import "_main/chrome";
 @import "_main/layout";
