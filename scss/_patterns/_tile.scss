@@ -91,13 +91,12 @@
   }
 
   .__flag {
-    background-color: red;
     color: #000;
     font-size: 14px;
     font-weight: $weight-sbold;
     left: 0;
     line-height: 1;
-    padding: em(4,14) em(8,14);
+    padding: em(4, 14) em(8, 14);
     position: absolute;
     text-transform: uppercase;
     top: 0;
