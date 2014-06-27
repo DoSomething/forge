@@ -90,6 +90,27 @@
     }
   }
 
+  .__flag {
+    color: #000;
+    font-size: 14px;
+    font-weight: $weight-sbold;
+    left: 0;
+    line-height: 1;
+    padding: em(4, 14) em(8, 14);
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 1;
+
+    @include media($desktop) {
+      font-size: 18px;
+    }
+
+    &.-staff-pick {
+      background-color: $yellow;
+    }
+  }
+
   .__title {
     color: inherit;
     font-size: $font-medium;
