@@ -1,33 +1,6 @@
-// Style for images in content sections.
-//
-// Styleguide 4.2.1 - Figures
-figure {
-  text-align: center;
-  padding: 2.5% 0;
-
-  img {
-    max-width: 100%;
-  }
-
-  figcaption {
-    color: $med-gray;
-    font-size: $font-small;
-    padding: 0 18px 27px;
-  }
-}
-
-// Stylized "polaroid" image, with a thick border and subtle shadow.
-//
-// Styleguide 4.2.2 - Bordered image style
-img.bordered {
-  border: 6px solid #fff;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-}
-
-
 // Legal text (a.k.a. the fine print).
 //
-// Styleguide 4.2.3 - Legal Text
+// Styleguide 4.2.1 - Legal Text
 .legal {
   font-size: $font-small;
   color: $med-gray;
@@ -58,7 +31,7 @@ img.bordered {
 // An pullquote draws attention to a particular quote from the
 // text. Generally used with an `aside` element.
 //
-// Styleguide 4.2.4 - Pullquote
+// Styleguide 4.2.2 - Pullquote
 .pullquote {
   color: $purple;
   width: 95%;

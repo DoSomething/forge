@@ -20,12 +20,13 @@
 @import "vendor/bourbon/bourbon";
 
 // We'll configure our grid settings before importing Bourbon Neat.
-@import "globals/grid-settings.scss";
+@import "helpers/grid-settings.scss";
 
 // We use Bourbon Neat to build semantic grid layouts.
 // http://neat.bourbon.io/docs
 @import "vendor/neat/neat";
 
 // We define some of our own variables and mixins to keep things DRY.
-@import "globals/variables";
-@import "globals/mixins";
+@import "helpers/functions";
+@import "helpers/variables";
+@import "helpers/mixins";

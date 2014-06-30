@@ -1,0 +1,70 @@
+// Style for images in content sections.
+//
+// Styleguide 4.9.1 - Figures
+.content-figure {
+  text-align: center;
+  padding: 2.5% 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    color: $med-gray;
+    font-size: $font-small;
+    padding: 0 18px 27px;
+  }
+}
+
+
+// Stylized image, with a thick border and subtle shadow.
+//
+// Styleguide 4.9.2 - Bordered image style
+img.bordered {
+  border: 6px solid #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+// Module class for styling a figure with a "polaroid" effect.
+//
+// Styleguide 4.9.3 - Polaroid image style
+.polaroid {
+  padding: 0;
+  position: relative;
+
+  @include media($tablet) {
+    width: 180px;
+    height: 210px;
+
+    @include transform(rotate(-3deg));
+
+    &:after {
+      background-image: url("assets/images/polaroid-frame.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 170px;
+      content: "";
+      height: 210px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 180px;
+    }
+  }
+
+
+  img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+
+    @include media($tablet) {
+      max-width: 160px;
+      top: 13px;
+      left: 10px;
+      margin: 0;
+    }
+  }
+}
+

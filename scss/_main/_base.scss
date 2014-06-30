@@ -1,6 +1,6 @@
 // Set border-box on all the elements!
 * {
-  @include prefixer(box-sizing, border-box, webkit moz spec);
+  @include box-sizing(border-box);
 }
 
 // Base HTML elements
@@ -28,11 +28,11 @@ body {
 // .banner - Stylized header banners.
 //
 // Styleguide 1.1 - Headings
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   clear: both;
   color: $purple;
   font-weight: $weight-bold;
-  margin: 27px 0;
+  margin: 0 0 27px;
 
   &.banner {
     background: #000;
@@ -64,7 +64,7 @@ h3 {
   font-weight: $weight-sbold;
 }
 
-h4 {
+h4, h5, h6 {
   color: $dark-gray;
   font-size: $font-regular;
   font-weight: $weight-sbold;
