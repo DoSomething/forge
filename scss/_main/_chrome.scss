@@ -212,7 +212,7 @@
         float: left;
         display: block;
         text-align: left;
-        padding: 12px 0;
+        padding: 18px 0;
         border-bottom: 0;
       }
 
@@ -253,7 +253,7 @@
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      padding: 9px 14px;
+      padding: 6px 14px;
 
       @include media($tablet) {
         color: $off-black;
