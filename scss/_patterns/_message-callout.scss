@@ -1,6 +1,12 @@
 // Module class for styling a text block callout with arrow pointing to other content.
 //
-// Styleguide 4.10.1 - Message Callout
+// .-below          - Callout is positioned below an element.
+// .-above          - Callout is positioned above element it's pointing to.
+// .-right          - Callout is positioned to the right of element it's pointing to.
+// .-dynamic-right  - Callout that starts below or above an item on mobile, but then switches to positon to the right of item.
+// .-white          - White text and arrow (for use on dark backgrounds).
+//
+// Styleguide 4.10 - Message Callout
 
 .message-callout {
   position: relative;
