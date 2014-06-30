@@ -1,6 +1,6 @@
 // Set border-box on all the elements!
 * {
-  @include prefixer(box-sizing, border-box, webkit moz spec);
+  @include box-sizing(border-box);
 }
 
 // Base HTML elements
