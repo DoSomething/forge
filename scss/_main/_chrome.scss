@@ -423,6 +423,25 @@
 .social {
   text-align: center;
 
+  // Mobile design (separate markup to re-position below menu).
+  // @TODO: Gross. Let's see if we can clean this up in future iterations.
+  &.mobile {
+    padding: 9px 0;
+
+    @include media($tablet) {
+      display: none;
+    }
+  }
+
+  // Tablet and desktop markup (separate markup to re-position in first column).
+  &.tablet {
+    display: none;
+
+    @include media($tablet) {
+      display: block;
+    }
+  }
+
   @include media($tablet) {
     float: left;
     border-top: 0;
