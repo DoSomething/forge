@@ -284,14 +284,18 @@
 }
 
 
-// Main content wrapper
+// Main content wrapper.
+//
+// No styleguide reference.
 .chrome--wrapper {
   position: relative;
   display: block;
   width: 100%;
 }
 
-// Footer
+// Chrome footer with social links & footer menus.
+//
+// No styleguide reference.
 .chrome--footer {
   display: block;
   width: 100%;
@@ -417,6 +421,7 @@
   }
 }
 
+// Social media icon links.
 .social {
   text-align: center;
 
