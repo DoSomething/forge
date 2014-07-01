@@ -352,15 +352,12 @@
 
   a {
     display: block;
-    color: $light-gray;
-    font-family: $font-proxima-nova;
-    font-size: 16px;
-    text-decoration: none;
+    color: $med-gray;
+    font-size: 14px;
     padding: 4px 14px;
 
     &:hover {
       color: #fff;
-      text-decoration: underline;
     }
 
     @include media($tablet) {
@@ -462,12 +459,9 @@
   .social-link {
     @include icomoon-icon;
     font-size: 24px;
-    color: $med-gray;
     text-decoration: none;
 
-
     &:hover {
-      color: $light-gray;
       text-decoration: none;
     }
   }
@@ -483,7 +477,6 @@
 
   a {
     display: inline;
-    color: $med-gray;
     font-size: 1em;
   }
 
