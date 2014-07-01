@@ -1,6 +1,10 @@
-// Logo & primary navigation/dropdowns
+// Chrome navigation with logo, navigation, and search.
+//
+// .white     - Use white navigation text and search field (with subtle drop shadow).
+// .floating  - Navigation should float above following elements on the page.
+//
+// No styleguide reference.
 .chrome--nav {
-  display: block;
   width: 100%;
   margin-bottom: 36px;
   overflow: hidden;
@@ -29,7 +33,7 @@
         }
       }
 
-      .hamburger {
+      a {
         color: #fff;
       }
     }
@@ -39,30 +43,32 @@
     padding: 18px 0;
   }
 
-  // Applies styles to make nav text white
+  // Use white navigation text and search field (with subtle drop shadow).
   &.white {
     .hamburger {
-      color: #fff !important;
-    }
-
-    a {
-      text-shadow: 0 1px 3px rgba(#000, 0.3);
-      color: #fff !important;
-    }
-
-    .secondary-nav input[type="search"] {
       color: #fff;
-      border: 1px solid #fff;
-      box-shadow: 0 1px 3px rgba(#000, 0.3);
-      background-image: url("assets/images/search_light.png");
+    }
 
-      @include hidpi {
-        background-image: url("assets/images/search_light@2x.png");
+    @include media($tablet) {
+      a {
+        color: #fff;
+        text-shadow: 0 1px 3px rgba(#000, 0.3);
+      }
+
+      .secondary-nav input[type="search"] {
+        color: #fff;
+        border: 1px solid #fff;
+        box-shadow: 0 1px 3px rgba(#000, 0.3);
+        background-image: url("assets/images/search_light.png");
+
+        @include hidpi {
+          background-image: url("assets/images/search_light@2x.png");
+        }
       }
     }
   }
 
-  // Applies styles to make nav float over content wrapper
+  // Navigation should float above following elements on the page.
   &.floating {
     position: absolute;
     top: 0;
@@ -71,9 +77,12 @@
   }
 
   a {
+    color: $off-black;
+    text-decoration: none;
     text-shadow: 0 1px 0 rgba(#fff, 0.2);
   }
 
+  // DoSomething.org logo container
   .logo {
     float: left;
     padding: 9px;
@@ -93,9 +102,9 @@
     }
   }
 
+  // Mobile "hamburger" menu toggle
   .hamburger {
     float: right;
-    color: $off-black;
     font-size: 32px;
     text-decoration: none;
     margin: 9px;
@@ -107,6 +116,7 @@
     }
   }
 
+  // Contents of menu, toggled on-and-off on mobile.
   .menu {
     display: none;
 
@@ -115,6 +125,7 @@
     }
   }
 
+  // Primary navigation elements (such as "Explore Campaigns").
   .primary-nav {
     list-style-type: none;
     padding: 0;
@@ -124,11 +135,6 @@
       font-size: 18px;
       text-align: center;
       padding: 18px 0;
-
-      // we can increase padding a bit if we're on a taller screen
-      @include media($tall-mobile) {
-        padding: 12px 0;
-      }
 
       @include media($tablet) {
         float: left;
@@ -147,12 +153,6 @@
 
     a {
       display: block;
-      color: #fff;
-      text-decoration: none;
-
-      @include media($tablet) {
-        color: $off-black;
-      }
     }
 
     strong {
@@ -165,7 +165,7 @@
       }
 
       @include media($desktop) {
-        > span { display: inline; font-size: $font-regular; }
+        > span { display: inline; }
       }
     }
 
@@ -182,6 +182,7 @@
     }
   }
 
+  // Secondary navigation elements (such as search or "Log In").
   .secondary-nav {
     position: fixed;
     bottom: 0;
@@ -202,8 +203,8 @@
     }
 
     li {
-      line-height: 1.4;
       font-size: 18px;
+      line-height: 1.4;
       text-align: center;
       padding: 27px 0;
       box-sizing: border-box;
@@ -218,15 +219,19 @@
     }
 
     .searchfield {
-      padding-right: 9px;
+      padding: 0 18px;
+
+      @include media($tablet) {
+        padding: 17px 18px;
+      }
+
     }
 
     input[type="search"] {
+      background-image: url("assets/images/search_dark.png");
       box-shadow: 0 1px 0 rgba(#fff, 0.2);
-      margin: 0.36px 0;
       padding-top: 5px;
       padding-bottom: 5px;
-      background-image: url("assets/images/search_dark.png");
       @include transition(width 0.5s);
 
       @include hidpi {
@@ -246,14 +251,8 @@
 
     a {
       display: block;
-      color: #fff;
       font-weight: bold;
-      text-decoration: none;
       padding: 6px 14px;
-
-      @include media($tablet) {
-        color: $off-black;
-      }
     }
 
     // @TODO: Temporary; will likely change to a border but this works well for now.
@@ -417,22 +416,6 @@
 
 .social {
   text-align: center;
-
-  &.mobile {
-    padding: 9px 0;
-
-    @include media($tablet) {
-      display: none;
-    }
-  }
-
-  &.tablet {
-    display: none;
-
-    @include media($tablet) {
-      display: block;
-    }
-  }
 
   @include media($tablet) {
     float: left;
