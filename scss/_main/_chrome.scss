@@ -131,22 +131,20 @@
     padding: 0;
 
     li {
-      line-height: 1.4;
       font-size: 18px;
+      line-height: 1.2;
       text-align: center;
-      padding: 18px 0;
+      padding: 22px 0;
 
       @include media($tablet) {
         float: left;
         display: block;
         text-align: left;
         margin: 0 3.5% 0 0;
-        padding: 22px 0;
-        border-bottom: 0;
       }
 
       @include media($desktop) {
-        padding: 12px 0;
+        padding: 14px 0;
         margin: 0 5% 0 0;
       }
     }
@@ -171,6 +169,7 @@
 
     span {
       font-size: $font-small;
+      opacity: 0.8;
 
       @include media($tablet) {
         display: none;
@@ -206,8 +205,7 @@
       font-size: 18px;
       line-height: 1.4;
       text-align: center;
-      padding: 27px 0;
-      box-sizing: border-box;
+      padding: 18px;
 
       @include media($tablet) {
         float: left;
@@ -218,21 +216,13 @@
       }
     }
 
-    .searchfield {
-      padding: 0 18px;
-
-      @include media($tablet) {
-        padding: 17px 18px;
-      }
-
-    }
-
     input[type="search"] {
       background-color: transparent;
       background-image: url("assets/images/search_light.png");
-      box-shadow: 0 1px 0 rgba(#000, 0.2);
+      color: #fff;
       padding-top: 5px;
       padding-bottom: 5px;
+      box-shadow: 0 1px 0 rgba(#000, 0.2);
       @include transition(width 0.5s);
 
       @include hidpi {
@@ -240,8 +230,9 @@
       }
 
       @include media($tablet) {
-        width: 110px;
+        width: 100px;
         background-image: url("assets/images/search_dark.png");
+        color: $off-black;
         border: 1px solid $off-black;
         box-shadow: 0 1px 0 rgba(#fff, 0.2);
 
@@ -250,7 +241,8 @@
         }
       }
 
-      @include media($desktop) {
+      // @TODO: Clean this up when we add some more media query breakpoints.
+      @include media(890px) {
         width: 200px;
       }
     }
@@ -258,7 +250,8 @@
     a {
       display: block;
       font-weight: bold;
-      padding: 6px 14px;
+      margin-left: 18px;
+      padding: 6px 9px;
     }
 
     // @TODO: Temporary; will likely change to a border but this works well for now.
