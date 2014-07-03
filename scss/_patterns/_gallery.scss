@@ -12,10 +12,8 @@
 
   @include clearfix();
 
-
   // Mosaic Gallery styles
   &.-mosaic {
-
     background-color: #000;
 
     > li {
@@ -50,7 +48,6 @@
 
 
     &.-trio {
-
       @include media(450px) {
         display: block;
         padding-bottom: 50%;
@@ -117,18 +114,12 @@
 
 
   &.-triad {
-
     > li {
       @include media($tablet) {
         @include span-columns(4 of 12);
         @include omega(3n);
-
-        &:nth-child(4n) {
-          clear: left;
-        }
       }
     }
-
   }
 
   .ie8 & {
