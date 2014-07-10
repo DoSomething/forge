@@ -30,15 +30,12 @@ define(function(require) {
   // The currently open modal
   var $modal = null;
 
-  // We can only have one modal open at a time; we track that here.
-  var modalIsOpen = false;
-
   // Whether this modal can be closed by the user
   var closeable = false;
 
   // Return a boolean if modal is open or not
   var isOpen = function() {
-    return modalIsOpen;
+    return ($modal !== null);
   };
 
   /**
@@ -80,7 +77,7 @@ define(function(require) {
         closeable = true;
     }
 
-    if(!modalIsOpen) {
+    if(!isOpen()) {
       // Set up overlay and show modal
       $chrome.addClass("modal-open");
       $chrome.css("top", offsetTop);
@@ -104,7 +101,6 @@ define(function(require) {
 
     // Keep track of whether modal is open or not
     $modal = $el;
-    modalIsOpen = true;
   };
 
   // Cleanup after modal animates out
@@ -120,6 +116,9 @@ define(function(require) {
     $chrome.removeClass("modal-open");
     $chrome.css("top", "");
     $document.scrollTop(scrollOffset);
+
+    // Get rid of reference to closed modal
+    $modal = null;
   };
 
   /**
@@ -149,9 +148,6 @@ define(function(require) {
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
     Events.publish("Modal:Close", $modal);
-
-    // Keep track of whether modal is open or not
-    modalIsOpen = false;
   };
 
   // Click handler for opening a new modal
