@@ -1,3 +1,8 @@
+.chrome {
+  width: 100%;
+}
+
+
 // Chrome navigation with logo, navigation, and search.
 //
 // .white     - Use white navigation text and search field (with subtle drop shadow).
@@ -283,6 +288,10 @@
 .chrome--wrapper {
   position: relative;
   width: 100%;
+  max-width: $max-width;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
 }
 
 // Chrome footer with social links & footer menus.
