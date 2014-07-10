@@ -5,65 +5,80 @@
 //
 // Styleguide 4.4.1 - Modal (Popup)
 
-.modal {
+.modal-container {
   display: none;
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  min-height: 100%;
+  background-image: url("assets/images/fallbacks/ie8-rgba-black-50.png");
   background: rgba(0, 0, 0, 0.5);
-  overflow: auto;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  z-index: 9998;
+  z-index: 9999;
 
-  .modal-content {
-    position: relative;
-    background: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: auto;
-    padding: 36px 27px;
-    margin: 0;
-    word-wrap: break-word;
-    z-index: 1050;
+  @include media($tablet) {
+    padding: 72px;
+  }
 
-    @include media($tablet) {
-      max-width: 600px;
-      min-height: 0;
-      margin: 90px auto;
-    }
+  &.animated-open {
+    @include animation(fadeIn 0.25s);
+  }
 
-    .modal-close-button {
-      @include close-parent;
-      color: #aaa;
-      top: 0;
+  &.animated-close {
+    @include animation(fadeOut 0.25s);
 
-      &.-alt {
-        font-size: 18px;
-        top: 18px;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    h2 {
-      padding: 9px 72px 9px 27px;
-
-      &.banner {
-        // fit this guy to edge of modal
-        margin: -36px -27px 18px;
-      }
-    }
-
-    // Ensure modal images do not break out of their
-    // parent containers on mobile
-    img {
-      width: 100%;
-      height: auto;
+    [data-modal] {
+      @include animation(moveDown 0.25s);
     }
   }
 }
 
-body.modal-open {
-  overflow: hidden;
+[data-modal] {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
+  width: auto;
+  padding: 36px 27px;
+  margin: 0;
+  word-wrap: break-word;
+  z-index: 1050;
+
+  @include media($tablet) {
+    max-width: 600px;
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .modal-close-button {
+    @include close-parent;
+    color: #aaa;
+    top: 0;
+
+    &.-alt {
+      font-size: 18px;
+      top: 18px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h2 {
+    padding: 9px 72px 9px 27px;
+
+    &.banner {
+      // fit this guy to edge of modal
+      margin: -36px -27px 18px;
+    }
+  }
+
+  // Ensure modal images do not break out of their
+  // parent containers on mobile
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.chrome.modal-open {
+  position: fixed;
 }

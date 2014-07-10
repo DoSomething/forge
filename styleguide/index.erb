@@ -193,19 +193,19 @@
       </nav>
     <% end %>
 
-    <h4 id="widgets">4.4 Widgets</h4>
+    <h4 id="modal">4.4 Modal</h4>
     <% styleguide_block '4.4.1 - Modal (Popup)' do %>
-    <a href="#modal--example" class="js-modal-link">Show example modal</a> or <a href="http://www.google.com" data-cached-modal="#modal--example" class="js-modal-link">alternative syntax</a>
+    <a href="http://www.example.com" data-modal-href="#modal--example" class="btn secondary">Show example modal</a>
 
-    <script type="text/cached-modal" id="modal--example" data-modal-close="true" data-modal-close-class="white">
+    <div data-modal id="modal--example" role="dialog">
       <h2 class="banner">Example Content</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#modal--pagetwo" class="js-modal-link">another modal</a>.</p>
-    </script>
-
-    <script type="text/cached-modal" id="modal--pagetwo" data-modal-close="skip" data-modal-skip-form="#skip-form">
-      <h2>Page 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+    </div>
+
+    <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
+      <h2 class="banner">Now fill out this form.</h2>
       <form action="#">
         <label for="name">Name</label>
         <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
@@ -217,12 +217,13 @@
           <input type="submit" class="btn">
         </div>
       </form>
+
       <form action="http://www.google.com" id="skip-form">
         <div class="form-actions">
           <input type="submit" value="Skip" class="btn tertiary">
         </div>
       </form>
-    </script>
+    </div>
   <% end %>
 
   <h4 id="cta">4.6 CTA</h4>
@@ -350,7 +351,7 @@
             <li><a href="#forms" class="js-scroll-indicator js-jump-scroll">Forms</a></li>
             <li><a href="#inline" class="js-scroll-indicator js-jump-scroll">Inline</a></li>
             <li><a href="#navigation" class="js-scroll-indicator js-jump-scroll">Navigation</a></li>
-            <li><a href="#widgets" class="js-scroll-indicator js-jump-scroll">Widgets</a></li>
+            <li><a href="#modal" class="js-scroll-indicator js-jump-scroll">Modal</a></li>
             <li><a href="#cta" class="js-scroll-indicator js-jump-scroll">CTA</a></li>
             <li><a href="#tile" class="js-scroll-indicator js-jump-scroll">Tile</a></li>
             <li><a href="#gallery" class="js-scroll-indicator js-jump-scroll">Gallery</a></li>
