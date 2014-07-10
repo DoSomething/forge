@@ -18,21 +18,20 @@ define(function(require) {
   var Modernizr = window.Modernizr;
   var Events = require("./events");
 
-  // We can only have one modal open at a time; we track that here.
-  var modalIsOpen = false;
-
-  // The site chrome
+  // Cache commonly used jQuery objects
+  var $document = $(document);
   var $chrome = $(".chrome");
-
-  // Container holding modals
   var $modalContainer = null;
-
-  // The currently open modal
-  var $modal = null;
 
   // UI elements:
   var $skipLink = $("<a href='#' class='js-close-modal js-modal-generated modal-close-button -alt'>skip</a>");
   var $closeLink = $("<a href='#' class='js-close-modal js-modal-generated modal-close-button'>&#215;</a>");
+
+  // The currently open modal
+  var $modal = null;
+
+  // We can only have one modal open at a time; we track that here.
+  var modalIsOpen = false;
 
   // Whether this modal can be closed by the user
   var closeable = false;
@@ -56,7 +55,7 @@ define(function(require) {
     options.skipForm = typeof options.skipForm !== "undefined" ? options.skipForm : $el.attr("data-modal-skip-form");
 
     // Read from DOM
-    var offsetTop = "-" + $(document).scrollTop() + "px";
+    var offsetTop = "-" + $document.scrollTop() + "px";
 
     // We add a "close" button programmatically
     // @param [data-modal-close=true]
@@ -97,7 +96,7 @@ define(function(require) {
     }
 
     // Make sure we're scrolled to the top of the modal.
-    $(document).scrollTop(0);
+    $document.scrollTop(0);
 
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
@@ -120,7 +119,7 @@ define(function(require) {
     // Remove overlay and reset scroll position
     $chrome.removeClass("modal-open");
     $chrome.css("top", "");
-    $(document).scrollTop(scrollOffset);
+    $document.scrollTop(scrollOffset);
   };
 
   /**
@@ -178,7 +177,7 @@ define(function(require) {
     }
   };
 
-  $(document).ready(function() {
+  $document.ready(function() {
     var $body = $("body");
 
     // Create container for modals
