@@ -24,5 +24,4 @@ build:
 # Determines whether a build passes or fails on GitHub.
 travis:
   - lint
-  - test
 
