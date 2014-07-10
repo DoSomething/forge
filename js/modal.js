@@ -50,7 +50,7 @@ define(function(require) {
    */
   var open = function($el, options) {
     options = options || {};
-    options.animated = typeof options.animated !== "undefined" ? options.animated : true;
+    options.animated = typeof options.animated === "boolean" ? options.animated : true;
     options.closeButton = typeof options.closeButton !== "undefined" ? options.closeButton : $el.attr("data-modal-close");
     options.skipForm = typeof options.skipForm !== "undefined" ? options.skipForm : $el.attr("data-modal-skip-form");
 
