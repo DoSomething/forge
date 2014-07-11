@@ -38,6 +38,30 @@ define(function(require) {
     return ($modal !== null);
   };
 
+  // Programmatically add close button to modal.
+  var _addCloseButton = function($el, type, skipForm) {
+    switch(type) {
+      case "skip":
+        // Add a skip button, which delegates to the submitting the form with the given ID
+        $el.prepend( $skipLink );
+        $skipLink.on("click", function(event) {
+          event.preventDefault();
+          $(skipForm).submit();
+        });
+        closeable = false;
+        break;
+
+      case "false":
+      case "0":
+        closeable = false;
+        break;
+
+      default:
+        $el.prepend($closeLink);
+        closeable = true;
+    }
+  };
+
   /**
    * Open a new modal
    * @param {jQuery}  $el                 Element that will be placed inside the modal.
@@ -54,28 +78,8 @@ define(function(require) {
     // Read from DOM
     var offsetTop = "-" + $document.scrollTop() + "px";
 
-    // We add a "close" button programmatically
-    // @param [data-modal-close=true]
-    switch (options.closeButton) {
-      case "skip":
-        // Add a skip button, which delegates to the submitting the form with the given ID
-        $el.prepend( $skipLink );
-        $skipLink.on("click", function(event) {
-          event.preventDefault();
-          $(options.skipForm).submit();
-        });
-        closeable = false;
-        break;
-
-      case "false":
-      case "0":
-        closeable = false;
-        break;
-
-      default:
-        $el.prepend($closeLink);
-        closeable = true;
-    }
+    // Add generated content
+    _addCloseButton($el, options.closeButton, options.skipForm);
 
     if(!isOpen()) {
       // Set up overlay and show modal
