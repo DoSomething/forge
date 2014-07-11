@@ -1,0 +1,84 @@
+// Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
+// #### Options:
+// - `[data-modal-close]`: set to "true" to include a close button on the modal, or "skip" to delegate a skip form action
+// - `[data-modal-skip-form]`: selector for a skip `form` element to submit upon clicking the "skip" link
+//
+// Styleguide 4.4.1 - Modal (Popup)
+
+.modal-container {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  min-height: 100%;
+  background-image: url("assets/images/fallbacks/ie8-rgba-black-50.png");
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+
+  @include media($tablet) {
+    padding: 72px;
+  }
+
+  &.animated-open {
+    @include animation(fadeIn 0.25s);
+  }
+
+  &.animated-close {
+    @include animation(fadeOut 0.25s);
+
+    [data-modal] {
+      @include animation(moveDown 0.25s);
+    }
+  }
+}
+
+[data-modal] {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
+  width: auto;
+  padding: 36px 27px;
+  margin: 0;
+  word-wrap: break-word;
+  z-index: 1050;
+
+  @include media($tablet) {
+    max-width: 600px;
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .modal-close-button {
+    @include close-parent;
+    color: #aaa;
+    top: 0;
+
+    &.-alt {
+      font-size: 18px;
+      top: 18px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  h2 {
+    padding: 9px 72px 9px 27px;
+
+    &.banner {
+      // fit this guy to edge of modal
+      margin: -36px -27px 18px;
+    }
+  }
+
+  // Ensure modal images do not break out of their
+  // parent containers on mobile
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.chrome.modal-open {
+  position: fixed;
+}

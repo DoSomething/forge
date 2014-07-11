@@ -1,13 +1,13 @@
 /**
  * @module neue/modal
- * Show/hide modals. Link should have `.js-modal-link` class, and
- * it's `href` should point to the hash of the modal. By convention, the
- * modal ID should be prefixed with `modal--` like so:
+ * Show/hide modals. To link to a modal, add a `data-modal-href` attribute
+ * pointing to the selector for the modal you want to show.
  *
  * @example
- * // <script type="text/cached-modal" id="modal--login">
+ * // <a href="http://www.example.com" data-modal-href="#modal--example">Click!</a>
+ * // <div data-modal id="modal--example" role="dialog">
  * //   <!-- content -->
- * // </script>
+ * // </div>
  *
  */
 
@@ -18,47 +18,48 @@ define(function(require) {
   var Modernizr = window.Modernizr;
   var Events = require("./events");
 
-  // We can only have one modal open at a time; we track that here.
-  var modalIsOpen = false;
+  // Cache commonly used jQuery objects
+  var $document = $(document);
+  var $chrome = $(".chrome");
+  var $modalContainer = null;
 
-  // The modal container (including background overlay).
+  // UI elements:
+  var $skipLink = $("<a href='#' class='js-close-modal js-modal-generated modal-close-button -alt'>skip</a>");
+  var $closeLink = $("<a href='#' class='js-close-modal js-modal-generated modal-close-button'>&#215;</a>");
+
+  // The currently open modal
   var $modal = null;
-
-  // The content of the modal.
-  var $modalContent = null;
-
-  // Reference to current modal source
-  var $reference = null;
 
   // Whether this modal can be closed by the user
   var closeable = false;
 
   // Return a boolean if modal is open or not
   var isOpen = function() {
-    return modalIsOpen;
+    return ($modal !== null);
   };
 
-  // Click handler for opening a new modal
-  var _openHandler = function(event) {
-    event.preventDefault();
-    var href = "";
+  // Programmatically add close button to modal.
+  var _addCloseButton = function($el, type, skipForm) {
+    switch(type) {
+      case "skip":
+        // Add a skip button, which delegates to the submitting the form with the given ID
+        $el.prepend( $skipLink );
+        $skipLink.on("click", function(event) {
+          event.preventDefault();
+          $(skipForm).submit();
+        });
+        closeable = false;
+        break;
 
-    if( $(this).data("cached-modal") ) {
-      // Preferred method: We load the modal specified in the `data-cached-modal` attribute.
-      // This allows `href` to act as a backup if JS is disabled. For example,
-      // `<a class="js-modal-link" data-cached-modal="#modal--faq" href="faq.html">Click</a>`
-      // would open a modal with the contents of `<div id="modal--faq"></div>`.
-      href = $($(this).data("cached-modal"));
-    } else if ( event.target.hash.charAt(0) === "#"  ) {
-      // We find the modal based on the ID in the link"s `href`. For example,
-      // `<a class="js-modal-link" href="#modal--faq">Click me</a>` would open
-      // `<div id="modal--faq"></div>`.
-      href = $(event.target.hash);
-    } else {
-      // @TODO: We should handle AJAX loading things in.
+      case "false":
+      case "0":
+        closeable = false;
+        break;
+
+      default:
+        $el.prepend($closeLink);
+        closeable = true;
     }
-
-    open(href);
   };
 
   /**
@@ -69,121 +70,101 @@ define(function(require) {
    * @param {boolean} [options.skipForm]          Override `data-modal-skip-form` attribute.
    */
   var open = function($el, options) {
-    // Default arguments
     options = options || {};
-    options.animated = typeof options.animated !== "undefined" ? options.animated : true;
+    options.animated = typeof options.animated === "boolean" ? options.animated : true;
     options.closeButton = typeof options.closeButton !== "undefined" ? options.closeButton : $el.attr("data-modal-close");
     options.skipForm = typeof options.skipForm !== "undefined" ? options.skipForm : $el.attr("data-modal-skip-form");
 
-    var id = $el.attr("id");
-    if(id) {
-      // Save ID of modal for future reference
-      $reference = "#" + id;
+    // Read from DOM
+    var offsetTop = "-" + $document.scrollTop() + "px";
 
-      // Set URL hash in the browser
-      window.location.hash = "#" + id;
-    } else {
-      $reference = "";
-    }
+    // Add generated content
+    _addCloseButton($el, options.closeButton, options.skipForm);
 
-    // If Google Analytics is set up, we fire an event to track that a
-    // modal has been opened.
-    if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-      _gaq.push(["_trackEvent", "Modal", "Open", $reference, null, true]);
-    }
-
-    if( !modalIsOpen ) {
-      // create modal in DOM
-      $modal = $("<div class=\"modal\"></div>");
-      $modalContent = $("<div></div>");
-      $modal.append($modalContent);
-      $modalContent.html( $el.html() );
-
-      // set up overlay and show modal
-      $("body").addClass("modal-open");
-      $("body").append($modal);
-
+    if(!isOpen()) {
+      // Set up overlay and show modal
+      $chrome.css("top", offsetTop);
+      $chrome.addClass("modal-open");
+      $modalContainer.css("display", "block");
       if(options.animated && Modernizr.cssanimations) {
-        $modal.addClass("fade-in");
-        $modalContent.addClass("fade-in-up");
+        $modalContainer.addClass("animated-open");
       }
-
-      // copy classes from modal source
-      $modalContent.removeClass();
-      $modalContent.addClass("modal-content");
-      $modalContent.addClass( $el.attr("class") );
-
-      $modal.show();
-
-      // Bind events to close Modal
-      $modal.on("click", ".js-close-modal", _closeHandler);
-      $modal.on("click", _closeHandler);
-
-      modalIsOpen = true;
-
-      //  **This fixes an issue with `position:fixed` and the virtual keyboard
-      //  on Mobile Safari.** Since this is a browser bug, we're forced to use
-      //  browser-detection here, and should look into removing this as soon
-      //  as this is fixed in the future. Yes, it is gross.
-      if(  /iPhone|iPad|iPod/i.test(window.navigator.userAgent) ) {
-        setTimeout(function () {
-          $modal.css({ "position": "absolute", "overflow": "visible", "height": $(document).height() + "px" });
-          $modalContent.css({ "margin-top": $(document).scrollTop() + "px" });
-        }, 0);
-      }
+      $el.css("display", "block");
     } else {
-      // modal is already open, so just replace current content
-      $modalContent.removeClass();
-      $modalContent.addClass("modal-content");
-      $modalContent.addClass( $el.attr("class") );
-      $modalContent.html( $($el).html() );
+      // Modal is already open, so just replace current content
+      $modal.hide();
+      $el.show();
     }
 
-    // We add a "close" button programmatically
-    // @param [data-modal-close=true]
-    switch (options.closeButton) {
-      case "skip":
-        // Add a skip button, which delegates to the submitting the form with the given ID
-        var $skipForm = $( options.skipForm );
-        var $skipLink = $("<a href='#' class='js-close-modal modal-close-button -alt'>skip</a>");
-        $modalContent.prepend( $skipLink );
-        $skipLink.on("click", function(event) {
-          event.preventDefault();
-          $skipForm.submit();
-        });
-        closeable = false; // cannot close modal by clicking background
-        break;
+    // Make sure we're scrolled to the top of the modal.
+    setTimeout(function() {
+      $document.scrollTop(0);
+    }, 50);
 
-      case "yes":
-      case "true":
-      case "1":
-        $modalContent.prepend("<a href='#' class='js-close-modal modal-close-button'>&#215;</a>");
-        closeable = true;
-        break;
-      default:
-        closeable = false;
+    // We provide an event that other modules can hook into to perform custom functionality when
+    // a modal opens (such as preparing things that are added to the DOM, etc.)
+    Events.publish("Modal:opened", $el);
+
+    // Keep track of whether modal is open or not
+    $modal = $el;
+  };
+
+  // Cleanup after modal animates out
+  var _cleanup = function(scrollOffset) {
+    $modalContainer.css("display", "none");
+    $modalContainer.removeClass("animated-close");
+    $modal.css("display", "none");
+
+    // Remove any generated content
+    $modal.find(".js-modal-generated").remove();
+
+    // Remove overlay and reset scroll position
+    $chrome.removeClass("modal-open");
+    $chrome.css("top", "");
+    $document.scrollTop(scrollOffset);
+
+    // Get rid of reference to closed modal
+    $modal = null;
+  };
+
+  /**
+   * Close the active modal.
+   * @param {boolean} [options.animated=true] Use animation for closing the modal.
+   */
+  var close = function(options) {
+    options = options || {};
+    options.animated = typeof options.animated !== "undefined" ? options.animated : true;
+
+    var scrollOffset = parseInt($chrome.css("top")) * -1;
+
+    if(options.animated && Modernizr.cssanimations) {
+      $modalContainer.addClass("animated-close");
+      $modalContainer.one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
+        _cleanup(scrollOffset);
+      });
+    } else {
+      _cleanup(scrollOffset);
     }
 
-    var closeClass = $el.attr("data-modal-close-class");
-    if(closeClass) {
-      $modalContent.find(".js-close-modal").addClass(closeClass);
+    // Remove URL hash for modal from browser
+    if(window.location.hash === "#" + $modal.attr("id")) {
+      window.location.hash = "/";
     }
 
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
-    Events.publish("Modal:opened", $modalContent);
-
-    // If Drupal has some messages on the screen, move them inside the modal
-    // @TODO: We need a better solution for this.
-    var $messages = $(".messages");
-    var $messagesClone = $modalContent.find(".js-messages-clone");
-    if($messagesClone && $messages.length ) {
-      $messagesClone.addClass("modal-messages");
-      $messagesClone.html( $messages[0].outerHTML );
-      $messagesClone.find(".js-close-message").remove();
-    }
+    Events.publish("Modal:Close", $modal);
   };
 
+  // Click handler for opening a new modal
+  var _openHandler = function(event) {
+    event.preventDefault();
+    var href = $(this).data("modal-href");
+
+    open($(href));
+  };
+
+  // Click handler for closing a modal
   var _closeHandler = function(event) {
     // Don't let the event bubble.
     if(event.target !== this) {
@@ -198,53 +179,29 @@ define(function(require) {
     }
   };
 
-  /**
-   * Close the active modal.
-   * @param {boolean} [animated=true] Use animation for closing the modal.
-   */
-  var close = function(animated) {
-    // Default arguments
-    animated = typeof animated !== "undefined" ? animated : true;
+  $document.ready(function() {
+    var $body = $("body");
 
-    // Remove URL hash for modal from browser
-    if(window.location.hash === $reference) {
-      window.location.hash = "/";
-    }
+    // Create container for modals
+    $modalContainer = $("<div class='modal-container'></div>");
+    $body.append($modalContainer);
 
-    // If Google Analytics is set up, we fire an event to track that a
-    // modal has been closed.
-    if(typeof(_gaq) !== "undefined" && _gaq !== null) {
-      _gaq.push(["_trackEvent", "Modal", "Close", $reference, null, true]);
-    }
+    // Prepare the DOM!
+    $("[data-modal]").each(function() {
+      $(this).appendTo($modalContainer);
+      $(this).attr("hidden", true);
+    });
 
-    if(animated && Modernizr.cssanimations) {
-      $modalContent.addClass("fade-out-down");
-      $modal.addClass("fade-out");
-
-      $("body").removeClass("modal-open");
-
-      $modal.one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
-        $modal.remove();
-        modalIsOpen = false;
-      });
-    } else {
-      $("body").removeClass("modal-open");
-      $modal.remove();
-      modalIsOpen = false;
-    }
-  };
-
-  $(document).ready(function() {
-    // Attach modal handler to `.js-modal-link` elements on click
-    $("body").on("click", ".js-modal-link", _openHandler);
-
-    //If there's a hash in the URL, let's check if its a modal and load it
+    //If there's a hash in the URL, check if it's a modal and load it
     var hash = window.location.hash;
-    if(hash && hash !== "#/" && $(hash) && $(hash).attr("type") === "text/cached-modal" ) {
-      open($(hash), false);
+    if(hash && hash !== "#/" && $(hash) && typeof $(hash).data("modal") !== "undefined") {
+      open($(hash));
     }
 
-    // Close modal events are bound on modal initialization.
+    // Bind events to open & close modal
+    $body.on("click", "[data-modal-href]", _openHandler);
+    $body.on("click", ".modal-container", _closeHandler);
+    $body.on("click", ".js-close-modal", _closeHandler);
   });
 
 
@@ -254,5 +211,4 @@ define(function(require) {
     open: open,
     close: close
   };
-
 });

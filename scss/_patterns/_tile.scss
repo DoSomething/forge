@@ -67,7 +67,7 @@
   .no-cssgradients & {
     > .wrapper {
       &:before {
-        background: transparent neue-image-url("black-gradient.png") 0 bottom repeat-x;
+        background: transparent url("assets/images/fallbacks/black-gradient.png") 0 bottom repeat-x;
       }
     }
   }
@@ -86,7 +86,7 @@
 
 
     .no-cssgradients & {
-      background: transparent neue-image-url("black-gradient.png") 0 bottom repeat-x;
+      background: transparent url("assets/images/fallbacks/black-gradient.png") 0 bottom repeat-x;
     }
   }
 
