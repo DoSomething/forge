@@ -12,15 +12,11 @@ html {
 
 body {
   width: 100%;
-  max-width: $max-width;
-  background: #fff;
   color: $copy-color;
   font-family: $font-proxima-nova;
   font-size: $font-regular;
   font-weight: $weight-normal;
   line-height: 1.4;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 // Various heading weights.
@@ -146,4 +142,9 @@ sup {
   top: -0.4em;
   font-size: 0.6em;
   padding: 0;
+}
+
+// Ensure hidden element is supported in older browsers
+[hidden] {
+  display: none;
 }

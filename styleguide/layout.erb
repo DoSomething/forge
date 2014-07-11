@@ -23,57 +23,60 @@
   <link rel="stylesheet" href="bower_components/highlightjs/styles/github.css" media="screen, projection" type="text/css">
   <link rel="stylesheet" href="styleguide/assets/kss.css">
 </head>
+
 <body>
-<div id="top" class="chrome--wrapper">
-  <nav class="chrome--nav white floating">
-    <a class="logo" href="http://www.dosomething.org"><img src="styleguide/assets/ds-logo.png" alt="DoSomething.org"></a>
-    <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
-    <div class="menu">
-      <ul class="primary-nav">
-        <li>
-          <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
-            <strong>Product Wiki</strong>
-            <span>Specs, mocks, etc.</span>
-          </a>
-        </li>
+<div class="chrome">
+  <div id="top" class="chrome--wrapper">
+    <nav class="chrome--nav white floating">
+      <a class="logo" href="http://www.dosomething.org"><img src="styleguide/assets/ds-logo.png" alt="DoSomething.org"></a>
+      <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
+      <div class="menu">
+        <ul class="primary-nav">
+          <li>
+            <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
+              <strong>Product Wiki</strong>
+              <span>Specs, mocks, etc.</span>
+            </a>
+          </li>
 
-        <li>
-          <a href="//brand.dosomething.org">
-            <strong>Brand Guide</strong>
-            <span>Style, Tone, and Voice</span>
-          </a>
-        </li>
+          <li>
+            <a href="//brand.dosomething.org">
+              <strong>Brand Guide</strong>
+              <span>Style, Tone, and Voice</span>
+            </a>
+          </li>
 
-        <li>
-          <a href="//neue.dosomething.org">
-            <strong>Pattern Library</strong>
-            <span>Interface framework</span>
-          </a>
-        </li>
-      </ul>
-
-      <div class="secondary-nav">
-        <ul>
-          <li><a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %></a></li>
+          <li>
+            <a href="//neue.dosomething.org">
+              <strong>Pattern Library</strong>
+              <span>Interface framework</span>
+            </a>
+          </li>
         </ul>
+
+        <div class="secondary-nav">
+          <ul>
+            <li><a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %></a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <header role="banner" class="-basic -styleguide">
-    <div class="wrapper">
-      <h1 class="__title">Pattern Library</h1>
-    </div>
-  </header>
+    <header role="banner" class="-basic -styleguide">
+      <div class="wrapper">
+        <h1 class="__title">Pattern Library</h1>
+      </div>
+    </header>
 
-  <main>
-    <%= yield %>
-  </main>
+    <main>
+      <%= yield %>
+    </main>
 
-  <footer class="styleguide--footer">
-    <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
-  </footer>
+    <footer class="styleguide--footer">
+      <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
+    </footer>
 
+  </div>
 </div>
 
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
