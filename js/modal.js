@@ -97,7 +97,9 @@ define(function(require) {
     }
 
     // Make sure we're scrolled to the top of the modal.
-    $document.scrollTop(0);
+    setTimeout(function() {
+      $document.scrollTop(0);
+    }, 50);
 
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
