@@ -79,13 +79,13 @@ define(function(require) {
 
     if(!isOpen()) {
       // Set up overlay and show modal
-      $chrome.addClass("modal-open");
       $chrome.css("top", offsetTop);
-      $el.css("display", "block");
+      $chrome.addClass("modal-open");
       $modalContainer.css("display", "block");
       if(options.animated && Modernizr.cssanimations) {
         $modalContainer.addClass("animated-open");
       }
+      $el.css("display", "block");
     } else {
       // Modal is already open, so just replace current content
       $modal.hide();
