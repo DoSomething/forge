@@ -103,7 +103,7 @@ define(function(require) {
 
     // We provide an event that other modules can hook into to perform custom functionality when
     // a modal opens (such as preparing things that are added to the DOM, etc.)
-    Events.publish("Modal:opened", $el);
+    Events.publish("Modal:Open", $el);
 
     // Keep track of whether modal is open or not
     $modal = $el;

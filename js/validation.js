@@ -311,10 +311,6 @@ define(function(require) {
   $(function() {
     // Prepare the labels on any `[data-validate]` fields in the DOM at load
     prepareFields( $("body").find("[data-validate]") );
-
-    Events.subscribe("Modal:opened", function(topic, args) {
-      prepareFields(args.find("[data-validate]"));
-    });
   });
 
   return {
