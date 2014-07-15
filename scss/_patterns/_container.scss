@@ -134,7 +134,8 @@
 
   // <p> tags following other items.
   p + p,
-  ul + p {
+  ul + p,
+  p + h3 {
     margin-top: 27px;
   }
 
