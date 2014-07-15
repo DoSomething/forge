@@ -77,7 +77,10 @@
     width: 100%;
   }
 
-  .tile--meta {
+  // Should be an element and not a modifier to the tile.
+  // Will remove tile--meta once the theme markup is updated, but adding both for now so it doesn't break things!
+  .tile--meta,
+  .tile__meta {
     bottom: 0;
     color: #fff;
     padding: 18px;
