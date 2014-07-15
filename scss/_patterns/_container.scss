@@ -208,6 +208,24 @@
   }
 }
 
+
+
+// Container Specific
+.container--tagline {
+  background-color: #111;
+
+  > .wrapper {
+    padding: 9px 18px;
+  }
+
+  .__tagline {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+
 // @TODO: temporary?
 .container--campaigns {
   .gallery.-mosaic {
@@ -240,22 +258,6 @@
 }
 
 
-// Page Specific Containers
-.campaign--pitch {
-  .container {
-    background-color: #111;
-
-    > .wrapper {
-      padding: 9px 18px;
-    }
-
-    .__tagline {
-      font-size: 16px;
-      margin: 0;
-      text-align: center;
-    }
-  }
-}
 
 
 // JS Enabled
