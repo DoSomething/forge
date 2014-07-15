@@ -96,11 +96,6 @@ input[type="search"] {
 // Styleguide 4.1.4 - Text Area Fields
 textarea {
   resize: vertical;
-  @include highlight-on-focus;
-
-  &.error {
-    border-color: $error;
-  }
 }
 
 // Button styles for both input and anchor buttons. Suitable for all-purpose use. Defaults
