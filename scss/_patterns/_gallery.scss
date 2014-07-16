@@ -28,6 +28,22 @@
       }
     }
 
+    &.-featured {
+      > li:first-child {
+        width: 100%;
+
+        @include media($tablet) {
+          width: 50%;
+        }
+      }
+
+      > li:nth-child(6) {
+        @include media($tablet) {
+          clear: both;
+        }
+      }
+    }
+
   }
 
 
