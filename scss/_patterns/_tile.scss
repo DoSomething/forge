@@ -46,7 +46,7 @@
   position: relative;
 
   > .wrapper {
-    background-color: #fff;
+    background-color: #000;
     height: 100%;
     left: 0;
     position: absolute;
@@ -60,6 +60,7 @@
       height: 100%;
       position: absolute;
       width: 100%;
+      z-index: 5;
       @include linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
     }
   }
@@ -75,6 +76,7 @@
   img {
     display: block;
     width: 100%;
+    z-index: 1;
   }
 
   // Should be an element and not a modifier to the tile.
@@ -86,7 +88,7 @@
     padding: 18px;
     position: absolute;
     width: 100%;
-
+    z-index: 10;
 
     .no-cssgradients & {
       background: transparent url("assets/images/fallbacks/black-gradient.png") 0 bottom repeat-x;
@@ -103,7 +105,7 @@
     position: absolute;
     text-transform: uppercase;
     top: 0;
-    z-index: 1;
+    z-index: 15;
 
     @include media($desktop) {
       font-size: 18px;
