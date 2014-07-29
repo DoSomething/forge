@@ -134,6 +134,7 @@
     .__subtitle {
       @include media($tablet) {
         margin-bottom: 9px;
+        width: 80%;
       }
     }
 
@@ -157,6 +158,7 @@
       @include media($tablet) {
         clear: left;
         float: left;
+        position: relative;
         width: 50%;
       }
 
