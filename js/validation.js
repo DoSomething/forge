@@ -279,8 +279,7 @@ define(function(require) {
           // If this is the first error in the form, scroll to it.
           if(!scrolledToError && result.success === false) {
             scrolledToError = true;
-            var $label = $("label[for='" + $field.attr("id") + "']");
-            $("html,body").animate({scrollTop: $label.offset().top - 16}, 200);
+            $("html,body").animate({scrollTop: $field.offset().top - 32}, 200);
           }
 
           // Once we're done validating all fields, check status of form
