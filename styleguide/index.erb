@@ -172,6 +172,24 @@
       <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
     <% end %>
 
+    <% styleguide_block '4.1.9 - Media Option Selector' do %>
+      <div class="media-options">
+        <div class="form-item form-type-radio selected">
+          <input type="radio" value="value1" name="item" id="option1" checked="checked">
+          <label for="option1">
+            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+          </label>
+        </div>
+
+        <div class="form-item form-type-radio">
+          <input type="radio" value="value2" name="item" id="option2">
+          <label for="option2">
+            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+          </label>
+        </div>
+      </div>
+    <% end %>
+
     <h4 id="inline">4.2 Inline</h4>
     <% styleguide_block  '4.2.1 - Legal Text' do %>
       <p class="legal">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
