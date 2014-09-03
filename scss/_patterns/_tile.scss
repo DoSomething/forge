@@ -131,7 +131,7 @@
 
     @include visually-hidden();
 
-    @include media($desktop) {
+    @include media($tablet) {
       @include visually-restored();
     }
 
