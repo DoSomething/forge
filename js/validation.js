@@ -248,10 +248,20 @@ define(function(require) {
    */
   $("body").on("submit", "form", function(event, isValidated) {
     var $form = $(this);
-    var $validationFields = $form.find("[data-validate]").filter("[data-validate-required]");
+    var $validationFields = $form.find("[data-validate]");
 
+    // Disable form submission to prevent double-clicks.
     disableFormSubmit($form);
 
+    // We want to validate all [data-validate] field that are either required, or have user input.
+    $validationFields = $validationFields.map(function() {
+      var $this = $(this);
+      if(typeof $this.attr("data-validate-required") !== "undefined" || $this.val() !== "") {
+        return $this;
+      }
+    });
+
+    // If no fields should be validated, submit!
     if($validationFields.length === 0) {
       return true;
     }
