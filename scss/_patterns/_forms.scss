@@ -150,6 +150,8 @@ textarea {
 
   // secondary appearance
   &.secondary {
+    color: #fff;
+    text-decoration: none;
     background: $dark-gray;
     font-weight: $weight-bold;
 
