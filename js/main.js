@@ -12,6 +12,7 @@ define(function(require) {
     Carousel: require("./carousel"),
     Events: require("./events"),
     JumpScroll: require("./jump-scroll"),
+    MediaSelector: require("./media-selector"),
     Menu: require("./menu"),
     Messages: require("./messages"),
     Modal: require("./modal"),
