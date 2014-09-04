@@ -153,6 +153,7 @@ textarea {
     color: #fff;
     text-decoration: none;
     background: $dark-gray;
+    font-size: $font-regular;
     font-weight: $weight-bold;
 
     &:hover {
@@ -168,6 +169,7 @@ textarea {
   &.tertiary {
     background: none;
     color: $dark-gray;
+    font-size: $font-regular;
     font-weight: $weight-normal;
     text-transform: none;
     text-decoration: underline;
