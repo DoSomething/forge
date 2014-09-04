@@ -128,7 +128,11 @@
     }
   }
 
-
+  // Three columned gallery.  Defaults using images with same dimensions.
+  //
+  // .-aligned - Tiles are with image flushed to top and minimum height to force content below to line up with adjacent tiles since image dimensions can vary.  Defaults to 75px tall.  This should be overriden when necessary.  
+  //
+  // Styleguide 4.8.2 - Triad
   &.-triad {
     > li {
       @include media($tablet) {
@@ -136,9 +140,76 @@
         @include omega(3n);
       }
     }
+
+    &.-aligned {
+      .tile--figure {
+
+        // Added wrapper to force minimum height so content below lines up on each <li>
+        // @TODO: update pattern in neue
+        .__media {
+          margin-bottom: 18px;
+          height: 75px;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            margin-bottom: 0;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // Two columned gallery with image in left column and content in right column.
+  //
+  // Styleguide 4.8.3 - Duo
+  &.-duo {
+    > li {
+      @include media($tablet) {
+        @include span-columns(6 of 12);
+        @include omega(2n);
+      }
+    }
+
+    .tile--figure {
+      @include clearfix();
+      text-align: left;
+
+      .__media {
+        @include span-columns(2);
+
+        img {
+          margin-left: 0;
+          margin-right: 0;
+          width: auto;
+        }
+      }
+
+      .__body {
+        @include span-columns(6);
+      }
+    }
   }
 
   .ie8 & {
+    &.-duo {
+      > li {
+        @include media($tablet) {
+          // Last-child not supported in IE8; using class as fallback.
+          &.-second {
+            margin-right: 0;
+            border: 1px solid #000;
+          }
+
+          // Nth-child not supported in IE8; using class as fallback.
+          &.-first {
+            clear: left;
+          }
+        }
+      }
+    }
+
     &.-triad {
       > li {
         @include media($tablet) {
