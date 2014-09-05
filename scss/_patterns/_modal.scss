@@ -62,13 +62,11 @@
     }
   }
 
-  h2 {
-    padding: 9px 72px 9px 27px;
-
-    &.banner {
-      // fit this guy to edge of modal
-      margin: -36px -27px 18px;
-    }
+  h2.banner {
+    // make space for "x" button & fit banner to edge of modal
+    padding-left: 27px;
+    padding-right: 72px;
+    margin: -36px -27px 18px;
   }
 
   // Ensure modal images do not break out of their
