@@ -54,12 +54,12 @@ label {
 // .medium        - Medium-sized input width (e.g. for phone numbers)
 //
 // Styleguide 4.1.2 - Text Input Fields
-input[type="text"], input[type="search"], input[type="password"] {
+#{$all-text-inputs}, textarea {
   width: 100%;
   font-family: $font-proxima-nova;
   font-size: 18px;
   border: 1px solid $light-gray;
-  border-radius: 5px;
+  border-radius: $lg-border-radius;
   padding: 0.5em 1em;
   margin: 0 0 0.5em;
   @include transition(border 0.5s);
@@ -92,13 +92,6 @@ input[type="search"] {
 //
 // Styleguide 4.1.4 - Text Area Fields
 textarea {
-  width: 100%;
-  font-family: $font-proxima-nova;
-  font-size: $font-regular;
-  border: 1px solid $light-gray;
-  border-radius: $lg-border-radius;
-  padding: 0.5em 1em 0.3em;
-  margin: 0 0 0.5em;
   resize: vertical;
   @include highlight-on-focus;
 
@@ -137,7 +130,7 @@ textarea {
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $lg-border-radius;
-  -webkit-appearance: none;
+  @include appearance(none);
   @include highlight-on-focus;
 
   &:hover {
@@ -157,22 +150,18 @@ textarea {
 
   // secondary appearance
   &.secondary {
-    background: $dark-gray;
-    font-weight: $weight-bold;
     color: #fff;
-    text-transform: uppercase;
     text-decoration: none;
-    border: 0;
+    background: $dark-gray;
+    font-size: $font-regular;
+    font-weight: $weight-bold;
 
     &:hover {
       background: lighten($off-black, $color-tint);
-      box-shadow: none;
     }
 
     &:active {
-      outline: 0;
       background: darken($off-black, $color-tint);
-      box-shadow: none;
     }
   }
 
@@ -180,7 +169,8 @@ textarea {
   &.tertiary {
     background: none;
     color: $dark-gray;
-    font-weight: 500;
+    font-size: $font-regular;
+    font-weight: $weight-normal;
     text-transform: none;
     text-decoration: underline;
     border: 0;
@@ -188,14 +178,11 @@ textarea {
     &:hover {
       color: $off-black;
       background-color: none;
-      box-shadow: none;
       text-decoration: underline;
     }
 
     &:active {
-      outline: 0;
       background-color: none;
-      box-shadow: none;
     }
   }
 
@@ -207,14 +194,11 @@ textarea {
 
     &:hover {
       background: $light-gray;
-      box-shadow: none;
     }
 
     &:active {
-      outline: 0;
       background: $light-gray;
-      color: lighten($light-gray, 10%);
-      box-shadow: none;
+      color: $light-gray;
     }
   }
 
@@ -233,6 +217,7 @@ textarea {
     }
 
     &:active {
+      background: $light-gray;
       color: $light-gray;
     }
 
@@ -269,7 +254,7 @@ select {
   font-size: 18px;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
-  @include highlight-on-focus;
+  @include highlight-on-focus();
 
   &.error {
     border-color: $error;
@@ -306,8 +291,7 @@ select {
 
 // Status message styles. These should be used to provide feedback to the user for
 // events that occur outside the normal application flow (such as form validation errors).
-//
-// ==Close button is added using JavaScript. See "system-messages.js".==
+// ==Close button is added using JavaScript. See `system-messages.js`.==
 //
 // .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
@@ -347,11 +331,8 @@ select {
 }
 
 
-// Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes
-//
-// ==Selected state is added using JavaScript. See "media-selector.js".==
-//
-//
+// Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
+// ==Selected state is added using JavaScript. See `media-selector.js`.==
 //
 // Styleguide 4.1.9 - Media Option Selector
 
