@@ -1,7 +1,7 @@
-define(function(require) {
+define(function() {
   "use strict";
 
-  var $ = require("jquery");
+  var $ = window.jQuery;
 
   /**
     * Creates an instance of MediaRadioSelector.
@@ -17,16 +17,16 @@ define(function(require) {
     var _this = this;
     opts = opts || {};
     _this.cfg = opts = {
-      fieldClassName: (typeof opts.fieldClassName === "string") ? opts.fieldClassName : "-media-options",
+      fieldClassName: (typeof opts.fieldClassName === "string") ? opts.fieldClassName : "media-options",
       fieldSelector: (typeof opts.fieldSelector === "string") ? opts.fieldSelector : ".form-type-radio",
-      optionSelector: (typeof opts.optionSelector === "string") ? opts.optionSelector : ".option"
+      optionSelector: (typeof opts.optionSelector === "string") ? opts.optionSelector : "label"
     };
     _this.$fieldGroup = $($fieldGroup).addClass(_this.cfg.fieldClassName);
     _this.$checked = [];
     _this.init();
   };
-  MediaRadioSelector.prototype = {
 
+  MediaRadioSelector.prototype = {
     /**
       * Adds event listeners to each field
     */
@@ -76,7 +76,7 @@ define(function(require) {
 
   $(function() {
     // Instantiate the media radio selectors
-    $(".form-radios.js-media-options").each(function () {
+    $(".js-media-options").each(function () {
       new MediaRadioSelector($(this));
     });
   });
