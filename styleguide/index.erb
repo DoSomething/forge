@@ -163,15 +163,31 @@
       </select>
     <% end %>
 
-    <% styleguide_block  '4.1.7 - Loading Spinner' do %>
+    <% styleguide_block  '4.1.7 - Option Fields' do %>
+      <h4>This thing</h4>
+      <input type="checkbox" id="option1">
+      <label class="option" for="option1">Choose that option.</label>
+
+      <input type="checkbox" id="option2">
+      <label class="option" for="option2">Choose this option.</label>
+
+      <h4>The other thing</h4>
+      <input type="radio" name="choice" id="choice1">
+      <label class="option" for="choice1">Choose one option.</label>
+
+      <input type="radio" name="choice" id="choice2">
+      <label class="option" for="choice2">Choose the other option.</label>
+    <% end %>
+
+    <% styleguide_block  '4.1.8 - Loading Spinner' do %>
       <div class="spinner"></div>
     <% end %>
 
-    <% styleguide_block '4.1.8 - Status Banners' do %>
+    <% styleguide_block '4.1.9 - Status Banners' do %>
       <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
     <% end %>
 
-    <% styleguide_block '4.1.9 - Media Option Selector' do %>
+    <% styleguide_block '4.1.10 - Media Option Selector' do %>
       <div class="js-media-options">
         <div class="form-item form-type-radio">
           <input type="radio" value="value1" name="item" id="option1" checked="checked">
