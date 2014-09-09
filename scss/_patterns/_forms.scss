@@ -261,9 +261,21 @@ select {
   }
 }
 
+// Checkboxes and radio boxes.
+//
+// Styleguide 4.1.7 - Option Fields
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+}
+
+label.option {
+  display: inline;
+}
+
+
 // Spinner to indicate loading content.
 //
-// Styleguide 4.1.7 - Loading Spinner
+// Styleguide 4.1.8 - Loading Spinner
 .spinner {
   height: 30px;
   width: 30px;
@@ -295,7 +307,7 @@ select {
 //
 // .error - Used to display errors. Be careful not to blame the user for a mistake.
 //
-// Styleguide 4.1.8 - Status Banners
+// Styleguide 4.1.9 - Status Banners
 
 .messages {
   position: relative;
@@ -334,7 +346,7 @@ select {
 // Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
 // ==Selected state is added using JavaScript. See `media-selector.js`.==
 //
-// Styleguide 4.1.9 - Media Option Selector
+// Styleguide 4.1.10 - Media Option Selector
 
 .media-options {
   @include clearfix();
