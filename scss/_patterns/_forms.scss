@@ -6,7 +6,7 @@
 //
 // Styleguide 4.1.1 - Form Labels
 label {
-  float: left;
+  display: block;
   clear: both;
   width: 100%;
   font-size: 16px;
@@ -99,7 +99,6 @@ textarea {
     border-color: $error;
   }
 }
-
 
 // Button styles for both input and anchor buttons. Suitable for all-purpose use. Defaults
 // to `.primary` class.
@@ -251,6 +250,7 @@ select {
   display: block;
   width: 100%;
   height: 41px;
+  margin: 0 0 0.5em;
   font-size: 18px;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
@@ -379,7 +379,7 @@ label.option {
       width: 100%;
 
       @include media($tablet) {
-        max-width: none;
+        max-width: 150px;
       }
 
       &:hover {
