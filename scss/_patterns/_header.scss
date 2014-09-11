@@ -30,7 +30,7 @@
 
   .no-cssgradients & {
     &:before {
-      background: transparent url("assets/images/fallbacks/black-gradient.png") 0 bottom repeat-x;
+      background: transparent neue-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
     }
   }
 
