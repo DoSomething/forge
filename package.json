@@ -25,6 +25,7 @@
     "grunt-contrib-qunit": "^0.3.0",
     "grunt-contrib-requirejs": "^0.4.3",
     "grunt-contrib-watch": "^0.5.3",
+    "grunt-modernizr": "^0.5.2",
     "grunt-sass": "^0.11.0",
     "grunt-scss-lint": "^0.1.11",
     "jshint-stylish": "^0.1.5",

@@ -20,6 +20,7 @@ build:
   - 'copy:assets'
   - 'sass:compile'
   - 'requirejs:compile'
+  - 'modernizr:dist'
 
 # Determines whether a build passes or fails on GitHub.
 travis:
