@@ -1,0 +1,42 @@
+//                 ____  _____    _   __
+//                / __ \/ ___/   / | / /__  __  _____
+//               / / / /\__ \   /  |/ / _ \/ / / / _ \
+//              / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+//             /_____//____/  /_/ |_/\___/\__,_/\___/
+//
+//  ======================== Buildfile ========================
+//
+//  This file builds `neue.css`. You can also use it as an
+//  example for including Neue in another app's build.
+//
+
+
+// We use Bourbon for base SCSS helpers.
+// http://bourbon.io/docs/
+@import "../bower_components/bourbon/dist/bourbon";
+
+// We have to include Neat's helper functions before we can set up
+// the grid, so let's do that now.
+@import "../bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+// We configure our grid settings before importing Bourbon Neat.
+@import "helpers/grid-settings.scss";
+
+// We use Bourbon Neat to build semantic grid layouts.
+// http://neat.bourbon.io/docs
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+// We set Neue settings here, such as configuring where Neue
+// assets should be loaded from:
+
+// This is the path where Neue's assets can be found. Be
+// sure to include the trailing slash!
+// ex: $neue-path: "bower_components/neue/assets/"
+$neue-path: "assets/";
+
+// The $asset-path variable can be used by your client-app
+// to simplify including asset URLs.
+$asset-path: "";
+
+// Now that we have everything in order, let's build Neue!
+@import "neue";
