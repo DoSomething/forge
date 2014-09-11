@@ -1,26 +1,3 @@
-// Utility class to make links fill their parent container. Also applies button hover
-// effects to buttons that are direct children of the parent container.
-//
-// Styleguide 4.5.1 - Full Container Link
-.full-link {
-  position: absolute;
-  background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"); // fixes link z-indexing in IE. yeah, really.
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-
-  span {
-    display: none;
-  }
-
-  &:hover ~ .full-link-delegate a {
-    text-decoration: underline;
-  }
-}
-
-
 // Helper class to hide only visually, but have it available for screenreaders.
 .visually-hidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 .visually-hidden.focusable:active, .visually-hidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }

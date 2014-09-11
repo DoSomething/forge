@@ -53,7 +53,7 @@
 
       // Arrow Up
       &:before {
-        background: url("assets/images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
+        background: neue-asset-url("images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
         height: 38px;
         right: -5px;
         top: -15px;
@@ -64,7 +64,7 @@
     &.-white {
       .__copy {
         &:before {
-          background-image: url("assets/images/callout/arrow-up-white.png");
+          background-image: neue-asset-url("images/callout/arrow-up-white.png");
         }
       }
     }
@@ -75,7 +75,7 @@
   &.-above {
     .__copy {
       &:before {
-        background: url("assets/images/callout/arrow-down-black.png") 50% 50% / 14px no-repeat transparent;
+        background: neue-asset-url("images/callout/arrow-down-black.png") 50% 50% / 14px no-repeat transparent;
         height: 50px;
         right: -20px;
         bottom: -15px;
@@ -86,7 +86,7 @@
     &.-white {
       .__copy {
         &:before {
-          background-image: url("assets/images/callout/arrow-down-white.png");
+          background-image: neue-asset-url("images/callout/arrow-down-white.png");
         }
       }
     }
@@ -103,7 +103,7 @@
       padding-left: 45px;
 
       &:before {
-        background: url("assets/images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
+        background: neue-asset-url("images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
         height: 19px;
         left: 0;
         margin-top: -9px;
@@ -116,7 +116,7 @@
     &.-white {
       .__copy {
         &:before {
-          background-image: url("assets/images/callout/arrow-left-white.png");
+          background-image: neue-asset-url("images/callout/arrow-left-white.png");
         }
       }
     }
@@ -137,7 +137,7 @@
         padding-left: 45px;
 
         &:before {
-          background: url("assets/images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
+          background: neue-asset-url("images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
           height: 19px;
           left: 0;
           margin-top: -9px;
@@ -152,7 +152,7 @@
       &.-white {
         .__copy {
           &:before {
-            background-image: url("assets/images/callout/arrow-left-white.png");
+            background-image: neue-asset-url("images/callout/arrow-left-white.png");
           }
         }
       }
