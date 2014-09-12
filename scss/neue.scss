@@ -6,17 +6,19 @@
 //
 //   =============== Base Styles/Pattern Library ===============
 //
-//   This is the build file for the Neue Pattern Library. It
+//   This is the main file for the Neue Pattern Library. It
 //   should include base layout and reusable patterns for the
 //   Neue deliverable.
 //
 //   Any app-specific styles should live in their respective
-//   project repo, and can import "imports.scss" for access to
+//   project repo, and can import "neue.scss" for access to
 //   Neue's variables and helpers.
 //
 
-// We'll start by importing our SCSS variables & helpers.
-@import "helpers";
+// We define some of our own variables and mixins to keep things DRY.
+@import "helpers/functions";
+@import "helpers/variables";
+@import "helpers/mixins";
 
 // CSS Reset
 @import "vendor/reset";

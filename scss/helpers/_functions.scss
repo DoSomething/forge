@@ -1,7 +1,13 @@
-$neue-path: "assets/images/";
+// @NOTE See `neue-build.scss` for $neue-path and $asset-path.
 
-// Helper to generate Neue URLs
-// @method neue-image-url
-@function neue-image-url($file) {
+// Helper to generate Neue URLs in client app stylesheets
+// @method neue-asset-url
+@function neue-asset-url($file) {
   @return url("#{$neue-path}#{$file}");
+}
+
+// Helper to generate URLs in client app stylesheets
+// @method asset-url
+@function asset-url($file) {
+  @return url(#{$asset-path}#{$file});
 }
