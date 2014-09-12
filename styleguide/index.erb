@@ -76,6 +76,7 @@
 
     <section class="styleguide-section">
       <h2 id="typography">Typography</h2>
+      <p>Content is the basis of our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
       <% styleguide_block  '1.1 - Headings' do %>
         <h1 class="$modifier_class"><span>Heading</span></h1>
         <p>Lorem ipsum dolor sit amet.</p>
@@ -115,7 +116,7 @@
     <section class="styleguide-section styleguide-doc-section">
       <h2 id="layout">Layout</h2>
       <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
-      <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 16-column grid. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation details. See <a href="https://github.com/DoSomething/neue/blob/dev/scss/globals/_grid-settings.scss"><code>_grid-settings.scss</code></a> for grid settings and breakpoints.</p>
+      <p>We use <a href="http://neat.bourbon.io">Bourbon Neat</a> to build our interface on a fluid 16-column grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. See the <a href="http://neat.bourbon.io/docs">documentation</a> for implementation details. See <a href="https://github.com/DoSomething/neue/blob/dev/scss/helpers/_grid-settings.scss"><code>_grid-settings.scss</code></a> for grid settings and breakpoints.</p>
     <% styleguide_block  '3.1 - Container' do %>
       <!-- this is a boring example... -->
       <div class="container">
@@ -128,6 +129,7 @@
 
   <section class="styleguide-section">
     <h2 id="patterns">Patterns</h2>
+    <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat.</p>
 
     <h4 id="forms">4.1 Forms</h4>
     <% styleguide_block  '4.1.1 - Form Labels' do %>
@@ -283,7 +285,7 @@
   <% end %>
 
   <h4 id="gallery">4.8 Gallery</h4>
-  <% styleguide_block  '4.8.1 - Mosaic' do %>
+  <% styleguide_block  '4.8.1 - Mosaic Gallery' do %>
     <ul class="gallery -mosaic">
       <li>
         <article class="tile tile--campaign">
@@ -328,7 +330,7 @@
     </ul>
   <% end %>
 
-  <% styleguide_block  '4.8.2 - Triad' do %>
+  <% styleguide_block  '4.8.2 - Triad Gallery' do %>
     <ul class="gallery -triad $modifier_class">
       <li class="-first">
         <div class="tile tile--figure">
@@ -371,7 +373,7 @@
     </ul>
   <% end %>
 
-  <% styleguide_block  '4.8.3 - Duo' do %>
+  <% styleguide_block  '4.8.3 - Duo Gallery' do %>
     <ul class="gallery -duo">
       <li class="-first">
         <div class="tile tile--figure">
@@ -446,8 +448,7 @@
 
   <section class="styleguide-section">
     <h2 id="animation">Animation</h2>
-    <p>We use animation to add a sense of playfulness and delight to our interface. Animation also has a functional aspect – helping to build a user's mental model of an interface by indicating</p>
-
+    <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
     <p>See <a href="https://github.com/DoSomething/neue/blob/dev/scss/_main/_animations.scss"><code>animation.scss</code></a> for details. Preview coming soon.</p>
   </section>
 
