@@ -1,5 +1,5 @@
 # Neue [![Build Status](http://img.shields.io/travis/DoSomething/neue/dev.svg?style=flat)](https://travis-ci.org/DoSomething/neue) 
-This is [Neue](https://neue.dosomething.org/), our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces. 
+This is [Neue](http://neue.dosomething.org/), our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces. 
 
 Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork this repository and use it as a starting point for your own website and style guide.
 
