@@ -41,6 +41,13 @@
     }
   }
 
+  // removes bottom padding on a gallery that is a direct child of the last .container
+  &:last-of-type {
+    > .gallery {
+      padding-bottom: 0;
+    }
+  }
+
   .-columned {
     @include media($tablet) {
       @include span-columns(6 of 12);
