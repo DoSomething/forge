@@ -59,7 +59,10 @@ label {
   font-family: $font-proxima-nova;
   font-size: 18px;
   border: 1px solid $light-gray;
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: $lg-border-radius;
+  background-clip: padding-box;
+  border-radius: 5px;
   padding: 0.5em 1em;
   margin: 0 0 0.5em;
   @include transition(border 0.5s);
@@ -93,11 +96,6 @@ input[type="search"] {
 // Styleguide 4.1.4 - Text Area Fields
 textarea {
   resize: vertical;
-  @include highlight-on-focus;
-
-  &.error {
-    border-color: $error;
-  }
 }
 
 // Button styles for both input and anchor buttons. Suitable for all-purpose use. Defaults
