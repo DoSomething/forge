@@ -311,9 +311,10 @@ label.option {
 .messages {
   position: relative;
   width: 100%;
+  max-width: $max-width;
   background: $purple;
   text-align: left;
-  margin: 0;
+  margin: 0 auto;
   padding: 18px 72px 18px 27px;
   @include rgba(color, #fff, 0.7);
 
