@@ -187,10 +187,10 @@ define(function(require) {
 
     // Set label height if it needs to be multiline.
     if(fieldMessageHeight > fieldLabelHeight) {
-      $fieldLabel.css('height', fieldMessageHeight + 'px');
+      $fieldLabel.css("height", fieldMessageHeight + "px");
     } else {
       // Clear previous multiline height if no longer needed.
-      $fieldLabel.css('height', '');
+      $fieldLabel.css("height", "");
     }
 
     // Animate in the validation message
@@ -211,7 +211,7 @@ define(function(require) {
     $field.on("focus", function() {
       $field.removeClass("warning error success shake");
       $fieldLabel.removeClass("show-message");
-      $fieldLabel.css('height', '');
+      $fieldLabel.css("height", "");
     });
 
     return result.success;
