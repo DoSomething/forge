@@ -14,6 +14,7 @@ label {
   margin: 1em 0 0.25em;
   height: 1.5em;
   overflow: hidden;
+  @include transition(height 0.5s);
 
   .inner-label {
     position: relative;
