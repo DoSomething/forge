@@ -89,11 +89,11 @@ label {
 input[type="search"] {
   padding-left: 32px;
   background: #fff no-repeat 12px 50%;
-  background-image: neue-url('assets/images/search');
+  background-image: neue-asset-url("images/search");
   background-size: 18px 18px;
 
   @include hidpi {
-    background-image: neue-url('assets/images/search@2x');
+    background-image: neue-asset-url("images/search@2x");
   }
 }
 
