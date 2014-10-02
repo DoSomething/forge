@@ -89,7 +89,12 @@ label {
 input[type="search"] {
   padding-left: 32px;
   background: #fff no-repeat 12px 50%;
-  @include retina-image('assets/images/search', 18px 18px)
+  background-image: neue-url('assets/images/search');
+  background-size: 18px 18px;
+
+  @include hidpi {
+    background-image: neue-url('assets/images/search@2x');
+  }
 }
 
 // Multi-line textarea fields.
