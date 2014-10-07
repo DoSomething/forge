@@ -230,13 +230,13 @@ textarea {
       color: $light-gray;
       color: transparent;
       background: #eee no-repeat center center;
-      background-image: neue-asset-url('images/spinner.svg');
+      background-image: neue-asset-url("images/spinner.svg");
       background-size: 32px;
     }
 
     .no-smil &, .no-smil &:hover, .no-smil &:active {
       // If no support for animated SVG, use 32px animated gif.
-      background-image: neue-asset-url('images/fallbacks/spinner.gif');
+      background-image: neue-asset-url("images/fallbacks/spinner.gif");
     }
 
     .no-rgba &, .no-rgba &:hover, .no-rgba &:active {
