@@ -228,6 +228,7 @@ define(function(require) {
 
     // Disable that guy
     $submitButton.attr("disabled", true);
+    $submitButton.addClass("loading");
 
     // If <button>, add a loading style
     if($submitButton.prop("tagName") === "BUTTON") {
