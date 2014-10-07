@@ -18,6 +18,9 @@ define(function(require) {
   var Modernizr = window.Modernizr;
   var Events = require("./events");
 
+  var modalReady = false;
+  var queuedModal = null; // Modals queued to be shown on document.ready
+
   // Cache commonly used jQuery objects
   var $document = $(document);
   var $chrome = $(".chrome");
@@ -77,6 +80,12 @@ define(function(require) {
 
     if($el.length === 0) {
       // If modal does not exist, don't try to open it.
+      return false;
+    }
+
+    // If modal markup isn't initialized, save and display once it is.
+    if(!modalReady) {
+      queuedModal = {'$el': $el, 'options': options};
       return false;
     }
 
@@ -201,6 +210,11 @@ define(function(require) {
     var hash = window.location.hash;
     if(hash && hash !== "#/" && $(hash) && typeof $(hash).data("modal") !== "undefined") {
       open($(hash));
+    }
+
+    modalReady = true;
+    if(queuedModal !== null) {
+      open(queuedModal.$el, queuedModal.options);
     }
 
     // Bind events to open & close modal
