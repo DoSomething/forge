@@ -64,7 +64,7 @@ define(function(require) {
 
   /**
    * Open a new modal
-   * @param {jQuery}  $el                 Element that will be placed inside the modal.
+   * @param {jQuery}  $el                         Element that will be placed inside the modal.
    * @param {boolean} [options.animated=true]     Use animation for opening the modal.
    * @param {boolean} [options.closeButton]       Override `data-modal-close` attribute.
    * @param {boolean} [options.skipForm]          Override `data-modal-skip-form` attribute.
