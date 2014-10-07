@@ -75,6 +75,11 @@ define(function(require) {
     options.closeButton = typeof options.closeButton !== "undefined" ? options.closeButton : $el.attr("data-modal-close");
     options.skipForm = typeof options.skipForm !== "undefined" ? options.skipForm : $el.attr("data-modal-skip-form");
 
+    if($el.length === 0) {
+      // If modal does not exist, don't try to open it.
+      return false;
+    }
+
     // Read from DOM
     var offsetTop = "-" + $document.scrollTop() + "px";
 
