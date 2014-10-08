@@ -3,6 +3,13 @@ bower_components/
 node_modules
 npm-debug.log
 
+# Ignore resource files
+resources/
+
+# Ignore styleguide content
+styleguide/
+dist/styleguide.css
+
 # Vim stuff
 *.swp
 

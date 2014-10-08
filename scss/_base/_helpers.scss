@@ -1,0 +1,35 @@
+// Helper class to hide only visually, but have it available for screenreaders.
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visually-hidden.focusable:active, .visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+// Helper class to clearfix and contain floats.
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+// Ensure hidden element is supported in older browsers
+[hidden] {
+  display: none;
+}
