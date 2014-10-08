@@ -6,11 +6,6 @@
   @include media($tablet) {
     @include span-columns(3);
     @include omega;
-
-    nav.is-stuck {
-      position: fixed;
-      top: 0;
-    }
   }
 }
 
