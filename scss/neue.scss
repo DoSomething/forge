@@ -7,8 +7,8 @@
 //   =============== Base Styles/Pattern Library ===============
 //
 //   This is the main file for the Neue Pattern Library. It
-//   should include base layout and reusable patterns for the
-//   Neue deliverable.
+//   should include base styles and reusable patterns for use
+//   across all DoSomething.org web applications.
 //
 //   Any app-specific styles should live in their respective
 //   project repo, and can import "neue.scss" for access to
@@ -16,38 +16,46 @@
 //
 
 // We define some of our own variables and mixins to keep things DRY.
-@import "helpers/functions";
-@import "helpers/variables";
-@import "helpers/mixins";
+@import "_utilities/functions";
+@import "_utilities/variables";
+@import "_utilities/mixins";
 
-// CSS Reset
-@import "vendor/reset";
+// Base
+@import "_base/reset";
+@import "_base/fonts";
+@import "_base/typography";
+@import "_base/animations";
+@import "_base/helpers";
 
-// Basic interface and layout building blocks
-@import "_main/fonts";
-@import "_main/base";
-@import "_main/chrome";
-@import "_main/layout";
-@import "_main/animations";
+// Components -
+@import "_components/forms";
+@import "_components/images";
+@import "_components/legal";
+@import "_components/media-options";
+@import "_components/message-box";
+@import "_components/message-callout";
+@import "_components/messages";
+@import "_components/pin-to-top";
+@import "_components/polaroid";
+@import "_components/pullquote";
+@import "_components/spinner";
+@import "_components/tabs";
+@import "_components/tile";
+@import "_components/video";
 
-// Interface patterns
-@import "_patterns/container";
-@import "_patterns/forms";
-@import "_patterns/video";
-@import "_patterns/inline";
-@import "_patterns/helpers";
-@import "_patterns/navigation";
-@import "_patterns/header";
-@import "_patterns/sponsor";
-@import "_patterns/cta";
-@import "_patterns/info-bar";
-@import "_patterns/tile";
-@import "_patterns/gallery";
-@import "_patterns/message-box";
-@import "_patterns/message-callout";
-@import "_patterns/images";
-@import "_patterns/modal";
-@import "_patterns/carousel";
+// Modules -
+@import "_modules/carousel";
+@import "_modules/cta";
+@import "_modules/gallery";
+@import "_modules/info-bar";
+@import "_modules/sponsor";
 
-// Supporting styles for JS features
-@import "_js/pin-to-top";
+// Regions -
+@import "_regions/chrome";
+@import "_regions/container";
+@import "_regions/footer";
+@import "_regions/header";
+@import "_regions/modal";
+@import "_regions/navigation";
+
+// *Mic drop.
