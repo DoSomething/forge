@@ -85,7 +85,7 @@ define(function(require) {
 
     // If modal markup isn't initialized, save and display once it is.
     if(!modalReady) {
-      queuedModal = {'$el': $el, 'options': options};
+      queuedModal = {"$el": $el, "options": options};
       return false;
     }
 
