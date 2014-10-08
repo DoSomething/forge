@@ -18,22 +18,29 @@
 @import "_utilities/variables";
 @import "_utilities/mixins";
 
-.sidebar {
+.styleguide-sidebar {
   margin-top: 9px; // keep top of sidebar inline with body text
   margin-bottom: 54px;
 
   @include media($tablet) {
-    @include span-columns(3);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    max-height: 100vh;
+
+    @include span-columns(4);
     @include omega;
   }
 }
 
-.sidebar-content {
+.styleguide-content {
   margin: 0 18px 54px;
 
   @include media($tablet) {
     @include shift(2);
-    @include span-columns(10);
+    @include span-columns(9);
   }
 }
 
@@ -167,7 +174,7 @@ ul.styleguide-modifier li {
 
 .font-tile {
   font-size: 27px;
-  margin: 18px;
+  margin: 18px 0;
   padding: 18px;
   border-radius: 2px;
   text-align: center;
@@ -197,19 +204,21 @@ ul.styleguide-modifier li {
 }
 
 .color-tile {
-  float: left;
-  width: 45%;
-  margin: 0 2.5% 5%;
   background: #eee;
   color: #fff;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
   padding: 2em 1em;
   border-radius: 2px;
-  box-sizing: border-box;
-}
 
-.color-tile code {
-  color: rgba(255, 255, 255, 0.7);
+  @include span-columns(5 of 10);
+
+  &:nth-of-type(2n) {
+    @include omega;
+  }
+
+  & code {
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 .js-color-label {
@@ -272,3 +281,5 @@ header[role="banner"].-styleguide {
 .intro-neue {
   font-weight: 400;
 }
+
+

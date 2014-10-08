@@ -3,7 +3,7 @@
 //
 // .vertical - Vertical tab layout (for use in a sidebar).
 //
-// Styleguide 4.3.1 - Tabs
+// Styleguide Tabbed Navigation
 .tabs {
   padding: 54px 0;
   font-size: 20px;
@@ -31,7 +31,6 @@
 
     &.active, &.is-active {
       color: #000;
-      font-weight: $weight-bold;
     }
   }
 
