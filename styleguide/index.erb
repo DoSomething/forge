@@ -80,7 +80,7 @@
     </div>
 
     <div class="styleguide-section">
-      <p class="kss-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
+      <p class="legal"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
     </div>
 
     <h3 id="typography">Typography</h3>
@@ -285,7 +285,24 @@
 
     <h2 id="modules">Modules</h2>
 
-    <!-- carousel -->
+    <h4 id="carousel">Carousel</h4>
+    <% styleguide_block 'Carousel' do %>
+      <aside class="carousel-wrapper gallery -columned">
+        <div id="prev" class="prev-wrapper">
+          <div class="prev-button"><span class="arrow"></span></div>
+        </div>
+
+        <div class="slide-wrapper">
+          <figure id="slide0" class="slide"><img src="http://placekitten.com/g/400/300"></figure>
+          <figure id="slide1" class="slide"><img src="http://placehold.it/400x300/23b7fb"></figure>
+          <figure id="slide2" class="slide"><img src="http://placehold.it/400x300/4e2b63"></figure>
+        </div>
+
+        <div id="next" class="next-wrapper">
+          <div class="next-button"><span class="arrow"></span></div>
+        </div>
+      </aside>
+    <% end %>
 
     <h4 id="cta">Call To Action</h4>
     <% styleguide_block 'Call To Action' do %>
@@ -296,8 +313,6 @@
         </div>
       </div>
     <% end %>
-
-    <!-- message box -->
 
     <h4 id="gallery">Gallery</h4>
     <% styleguide_block  'Gallery - Mosaic' do %>
@@ -431,13 +446,37 @@
       </ul>
     <% end %>
 
-    <!-- info bar -->
+    <h4 id="info-bar">Info Bar</h4>
+    <% styleguide_block 'Information Bar' do %>
+      <footer class="info-bar">
+        <div class="wrapper">
+          Sponsored by <a href="#">Puppet Sloth</a>.
+          <div class="help">
+            Questions? <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </footer>
+    <% end %>
 
-    <!-- sponsor -->
+    <h4 id="message-box">Message Box</h4>
+    <% styleguide_block 'Message Box Container' do %>
+      <div class="message-box">
+        <h3 class="__title">Man, kittens sure are the greatest.</h3>
+        <p>They are cute creatures. Good job kittens. Keep being cute. Lorem ipsum dolor sit amet, consequeter.</p>
+      </div>
+    <% end %>
+
+    <h4 id="sponsor">Sponsor</h4>
+    <% styleguide_block 'Sponsor' do %>
+      <!-- coming soon... -->
+    <% end %>
 
     <h2 id="regions">Regions</h2>
 
-    <!-- chrome -->
+    <h4 id="chrome">Chrome</h4>
+    <% styleguide_block  'Site Chrome' do %>
+      <!-- see page source -->
+    <% end %>
 
     <h4 id="container">Container</h4>
     <% styleguide_block  'Container' do %>
@@ -450,8 +489,66 @@
     <% end %>
 
     <!-- footer -->
+    <h4 id="footer">Footer</h4>
+    <% styleguide_block  'Site Footer' do %>
+      <footer class="chrome--footer">
+        <div class="social tablet">
+          <ul>
+            <li><a href="#" class="social-link"></a></li>
+            <li><a href="#" class="social-link"></a></li>
+            <li><a href="#" class="social-link"></a></li>
+            <li><a href="#" class="social-link"></a></li>
+            <li><a href="#" class="social-link"></a></li>
+          </ul>
+        </div>
 
-    <!-- header -->
+        <div class="col help js-footer-col is-collapsed">
+          <h4>Who We Are</h4>
+          <ul>
+            <li><a href="#">What is this?</a></li>
+            <li><a href="#">Who are they?</a></li>
+            <li><a href="#">Why are we?</a></li>
+          </ul>
+        </div>
+
+        <div class="col knowus js-footer-col is-collapsed">
+          <h4>Our Friends</h4>
+          <ul>
+            <li><a href="#">Freshman</a></li>
+            <li><a href="#">ROTC Guys</a></li>
+            <li><a href="#">Preps</a></li>
+            <li><a href="#">Varsity Jocks</a></li>
+            <li><a href="#">Unfriendly Black Hotties</a></li>
+            <li><a href="#">The greatest people you will ever meet</a></li>
+          </ul>
+        </div>
+
+        <div class="col about js-footer-col is-collapsed">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="#">Do things</a></li>
+            <li><a href="#">Do other things</a></li>
+          </ul>
+        </div>
+
+        <div class="subfooter">
+          <ul class="utility">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </footer>
+    <% end %>
+
+    <h4 id="header">Header</h4>
+    <% styleguide_block  'Header' do %>
+      <header role="banner" class="$modifier_class">
+        <div class="wrapper">
+          <h1 class="__title">Title</h1>
+          <p class="__subtitle">Subtitle.</p>
+        </div>
+      </header>
+    <% end %>
 
     <h4 id="modal">Modal</h4>
     <% styleguide_block 'Modal (Popup)' do %>
@@ -487,6 +584,30 @@
   <% end %>
 
     <!-- navigation -->
+    <h4 id="navigation">Navigation</h4>
+    <% styleguide_block  'Site Navigation' do %>
+      <nav class="chrome--nav $modifier_class">
+        <a class="logo" href="http://www.dosomething.org"><img src="dist/assets/images/ds-logo.png" alt="DoSomething.org"></a>
+        <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
+        <div class="menu">
+          <ul class="primary-nav">
+            <li>
+              <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
+                <strong>Explore Patterns</strong>
+                <span>Lorem ipsum dolor sit.</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="//brand.dosomething.org">
+                <strong>About Us</strong>
+                <span>Eat some souploaf.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <% end %>
 
   </section>
 
@@ -508,64 +629,64 @@
 </article>
 
 <div class="styleguide-sidebar">
-  <nav class="tabs vertical">
+  <nav class="tabs vertical js-scroll-indicator">
     <ul>
-      <li><a href="#intro" class="js-scroll-indicator js-jump-scroll">Introduction</a></li>
+      <li><a href="#intro" class="js-jump-scroll">Introduction</a></li>
 
       <li>
-      <a href="#base" class="js-scroll-indicator js-jump-scroll">Base Styles</a>
+      <a href="#base" class="js-jump-scroll">Base Styles</a>
       <ul>
-        <li><a href="#fonts-and-colors" class="js-scroll-indicator js-jump-scroll">Fonts &amp; Colors</a></li>
-        <li><a href="#typography" class="js-scroll-indicator js-jump-scroll">Typography</a></li>
-        <li><a href="#layout" class="js-scroll-indicator js-jump-scroll">Layout</a></li>
-        <li><a href="#animation" class="js-scroll-indicator js-jump-scroll">Animation</a></li>
+        <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
+        <li><a href="#typography" class="js-jump-scroll">Typography</a></li>
+        <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
+        <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
       </ul>
       </li>
 
       <li>
-      <a href="#components" class="js-scroll-indicator js-jump-scroll">Components</a>
+      <a href="#components" class="js-jump-scroll">Components</a>
       <ul>
-        <li><a href="#forms" class="js-scroll-indicator js-jump-scroll">Forms</a></li>
-        <li><a href="#images" class="js-scroll-indicator js-jump-scroll">Images</a></li>
-        <li><a href="#legal" class="js-scroll-indicator js-jump-scroll">Legal</a></li>
-        <li><a href="#media-select" class="js-scroll-indicator js-jump-scroll">Media Selector</a></li>
-        <li><a href="#message-callout" class="js-scroll-indicator js-jump-scroll">Message Callout</a></li>
-        <li><a href="#messages" class="js-scroll-indicator js-jump-scroll">Status Banner</a></li>
-        <li><a href="#polaroid" class="js-scroll-indicator js-jump-scroll">Polaroid</a></li>
-        <li><a href="#pullquotes" class="js-scroll-indicator js-jump-scroll">Pullquote</a></li>
-        <li><a href="#spinner" class="js-scroll-indicator js-jump-scroll">Spinner</a></li>
-        <li><a href="#tabs" class="js-scroll-indicator js-jump-scroll">Tabs</a></li>
-        <li><a href="#tile" class="js-scroll-indicator js-jump-scroll">Tile</a></li>
-        <li><a href="#video" class="js-scroll-indicator js-jump-scroll">Video</a></li>
+        <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+        <li><a href="#images" class="js-jump-scroll">Images</a></li>
+        <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
+        <li><a href="#media-select" class="js-jump-scroll">Media Selector</a></li>
+        <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
+        <li><a href="#messages" class="js-jump-scroll">Status Banner</a></li>
+        <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
+        <li><a href="#pullquotes" class="js-jump-scroll">Pullquote</a></li>
+        <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
+        <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
+        <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
+        <li><a href="#video" class="js-jump-scroll">Video</a></li>
       </ul>
       </li>
 
       <li>
-      <a href="#modules" class="js-scroll-indicator js-jump-scroll">Modules</a>
+      <a href="#modules" class="js-jump-scroll">Modules</a>
       <ul>
-        <li><a href="#carousel" class="js-scroll-indicator js-jump-scroll">Carousel</a></li>
-        <li><a href="#cta" class="js-scroll-indicator js-jump-scroll">Call To Action</a></li>
-        <li><a href="#gallery" class="js-scroll-indicator js-jump-scroll">Gallery</a></li>
-        <li><a href="#info-bar" class="js-scroll-indicator js-jump-scroll">Info Bar</a></li>
-        <li><a href="#message-box" class="js-scroll-indicator js-jump-scroll">Message Box</a></li>
-        <li><a href="#sponsor" class="js-scroll-indicator js-jump-scroll">Sponsor</a></li>
+        <li><a href="#carousel" class="js-jump-scroll">Carousel</a></li>
+        <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
+        <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
+        <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
+        <li><a href="#message-box" class="js-jump-scroll">Message Box</a></li>
+        <li><a href="#sponsor" class="js-jump-scroll">Sponsor</a></li>
       </ul>
       </li>
 
       <li>
-      <a href="#regions" class="js-scroll-indicator js-jump-scroll">Regions</a>
+      <a href="#regions" class="js-jump-scroll">Regions</a>
       <ul>
-        <li><a href="#chrome" class="js-scroll-indicator js-jump-scroll">Chrome</a></li>
-        <li><a href="#container" class="js-scroll-indicator js-jump-scroll">Container</a></li>
-        <li><a href="#footer" class="js-scroll-indicator js-jump-scroll">Footer</a></li>
-        <li><a href="#header" class="js-scroll-indicator js-jump-scroll">Header</a></li>
-        <li><a href="#message-box" class="js-scroll-indicator js-jump-scroll">Modal</a></li>
-        <li><a href="#navigation" class="js-scroll-indicator js-jump-scroll">Navigation</a></li>
+        <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
+        <li><a href="#container" class="js-jump-scroll">Container</a></li>
+        <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
+        <li><a href="#header" class="js-jump-scroll">Header</a></li>
+        <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
+        <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
       </ul>
       </li>
 
-      <li><a href="#interaction" class="js-scroll-indicator js-jump-scroll">Interaction</a></li>
-      <li><a href="#resources" class="js-scroll-indicator js-jump-scroll">Resources</a></li>
+      <li><a href="#interaction" class="js-jump-scroll">Interaction</a></li>
+      <li><a href="#resources" class="js-jump-scroll">Resources</a></li>
     </ul>
   </nav>
 </div>

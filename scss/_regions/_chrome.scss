@@ -1,11 +1,14 @@
-// Entire page wrapper. Used to lock page in place while modals are open.
+// The entire page should be wrapped in `.chrome` to lock page in
+// place while modals are open. The page content should be wrapped
+// in a `.chrome--wrapper` to set max-width and apply background
+// box shadow to the page.
+//
+// Styleguide Site Chrome
 .chrome {
   width: 100%;
 }
 
 // Main content wrapper.
-//
-// No styleguide reference.
 .chrome--wrapper {
   position: relative;
   width: 100%;
