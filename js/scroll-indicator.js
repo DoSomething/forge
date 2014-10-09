@@ -9,16 +9,67 @@ define(function() {
   "use strict";
 
   var $ = window.jQuery;
-
   var links = [];
 
-  // Prepare all `.js-scroll-indicator` links on the page.
-  function preparePage() {
-    links = [];
+  /**
+   * @see _.throttle
+   */
+  var throttle = function(func, wait, options) {
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
 
-    $(".js-scroll-indicator").each(function(index, link) {
-      prepareIndicator( $(link) );
-    });
+    options || (options = {});
+
+    var later = function() {
+      previous = new Date();
+      timeout = null;
+      result = func.apply(context, args);
+    };
+
+    return function() {
+      var now = new Date();
+      if (!previous && options.leading === false) previous = now;
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+
+      if (remaining <= 0) {
+        clearTimeout(timeout);
+        timeout = null;
+        previous = now;
+        result = func.apply(context, args);
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining);
+      }
+
+      return result;
+    };
+  };
+
+  /**
+   * @see _.sortedIndex
+   */
+  function sortedIndex(array, value, key) {
+    var low = 0,
+    high = array ? array.length : low;
+
+    while (low < high) {
+      var mid = (low + high) >>> 1; // jshint ignore:line
+      (array[mid][key] < value) ? low = mid + 1 : high = mid;
+    }
+
+    return low ? low - 1 : low;
+  }
+
+  /**
+   * Modified binary search. Finds target key, or next lowest if
+   * it doesn't exist.
+   * @see _.binarySearch
+   */
+  function binarySearch(array, value) {
+    var index = sortedIndex(array, value, "offset");
+    return array[index];
   }
 
   // Registers links and their targets with scroll handler
@@ -26,42 +77,49 @@ define(function() {
     // Calculate the element's offset from the top of the page while anchored
     var $linkTarget = $( $link.attr("href") );
     if( $linkTarget.length ) {
-      var linkTargetOffset = $linkTarget.offset().top;
-
-      // Create the data structure that we'll store this stuff in
-      var linkObj = {
-        $el: $link,
-        targetOffset: linkTargetOffset
-      };
-
-      // Add jQuery object and offset value to links array
-      links.push(linkObj);
+      // Add jQuery object and offset value to link map
+      links.push({ offset: $linkTarget.offset().top, link: $link });
     }
-
-    // Now that we're ready, let's calculate how stickies should be displayed
-    updateScrollIndicators();
   }
 
+  // Prepare all `.js-scroll-indicator` links on the page.
+  function preparePage() {
+    links = [];
+
+    $(".js-scroll-indicator").find("a").each(function(index, link) {
+      prepareIndicator( $(link) );
+    });
+  }
+
+  var oldIndicator;
   // Scroll handler: highlights the furthest link the user has passed
   function updateScrollIndicators() {
-    $.each(links, function(index, link) {
-      // In reverse order (moving up the nav from the bottom), check whether
-      // we've scrolled past the link's target. If so, set active and stop.
-      var windowOffset = $(window).scrollTop() + link.$el.height();
-      if (windowOffset > link.targetOffset) {
-        $(".js-scroll-indicator").removeClass("is-active");
-        link.$el.addClass("is-active");
-        return;
-      }
-    });
+    var newIndicator = binarySearch(links, $(window).scrollTop());
+    var newIndicatorParents = newIndicator.link.parentsUntil(".js-scroll-indicator");
+    var oldIndicatorParents = $();
+
+    if(oldIndicator && oldIndicator !== newIndicator) {
+      oldIndicator.link.removeClass("is-active");
+      oldIndicatorParents = oldIndicator.link.parentsUntil(".js-scroll-indicator");
+    }
+
+    newIndicator.link.addClass("is-active");
+    newIndicatorParents.addClass("is-active");
+    oldIndicatorParents.not(newIndicatorParents).removeClass("is-active");
+
+    oldIndicator = newIndicator;
+    console.log("WHAWHAWHA");
   }
 
   // Attach our functions to their respective events.
   $(function() {
     preparePage();
 
-    $(window).on("scroll", updateScrollIndicators);
+    var throttledScroll = throttle(updateScrollIndicators, 60);
+
+    $(window).on("scroll", throttledScroll);
     $(window).on("resize", preparePage);
   });
 
 });
+
