@@ -201,25 +201,6 @@
       <p class="legal">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
     <% end %>
 
-    <h4 id="media-select">Media Selector</h4>
-    <% styleguide_block 'Media Selector' do %>
-      <div class="js-media-options">
-        <div class="form-item form-type-radio">
-          <input type="radio" value="value1" name="item" id="option1" checked="checked">
-          <label for="option1">
-            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
-          </label>
-        </div>
-
-        <div class="form-item form-type-radio">
-          <input type="radio" value="value2" name="item" id="option2">
-          <label for="option2">
-            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
-          </label>
-        </div>
-      </div>
-    <% end %>
-
     <h4 id="callout">Message Callout</h4>
     <% styleguide_block  'Message Callout' do %>
       <div class="message-callout $modifier_class">
@@ -234,13 +215,6 @@
       <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
     <% end %>
 
-    <h4 id='polaroid'>Polaroid</h4>
-    <% styleguide_block  'Polaroid image style' do %>
-      <figure class="polaroid">
-        <img src="http://www.placekitten.com/g/320/320" alt="another kitten">
-      </figure>
-    <% end %>
-
     <h4 id='pullquotes'>Pullquote</h4>
     <% styleguide_block  'Pullquote' do %>
       <p class="pullquote">Lorem ipsum dolor sit aquote.</p>
@@ -251,7 +225,6 @@
       <div class="spinner"></div>
     <% end %>
 
-
     <h4 id="tabs">Tabs</h4>
     <% styleguide_block  'Tabbed Navigation' do %>
       <nav class="tabs $modifier_class">
@@ -261,19 +234,6 @@
           <li><a href="#">Section Three</a></li>
         </ul>
       </nav>
-    <% end %>
-
-    <h4 id="tile">Tile</h4>
-    <% styleguide_block  'Tile' do %>
-      <article class="tile tile--campaign">
-        <a class="wrapper" href="#">
-          <div class="tile--meta">
-            <h1 class="__title">Kitten Overlords</h1>
-            <p class="__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
-          </div>
-          <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
-        </a>
-      </article>
     <% end %>
 
     <h4 id="video">Video</h4>
@@ -458,6 +418,25 @@
       </footer>
     <% end %>
 
+    <h4 id="media-select">Media Selector</h4>
+    <% styleguide_block 'Media Selector' do %>
+      <div class="js-media-options">
+        <div class="form-item form-type-radio">
+          <input type="radio" value="value1" name="item" id="option1" checked="checked">
+          <label for="option1">
+            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+          </label>
+        </div>
+
+        <div class="form-item form-type-radio">
+          <input type="radio" value="value2" name="item" id="option2">
+          <label for="option2">
+            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+          </label>
+        </div>
+      </div>
+    <% end %>
+
     <h4 id="message-box">Message Box</h4>
     <% styleguide_block 'Message Box Container' do %>
       <div class="message-box">
@@ -466,9 +445,29 @@
       </div>
     <% end %>
 
+    <h4 id='polaroid'>Polaroid</h4>
+    <% styleguide_block  'Polaroid image style' do %>
+      <figure class="polaroid">
+        <img src="http://www.placekitten.com/g/320/320" alt="another kitten">
+      </figure>
+    <% end %>
+
     <h4 id="sponsor">Sponsor</h4>
     <% styleguide_block 'Sponsor' do %>
       <!-- coming soon... -->
+    <% end %>
+
+    <h4 id="tile">Tile</h4>
+    <% styleguide_block  'Tile' do %>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile--meta">
+            <h1 class="__title">Kitten Overlords</h1>
+            <p class="__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+          </div>
+          <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
+        </a>
+      </article>
     <% end %>
 
     <h2 id="regions">Regions</h2>
@@ -649,14 +648,11 @@
         <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
         <li><a href="#images" class="js-jump-scroll">Images</a></li>
         <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
-        <li><a href="#media-select" class="js-jump-scroll">Media Selector</a></li>
         <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
         <li><a href="#messages" class="js-jump-scroll">Status Banner</a></li>
-        <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
         <li><a href="#pullquotes" class="js-jump-scroll">Pullquote</a></li>
         <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
         <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
-        <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
         <li><a href="#video" class="js-jump-scroll">Video</a></li>
       </ul>
       </li>
@@ -668,8 +664,11 @@
         <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
         <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
         <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
+        <li><a href="#media-select" class="js-jump-scroll">Media Selector</a></li>
         <li><a href="#message-box" class="js-jump-scroll">Message Box</a></li>
+        <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
         <li><a href="#sponsor" class="js-jump-scroll">Sponsor</a></li>
+        <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
       </ul>
       </li>
 

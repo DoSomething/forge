@@ -27,30 +27,30 @@
 @import "_base/animations";
 @import "_base/helpers";
 
-// Components -
+// Components - basic non-divisible building blocks
 @import "_components/forms";
 @import "_components/images";
 @import "_components/legal";
-@import "_components/media-options";
 @import "_components/message-callout";
 @import "_components/messages";
 @import "_components/pin-to-top";
-@import "_components/polaroid";
 @import "_components/pullquote";
 @import "_components/spinner";
 @import "_components/tabs";
-@import "_components/tile";
 @import "_components/video";
 
-// Modules -
+// Modules - basic patterns, may contain other components or modules
 @import "_modules/carousel";
 @import "_modules/cta";
-@import "_modules/message-box";
 @import "_modules/gallery";
 @import "_modules/info-bar";
+@import "_modules/media-options";
+@import "_modules/message-box";
+@import "_modules/polaroid";
 @import "_modules/sponsor";
+@import "_modules/tile";
 
-// Regions -
+// Regions - complete sections of an interface
 @import "_regions/chrome";
 @import "_regions/container";
 @import "_regions/footer";
