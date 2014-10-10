@@ -1,0 +1,214 @@
+// Chrome footer with social links & footer menus.
+//
+// Styleguide Site Footer
+.chrome--footer {
+  width: 100%;
+  background: #000;
+  margin: 0 auto;
+
+  @include media($tablet) {
+    padding: 18px;
+  }
+
+  h4 {
+    position: relative;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 0 18px;
+    margin: 0;
+    cursor: pointer;
+
+    &:after {
+      @include icomoon-icon;
+      content: "\e609";
+      color: $med-gray;
+      font-size: 32px;
+      position: absolute;
+      right: 4px;
+      top: -0.36px;
+      @include transform(rotate(0));
+      @include transition-property(transform);
+      @include transition-duration(0.25s);
+    }
+
+    @include media($tablet) {
+      cursor: auto;
+      margin: 18px 0 9px;
+      padding: 0;
+
+      &:after {
+        content: "";
+      }
+    }
+  }
+
+  ul {
+    height: auto;
+    list-style-type: none;
+    padding: 4px;
+    @include transition(height 0.25s, padding 0.5s);
+
+    @include media($tablet) {
+      padding: 0;
+    }
+  }
+
+  li {
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  a {
+    display: block;
+    color: $med-gray;
+    font-size: 14px;
+    padding: 4px 14px;
+
+    &:hover {
+      color: #fff;
+    }
+
+    @include media($tablet) {
+      padding: 0;
+    }
+  }
+}
+
+.col {
+  padding: 9px 0;
+
+  @include media($tablet) {
+    @include span-columns(3);
+    margin-bottom: 36px;
+  }
+
+  &.is-collapsed {
+    h4:after {
+      @include transform(rotate(-90deg));
+    }
+
+    ul {
+      overflow: hidden;
+      padding: 0 4px;
+      height: 0;
+    }
+
+    @include media($tablet) {
+      h4:after {
+        content: "";
+      }
+
+      ul {
+        height: auto;
+        padding: 0;
+        @include transition(none);
+      }
+    }
+  }
+}
+
+.help, .knowus, .about {
+  border-top: 1px solid $dark-gray;
+
+  @include media($tablet) {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
+
+.about {
+  border-bottom: 1px solid $dark-gray;
+
+  @include media($tablet) {
+    border-bottom: 0;
+    @include omega;
+  }
+}
+
+// Social media icon links.
+.social {
+  text-align: center;
+
+  // Mobile design (separate markup to re-position below menu).
+  // @TODO: Gross. Let's see if we can clean this up in future iterations.
+  &.mobile {
+    padding: 9px 0;
+
+    @include media($tablet) {
+      display: none;
+    }
+  }
+
+  // Tablet and desktop markup (separate markup to re-position in first column).
+  &.tablet {
+    display: none;
+
+    @include media($tablet) {
+      display: block;
+    }
+  }
+
+  @include media($tablet) {
+    float: left;
+    border-top: 0;
+    margin-top: 30px;
+    text-align: left;
+    @include span-columns(7);
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 0;
+
+    @include media($tablet) {
+      margin-right: 16px;
+    }
+  }
+
+  .social-link {
+    @include icomoon-icon;
+    font-size: 24px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.subfooter {
+  display: block;
+  clear: both;
+  font-size: $font-small;
+  border-top: 1px solid $dark-gray;
+  padding: 9px 0;
+  @include row;
+
+  a {
+    display: inline;
+    font-size: 1em;
+  }
+
+  .utility {
+    text-align: center;
+    list-style-type: none;
+
+    @include media($tablet) {
+      float: right;
+      text-align: left;
+      margin-right: 14px;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      margin: 0 9px;
+
+      @include media($tablet) {
+        margin: 0 18px 0 0;
+      }
+    }
+  }
+}

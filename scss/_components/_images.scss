@@ -1,0 +1,27 @@
+// Style for images in content sections.
+//
+// Styleguide Images - Figures
+.content-figure {
+  text-align: center;
+  padding: 2.5% 0;
+
+  img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    color: $med-gray;
+    font-size: $font-small;
+    padding: 0 18px 27px;
+  }
+}
+
+
+// Stylized image, with a thick border and subtle shadow.
+//
+// Styleguide Images - Bordered
+img.bordered {
+  border: 6px solid #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+

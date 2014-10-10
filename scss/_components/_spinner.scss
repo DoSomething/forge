@@ -1,0 +1,15 @@
+// Spinner to indicate loading content.
+//
+// Styleguide Loading Spinner
+.spinner {
+  background: transparent no-repeat center center;
+  background-image: neue-asset-url("images/spinner.svg");
+  background-size: 32px;
+  height: 32px;
+  width: 32px;
+
+  .no-smil & {
+    background-image: neue-asset-url("images/fallbacks/spinner.gif");
+  }
+}
+

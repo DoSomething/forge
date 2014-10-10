@@ -1,0 +1,282 @@
+//                 ____  _____    _   __
+//                / __ \/ ___/   / | / /__  __  _____
+//               / / / /\__ \   /  |/ / _ \/ / / / _ \
+//              / /_/ /___/ /  / /|  /  __/ /_/ /  __/
+//             /_____//____/  /_/ |_/\___/\__,_/\___/
+//
+//   ==================== Styleguide Styles ====================
+//
+//   These are styles that are only used in the styleguide, and
+//   should not be available in client applications.
+
+@import "../bower_components/bourbon/dist/bourbon";
+@import "../bower_components/neat/app/assets/stylesheets/neat-helpers";
+@import "_utilities/grid-settings.scss";
+@import "../bower_components/neat/app/assets/stylesheets/neat";
+
+@import "_utilities/functions";
+@import "_utilities/variables";
+@import "_utilities/mixins";
+
+.styleguide-sidebar {
+  margin-top: 9px; // keep top of sidebar inline with body text
+  margin-bottom: 54px;
+
+  @include media($tablet) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    @include span-columns(4);
+    @include omega;
+  }
+}
+
+.styleguide-content {
+  margin: 0 18px 54px;
+
+  @include media($tablet) {
+    @include shift(2);
+    @include span-columns(9);
+  }
+}
+
+h1.styleguide {
+  margin: 0 0 -5px;
+  font-size: 24px;
+  color: #000;
+}
+
+.styleguide-example {
+  margin: 15px 0 50px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.styleguide-example-content {
+  border-radius: 2px;
+  border: 1px solid #ddd;
+}
+
+.styleguide-example > h3 {
+  margin: 0;
+  padding: 5px 0;
+  color: #333;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.styleguide-example > h3 a {
+  color: #333;
+}
+
+.styleguide-example > h3 em {
+  float: right;
+  text-transform: none;
+  font-style: normal;
+  font-weight: normal;
+  color: #999;
+}
+
+.styleguide-example .styleguide-description {
+  padding: 10px 15px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.styleguide-example .styleguide-description p:first-child {
+  margin-top: 0;
+}
+
+.styleguide-example .styleguide-description p:last-child {
+  margin-bottom: 0;
+}
+
+.styleguide-example .styleguide-element {
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+.styleguide-example .styleguide-element + .styleguide-element {
+  margin-top: -5px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.styleguide-example .styleguide-element .styleguide-modifier-name {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 8px;
+  font-size: 11px;
+  color: #999;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-top: 0;
+  z-index: 10;
+}
+
+.styleguide-example .styleguide-html {
+  padding: 10px 25px 10px 5px;
+  background: #efefef;
+  border-top: 1px solid #dde7ea;
+  font-size: 18px;
+  overflow: auto;
+}
+
+.hljs {
+  background: transparent !important;
+  display: inline !important;
+  padding-right: 25px !important;
+}
+
+.styleguide-example .styleguide-html .highlight {
+  background: none;
+}
+
+.styleguide-example ul.styleguide-modifiers {
+  margin: 0 0 0 10px;
+}
+
+.styleguide-example ul.styleguide-modifiers li {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.styleguide-example ul.styleguide-modifiers li strong {
+  font-family: Monaco, monospace;
+  font-size: 12px;
+  font-weight: normal;
+  color: #222;
+}
+
+ul.styleguide-modifier {
+  list-style-type: none;
+  padding: 0.5em 1em;
+  margin-left: 0;
+}
+
+ul.styleguide-modifier li {
+  margin-bottom: 0.25em;
+}
+
+.kss-dark .styleguide-element {
+  background: #666;
+}
+
+.kss-min-height .styleguide-element {
+  min-height: 300px;
+}
+
+.font-tile {
+  font-size: 27px;
+  margin: 18px 0;
+  padding: 18px;
+  border-radius: 2px;
+  text-align: center;
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+}
+
+.font-tile code {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  padding-top: 5px;
+}
+
+@media screen and (min-width: 960px) {
+  .font-tile {
+    text-align: left;
+  }
+
+  .font-tile code {
+    display: inline-block;
+    float: right;
+  };
+}
+
+.color-tile {
+  background: #eee;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  padding: 2em 1em;
+  border-radius: 2px;
+
+  @include span-columns(5 of 10);
+
+  &:nth-of-type(2n) {
+    @include omega;
+  }
+
+  & code {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.js-color-label {
+  display: block;
+}
+
+.kss-tip {
+  color: #ccc;
+}
+
+.kss-grid-bookmarklet {
+  font-size: 12px;
+}
+
+.styleguide-section:first-of-type {
+  padding-top: 72px;
+}
+
+.styleguide-section {
+  clear: both;
+}
+
+.styleguide-doc-section img {
+  max-width: 100%;
+}
+
+.styleguide--footer {
+  clear: both;
+  display: block;
+  width: 61.66667%;
+  margin-left: 12.77778%;
+  padding-bottom: 36px;
+}
+
+.styleguide--footer p {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.styleguide--footer a {
+  color: #666;
+}
+
+header[role="banner"].-styleguide {
+  background: url("../styleguide/assets/grid_2x.png");
+  background-size: 105px 105px;
+}
+
+.semver-badge {
+  font-size: 16px;
+  vertical-align: 50%;
+  background: #fff;
+  padding: 4px 8px;
+  text-shadow: none;
+  color: #271231;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.intro-neue {
+  font-weight: 400;
+}
+
+
