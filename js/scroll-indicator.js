@@ -94,7 +94,7 @@ define(function() {
   var oldIndicator;
   // Scroll handler: highlights the furthest link the user has passed
   function updateScrollIndicators() {
-    var newIndicator = binarySearch(links, $(window).scrollTop());
+    var newIndicator = binarySearch(links, $(window).scrollTop() + 40);  // 40px offset
     var newIndicatorParents = newIndicator.link.parentsUntil(".js-scroll-indicator");
     var oldIndicatorParents = $();
 
