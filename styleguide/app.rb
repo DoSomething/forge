@@ -25,7 +25,7 @@ helpers do
 
     @section = @styleguide.section(section)
     @description = markdown.render(@section.description)
-    @link = @section.section.scan(/\d/)[0,3].join();
+    @link = @section.section.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     @example_html = capture{ block.call }
     @escaped_html = ERB::Util.html_escape @example_html
     @_out_buf << erb(:_styleguide_block)

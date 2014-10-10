@@ -1,0 +1,88 @@
+// Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
+// ==Selected state is added using JavaScript. See `media-selector.js`.==
+//
+// Styleguide Media Selector
+
+.media-options {
+  @include clearfix();
+
+  .form-item {
+    @include span-columns(4);
+    position: relative;
+
+    label {
+      height: auto;
+      margin-top: 0;
+      max-width: 150px;
+      position: relative;
+
+      .inner-label {
+        top: 0;
+      }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      @include visually-hidden();
+    }
+
+    img {
+      cursor: pointer;
+      border: 2px solid $med-gray;
+      border-radius: $sm-border-radius;
+      max-width: 100px;
+      width: 100%;
+
+      @include media($tablet) {
+        max-width: 150px;
+      }
+
+      &:hover {
+        border-color: $blue;
+      }
+    }
+
+    // Last-child not supported in IE8; using class as fallback.
+    &.-second {
+      margin-right: 0;
+    }
+
+    &:before {
+      font-size: $font-regular;
+      font-weight: $weight-sbold;
+      height: 30px;
+      left: -50%;
+      margin: -15px 0 0 23px;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 50%;
+      width: 40px;
+
+      @include media($tablet) {
+        font-size: $font-medium;
+        margin-left: 45px;
+        margin-top: -25px;
+      }
+    }
+
+    &.form-type-radio {
+      &:before {
+        content: "or";
+      }
+    }
+
+    &:first-child {
+      &:before {
+        content: "";
+      }
+    }
+
+    &.selected {
+      img {
+        border-color: $blue;
+        border-width: 4px;
+      }
+    }
+  }
+}

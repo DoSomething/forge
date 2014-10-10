@@ -1,0 +1,43 @@
+// Status message styles. These should be used to provide feedback to the user for
+// events that occur outside the normal application flow (such as form validation errors).
+// ==Close button is added using JavaScript. See `system-messages.js`.==
+//
+// .error - Used to display errors. Be careful not to blame the user for a mistake.
+//
+// Styleguide Messages - Status Banners
+
+.messages {
+  position: relative;
+  width: 100%;
+  max-width: $max-width;
+  background: $purple;
+  text-align: left;
+  margin: 0 auto;
+  padding: 18px 72px 18px 27px;
+  @include rgba(color, #fff, 0.7);
+
+  b,
+  strong {
+    font-weight: $weight-bold;
+    color: #fff;
+    padding: 0 5px;
+  }
+
+  a {
+    font-weight: $weight-bold;
+    color: #fff;
+  }
+
+  &.error {
+    background: $error;
+  }
+
+  .message-close-button {
+    @include close-parent;
+
+    color: #fff;
+    top: 0;
+  }
+}
+
+

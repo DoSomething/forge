@@ -4,7 +4,7 @@
 // .warning    - Warning form validation (not an error, but worth double-checking).
 // .error      - Something's wrong!
 //
-// Styleguide 4.1.1 - Form Labels
+// Styleguide Forms - Form Labels
 label {
   display: block;
   clear: both;
@@ -54,7 +54,7 @@ label {
 // .short         - Short input width (e.g. for zip codes)
 // .medium        - Medium-sized input width (e.g. for phone numbers)
 //
-// Styleguide 4.1.2 - Text Input Fields
+// Styleguide Forms - Text Input Fields
 #{$all-text-inputs}, textarea {
   width: 100%;
   font-family: $font-proxima-nova;
@@ -87,7 +87,7 @@ label {
 //
 // .loading - Indicates search field is loading results.
 //
-// Styleguide 4.1.3 - Search Fields
+// Styleguide Forms - Search Fields
 input[type="search"] {
   padding-left: 32px;
   background: #fff no-repeat 12px 50%;
@@ -110,7 +110,7 @@ input[type="search"] {
 
 // Multi-line textarea fields.
 //
-// Styleguide 4.1.4 - Text Area Fields
+// Styleguide Forms - Text Area Fields
 textarea {
   resize: vertical;
 }
@@ -126,7 +126,7 @@ textarea {
 // .secondary         - Should be used if not the main call-to-action on a page.
 // .tertiary          - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
 //
-// Styleguide 4.1.5 - Buttons
+// Styleguide Forms - Buttons
 .btn {
   display: inline-block;
   clear: both;
@@ -253,7 +253,7 @@ input[type="submit"] {
 
 // Select boxes present a list of options on a form.
 //
-// Styleguide 4.1.6 - Select Boxes
+// Styleguide Forms - Select Boxes
 select {
   display: block;
   width: 100%;
@@ -271,7 +271,7 @@ select {
 
 // Checkboxes and radio boxes.
 //
-// Styleguide 4.1.7 - Option Fields
+// Styleguide Forms - Option Fields
 input[type="checkbox"], input[type="radio"] {
   display: inline;
 }
@@ -280,151 +280,3 @@ label.option {
   display: inline;
 }
 
-
-// Spinner to indicate loading content.
-//
-// Styleguide 4.1.8 - Loading Spinner
-.spinner {
-  background: transparent no-repeat center center;
-  background-image: neue-asset-url("images/spinner.svg");
-  background-size: 32px;
-  height: 32px;
-  width: 32px;
-
-  .no-smil & {
-    background-image: neue-asset-url("images/fallbacks/spinner.gif");
-  }
-}
-
-
-// Status message styles. These should be used to provide feedback to the user for
-// events that occur outside the normal application flow (such as form validation errors).
-// ==Close button is added using JavaScript. See `system-messages.js`.==
-//
-// .error - Used to display errors. Be careful not to blame the user for a mistake.
-//
-// Styleguide 4.1.9 - Status Banners
-
-.messages {
-  position: relative;
-  width: 100%;
-  max-width: $max-width;
-  background: $purple;
-  text-align: left;
-  margin: 0 auto;
-  padding: 18px 72px 18px 27px;
-  @include rgba(color, #fff, 0.7);
-
-  b,
-  strong {
-    font-weight: $weight-bold;
-    color: #fff;
-    padding: 0 5px;
-  }
-
-  a {
-    font-weight: $weight-bold;
-    color: #fff;
-  }
-
-  &.error {
-    background: $error;
-  }
-
-  .message-close-button {
-    @include close-parent;
-
-    color: #fff;
-    top: 0;
-  }
-}
-
-
-// Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
-// ==Selected state is added using JavaScript. See `media-selector.js`.==
-//
-// Styleguide 4.1.10 - Media Option Selector
-
-.media-options {
-  @include clearfix();
-
-  .form-item {
-    @include span-columns(4);
-    position: relative;
-
-    label {
-      height: auto;
-      margin-top: 0;
-      max-width: 150px;
-      position: relative;
-
-      .inner-label {
-        top: 0;
-      }
-    }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-      @include visually-hidden();
-    }
-
-    img {
-      cursor: pointer;
-      border: 2px solid $med-gray;
-      border-radius: $sm-border-radius;
-      max-width: 100px;
-      width: 100%;
-
-      @include media($tablet) {
-        max-width: 150px;
-      }
-
-      &:hover {
-        border-color: $blue;
-      }
-    }
-
-    // Last-child not supported in IE8; using class as fallback.
-    &.-second {
-      margin-right: 0;
-    }
-
-    &:before {
-      font-size: $font-regular;
-      font-weight: $weight-sbold;
-      height: 30px;
-      left: -50%;
-      margin: -15px 0 0 23px;
-      position: absolute;
-      text-align: center;
-      text-transform: uppercase;
-      top: 50%;
-      width: 40px;
-
-      @include media($tablet) {
-        font-size: $font-medium;
-        margin-left: 45px;
-        margin-top: -25px;
-      }
-    }
-
-    &.form-type-radio {
-      &:before {
-        content: "or";
-      }
-    }
-
-    &:first-child {
-      &:before {
-        content: "";
-      }
-    }
-
-    &.selected {
-      img {
-        border-color: $blue;
-        border-width: 4px;
-      }
-    }
-  }
-}
