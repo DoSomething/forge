@@ -94,7 +94,10 @@ define(function() {
   var oldIndicator;
   // Scroll handler: highlights the furthest link the user has passed
   function updateScrollIndicators() {
-    var newIndicator = binarySearch(links, $(window).scrollTop() + 40);  // 40px offset
+    var newIndicator = binarySearch(links, $(window).scrollTop() + 40);
+    // @NOTE: We use a 40px offset to trigger indicator slightly after scroll position
+    // (so that nav switches closer to where a user will likely be reading the text)
+
     var newIndicatorParents = newIndicator.link.parentsUntil(".js-scroll-indicator");
     var oldIndicatorParents = $();
 
@@ -108,7 +111,6 @@ define(function() {
     oldIndicatorParents.not(newIndicatorParents).removeClass("is-active");
 
     oldIndicator = newIndicator;
-    console.log("WHAWHAWHA");
   }
 
   // Attach our functions to their respective events.
