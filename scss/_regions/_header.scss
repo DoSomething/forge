@@ -1,12 +1,14 @@
 // Module for applying styles to main page headers.
 //
-// .-basic - Basic page header styling.
-// .-hero  - Hero image header banner styling.
+// .-sponsored - Makes space for sponsor module within header.
+// .-centered  - Center text in the header (generally used for non-content pages).
+// .-hero      - Hero image header banner styling.
 //
 // Styleguide Header
 
 [role="banner"] {
-  background-color: $purple;
+  background: $purple no-repeat center center;
+  background-size: cover;
   overflow: hidden;
   padding: 144px 18px 27px;
   position: relative;
@@ -41,6 +43,7 @@
   > .wrapper {
     position: relative;
     text-align: center;
+    width: 100%;
 
     @include clearfix();
 
@@ -55,7 +58,7 @@
 
   .__title {
     color: #fff;
-    font-size: 36px;
+    font-size: $font-larger;
     line-height: 1;
     margin: 0 0 9px;
 
@@ -93,28 +96,62 @@
     }
   }
 
-  // Default header banner styling.
-  &.-basic {
-    background: $purple;
+  // Makes space for sponsor module inside header.
+  // @TODO: There's a better solution for this, but need a quick solution for now (2014.05.22).
+  &.-sponsored {
+    .__subtitle {
+      @include media($tablet) {
+        width: 75%;
+      }
+    }
+  }
 
-    // @TODO: There's a better solution for this, but need a quick solution for now (2014.05.22).
-    &.-sponsored {
-      .__subtitle {
-        @include media($tablet) {
-          width: 75%;
-        }
+  // Center text in the header (generally used for non-content pages).
+  &.-centered {
+    min-height: 465px;
+    padding: 216px 0;
+
+    @include media($tablet) {
+      height: 620px;
+    }
+
+    > .wrapper {
+      position: absolute;
+      top: 50%;
+      padding: 18px;
+      text-align: center;
+
+      @include transform(translateY(-50%));
+
+      @include media($tablet) {
+        @include span-columns(8);
+        @include shift(4);
+      }
+    }
+
+    .__title {
+      font-size: $font-larger;
+    }
+
+    .__subtitle {
+      font-size: $font-regular;
+      margin-bottom: 0;
+
+      span {
+        opacity: 0.8;
       }
     }
   }
 
   // Hero image header banner styling.
   &.-hero {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     min-height: 465px;
-    padding-bottom: 28px;
     padding-top: 216px;
+    padding-bottom: 28px;
+
+    @include media($tablet) {
+      height: 620px;
+    }
 
     &:before {
       @include linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
@@ -122,10 +159,6 @@
       @include media($tablet) {
         @include linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
       }
-    }
-
-    @include media($tablet) {
-      height: 620px;
     }
 
     > .wrapper {
