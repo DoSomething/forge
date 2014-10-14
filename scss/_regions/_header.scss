@@ -172,27 +172,5 @@
         }
       }
     }
-
-    // @TODO: May be a better way to handle the oversized button on mobile; maybe address this in btn module?
-    .btn {
-      margin: 27px auto 0;
-      max-width: 250px;
-
-      &.medium {
-        @include media($tablet) {
-          margin: 0;
-        }
-      }
-
-      &.large {
-        font-size: $font-medium;
-
-        @include media($tablet) {
-          font-size: $font-large;
-          margin: 0;
-          max-width: 100%;
-        }
-      }
-    }
   }
 }
