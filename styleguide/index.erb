@@ -1,6 +1,8 @@
 <article class="styleguide-content">
   <section id="intro" class="styleguide-section">
-    <p>This is <a href="https://www.github.com/dosomething/neue">Neue</a>, our interface framework and pattern library. Neue is made up of four pillars: typography, a fluid grid-based layout system, re-usable interface patterns, and animations. It's a strong foundation for building beautiful interfaces.</p>
+    <p>This is <a href="https://www.github.com/dosomething/neue">Neue</a>, our interface framework and pattern library. It defines a set of base styles and common patterns shared throughout our website. It's a strong foundation for building beautiful interfaces.</p>
+
+    <p>Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork our <a href="https://github.com/dosomething/neue">GitHub repository</a> and use it as a starting point for your own pattern library.</p>
   </section>
 
   <section class="styleguide-section styleguide-doc-section">
@@ -132,7 +134,8 @@
 
   <section class="styleguide-section">
     <h2 id="components">Components</h2>
-    <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components.</p>
+    <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat.</p>
+    <p>We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
 
     <h4 id="forms">Forms</h4>
     <% styleguide_block  'Forms - Form Labels' do %>
@@ -244,6 +247,7 @@
     <% end %>
 
     <h2 id="modules">Modules</h2>
+    <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
 
     <h4 id="carousel">Carousel</h4>
     <% styleguide_block 'Carousel' do %>
@@ -472,6 +476,7 @@
     <% end %>
 
     <h2 id="regions">Regions</h2>
+    <p>Regions are complete sections of an interface.</p>
 
     <h4 id="chrome">Chrome</h4>
     <% styleguide_block  'Site Chrome' do %>
