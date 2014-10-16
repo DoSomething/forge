@@ -213,7 +213,7 @@ textarea {
 
     &:active {
       background: $light-gray;
-      color: $light-gray;
+      color: lighten($light-gray, 10%);
     }
   }
 
