@@ -82,7 +82,7 @@
   .__title,
   .__subtitle,
   .__date {
-    text-shadow: 0 1px 3px rgba(#000, 0.3);
+    text-shadow: $text-shadow;
   }
 
   .sponsor {
