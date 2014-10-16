@@ -52,7 +52,7 @@
     @include media($tablet) {
       a {
         color: #fff;
-        text-shadow: 0 1px 3px rgba(#000, 0.3);
+        text-shadow: $text-shadow;
       }
 
       .secondary-nav input[type="search"] {
@@ -79,7 +79,7 @@
   a {
     color: $off-black;
     text-decoration: none;
-    text-shadow: 0 1px 0 rgba(#fff, 0.2);
+    text-shadow: $text-emboss;
   }
 
   // DoSomething.org logo container
