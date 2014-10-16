@@ -152,6 +152,10 @@ textarea {
     background: lighten($blue, $color-tint);
   }
 
+  &:focus {
+    background: lighten($blue, $color-tint);
+  }
+
   &:active {
     outline: 0;
     background: darken($blue, $color-tint);
