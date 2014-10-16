@@ -274,3 +274,11 @@ header[role="banner"].-styleguide {
 }
 
 
+// Specific pattern overrides
+#message-callout--example---white,
+#carousel--example,
+#information-bar--example,
+#site-navigation--example--white {
+  background: #fff url("/styleguide/assets/pattern-dark-bg.png");
+}
+
