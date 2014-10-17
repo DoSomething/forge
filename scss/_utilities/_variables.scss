@@ -57,3 +57,7 @@ $unicode-flag: "\2691";
 
 $sm-border-radius: 2px; // for accent (images, text fields, etc)
 $lg-border-radius: 5px; // used for primary interactive elements (buttons, etc)
+
+// Text Shadows
+$text-shadow: 0 1px 3px rgba(#000, 0.3);
+$text-emboss: 0 1px 0 rgba(#fff, 0.2);

@@ -41,12 +41,6 @@
   }
 }
 
-h1.styleguide {
-  margin: 0 0 -5px;
-  font-size: 24px;
-  color: #000;
-}
-
 .styleguide-example {
   margin: 15px 0 50px;
   background: rgba(255, 255, 255, 0.5);
@@ -95,10 +89,10 @@ h1.styleguide {
   overflow: hidden;
   position: relative;
   padding: 20px;
+  min-height: 100px;
 }
 
 .styleguide-example .styleguide-element + .styleguide-element {
-  margin-top: -5px;
   padding-top: 15px;
   border-top: 1px solid #eee;
 }
@@ -203,7 +197,7 @@ ul.styleguide-modifier li {
 .color-tile {
   background: #eee;
   color: #fff;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: $text-shadow;
   padding: 2em 1em;
   border-radius: 2px;
 
@@ -279,4 +273,12 @@ header[role="banner"].-styleguide {
   font-weight: 400;
 }
 
+
+// Specific pattern overrides
+#message-callout--example---white,
+#carousel--example,
+#information-bar--example,
+#site-navigation--example--white {
+  background: #fff url("/styleguide/assets/pattern-dark-bg.png");
+}
 

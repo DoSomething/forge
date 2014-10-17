@@ -51,6 +51,7 @@ label {
 // Text input fields. Defaults to full-width, but can be modified to be smaller
 // if necessary (use sparingly, it's generally best to fit to grid container).
 //
+// :focus         - Field is selected for text input
 // .short         - Short input width (e.g. for zip codes)
 // .medium        - Medium-sized input width (e.g. for phone numbers)
 //
@@ -85,6 +86,7 @@ label {
 
 // Specific style rules for search input fields.
 //
+// :focus   - Field is selected for text input
 // .loading - Indicates search field is loading results.
 //
 // Styleguide Forms - Search Fields
@@ -109,6 +111,8 @@ input[type="search"] {
 
 
 // Multi-line textarea fields.
+//
+// :focus   - Field is selected for text input
 //
 // Styleguide Forms - Text Area Fields
 textarea {
@@ -145,10 +149,15 @@ textarea {
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $lg-border-radius;
+
   @include appearance(none);
   @include highlight-on-focus;
 
   &:hover {
+    background: lighten($blue, $color-tint);
+  }
+
+  &:focus {
     background: lighten($blue, $color-tint);
   }
 
@@ -213,7 +222,7 @@ textarea {
 
     &:active {
       background: $light-gray;
-      color: $light-gray;
+      color: lighten($light-gray, 10%);
     }
   }
 
