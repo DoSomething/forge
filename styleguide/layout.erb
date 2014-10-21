@@ -27,7 +27,7 @@
 <div class="chrome">
   <div id="top" class="chrome--wrapper">
     <nav class="chrome--nav white floating">
-      <a class="logo" href="http://www.dosomething.org"><img src="styleguide/assets/styleguide-logo.png" alt="DoSomething.org"></a>
+      <a class="logo" href="http://www.dosomething.org"><img src="dist/assets/images/ds-logo.png" alt="DoSomething.org"></a>
       <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
       <div class="menu">
         <ul class="primary-nav">
@@ -62,13 +62,17 @@
       </div>
     </nav>
 
-    <header role="banner" class="-basic -styleguide">
+    <header role="banner" class="-basic -centered -styleguide">
       <div class="wrapper">
         <h1 class="__title">
           Pattern Library
           <a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %></a>
         </h1>
+        <p class="__subtitle">
+          Any pattern, anytime, anywhere.
+        </p>
       </div>
+      <video src="/styleguide/assets/example-video.mp4" type="video/mp4" poster="/styleguide/assets/example-poster.jpg" autoplay loop></video>
     </header>
 
     <%= yield %>
