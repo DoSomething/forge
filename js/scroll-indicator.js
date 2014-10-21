@@ -98,19 +98,21 @@ define(function() {
     // @NOTE: We use a 40px offset to trigger indicator slightly after scroll position
     // (so that nav switches closer to where a user will likely be reading the text)
 
-    var newIndicatorParents = newIndicator.link.parentsUntil(".js-scroll-indicator");
-    var oldIndicatorParents = $();
+    if(newIndicator && newIndicator.link) {
+      var newIndicatorParents = newIndicator.link.parentsUntil(".js-scroll-indicator");
+      var oldIndicatorParents = $();
 
-    if(oldIndicator && oldIndicator !== newIndicator) {
-      oldIndicator.link.removeClass("is-active");
-      oldIndicatorParents = oldIndicator.link.parentsUntil(".js-scroll-indicator");
+      if(oldIndicator && oldIndicator !== newIndicator) {
+        oldIndicator.link.removeClass("is-active");
+        oldIndicatorParents = oldIndicator.link.parentsUntil(".js-scroll-indicator");
+      }
+
+      newIndicator.link.addClass("is-active");
+      newIndicatorParents.addClass("is-active");
+      oldIndicatorParents.not(newIndicatorParents).removeClass("is-active");
+
+      oldIndicator = newIndicator;
     }
-
-    newIndicator.link.addClass("is-active");
-    newIndicatorParents.addClass("is-active");
-    oldIndicatorParents.not(newIndicatorParents).removeClass("is-active");
-
-    oldIndicator = newIndicator;
   }
 
   // Attach our functions to their respective events.
