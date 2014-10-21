@@ -254,8 +254,8 @@ ul.styleguide-modifier li {
 }
 
 header[role="banner"].-styleguide {
-  background: url("../styleguide/assets/grid_2x.png");
-  background-size: 105px 105px;
+  background: url("../styleguide/assets/example-poster.jpg") no-repeat;
+  background-size: cover;
 }
 
 .semver-badge {
