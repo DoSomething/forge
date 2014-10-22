@@ -1,6 +1,6 @@
 {
   "name": "neue",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "license": "MIT",
   "engines": {
     "node": "0.10.x"
