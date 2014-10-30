@@ -44,9 +44,6 @@
 //  ICOMOON (ICON FONT)
 // ---------------------
 
-// Incremement "revision" to bust cache when we update icon font
-$icomoon-revision: 1;
-
 @font-face {
   font-family: "icomoon";
   src: neue-asset-url("fonts/icomoon/icomoon.eot");
@@ -56,19 +53,4 @@ $icomoon-revision: 1;
        neue-asset-url("fonts/icomoon/icomoon.svg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
-}
-
-.icon-pencil:before {
-  @include icomoon-icon;
-  content: "\e600";
-}
-
-.icon-lock:before {
-  @include icomoon-icon;
-  content: "\e601";
-}
-
-.icon-search:before {
-  @include icomoon-icon;
-  content: "\e602";
 }
