@@ -75,6 +75,12 @@
     width: 100%;
     height: auto;
   }
+
+  // Fixes spacing between ul and paragraphs in the modal.
+  // @TODO: Remove after typography revamp.
+  ul + p { 
+    margin-top: 1em; 
+  }
 }
 
 .chrome.modal-open {
