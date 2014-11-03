@@ -1,0 +1,38 @@
+// Module class for media tile blocks that can be placed in multiple contexts on a page. Specifically used for reportback tiles on user profiles, but can be used for other content as well.
+// A media tile block can contain an image, title, and description with the image in the left column and the content in the right.
+//
+// Styleguide Media Tile
+
+.tile--media {
+  @include clearfix();
+  text-align: left;
+
+  @include media($tablet) {
+    @include span-columns(6 of 12);
+    @include omega(2n);
+  }
+
+  .__media {
+    @include span-columns(2 of 6);
+
+    img {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  .__body {
+    @include span-columns(4 of 6);
+  }
+
+  .__title {
+    color: $dark-gray;
+    line-height: 1.1;
+    margin: 0 0 9px;
+  }
+
+  .__description {
+    line-height: 1.2;
+  }
+}
