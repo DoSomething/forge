@@ -3,12 +3,12 @@
 //
 // Styleguide Media Tile
 
-.tile--media {
+.media {
   @include clearfix();
   text-align: left;
   padding-bottom: 27px;
   
-  .__media {
+  > .wrapper {
     @include span-columns(2 of 6);
 
     img {
