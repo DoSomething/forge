@@ -6,12 +6,8 @@
 .tile--media {
   @include clearfix();
   text-align: left;
-
-  @include media($tablet) {
-    @include span-columns(6 of 12);
-    @include omega(2n);
-  }
-
+  padding-bottom: 27px;
+  
   .__media {
     @include span-columns(2 of 6);
 
