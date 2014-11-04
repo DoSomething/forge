@@ -164,7 +164,7 @@
     }
   }
 
-  // Duo Gallery with image in left column and content in right column.
+  // Duo Gallery serves as a container for two tiles that sit side by side. Tiles can be of any style.
   //
   // Styleguide Gallery - Duo
   &.-duo {
@@ -172,25 +172,6 @@
       @include media($tablet) {
         @include span-columns(6 of 12);
         @include omega(2n);
-      }
-    }
-
-    .tile--figure {
-      @include clearfix();
-      text-align: left;
-
-      .__media {
-        @include span-columns(2);
-
-        img {
-          margin-left: 0;
-          margin-right: 0;
-          width: auto;
-        }
-      }
-
-      .__body {
-        @include span-columns(6);
       }
     }
   }
