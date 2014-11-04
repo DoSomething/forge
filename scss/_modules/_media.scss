@@ -1,7 +1,7 @@
 // Module class for media tile blocks that can be placed in multiple contexts on a page. Specifically used for reportback tiles on user profiles, but can be used for other content as well.
 // A media tile block can contain an image, title, and description with the image in the left column and the content in the right.
 //
-// Styleguide Media Tile
+// Styleguide Media
 
 .media {
   @include clearfix();
