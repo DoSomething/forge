@@ -370,7 +370,7 @@
     <% styleguide_block  'Gallery - Duo' do %>
       <ul class="gallery -duo">
         <li class="-first">
-          <article class="tile media">
+          <article class="media">
             <div class="wrapper">
               <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
             </div>
@@ -389,7 +389,7 @@
         </li>
 
         <li class="-second">
-          <article class="tile media">
+          <article class="media">
             <div class="wrapper">
               <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
             </div>
@@ -421,6 +421,26 @@
       </footer>
     <% end %>
 
+    <h4 id="media">Media</h4>
+    <% styleguide_block  'Media' do %>
+      <article class="media">
+        <div class="wrapper">
+          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+        </div>
+
+        <div class="__body">
+          <h3 class="__title"><a href=
+              "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+
+          <div class="__description">
+            Do you have stained or ripped clothes you don't wear? Recycle them
+            w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+            <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+          </div>
+        </div>
+      </article>
+    <% end %>
+    
     <h4 id="media-select">Media Selector</h4>
     <% styleguide_block 'Media Selector' do %>
       <div class="js-media-options">
@@ -471,26 +491,6 @@
           <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
           <!-- <video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop></video> -->
         </a>
-      </article>
-    <% end %>
-
-    <h4 id="tile">Media Tile</h4>
-    <% styleguide_block  'Media Tile' do %>
-      <article class="tile media">
-        <div class="wrapper">
-          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
-        </div>
-
-        <div class="__body">
-          <h3 class="__title"><a href=
-              "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
-
-          <div class="__description">
-            Do you have stained or ripped clothes you don't wear? Recycle them
-            w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
-            <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-          </div>
-        </div>
       </article>
     <% end %>
 
@@ -689,6 +689,7 @@
         <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
         <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
         <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
+        <li><a href="#media" class="js-jump-scroll">Media</a></li>
         <li><a href="#media-select" class="js-jump-scroll">Media Selector</a></li>
         <li><a href="#message-box" class="js-jump-scroll">Message Box</a></li>
         <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
