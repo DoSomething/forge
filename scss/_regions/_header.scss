@@ -127,11 +127,11 @@
 
   // Center text in the header (generally used for non-content pages).
   &.-centered {
-    min-height: 465px;
+    min-height: 365px;
     padding: 216px 0;
 
     @include media($tablet) {
-      height: 620px;
+      height: 520px;
     }
 
     > .wrapper {
