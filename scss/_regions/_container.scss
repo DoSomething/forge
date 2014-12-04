@@ -81,6 +81,12 @@
   p + .tabbed {
     margin-top: 27px;
   }
+
+  // Fixes spacing between ul and h2.
+  // @TODO: Remove after typography revamp.
+  ul + h2 {
+    margin-top: 1em;
+  }
 }
 
 
