@@ -4,9 +4,9 @@
 // .floating  - Navigation should float above following elements on the page.
 //
 // Styleguide Site Navigation
-.chrome--nav {
+.navigation {
   width: 100%;
-  margin-bottom: 36px;
+  margin-bottom: $base-spacing;
   overflow: hidden;
 
   @include media($mobile) {
@@ -44,7 +44,7 @@
   }
 
   // Use white navigation text and search field (with subtle drop shadow).
-  &.white {
+  &.-white {
     .hamburger {
       color: #fff;
     }
@@ -69,7 +69,7 @@
   }
 
   // Navigation should float above following elements on the page.
-  &.floating {
+  &.-floating {
     position: absolute;
     top: 0;
     margin-bottom: 0;
@@ -97,6 +97,7 @@
     }
 
     img {
+      max-width: auto;
       width: 80px;
       height: 70px;
     }
@@ -168,7 +169,7 @@
     }
 
     span {
-      font-size: $font-small;
+      font-size: $font-smaller;
       opacity: 0.8;
 
       @include media($tablet) {

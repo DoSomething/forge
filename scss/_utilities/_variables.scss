@@ -8,55 +8,66 @@ $purple: #4e2b63;
 $yellow: #fcd116;
 
 // Grayscale
+$black: #000;
 $off-black: #222;
 $dark-gray: #444;
 $med-gray: #999;
 $light-gray: #ddd;
+$white: #fff;
 
 // System
 $error: #ff4747;
 $warning: $purple;
 $success: $purple;
 
+$base-background-color: $light-gray;
+$base-font-color: $dark-gray;
+
 // Body copy
-$copy-color: #444;
+$error-color: $error;
+$copy-color: $dark-gray;
 
 // Modifiers
+$tint: 10%;
 $color-tint: 10%;
 
 // ------------
 //  Typography
 // ------------
 
-// Families
+// Font Stacks
 $font-proxima-nova: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-handwritten: "CoveredGrace", cursive;
+
+$base-font-family: $font-proxima-nova;
+$accent-font-family: $font-handwritten;
 
 // Weights
 $weight-normal: 400;
 $weight-sbold: 600;
 $weight-bold: 700;
 
-// Sizes
-$font-hero: 72px;
-$font-largest: 54px;
-$font-larger: 45px;
+// Typography
+$font-hero: 54px;
+$font-larger: 36px;
 $font-large: 32px;
 $font-medium: 24px;
 $font-regular: 18px; // base font size
-$font-small: 13px;
+$font-small: 16px;
+$font-smaller: 13px;
 
-// Unicode
-$unicode-check: "\e60b";
-$unicode-error: "\e608";
-$unicode-flag: "\2691";
+$base-font-size: $font-regular;
+$unitless-line-height: 1.5;
+$header-line-height: 1.2;
+$base-line-height: $base-font-size * $unitless-line-height;
 
-// ------------
-//  Decoration
-// ------------
+// Measurements
+$base-spacing: 24px;
+$section-spacing: 48px;
 
+// Decoration
 $sm-border-radius: 2px; // for accent (images, text fields, etc)
-$lg-border-radius: 5px; // used for primary interactive elements (buttons, etc)
+$lg-border-radius: 4px; // used for primary interactive elements (buttons, etc)
 
 // Text Shadows
 $text-shadow: 0 1px 3px rgba(#000, 0.3);

@@ -11,35 +11,12 @@
   background: $purple no-repeat center center;
   background-size: cover;
   overflow: hidden;
-  padding: 144px 18px 27px;
+  padding: 144px ($base-spacing / 2) $base-spacing;
   position: relative;
 
   @include media($tablet) {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  &:before {
-    bottom: 0;
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 5;
-    @include linear-gradient(rgba(#000, 0) 30%, rgba(#000, .2) 85%, rgba(#000, .5) 95%, rgba(#000, .85) 100%);
-
-    @include media($tablet) {
-      @include linear-gradient(rgba(#000, 0) 20%, rgba(#000, .2) 50%, rgba(#000, .5) 70%, rgba(#000, .85) 100%);
-    }
-  }
-
-  .no-cssgradients & {
-    &:before {
-      background: transparent neue-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
-    }
   }
 
   > .wrapper {
@@ -51,19 +28,17 @@
     @include clearfix();
 
     @include media($tablet) {
+      text-align: left;
+
       @include span-columns(12);
       @include shift(2);
-
-      float: none;
-      text-align: left;
     }
   }
 
   .__title {
-    color: #fff;
+    color: $white;
     font-size: $font-larger;
-    line-height: 1;
-    margin: 0 0 9px;
+    margin: 0;
 
     @include media($tablet) {
       font-size: $font-hero;
@@ -71,14 +46,11 @@
   }
 
   .__subtitle {
-    color: #fff;
+    color: $white;
     font-size: $font-regular;
-    font-weight: normal;
-    line-height: 1.3;
 
     @include media($tablet) {
       font-size: $font-medium;
-      margin-bottom: 27px;
     }
   }
 
@@ -173,6 +145,15 @@
     }
 
     &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 5;
       @include linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
 
       @include media($tablet) {
