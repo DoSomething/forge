@@ -14,9 +14,8 @@
 
   // Mosaic Gallery styles
   &.-mosaic {
-    background-color: #000;
-
     > li {
+      padding: $base-spacing / 2;
 
       @include media(450px) {  // @TODO: custom mq; address when more mq's added.
         float: left;

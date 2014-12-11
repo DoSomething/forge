@@ -5,8 +5,7 @@
 //
 // Styleguide Tabbed Navigation
 .tabs {
-  padding: 54px 0;
-  font-size: 20px;
+  font-size: $font-regular;
   text-align: center;
   overflow: hidden;
 
@@ -52,7 +51,6 @@
 
     li {
       display: block;
-      margin: 9px 0;
     }
   }
 }

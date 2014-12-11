@@ -3,48 +3,24 @@
 // Styleguide Container
 
 .container {
+  @include clearfix();
+
   > .wrapper {
-    padding: 18px;
+    clear: both;
+    padding: $base-spacing;
     position: relative;
-    @include clearfix();
 
     @include media($tablet) {
+      padding: $base-spacing 0;
+
       @include span-columns(12);
       @include shift(2);
-      float: none;
-      padding: 18px 0;
     }
 
-    @include media($desktop) {
-      padding: 27px 0;
-    }
-  }
-
-  // @TODO: (Revisit) Not supported in IE8; maybe use a class instead...
-  // but makes dictating extra padding on first item easy @_@
-  &:first-of-type {
-    > .wrapper {
-      padding-top: 36px;
-    }
-
-    // If this is the first .container but has a header that's a .banner, then don't add the extra padding.
-    .container__title + .wrapper {
-      padding-top: 27px;
-    }
-  }
-
-  > .gallery {
-    padding: 18px 0;
-
-    @include media($desktop) {
-      padding: 27px 0;
-    }
-  }
-
-  // removes bottom padding on a gallery that is a direct child of the last .container
-  &:last-of-type {
-    > .gallery {
-      padding-bottom: 0;
+    &.-narrow {
+      @include media($tablet) {
+        @include span-columns(9);
+      }
     }
   }
 

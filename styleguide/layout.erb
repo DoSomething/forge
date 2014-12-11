@@ -26,7 +26,7 @@
 <body>
 <div class="chrome">
   <div id="top" class="chrome--wrapper">
-    <nav class="chrome--nav white floating">
+    <nav class="navigation -white -floating">
       <a class="logo" href="http://www.dosomething.org"><img src="dist/assets/images/ds-logo.png" alt="DoSomething.org"></a>
       <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
       <div class="menu">
@@ -62,23 +62,24 @@
       </div>
     </nav>
 
-    <header role="banner" class="-basic -centered -styleguide">
+    <header role="banner">
       <div class="wrapper">
         <h1 class="__title">
           Pattern Library
-          <a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %></a>
+          <%# <a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %1></a> %>
         </h1>
         <p class="__subtitle">
           Any pattern, anytime, anywhere.
         </p>
       </div>
-      <video src="/styleguide/assets/example-video.mp4" type="video/mp4" poster="/styleguide/assets/example-poster.jpg" autoplay loop></video>
     </header>
 
     <%= yield %>
 
-    <footer class="styleguide--footer">
-      <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
+    <footer class="container -styleguide-footer">
+      <div class="wrapper -narrow">
+        <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
+      </div>
     </footer>
 
   </div>
