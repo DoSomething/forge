@@ -15,6 +15,13 @@ get '/' do
   erb :index
 end
 
+get '/inventory' do
+  @package = JSON.parse( File.read('package.json') )
+  @version = "v#{@package["version"]}"
+
+  erb :inventory
+end
+
 helpers do
   # Generates a styleguide block. A little bit evil with @_out_buf, but
   # if you're using something like Rails, you can write a much cleaner helper
