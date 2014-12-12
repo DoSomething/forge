@@ -1,0 +1,116 @@
+// Module class for all galleries. Add additional modifier classes to designate styling for a specific type of gallery.
+// The .empty class for items in the gallery will create a spacer item that can contain custom messaging and expand to fill the appropriate space based on its own modifier classes.
+//
+// Styleguide Gallery - Mosaic
+
+.gallery {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @include clearfix();
+
+  > li {
+    margin: 0;
+
+    @include media($tablet) {
+      @include span(3 of 12);
+      margin: gutter() 0;
+    }
+  }
+
+  &.-featured {
+    > li:first-child {
+      width: 100%;
+
+      @include media($tablet) {
+        @include span(6 of 12);
+      }
+    }
+
+    > li:nth-child(6) {
+      @include media($tablet) {
+        clear: both;
+      }
+    }
+  }
+
+  // Triad Gallery.  Defaults to using images with same dimensions.
+  //
+  // .-aligned - Tiles with image flushed to top and minimum
+  // height to force content below to line up with adjacent tiles
+  // since image dimensions can vary.  Defaults to 75px tall.
+  // This should be overridden when necessary.
+  //
+  // Styleguide Gallery - Triad
+  &.-triad {
+    > li {
+      @include media($tablet) {
+        @include gallery(4 of 12);
+      }
+    }
+
+    &.-aligned {
+      .tile--figure {
+        .__media {
+          margin-bottom: 18px;
+          height: 75px;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            margin-bottom: 0;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // Duo Gallery serves as a container for two tiles that sit side by side. Tiles can be of any style.
+  //
+  // Styleguide Gallery - Duo
+  &.-duo {
+    > li {
+      @include media($tablet) {
+        @include span(6 of 12);
+      }
+    }
+  }
+
+  .ie8 & {
+    &.-duo {
+      > li {
+        @include media($tablet) {
+          // Last-child not supported in IE8; using class as fallback.
+          &.-second {
+            margin-right: 0;
+            border: 1px solid #000;
+          }
+
+          // Nth-child not supported in IE8; using class as fallback.
+          &.-first {
+            clear: left;
+          }
+        }
+      }
+    }
+
+    &.-triad {
+      > li {
+        @include media($tablet) {
+          // Last-child not supported in IE8; using class as fallback.
+          &.-third {
+            margin-right: 0;
+          }
+
+          // Nth-child not supported in IE8; using class as fallback.
+          &.-first {
+            clear: left;
+          }
+        }
+      }
+    }
+  }
+}
+
