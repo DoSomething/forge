@@ -19,14 +19,14 @@
   }
 
   &.animated-open {
-    @include animation(fadeIn 0.25s);
+    animation: fadeIn 0.25s;
   }
 
   &.animated-close {
-    @include animation(fadeOut 0.25s);
+    animation: fadeOut 0.25s;
 
     [data-modal] {
-      @include animation(moveDown 0.25s);
+      animation: moveDown 0.25s;
     }
   }
 }
@@ -48,9 +48,21 @@
   }
 
   .modal-close-button {
-    @include close-parent;
-    color: #aaa;
-    top: 0;
+    position: absolute;
+    top: 0; right: 27px;
+    font-size: 45px;
+    font-weight: bold;
+    color: $med-gray;
+    opacity: 0.4;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 1;
+    }
 
     &.-alt {
       font-size: 18px;
@@ -62,24 +74,11 @@
     }
   }
 
-  h2.banner {
+  .heading.-banner {
     // make space for "x" button & fit banner to edge of modal
     padding-left: 27px;
     padding-right: 72px;
     margin: -36px -27px 18px;
-  }
-
-  // Ensure modal images do not break out of their
-  // parent containers on mobile
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  // Fixes spacing between ul and paragraphs in the modal.
-  // @TODO: Remove after typography revamp.
-  ul + p { 
-    margin-top: 1em; 
   }
 }
 

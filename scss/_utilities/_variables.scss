@@ -1,3 +1,29 @@
+$max-width: 1440px;
+
+$small: "(max-width: 659px)";
+$medium: "(min-width: 660px)";
+$large: "(min-width: 960px)";
+$larger: "(min-width: 1060px)";
+
+$mobile: $small;
+$tablet: $medium;
+$desktop: $larger;
+
+$susy: (
+  container: 1440px,
+  columns: 16,
+  gutters: 24px/64.5px,
+  column-width: 64.5px,
+  gutter-position: inside-static,
+  global-box-sizing: border-box,
+
+  debug: (
+    image: show-columns,
+    output: overlay,
+    toggle: top right,
+  )
+);
+
 // --------
 //  Colors
 // --------

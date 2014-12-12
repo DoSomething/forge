@@ -1,9 +1,3 @@
-// Consistent indentation for elements in the mobile views to allow for full-width images, formes, etc.
-// @TODO - This method scales terribly; revisit.
-@mixin section-padding {
-  padding: 0 27px;
-}
-
 // Calculate rgba() fallback value for older browsers.
 //
 // Examples:
@@ -16,26 +10,24 @@
   #{$property}: rgba($color, $value);
 }
 
-
-// Shortcut for writing sprites that scale down on mobile displays.
-@mixin responsive-sprite($pos-x, $pos-y) {
-  background-position: $pos-x/2 $pos-y/2;
-
-  @include media($tablet) {
-    background-position: $pos-x $pos-y;
+// Micro-clearfix mixin.
+// See: http://goo.gl/y82qLF
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
   }
 }
 
-// Border highlight on input focus
-@mixin highlight-on-focus {
-  &:focus {
-    outline: 0;
-    border: 1px solid $blue;
-    box-shadow: 0 0 3px $blue;
+// Media query mixin
+@mixin media($breakpoint) {
+  @media #{$breakpoint} {
+    @content;
   }
 }
 
-// Cleaner calling of our icon font
+// Set typographic settings for icon fonts.
 @mixin icomoon-icon {
   font-family: "icomoon";
   speak: none;
@@ -50,27 +42,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Pattern for creating the close "x" for all
-// modals, dialogs and system status messages
-@mixin close-parent {
-  position: absolute;
-  top: 4px; right: 27px;
-  font-size: 45px;
-  font-weight: bold;
-  color: $dark-gray;
-  opacity: 0.4;
-  text-decoration: none;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 1;
-  }
-}
-
-
 // Hide only visually, but have it available for screenreaders.
 // @mixin visually-hidden
 // @mixin visually-restored
@@ -79,11 +50,3 @@
 @mixin visually-hidden($position:absolute) { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: $position; width: 1px; }
 @mixin visually-restored($position:static) { clip: auto; height: auto; margin: auto; overflow: visible; position: $position; width: auto; }
 
-
-// @TODO: Add universally to all images; but need to thoroughly test, so just a mixin on call for now.
-@mixin fluid-image() {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: auto;
-}

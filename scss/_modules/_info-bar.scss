@@ -12,8 +12,7 @@
     @include clearfix();
 
     @include media($tablet) {
-      @include span-columns(12);
-      @include shift(2);
+      @include span(12 at 2);
       float: none;
       padding: 18px 0;
     }

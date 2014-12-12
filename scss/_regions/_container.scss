@@ -6,31 +6,31 @@
   @include clearfix();
 
   > .wrapper {
-    clear: both;
     padding: $base-spacing;
     position: relative;
-
-    @include media($tablet) {
-      padding: $base-spacing 0;
-
-      @include span-columns(12);
-      @include shift(2);
-    }
+    @include span(12);
+    @include push(2);
 
     &.-narrow {
       @include media($tablet) {
-        @include span-columns(9);
+        @include span(9);
+      }
+    }
+
+    &.-half {
+      @include media($tablet) {
+        @include span(6);
+
+        &:nth-of-type(2) {
+          @include push(0);
+        }
       }
     }
   }
 
   .-columned {
     @include media($tablet) {
-      @include span-columns(6 of 12);
-
-      &.-even {
-        @include omega();
-      }
+      @include span(6);
     }
   }
 
@@ -41,35 +41,10 @@
       margin-top: 0;
     }
   }
-
-  aside {
-    img {
-      @include fluid-image();
-      width: 100%;
-    }
-  }
-
-  p + .__row,
-  .__row + .__row {
-    margin-top: 27px;
-  }
-
-  p + .tabbed {
-    margin-top: 27px;
-  }
-
-  // Fixes spacing between ul and h2.
-  // @TODO: Remove after typography revamp.
-  ul + h2 {
-    margin-top: 1em;
-  }
 }
-
 
 // Styles for Container Titles.
 .container__title {
-  line-height: 1.1;
-  margin: 0 0 18px;  // @TODO: remove margins. Should be done globally!
 
   &.banner {
     margin-bottom: 0;
@@ -84,7 +59,7 @@
       line-height: 1; // @TODO: Move to Neue.
 
       @include media($tablet) {
-        @include shift(2 of 16);
+        @include prefix(2 of 16);
       }
     }
   }
@@ -103,7 +78,7 @@
 
   @include media($tablet) {
     &.-compact {
-      @include span-columns(9 of 12);
+      @include span(9 of 12);
     }
   }
 
@@ -187,7 +162,7 @@
 
 // IE BUG Fixes
 
-.ie8 & {
+.ie8 .container {
   .-columned {
     @include media($tablet) {
       // Last-child not supported in IE8; using class as fallback.
@@ -230,7 +205,7 @@
 
   .form-item-alpha-first-name {
     @include media($tablet) {
-      @include span-columns(6 of 12);
+      @include span(6 of 12);
     }
   }
 

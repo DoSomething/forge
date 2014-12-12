@@ -14,11 +14,11 @@ label {
   margin: 1em 0 0.25em;
   height: 1.5em;
   overflow: hidden;
-  @include transition(height 0.5s);
+  transition: height 0.5s;
 
   .inner-label {
     position: relative;
-    @include transition(top 0.5s);
+    transition: top 0.5s;
   }
 
   &.show-message {
@@ -56,7 +56,10 @@ label {
 // .medium        - Medium-sized input width (e.g. for phone numbers)
 //
 // Styleguide Forms - Text Input Fields
-#{$all-text-inputs}, textarea {
+input[type="email"], input[type="number"], input[type="password"], input[type="search"],
+input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
+input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
+input[type="time"], input[type="week"], textarea {
   width: 100%;
   font-family: $font-proxima-nova;
   font-size: 18px;
@@ -67,9 +70,13 @@ label {
   border-radius: 5px;
   padding: 0.5em 1em;
   margin: 0 0 0.5em;
-  @include transition(border 0.5s);
-  @include highlight-on-focus;
-  -webkit-appearance: none;
+  appearance: none;
+  transition: border 0.5s;
+
+  &:focus {
+    border: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
 
   &.short {
     max-width: 80px;
@@ -131,7 +138,7 @@ textarea {
 // .tertiary          - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
 //
 // Styleguide Forms - Buttons
-.btn {
+.button {
   display: inline-block;
   clear: both;
   background: $blue;
@@ -149,15 +156,15 @@ textarea {
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $lg-border-radius;
-
-  @include appearance(none);
-  @include highlight-on-focus;
+  appearance: none;
 
   &:hover {
     background: lighten($blue, $color-tint);
   }
 
   &:focus {
+    outline: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
     background: lighten($blue, $color-tint);
   }
 
@@ -233,7 +240,7 @@ textarea {
     background-size: 32px;
     box-shadow: none;
     cursor: default;
-    @include user-select(none);
+    user-select: none;
 
     &:hover, &:active {
       color: $light-gray;
@@ -271,7 +278,11 @@ select {
   font-size: 18px;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
-  @include highlight-on-focus();
+
+  &:focus {
+    outline: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
 
   &.error {
     border-color: $error;

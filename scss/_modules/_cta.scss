@@ -5,11 +5,13 @@
 // Styleguide Call To Action
 
 .cta {
+  display: block;
+  width: 100%;
   background-color: lighten($light-gray, 10%);
   border-bottom: 2px solid $light-gray;
   border-top: 2px solid $light-gray;
   padding: 18px;
-  @include row;
+
   @include media($tablet) {
     padding: 0;
   }
@@ -20,8 +22,7 @@
 
 
     @include media($tablet) {
-      @include span-columns(12);
-      @include shift(2);
+      @include span(12 at 2);
     }
   }
 

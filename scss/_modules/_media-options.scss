@@ -7,7 +7,7 @@
   @include clearfix();
 
   .form-item {
-    @include span-columns(4);
+    @include span(4);
     position: relative;
 
     label {
