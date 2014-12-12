@@ -16,7 +16,6 @@
   text-align: center;
 
   img {
-    @include fluid-image();
     margin: 0 auto 18px;
 
     @include media($desktop) {
@@ -46,11 +45,10 @@
   position: relative;
 
   > .wrapper {
-    background-color: #000;
     height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
 
     &:before {
@@ -61,7 +59,7 @@
       position: absolute;
       width: 100%;
       z-index: 5;
-      @include linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
+      background: linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
     }
   }
 

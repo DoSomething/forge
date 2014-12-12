@@ -30,8 +30,8 @@
     @include media($tablet) {
       text-align: left;
 
-      @include span-columns(12);
-      @include shift(2);
+      @include span(12);
+      @include push(2);
     }
   }
 
@@ -111,12 +111,10 @@
       top: 50%;
       padding: 18px;
       text-align: center;
-
-      @include transform(translateY(-50%));
+      transform: translateY(-50%);
 
       @include media($tablet) {
-        @include span-columns(8);
-        @include shift(4);
+        @include span(8 at 4);
       }
     }
 
@@ -154,10 +152,10 @@
       bottom: 0;
       left: 0;
       z-index: 5;
-      @include linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
+      background: linear-gradient(rgba(#000, 0) 10%, rgba(#000, .2) 65%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
 
       @include media($tablet) {
-        @include linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
+        background: linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
       }
     }
 

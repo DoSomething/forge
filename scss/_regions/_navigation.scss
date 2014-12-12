@@ -27,10 +27,6 @@
         height: auto;
         background: none;
         margin-top: 72px;
-
-        @include media($tall-mobile) {
-          margin-top: 90px;
-        }
       }
 
       a {
@@ -93,13 +89,13 @@
       padding: 0 18px;
       text-align: center;
 
-      @include span-columns(2);
+      @include span(2);
     }
 
     img {
-      max-width: auto;
       width: 80px;
       height: 70px;
+      max-width: none;
     }
   }
 
@@ -224,7 +220,7 @@
       padding-top: 5px;
       padding-bottom: 5px;
       box-shadow: 0 1px 0 rgba(#000, 0.2);
-      @include transition(width 0.5s);
+      transition: width 0.5s;
 
       .no-svg & {
         background-image: neue-asset-url("images/fallbacks/search_white.png");
@@ -243,9 +239,10 @@
       }
 
       // @TODO: Clean this up when we add some more media query breakpoints.
-      @include media(890px) {
-        width: 200px;
-      }
+      @warn("Me");
+      // @include media(890px) {
+      //   width: 200px;
+      // }
     }
 
     a {

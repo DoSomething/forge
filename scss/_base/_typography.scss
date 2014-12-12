@@ -1,6 +1,6 @@
 // Set border-box on all the elements!
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Base HTML elements
@@ -44,12 +44,16 @@ h1, h2, h3, h4, h5, h6,
   color: $white;
   text-transform: uppercase;
   padding: ($base-spacing / 2) 0;
+  margin: 0;
+
+  @include clearfix;
 
   span {
-    margin-left: $base-spacing;
+    padding-left: $base-spacing;
 
     @include media($tablet) {
-      @include shift(2 of 16);
+      @include span(12);
+      @include push(2);
     }
   }
 }
@@ -95,7 +99,7 @@ h4, h5, h6, .heading.-delta {
 // Styleguide Typography - Unordered Lists
 ul {
   list-style-type: square;
-  padding-left: $base-spacing * 2;
+  padding-left: $base-spacing;
 }
 
 // List of items with numerical ordering.
@@ -103,19 +107,23 @@ ul {
 // Styleguide Typography - Ordered Lists
 ol {
   list-style-type: decimal;
-  padding-left: $base-spacing * 2;
+  padding-left: $base-spacing;
+}
+
+li + li {
+  margin-top: $base-spacing;
 }
 
 // Inline text elements.
 //
 // Styleguide Typography - Inline Elements
-p {
+p, ul, ol {
   font-size: $font-regular;
   color: $copy-color;
 
   // Apply base spacing between adjacent paragraphs, and
   // headings that follow paragraph text.
-  + p, + h1, + h2, + h3, + h4, + h5, + h6 {
+  + p, + ul, + ol, + h1, + h2, + h3, + h4, + h5, + h6 {
     margin-top: $base-spacing * 2;
   }
 }
@@ -149,7 +157,10 @@ a {
 //
 // Styleguide Typography - Images
 img {
+  display: block;
   max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 // Emphasized content, displayed with a bold font.

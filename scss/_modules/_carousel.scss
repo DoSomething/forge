@@ -39,7 +39,7 @@
     border-radius: 25px;
 
     // prevent icons from highlighting when double clicked
-    @include user-select;
+    user-select: none;
 
     // arrow icon nested inside each button
     span.arrow {
