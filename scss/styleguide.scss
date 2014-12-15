@@ -9,10 +9,7 @@
 //   These are styles that are only used in the styleguide, and
 //   should not be available in client applications.
 
-@import "../bower_components/bourbon/dist/bourbon";
-@import "../bower_components/neat/app/assets/stylesheets/neat-helpers";
-@import "_utilities/grid-settings.scss";
-@import "../bower_components/neat/app/assets/stylesheets/neat";
+@import "../bower_components/susy/sass/susy";
 
 @import "_utilities/functions";
 @import "_utilities/variables";
@@ -26,8 +23,7 @@
     position: sticky;
     top: 0;
 
-    @include span-columns(4);
-    @include omega;
+    @include span(4);
   }
 }
 
@@ -35,8 +31,8 @@
   margin: $base-spacing;
 
   @include media($tablet) {
-    @include shift(2);
-    @include span-columns(9);
+    @include span(9);
+    @include push(2);
   }
 }
 
