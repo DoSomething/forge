@@ -114,14 +114,14 @@
     display: block;
     font-size: $font-smaller;
     color: $med-gray;
-    line-height: 2;
+    line-height: 2.5;
 
     &:hover {
       color: #fff;
     }
 
     @include media($tablet) {
-      line-height: $unitless-line-height;
+      line-height: 1.75;
     }
   }
 }
