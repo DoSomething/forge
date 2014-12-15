@@ -19,6 +19,7 @@ build:
   - 'clean:dist'
   - 'copy:assets'
   - 'sass:compile'
+  - 'autoprefixer:process'
   - 'requirejs:compile'
   - 'modernizr:dist'
 
