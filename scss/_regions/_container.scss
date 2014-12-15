@@ -6,10 +6,13 @@
   @include clearfix();
 
   > .wrapper {
-    padding: $base-spacing;
     position: relative;
-    @include span(12);
-    @include push(2);
+    padding: $base-spacing;
+
+    @include media($tablet) {
+      @include span(12);
+      @include push(2);
+    }
 
     &.-narrow {
       @include media($tablet) {
