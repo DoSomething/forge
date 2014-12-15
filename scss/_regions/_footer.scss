@@ -74,7 +74,7 @@
           @include icomoon-icon;
           position: absolute;
           top: -5px;
-          right: 0;
+          right: -5px;
           content: "\e609"; // down arrow
           color: $med-gray;
           font-size: 32px;
@@ -88,7 +88,7 @@
         margin-bottom: 0;
 
         &:after {
-          transform: rotate(90);
+          transform: rotate(-90deg);
         }
 
         & + ul {
@@ -103,7 +103,7 @@
     overflow: hidden;
     padding: 0;
     max-height: 500px;
-    -webkit-transition: max-height 0.25s;
+    transition: max-height 0.25s;
   }
 
   li {
