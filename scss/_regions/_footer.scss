@@ -2,6 +2,7 @@
 //
 // Styleguide Site Footer
 .footer {
+  clear: both;
   width: 100%;
   background: $black;
   @include clearfix;
