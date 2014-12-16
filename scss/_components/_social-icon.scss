@@ -28,18 +28,18 @@
   }
 
   &.-twitter:after {
-    content: "\e603";
-  }
-
-  &.-tumblr:after {
     content: "\e602";
   }
 
-  &.-instagram:after {
+  &.-tumblr:after {
     content: "\e604";
   }
 
-  &.-youtube:after {
+  &.-instagram:after {
     content: "\e601";
+  }
+
+  &.-youtube:after {
+    content: "\e603";
   }
 }

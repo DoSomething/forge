@@ -75,10 +75,10 @@
           position: absolute;
           top: -5px;
           right: -5px;
-          content: "\e609"; // down arrow
+          content: "\e607"; // right arrow
           color: $med-gray;
           font-size: 32px;
-          transform: rotate(0);
+          transform: rotate(90deg); // rotate to down arrow
           transition: transform 0.25s;
         }
       }
@@ -88,7 +88,7 @@
         margin-bottom: 0;
 
         &:after {
-          transform: rotate(-90deg);
+          transform: rotate(0deg); // rotate to right arrow
         }
 
         & + ul {
@@ -114,14 +114,14 @@
     display: block;
     font-size: $font-smaller;
     color: $med-gray;
-    line-height: 2.5;
+    padding: ($base-spacing / 4) 0;
 
     &:hover {
       color: #fff;
     }
 
     @include media($tablet) {
-      line-height: 1.75;
+      padding: 0;
     }
   }
 }
