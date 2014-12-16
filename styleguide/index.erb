@@ -30,21 +30,21 @@
       <li>
       <div class="color-tile" data-hex="#23b7fb">
       <strong>Blue</strong>
-      <code>($blue) <span class="js-color-label">&hellip;</span></code>
+      <code>($blue) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
 
       <li>
       <div class="color-tile" data-hex="#4e2b63">
       <strong>Purple</strong>
-      <code>($purple) <span class="js-color-label">&hellip;</span></code>
+      <code>($purple) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
 
       <li>
       <div class="color-tile" data-hex="#fcd116">
       <strong>Yellow</strong>
-      <code>($yellow) <span class="js-color-label">&hellip;</span></code>
+      <code>($yellow) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
     </ul>
@@ -55,28 +55,28 @@
       <li>
       <div class="color-tile" data-hex="#222">
       <strong>Off Black</strong>
-      <code>($off-black) <span class="js-color-label">&hellip;</span></code>
+      <code>($off-black) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
 
       <li>
       <div class="color-tile" data-hex="#444">
       <strong>Dark Gray</strong>
-      <code>($dark-gray) <span class="js-color-label">&hellip;</span></code>
+      <code>($dark-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
 
       <li>
       <div class="color-tile" data-hex="#999">
       <strong>Medium Gray</strong>
-      <code>($med-gray) <span class="js-color-label">&hellip;</span></code>
+      <code>($med-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
 
       <li>
       <div class="color-tile" data-hex="#ddd">
       <strong>Light Gray</strong>
-      <code>($light-gray) <span class="js-color-label">&hellip;</span></code>
+      <code>($light-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
       </li>
     </ul>
@@ -87,12 +87,12 @@
       <li>
         <div class="color-tile" data-hex="#ff4747">
         <strong>Red</strong>
-        <code>($red) <span class="js-color-label">&hellip;</span></code>
+        <code>($red) <span class="color-tile__value js-color-label">&hellip;</span></code>
         </div>
       </li>
     </ul>
 
-    <p class="legal"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
+    <p class="legal styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
 
     <h3 id="typography">Typography</h3>
     <p>Content is the basis of our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
@@ -124,10 +124,56 @@
     This is some <strong>bold</strong> text, a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>. Also, <code>code(0);</code>.</p>
   <% end %>
 
-    <h3 id="layout">Layout</h3>
-    <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
-    <p>We use <a href="http://susy.oddbird.net">Susy 2</a> to build our interface on a fluid grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. Our grid is split up into sixteen columns, with a 24 pixel static gutter between columns.</p>
-    <p>See the <a href="http://susydocs.oddbird.net/en/latest/">Susy documentation</a> for implementation details.</p>
+  <h3 id="forms">Forms</h3>
+  <% styleguide_block  'Forms - Form Labels' do %>
+    <!-- .show-message and .message classes and markup generated dynamically -->
+    <label class="show-message">
+      <div class="message $modifier_class">Label</div>
+    </label>
+    <input class="$modifier_class" type="text">
+  <% end %>
+
+  <% styleguide_block  'Forms - Text Input Fields' do %>
+    <input type="text" class="$modifier_class">
+    <input type="text" class="$modifier_class" placeholder="placeholder">
+  <% end %>
+
+  <% styleguide_block  'Forms - Search Fields' do %>
+    <input type="search" class="$modifier_class" placeholder="Find something...">
+  <% end %>
+
+  <% styleguide_block  'Forms - Text Area Fields' do %>
+    <textarea name="textarea" placeholder="Write something here..."></textarea>
+  <% end %>
+
+  <% styleguide_block  'Forms - Select Boxes' do %>
+    <select class="$modifier_class">
+      <option>Awesome Things</option>
+      <option>Popular Things</option>
+      <option>Random Things</option>
+    </select>
+  <% end %>
+
+  <% styleguide_block  'Forms - Option Fields' do %>
+    <h4>This thing</h4>
+    <input type="checkbox" id="option1">
+    <label class="option" for="option1">Choose that option.</label>
+
+    <input type="checkbox" id="option2">
+    <label class="option" for="option2">Choose this option.</label>
+
+    <h4>The other thing</h4>
+    <input type="radio" name="choice" id="choice1">
+    <label class="option" for="choice1">Choose one option.</label>
+
+    <input type="radio" name="choice" id="choice2">
+    <label class="option" for="choice2">Choose the other option.</label>
+  <% end %>
+
+  <h3 id="layout">Layout</h3>
+  <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
+  <p>We use <a href="http://susy.oddbird.net">Susy 2</a> to build our interface on a fluid grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. Our grid is split up into sixteen columns, with a 24 pixel static gutter between columns.</p>
+  <p>See the <a href="http://susydocs.oddbird.net/en/latest/">Susy documentation</a> for implementation details.</p>
 
   <h3 id="animation">Animation</h3>
   <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
@@ -137,54 +183,9 @@
     <h2 id="components">Components</h2>
     <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
 
-    <h4 id="forms">Forms</h4>
-    <% styleguide_block  'Forms - Form Labels' do %>
-      <!-- .show-message and .message classes and markup generated dynamically -->
-      <label class="show-message">
-        <div class="message $modifier_class">Label</div>
-      </label>
-      <input class="$modifier_class" type="text">
-    <% end %>
-
-    <% styleguide_block  'Forms - Text Input Fields' do %>
-      <input type="text" class="$modifier_class">
-      <input type="text" class="$modifier_class" placeholder="placeholder">
-    <% end %>
-
-    <% styleguide_block  'Forms - Search Fields' do %>
-      <input type="search" class="$modifier_class" placeholder="Find something...">
-    <% end %>
-
-    <% styleguide_block  'Forms - Text Area Fields' do %>
-      <textarea name="textarea" placeholder="Write something here..."></textarea>
-    <% end %>
-
+    <h4 id="buttons">Buttons</h4>
     <% styleguide_block  'Forms - Buttons' do %>
       <a class="button $modifier_class">Example Button</a>
-    <% end %>
-
-    <% styleguide_block  'Forms - Select Boxes' do %>
-      <select class="$modifier_class">
-        <option>Awesome Things</option>
-        <option>Popular Things</option>
-        <option>Random Things</option>
-      </select>
-    <% end %>
-
-    <% styleguide_block  'Forms - Option Fields' do %>
-      <h4>This thing</h4>
-      <input type="checkbox" id="option1">
-      <label class="option" for="option1">Choose that option.</label>
-
-      <input type="checkbox" id="option2">
-      <label class="option" for="option2">Choose this option.</label>
-
-      <h4>The other thing</h4>
-      <input type="radio" name="choice" id="choice1">
-      <label class="option" for="choice1">Choose one option.</label>
-
-      <input type="radio" name="choice" id="choice2">
-      <label class="option" for="choice2">Choose the other option.</label>
     <% end %>
 
     <h4 id="images">Images</h4>
@@ -657,6 +658,7 @@
       <ul>
         <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
         <li><a href="#typography" class="js-jump-scroll">Typography</a></li>
+        <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
         <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
         <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
       </ul>
@@ -665,7 +667,7 @@
       <li>
       <a href="#components" class="js-jump-scroll">Components</a>
       <ul>
-        <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+        <li><a href="#buttons" class="js-jump-scroll">Buttons</a></li>
         <li><a href="#images" class="js-jump-scroll">Images</a></li>
         <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
         <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>

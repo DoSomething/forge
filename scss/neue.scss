@@ -23,12 +23,13 @@
 // Base
 @import "_base/reset";
 @import "_base/fonts";
-@import "_base/typography";
 @import "_base/animations";
+@import "_base/typography";
+@import "_base/forms";
 @import "_base/helpers";
 
 // Components - basic non-divisible building blocks
-@import "_components/forms";
+@import "_components/button";
 @import "_components/images";
 @import "_components/legal";
 @import "_components/message-callout";
