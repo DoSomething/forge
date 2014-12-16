@@ -202,12 +202,18 @@ ul.styleguide-modifier li {
   }
 }
 
-.js-color-label {
+.color-tile__value {
   display: block;
 }
 
-.kss-tip {
-  color: #ccc;
+.styleguide-tip {
+  &:before {
+    @include icomoon-icon;
+    content: "\e605"; // right arrow
+    position: relative;
+    top: 1px;
+    padding-right: 4px;
+  }
 }
 
 .container.-styleguide-footer {
