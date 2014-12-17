@@ -76,12 +76,6 @@
 
     <%= yield %>
 
-    <footer class="container -styleguide-footer">
-      <div class="wrapper -narrow">
-        <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
-      </div>
-    </footer>
-
     <footer class="footer">
       <div class="footer__columns">
         <div class="footer__column -social">
@@ -136,12 +130,17 @@
 </div>
 
 <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/filament-fixed/fixedfixed.js"></script>
+<script type="text/javascript" src="bower_components/filament-sticky/fixedsticky.js"></script>
+
 <script type="text/javascript" src="dist/neue.js"></script>
+
 <script type="text/javascript" src="styleguide/assets/kss.js"></script>
 <script type="text/javascript" src="styleguide/assets/kss-colortiles.js"></script>
-
 <script type="text/javascript" src="bower_components/highlightjs/highlight.pack.js"></script>
+
 <script type="text/javascript">
+  $('.js-fixedsticky').fixedsticky();
   hljs.initHighlightingOnLoad();
 </script>
 

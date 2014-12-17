@@ -15,6 +15,33 @@
 @import "_utilities/variables";
 @import "_utilities/mixins";
 
+// FixedSticky
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+/* When position: sticky is supported but native behavior is ignored */
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: static;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed;
+}
+.fixedsticky-dummy {
+  display: none;
+}
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block;
+}
+
+
+// Styleguide!
+
 .styleguide-sidebar {
   padding-top: $base-spacing;
 
@@ -23,16 +50,17 @@
     position: sticky;
     top: 0;
 
-    @include span(4);
+    @include span(4 at 12 isolate);
   }
 }
 
 .styleguide-content {
   margin: $base-spacing;
 
+  @include clearfix;
+
   @include media($tablet) {
-    @include span(9);
-    @include push(2);
+    @include span(9 at 3 isolate);
   }
 }
 
@@ -216,7 +244,9 @@ ul.styleguide-modifier li {
   }
 }
 
-.container.-styleguide-footer {
+.styleguide-footer {
+  margin-top: $section-spacing;
+
   p {
     color: #aaa;
     font-size: $font-small;
