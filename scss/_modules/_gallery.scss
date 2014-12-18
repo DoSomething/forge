@@ -1,9 +1,6 @@
 // Module class for all galleries. Add additional modifier classes to designate styling for a specific type of gallery.
-// The .empty class for items in the gallery will create a spacer item that can contain custom messaging and expand to fill the appropriate space based on its own modifier classes.
 //
-// .-mosaic - Tiles are arranged without spacing next to each other.
-//
-// Styleguide Gallery - Mosaic
+// Styleguide Gallery
 
 .gallery {
   list-style-type: none;
@@ -12,128 +9,27 @@
 
   @include clearfix();
 
-  // Mosaic Gallery styles
-  &.-mosaic {
-    background-color: #000;
+  > li {
+    margin: 0;
 
-    > li {
-
-      @include media(450px) {  // @TODO: custom mq; address when more mq's added.
-        float: left;
-        width: 50%;
-      }
-
-      @include media($tablet) {  // @TODO: custom mq; address when more mq's added.
-        width: 25%;
-      }
+    @include media($tablet) {
+      @include span(3 of 12);
+      margin: gutter() 0;
     }
-
-    &.-featured {
-      > li:first-child {
-        width: 100%;
-
-        @include media($tablet) {
-          width: 50%;
-        }
-      }
-
-      > li:nth-child(6) {
-        @include media($tablet) {
-          clear: both;
-        }
-      }
-    }
-
-    + .btn {
-      color: $med-gray;
-      display: table;
-      margin: 0 auto 18px;
-
-      &:focus {
-        box-shadow: none;
-      }
-    }
-
   }
 
-
-  // Style for empty gallery item to help balance the space.
-  .empty {
-    background-color: lighten($light-gray, 10%);
-    display: none;
-    height: 0;
-    position: relative;
-
-    > .wrapper {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-
-    &.-trio {
-      @include media(450px) {
-        display: block;
-        padding-bottom: 50%;
-      }
-
-      @include media($tablet) {
-        padding-bottom: 25%;
-        width: 75%;
-
-        p,a {
-          font-size: $font-medium;
-        }
-      }
-    }
-
-
-    &.-duo {
-      padding-bottom: 25%;
-      width: 50%;
-
-      p,a {
-        font-size: $font-regular;
-      }
-
-      @include media($tablet) {
-        display: block;
-      }
-
-      @include media($desktop) {
-        p,a {
-          font-size: $font-medium;
-        }
-      }
-    }
-
-
-    &.-mono {
-      display: block;
-      padding-bottom: 50%;
-
-      @include media($tablet) {
-        padding-bottom: 25%;
-      }
-    }
-
-    .__message {
-      display: table;
-      height: 100%;
-      padding: 18px;
-      text-align: center;
+  &.-featured {
+    > li:first-child {
       width: 100%;
 
-      > .wrapper {
-        display: table-cell;
-        vertical-align: middle;
+      @include media($tablet) {
+        @include span(6 of 12);
       }
+    }
 
-      p {
-        line-height: 1.3;
-        margin: 4px;
+    > li:nth-child(6) {
+      @include media($tablet) {
+        clear: both;
       }
     }
   }
@@ -149,16 +45,12 @@
   &.-triad {
     > li {
       @include media($tablet) {
-        @include span-columns(4 of 12);
-        @include omega(3n);
+        @include gallery(4 of 12);
       }
     }
 
     &.-aligned {
       .tile--figure {
-
-        // Added wrapper to force minimum height so content below lines up on each <li>
-        // @TODO: update pattern in neue
         .__media {
           margin-bottom: 18px;
           height: 75px;
@@ -180,28 +72,7 @@
   &.-duo {
     > li {
       @include media($tablet) {
-        @include span-columns(6 of 12);
-        @include omega(2n);
-      }
-    }
-
-    // @DEPRECIATED with v5.3.0
-    .tile--figure {
-      @include clearfix();
-      text-align: left;
-
-      .__media {
-        @include span-columns(2);
-
-        img {
-          margin-left: 0;
-          margin-right: 0;
-          width: auto;
-        }
-      }
-
-      .__body {
-        @include span-columns(6);
+        @include span(6 of 12);
       }
     }
   }

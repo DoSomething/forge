@@ -1,70 +1,97 @@
 // Set border-box on all the elements!
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Base HTML elements
 html {
-  height: 100%;
-  font-size: $font-regular;
-  background: $light-gray;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-weight: $weight-normal;
+  font-size: $base-font-size;
+  line-height: $unitless-line-height;
 }
 
 body {
   width: 100%;
+  background: $base-background-color;
   color: $copy-color;
   font-family: $font-proxima-nova;
   font-size: $font-regular;
   font-weight: $weight-normal;
-  line-height: 1.4;
+  line-height: $unitless-line-height;
 }
 
-// Various heading weights.
+// Various heading weights. The `.heading` class can be used to pair specific heading styles to non-semantic classes, such as `.heading.-alpha` to apply `h1` styles on a specific element.
 //
-// .banner - Stylized header banners.
+// .-banner - Stylized header banners.
 //
 // Styleguide Typography - Headings
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.heading.-hero, .heading.-alpha, .heading.-beta,
+.heading.-gamma, .heading.-delta, .heading.-epsilon {
   clear: both;
-  color: $purple;
+  font-family: $base-font-family;
   font-weight: $weight-bold;
-  margin: 0 0 27px;
+  line-height: $header-line-height;
+  color: $purple;
+  margin: 0 0 ($base-spacing / 2);
+  text-rendering: optimizeLegibility;
+}
 
-  &.banner {
-    background: #000;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 9px 0;
+.heading.-banner {
+  background: $black;
+  color: $white;
+  text-transform: uppercase;
+  padding: ($base-spacing / 2) 0;
+  margin: 0;
+
+  @include clearfix;
+
+  span {
+    padding-left: $base-spacing;
 
     @include media($tablet) {
-      padding: 9px;
+      @include span(12);
+      @include push(2);
     }
   }
 }
 
-h1 {
-  font-size: $font-largest;
+.heading.-hero {
+  font-size: $font-larger;
 
-  &.hero {
+  @include media($tablet) {
     font-size: $font-hero;
   }
 }
 
-h2 {
+h1, .heading.-alpha {
   font-size: $font-large;
+
+  @include media($tablet) {
+    font-size: $font-larger;
+  }
 }
 
-h3 {
+h2, .heading.-beta {
+  font-size: $font-medium;
+
+  @include media($tablet) {
+    font-size: $font-large;
+  }
+}
+
+h3, .heading.-gamma {
   color: $dark-gray;
   font-size: $font-medium;
   font-weight: $weight-sbold;
 }
 
-h4, h5, h6 {
+h4, h5, h6, .heading.-delta {
   color: $dark-gray;
   font-size: $font-regular;
   font-weight: $weight-sbold;
-  margin: 27px 0 9px;
 }
 
 // List of items with no ordering.
@@ -72,7 +99,7 @@ h4, h5, h6 {
 // Styleguide Typography - Unordered Lists
 ul {
   list-style-type: square;
-  padding-left: 1em;
+  padding-left: $base-spacing;
 }
 
 // List of items with numerical ordering.
@@ -80,35 +107,42 @@ ul {
 // Styleguide Typography - Ordered Lists
 ol {
   list-style-type: decimal;
-  padding-left: 2em;
+  padding-left: $base-spacing;
+}
+
+li + li {
+  margin-top: $base-spacing;
 }
 
 // Inline text elements.
 //
 // Styleguide Typography - Inline Elements
-p {
+p, ul, ol {
   font-size: $font-regular;
   color: $copy-color;
-  margin: 0 0 27px;
+
+  // Apply base spacing between adjacent paragraphs, and
+  // headings that follow paragraph text.
+  + p, + ul, + ol, + h1, + h2, + h3, + h4, + h5, + h6 {
+    margin-top: $base-spacing * 2;
+  }
 }
 
-small {
-  font-size: $font-small;
-  margin: 0 0 27px;
-}
-
+// Links!
+//
+// Styleguide Typography - Links
 a {
   color: $blue;
   font-weight: $weight-sbold;
   text-decoration: none;
 
   &:hover {
-    color: lighten($blue, $color-tint);
+    color: lighten($blue, $tint);
     text-decoration: underline;
   }
 
   &:active {
-    color: darken($blue, $color-tint);
+    color: darken($blue, $tint);
   }
 
   &.secondary {
@@ -118,23 +152,49 @@ a {
   }
 }
 
+
+// By default, images should not break out of their containers.
+//
+// Styleguide Typography - Images
+img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+// Emphasized content, displayed with a bold font.
+//
+// Styleguide Typography - Bold
 strong, b {
   font-weight: $weight-sbold;
 }
 
+// Emphasized content, displayed with italicized font.
+//
+// Styleguide Typography - Italics
 em {
   font-style: italic;
 }
 
+// Emphasized content, displayed with a highlighted effect.
+//
+// Styleguide Typography - Highlighted Text
 mark {
   background: #fdfbbd;
 }
 
+// A fragment of computer code
+//
+// Styleguide Typography - Code
 code {
   font-family: "Menlo", "Consolas", "Courier New", serif;
   font-size: 0.8em;
 }
 
+// Superscript is used for special markup, such as footnotes.
+//
+// Styleguide Typography - Superscript
 sup {
   display: inline-block;
   position: relative;

@@ -5,13 +5,11 @@
 //
 // Styleguide Tabbed Navigation
 .tabs {
-  padding: 54px 0;
-  font-size: 20px;
+  font-size: $font-regular;
   text-align: center;
   overflow: hidden;
 
   ul {
-    font-size: 0.9em;
     margin: 0;
     padding: 18px;
 
@@ -25,12 +23,14 @@
 
   li {
     display: inline;
-    margin: 0 0 9px;
+    margin: 0 0 $base-spacing / 4;
 
+    // Highlight the active link, but not nested links
     &.is-active > a {
-      color: #000;
+      color: $black;
     }
 
+    // If there's nested links inside active item, show it.
     &.is-active ul {
       max-height: 600px;
     }
@@ -47,12 +47,11 @@
 
     ul {
       font-size: 0.9em;
-      padding: 0 18px;
+      padding: 0 $base-spacing;
     }
 
     li {
       display: block;
-      margin: 9px 0;
     }
   }
 }

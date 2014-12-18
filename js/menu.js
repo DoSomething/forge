@@ -14,10 +14,10 @@ define(function() {
     });
 
     // Hide footer on mobile until clicked
-    $(".js-footer-col").addClass("is-collapsed");
-    $(".js-footer-col h4").on("click", function() {
+    $(".js-toggle-collapsed").addClass("is-collapsed is-toggleable");
+    $(".js-toggle-collapsed").on("click", function() {
       if( window.matchMedia("screen and (max-width: 768px)").matches ) {
-        $(this).closest(".js-footer-col").toggleClass("is-collapsed");
+        $(this).toggleClass("is-collapsed");
       }
     });
   });

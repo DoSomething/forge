@@ -33,11 +33,21 @@
   }
 
   .message-close-button {
-    @include close-parent;
+    position: absolute;
+    top: 0; right: 27px;
+    font-size: 45px;
+    font-weight: bold;
+    color: $white;
+    opacity: 0.4;
+    text-decoration: none;
 
-    color: #fff;
-    top: 0;
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 1;
+    }
   }
 }
-
 

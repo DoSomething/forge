@@ -19,6 +19,7 @@ build:
   - 'clean:dist'
   - 'copy:assets'
   - 'sass:compile'
+  - 'postcss:process'
   - 'requirejs:compile'
   - 'modernizr:dist'
 

@@ -3,287 +3,40 @@
 // Styleguide Container
 
 .container {
-  > .wrapper {
-    padding: 18px;
-    position: relative;
-    @include clearfix();
-
-    @include media($tablet) {
-      @include span-columns(12);
-      @include shift(2);
-      float: none;
-      padding: 18px 0;
-    }
-
-    @include media($desktop) {
-      padding: 27px 0;
-    }
-  }
-
-  // @TODO: (Revisit) Not supported in IE8; maybe use a class instead...
-  // but makes dictating extra padding on first item easy @_@
-  &:first-of-type {
-    > .wrapper {
-      padding-top: 36px;
-    }
-
-    // If this is the first .container but has a header that's a .banner, then don't add the extra padding.
-    .container__title + .wrapper {
-      padding-top: 27px;
-    }
-  }
-
-  > .gallery {
-    padding: 18px 0;
-
-    @include media($desktop) {
-      padding: 27px 0;
-    }
-  }
-
-  // removes bottom padding on a gallery that is a direct child of the last .container
-  &:last-of-type {
-    > .gallery {
-      padding-bottom: 0;
-    }
-  }
-
-  .-columned {
-    @include media($tablet) {
-      @include span-columns(6 of 12);
-
-      &.-even {
-        @include omega();
-      }
-    }
-  }
-
-  .-columned + .-columned {
-    margin-top: 18px;
-
-    @include media($tablet) {
-      margin-top: 0;
-    }
-  }
-
-  aside {
-    img {
-      @include fluid-image();
-      width: 100%;
-    }
-  }
-
-  p + .__row,
-  .__row + .__row {
-    margin-top: 27px;
-  }
-
-  p + .tabbed {
-    margin-top: 27px;
-  }
-
-  // Fixes spacing between ul and h2.
-  // @TODO: Remove after typography revamp.
-  ul + h2 {
-    margin-top: 1em;
-  }
-}
-
-
-// Styles for Container Titles.
-.container__title {
-  line-height: 1.1;
-  margin: 0 0 18px;  // @TODO: remove margins. Should be done globally!
-
-  &.banner {
-    margin-bottom: 0;
-    padding: 14px 18px;
-
-    @include media($tablet) {
-      padding: 14px 0;
-    }
-
-    > span {
-      display: inline-block;
-      line-height: 1; // @TODO: Move to Neue.
-
-      @include media($tablet) {
-        @include shift(2 of 16);
-      }
-    }
-  }
-
-  @include media($tablet) {
-    margin-bottom: 27px;
-  }
-}
-
-
-// Styles for Container Body content.
-.container__body {
-  position: relative;
-
   @include clearfix();
 
-  @include media($tablet) {
-    &.-compact {
-      @include span-columns(9 of 12);
-    }
-  }
-
-  h3 {
-    color: $purple;
-    margin-bottom: 9px;
-  }
-
-  p {
-    margin-bottom: 0;
-  }
-
-  .__row {
-    @include clearfix();
-    clear: both;
-  }
-
-  // <p> tags following other items.
-  p + p,
-  ul + p,
-  p + h3 {
-    margin-top: 27px;
-  }
-
-  ul {
-    margin-bottom: 0;
-  }
-
-  // Items following a <p> tag.
-  p + ul,
-  p + aside {
-    margin-top: 27px;
-  }
-
-  // Items following a list, <ul> or <ol>
-  ul + h3,
-  ol + h3 {
-    margin-top: 27px;
-  }
-
-  p + .btn {
-    margin-top: 14px;
-  }
-
-  // Form items inside Container Body.
-  form {
-    padding-top: 18px;
-    position: relative;
-  }
-
-  .form-actions {
-    clear: both;
-    padding-top: 18px;
-
-    @include media($tablet) {
-      text-align: left;
-    }
-  }
-
-  .media {
-    &.-inline {
-      float: none;
-      margin-bottom: 27px;
-
-      @include media($desktop) {
-        margin-left: 45px;
-        float: right;
-      }
-    }
-  }
-
-  .polaroid + p {
-    margin-top: 27px;
-
-    @include media($tablet) {
-      margin-top: 0;
-    }
-  }
-}
-
-
-// IE BUG Fixes
-
-.ie8 & {
-  .-columned {
-    @include media($tablet) {
-      // Last-child not supported in IE8; using class as fallback.
-      &.-col-last {
-        margin-right: 0;
-      }
-    }
-  }
-}
-
-
-
-// Container Specific
-.container--tagline {
-  background-color: #111;
-
   > .wrapper {
-    padding: 9px 18px;
-  }
+    position: relative;
+    padding: $base-spacing;
 
-  .__tagline {
-    font-size: 16px;
-    margin: 0;
-    text-align: center;
-  }
-}
-
-
-// @TODO: temporary?
-.container--campaigns {
-  .gallery.-mosaic {
-    background-color: #fff;
-  }
-}
-
-
-// @TODO: Need a better solution, good for now for this release for SMS Games Campaign.
-// The following is ugly and only temporary. Please ignore. Thanks much!
-.container__body {
-
-  .form-item-alpha-first-name {
     @include media($tablet) {
-      @include span-columns(6 of 12);
+      @include span(12);
+      @include push(2);
+    }
+
+    &.-narrow {
+      @include media($tablet) {
+        @include span(9);
+      }
+    }
+
+    &.-half {
+      @include media($tablet) {
+        @include span(6);
+
+        &:nth-of-type(2) {
+          @include push(0);
+        }
+      }
     }
   }
-
-  .-columned.second-group {
-    margin-right: 0;
-  }
 }
-
-.container {
-  form {
-    .-columned + .-columned {
-      margin-top: 0;
-    }
-  }
-}
-
-
-
 
 // JS Enabled
-
 .js {
-
   .container__body {
-
     p + .tabbed {
       margin-top: 9px;
     }
-
   }
-
 }

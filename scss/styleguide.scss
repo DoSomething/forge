@@ -9,35 +9,61 @@
 //   These are styles that are only used in the styleguide, and
 //   should not be available in client applications.
 
-@import "../bower_components/bourbon/dist/bourbon";
-@import "../bower_components/neat/app/assets/stylesheets/neat-helpers";
-@import "_utilities/grid-settings.scss";
-@import "../bower_components/neat/app/assets/stylesheets/neat";
+@import "../bower_components/susy/sass/susy";
 
 @import "_utilities/functions";
 @import "_utilities/variables";
 @import "_utilities/mixins";
 
+// FixedSticky
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: static;
+}
+
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed;
+}
+
+.fixedsticky-dummy {
+  display: none;
+}
+
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block;
+}
+
+
+// Styleguide!
+
 .styleguide-sidebar {
-  margin-top: 9px; // keep top of sidebar inline with body text
-  margin-bottom: 54px;
+  padding-top: $base-spacing;
 
   @include media($tablet) {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
 
-    @include span-columns(4);
-    @include omega;
+    @include span(4 at 12 isolate);
   }
 }
 
 .styleguide-content {
-  margin: 0 18px 54px;
+  margin: $base-spacing;
+
+  @include clearfix;
 
   @include media($tablet) {
-    @include shift(2);
-    @include span-columns(9);
+    @include span(9 at 3 isolate);
   }
 }
 
@@ -195,62 +221,43 @@ ul.styleguide-modifier li {
 }
 
 .color-tile {
+  width: 100%;
   background: #eee;
   color: #fff;
   text-shadow: $text-shadow;
-  padding: 2em 1em;
+  padding: ($base-spacing * 2) $base-spacing;
   border-radius: 2px;
-
-  @include span-columns(5 of 10);
-
-  &:nth-of-type(2n) {
-    @include omega;
-  }
 
   & code {
     color: rgba(255, 255, 255, 0.7);
   }
 }
 
-.js-color-label {
+.color-tile__value {
   display: block;
 }
 
-.kss-tip {
-  color: #ccc;
+.styleguide-tip {
+  &:before {
+    @include icomoon-icon;
+    content: "\e605"; // right arrow
+    position: relative;
+    top: 1px;
+    padding-right: 4px;
+  }
 }
 
-.kss-grid-bookmarklet {
-  font-size: 12px;
-}
+.styleguide-footer {
+  margin-top: $section-spacing;
 
-.styleguide-section:first-of-type {
-  padding-top: 72px;
-}
+  p {
+    color: #aaa;
+    font-size: $font-small;
+  }
 
-.styleguide-section {
-  clear: both;
-}
-
-.styleguide-doc-section img {
-  max-width: 100%;
-}
-
-.styleguide--footer {
-  clear: both;
-  display: block;
-  width: 61.66667%;
-  margin-left: 12.77778%;
-  padding-bottom: 36px;
-}
-
-.styleguide--footer p {
-  color: #aaa;
-  font-size: 16px;
-}
-
-.styleguide--footer a {
-  color: #666;
+  a {
+    color: #666;
+  }
 }
 
 header[role="banner"].-styleguide {

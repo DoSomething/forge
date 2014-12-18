@@ -12,9 +12,8 @@
 .chrome--wrapper {
   position: relative;
   width: 100%;
-  max-width: $max-width;
   background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  @include container(16);
 }
 
