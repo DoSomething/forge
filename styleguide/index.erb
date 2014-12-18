@@ -269,18 +269,18 @@
       <div class="cta">
         <div class="wrapper">
           <h2 class="__message">Miscreant! You should pay homage to our future kitten overlords:</h2>
-          <a href="#" class="btn medium">Support Our Kittens</a>
+          <a href="#" class="button">Support Our Kittens</a>
         </div>
       </div>
     <% end %>
 
     <h4 id="gallery">Gallery</h4>
-    <% styleguide_block  'Gallery - Mosaic' do %>
-      <ul class="gallery -mosaic">
+    <% styleguide_block  'Gallery' do %>
+      <ul class="gallery">
         <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
-            <div class="tile--meta">
+            <div class="tile__meta">
               <h1 class="__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -290,7 +290,7 @@
         <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
-            <div class="tile--meta">
+            <div class="tile__meta">
               <h1 class="__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -300,22 +300,22 @@
         <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
-            <div class="tile--meta">
+            <div class="tile__meta">
               <h1 class="__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
         </li>
-        <li class="empty -mono">
-        <div class="wrapper">
-          <div class="__message">
-            <div class="wrapper">
-              <p>Gah! Nothing to see here.</p>
-              <a href="#">Move Along</a>
+        <li>
+        <article class="tile tile--campaign">
+          <a class="wrapper" href="#">
+            <div class="tile__meta">
+              <h1 class="__title">Kitten Overlord</h1>
             </div>
-          </div>
-        </div>
+            <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+          </a>
+        </article>
         </li>
       </ul>
     <% end %>
@@ -485,6 +485,16 @@
     <h2 id="regions">Regions</h2>
     <p>Regions are complete sections of an interface.</p>
 
+    <h4 id="banner">Banner</h4>
+    <% styleguide_block  'Banner' do %>
+      <header role="banner" class="$modifier_class">
+        <div class="wrapper">
+          <h1 class="__title">Title</h1>
+          <p class="__subtitle">Subtitle.</p>
+        </div>
+      </header>
+    <% end %>
+
     <h4 id="chrome">Chrome</h4>
     <% styleguide_block  'Site Chrome' do %>
       <!-- see page source -->
@@ -502,64 +512,56 @@
 
     <!-- footer -->
     <h4 id="footer">Footer</h4>
-    <% styleguide_block  'Site Footer' do %>
-      <footer class="chrome--footer">
-        <div class="social tablet">
-          <ul>
-            <li><a href="#" class="social-link"></a></li>
-            <li><a href="#" class="social-link"></a></li>
-            <li><a href="#" class="social-link"></a></li>
-            <li><a href="#" class="social-link"></a></li>
-            <li><a href="#" class="social-link"></a></li>
-          </ul>
-        </div>
+      <% styleguide_block  'Site Footer' do %>
+        <footer class="footer">
+          <div class="footer__columns">
+            <div class="footer__column -social">
+              <ul>
+                <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
+                <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
+                <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
+                <li><a href="#" class="social-icon -instagram"><span>Instagram</span></a></li>
+                <li><a href="#" class="social-icon -youtube"><span>YouTube</span></a></li>
+              </ul>
+            </div>
 
-        <div class="col help js-footer-col is-collapsed">
-          <h4>Who We Are</h4>
-          <ul>
-            <li><a href="#">What is this?</a></li>
-            <li><a href="#">Who are they?</a></li>
-            <li><a href="#">Why are we?</a></li>
-          </ul>
-        </div>
+            <div class="footer__column -links">
+              <h4 class="js-toggle-collapsed">Who We Are</h4>
+              <ul>
+                <li><a href="#">What is this?</a></li>
+                <li><a href="#">Who are they?</a></li>
+                <li><a href="#">Why are we?</a></li>
+              </ul>
+            </div>
 
-        <div class="col knowus js-footer-col is-collapsed">
-          <h4>Our Friends</h4>
-          <ul>
-            <li><a href="#">Freshman</a></li>
-            <li><a href="#">ROTC Guys</a></li>
-            <li><a href="#">Preps</a></li>
-            <li><a href="#">Varsity Jocks</a></li>
-            <li><a href="#">Unfriendly Black Hotties</a></li>
-            <li><a href="#">The greatest people you will ever meet</a></li>
-          </ul>
-        </div>
+            <div class="footer__column -links">
+              <h4 class="js-toggle-collapsed">Our Friends</h4>
+              <ul>
+                <li><a href="#">Freshman</a></li>
+                <li><a href="#">ROTC Guys</a></li>
+                <li><a href="#">Preps</a></li>
+                <li><a href="#">Varsity Jocks</a></li>
+                <li><a href="#">Unfriendly Black Hotties</a></li>
+                <li><a href="#">The greatest people you will ever meet</a></li>
+              </ul>
+            </div>
 
-        <div class="col about js-footer-col is-collapsed">
-          <h4>Get Involved</h4>
-          <ul>
-            <li><a href="#">Do things</a></li>
-            <li><a href="#">Do other things</a></li>
-          </ul>
-        </div>
+            <div class="footer__column -links">
+              <h4 class="js-toggle-collapsed">Get Involved</h4>
+              <ul>
+                <li><a href="#">Do things</a></li>
+                <li><a href="#">Do other things</a></li>
+              </ul>
+            </div>
+          </div>
 
-        <div class="subfooter">
-          <ul class="utility">
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
+          <div class="footer__subfooter">
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
       </footer>
-    <% end %>
-
-    <h4 id="header">Header</h4>
-    <% styleguide_block  'Header' do %>
-      <header role="banner" class="$modifier_class">
-        <div class="wrapper">
-          <h1 class="__title">Title</h1>
-          <p class="__subtitle">Subtitle.</p>
-        </div>
-      </header>
     <% end %>
 
     <h4 id="modal">Modal</h4>
@@ -687,10 +689,10 @@
       <li>
       <a href="#regions" class="js-jump-scroll">Regions</a>
       <ul>
+        <li><a href="#banner" class="js-jump-scroll">Banner</a></li>
         <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
         <li><a href="#container" class="js-jump-scroll">Container</a></li>
         <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
-        <li><a href="#header" class="js-jump-scroll">Header</a></li>
         <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
         <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
       </ul>
