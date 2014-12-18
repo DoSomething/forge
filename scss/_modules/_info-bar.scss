@@ -3,46 +3,29 @@
 // Styleguide Information Bar
 
 .info-bar {
-  color: #fff;
-
-  @include rgba(background-color, #000, 0.5, #7f7f7f);
+  color: $white;
+  @include rgba(background-color, $black, 0.5, #7f7f7f);
+  @include clearfix();
 
   > .wrapper {
-    padding: 18px;
+    padding: $base-spacing;
     @include clearfix();
 
     @include media($tablet) {
-      @include span(12 at 2);
-      float: none;
-      padding: 18px 0;
+      @include span(12);
+      @include push(2);
     }
   }
 
   a {
-    color: #fff;
+    color: $white;
     font-weight: $weight-normal;
     text-decoration: underline;
   }
 
-  div + div {
-    margin-top: 9px;
-  }
-
-  .help {
-    border: 0 none; // @TODO: Inherited style to remove.
-  }
-
   @include media($tablet) {
-    div + div {
-      margin-top: 0;
-    }
-
     .help {
       float: right;
-    }
-
-    .sponsor {
-      float: left;
     }
   }
 }
