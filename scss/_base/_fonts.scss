@@ -1,33 +1,29 @@
-// --------------
-//  PROXIMA NOVA
-// --------------
-
+// Proxima Nova
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 400;
   src: neue-asset-url("fonts/proxima-nova/ProximaNova-Regular.eot");
-  src: neue-asset-url("fonts/proxima-nova/ProximaNova-Regular.eot?") format("eot"), neue-asset-url("fonts/proxima-nova/ProximaNova-Regular.woff") format("woff");
+  src: neue-asset-url("fonts/proxima-nova/ProximaNova-Regular.eot?") format("eot"),
+       neue-asset-url("fonts/proxima-nova/ProximaNova-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 600;
   src: neue-asset-url("fonts/proxima-nova/ProximaNova-SBold.eot");
-  src: neue-asset-url("fonts/proxima-nova/ProximaNova-SBold.eot?") format("eot"), neue-asset-url("fonts/proxima-nova/ProximaNova-SBold.woff") format("woff");
+  src: neue-asset-url("fonts/proxima-nova/ProximaNova-SBold.eot?") format("eot"),
+       neue-asset-url("fonts/proxima-nova/ProximaNova-SBold.woff") format("woff");
 }
 
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 700;
   src: neue-asset-url("fonts/proxima-nova/ProximaNova-Bold.eot");
-  src: neue-asset-url("fonts/proxima-nova/ProximaNova-Bold.eot?") format("eot"), neue-asset-url("fonts/proxima-nova/ProximaNova-Bold.woff") format("woff");
+  src: neue-asset-url("fonts/proxima-nova/ProximaNova-Bold.eot?") format("eot"),
+       neue-asset-url("fonts/proxima-nova/ProximaNova-Bold.woff") format("woff");
 }
 
-
-// -----------------------
-//  COVERED BY YOUR GRACE
-// -----------------------
-
+// Covered By Your Grace
 @font-face {
   font-family: "CoveredGrace";
   src: neue-asset-url("fonts/covered-grace/CoveredGrace-Regular.eot");
@@ -40,10 +36,7 @@
 }
 
 
-// ---------------------
-//  ICOMOON (ICON FONT)
-// ---------------------
-
+// Icomoon (icon font)
 @font-face {
   font-family: "icomoon";
   src: neue-asset-url("fonts/icomoon/icomoon.eot");

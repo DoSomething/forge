@@ -7,9 +7,9 @@
   @include clearfix();
   text-align: left;
   padding-bottom: 27px;
-  
+
   > .wrapper {
-    @include span-columns(2 of 6);
+    @include span(2 of 6);
 
     img {
       margin-left: 0;
@@ -20,7 +20,7 @@
   }
 
   .__body {
-    @include span-columns(4 of 6);
+    @include span(4 of 6);
   }
 
   .__title {
@@ -31,7 +31,7 @@
 
   .__description {
     line-height: 1.2;
-    
+
     p {
       margin: 0;
     }

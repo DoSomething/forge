@@ -5,23 +5,25 @@
 // Styleguide Call To Action
 
 .cta {
+  width: 100%;
   background-color: lighten($light-gray, 10%);
   border-bottom: 2px solid $light-gray;
   border-top: 2px solid $light-gray;
-  padding: 18px;
-  @include row;
+
+  @include clearfix;
+
   @include media($tablet) {
     padding: 0;
   }
 
   > .wrapper {
+    width: 100%;
     text-align: center;
-    padding: 36px 0;
-
+    padding: $base-spacing 0;
 
     @include media($tablet) {
-      @include span-columns(12);
-      @include shift(2);
+      @include span(12);
+      @include push(2);
     }
   }
 
@@ -29,6 +31,6 @@
     color: $copy-color;
     font-size: $font-medium;
     font-weight: $weight-sbold;
-    margin: 0 0 9px;
+    margin: 0 0 $base-spacing;
   }
 }

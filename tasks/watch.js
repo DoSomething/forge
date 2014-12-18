@@ -1,7 +1,7 @@
 module.exports = {
   sass: {
     files: ["scss/**/*.{scss,sass}"],
-    tasks: ["scsslint:all", "sass:compile"]
+    tasks: ["scsslint:all", "sass:compile", "postcss:process"]
   },
   js: {
     files: ["js/**/*.js", "tests/**/*.js"],

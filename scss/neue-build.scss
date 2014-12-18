@@ -10,21 +10,8 @@
 //  example for including Neue in another app's build.
 //
 
-
-// We use Bourbon for base SCSS helpers.
-// http://bourbon.io/docs/
-@import "../bower_components/bourbon/dist/bourbon";
-
-// We have to include Neat's helper functions before we can set up
-// the grid, so let's do that now.
-@import "../bower_components/neat/app/assets/stylesheets/neat-helpers";
-
-// We configure our grid settings before importing Bourbon Neat.
-@import "_utilities/grid-settings.scss";
-
-// We use Bourbon Neat to build semantic grid layouts.
-// http://neat.bourbon.io/docs
-@import "../bower_components/neat/app/assets/stylesheets/neat";
+// We use Susy 2 to build semantic grid layouts.
+@import "../bower_components/susy/sass/susy";
 
 // We set Neue settings here, such as configuring where Neue
 // assets should be loaded from:

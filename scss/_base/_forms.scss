@@ -1,0 +1,171 @@
+// Labels for form elements. Optional validation styles triggered by client-side validation.
+//
+// .success    - Successful form validation
+// .warning    - Warning form validation (not an error, but worth double-checking).
+// .error      - Something's wrong!
+//
+// Styleguide Forms - Form Labels
+label {
+  display: block;
+  clear: both;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 1em 0 0.25em;
+  height: 1.5em;
+  overflow: hidden;
+  transition: height 0.5s;
+
+  .inner-label {
+    position: relative;
+    transition: top 0.5s;
+  }
+
+  &.show-message {
+    .inner-label {
+      top: -1.5em;
+    }
+  }
+
+  em {
+    font-style: normal;
+    color: $med-gray;
+  }
+
+  .message {
+    &.error {
+      color: $error;
+    }
+
+    &.warning {
+      color: $warning;
+    }
+
+    &.success {
+      color: $success;
+    }
+  }
+}
+
+
+// Text input fields. Defaults to full-width, but can be modified to be smaller
+// if necessary (use sparingly, it's generally best to fit to grid container).
+//
+// :focus         - Field is selected for text input
+// .short         - Short input width (e.g. for zip codes)
+// .medium        - Medium-sized input width (e.g. for phone numbers)
+//
+// Styleguide Forms - Text Input Fields
+input[type="email"], input[type="number"], input[type="password"], input[type="search"],
+input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
+input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
+input[type="time"], input[type="week"], textarea {
+  width: 100%;
+  font-family: $font-proxima-nova;
+  font-size: $font-regular;
+  border: 1px solid $light-gray;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: $lg-border-radius;
+  background-clip: padding-box;
+  padding: 0.5em 1em;
+  margin: 0 0 0.5em;
+  transition: border 0.5s;
+
+  // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
+
+  &.short {
+    max-width: 80px;
+  }
+
+  &.medium {
+    max-width: 200px;
+  }
+
+  &.error {
+    border-color: $error;
+  }
+}
+
+// Specific style rules for search input fields.
+//
+// :focus   - Field is selected for text input
+// .loading - Indicates search field is loading results.
+//
+// Styleguide Forms - Search Fields
+input[type="search"] {
+  padding-left: 32px;
+  background: #fff no-repeat 12px 50%;
+  background-image: neue-asset-url("images/search.svg");
+  background-size: 18px 18px;
+  appearance: none;
+
+  .no-svg & {
+    background-image: neue-asset-url("images/fallbacks/search.png");
+  }
+
+  &.loading {
+    background-image: neue-asset-url("images/spinner.svg");
+  }
+
+  .no-smil &.loading {
+    background-image: neue-asset-url("images/fallbacks/spinner16.gif");
+  }
+}
+
+
+// Multi-line textarea fields.
+//
+// :focus   - Field is selected for text input
+//
+// Styleguide Forms - Text Area Fields
+textarea {
+  resize: vertical;
+}
+
+// Ensure text wraps to new lines when in an <input> button
+input[type="submit"] {
+  white-space: normal;
+}
+
+// Select boxes present a list of options on a form.
+//
+// Styleguide Forms - Select Boxes
+select {
+  display: block;
+  width: 100%;
+  height: 41px;
+  font-size: $font-regular;
+  font-family: $font-proxima-nova;
+  border: 1px solid $light-gray;
+  margin: 0 0 0.5em;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
+
+  &.error {
+    border-color: $error;
+  }
+}
+
+// Checkboxes and radio boxes.
+//
+// Styleguide Forms - Option Fields
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+}
+
+label.option {
+  display: inline;
+}
+
