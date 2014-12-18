@@ -114,7 +114,8 @@
       transform: translateY(-50%);
 
       @include media($tablet) {
-        @include span(8 at 4);
+        @include span(8);
+        @include push(4);
       }
     }
 
