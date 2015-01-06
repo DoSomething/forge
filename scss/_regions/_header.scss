@@ -12,7 +12,6 @@
   background-size: cover;
   overflow: hidden;
   padding: 144px ($base-spacing / 2) $base-spacing;
-  position: relative;
 
   @include media($tablet) {
     padding-left: 0;
