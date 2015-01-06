@@ -1,20 +1,35 @@
 // Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
-// ==Selected state is added using JavaScript. See `media-selector.js`.==
+// Selected state is added using JavaScript. See `media-selector.js`.
 //
-// Styleguide Media Selector
+// Styleguide Media Options
 
 .media-options {
-  @include clearfix();
+  @include clearfix;
 
-  .form-item {
-    @include span(4);
+  .media-options__item {
     position: relative;
+    float: left;
+    padding-left: $base-spacing * 2;
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: $base-spacing * (-1/2);
+      width: 40px;
+      height: 30px;
+      margin: -15px 0 0 15px;
+      font-size: $font-regular;
+      font-weight: $weight-sbold;
+      text-align: center;
+      text-transform: uppercase;
+    }
 
     label {
-      height: auto;
-      margin-top: 0;
-      max-width: 150px;
       position: relative;
+      height: auto;
+      max-width: 150px;
+      margin: 0;
 
       .inner-label {
         top: 0;
@@ -23,7 +38,7 @@
 
     input[type="radio"],
     input[type="checkbox"] {
-      @include visually-hidden();
+      @include visually-hidden;
     }
 
     img {
@@ -33,52 +48,28 @@
       max-width: 100px;
       width: 100%;
 
-      @include media($tablet) {
-        max-width: 150px;
-      }
-
       &:hover {
         border-color: $blue;
       }
     }
 
-    // Last-child not supported in IE8; using class as fallback.
-    &.-second {
-      margin-right: 0;
-    }
-
-    &:before {
-      font-size: $font-regular;
-      font-weight: $weight-sbold;
-      height: 30px;
-      left: -50%;
-      margin: -15px 0 0 23px;
-      position: absolute;
-      text-align: center;
-      text-transform: uppercase;
-      top: 50%;
-      width: 40px;
-
-      @include media($tablet) {
-        font-size: $font-medium;
-        margin-left: 45px;
-        margin-top: -25px;
-      }
-    }
-
-    &.form-type-radio {
+    // "OR" label applied to radio buttons.
+    &.-radio {
       &:before {
         content: "or";
       }
     }
 
+    // Hide "OR" label on first element.
     &:first-child {
+      padding-left: 0;
+
       &:before {
         content: "";
       }
     }
 
-    &.selected {
+    &.is-selected {
       img {
         border-color: $blue;
         border-width: 4px;
