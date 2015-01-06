@@ -1,86 +1,58 @@
 // A carousel lets the user page through a stack of images.
 //
 // Styleguide Carousel
-
-// wraps the collection of images ("slides")
-.carousel-wrapper {
+.carousel {
   position: relative;
+  display: inline-block;
+}
 
-  .slide-wrapper {
-    float: left;
-    width: 100%;
+// wraps the increment & decrement buttons
+.carousel__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 37px;
+  cursor: pointer;
+
+  &:after {
+    @include icomoon-icon;
+    display: block;
+    background: #fff;
+    border-radius: 100%;
+    line-height: 1.2;
+    padding: 8px;
   }
 
-  // wraps the increment & decrement buttons
-  .prev-wrapper,
-  .next-wrapper {
-    position: absolute;
-    width: 37px;
-    height: 100%;
-    cursor: pointer;
-  }
+  &.-previous {
+    left: -16px;
 
-  .prev-wrapper {
-    left: 0;
-  }
-
-  .next-wrapper {
-    right: 0;
-  }
-
-  // increment & decrement buttons
-  .prev-button,
-  .next-button {
-    position: relative;
-    top: 33.3333%;
-    height: 0;
-    width: 0;
-    border: 25px solid #fff;
-    border-radius: 25px;
-
-    // prevent icons from highlighting when double clicked
-    user-select: none;
-
-    // arrow icon nested inside each button
-    span.arrow {
-      font-size: 40px;
-      line-height: 10px;
-      color: $off-black;
-      position: absolute;
-      top: -18px;
-
-      @include icomoon-icon;
+    &:after {
+      content: "\e609";
     }
   }
 
-  .prev-button {
-    left: -13px;
+  &.-next {
+    right: -16px;
 
-    .arrow {
-      left: -22px;
+    &:after {
+      content: "\e607";
     }
   }
 
-  .next-button {
-    right: 0;
-
-    .arrow {
-      right: -24px;
-    }
-  }
-
-  // individual image
-  figure.slide {
+  span {
     display: none;
-    border: 6px solid #fff;
-    padding: 0;
+  }
+}
 
-    img {
-      display: block;
-    }
+// individual image
+.carousel__slide {
+  display: none;
+
+  &.is-visible {
+    display: inline-block;
   }
 
-  .slide.visible {
+  img {
     display: block;
   }
 }
