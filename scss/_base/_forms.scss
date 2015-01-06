@@ -158,14 +158,19 @@ select {
   }
 }
 
-// Checkboxes and radio boxes.
+// Checkboxes and radio boxes. Must be enclosed in `.option-group` class.
 //
 // Styleguide Forms - Option Fields
-input[type="checkbox"], input[type="radio"] {
-  display: inline;
-}
+.option-group {
+  margin-bottom: $base-spacing / 2;
 
-label.option {
-  display: inline;
+  input[type="checkbox"], input[type="radio"] {
+    display: inline;
+  }
+
+  label {
+    display: inline;
+    padding-right: $base-spacing;
+  }
 }
 
