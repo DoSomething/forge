@@ -68,7 +68,7 @@ input[type="time"], input[type="week"], textarea {
   border-radius: $lg-border-radius;
   background-clip: padding-box;
   padding: 0.5em 1em;
-  margin: 0 0 0.5em;
+  margin: 0 0 ($base-spacing / 2);
   transition: border 0.5s;
 
   // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
@@ -145,7 +145,7 @@ select {
   font-size: $font-regular;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
-  margin: 0 0 0.5em;
+  margin: 0 0 ($base-spacing / 2);
 
   &:focus {
     outline: none;
