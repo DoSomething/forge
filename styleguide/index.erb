@@ -585,14 +585,14 @@
       <a href="http://www.example.com" data-modal-href="#modal--example" class="btn secondary">Show example modal</a>
 
     <div data-modal id="modal--example" role="dialog">
-      <h2 class="banner">Example Content</h2>
+      <h2 class="heading -banner">Example Content</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
     </div>
 
     <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
-      <h2 class="banner">Now fill out this form.</h2>
+      <h2 class="heading -banner">Now fill out this form.</h2>
       <form action="#">
         <label for="name">Name</label>
         <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
@@ -601,13 +601,13 @@
         <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
 
         <div class="form-actions">
-          <input type="submit" class="btn">
+          <input type="submit" class="button">
         </div>
       </form>
 
       <form action="http://www.google.com" id="skip-form">
         <div class="form-actions">
-          <input type="submit" value="Skip" class="btn tertiary">
+          <input type="submit" value="Skip" class="button -tertiary">
         </div>
       </form>
     </div>
