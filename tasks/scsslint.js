@@ -1,6 +1,7 @@
 module.exports = {
   all: [
     'scss/**/*.scss',
+    '!scss/styleguide.scss'
   ],
 
   options: {
