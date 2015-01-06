@@ -25,7 +25,7 @@
 
 <body>
 <div class="chrome">
-  <div id="top" class="chrome--wrapper">
+  <div id="top" class="wrapper">
     <nav class="navigation -white -floating">
       <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
       <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
@@ -33,30 +33,27 @@
         <ul class="navigation__primary">
           <li>
             <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
-              <strong>Product Wiki</strong>
-              <span>Specs, mocks, etc.</span>
+              <strong class="navigation__title">Explore Campaigns</strong>
+              <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
             </a>
           </li>
 
           <li>
             <a href="//brand.dosomething.org">
-              <strong>Brand Guide</strong>
-              <span>Style, tone, &amp; voice</span>
+              <strong class="navigation__title">What is DoSomething.org?</strong>
+              <span class="navigation__subtitle">Young people + Social change</span>
             </a>
           </li>
+        </ul>
 
+        <ul class="navigation__secondary">
           <li>
-            <a href="//neue.dosomething.org">
-              <strong>Pattern Library</strong>
-              <span>Interface framework</span>
-            </a>
+            <form action="#" method="post">
+              <input type="search">
+            </form>
           </li>
-
           <li>
-            <a href="//status.dosomething.org">
-              <strong>Platform Status</strong>
-              <span>Versions & uptime</span>
-            </a>
+            <a href="#">Log In</a>
           </li>
         </ul>
       </div>
@@ -65,11 +62,11 @@
     <header role="banner">
       <div class="wrapper">
         <h1 class="__title">
-          Pattern Library
+          Who We Are
           <%# <a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %1></a> %>
         </h1>
         <p class="__subtitle">
-          Any pattern, anytime, anywhere.
+          And what we do.
         </p>
       </div>
     </header>
