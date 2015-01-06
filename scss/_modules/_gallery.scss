@@ -75,40 +75,5 @@
       }
     }
   }
-
-  .ie8 & {
-    &.-duo {
-      > li {
-        @include media($tablet) {
-          // Last-child not supported in IE8; using class as fallback.
-          &.-second {
-            margin-right: 0;
-            border: 1px solid #000;
-          }
-
-          // Nth-child not supported in IE8; using class as fallback.
-          &.-first {
-            clear: left;
-          }
-        }
-      }
-    }
-
-    &.-triad {
-      > li {
-        @include media($tablet) {
-          // Last-child not supported in IE8; using class as fallback.
-          &.-third {
-            margin-right: 0;
-          }
-
-          // Nth-child not supported in IE8; using class as fallback.
-          &.-first {
-            clear: left;
-          }
-        }
-      }
-    }
-  }
 }
 
