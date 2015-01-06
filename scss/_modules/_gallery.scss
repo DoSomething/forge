@@ -49,8 +49,8 @@
     }
 
     &.-aligned {
-      .tile--figure {
-        .__media {
+      .figure {
+        .figure__media {
           margin-bottom: 18px;
           height: 75px;
           overflow: hidden;

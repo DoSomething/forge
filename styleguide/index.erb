@@ -274,14 +274,28 @@
       </div>
     <% end %>
 
+    <h4 id="figure">Figure</h4>
+    <% styleguide_block  'Figure' do %>
+      <article class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+        </div>
+
+        <div class="figure__description">
+          <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+          fashion brands like H&amp;M are "taking eco-chic to the next level."
+        </div>
+      </article>
+    <% end %>
+
     <h4 id="gallery">Gallery</h4>
     <% styleguide_block  'Gallery' do %>
       <ul class="gallery">
         <li>
-        <article class="tile tile--campaign">
+        <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -291,7 +305,7 @@
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -301,7 +315,7 @@
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -311,7 +325,7 @@
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -322,39 +336,39 @@
 
     <% styleguide_block  'Gallery - Triad' do %>
       <ul class="gallery -triad $modifier_class">
-        <li class="-first">
-        <div class="tile tile--figure">
-          <div class="__media">
+        <li>
+        <div class="figure">
+          <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="__description">
+          <div class="figure__description">
             <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
             fashion brands like H&amp;M are "taking eco-chic to the next level."
           </div>
         </div>
         </li>
 
-        <li class="-second">
-        <div class="tile tile--figure">
-          <div class="__media">
+        <li>
+        <div class="figure">
+          <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="__description">
+          <div class="figure__description">
             <b>Seventeen</b> ran an Earth Day story about recycling old fabrics
             through DoSomething.org and H&amp;M's Comeback Clothes.
           </div>
         </div>
         </li>
 
-        <li class="-third">
-        <div class="tile tile--figure">
-          <div class="__media">
+        <li>
+        <div class="figure">
+          <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="__description">
+          <div class="figure__description">
             <b>Nylon</b> urged readers to clean out their closets and do good for
             the planet by recycling old clothes at H&amp;M.
           </div>
@@ -371,11 +385,11 @@
               <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
             </div>
 
-            <div class="__body">
-              <h3 class="__title"><a href=
+            <div class="media__body">
+              <h3 class="media__title"><a href=
                   "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <div class="__description">
+              <div class="media__description">
                 Do you have stained or ripped clothes you don't wear? Recycle them
                 w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
                 <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
@@ -390,11 +404,11 @@
               <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
             </div>
 
-            <div class="__body">
-              <h3 class="__title"><a href=
+            <div class="media__body">
+              <h3 class="media__title"><a href=
                   "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <div class="__description">
+              <div class="media__description">
                 Do you have stained or ripped clothes you don't wear? Recycle them
                 w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
                 <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
@@ -424,11 +438,11 @@
           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
         </div>
 
-        <div class="__body">
-          <h3 class="__title"><a href=
+        <div class="media__body">
+          <h3 class="media__title"><a href=
               "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-          <div class="__description">
+          <div class="media__description">
             Do you have stained or ripped clothes you don't wear? Recycle them
             w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
             <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
