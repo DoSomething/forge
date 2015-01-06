@@ -8,4 +8,4 @@ module.exports = {
     config: '.scss-lint.yml',
     colorizeOutput: true
   }
-}
+};

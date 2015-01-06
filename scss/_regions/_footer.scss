@@ -92,7 +92,7 @@
           transform: rotate(0deg); // rotate to right arrow
         }
 
-        & + ul {
+        + ul {
           max-height: 0;
         }
       }
@@ -144,7 +144,7 @@
     li {
       display: inline;
 
-      & + li {
+      + li {
         padding-left: $base-spacing;
       }
     }
