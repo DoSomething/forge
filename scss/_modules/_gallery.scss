@@ -10,11 +10,10 @@
   @include clearfix();
 
   > li {
-    margin: 0;
+    margin: gutter() 0;
 
     @include media($tablet) {
       @include span(3 of 12);
-      margin: gutter() 0;
     }
   }
 
