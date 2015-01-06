@@ -30,7 +30,7 @@
     "grunt-contrib-watch": "^0.5.3",
     "grunt-modernizr": "^0.5.2",
     "grunt-postcss": "^0.2.0",
-    "grunt-scss-lint": "^0.1.11",
+    "grunt-scss-lint": "^0.3.4",
     "jshint-stylish": "^0.1.5",
     "load-grunt-config": "^0.8.0",
     "time-grunt": "^0.3.2"

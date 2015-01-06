@@ -8,4 +8,4 @@ gem 'kss', '~> 0.5.0'
 gem 'thin', '~> 1.6.0'
 
 # linting
-gem 'scss-lint', '0.24.1'
+gem 'scss-lint', '0.31.0'
