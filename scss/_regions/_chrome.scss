@@ -1,19 +1,25 @@
 // The entire page should be wrapped in `.chrome` to lock page in
 // place while modals are open. The page content should be wrapped
-// in a `.chrome--wrapper` to set max-width and apply background
+// in a `.wrapper` to set max-width and apply background
 // box shadow to the page.
 //
 // Styleguide Site Chrome
 .chrome {
   width: 100%;
+
+  // Main content wrapper.
+  > .wrapper {
+    position: relative;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 0 10px rgba($black, 0.2);
+
+    @include container(16);
+  }
+
+  // See also: _modal.scss (.chrome.modal-open)
+
+  // See also: _chrome.scss (.chrome.mobile-menu-open)
 }
 
-// Main content wrapper.
-.chrome--wrapper {
-  position: relative;
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  @include container(16);
-}
 
