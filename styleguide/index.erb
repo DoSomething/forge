@@ -247,19 +247,19 @@
 
     <h4 id="carousel">Carousel</h4>
     <% styleguide_block 'Carousel' do %>
-      <aside class="carousel-wrapper gallery -columned">
-        <div id="prev" class="prev-wrapper">
-          <div class="prev-button"><span class="arrow"></span></div>
+      <aside class="carousel">
+        <div id="prev" class="carousel__control -previous">
+          <span>Previous Slide</span>
         </div>
 
-        <div class="slide-wrapper">
-          <figure id="slide0" class="slide"><img src="http://placekitten.com/g/400/300"></figure>
-          <figure id="slide1" class="slide"><img src="http://placehold.it/400x300/23b7fb"></figure>
-          <figure id="slide2" class="slide"><img src="http://placehold.it/400x300/4e2b63"></figure>
+        <div class="slides">
+          <img id="slide0" class="carousel__slide bordered" src="http://placekitten.com/g/450/300">
+          <img id="slide1" class="carousel__slide bordered" src="http://placekitten.com/450/300">
+          <img id="slide2" class="carousel__slide bordered" src="http://placehold.it/450x300">
         </div>
 
-        <div id="next" class="next-wrapper">
-          <div class="next-button"><span class="arrow"></span></div>
+        <div id="next" class="carousel__control -next">
+          <span>Next Slide</span>
         </div>
       </aside>
     <% end %>
