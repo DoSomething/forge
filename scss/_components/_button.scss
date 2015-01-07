@@ -28,7 +28,7 @@
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $lg-border-radius;
-  appearance: none;
+  -webkit-appearance: none;
 
   &:hover {
     background: lighten($blue, $color-tint);
