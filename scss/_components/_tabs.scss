@@ -37,7 +37,6 @@
   }
 
   a {
-    display: block;
     text-decoration: none;
     padding: 0 9px;
   }
@@ -52,6 +51,10 @@
     }
 
     li {
+      display: block;
+    }
+
+    a {
       display: block;
     }
   }
