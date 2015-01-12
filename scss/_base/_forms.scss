@@ -161,7 +161,7 @@ select {
 // Checkboxes and radio boxes. Must be enclosed in `.option-group` class.
 //
 // Styleguide Forms - Option Fields
-.option-group {
+.option-group, .form-item.form-type-checkbox {
   margin-bottom: $base-spacing / 2;
 
   input[type="checkbox"], input[type="radio"] {
