@@ -13,7 +13,7 @@
 // Micro-clearfix mixin.
 // See: http://goo.gl/y82qLF
 @mixin clearfix {
-  &::after {
+  &:after {
     clear: both;
     content: "";
     display: table;
