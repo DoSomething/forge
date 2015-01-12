@@ -3,13 +3,14 @@
 // Styleguide Information Bar
 
 .info-bar {
-  color: $white;
+  @include clearfix;
   @include rgba(background-color, $black, 0.5, #7f7f7f);
-  @include clearfix();
+  clear: both;
+  color: $white;
 
   > .wrapper {
+    @include clearfix;
     padding: $base-spacing;
-    @include clearfix();
 
     @include media($tablet) {
       @include span(12);
