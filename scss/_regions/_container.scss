@@ -7,7 +7,7 @@
 // Styleguide Container
 
 .container {
-  @include clearfix();
+  @include clearfix;
 
   > .wrapper {
     position: relative;
@@ -28,7 +28,11 @@
       @include media($tablet) {
         @include span(6);
 
-        &:nth-of-type(2) {
+        &:nth-of-type(2n+1) {
+          clear: both;
+        }
+
+        &:nth-of-type(2n) {
           @include push(0);
         }
       }
