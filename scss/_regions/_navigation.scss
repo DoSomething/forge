@@ -85,6 +85,10 @@
     height: 60px;
   }
 
+  .no-svg &:after {
+    background: neue-asset-url("images/logo.png");
+  }
+
   @include media($mobile) {
     position: absolute;
     top: 0;
