@@ -70,7 +70,7 @@
     font-weight: $weight-sbold;
     left: 0;
     line-height: 1;
-    padding: em(4, 14) em(8, 14);
+    padding: $base-spacing / 2;
     position: absolute;
     text-transform: uppercase;
     top: 0;
