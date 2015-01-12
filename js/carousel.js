@@ -31,11 +31,11 @@ define(function() {
 
   $(function() {
     // Show first image
-    $("#slide0").addClass("visible");
+    $("#slide0").addClass("is-visible");
 
     // Make carousel stateful
     var counter = 0,
-        totalCount = $(".slide").length - 1;
+        totalCount = $(".carousel__slide").length - 1;
 
     // Cache carousel buttons
     var $buttons = $("#prev, #next");
@@ -57,13 +57,13 @@ define(function() {
     // Toggle slide visibility
     function showCurrentSlide( direction ) {
       // Remove "visibile" class from the current slide
-      $("#slide" + counter).removeClass("visible");
+      $("#slide" + counter).removeClass("is-visible");
 
       // Increment or decrement slide position based on user"s request
       direction === "prev" ? decrementCounter() : incrementCounter();
 
       // Assign "visible" class to the requested slide
-      $("#slide" + counter).addClass("visible");
+      $("#slide" + counter).addClass("is-visible");
     }
 
     // Bind click event to carousel buttons

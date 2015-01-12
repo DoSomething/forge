@@ -192,3 +192,22 @@
   animation-name: shake;
 }
 
+
+// Zoom (scale) in.
+//
+// Styleguide 5.8 - Zoom In
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.95, 0.95, 0.95);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  @extend %animated;
+  animation-name: zoomIn;
+}

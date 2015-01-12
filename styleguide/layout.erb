@@ -25,38 +25,37 @@
 
 <body>
 <div class="chrome">
-  <div id="top" class="chrome--wrapper">
+  <div id="top" class="wrapper">
     <nav class="navigation -white -floating">
-      <a class="logo" href="http://www.dosomething.org"><img src="dist/assets/images/ds-logo.png" alt="DoSomething.org"></a>
-      <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
-      <div class="menu">
-        <ul class="primary-nav">
+      <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+      <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+      <div class="navigation__menu">
+        <ul class="navigation__primary">
           <li>
             <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
-              <strong>Product Wiki</strong>
-              <span>Specs, mocks, etc.</span>
+              <strong class="navigation__title">Product Wiki</strong>
+              <span class="navigation__subtitle">Specs, mocks, etc.</span>
             </a>
           </li>
 
           <li>
             <a href="//brand.dosomething.org">
-              <strong>Brand Guide</strong>
-              <span>Style, tone, &amp; voice</span>
+              <strong class="navigation__title">Brand Guide</strong>
+              <span class="navigation__subtitle">Style, tone, &amp; voice</span>
             </a>
           </li>
 
           <li>
             <a href="//neue.dosomething.org">
-              <strong>Pattern Library</strong>
-              <span>Interface framework</span>
+              <strong class="navigation__title">Pattern Library</strong>
+              <span class="navigation__subtitle">Interface framework</span>
             </a>
           </li>
+        </ul>
 
+        <ul class="navigation__secondary">
           <li>
-            <a href="//status.dosomething.org">
-              <strong>Platform Status</strong>
-              <span>Versions & uptime</span>
-            </a>
+            <a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %></a>
           </li>
         </ul>
       </div>
@@ -66,7 +65,6 @@
       <div class="wrapper">
         <h1 class="__title">
           Pattern Library
-          <%# <a href="https://github.com/DoSomething/neue/releases" class="semver-badge"><%= @version %1></a> %>
         </h1>
         <p class="__subtitle">
           Any pattern, anytime, anywhere.
@@ -75,56 +73,6 @@
     </header>
 
     <%= yield %>
-
-    <footer class="footer">
-      <div class="footer__columns">
-        <div class="footer__column -social">
-          <ul>
-            <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
-            <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
-            <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
-            <li><a href="#" class="social-icon -instagram"><span>Instagram</span></a></li>
-            <li><a href="#" class="social-icon -youtube"><span>YouTube</span></a></li>
-          </ul>
-        </div>
-
-        <div class="footer__column -links">
-          <h4 class="js-toggle-collapsed">Who We Are</h4>
-          <ul>
-            <li><a href="#">What is this?</a></li>
-            <li><a href="#">Who are they?</a></li>
-            <li><a href="#">Why are we?</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__column -links">
-          <h4 class="js-toggle-collapsed">Our Friends</h4>
-          <ul>
-            <li><a href="#">Freshman</a></li>
-            <li><a href="#">ROTC Guys</a></li>
-            <li><a href="#">Preps</a></li>
-            <li><a href="#">Varsity Jocks</a></li>
-            <li><a href="#">Unfriendly Black Hotties</a></li>
-            <li><a href="#">The greatest people you will ever meet</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__column -links">
-          <h4 class="js-toggle-collapsed">Get Involved</h4>
-          <ul>
-            <li><a href="#">Do things</a></li>
-            <li><a href="#">Do other things</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer__subfooter">
-        <ul>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </footer>
 
   </div>
 </div>

@@ -1,9 +1,13 @@
 // Standard container for centered 12-column layouts. Collapses to full-width on mobile.
+// Modifier classes can be applied to the wrapper to create different layouts.
+//
+// .-narrow - Three-quarters width container.
+// .-half   - Half-width container, can be placed side-by-side to create two-column layouts.
 //
 // Styleguide Container
 
 .container {
-  @include clearfix();
+  @include clearfix;
 
   > .wrapper {
     position: relative;
@@ -24,7 +28,11 @@
       @include media($tablet) {
         @include span(6);
 
-        &:nth-of-type(2) {
+        &:nth-of-type(2n+1) {
+          clear: both;
+        }
+
+        &:nth-of-type(2n) {
           @include push(0);
         }
       }

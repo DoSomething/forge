@@ -103,16 +103,16 @@
     <h4 class="heading $modifier_class"><span>Heading</span></h4>
   <% end %>
 
-    <% styleguide_block  'Typography - Unordered Lists' do %>
-      <ul>
+  <% styleguide_block  'Typography - Unordered Lists' do %>
+    <ul>
       <li>Norway</li>
       <li>Sweden</li>
       <li>Finland</li>
     </ul>
   <% end %>
 
-    <% styleguide_block  'Typography - Ordered Lists' do %>
-      <ol>
+  <% styleguide_block  'Typography - Ordered Lists' do %>
+    <ol>
       <li>Norway</li>
       <li>Sweden</li>
       <li>Finland</li>
@@ -156,18 +156,22 @@
 
   <% styleguide_block  'Forms - Option Fields' do %>
     <h4>This thing</h4>
-    <input type="checkbox" id="option1">
-    <label class="option" for="option1">Choose that option.</label>
+    <div class="option-group">
+      <input type="checkbox" id="option1">
+      <label for="option1">Choose that option.</label>
 
-    <input type="checkbox" id="option2">
-    <label class="option" for="option2">Choose this option.</label>
+      <input type="checkbox" id="option2">
+      <label for="option2">Choose this option.</label>
+    </div>
 
     <h4>The other thing</h4>
-    <input type="radio" name="choice" id="choice1">
-    <label class="option" for="choice1">Choose one option.</label>
+    <div class="option-group">
+      <input type="radio" name="choice" id="choice1">
+      <label for="choice1">Choose one option.</label>
 
-    <input type="radio" name="choice" id="choice2">
-    <label class="option" for="choice2">Choose the other option.</label>
+      <input type="radio" name="choice" id="choice2">
+      <label for="choice2">Choose the other option.</label>
+    </div>
   <% end %>
 
   <h3 id="layout">Layout</h3>
@@ -228,7 +232,7 @@
     <% styleguide_block  'Tabbed Navigation' do %>
       <nav class="tabs $modifier_class">
         <ul>
-          <li><a class="active" href="#">Section One</a></li>
+          <li class="is-active"><a href="#">Section One</a></li>
           <li><a href="#">Section Two</a></li>
           <li><a href="#">Section Three</a></li>
         </ul>
@@ -247,19 +251,19 @@
 
     <h4 id="carousel">Carousel</h4>
     <% styleguide_block 'Carousel' do %>
-      <aside class="carousel-wrapper gallery -columned">
-        <div id="prev" class="prev-wrapper">
-          <div class="prev-button"><span class="arrow"></span></div>
+      <aside class="carousel">
+        <div id="prev" class="carousel__control -previous">
+          <span>Previous Slide</span>
         </div>
 
-        <div class="slide-wrapper">
-          <figure id="slide0" class="slide"><img src="http://placekitten.com/g/400/300"></figure>
-          <figure id="slide1" class="slide"><img src="http://placehold.it/400x300/23b7fb"></figure>
-          <figure id="slide2" class="slide"><img src="http://placehold.it/400x300/4e2b63"></figure>
+        <div class="slides">
+          <img id="slide0" class="carousel__slide bordered" src="http://placekitten.com/g/450/300">
+          <img id="slide1" class="carousel__slide bordered" src="http://placekitten.com/450/300">
+          <img id="slide2" class="carousel__slide bordered" src="http://placehold.it/450x300">
         </div>
 
-        <div id="next" class="next-wrapper">
-          <div class="next-button"><span class="arrow"></span></div>
+        <div id="next" class="carousel__control -next">
+          <span>Next Slide</span>
         </div>
       </aside>
     <% end %>
@@ -274,14 +278,28 @@
       </div>
     <% end %>
 
+    <h4 id="figure">Figure</h4>
+    <% styleguide_block  'Figure' do %>
+      <article class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+        </div>
+
+        <div class="figure__description">
+          <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+          fashion brands like H&amp;M are "taking eco-chic to the next level."
+        </div>
+      </article>
+    <% end %>
+
     <h4 id="gallery">Gallery</h4>
     <% styleguide_block  'Gallery' do %>
       <ul class="gallery">
         <li>
-        <article class="tile tile--campaign">
+        <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -291,7 +309,7 @@
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -301,7 +319,7 @@
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -311,7 +329,7 @@
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
-              <h1 class="__title">Kitten Overlord</h1>
+              <h1 class="tile__title">Kitten Overlord</h1>
             </div>
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
@@ -322,39 +340,39 @@
 
     <% styleguide_block  'Gallery - Triad' do %>
       <ul class="gallery -triad $modifier_class">
-        <li class="-first">
-        <div class="tile tile--figure">
-          <div class="__media">
+        <li>
+        <div class="figure">
+          <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="__description">
+          <div class="figure__description">
             <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
             fashion brands like H&amp;M are "taking eco-chic to the next level."
           </div>
         </div>
         </li>
 
-        <li class="-second">
-        <div class="tile tile--figure">
-          <div class="__media">
+        <li>
+        <div class="figure">
+          <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="__description">
+          <div class="figure__description">
             <b>Seventeen</b> ran an Earth Day story about recycling old fabrics
             through DoSomething.org and H&amp;M's Comeback Clothes.
           </div>
         </div>
         </li>
 
-        <li class="-third">
-        <div class="tile tile--figure">
-          <div class="__media">
+        <li>
+        <div class="figure">
+          <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="__description">
+          <div class="figure__description">
             <b>Nylon</b> urged readers to clean out their closets and do good for
             the planet by recycling old clothes at H&amp;M.
           </div>
@@ -371,11 +389,11 @@
               <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
             </div>
 
-            <div class="__body">
-              <h3 class="__title"><a href=
+            <div class="media__body">
+              <h3 class="media__title"><a href=
                   "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <div class="__description">
+              <div class="media__description">
                 Do you have stained or ripped clothes you don't wear? Recycle them
                 w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
                 <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
@@ -390,11 +408,11 @@
               <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
             </div>
 
-            <div class="__body">
-              <h3 class="__title"><a href=
+            <div class="media__body">
+              <h3 class="media__title"><a href=
                   "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <div class="__description">
+              <div class="media__description">
                 Do you have stained or ripped clothes you don't wear? Recycle them
                 w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
                 <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
@@ -424,11 +442,11 @@
           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
         </div>
 
-        <div class="__body">
-          <h3 class="__title"><a href=
+        <div class="media__body">
+          <h3 class="media__title"><a href=
               "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-          <div class="__description">
+          <div class="media__description">
             Do you have stained or ripped clothes you don't wear? Recycle them
             w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
             <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
@@ -437,17 +455,17 @@
       </article>
     <% end %>
 
-    <h4 id="media-select">Media Selector</h4>
-    <% styleguide_block 'Media Selector' do %>
+    <h4 id="media-opts">Media Options</h4>
+    <% styleguide_block 'Media Options' do %>
       <div class="js-media-options">
-        <div class="form-item form-type-radio">
+        <div class="media-options__item -radio">
           <input type="radio" value="value1" name="item" id="option1" checked="checked">
           <label for="option1">
             <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
           </label>
         </div>
 
-        <div class="form-item form-type-radio">
+        <div class="media-options__item -radio">
           <input type="radio" value="value2" name="item" id="option2">
           <label for="option2">
             <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
@@ -470,11 +488,11 @@
 
     <h4 id="tile">Tile</h4>
     <% styleguide_block  'Tile' do %>
-      <article class="tile tile--campaign">
+      <article class="tile">
         <a class="wrapper" href="#">
-          <div class="tile--meta">
-            <h1 class="__title">Kitten Overlords</h1>
-            <p class="__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlords</h1>
+            <p class="tile__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
           </div>
           <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
           <!-- <video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop></video> -->
@@ -485,16 +503,6 @@
     <h2 id="regions">Regions</h2>
     <p>Regions are complete sections of an interface.</p>
 
-    <h4 id="banner">Banner</h4>
-    <% styleguide_block  'Banner' do %>
-      <header role="banner" class="$modifier_class">
-        <div class="wrapper">
-          <h1 class="__title">Title</h1>
-          <p class="__subtitle">Subtitle.</p>
-        </div>
-      </header>
-    <% end %>
-
     <h4 id="chrome">Chrome</h4>
     <% styleguide_block  'Site Chrome' do %>
       <!-- see page source -->
@@ -502,15 +510,13 @@
 
     <h4 id="container">Container</h4>
     <% styleguide_block  'Container' do %>
-      <!-- this is a boring example... -->
       <div class="container">
-        <div class="wrapper">
-          <p>Hi.</p>
+        <div class="wrapper $modifier_class">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat vitae.</p>
         </div>
       </div>
     <% end %>
 
-    <!-- footer -->
     <h4 id="footer">Footer</h4>
       <% styleguide_block  'Site Footer' do %>
         <footer class="footer">
@@ -564,19 +570,29 @@
       </footer>
     <% end %>
 
+    <h4 id="header">Header</h4>
+    <% styleguide_block  'Header' do %>
+      <header role="banner" class="$modifier_class">
+        <div class="wrapper">
+          <h1 class="__title">Title</h1>
+          <p class="__subtitle">Subtitle.</p>
+        </div>
+      </header>
+    <% end %>
+
     <h4 id="modal">Modal</h4>
     <% styleguide_block 'Modal (Popup)' do %>
       <a href="http://www.example.com" data-modal-href="#modal--example" class="btn secondary">Show example modal</a>
 
     <div data-modal id="modal--example" role="dialog">
-      <h2 class="banner">Example Content</h2>
+      <h2 class="heading -banner">Example Content</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
     </div>
 
     <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
-      <h2 class="banner">Now fill out this form.</h2>
+      <h2 class="heading -banner">Now fill out this form.</h2>
       <form action="#">
         <label for="name">Name</label>
         <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
@@ -585,13 +601,13 @@
         <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
 
         <div class="form-actions">
-          <input type="submit" class="btn">
+          <input type="submit" class="button">
         </div>
       </form>
 
       <form action="http://www.google.com" id="skip-form">
         <div class="form-actions">
-          <input type="submit" value="Skip" class="btn tertiary">
+          <input type="submit" value="Skip" class="button -tertiary">
         </div>
       </form>
     </div>
@@ -600,23 +616,27 @@
     <!-- navigation -->
     <h4 id="navigation">Navigation</h4>
     <% styleguide_block  'Site Navigation' do %>
-      <nav class="chrome--nav $modifier_class">
-        <a class="logo" href="http://www.dosomething.org"><img src="dist/assets/images/ds-logo.png" alt="DoSomething.org"></a>
-        <a class="hamburger js-toggle-mobile-menu" href="#">&#xe606;</a>
-        <div class="menu">
-          <ul class="primary-nav">
+      <nav class="navigation $modifier_class">
+        <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+        <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+        <div class="navigation__menu">
+          <ul class="navigation__primary">
             <li>
               <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
-                <strong>Explore Patterns</strong>
-                <span>Lorem ipsum dolor sit.</span>
+                <strong class="navigation__title">Explore Campaigns</strong>
+                <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
               </a>
             </li>
+          </ul>
 
+          <ul class="navigation__secondary">
             <li>
-              <a href="//brand.dosomething.org">
-                <strong>About Us</strong>
-                <span>Eat some souploaf.</span>
-              </a>
+              <form action="#" method="post">
+                <input type="search">
+              </form>
+            </li>
+            <li>
+              <a href="#">Log In</a>
             </li>
           </ul>
         </div>
@@ -664,7 +684,7 @@
         <li><a href="#images" class="js-jump-scroll">Images</a></li>
         <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
         <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
-        <li><a href="#messages" class="js-jump-scroll">Status Banner</a></li>
+        <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
         <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
         <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
         <li><a href="#video" class="js-jump-scroll">Video</a></li>
@@ -676,10 +696,11 @@
       <ul>
         <li><a href="#carousel" class="js-jump-scroll">Carousel</a></li>
         <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
+        <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
         <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
         <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
         <li><a href="#media" class="js-jump-scroll">Media</a></li>
-        <li><a href="#media-select" class="js-jump-scroll">Media Selector</a></li>
+        <li><a href="#media-opts" class="js-jump-scroll">Media Options</a></li>
         <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
         <li><a href="#sponsor" class="js-jump-scroll">Sponsor</a></li>
         <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
@@ -689,10 +710,10 @@
       <li>
       <a href="#regions" class="js-jump-scroll">Regions</a>
       <ul>
-        <li><a href="#banner" class="js-jump-scroll">Banner</a></li>
         <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
         <li><a href="#container" class="js-jump-scroll">Container</a></li>
         <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
+        <li><a href="#header" class="js-jump-scroll">Header</a></li>
         <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
         <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
       </ul>

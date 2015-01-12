@@ -53,7 +53,7 @@
     position: sticky;
     top: 0;
 
-    @include span(4 at 12 isolate);
+    @include span(5 at 12 isolate);
   }
 }
 
@@ -194,7 +194,6 @@ ul.styleguide-modifier li {
   margin: 18px 0;
   padding: 18px;
   border-radius: 2px;
-  text-align: center;
   background: #f1f1f1;
   border: 1px solid #ddd;
 }
@@ -205,19 +204,7 @@ ul.styleguide-modifier li {
   color: #999;
   font-weight: 400;
   line-height: 1.5;
-  text-align: center;
   padding-top: 5px;
-}
-
-@media screen and (min-width: 960px) {
-  .font-tile {
-    text-align: left;
-  }
-
-  .font-tile code {
-    display: inline-block;
-    float: right;
-  };
 }
 
 .color-tile {
@@ -268,12 +255,10 @@ header[role="banner"].-styleguide {
 .semver-badge {
   font-size: 16px;
   vertical-align: 50%;
-  background: #fff;
+  background: rgba(#000, 0.25);
   padding: 4px 8px;
   text-shadow: none;
-  color: #271231;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .intro-neue {

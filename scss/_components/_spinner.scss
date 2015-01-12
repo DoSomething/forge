@@ -2,8 +2,7 @@
 //
 // Styleguide Loading Spinner
 .spinner {
-  background: transparent no-repeat center center;
-  background-image: neue-asset-url("images/spinner.svg");
+  background: transparent neue-asset-url("images/spinner.svg") no-repeat center center;
   background-size: 32px;
   height: 32px;
   width: 32px;

@@ -1,6 +1,6 @@
 module.exports = {
   sass: {
-    files: ["scss/**/*.{scss,sass}"],
+    files: ["scss/**/*.{scss,sass}", "!scss/**/*scsslint_tmp*.scss"],
     tasks: ["scsslint:all", "sass:compile", "postcss:process"]
   },
   js: {
