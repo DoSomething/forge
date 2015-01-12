@@ -9,13 +9,17 @@ define(function() {
 
   $(function() {
     // Toggle dropdown menu navigation on mobile:
-    $(".js-toggle-mobile-menu").on("click", function() {
-      $(".chrome--nav").toggleClass("is-visible");
+    $(".js-navigation-toggle").on("touchstart mousedown", function(e) {
+      e.preventDefault();
+
+      $(".chrome").toggleClass("mobile-menu-open");
+      $(".navigation").toggleClass("is-visible");
     });
 
     // Hide footer on mobile until clicked
-    $(".js-toggle-collapsed").addClass("is-collapsed is-toggleable");
-    $(".js-toggle-collapsed").on("click", function() {
+    var $collapsible = $(".js-toggle-collapsed");
+    $collapsible.addClass("is-collapsed is-toggleable");
+    $collapsible.on("click", function() {
       if( window.matchMedia("screen and (max-width: 768px)").matches ) {
         $(this).toggleClass("is-collapsed");
       }

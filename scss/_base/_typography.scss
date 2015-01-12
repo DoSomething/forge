@@ -15,7 +15,7 @@ html {
 body {
   width: 100%;
   background: $base-background-color;
-  color: $copy-color;
+  color: $base-font-color;
   font-family: $font-proxima-nova;
   font-size: $font-regular;
   font-weight: $weight-normal;
@@ -119,7 +119,7 @@ li + li {
 // Styleguide Typography - Inline Elements
 p, ul, ol {
   font-size: $font-regular;
-  color: $copy-color;
+  color: $base-font-color;
 
   // Apply base spacing between adjacent paragraphs, and
   // headings that follow paragraph text.

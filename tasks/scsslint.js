@@ -1,6 +1,7 @@
 module.exports = {
   all: [
     'scss/**/*.scss',
+    '!scss/styleguide.scss'
   ],
 
   options: {
@@ -8,4 +9,4 @@ module.exports = {
     config: '.scss-lint.yml',
     colorizeOutput: true
   }
-}
+};

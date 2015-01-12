@@ -1,0 +1,35 @@
+// A figure block usually contains an image with a title and a description.
+//
+// Styleguide Figure
+.figure {
+  padding-bottom: 27px;
+  text-align: center;
+
+  > .wrapper {
+    display: block;
+    overflow: hidden;
+  }
+
+  img {
+    margin: 0 auto 18px;
+
+    @include media($desktop) {
+      max-width: 100%;
+    }
+  }
+
+  .figure__title {
+    color: $dark-gray;
+    line-height: 1.1;
+    margin: 0 0 9px;
+  }
+
+  .figure__description {
+    line-height: 1.2;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+

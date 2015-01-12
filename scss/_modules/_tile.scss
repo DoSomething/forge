@@ -1,50 +1,19 @@
-// Module class for tile blocks that can be placed in multiple contexts on a page. Specifically used for campaign tiles, but can be used for other content as well.
 // A tile block usually contains an image with a title and a tagline.
+// Module class for tile blocks that can be placed in multiple contexts on a page. Specifically used for campaign tiles, but can be used for other content as well.
 //
 // Styleguide Tile
-
 .tile {
-  > .wrapper {
-    display: block;
-    overflow: hidden;
-  }
-}
-
-
-.tile--figure {
-  padding-bottom: 27px;
-  text-align: center;
-
-  img {
-    margin: 0 auto 18px;
-
-    @include media($desktop) {
-      max-width: 100%;
-    }
-  }
-
-  .__title {
-    color: $dark-gray;
-    line-height: 1.1;
-    margin: 0 0 9px;
-  }
-
-  .__description {
-    line-height: 1.2;
-
-    p {
-      margin: 0;
-    }
-  }
-}
-
-
-.tile--campaign {
   height: 0;
   padding-bottom: 100%;
   position: relative;
 
+  &.-unpublished {
+    opacity: 0.45;
+  }
+
   > .wrapper {
+    display: block;
+    overflow: hidden;
     height: 100%;
     position: absolute;
     top: 0;
@@ -59,7 +28,7 @@
       position: absolute;
       width: 100%;
       z-index: 5;
-      background: linear-gradient(rgba(#000, 0) 40%, rgba(#000, .2) 70%, rgba(#000, .5) 87%, rgba(#000, .85) 100%);
+      background: linear-gradient(rgba(#000, 0) 40%, rgba(#000, 0.2) 70%, rgba(#000, 0.5) 87%, rgba(#000, 0.85) 100%);
     }
   }
 
@@ -82,9 +51,6 @@
     z-index: 1;
   }
 
-  // Should be an element and not a modifier to the tile.
-  // Will remove tile--meta once the theme markup is updated, but adding both for now so it doesn't break things!
-  .tile--meta,
   .tile__meta {
     bottom: 0;
     color: #fff;
@@ -98,20 +64,20 @@
     }
   }
 
-  .__flag {
+  .tile__flag {
     color: #000;
-    font-size: 14px;
+    font-size: $font-smaller;
     font-weight: $weight-sbold;
     left: 0;
     line-height: 1;
-    padding: em(4, 14) em(8, 14);
+    padding: $base-spacing / 2;
     position: absolute;
     text-transform: uppercase;
     top: 0;
     z-index: 15;
 
     @include media($desktop) {
-      font-size: 18px;
+      font-size: $font-regular;
     }
 
     &.-staff-pick {
@@ -119,35 +85,20 @@
     }
   }
 
-  .__title {
+  .tile__title {
     color: inherit;
     font-size: $font-medium;
+    text-shadow: $text-shadow;
     line-height: 1.2;
-    margin: 0 0 4px;
+    margin: 0;
   }
 
-  .__tagline {
+  .tile__tagline {
     color: inherit;
-    font-size: 0.9em;
+    font-size: $font-small;
+    text-shadow: $text-shadow;
     line-height: 1;
     margin: 0;
-
-    @include visually-hidden();
-
-    @include media($tablet) {
-      @include visually-restored();
-    }
-
-  }
-
-  .__title,
-  .__tagline {
-    text-shadow: $text-shadow;
-  }
-
-
-  &.-unpublished {
-    opacity: 0.45;
   }
 }
 

@@ -4,13 +4,11 @@
 // Styleguide Media
 
 .media {
-  @include clearfix();
+  @include clearfix;
   text-align: left;
   padding-bottom: 27px;
 
   > .wrapper {
-    @include span(2 of 6);
-
     img {
       margin-left: 0;
       margin-right: 0;
@@ -19,17 +17,17 @@
     }
   }
 
-  .__body {
+  .media__body {
     @include span(4 of 6);
   }
 
-  .__title {
+  .media__title {
     color: $dark-gray;
     line-height: 1.1;
     margin: 0 0 9px;
   }
 
-  .__description {
+  .media__description {
     line-height: 1.2;
 
     p {

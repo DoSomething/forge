@@ -8,7 +8,9 @@
 .modal-container {
   display: none;
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   min-height: 100%;
   background-image: neue-asset-url("images/fallbacks/ie8-rgba-black-50.png");
   background: rgba(0, 0, 0, 0.5);
@@ -36,7 +38,7 @@
   background: #fff;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
   width: auto;
-  padding: 36px 27px;
+  padding: $base-spacing;
   margin: 0;
   word-wrap: break-word;
   z-index: 1050;
@@ -47,39 +49,50 @@
     margin: 0 auto;
   }
 
-  .modal-close-button {
-    position: absolute;
-    top: 0; right: 27px;
-    font-size: 45px;
-    font-weight: bold;
-    color: $med-gray;
-    opacity: 0.4;
-    text-decoration: none;
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:active {
-      opacity: 1;
-    }
-
-    &.-alt {
-      font-size: 18px;
-      top: 18px;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
   .heading.-banner {
     // make space for "x" button & fit banner to edge of modal
-    padding-left: 27px;
+    padding-left: $base-spacing;
     padding-right: 72px;
-    margin: -36px -27px 18px;
+    margin: (-$base-spacing) (-$base-spacing) $base-spacing;
   }
+}
+
+// Close Button
+.modal-close-button {
+  position: absolute;
+  top: 0;
+  right: $base-spacing;
+  font-size: 45px;
+  font-weight: bold;
+  color: $med-gray;
+  opacity: 0.4;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $med-gray;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  &.-alt {
+    font-size: 18px;
+    top: 18px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// If JavaScript is enabled (via Modernizr check), hide inline modal
+// containers to prevent flash of unstyled content as JS initializes.
+.js [data-modal] {
+  display: none;
 }
 
 .chrome.modal-open {
