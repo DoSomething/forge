@@ -7,17 +7,14 @@
   @include clearfix;
   text-align: left;
 
-  > .wrapper {
-    @include clearfix;
+  > .media__image {
     float: left;
-    overflow: hidden;
     padding-right: gutter();
   }
 
   .media__body {
-    @include clearfix;
-    padding-left: gutter();
     overflow: hidden;
+    padding-left: gutter();
   }
 
   .media__title {
