@@ -11,9 +11,16 @@
 
   > li {
     margin: gutter() 0;
+  }
 
-    @include media($tablet) {
-      @include span(3 of 12);
+  // Quartet Gallery. Four items per row.
+  //
+  // Styleguide Gallery - Quartet
+  &.-quartet {
+    li {
+      @include media($tablet) {
+        @include span(3 of 12);
+      }
     }
   }
 
