@@ -65,6 +65,11 @@
   @include media($tablet) {
     @include span(9 at 3 isolate);
   }
+
+  // Override galleries in styleguide content to fit to grid.
+  > .gallery {
+    margin: ($base-spacing / 2) (-$base-spacing / 2);
+  }
 }
 
 .styleguide-example {
