@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# sass
-gem 'sass', '~>3.4.0'
-
 # styleguide
 gem 'sinatra', '~> 1.4.3'
 gem 'sinatra-export', '~> 1.0.1'
