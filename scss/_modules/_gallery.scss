@@ -56,7 +56,7 @@
   &.-triad {
     > li {
       @include media($tablet) {
-        @include gallery(4 of 12);
+        @include span(4 of 12);
       }
     }
 
