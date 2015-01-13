@@ -5,8 +5,7 @@ module.exports = {
       "dist/styleguide.css": "scss/styleguide.scss",
     },
     options: {
-      style: "compressed",
-      bundleExec: true
+      outputStyle: "compressed"
     }
   }
-}
+};
