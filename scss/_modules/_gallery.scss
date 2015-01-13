@@ -31,8 +31,6 @@
   // Styleguide Gallery - Featured
   &.-featured {
     > li:first-child {
-      width: 100%;
-
       @include media($tablet) {
         @include span(6 of 12);
       }
