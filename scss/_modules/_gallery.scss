@@ -1,4 +1,5 @@
-// Module class for all galleries. Add additional modifier classes to designate styling for a specific type of gallery.
+// Module class for all galleries. Galleries can contain items of any type (e.g. tile, media, etc.)
+// Add additional modifier classes to designate styling for a specific type of gallery.
 //
 // Styleguide Gallery
 
@@ -11,16 +12,25 @@
 
   > li {
     margin: gutter() 0;
+  }
 
-    @include media($tablet) {
-      @include span(3 of 12);
+  // Quartet Gallery. Four items per row.
+  //
+  // Styleguide Gallery - Quartet
+  &.-quartet {
+    li {
+      @include media($tablet) {
+        @include span(3 of 12);
+      }
     }
   }
 
+  // Featured Gallery. Emphasizes the first item in the gallery.
+  // Works best when paired with `.-quartet.`
+  //
+  // Styleguide Gallery - Featured
   &.-featured {
     > li:first-child {
-      width: 100%;
-
       @include media($tablet) {
         @include span(6 of 12);
       }
@@ -33,7 +43,7 @@
     }
   }
 
-  // Triad Gallery.  Defaults to using images with same dimensions.
+  // Triad Gallery. Three items per row.
   //
   // .-aligned - Tiles with image flushed to top and minimum
   // height to force content below to line up with adjacent tiles
@@ -44,7 +54,7 @@
   &.-triad {
     > li {
       @include media($tablet) {
-        @include gallery(4 of 12);
+        @include span(4 of 12);
       }
     }
 
@@ -65,7 +75,7 @@
     }
   }
 
-  // Duo Gallery serves as a container for two tiles that sit side by side. Tiles can be of any style.
+  // Duo Gallery. Two items per row.
   //
   // Styleguide Gallery - Duo
   &.-duo {
