@@ -26,7 +26,7 @@
   }
 
   // Featured Gallery. Emphasizes the first item in the gallery.
-  // Works best when paired with `.-quartet.`
+  // Works best when paired with `-quartet.` and `-mosaic`.
   //
   // Styleguide Gallery - Featured
   &.-featured {
@@ -39,6 +39,29 @@
     > li:nth-child(6) {
       @include media($tablet) {
         clear: both;
+      }
+    }
+  }
+
+  // Mosaic Gallery. Removes spacing between gallery items.
+  //
+  // Styleguide Gallery - Mosaic
+  &.-mosaic {
+    margin: (-$base-spacing / 2);
+
+    > li {
+      margin: 0;
+      padding: 0;
+
+      // Ensure that media-queried grid spacing from other patterns doesn't override.
+      &:first-child {
+        @include media($tablet) {
+          padding: 0;
+        }
+      }
+
+      @include media($tablet) {
+        padding: 0;
       }
     }
   }
