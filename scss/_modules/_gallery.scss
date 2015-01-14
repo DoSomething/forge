@@ -18,7 +18,7 @@
   //
   // Styleguide Gallery - Quartet
   &.-quartet {
-    li {
+    > li {
       @include media($tablet) {
         @include span(3 of 12);
       }
