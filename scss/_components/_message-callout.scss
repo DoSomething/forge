@@ -11,6 +11,10 @@
 .message-callout {
   position: relative;
 
+  @include media($tablet) {
+    transform: rotate(-3deg);
+  }
+
   .__copy {
     display: inline-block;
     padding: 18px 9px;
@@ -134,6 +138,8 @@
 
       .__copy {
         left: 0;
+        padding-bottom: 3px;
+        padding-top: 3px;
         padding-left: 45px;
 
         &:before {
