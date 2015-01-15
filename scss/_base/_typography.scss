@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6,
   font-weight: $weight-bold;
   line-height: $header-line-height;
   color: $purple;
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0 0 ($base-spacing / 6);
   text-rendering: optimizeLegibility;
 }
 
@@ -122,7 +122,11 @@ p, ul, ol {
 
   // Apply base spacing between adjacent paragraphs, and
   // headings that follow paragraph text.
-  + p, + ul, + ol, + h1, + h2, + h3, + h4, + h5, + h6 {
+  + p, + ul, + ol {
+    margin-top: $base-spacing;
+  }
+
+  + h1, + h2, + h3, + h4, + h5, + h6 {
     margin-top: $base-spacing * 2;
   }
 }
