@@ -1,9 +1,12 @@
 module.exports = {
-  dist: {
+  all: {
     "devFile": "remote",
     "outputFile": "dist/modernizr-neue.js",
     "files" : {
-      "src": ["js/**/*.js", "scss/**/*.scss"]
+      "src": [
+        "js/**/*.js",
+        "scss/**/*.scss"
+      ]
     },
     "extra" : {
       "shiv" : false,

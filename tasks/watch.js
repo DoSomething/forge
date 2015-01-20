@@ -1,14 +1,14 @@
 module.exports = {
   sass: {
-    files: ["scss/**/*.{scss,sass}", "!scss/**/*scsslint_tmp*.scss"],
-    tasks: ["scsslint:all", "sass:compile", "postcss:process"]
+    files: ["scss/**/*.{scss,sass}"],
+    tasks: ["sass", "scsslint",  "postcss"]
   },
   js: {
     files: ["js/**/*.js", "tests/**/*.js"],
-    tasks: ["jshint:all", "requirejs:compile", "test:js"]
+    tasks: ["requirejs", "jshint", "qunit"]
   },
-  images: {
+  assets: {
     files: ["assets/**/*"],
     tasks: ["copy:assets"]
   }
-}
+};
