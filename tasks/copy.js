@@ -1,7 +1,7 @@
 module.exports = {
   assets: {
     files: [
-      { expand: true, src: ["assets/**/*"], dest: "dist/" },
+      {expand: true, src: ["images/**"], dest: "dist/"}
     ]
   }
-}
+};

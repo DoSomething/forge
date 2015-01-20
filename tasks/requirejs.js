@@ -1,5 +1,5 @@
 module.exports = {
-  compile: {
+  all: {
     options: {
       baseUrl: "dist/",
       name: "../bower_components/almond/almond",
@@ -15,4 +15,4 @@ module.exports = {
       optimize: "uglify2"
     }
   }
-}
+};

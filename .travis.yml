@@ -3,6 +3,7 @@ rvm:
 - 2.1.1
 before_script:
 - gem install sass
+- npm install grunt-cli -g
 - npm install
 script:
-- npm test
+- grunt travis
