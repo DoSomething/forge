@@ -5,4 +5,4 @@ module.exports = {
     push: false,
     createTag: false
   }
-}
+};
