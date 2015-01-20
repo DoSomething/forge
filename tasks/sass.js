@@ -12,7 +12,7 @@ module.exports = function(grunt) {
   }
 
   grunt.registerTask('sass', function() {
-    console.log(sass.info());
+    grunt.log.writeln(sass.info());
 
     var inFile = path.resolve('scss/neue-build.scss');
     var outFile = path.resolve('dist/neue.css');
