@@ -18,7 +18,7 @@ define(function(require) {
     var $this = $(this),
         $siblings = $this.parent().siblings(),
         selection = $this.data("tab") - 1,
-        $tabs = $this.closest(".js-tabs").find(".tab"),
+        $tabs = $this.closest(".js-tabs").find(".tabs__tab"),
         tab = $tabs.get(selection);
 
     $siblings.removeClass("is-active");
