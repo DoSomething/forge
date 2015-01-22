@@ -209,6 +209,25 @@
       <p class="legal">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
     <% end %>
 
+    <h4 id="list-compact">List Compacted</h4>
+    <% styleguide_block  'List Compacted' do %>
+      <ul class="list-compacted">
+        <li>Norway</li>
+        <li>Sweden</li>
+        <li>Finland</li>
+      </ul>
+
+      <div class="list-compacted-wrapper">
+        <ul>
+          <li>Norway</li>
+          <li>Sweden</li>
+        </ul>
+        <ul>
+          <li>Finland</li>
+        </ul>
+      </div>
+    <% end %>
+
     <h4 id="callout">Message Callout</h4>
     <% styleguide_block  'Message Callout' do %>
       <div class="message-callout $modifier_class">
@@ -525,7 +544,7 @@
 
     <h4 id="info-bar">Info Bar</h4>
     <% styleguide_block 'Information Bar' do %>
-      <footer class="info-bar">
+      <footer class="info-bar $modifier_class">
         <div class="wrapper">
           Sponsored by <a href="#">Puppet Sloth</a>.
           <div class="help">
@@ -537,9 +556,9 @@
 
     <h4 id="media">Media</h4>
     <% styleguide_block  'Media' do %>
-      <article class="media">
+      <article class="media $modifier_class">
         <div class="media__image">
-          <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
+          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
         </div>
 
         <div class="media__body">
@@ -789,6 +808,7 @@
         <li><a href="#buttons" class="js-jump-scroll">Buttons</a></li>
         <li><a href="#images" class="js-jump-scroll">Images</a></li>
         <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
+        <li><a href="#list-compacted" class="js-jump-scroll">List Compacted</a></li>
         <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
         <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
         <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>

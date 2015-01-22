@@ -1,6 +1,8 @@
 // Module class for media blocks that can be placed in multiple contexts on a page. A media block
 // contains an image and description. See [Nicole Sullivan's introductory article](http://goo.gl/Gnfw7d).
 //
+// .-medium  - Fixed medium tile size.
+//
 // Styleguide Media
 
 .media {
@@ -13,6 +15,10 @@
 
       @include media($medium) {
         width: 150px;
+      }
+
+      img {
+        width: 100%;
       }
     }
   }
