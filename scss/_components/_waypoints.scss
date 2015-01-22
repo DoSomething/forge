@@ -1,0 +1,84 @@
+// Used to navigate between sections/panels/pages within an interface. Apply `.is-active` class to
+// list element for "active" state.
+//
+// .-vertical - Vertical tab layout (for use in a sidebar).
+// .-primary  - Emphasized tabs
+//
+// Styleguide Waypoint Navigation
+.waypoints {
+  list-style: none;
+  font-size: $font-regular;
+  margin: 0;
+  padding: 0;
+
+  ul {
+    padding: 18px;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 0 $base-spacing / 4;
+
+    &.is-active  {
+      // Highlight the active link, but not nested links
+      > a {
+        color: $black;
+      }
+
+      // If there's nested links inside active item, show it.
+      ul {
+        max-height: 600px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0 9px;
+  }
+
+  &.-vertical {
+    text-align: left;
+
+    ul {
+      padding: 0 $base-spacing;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s; // used to transition between 0 & auto height via max-width
+
+      ul {
+        font-size: $font-small;
+      }
+    }
+
+    li {
+      display: block;
+    }
+
+    a {
+      display: block;
+    }
+  }
+
+  &.-primary {
+    background: $light-gray;
+    padding: $base-spacing gutter();
+
+    a {
+      color: $med-gray;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $dark-gray;
+      }
+
+      &.is-active {
+        color: $black;
+      }
+
+      &.waypoints__primary-link {
+        color: $blue;
+      }
+    }
+  }
+}

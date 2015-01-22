@@ -1,61 +1,109 @@
-// Used to navigate between sections/panels/pages within an interface. Apply `.is-active` class to
-// list element for "active" state.
+// Tabbed container. Gracefully degrades into plain text if JavaScript is disabled.
+// Extends the "waypoints" patterns for tab navigation.
 //
-// .vertical - Vertical tab layout (for use in a sidebar).
-//
-// Styleguide Tabbed Navigation
-.tabs {
-  font-size: $font-regular;
-  text-align: center;
-  overflow: hidden;
+// Styleguide Tabs
 
-  ul {
-    margin: 0;
-    padding: 18px;
 
-    ul {
-      display: block;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.5s; // used to transition between 0 & auto height via max-width
-    }
-  }
+// If JS is disabled, hide interactive tab menu.
+.tabs__menu {
+  @include visually-hidden();
+}
+
+// Containing element for tabs
+.tabs__body {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
   li {
-    display: inline;
-    margin: 0 0 $base-spacing / 4;
+    margin-top: 27px;
 
-    // Highlight the active link, but not nested links
-    &.is-active > a {
-      color: $black;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// Tab headings for when JS is disabled
+.tabs__title {
+  font-weight: $weight-bold;
+  margin-bottom: 9px;
+}
+
+
+// We add interactive elements once we know JS is working.
+.js {
+  .tabs {
+    > .wrapper {
+      @include visually-hidden();
+
+      @include media($tablet) {
+        @include visually-restored();
+      }
     }
 
-    // If there's nested links inside active item, show it.
-    &.is-active ul {
-      max-height: 600px;
+    // Extends nested `.waypoints` with active "arrow"
+    .waypoints {
+      z-index: 10;
+
+      li {
+        margin: 0;
+      }
+
+      a {
+        display: inline-block;
+        padding: ($base-spacing / 4) ($base-spacing / 2);
+      }
+
+      .is-active {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          display: block;
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 12px solid #fff;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          margin-left: -12px;
+        }
+      }
     }
   }
 
-  a {
-    text-decoration: none;
-    padding: 0 9px;
-  }
+  // For mobile users, show an associated modal link instead.
+  .tabs__modal-toggle {
+    display: block;
 
-  &.vertical {
-    font-size: 1.1em; // decreasing font size, starting at 1em
-    text-align: left;
-
-    ul {
-      font-size: 0.9em;
-      padding: 0 $base-spacing;
-    }
-
-    li {
-      display: block;
-    }
-
-    a {
-      display: block;
+    @include media($tablet) {
+      display: none;
     }
   }
+
+  // Once we know JS is enabled, show tab menu
+  .tabs__menu {
+    @include visually-restored();
+  }
+
+  // Inline title is only used for screen readers & no-JS.
+  .tabs__title {
+    @include visually-hidden();
+  }
+
+  // Only display tabs with active class toggled.
+  .tabs__tab {
+    @include visually-hidden();
+    background-color: $light-gray;
+    margin-top: 0;
+    padding: 18px;
+
+    &.is-active {
+      @include visually-restored();
+    }
+  }
+
 }

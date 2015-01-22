@@ -229,21 +229,59 @@
     <% end %>
 
     <h4 id="tabs">Tabs</h4>
-    <% styleguide_block  'Tabbed Navigation' do %>
-      <nav class="tabs $modifier_class">
-        <ul>
-          <li class="is-active"><a href="#">Section One</a></li>
-          <li><a href="#">Section Two</a></li>
-          <li><a href="#">Section Three</a></li>
-        </ul>
-      </nav>
-    <% end %>
+    <% styleguide_block  'Tabs' do %>
+      <section class="tabs js-tabs">
+        <a href="#" data-modal-href="#modal-tips-during" class="tabs__modal-toggle">View Tips</a>
+        <h4 class="visually-hidden">Tips</h4>
+        <div class="wrapper">
+          <nav class="tabs__menu">
+            <ul class="waypoints">
+              <li class="is-active"><a href="#tip-1" data-tab="1">Find Maxwell</a></li>
+              <li><a href="#tip-2" data-tab="2">Give Him 'Fee</a></li>
+            </ul>
+          </nav>
+
+          <ul class="tabs__body">
+            <li id="tip-1" class="tabs__tab">
+              <h5 class="tabs__title">Find Maxwell</h5>
+              <p>He's drinking 'fee. But he needs some more 'fee.</p>
+            </li>
+            <li id="tip-2" class="tabs__tab">
+              <h5 class="tabs__title">Give Him 'Fee</h5>
+              <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div data-modal id="modal-tips-during" class="modal--tips" role="dialog">
+        <h2 class="heading -banner">Tips</h2>
+        <h4 class="inline--alt-color">Find Maxwell</h4>
+        <p>He's drinking 'fee. But he needs some more 'fee.</p>
+
+        <h4 class="inline--alt-color">Give Him 'Fee</h4>
+        <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+
+        <a href="#" class="js-close-modal">Back to main page</a>
+      </div>
+
+  <% end %>
 
     <h4 id="video">Video</h4>
     <% styleguide_block 'Video Embed' do %>
       <div class="media-video">
         <iframe width="560" height="315" src="//www.youtube.com/embed/bkK2C0iBFt8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
       </div>
+    <% end %>
+
+    <h4 id="waypoints">Waypoints</h4>
+    <% styleguide_block  'Waypoint Navigation' do %>
+      <ul class="waypoints $modifier_class">
+        <li class="is-active"><a href="#">Section One</a></li>
+        <li><a href="#">Section Two</a></li>
+        <li><a href="#">Section Three</a></li>
+        <li><a class="waypoints__primary-link" href="#">Section Four</a></li>
+      </ul>
     <% end %>
 
     <h2 id="modules">Modules</h2>
@@ -767,66 +805,63 @@
 
 </article>
 
-<div class="styleguide-sidebar js-fixedsticky">
-  <nav class="tabs vertical js-scroll-indicator">
+<nav class="styleguide-sidebar js-fixedsticky">
+  <ul class="waypoints -vertical js-scroll-indicator">
+    <li><a href="#intro" class="js-jump-scroll">Introduction</a></li>
+
+    <li>
+    <a href="#base" class="js-jump-scroll">Base Styles</a>
     <ul>
-      <li><a href="#intro" class="js-jump-scroll">Introduction</a></li>
-
-      <li>
-      <a href="#base" class="js-jump-scroll">Base Styles</a>
-      <ul>
-        <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
-        <li><a href="#typography" class="js-jump-scroll">Typography</a></li>
-        <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
-        <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
-        <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
-      </ul>
-      </li>
-
-      <li>
-      <a href="#components" class="js-jump-scroll">Components</a>
-      <ul>
-        <li><a href="#buttons" class="js-jump-scroll">Buttons</a></li>
-        <li><a href="#images" class="js-jump-scroll">Images</a></li>
-        <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
-        <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
-        <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
-        <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
-        <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
-        <li><a href="#video" class="js-jump-scroll">Video</a></li>
-      </ul>
-      </li>
-
-      <li>
-      <a href="#modules" class="js-jump-scroll">Modules</a>
-      <ul>
-        <li><a href="#carousel" class="js-jump-scroll">Carousel</a></li>
-        <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
-        <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
-        <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
-        <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
-        <li><a href="#media" class="js-jump-scroll">Media</a></li>
-        <li><a href="#media-opts" class="js-jump-scroll">Media Options</a></li>
-        <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
-        <li><a href="#sponsor" class="js-jump-scroll">Sponsor</a></li>
-        <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
-      </ul>
-      </li>
-
-      <li>
-      <a href="#regions" class="js-jump-scroll">Regions</a>
-      <ul>
-        <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
-        <li><a href="#container" class="js-jump-scroll">Container</a></li>
-        <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
-        <li><a href="#header" class="js-jump-scroll">Header</a></li>
-        <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
-        <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
-      </ul>
-      </li>
-
-      <li><a href="#interaction" class="js-jump-scroll">Interaction</a></li>
-      <li><a href="#resources" class="js-jump-scroll">Resources</a></li>
+      <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
+      <li><a href="#typography" class="js-jump-scroll">Typography</a></li>
+      <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+      <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
+      <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
     </ul>
-  </nav>
-</div>
+    </li>
+
+    <li>
+    <a href="#components" class="js-jump-scroll">Components</a>
+    <ul>
+      <li><a href="#buttons" class="js-jump-scroll">Buttons</a></li>
+      <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
+      <li><a href="#callout" class="js-jump-scroll">Message Callout</a></li>
+      <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
+      <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
+      <li><a href="#video" class="js-jump-scroll">Video</a></li>
+      <li><a href="#waypoints" class="js-jump-scroll">Waypoints</a></li>
+    </ul>
+    </li>
+
+    <li>
+    <a href="#modules" class="js-jump-scroll">Modules</a>
+    <ul>
+      <li><a href="#carousel" class="js-jump-scroll">Carousel</a></li>
+      <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
+      <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
+      <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
+      <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
+      <li><a href="#media" class="js-jump-scroll">Media</a></li>
+      <li><a href="#media-opts" class="js-jump-scroll">Media Options</a></li>
+      <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
+      <li><a href="#sponsor" class="js-jump-scroll">Sponsor</a></li>
+      <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
+    </ul>
+    </li>
+
+    <li>
+    <a href="#regions" class="js-jump-scroll">Regions</a>
+    <ul>
+      <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
+      <li><a href="#container" class="js-jump-scroll">Container</a></li>
+      <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
+      <li><a href="#header" class="js-jump-scroll">Header</a></li>
+      <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
+      <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
+    </ul>
+    </li>
+
+    <li><a href="#interaction" class="js-jump-scroll">Interaction</a></li>
+    <li><a href="#resources" class="js-jump-scroll">Resources</a></li>
+  </ul>
+</nav>
