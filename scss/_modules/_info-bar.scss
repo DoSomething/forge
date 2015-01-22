@@ -8,6 +8,11 @@
   clear: both;
   color: $white;
 
+  &.-dark {
+    background: $off-black;
+    color: $med-gray;
+  }
+
   > .wrapper {
     @include clearfix;
     padding: $base-spacing;

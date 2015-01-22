@@ -7,12 +7,22 @@
   @include clearfix;
   text-align: left;
 
+  &.-medium {
+    > .media__image {
+      width: 75px;
+
+      @include media($medium) {
+        width: 150px;
+      }
+    }
+  }
+
   > .media__image {
     float: left;
     padding-right: gutter();
   }
 
-  .media__body {
+  > .media__body {
     overflow: hidden;
     padding-left: gutter();
   }
