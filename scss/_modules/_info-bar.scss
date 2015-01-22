@@ -1,5 +1,7 @@
 // Module for applying styles to the Info Bar typically found in page footer.
 //
+// .-dark - Dark variation.
+//
 // Styleguide Information Bar
 
 .info-bar {
@@ -7,6 +9,11 @@
   @include rgba(background-color, $black, 0.5, #7f7f7f);
   clear: both;
   color: $white;
+
+  &.-dark {
+    background: $off-black;
+    color: $med-gray;
+  }
 
   > .wrapper {
     @include clearfix;
