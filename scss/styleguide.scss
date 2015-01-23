@@ -16,24 +16,6 @@
 @import "_utilities/mixins";
 
 // FixedSticky
-.fixedsticky {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-}
-
-.fixedsticky-withoutfixedfixed .fixedsticky-off,
-.fixed-supported .fixedsticky-off {
-  position: static;
-}
-
-.fixedsticky-withoutfixedfixed .fixedsticky-on,
-.fixed-supported .fixedsticky-on {
-  position: fixed;
-}
-
 .fixedsticky-dummy {
   display: none;
 }
@@ -44,26 +26,48 @@
 
 
 // Styleguide!
+main {
+  @include clearfix;
+}
 
 .styleguide-sidebar {
   padding-top: $base-spacing;
 
   @include media($tablet) {
-    position: -webkit-sticky;
+    @include span(4 rtl);
     position: sticky;
     top: 0;
 
-    @include span(5 at 12 isolate);
+    // Fallback for position:sticky, through Filament Group's fixed-sticky
+    &.fixedsticky-on {
+      position: fixed;
+      width: 100%;
+      max-width: 1440px;
+      padding: 0;
+
+      .waypoints {
+        position: absolute;
+        width: span(4);
+        padding: $base-spacing gutter();
+        right: 0;
+        display: inline-block;
+      }
+    }
+
+    &.fixedsticky-off {
+      position: static;
+    }
   }
 }
 
 .styleguide-content {
-  margin: $base-spacing;
-
   @include clearfix;
+  @include span(100%);
+  padding-top: $base-spacing;
 
   @include media($tablet) {
-    @include span(9 at 3 isolate);
+    @include span(10);
+    @include push(2);
   }
 
   // Override galleries in styleguide content to fit to grid.
