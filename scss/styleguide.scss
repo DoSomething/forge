@@ -232,7 +232,7 @@
 .styleguide-tip {
   &:before {
     @include icomoon-icon;
-    content: "\e605"; // right arrow
+    content: "\f000 ";
     position: relative;
     top: 1px;
     padding-right: 4px;
