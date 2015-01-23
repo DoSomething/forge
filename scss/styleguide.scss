@@ -176,14 +176,14 @@
   color: #222;
 }
 
-ul.styleguide-modifier {
+.styleguide-modifier {
   list-style-type: none;
   padding: 0.5em 1em;
-  margin-left: 0;
+  margin: 0;
 }
 
-ul.styleguide-modifier li {
-  margin-bottom: 0.25em;
+.styleguide-modifier li + li {
+  margin-top: 0;
 }
 
 .kss-dark .styleguide-element {
@@ -270,6 +270,27 @@ header[role="banner"].-styleguide {
   font-weight: 400;
 }
 
+.kss-markuplink {
+  color: $med-gray;
+  font-size: $font-smaller;
+  margin: 4px;
+
+  a {
+    color: $med-gray;
+
+    &:before {
+      @include icomoon-icon;
+      content: "\f05f ";
+      position: relative;
+      top: 1px;
+      padding-right: 6px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
 
 // Specific pattern overrides
 #message-callout--example---white,
