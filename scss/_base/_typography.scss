@@ -40,19 +40,16 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .heading.-banner {
+  @include clearfix;
   background: $black;
   color: $white;
   text-transform: uppercase;
-  padding: ($base-spacing / 2) 0;
+  padding: gutter();
   margin: 0;
 
-  @include clearfix;
-
   span {
-    padding-left: $base-spacing;
-
-    @include media($tablet) {
-      @include span(12);
+    @include media($medium) {
+      @include span(12 no-gutters);
       @include push(2);
     }
   }
