@@ -19,7 +19,7 @@
     display: inline-block;
     margin: 0 0 $base-spacing / 4;
 
-    &.is-active  {
+    &.is-active {
       // Highlight the active link, but not nested links
       > a {
         color: $black;
