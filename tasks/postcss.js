@@ -1,6 +1,6 @@
 module.exports = {
   all: {
-    src: "dist/neue.css",
+    src: ["dist/neue.css", "dist/styleguide.css"],
     options: {
       map: false,
       processors: [
