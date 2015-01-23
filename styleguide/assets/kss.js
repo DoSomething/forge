@@ -1,7 +1,8 @@
 (function() {
-  var KssStateGenerator;
-
-  KssStateGenerator = (function() {
+  /**
+   * Generate KSS state previews.
+   */
+  var KssStateGenerator = (function() {
     var psuedo_selectors;
 
     psuedo_selectors = ['hover', 'enabled', 'disabled', 'active', 'visited', 'focus', 'target', 'checked', 'empty', 'first-of-type', 'last-of-type', 'first-child', 'last-child'];
@@ -50,4 +51,25 @@
 
   new KssStateGenerator;
 
+  /**
+   * Add 'show code' buttons.
+   */
+  $(document).ready(function() {
+    $(".styleguide-example").each(function () {
+      var $markupSample = $(this).find(".styleguide-html");
+      var $showMarkupLink = $("<p class='kss-markuplink'><a href='#'>Show Markup</a></p>");
+      $showMarkupLink.on("click", function (event) {
+        event.preventDefault();
+        $markupSample.slideToggle();
+        $(this).fadeOut();
+      });
+
+      $markupSample.hide();
+      $(this).append($showMarkupLink);
+    });
+
+  });
+
 }).call(this);
+
+
