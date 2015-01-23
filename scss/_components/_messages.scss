@@ -1,53 +1,58 @@
 // Status message styles. These should be used to provide feedback to the user for
 // events that occur outside the normal application flow (such as form validation errors).
-// ==Close button is added using JavaScript. See `system-messages.js`.==
+// Close button is added using JavaScript. See `system-messages.js`.
 //
-// .error - Used to display errors. Be careful not to blame the user for a mistake.
+// .-error - Used to display errors. Be careful not to blame the user for a mistake.
 //
 // Styleguide Messages - Status Banners
 
 .messages {
+  @include rgba(color, #fff, 0.7);
   position: relative;
   width: 100%;
   max-width: $max-width;
   background: $purple;
   text-align: left;
   margin: 0 auto;
-  padding: 18px 72px 18px 27px;
-  @include rgba(color, #fff, 0.7);
+  padding: $base-spacing;
+  padding-right: 72px;
 
-  b,
-  strong {
-    font-weight: $weight-bold;
-    color: #fff;
-    padding: 0 5px;
-  }
-
-  a {
+  b, strong, a {
     font-weight: $weight-bold;
     color: #fff;
   }
 
-  &.error {
-    background: $error;
+  // Accepts plain 'error' class for Drupal compatability
+  &.-error, &.error {
+    background: $error-color;
+  }
+}
+
+.messages__close {
+  position: absolute;
+  top: 6px;
+  right: 27px;
+  font-size: 45px;
+  font-weight: bold;
+  color: $white;
+  opacity: 0.4;
+  text-decoration: none;
+
+  span {
+    display: none;
   }
 
-  .message-close-button {
-    position: absolute;
-    top: 0; right: 27px;
-    font-size: 45px;
-    font-weight: bold;
-    color: $white;
-    opacity: 0.4;
+  &:after {
+    content: "\00d7";
+  }
+
+  &:hover {
+    opacity: 0.7;
     text-decoration: none;
+  }
 
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:active {
-      opacity: 1;
-    }
+  &:active {
+    opacity: 1;
   }
 }
 

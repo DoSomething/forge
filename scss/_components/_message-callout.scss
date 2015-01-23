@@ -15,7 +15,7 @@
     transform: rotate(-3deg);
   }
 
-  .__copy {
+  .message-callout__copy {
     display: inline-block;
     padding: 18px 9px;
     position: relative;
@@ -41,7 +41,7 @@
   }
 
   &.-white {
-    .__copy {
+    .message-callout__copy {
       p {
         color: #fff;
       }
@@ -53,7 +53,7 @@
   &.-below {
     padding-top: 18px;
 
-    .__copy {
+    .message-callout__copy {
 
       // Arrow Up
       &:before {
@@ -66,7 +66,7 @@
     }
 
     &.-white {
-      .__copy {
+      .message-callout__copy {
         &:before {
           background-image: neue-asset-url("images/callout/arrow-up-white.png");
         }
@@ -77,7 +77,7 @@
 
   // Class indicates callout is positioned above item it's pointing at.
   &.-above {
-    .__copy {
+    .message-callout__copy {
       &:before {
         background: neue-asset-url("images/callout/arrow-down-black.png") 50% 50% / 14px no-repeat transparent;
         height: 50px;
@@ -88,7 +88,7 @@
     }
 
     &.-white {
-      .__copy {
+      .message-callout__copy {
         &:before {
           background-image: neue-asset-url("images/callout/arrow-down-white.png");
         }
@@ -103,7 +103,7 @@
     // left: 144px;
     // bottom: 0;
 
-    .__copy {
+    .message-callout__copy {
       padding-left: 45px;
 
       &:before {
@@ -118,7 +118,7 @@
     }
 
     &.-white {
-      .__copy {
+      .message-callout__copy {
         &:before {
           background-image: neue-asset-url("images/callout/arrow-left-white.png");
         }
@@ -136,7 +136,7 @@
       // position: absolute;
       // left: 144px;
 
-      .__copy {
+      .message-callout__copy {
         left: 0;
         padding-bottom: 3px;
         padding-top: 3px;
@@ -156,7 +156,7 @@
 
     @include media($tablet) {
       &.-white {
-        .__copy {
+        .message-callout__copy {
           &:before {
             background-image: neue-asset-url("images/callout/arrow-left-white.png");
           }

@@ -34,7 +34,7 @@ label {
 
   .message {
     &.error {
-      color: $error;
+      color: $error-color;
     }
 
     &.warning {
@@ -90,7 +90,7 @@ input[type="time"], input[type="week"], textarea {
   }
 
   &.error {
-    border-color: $error;
+    border-color: $error-color;
   }
 }
 
@@ -154,7 +154,7 @@ select {
   }
 
   &.error {
-    border-color: $error;
+    border-color: $error-color;
   }
 }
 
