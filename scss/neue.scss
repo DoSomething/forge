@@ -30,7 +30,6 @@
 
 // Components - basic non-divisible building blocks
 @import "_components/button";
-@import "_components/images";
 @import "_components/legal";
 @import "_components/message-callout";
 @import "_components/messages";
@@ -39,6 +38,7 @@
 @import "_components/spinner";
 @import "_components/tabs";
 @import "_components/video";
+@import "_components/waypoints";
 
 // Modules - basic patterns, may contain other components or modules
 @import "_modules/carousel";

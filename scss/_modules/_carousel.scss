@@ -47,6 +47,8 @@
 // individual image
 .carousel__slide {
   display: none;
+  border: 6px solid #fff;
+  box-shadow: $box-shadow;
 
   &.is-visible {
     display: inline-block;

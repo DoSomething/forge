@@ -18,6 +18,7 @@ define(function(require) {
     Modal: require("./modal"),
     ScrollIndicator: require("./scroll-indicator"),
     Sticky: require("./sticky"),
+    Tabs: require("./tabs"),
     Validation: require("./validation")
   };
 

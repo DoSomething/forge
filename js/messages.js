@@ -18,7 +18,7 @@ define(function() {
 
   var $ = window.jQuery;
 
-  var messageClose = "<a href=\"#\" class=\"js-close-message message-close-button white\">×</a>";
+  var messageClose = "<a href=\"#\" class=\"js-close-message messages__close\"><span>Close</span></a>";
 
   /**
   * Adds a close button to system message banner, with optional callback.

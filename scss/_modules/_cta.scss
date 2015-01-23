@@ -5,16 +5,11 @@
 // Styleguide Call To Action
 
 .cta {
-  width: 100%;
-  background-color: lighten($light-gray, 10%);
+  @include clearfix;
+  @include span(100%);
+  background: lighten($light-gray, 10%);
   border-bottom: 2px solid $light-gray;
   border-top: 2px solid $light-gray;
-
-  @include clearfix;
-
-  @include media($tablet) {
-    padding: 0;
-  }
 
   > .wrapper {
     width: 100%;
@@ -26,11 +21,11 @@
       @include push(2);
     }
   }
+}
 
-  .__message {
-    color: $base-font-color;
-    font-size: $font-medium;
-    font-weight: $weight-sbold;
-    margin: 0 0 $base-spacing;
-  }
+.cta__message {
+  color: $base-font-color;
+  font-size: $font-medium;
+  font-weight: $weight-sbold;
+  margin: 0 0 $base-spacing;
 }
