@@ -11,13 +11,9 @@
   margin: 0;
   padding: 0;
 
-  ul {
-    padding: 18px;
-  }
-
   li {
     display: inline-block;
-    margin: 0 0 $base-spacing / 4;
+    margin: 0 $base-spacing;
 
     &.is-active {
       // Highlight the active link, but not nested links
@@ -34,11 +30,12 @@
 
   a {
     text-decoration: none;
-    padding: 0 9px;
+    padding: 0;
   }
 
   &.-vertical {
     text-align: left;
+    padding: 0;
 
     ul {
       padding: 0 $base-spacing;
@@ -53,6 +50,7 @@
 
     li {
       display: block;
+      margin: 0 0 $base-spacing / 4;
     }
 
     a {
@@ -62,7 +60,7 @@
 
   &.-primary {
     background: $light-gray;
-    padding: $base-spacing gutter();
+    padding: gutter();
 
     a {
       color: $med-gray;
