@@ -20,6 +20,7 @@
       }
 
       input[type="search"] {
+        margin-right: 24px;
         color: #fff;
         text-shadow: $text-shadow;
         border: 1px solid #fff;
@@ -275,7 +276,6 @@
   a {
     display: block;
     font-weight: bold;
-    margin-left: 18px;
     padding: 6px 9px;
   }
 
