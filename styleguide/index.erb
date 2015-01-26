@@ -155,22 +155,40 @@
   <% end %>
 
   <% styleguide_block  'Forms - Option Fields' do %>
-    <h4>This thing</h4>
+    <h4>Some checkboxes</h4>
     <div class="option-group">
-      <input type="checkbox" id="option1">
-      <label for="option1">Choose that option.</label>
+      <label class="option -checkbox">
+        <input checked type="checkbox" id="option1">
+        <span class="option__indicator"></span>
+        <span>Choose this option.</span>
+      </label>
 
-      <input type="checkbox" id="option2">
-      <label for="option2">Choose this option.</label>
+      <label class="option -checkbox">
+        <input type="checkbox" id="option2">
+        <span class="option__indicator"></span>
+        <span>Choose that option.</span>
+      </label>
+
+      <label class="option -checkbox">
+        <input type="checkbox" id="option2">
+        <span class="option__indicator"></span>
+        <span>Choose this unreasonably long-winded and ultimately pointless option.</span>
+      </label>
     </div>
 
-    <h4>The other thing</h4>
+    <h4>Some radio options</h4>
     <div class="option-group">
-      <input type="radio" name="choice" id="choice1">
-      <label for="choice1">Choose one option.</label>
+      <label class="option -radio">
+        <input checked type="radio" name="choice" id="choice1">
+        <span class="option__indicator"></span>
+        <span>Choose one option.</span>
+      </label>
 
-      <input type="radio" name="choice" id="choice2">
-      <label for="choice2">Choose the other option.</label>
+      <label class="option -radio">
+        <input type="radio" name="choice" id="choice2">
+        <span class="option__indicator"></span>
+        <span>Choose the other option.</span>
+      </label>
     </div>
   <% end %>
 
