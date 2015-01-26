@@ -156,19 +156,97 @@ select {
   }
 }
 
-// Checkboxes and radio boxes. Must be enclosed in `.option-group` class.
+// Checkboxes and radio boxes.
 //
 // Styleguide Forms - Option Fields
-.option-group, .form-item.form-type-checkbox {
-  margin-bottom: $base-spacing / 2;
+.option {
+  // Hat tip to Mark Otto's [WTF, Forms](http://wtfforms.com)
+  // for markup inspiration and Open Iconic for check and radio icons.
+  //
+  // https://useiconic.com/open/
+  // Open Iconic released under MIT License.
 
-  input[type="checkbox"], input[type="radio"] {
-    display: inline;
+  position: relative;
+  display: inline-block;
+  height: auto;
+  padding-left: $base-spacing;
+  margin: ($base-spacing / 4) 0;
+  cursor: pointer;
+
+  .option__indicator {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    color: $light-gray;
+    background-color: #eee;
+    background-size: 50% 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    user-select: none;
   }
 
-  label {
-    display: inline;
-    padding-right: $base-spacing;
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; // Put the input behind the label so it doesn't overlay text
+  }
+
+  input:active ~ .option__indicator {
+    color: #fff;
+    background-color: darken($light-gray, $tint);
+  }
+
+  input:checked ~ .option__indicator {
+    color: #fff;
+    background-color: $blue;
+  }
+
+  input:checked:active ~ .option__indicator {
+    background-color: darken($blue, $tint);
+  }
+
+  &.-checkbox {
+    .option__indicator {
+      border-radius: $lg-border-radius;
+    }
+
+    input:checked ~ .option__indicator {
+      background-image: url("#{$data-check-svg}");
+    }
+  }
+
+  &.-radio {
+    .option__indicator {
+      border-radius: 50%;
+    }
+
+    input:checked ~ .option__indicator {
+      background-image: url("#{$data-disc-svg}");
+    }
   }
 }
+
+// Remove custom styles for IE 8 due to lack of SVG
+// support, and use native appearance.
+.ie8 .option {
+  .option__indicator {
+    display: none;
+  }
+
+  input {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+// Wrapping a group of checkboxes or radio buttons in `.option` adds proper bottom margins.
+.option-group {
+  margin-bottom: $base-spacing / 2;
+}
+
 
