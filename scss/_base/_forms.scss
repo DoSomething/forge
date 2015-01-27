@@ -159,19 +159,34 @@ select {
 // Checkboxes and radio boxes.
 //
 // Styleguide Forms - Option Fields
-.option {
-  // Hat tip to Mark Otto's [WTF, Forms](http://wtfforms.com)
-  // for markup inspiration and Open Iconic for check and radio icons.
-  //
-  // https://useiconic.com/open/
-  // Open Iconic released under MIT License.
 
+.option {
   position: relative;
   display: inline-block;
   height: auto;
   padding-left: $base-spacing;
   margin: ($base-spacing / 4) 0;
   cursor: pointer;
+
+  .option__indicator {
+    display: none;
+  }
+
+  input {
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+}
+
+.checked.label-click .option {
+  overflow: hidden;
+
+  // Hat tip to Mark Otto's [WTF, Forms](http://wtfforms.com)
+  // for markup inspiration and Open Iconic for check and radio icons.
+  //
+  // https://useiconic.com/open/
+  // Open Iconic released under MIT License.
 
   .option__indicator {
     position: absolute;
@@ -189,7 +204,8 @@ select {
   }
 
   input {
-    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
     z-index: -1; // Put the input behind the label so it doesn't overlay text
   }
@@ -226,21 +242,6 @@ select {
     input:checked ~ .option__indicator {
       background-image: url("#{$data-disc-svg}");
     }
-  }
-}
-
-// Remove custom styles for IE 8 due to lack of SVG
-// support, and use native appearance.
-.ie8 .option {
-  .option__indicator {
-    display: none;
-  }
-
-  input {
-    top: 0;
-    left: 0;
-    opacity: 1;
-    z-index: 1;
   }
 }
 
