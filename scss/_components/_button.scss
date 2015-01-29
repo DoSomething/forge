@@ -4,10 +4,10 @@
 // :hover             - Suble hover state (will not be displayed on touch interfaces)
 // :focus             - Focus state for users navigating the page using tab keys.
 // :active            - "Pushed" button state
-// .disabled          - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
-// .-loading           - AJAX loading animation. Used when loading results inline.
-// .-secondary         - Should be used if not the main call-to-action on a page.
-// .-tertiary          - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
+// .is-disabled       - Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.
+// .is-loading        - AJAX loading animation. Used when loading results inline.
+// .-secondary        - Should be used if not the main call-to-action on a page.
+// .-tertiary         - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
 //
 // Styleguide Forms - Buttons
 .button {
@@ -91,7 +91,7 @@
   }
 
   // disabled state
-  &[disabled], &.disabled {
+  &[disabled], &.is-disabled {
     background: $light-gray;
     color: lighten($light-gray, 10%);
     cursor: default;
@@ -106,7 +106,7 @@
     }
   }
 
-  &.-loading {
+  &.is-loading {
     position: relative;
     color: transparent;
     background: #eee neue-asset-url("images/spinner.svg") no-repeat center center;
