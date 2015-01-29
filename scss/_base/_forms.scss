@@ -1,11 +1,15 @@
 // A label and a form element.
 //
-// .-inline - Form elements appear side-by-side.
 // .-padded - Adds extra padding above and below field group.
+// .-inline - Form elements appear side-by-side.
 //
 // Styleguide Forms - Field Groups
 .field-group {
   margin-bottom: ($base-spacing / 2);
+
+  &.-padded {
+    margin: $base-spacing 0;
+  }
 
   &.-inline {
     .field-label {
@@ -36,10 +40,6 @@
       padding: 0.5em 1em 0.45em;
       margin: 0 ($base-spacing / 2);
     }
-  }
-
-  &.-padded {
-    margin: $base-spacing 0;
   }
 }
 
