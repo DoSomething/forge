@@ -1,5 +1,5 @@
 // Standard container for centered 12-column layouts. Collapses to full-width on mobile.
-// Modifier classes can be applied to the required `container__body` to use different
+// Modifier classes can be applied to the required `container__block` to use different
 // preset layouts. Optionally, the `container__row` class can be used to align into rows.
 //
 // Apply `.-padded` modifier to add extra bottom padding to a container.
@@ -24,7 +24,7 @@
       @include push(2);
     }
 
-    .container__body {
+    .container__block {
       // When inside a container wrapper, increase top/bottom padding
       // on the container body.
       padding: $base-spacing gutters();
@@ -50,7 +50,8 @@
 
   // Use container body for all container content, with optional modifiers
   // to span either half or three-quarters width.
-  .container__body {
+  .container__block {
+    @include clearfix;
     padding: gutters();
   }
 }
