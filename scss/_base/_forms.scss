@@ -90,12 +90,9 @@
 }
 
 
-// Text input fields. Defaults to full-width, but can be modified to be smaller
-// if necessary (use sparingly, it's generally best to fit to grid container).
+// Text input fields.
 //
 // :focus         - Field is selected for text input
-// .short         - Short input width (e.g. for zip codes)
-// .medium        - Medium-sized input width (e.g. for phone numbers)
 // .-error        - Error styling, used for validation issues.
 //
 // Styleguide Forms - Text Input Fields
@@ -124,15 +121,6 @@ input[type="time"], input[type="week"], textarea {
     box-shadow: 0 0 3px $blue;
   }
 
-  &.short {
-    max-width: 80px;
-  }
-
-  &.medium {
-    max-width: 200px;
-  }
-
-  &.error {
   &.-error {
     border-color: $error-color;
   }
