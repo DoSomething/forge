@@ -57,7 +57,7 @@
   width: 100%;
   font-size: 16px;
   font-weight: 600;
-  margin: 1em 0 0.25em;
+  margin: 0 0 ($base-spacing / 4);
   height: 1.5em;
   overflow: hidden;
   transition: height 0.5s;
@@ -108,7 +108,7 @@ input[type="time"], input[type="week"], textarea {
   border-radius: $lg-border-radius;
   background-clip: padding-box;
   padding: 0.5em 1em;
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0;
   transition: border 0.5s;
 
   // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
@@ -166,6 +166,7 @@ input[type="submit"] {
   white-space: normal;
 }
 
+
 // Select boxes present a list of options on a form.
 //
 // Styleguide Forms - Select Boxes
@@ -176,7 +177,7 @@ select {
   font-size: $font-regular;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0;
 
   &:focus {
     outline: none;
@@ -189,10 +190,10 @@ select {
   }
 }
 
+
 // Checkboxes and radio boxes.
 //
 // Styleguide Forms - Option Fields
-
 .option {
   position: relative;
   display: inline-block;
