@@ -125,10 +125,6 @@
   <% end %>
 
   <h3 id="forms">Forms</h3>
-  <% styleguide_block  'Forms - Form Labels' do %>
-    <!-- .show-message and .message classes and markup generated dynamically -->
-    <label class="show-message">
-      <div class="message $modifier_class">Label</div>
   <% styleguide_block  'Forms - Field Groups' do %>
     <div class="field-group $modifier_class">
       <label class="field-label">Form Label</label>
@@ -136,6 +132,12 @@
     </div>
   <% end %>
 
+  <% styleguide_block  'Forms - Field Labels' do %>
+    <!-- validation classes and markup generated dynamically -->
+    <label class="field-label">
+      <span class="validation">
+        <div class="validation__message $modifier_class">Label</div>
+      </span>
     </label>
     <input class="$modifier_class" type="text">
   <% end %>

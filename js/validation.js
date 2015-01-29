@@ -47,9 +47,9 @@ define(function(require) {
   var prepareLabel = function($label) {
     // Check to make sure we haven't already prepared this before
     if($label.find(".inner-label").length === 0) {
-      var $innerLabel = $("<div class='inner-label'></div>");
-      $innerLabel.append("<div class='label'>" + $label.html() + "</div>");
-      $innerLabel.append("<div class='message'></div>");
+      var $innerLabel = $("<div class='validation'></div>");
+      $innerLabel.append("<div class='validation__label'>" + $label.html() + "</div>");
+      $innerLabel.append("<div class='validation__message'></div>");
 
       $label.html($innerLabel);
     }
@@ -151,20 +151,20 @@ define(function(require) {
    */
   var showValidationMessage = function($field, result) {
     var $fieldLabel = $("label[for='" + $field.attr("id") + "']");
-    var $fieldMessage = $fieldLabel.find(".message");
+    var $fieldMessage = $fieldLabel.find(".validation__message");
     var fieldLabelHeight = $fieldLabel.height();
     var fieldMessageHeight;
 
-    $field.removeClass("success error warning shake");
-    $fieldMessage.removeClass("success error warning");
+    $field.removeClass("-success -error -warning shake");
+    $fieldMessage.removeClass("-success -error -warning");
 
     // Highlight/animate field
     if(result.success === true) {
-      $field.addClass("success");
+      $field.addClass("-success");
       $fieldMessage.addClass("success");
     } else {
-      $field.addClass("error");
-      $fieldMessage.addClass("error");
+      $field.addClass("-error");
+      $fieldMessage.addClass("-error");
 
       if( isFormField($field) ) {
         $field.addClass("shake");
@@ -194,7 +194,7 @@ define(function(require) {
     }
 
     // Animate in the validation message
-    $fieldLabel.addClass("show-message");
+    $fieldMessage.addClass("is-showing-message");
 
     $(".js-mailcheck-fix").on("click", function(e) {
       e.preventDefault();
@@ -209,8 +209,8 @@ define(function(require) {
     });
 
     $field.on("focus", function() {
-      $field.removeClass("warning error success shake");
-      $fieldLabel.removeClass("show-message");
+      $field.removeClass("-warning -error -success shake");
+      $fieldMessage.removeClass("is-showing-message");
       $fieldLabel.css("height", "");
     });
 
