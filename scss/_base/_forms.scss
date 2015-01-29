@@ -46,12 +46,12 @@
 
 // Labels for form elements. Optional validation styles triggered by client-side validation.
 //
-// .success    - Successful form validation
-// .warning    - Warning form validation (not an error, but worth double-checking).
-// .error      - Something's wrong!
+// .-success    - Successful form validation
+// .-warning    - Warning form validation (not an error, but worth double-checking).
+// .-error      - Something's wrong!
 //
-// Styleguide Forms - Form Labels
-label {
+// Styleguide Forms - Field Labels
+.field-label {
   display: block;
   clear: both;
   width: 100%;
@@ -62,34 +62,30 @@ label {
   overflow: hidden;
   transition: height 0.5s;
 
-  .inner-label {
-    position: relative;
-    transition: top 0.5s;
-  }
-
-  &.show-message {
-    .inner-label {
-      top: -1.5em;
-    }
-  }
-
   em {
     font-style: normal;
     color: $med-gray;
   }
+}
 
-  .message {
-    &.error {
-      color: $error-color;
-    }
+// Validation styles
+// @see: validation.js
+.validation {
+  position: relative;
+  transition: top 0.5s;
 
-    &.warning {
-      color: $purple;
-    }
+  &.is-showing-message {
+    top: -1.5em;
+  }
+}
 
-    &.success {
-      color: $purple;
-    }
+.validation__message {
+  &.-error {
+    color: $error-color;
+  }
+
+  &.-warning, &.-success {
+    color: $purple;
   }
 }
 
@@ -100,6 +96,7 @@ label {
 // :focus         - Field is selected for text input
 // .short         - Short input width (e.g. for zip codes)
 // .medium        - Medium-sized input width (e.g. for phone numbers)
+// .-error        - Error styling, used for validation issues.
 //
 // Styleguide Forms - Text Input Fields
 input[type="email"], input[type="number"], input[type="password"], input[type="search"],
@@ -136,9 +133,11 @@ input[type="time"], input[type="week"], textarea {
   }
 
   &.error {
+  &.-error {
     border-color: $error-color;
   }
 }
+
 
 // Specific style rules for search input fields.
 //
