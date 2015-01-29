@@ -196,7 +196,7 @@ select {
 // Styleguide Forms - Option Fields
 .option {
   position: relative;
-  display: inline-block;
+  display: block;
   height: auto;
   padding-left: $base-spacing;
   margin: ($base-spacing / 4) 0;
