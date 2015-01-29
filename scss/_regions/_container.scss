@@ -51,6 +51,7 @@
   // Use container body for all container content, with optional modifiers
   // to span either half or three-quarters width.
   .container__block {
+    @include clearfix;
     padding: gutters();
   }
 }
