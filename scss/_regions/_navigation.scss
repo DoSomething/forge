@@ -288,6 +288,86 @@
     padding: 6px 9px;
   }
 
+  .navigation__dropdown {
+
+    padding-top: 0;
+
+    @include media($tablet) {
+      padding-top: 12px;
+      padding-left: 8px;
+      margin-left: 8px;
+    }
+
+    ul {
+      visibility: visibile;
+      margin-top: 0;
+      @include media($tablet) {
+        visibility: hidden;
+      }
+
+      li {
+        padding: 0; 
+
+        @include media($tablet) {
+          padding: gutter() 0;
+        }
+      }
+
+    }
+
+    p {
+      visibility: hidden;
+      @include media($tablet) {
+        visibility: visible;
+        color: #fff;
+        margin-left: 16px;
+      }      
+    }
+
+  }
+
+  .navigation__dropdown.clicked {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 0; 
+    margin-left: 36px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+    margin-top: 12px;
+    margin-right: 38px;
+    min-width: 180px;
+    visibility: visible;
+
+    p {
+      color: $purple;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1px;
+      margin-left: 0;
+    }
+
+    a, ul {
+      color: $off-black;
+      font-weight: normal;
+      text-shadow: none; 
+      margin-left: 0;
+      padding-left: 0;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-right: 0px;
+      margin-top: 0;
+    }    
+
+    li {
+      visibility: visible;
+      display: block;
+      float: none;
+      padding-top: 0;
+      padding-bottom: 0;  
+    }    
+  }
+
   // @TODO: Temporary; will likely change to a border but this works well for now.
   @include media($tablet) {
     .account {
