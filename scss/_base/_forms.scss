@@ -1,59 +1,99 @@
-// Labels for form elements. Optional validation styles triggered by client-side validation.
+// A label and a form element.
 //
-// .success    - Successful form validation
-// .warning    - Warning form validation (not an error, but worth double-checking).
-// .error      - Something's wrong!
+// .-padded - Adds extra padding above and below field group.
+// .-inline - Form elements appear side-by-side.
 //
-// Styleguide Forms - Form Labels
-label {
-  display: block;
-  clear: both;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 1em 0 0.25em;
-  height: 1.5em;
-  overflow: hidden;
-  transition: height 0.5s;
+// Styleguide Forms - Field Groups
+.field-group {
+  margin-bottom: ($base-spacing / 2);
 
-  .inner-label {
-    position: relative;
-    transition: top 0.5s;
+  &.-padded {
+    margin: $base-spacing 0;
   }
 
-  &.show-message {
-    .inner-label {
-      top: -1.5em;
-    }
-  }
-
-  em {
-    font-style: normal;
-    color: $med-gray;
-  }
-
-  .message {
-    &.error {
-      color: $error-color;
+  &.-inline {
+    .field-label {
+      display: inline-block;
+      width: auto;
+      margin: ($base-spacing / 2) ($base-spacing /2) ($base-spacing / 2) 0;
     }
 
-    &.warning {
-      color: $purple;
+    input[type="email"], input[type="number"], input[type="password"], input[type="search"],
+    input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
+    input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
+    input[type="time"], input[type="week"], textarea {
+      width: auto;
     }
 
-    &.success {
-      color: $purple;
+    .option {
+      display: inline-block;
+    }
+
+    .option, .button {
+      + .option,  + .button {
+        margin-left: ($base-spacing / 2);
+      }
+    }
+
+    .button {
+      font-size: $font-regular;
+      padding: 0.5em 1em 0.45em;
+      margin: 0 ($base-spacing / 2);
     }
   }
 }
 
 
-// Text input fields. Defaults to full-width, but can be modified to be smaller
-// if necessary (use sparingly, it's generally best to fit to grid container).
+// Labels for form elements. Optional validation styles triggered by client-side validation.
+//
+// .-success    - Successful form validation
+// .-warning    - Warning form validation (not an error, but worth double-checking).
+// .-error      - Something's wrong!
+//
+// Styleguide Forms - Field Labels
+.field-label {
+  display: block;
+  clear: both;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 ($base-spacing / 4);
+  height: 1.5em;
+  overflow: hidden;
+  transition: height 0.5s;
+
+  em {
+    font-style: normal;
+    color: $med-gray;
+  }
+}
+
+// Validation styles
+// @see: validation.js
+.validation {
+  position: relative;
+  transition: top 0.5s;
+
+  &.is-showing-message {
+    top: -1.5em;
+  }
+}
+
+.validation__message {
+  &.-error {
+    color: $error-color;
+  }
+
+  &.-warning, &.-success {
+    color: $purple;
+  }
+}
+
+
+// Text input fields.
 //
 // :focus         - Field is selected for text input
-// .short         - Short input width (e.g. for zip codes)
-// .medium        - Medium-sized input width (e.g. for phone numbers)
+// .-error        - Error styling, used for validation issues.
 //
 // Styleguide Forms - Text Input Fields
 input[type="email"], input[type="number"], input[type="password"], input[type="search"],
@@ -68,7 +108,7 @@ input[type="time"], input[type="week"], textarea {
   border-radius: $lg-border-radius;
   background-clip: padding-box;
   padding: 0.5em 1em;
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0;
   transition: border 0.5s;
 
   // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
@@ -81,18 +121,11 @@ input[type="time"], input[type="week"], textarea {
     box-shadow: 0 0 3px $blue;
   }
 
-  &.short {
-    max-width: 80px;
-  }
-
-  &.medium {
-    max-width: 200px;
-  }
-
-  &.error {
+  &.-error {
     border-color: $error-color;
   }
 }
+
 
 // Specific style rules for search input fields.
 //
@@ -133,6 +166,7 @@ input[type="submit"] {
   white-space: normal;
 }
 
+
 // Select boxes present a list of options on a form.
 //
 // Styleguide Forms - Select Boxes
@@ -143,7 +177,7 @@ select {
   font-size: $font-regular;
   font-family: $font-proxima-nova;
   border: 1px solid $light-gray;
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0;
 
   &:focus {
     outline: none;
@@ -156,13 +190,13 @@ select {
   }
 }
 
+
 // Checkboxes and radio boxes.
 //
 // Styleguide Forms - Option Fields
-
 .option {
   position: relative;
-  display: inline-block;
+  display: block;
   height: auto;
   padding-left: $base-spacing;
   margin: ($base-spacing / 4) 0;
@@ -244,10 +278,4 @@ select {
     }
   }
 }
-
-// Wrapping a group of checkboxes or radio buttons in `.option` adds proper bottom margins.
-.option-group {
-  margin-bottom: $base-spacing / 2;
-}
-
 
