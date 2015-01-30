@@ -107,7 +107,7 @@ input[type="time"], input[type="week"], textarea {
   border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: $lg-border-radius;
   background-clip: padding-box;
-  padding: 0.5em 1em;
+  padding: ($base-spacing / 2);
   margin: 0;
   transition: border 0.5s;
 
