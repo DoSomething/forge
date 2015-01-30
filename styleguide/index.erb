@@ -103,23 +103,25 @@
     <h4 class="heading $modifier_class"><span>Heading</span></h4>
   <% end %>
 
-  <% styleguide_block  'Typography - Unordered Lists' do %>
-    <ul>
-      <li>Norway</li>
-      <li>Sweden</li>
-      <li>Finland</li>
+  <% styleguide_block  'Typography - Lists' do %>
+    <p>An unordered list:</p>
+    <ul class="list $modifier_class">
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+      <li>Curabitur sed odio aliquet, efficitur diam vel, laoreet ipsum. Curabitur faucibus tincidunt augue.</li>
+      <li>In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
     </ul>
-  <% end %>
 
-  <% styleguide_block  'Typography - Ordered Lists' do %>
-    <ol>
-      <li>Norway</li>
-      <li>Sweden</li>
-      <li>Finland</li>
+
+    <p>And an ordered list:</p>
+    <ol class="list $modifier_class">
+      <li>Know it.</li>
+      <li>Plan it.</li>
+      <li>???</li>
+      <li>Profit.</li>
     </ol>
   <% end %>
 
-    <% styleguide_block  'Typography - Inline Elements' do %>
+  <% styleguide_block  'Typography - Inline Elements' do %>
       <p>Lorem <em>italic</em> dolor <mark>important</mark> amet.
     This is some <strong>bold</strong> text, a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>. Also, <code>code(0);</code>.</p>
   <% end %>
