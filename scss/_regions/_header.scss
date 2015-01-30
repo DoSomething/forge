@@ -176,16 +176,13 @@
     .__date {
       color: #fff;
       font-size: $font-small;
+      margin-top: 0;
       margin-bottom: 9px;
 
       @include media($tablet) {
         font-size: $font-regular;
         float: left;
         margin-bottom: 27px;
-      }
-
-      + .__subtitle {
-        margin-top: -9px;
       }
     }
 
