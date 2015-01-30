@@ -5,6 +5,9 @@
  * expected behavior still functions.
  */
 
+/* jshint strict:false */
+/* global Modernizr:false */
+
 Modernizr.addTest("label-click", function() {
   var testLabel = document.createElement("label");
   var testInput = document.createElement("input");
