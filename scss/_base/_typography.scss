@@ -94,7 +94,7 @@ h4, h5, h6, .heading.-delta {
 // List of items. You can use the `.with-lists` class to apply list styles to all `ol` and `ul`
 // within a container, for example when styling Markdown content.
 //
-// .-cozy         - Closely spaced list elements.
+// .-compacted - Closely spaced list elements.
 //
 // Styleguide Typography - Lists
 .list {
@@ -104,7 +104,7 @@ h4, h5, h6, .heading.-delta {
     margin-top: ($base-spacing / 2);
   }
 
-  &.-cozy {
+  &.-compacted {
     li + li {
       margin-top: 0;
     }
@@ -136,7 +136,7 @@ ol.list {
     margin-top: ($base-spacing / 2);
   }
 
-  &.-cozy {
+  &.-compacted {
     li + li {
       margin-top: 0;
     }
