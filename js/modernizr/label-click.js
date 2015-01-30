@@ -5,7 +5,10 @@
  * expected behavior still functions.
  */
 
-Modernizr.addTest('label-click', function() {
+/* jshint strict:false */
+/* global Modernizr:false */
+
+Modernizr.addTest("label-click", function() {
   var testLabel = document.createElement("label");
   var testInput = document.createElement("input");
   testInput.setAttribute("type", "checkbox");

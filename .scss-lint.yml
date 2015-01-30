@@ -67,7 +67,7 @@ linters:
     extra_properties: []
 
   QualifyingElement:
-    allow_element_with_attribute: true
+    enabled: false
 
   SelectorDepth:
     enabled: false
