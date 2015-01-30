@@ -91,25 +91,58 @@ h4, h5, h6, .heading.-delta {
   font-weight: $weight-sbold;
 }
 
-// List of items with no ordering.
+// List of items. You can use the `.with-lists` class to apply list styles to all `ol` and `ul`
+// within a container, for example when styling Markdown content.
 //
-// Styleguide Typography - Unordered Lists
-ul {
+// .-cozy         - Closely spaced list elements.
+//
+// Styleguide Typography - Lists
+.list {
+  padding-left: $base-spacing;
+
+  li + li {
+    margin-top: ($base-spacing / 2);
+  }
+
+  &.-cozy {
+    li + li {
+      margin-top: 0;
+    }
+  }
+}
+
+ul.list {
   list-style-type: square;
-  padding-left: $base-spacing;
 }
 
-// List of items with numerical ordering.
-//
-// Styleguide Typography - Ordered Lists
-ol {
+ol.list {
   list-style-type: decimal;
-  padding-left: $base-spacing;
 }
 
-li + li {
-  margin-top: $base-spacing;
+.with-lists {
+  ul, ol {
+    padding-left: $base-spacing;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li + li {
+    margin-top: ($base-spacing / 2);
+  }
+
+  &.-cozy {
+    li + li {
+      margin-top: 0;
+    }
+  }
 }
+
 
 // Inline text elements.
 //
