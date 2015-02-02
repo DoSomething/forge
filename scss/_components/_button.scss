@@ -15,7 +15,7 @@
   clear: both;
   background: $blue;
   border: 0;
-  margin: 4px 0;
+  margin: 0;
   line-height: 1.3;
   padding: 0.55em 1em 0.45em;
   cursor: pointer;
@@ -28,7 +28,13 @@
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $lg-border-radius;
+
+  // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
+  -moz-appearance: none;
   -webkit-appearance: none;
+
+  // Ensure text wraps to new lines when in an <input> button
+  white-space: normal;
 
   &:hover {
     background: lighten($blue, $color-tint);
@@ -135,3 +141,4 @@
     }
   }
 }
+
