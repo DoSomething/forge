@@ -134,6 +134,28 @@
     </div>
   <% end %>
 
+  <% styleguide_block  'Forms - Form Actions' do %>
+  <div class="form-actions $modifier_class">
+    <input type="submit" class="button" value="Submit">
+  </div>
+
+  <div class="form-actions $modifier_class">
+    <ul>
+      <li><a href="#">Forgot your password?</a></li>
+      <li><a href="#">Create an account</a></li>
+    </ul>
+  </div>
+  <% end %>
+
+  <% styleguide_block  'Forms - Inline Form Actions' do %>
+  <div class="form-actions -inline $modifier_class">
+    <ul>
+      <li><input type="submit" class="button" value="Submit"></li>
+      <li><input type="submit" class="button -tertiary" value="Skip"></li>
+    </ul>
+  </div>
+  <% end %>
+
   <% styleguide_block  'Forms - Form Labels' do %>
     <!-- validation classes and markup generated dynamically -->
     <label class="form-label">
