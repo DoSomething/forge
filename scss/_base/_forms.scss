@@ -12,7 +12,7 @@
   }
 
   &.-inline {
-    .form-label {
+    .field-label {
       display: inline-block;
       width: auto;
       margin: ($base-spacing / 2) ($base-spacing /2) ($base-spacing / 2) 0;
@@ -84,8 +84,8 @@
 // .-warning    - Warning form validation (not an error, but worth double-checking).
 // .-error      - Something's wrong!
 //
-// Styleguide Forms - Form Labels
-.form-label {
+// Styleguide Forms - Field Labels
+.field-label {
   display: block;
   clear: both;
   width: 100%;

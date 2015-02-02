@@ -129,7 +129,7 @@
   <h3 id="forms">Forms</h3>
   <% styleguide_block  'Forms - Form Items' do %>
     <div class="form-item $modifier_class">
-      <label class="form-label">Form Label</label>
+      <label class="field-label">Field Label</label>
       <input type="text" class="text-field">
     </div>
   <% end %>
@@ -152,11 +152,11 @@
     </ul>
   <% end %>
 
-  <% styleguide_block  'Forms - Form Labels' do %>
+  <% styleguide_block  'Forms - Field Labels' do %>
     <!-- validation classes and markup generated dynamically -->
-    <label class="form-label">
+    <label class="field-label">
       <span class="validation">
-        <div class="validation__message $modifier_class">Label</div>
+        <div class="validation__message $modifier_class">Field Label</div>
       </span>
     </label>
     <input class="text-field $modifier_class" type="text">
@@ -185,7 +185,7 @@
   <% end %>
 
   <% styleguide_block  'Forms - Option Fields' do %>
-    <label class="form-label">Some checkboxes</label>
+    <label class="field-label">Some checkboxes</label>
     <div class="form-item">
       <label class="option -checkbox">
         <input checked type="checkbox" id="option1">
@@ -206,7 +206,7 @@
       </label>
     </div>
 
-    <label class="form-label">Some radio buttons</label>
+    <label class="field-label">Some radio buttons</label>
     <div class="form-item">
       <label class="option -radio">
         <input checked type="radio" name="choice" id="choice1">
@@ -775,12 +775,12 @@
       <h2 class="heading -banner">Now fill out this form.</h2>
       <form action="#">
         <div class="form-item">
-          <label for="name" class="form-label">Name</label>
+          <label for="name" class="field-label">Name</label>
           <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
         </div>
 
         <div class="form-item">
-          <label for="confirmName" class="form-label">Confirm Name</label>
+          <label for="confirmName" class="field-label">Confirm Name</label>
           <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
         </div>
 
