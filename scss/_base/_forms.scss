@@ -12,16 +12,13 @@
   }
 
   &.-inline {
-    .field-label {
+    .form-label {
       display: inline-block;
       width: auto;
       margin: ($base-spacing / 2) ($base-spacing /2) ($base-spacing / 2) 0;
     }
 
-    input[type="email"], input[type="number"], input[type="password"], input[type="search"],
-    input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
-    input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
-    input[type="time"], input[type="week"], textarea {
+    .text-field {
       width: auto;
     }
 
@@ -50,6 +47,7 @@
 // Styleguide Forms - Form Actions
 .form-actions {
   text-align: center;
+  padding-top: ($base-spacing / 2);
 
   &.-padded {
     padding: $base-spacing 0;
@@ -67,7 +65,6 @@
 //
 // Styleguide Forms - Inline Form Actions
 .form-actions.-inline {
-  display: table;
 
   li {
     display: table-cell;
@@ -133,10 +130,7 @@
 // .-error        - Error styling, used for validation issues.
 //
 // Styleguide Forms - Text Input Fields
-input[type="email"], input[type="number"], input[type="password"], input[type="search"],
-input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
-input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
-input[type="time"], input[type="week"], textarea {
+.text-field {
   width: 100%;
   font-family: $font-proxima-nova;
   font-size: $font-regular;
@@ -170,7 +164,7 @@ input[type="time"], input[type="week"], textarea {
 // .loading - Indicates search field is loading results.
 //
 // Styleguide Forms - Search Fields
-input[type="search"] {
+.text-field.-search {
   padding-left: 32px;
   background: #fff no-repeat 12px 50%;
   background-image: neue-asset-url("images/search.svg");
@@ -194,13 +188,8 @@ input[type="search"] {
 // Multi-line textarea fields.
 //
 // Styleguide Forms - Text Area Fields
-textarea {
+textarea.text-field {
   resize: vertical;
-}
-
-// Ensure text wraps to new lines when in an <input> button
-input[type="submit"] {
-  white-space: normal;
 }
 
 
