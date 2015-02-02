@@ -127,16 +127,16 @@
   <% end %>
 
   <h3 id="forms">Forms</h3>
-  <% styleguide_block  'Forms - Field Groups' do %>
-    <div class="field-group $modifier_class">
+  <% styleguide_block  'Forms - Form Items' do %>
+    <div class="form-item $modifier_class">
       <label class="field-label">Form Label</label>
       <input type="text">
     </div>
   <% end %>
 
-  <% styleguide_block  'Forms - Field Labels' do %>
+  <% styleguide_block  'Forms - Form Labels' do %>
     <!-- validation classes and markup generated dynamically -->
-    <label class="field-label">
+    <label class="form-label">
       <span class="validation">
         <div class="validation__message $modifier_class">Label</div>
       </span>
@@ -168,7 +168,7 @@
 
   <% styleguide_block  'Forms - Option Fields' do %>
     <h4>Some checkboxes</h4>
-    <div class="field-group">
+    <div class="form-item">
       <label class="option -checkbox">
         <input checked type="checkbox" id="option1">
         <span class="option__indicator"></span>
@@ -189,7 +189,7 @@
     </div>
 
     <h4>Some radio options</h4>
-    <div class="field-group">
+    <div class="form-item">
       <label class="option -radio">
         <input checked type="radio" name="choice" id="choice1">
         <span class="option__indicator"></span>
