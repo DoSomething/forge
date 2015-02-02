@@ -3,8 +3,8 @@
 // .-padded - Adds extra padding above and below field group.
 // .-inline - Form elements appear side-by-side.
 //
-// Styleguide Forms - Field Groups
-.field-group {
+// Styleguide Forms - Form Items
+.form-item {
   margin-bottom: ($base-spacing / 2);
 
   &.-padded {
@@ -18,10 +18,7 @@
       margin: ($base-spacing / 2) ($base-spacing /2) ($base-spacing / 2) 0;
     }
 
-    input[type="email"], input[type="number"], input[type="password"], input[type="search"],
-    input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
-    input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
-    input[type="time"], input[type="week"], textarea {
+    .text-field {
       width: auto;
     }
 
@@ -41,6 +38,43 @@
       margin: 0 ($base-spacing / 2);
     }
   }
+}
+
+// Form actions, such as submit buttons.
+//
+// .-padded - Adds top and bottom padding, for use independent of form items.
+//
+// Styleguide Forms - Form Actions
+.form-actions {
+  text-align: center;
+  padding-top: ($base-spacing / 2);
+
+  &.-padded {
+    padding: $base-spacing 0;
+  }
+}
+
+.form-actions + .form-actions {
+  margin-top: $base-spacing;
+}
+
+
+// Inline form actions, with all items shown in a row.
+//
+// .-padded - Adds top and bottom padding, for use independent of form items.
+//
+// Styleguide Forms - Inline Form Actions
+.form-actions.-inline {
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  li + li {
+    padding-left: $base-spacing;
+  }
+
 }
 
 
@@ -96,10 +130,7 @@
 // .-error        - Error styling, used for validation issues.
 //
 // Styleguide Forms - Text Input Fields
-input[type="email"], input[type="number"], input[type="password"], input[type="search"],
-input[type="tel"], input[type="text"], input[type="url"], input[type="color"],
-input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"],
-input[type="time"], input[type="week"], textarea {
+.text-field {
   width: 100%;
   font-family: $font-proxima-nova;
   font-size: $font-regular;
@@ -133,7 +164,7 @@ input[type="time"], input[type="week"], textarea {
 // .loading - Indicates search field is loading results.
 //
 // Styleguide Forms - Search Fields
-input[type="search"] {
+.text-field.-search {
   padding-left: 32px;
   background: #fff no-repeat 12px 50%;
   background-image: neue-asset-url("images/search.svg");
@@ -157,13 +188,8 @@ input[type="search"] {
 // Multi-line textarea fields.
 //
 // Styleguide Forms - Text Area Fields
-textarea {
+textarea.text-field {
   resize: vertical;
-}
-
-// Ensure text wraps to new lines when in an <input> button
-input[type="submit"] {
-  white-space: normal;
 }
 
 
