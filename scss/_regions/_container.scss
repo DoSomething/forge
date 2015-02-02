@@ -11,6 +11,7 @@
 
 .container {
   @include clearfix;
+  clear: both;
 
   &.-padded {
     padding-bottom: $base-spacing * 2;
