@@ -129,8 +129,8 @@
   <h3 id="forms">Forms</h3>
   <% styleguide_block  'Forms - Form Items' do %>
     <div class="form-item $modifier_class">
-      <label class="field-label">Form Label</label>
-      <input type="text">
+      <label class="form-label">Form Label</label>
+      <input type="text" class="text-field">
     </div>
   <% end %>
 
@@ -159,19 +159,19 @@
         <div class="validation__message $modifier_class">Label</div>
       </span>
     </label>
-    <input class="$modifier_class" type="text">
+    <input class="text-field $modifier_class" type="text">
   <% end %>
 
   <% styleguide_block  'Forms - Text Input Fields' do %>
-    <input type="text" class="$modifier_class" placeholder="placeholder">
+    <input type="text" class="text-field" placeholder="placeholder">
   <% end %>
 
   <% styleguide_block  'Forms - Search Fields' do %>
-    <input type="search" class="$modifier_class" placeholder="Find something...">
+    <input type="search" class="text-field -search" placeholder="Find something...">
   <% end %>
 
   <% styleguide_block  'Forms - Text Area Fields' do %>
-    <textarea name="textarea" placeholder="Write something here..."></textarea>
+    <textarea name="textarea" class="text-field" placeholder="Write something here..."></textarea>
   <% end %>
 
   <% styleguide_block  'Forms - Select Boxes' do %>
@@ -185,7 +185,7 @@
   <% end %>
 
   <% styleguide_block  'Forms - Option Fields' do %>
-    <h4>Some checkboxes</h4>
+    <label class="form-label">Some checkboxes</label>
     <div class="form-item">
       <label class="option -checkbox">
         <input checked type="checkbox" id="option1">
@@ -206,7 +206,7 @@
       </label>
     </div>
 
-    <h4>Some radio options</h4>
+    <label class="form-label">Some radio buttons</label>
     <div class="form-item">
       <label class="option -radio">
         <input checked type="radio" name="choice" id="choice1">
@@ -774,11 +774,15 @@
     <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
       <h2 class="heading -banner">Now fill out this form.</h2>
       <form action="#">
-        <label for="name">Name</label>
-        <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+        <div class="form-item">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+        </div>
 
-        <label for="confirmName">Confirm Name</label>
-        <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+        <div class="form-item">
+          <label for="confirmName" class="form-label">Confirm Name</label>
+          <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+        </div>
 
         <div class="form-actions">
           <input type="submit" class="button">
