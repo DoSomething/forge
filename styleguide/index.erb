@@ -127,33 +127,51 @@
   <% end %>
 
   <h3 id="forms">Forms</h3>
-  <% styleguide_block  'Forms - Field Groups' do %>
-    <div class="field-group $modifier_class">
-      <label class="field-label">Form Label</label>
-      <input type="text">
+  <% styleguide_block  'Forms - Form Items' do %>
+    <div class="form-item $modifier_class">
+      <label class="field-label">Field Label</label>
+      <input type="text" class="text-field">
     </div>
+  <% end %>
+
+  <% styleguide_block  'Forms - Form Actions' do %>
+    <div class="form-actions $modifier_class">
+      <input type="submit" class="button" value="Submit">
+    </div>
+
+    <ul class="form-actions $modifier_class">
+      <li><a href="#">Forgot your password?</a></li>
+      <li><a href="#">Create an account</a></li>
+    </ul>
+  <% end %>
+
+  <% styleguide_block  'Forms - Inline Form Actions' do %>
+    <ul class="form-actions -inline $modifier_class">
+      <li><input type="submit" class="button" value="Submit"></li>
+      <li><input type="submit" class="button -tertiary" value="Skip"></li>
+    </ul>
   <% end %>
 
   <% styleguide_block  'Forms - Field Labels' do %>
     <!-- validation classes and markup generated dynamically -->
     <label class="field-label">
       <span class="validation">
-        <div class="validation__message $modifier_class">Label</div>
+        <div class="validation__message $modifier_class">Field Label</div>
       </span>
     </label>
-    <input class="$modifier_class" type="text">
+    <input class="text-field $modifier_class" type="text">
   <% end %>
 
   <% styleguide_block  'Forms - Text Input Fields' do %>
-    <input type="text" class="$modifier_class" placeholder="placeholder">
+    <input type="text" class="text-field" placeholder="placeholder">
   <% end %>
 
   <% styleguide_block  'Forms - Search Fields' do %>
-    <input type="search" class="$modifier_class" placeholder="Find something...">
+    <input type="search" class="text-field -search" placeholder="Find something...">
   <% end %>
 
   <% styleguide_block  'Forms - Text Area Fields' do %>
-    <textarea name="textarea" placeholder="Write something here..."></textarea>
+    <textarea name="textarea" class="text-field" placeholder="Write something here..."></textarea>
   <% end %>
 
   <% styleguide_block  'Forms - Select Boxes' do %>
@@ -167,8 +185,8 @@
   <% end %>
 
   <% styleguide_block  'Forms - Option Fields' do %>
-    <h4>Some checkboxes</h4>
-    <div class="field-group">
+    <label class="field-label">Some checkboxes</label>
+    <div class="form-item">
       <label class="option -checkbox">
         <input checked type="checkbox" id="option1">
         <span class="option__indicator"></span>
@@ -188,8 +206,8 @@
       </label>
     </div>
 
-    <h4>Some radio options</h4>
-    <div class="field-group">
+    <label class="field-label">Some radio buttons</label>
+    <div class="form-item">
       <label class="option -radio">
         <input checked type="radio" name="choice" id="choice1">
         <span class="option__indicator"></span>
@@ -218,7 +236,7 @@
     <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
 
     <h4 id="buttons">Buttons</h4>
-    <% styleguide_block  'Forms - Buttons' do %>
+    <% styleguide_block  'Button' do %>
       <a class="button $modifier_class">Example Button</a>
     <% end %>
 
@@ -756,11 +774,15 @@
     <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
       <h2 class="heading -banner">Now fill out this form.</h2>
       <form action="#">
-        <label for="name">Name</label>
-        <input type="text" class="js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+        <div class="form-item">
+          <label for="name" class="field-label">Name</label>
+          <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+        </div>
 
-        <label for="confirmName">Confirm Name</label>
-        <input type="text" name="confirmName" class="js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+        <div class="form-item">
+          <label for="confirmName" class="field-label">Confirm Name</label>
+          <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+        </div>
 
         <div class="form-actions">
           <input type="submit" class="button">
