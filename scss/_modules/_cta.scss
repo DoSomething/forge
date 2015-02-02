@@ -6,13 +6,12 @@
 
 .cta {
   @include clearfix;
-  @include span(100%);
+  @include gutters;
   background: lighten($light-gray, 10%);
   border-bottom: 2px solid $light-gray;
   border-top: 2px solid $light-gray;
 
   > .wrapper {
-    width: 100%;
     text-align: center;
     padding: $base-spacing 0;
 
