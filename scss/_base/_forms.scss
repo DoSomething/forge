@@ -3,8 +3,8 @@
 // .-padded - Adds extra padding above and below field group.
 // .-inline - Form elements appear side-by-side.
 //
-// Styleguide Forms - Field Groups
-.field-group {
+// Styleguide Forms - Form Items
+.form-item {
   margin-bottom: ($base-spacing / 2);
 
   &.-padded {
@@ -50,8 +50,8 @@
 // .-warning    - Warning form validation (not an error, but worth double-checking).
 // .-error      - Something's wrong!
 //
-// Styleguide Forms - Field Labels
-.field-label {
+// Styleguide Forms - Form Labels
+.form-label {
   display: block;
   clear: both;
   width: 100%;
