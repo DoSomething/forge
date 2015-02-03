@@ -4,6 +4,10 @@
 .figure {
   text-align: center;
 
+  @include media($mobile) {
+    margin-bottom: ($base-spacing * 2);
+  }
+
   > .wrapper {
     display: block;
     overflow: hidden;
