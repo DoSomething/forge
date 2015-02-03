@@ -152,11 +152,7 @@
       bottom: 0;
       left: 0;
       z-index: 5;
-      background: linear-gradient(rgba(#000, 0) 10%, rgba(#000, 0.2) 65%, rgba(#000, 0.5) 87%, rgba(#000, 0.85) 100%);
-
-      @include media($tablet) {
-        background: linear-gradient(rgba(#000, 0) 40%, rgba(#000, 0.2) 70%, rgba(#000, 0.5) 87%, rgba(#000, 0.85) 100%);
-      }
+      background: linear-gradient(rgba(0,0,0,0.15) 5%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0.8) 100%);
     }
 
     > .wrapper {
