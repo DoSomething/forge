@@ -32,7 +32,7 @@
 
 
 // We add interactive elements once we know JS is working.
-.js {
+.modernizr-js {
   .tabs {
     > .wrapper {
       @include visually-hidden();
