@@ -1,0 +1,34 @@
+// Form actions, such as submit buttons.
+//
+// .-padded - Adds top and bottom padding, for use independent of form items.
+//
+// Styleguide Forms - Form Action
+.form-actions {
+  text-align: center;
+  margin-top: ($base-spacing / 2);
+
+  &.-padded {
+    margin: $base-spacing 0;
+  }
+}
+
+.form-actions + .form-actions {
+  margin-top: $base-spacing;
+}
+
+
+// Inline form actions, with all items shown in a row.
+//
+// .-padded - Adds top and bottom padding, for use independent of form items.
+//
+// Styleguide Forms - Inline Form Action
+.form-actions.-inline {
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  li + li {
+    padding-left: $base-spacing;
+  }
+}

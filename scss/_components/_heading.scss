@@ -1,0 +1,68 @@
+// Various heading weights. The `.heading` class can be used to pair specific heading styles to non-semantic classes, such as `.heading.-alpha` to apply `h1` styles on a specific element.
+//
+// .-banner - Stylized header banners.
+//
+// Styleguide Heading
+h1, h2, h3, h4, h5, h6,
+.heading.-hero, .heading.-alpha, .heading.-beta,
+.heading.-gamma, .heading.-delta, .heading.-epsilon {
+  clear: both;
+  font-family: $base-font-family;
+  font-weight: $weight-bold;
+  line-height: $header-line-height;
+  color: $purple;
+  margin: 0 0 ($base-spacing / 6);
+  text-rendering: optimizeLegibility;
+}
+
+.heading.-banner {
+  @include clearfix;
+  background: $black;
+  color: $white;
+  text-transform: uppercase;
+  padding: gutter();
+  margin: 0;
+
+  span {
+    @include media($medium) {
+      @include span(12 no-gutters);
+      @include push(2);
+    }
+  }
+}
+
+.heading.-hero {
+  font-size: $font-larger;
+
+  @include media($tablet) {
+    font-size: $font-hero;
+  }
+}
+
+h1, .heading.-alpha {
+  font-size: $font-large;
+
+  @include media($tablet) {
+    font-size: $font-larger;
+  }
+}
+
+h2, .heading.-beta {
+  font-size: $font-medium;
+
+  @include media($tablet) {
+    font-size: $font-large;
+  }
+}
+
+h3, .heading.-gamma {
+  color: $dark-gray;
+  font-size: $font-medium;
+  font-weight: $weight-sbold;
+}
+
+h4, h5, h6, .heading.-delta {
+  color: $dark-gray;
+  font-size: $font-regular;
+  font-weight: $weight-sbold;
+}

@@ -1,0 +1,118 @@
+// Select boxes present a list of options on a form.
+//
+// .has-error - Error state
+//
+// Styleguide Forms - Select Box
+.select {
+  // Hat tip to Mark Otto's [WTF, Forms](http://wtfforms.com)
+  // for markup inspiration and browser compatibility considerations
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: $base-font-color;
+
+  select {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    font-family: $base-font-family;
+    font-size: $font-regular;
+    padding: ($base-spacing / 2) ($base-spacing * 2) ($base-spacing / 2) ($base-spacing / 2);
+    color: #555;
+    background-color: #fff;
+    border: 1px solid $light-gray;
+    border-radius: $lg-border-radius;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    // Undo the Firefox inner focus ring
+    &:focus:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $blue;
+      box-shadow: 0 0 3px $blue;
+    }
+
+    &:active {
+      background: #fff;
+    }
+
+    // Hide the arrow in IE10 and up
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  // Dropdown arrow
+  &:after {
+    @include icomoon-icon;
+    content: "\e607"; // right arrow
+    position: absolute;
+    top: 50%;
+    right: ($base-spacing / 2);
+    display: inline-block;
+    width: 0;
+    height: 0;
+    color: $med-gray;
+    font-size: 32px;
+    margin-top: -16px;
+    transform: rotate(90deg); // rotate to down arrow
+    transition: transform 0.25s;
+    pointer-events: none;
+  }
+
+  &.has-error select, &.error select {
+    border: 1px solid $error-color;
+  }
+
+  // Media query to target Firefox only
+  @-moz-document url-prefix() {
+    // Firefox hack to hide the arrow
+    select {
+      text-indent: 0.01px;
+      text-overflow: "";
+      padding-right: 1rem;
+    }
+
+    // <option> elements inherit styles from <select>, so reset them.
+    option {
+      background-color: #fff;
+    }
+  }
+
+  // Hide the arrow on IE 8 and IE 9
+  .ie8 &, .ie9 & {
+    select {
+      z-index: 1;
+      padding: ($base-spacing / 2);
+
+      &:hover, &:focus, &:active {
+        color: $dark-gray;
+      }
+    }
+
+    &:after {
+      content: "";
+      z-index: 5;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      bottom: 0;
+      z-index: 2;
+      content: "";
+      display: block;
+      width: 1.5rem;
+    }
+  }
+}
+
