@@ -171,7 +171,7 @@
   background-size: 18px 18px;
   appearance: none;
 
-  .no-svg & {
+  .modernizr-no-svg & {
     background-image: neue-asset-url("images/fallbacks/search.png");
   }
 
@@ -179,7 +179,7 @@
     background-image: neue-asset-url("images/spinner.svg");
   }
 
-  .no-smil &.loading {
+  .modernizr-no-smil &.loading {
     background-image: neue-asset-url("images/fallbacks/spinner16.gif");
   }
 }
@@ -334,7 +334,7 @@ textarea.text-field {
   }
 }
 
-.checked.label-click .option {
+.modernizr-checked.modernizr-label-click .option {
   overflow: hidden;
 
   // Hat tip to Mark Otto's [WTF, Forms](http://wtfforms.com)

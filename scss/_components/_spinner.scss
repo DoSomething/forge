@@ -7,7 +7,7 @@
   height: 32px;
   width: 32px;
 
-  .no-smil & {
+  .modernizr-no-smil & {
     background-image: neue-asset-url("images/fallbacks/spinner.gif");
   }
 }
