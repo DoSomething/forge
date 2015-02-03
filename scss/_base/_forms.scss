@@ -80,9 +80,9 @@
 
 // Labels for form elements. Optional validation styles triggered by client-side validation.
 //
-// .-success    - Successful form validation
-// .-warning    - Warning form validation (not an error, but worth double-checking).
-// .-error      - Something's wrong!
+// .has-success    - Successful form validation
+// .has-warning    - Warning form validation (not an error, but worth double-checking).
+// .has-error      - Something's wrong!
 //
 // Styleguide Forms - Field Labels
 .field-label {
@@ -114,11 +114,11 @@
 }
 
 .validation__message {
-  &.-error {
+  &.has-error {
     color: $error-color;
   }
 
-  &.-warning, &.-success {
+  &.has-warning, &.has-success {
     color: $purple;
   }
 }
@@ -127,7 +127,9 @@
 // Text input fields.
 //
 // :focus         - Field is selected for text input
-// .-error        - Error styling, used for validation issues.
+// .-search       - Search field appearance
+// .is-loading    - Loading indicator, for example while fetching an AJAX response.
+// .has-error     - Error state, used for validation issues.
 //
 // Styleguide Forms - Text Input Fields
 .text-field {
@@ -152,7 +154,29 @@
     box-shadow: 0 0 3px $blue;
   }
 
-  &.-error {
+  &.-search, &.is-loading {
+    background: #fff no-repeat 16px 50%;
+    background-size: 18px 18px;
+    padding-left: ($base-spacing * 2);
+  }
+
+  &.-search {
+    background-image: neue-asset-url("images/search.svg");
+
+    .modernizr-no-svg & {
+      background-image: neue-asset-url("images/fallbacks/search.png");
+    }
+  }
+
+  &.is-loading {
+    background-image: neue-asset-url("images/spinner.svg");
+  }
+
+  .modernizr-no-smil &.loading {
+    background-image: neue-asset-url("images/fallbacks/spinner16.gif");
+  }
+
+  &.has-error {
     border-color: $error-color;
   }
 }
@@ -161,28 +185,9 @@
 // Specific style rules for search input fields.
 //
 // :focus   - Field is selected for text input
-// .loading - Indicates search field is loading results.
+// .is-loading - Indicates search field is loading results.
 //
 // Styleguide Forms - Search Fields
-.text-field.-search {
-  padding-left: 32px;
-  background: #fff no-repeat 12px 50%;
-  background-image: neue-asset-url("images/search.svg");
-  background-size: 18px 18px;
-  appearance: none;
-
-  .modernizr-no-svg & {
-    background-image: neue-asset-url("images/fallbacks/search.png");
-  }
-
-  &.loading {
-    background-image: neue-asset-url("images/spinner.svg");
-  }
-
-  .modernizr-no-smil &.loading {
-    background-image: neue-asset-url("images/fallbacks/spinner16.gif");
-  }
-}
 
 
 // Multi-line textarea fields.
@@ -195,7 +200,7 @@ textarea.text-field {
 
 // Select boxes present a list of options on a form.
 //
-// .-error - Error state
+// .has-error - Error state
 //
 // Styleguide Forms - Select Boxes
 .select {
@@ -263,7 +268,7 @@ textarea.text-field {
     pointer-events: none;
   }
 
-  &.-error select, &.error select {
+  &.has-error select, &.error select {
     border: 1px solid $error-color;
   }
 
