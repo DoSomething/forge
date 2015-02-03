@@ -1,0 +1,42 @@
+// A label and a form element.
+//
+// .-padded - Adds extra padding above and below field group.
+// .-inline - Form elements appear side-by-side.
+//
+// Styleguide Forms - Form Item
+.form-item {
+  margin-bottom: ($base-spacing / 2);
+
+  &.-padded {
+    margin: $base-spacing 0;
+  }
+
+  &.-inline {
+    .field-label {
+      display: inline-block;
+      width: auto;
+      margin: ($base-spacing / 2) ($base-spacing /2) ($base-spacing / 2) 0;
+    }
+
+    .text-field {
+      width: auto;
+    }
+
+    .option {
+      display: inline-block;
+    }
+
+    .option, .button {
+      + .option,  + .button {
+        margin-left: ($base-spacing / 2);
+      }
+    }
+
+    .button {
+      font-size: $font-regular;
+      padding: 0.5em 1em 0.45em;
+      margin: 0 ($base-spacing / 2);
+    }
+  }
+}
+

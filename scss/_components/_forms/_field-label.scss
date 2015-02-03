@@ -1,0 +1,44 @@
+// Labels for form elements. Optional validation styles triggered by client-side validation.
+//
+// .has-success    - Successful form validation
+// .has-warning    - Warning form validation (not an error, but worth double-checking).
+// .has-error      - Something's wrong!
+//
+// Styleguide Forms - Field Label
+.field-label {
+  display: block;
+  clear: both;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 ($base-spacing / 4);
+  height: 1.5em;
+  overflow: hidden;
+  transition: height 0.5s;
+
+  em {
+    font-style: normal;
+    color: $med-gray;
+  }
+}
+
+// Validation styles
+// @see: validation.js
+.validation {
+  position: relative;
+  transition: top 0.5s;
+
+  &.is-showing-message {
+    top: -1.5em;
+  }
+}
+
+.validation__message {
+  &.has-error {
+    color: $error-color;
+  }
+
+  &.has-warning, &.has-success {
+    color: $purple;
+  }
+}
