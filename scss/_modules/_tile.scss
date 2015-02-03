@@ -32,7 +32,7 @@
     }
   }
 
-  .no-cssgradients & {
+  .modernizr-no-cssgradients & {
     > .wrapper {
       &:before {
         background: transparent neue-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
@@ -59,7 +59,7 @@
     width: 100%;
     z-index: 10;
 
-    .no-cssgradients & {
+    .modernizr-no-cssgradients & {
       background: transparent neue-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
     }
   }
