@@ -47,10 +47,10 @@
 // Styleguide Forms - Form Actions
 .form-actions {
   text-align: center;
-  padding-top: ($base-spacing / 2);
+  margin-top: ($base-spacing / 2);
 
   &.-padded {
-    padding: $base-spacing 0;
+    margin: $base-spacing 0;
   }
 }
 
