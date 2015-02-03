@@ -3,7 +3,13 @@
 
     <p>Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork our <a href="https://github.com/dosomething/neue">GitHub repository</a> and use it as a starting point for your own pattern library.</p>
 
-    <h2 id="base-styles">Base Styles</h2>
+    <h2 id="base">Base Styles</h2>
+    <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
+
+    <% styleguide_block  'Base - Inline Elements' do %>
+      <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs for young people and social change</mark>, our members tackle campaigns that impact every cause, from poverty to violence to the environment to <em>literally</em> everything else. Any cause, anytime, anywhere. *mic drop*</p>
+      <p>This is a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>.</p>
+    <% end %>
 
     <h3 id="fonts-and-colors">Fonts &amp; Colors</h3>
     <p>We use <a href="http://www.marksimonson.com/fonts/view/proxima-nova">Proxima Nova</a> for all headings and body copy.</p>
@@ -94,15 +100,7 @@
 
     <p class="legal styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
 
-    <h3 id="base">Base Elements</h3>
-    <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
-
-    <% styleguide_block  'Base - Inline Elements' do %>
-        <p>Lorem <em>italic</em> dolor <mark>important</mark> amet.
-      This is some <strong>bold</strong> text, a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>. Also, <code>code(0);</code>.</p>
-    <% end %>
-
-    <h3 id="layout">Layout</h3>
+    <h3 id="grid">Grid System</h3>
     <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
     <p>We use <a href="http://susy.oddbird.net">Susy 2</a> to build our interface on a fluid grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. Our grid is split up into sixteen columns, with a 24 pixel static gutter between columns.</p>
     <p>See the <a href="http://susydocs.oddbird.net/en/latest/">Susy documentation</a> for implementation details.</p>
@@ -852,9 +850,9 @@
     <li>
     <a href="#base" class="js-jump-scroll">Base Styles</a>
     <ul>
-      <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
       <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
-      <li><a href="#layout" class="js-jump-scroll">Layout</a></li>
+      <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
+      <li><a href="#grid" class="js-jump-scroll">Grid System</a></li>
       <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
     </ul>
     </li>
