@@ -16,14 +16,14 @@
 //
 
 // We define some of our own variables and mixins to keep things DRY.
-@import "_utilities/functions";
+@import "_utilities/data";
 @import "_utilities/variables";
+@import "_utilities/functions";
 @import "_utilities/mixins";
 
 // Base
 @import "_base/reset";
 @import "_base/fonts";
-@import "_base/data";
 @import "_base/animations";
 @import "_base/typography";
 @import "_base/forms";
