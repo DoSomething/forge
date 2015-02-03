@@ -129,12 +129,12 @@
       background-size: 32px;
     }
 
-    .no-smil &, .no-smil &:hover, .no-smil &:active {
+    .modernizr-no-smil &, .modernizr-no-smil &:hover, .modernizr-no-smil &:active {
       // If no support for animated SVG, use 32px animated gif.
       background-image: neue-asset-url("images/fallbacks/spinner.gif");
     }
 
-    .no-rgba &, .no-rgba &:hover, .no-rgba &:active {
+    .modernizr-no-rgba &, .modernizr-no-rgba &:hover, .modernizr-no-rgba &:active {
       // If no support for text color:transparent, hide image and lighten text.
       color: $light-gray;
       background-image: none;

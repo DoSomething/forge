@@ -9,6 +9,9 @@ module.exports = {
         "scss/**/*.scss"
       ]
     },
+    extensibility : {
+      "cssclassprefix": "modernizr-"
+    },
     "extra" : {
       "shiv" : false,
       "teststyles": true,

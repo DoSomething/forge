@@ -30,7 +30,7 @@
       .text-field.-search {
         background-image: neue-asset-url("images/search_white.svg");
 
-        .no-svg & {
+        .modernizr-no-svg & {
           background-image: neue-asset-url("images/fallbacks/search_white.png");
         }
       }
@@ -89,7 +89,7 @@
     height: 60px;
   }
 
-  .no-svg &:after {
+  .modernizr-no-svg &:after {
     background: neue-asset-url("images/logo.png");
   }
 
@@ -272,12 +272,12 @@
     @include media($tablet) {
       background-image: neue-asset-url("images/search_black.svg");
 
-      .no-svg & {
+      .modernizr-no-svg & {
         background-image: neue-asset-url("images/fallbacks/search_black.png");
       }
     }
 
-    .no-svg & {
+    .modernizr-no-svg & {
       background-image: neue-asset-url("images/fallbacks/search_white.png");
     }
   }

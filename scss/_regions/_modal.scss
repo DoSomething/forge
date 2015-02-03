@@ -95,7 +95,7 @@
 
 // If JavaScript is enabled (via Modernizr check), hide inline modal
 // containers to prevent flash of unstyled content as JS initializes.
-.js [data-modal] {
+.modernizr-js [data-modal] {
   display: none;
 }
 
