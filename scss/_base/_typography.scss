@@ -141,6 +141,12 @@ ol.list {
       margin-top: 0;
     }
   }
+
+  &.-concatenated {
+    ul + ul {
+      margin-top: 0;
+    }
+  }
 }
 
 
