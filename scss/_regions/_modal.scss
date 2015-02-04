@@ -1,4 +1,8 @@
-// Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
+// Show supplementary information to a user without leaving the page. Fills
+// screen on mobile, centered with overlay on tablet/desktop. Use `.modal__block`
+// element to add padding inside the modal. (This allows "full-width" modal content
+// to work without a negative margin.)
+//
 // #### Options:
 // - `[data-modal-close]`: set to "true" to include a close button on the modal, or "skip" to delegate a skip form action
 // - `[data-modal-skip-form]`: selector for a skip `form` element to submit upon clicking the "skip" link
@@ -12,16 +16,10 @@
   left: 0;
   right: 0;
   min-height: 100%;
-  background-image: neue-asset-url("images/fallbacks/ie8-rgba-black-50.png");
-  background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 
   @include media($tablet) {
     padding: 72px;
-  }
-
-  &.animated-open {
-    animation: fadeIn 0.25s;
   }
 
   &.animated-close {
@@ -36,10 +34,8 @@
 [data-modal] {
   position: relative;
   background: #fff;
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.75);
   width: auto;
-  padding: $base-spacing;
-  margin: 0;
   word-wrap: break-word;
   z-index: 1050;
 
@@ -53,7 +49,6 @@
     // make space for "x" button & fit banner to edge of modal
     padding-left: $base-spacing;
     padding-right: 72px;
-    margin: (-$base-spacing) (-$base-spacing) $base-spacing;
   }
 }
 
@@ -93,12 +88,37 @@
 }
 
 
+// Modal content block
+// Adds proper spacing around content in modal.
+.modal__block {
+  padding: $base-spacing;
+}
+
+
 // If JavaScript is enabled (via Modernizr check), hide inline modal
 // containers to prevent flash of unstyled content as JS initializes.
 .modernizr-js [data-modal] {
   display: none;
 }
 
-.chrome.modal-open {
+// See also: _chrome.scss
+.chrome.has-modal {
   position: fixed;
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: neue-asset-url("images/fallbacks/ie8-rgba-black-50.png");
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.25s;
+    z-index: 9998;
+  }
+
+  &.animated-close:after {
+    animation: fadeOut 0.25s;
+  }
 }

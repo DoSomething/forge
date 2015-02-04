@@ -761,34 +761,38 @@
 
     <div data-modal id="modal--example" role="dialog">
       <h2 class="heading -banner">Example Content</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+      <div class="modal__block">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+      </div>
     </div>
 
     <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
       <h2 class="heading -banner">Now fill out this form.</h2>
-      <form action="#">
-        <div class="form-item">
-          <label for="name" class="field-label">Name</label>
-          <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
-        </div>
+      <div class="modal__block">
+        <form action="#">
+          <div class="form-item">
+            <label for="name" class="field-label">Name</label>
+            <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+          </div>
 
-        <div class="form-item">
-          <label for="confirmName" class="field-label">Confirm Name</label>
-          <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
-        </div>
+          <div class="form-item">
+            <label for="confirmName" class="field-label">Confirm Name</label>
+            <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+          </div>
 
-        <div class="form-actions">
-          <input type="submit" class="button">
-        </div>
-      </form>
+          <div class="form-actions">
+            <input type="submit" class="button">
+          </div>
+        </form>
 
-      <form action="http://www.google.com" id="skip-form">
-        <div class="form-actions">
-          <input type="submit" value="Skip" class="button -tertiary">
-        </div>
-      </form>
+        <form action="http://www.google.com" id="skip-form">
+          <div class="form-actions">
+            <input type="submit" value="Skip" class="button -tertiary">
+          </div>
+        </form>
+      </div>
     </div>
   <% end %>
 

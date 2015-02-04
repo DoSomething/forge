@@ -311,7 +311,8 @@
 }
 
 // When menu is open, prevent scrolling on mobile breakpoint.
-.chrome.mobile-menu-open {
+// See also: _chrome.scss
+.chrome.has-mobile-menu {
   @include media($mobile) {
     position: fixed;
   }
