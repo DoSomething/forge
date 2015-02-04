@@ -1,7 +1,7 @@
 module.exports = {
   all: {
     "devFile": "remote",
-    "outputFile": "dist/modernizr-neue.js",
+    "outputFile": "dist/modernizr.js",
     "files" : {
       "src": [
         "js/**/*.js",
