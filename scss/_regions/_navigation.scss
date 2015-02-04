@@ -234,7 +234,7 @@
     padding: gutter();
     margin: 0;
 
-    @include media($tablet) {
+    @include media($tablet) {    
       float: left;
       display: block;
       text-align: left;
@@ -294,8 +294,6 @@
 
     @include media($tablet) {
       padding-top: 12px;
-      padding-left: 8px;
-      margin-left: 8px;
     }
 
     ul {
@@ -320,7 +318,8 @@
       @include media($tablet) {
         visibility: visible;
         color: #fff;
-        margin-left: 16px;
+        padding-left: 8px;
+        padding-right: 8px;        
       }      
     }
 
@@ -330,12 +329,10 @@
     background-color: #fff;
     padding-top: 0;
     padding-bottom: 0; 
-    margin-left: 36px;
-    padding-left: 8px;
-    padding-right: 8px;
     border-radius: 4px;
     margin-top: 12px;
     margin-right: 38px;
+    margin-left: 2px;
     min-width: 180px;
     visibility: visible;
 
@@ -352,11 +349,8 @@
       font-weight: normal;
       text-shadow: none; 
       margin-left: 0;
-      padding-left: 0;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      padding-right: 0px;
       margin-top: 0;
+      padding: 4px;
     }    
 
     li {
