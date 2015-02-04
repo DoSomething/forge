@@ -28,7 +28,7 @@ define(function() {
     // Toggle menu on dekstop
     $('.navigation__dropdown-toggle').on("mousedown", function(e) {
       e.preventDefault();
-      $('.navigation__dropdown').toggleClass("clicked");
+      $('.navigation__dropdown').toggleClass("is-visible");
     });
   });
 });
