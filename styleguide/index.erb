@@ -209,6 +209,20 @@
     </div>
     <% end %>
 
+    <% styleguide_block 'Forms - Media Option Field' do %>
+    <div class="form-item">
+      <label class="media-option -radio">
+        <input type="radio" value="value1" name="item" id="option1" checked="checked">
+        <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+      </label>
+
+      <label class="media-option -radio">
+        <input type="radio" value="value2" name="item" id="option2">
+        <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+      </label>
+    </div>
+    <% end %>
+
     <h4 id="heading">Heading</h4>
     <% styleguide_block  'Heading' do %>
       <h1 class="heading $modifier_class"><span>Heading</span></h1>
@@ -591,25 +605,6 @@
       </article>
     <% end %>
 
-    <h4 id="media-opts">Media Options</h4>
-    <% styleguide_block 'Media Options' do %>
-      <div class="js-media-options">
-        <div class="media-options__item -radio">
-          <input type="radio" value="value1" name="item" id="option1" checked="checked">
-          <label for="option1">
-            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
-          </label>
-        </div>
-
-        <div class="media-options__item -radio">
-          <input type="radio" value="value2" name="item" id="option2">
-          <label for="option2">
-            <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
-          </label>
-        </div>
-      </div>
-    <% end %>
-
     <h4 id='polaroid'>Polaroid</h4>
     <% styleguide_block  'Polaroid image style' do %>
       <figure class="polaroid">
@@ -881,7 +876,6 @@
       <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
       <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
       <li><a href="#media" class="js-jump-scroll">Media</a></li>
-      <li><a href="#media-opts" class="js-jump-scroll">Media Options</a></li>
       <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
       <li><a href="#sponsor" class="js-jump-scroll">Sponsor</a></li>
       <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
