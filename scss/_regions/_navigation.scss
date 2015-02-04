@@ -297,7 +297,8 @@
     }
 
     ul {
-      visibility: visibile;
+      list-style-type: none;
+      visibility: visible;
       margin-top: 0;
       @include media($tablet) {
         visibility: hidden;
@@ -329,7 +330,7 @@
     background-color: #fff;
     padding-top: 0;
     padding-bottom: 0; 
-    border-radius: 4px;
+    border-radius: $lg-border-radius;
     margin-top: 12px;
     margin-right: 38px;
     margin-left: 2px;
@@ -339,8 +340,7 @@
     p {
       color: $purple;
       font-weight: bold;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 1px;
+      border-bottom: 1px solid $light-gray;
       margin-left: 0;
     }
 
