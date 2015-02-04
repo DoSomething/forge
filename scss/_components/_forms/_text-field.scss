@@ -1,0 +1,73 @@
+// Text input fields.
+//
+// :focus         - Field is selected for text input
+// .-search       - Search field appearance
+// .is-loading    - Loading indicator, for example while fetching an AJAX response.
+// .has-error     - Error state, used for validation issues.
+//
+// Styleguide Forms - Text Field
+.text-field {
+  width: 100%;
+  font-family: $font-proxima-nova;
+  font-size: $font-regular;
+  border: 1px solid $light-gray;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: $lg-border-radius;
+  background-clip: padding-box;
+  padding: ($base-spacing / 2);
+  margin: 0;
+  transition: border 0.5s;
+
+  // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $blue;
+    box-shadow: 0 0 3px $blue;
+  }
+
+  &.-search, &.is-loading {
+    background: #fff no-repeat 16px 50%;
+    background-size: 18px 18px;
+    padding-left: ($base-spacing * 2);
+  }
+
+  &.-search {
+    background-image: neue-asset-url("images/search.svg");
+
+    .modernizr-no-svg & {
+      background-image: neue-asset-url("images/fallbacks/search.png");
+    }
+  }
+
+  &.is-loading {
+    background-image: neue-asset-url("images/spinner.svg");
+  }
+
+  .modernizr-no-smil &.loading {
+    background-image: neue-asset-url("images/fallbacks/spinner16.gif");
+  }
+
+  &.has-error {
+    border-color: $error-color;
+  }
+}
+
+
+// Specific style rules for search input fields.
+//
+// :focus   - Field is selected for text input
+// .is-loading - Indicates search field is loading results.
+//
+// Styleguide Forms - Search Fields
+
+
+// Multi-line textarea fields.
+//
+// Styleguide Forms - Textarea Field
+textarea.text-field {
+  resize: vertical;
+}
+

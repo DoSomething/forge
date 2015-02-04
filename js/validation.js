@@ -156,16 +156,16 @@ define(function(require) {
     var fieldLabelHeight = $fieldLabel.height();
     var fieldMessageHeight;
 
-    $field.removeClass("-success -error -warning shake");
-    $fieldMessage.removeClass("-success -error -warning");
+    $field.removeClass("has-success has-error has-warning shake");
+    $fieldMessage.removeClass("has-success has-error has-warning");
 
     // Highlight/animate field
     if(result.success === true) {
-      $field.addClass("-success");
-      $fieldMessage.addClass("-success");
+      $field.addClass("has-success");
+      $fieldMessage.addClass("has-success");
     } else {
-      $field.addClass("-error");
-      $fieldMessage.addClass("-error");
+      $field.addClass("has-error");
+      $fieldMessage.addClass("has-error");
 
       if( isFormField($field) ) {
         $field.addClass("shake");
@@ -210,7 +210,7 @@ define(function(require) {
     });
 
     $field.on("focus", function() {
-      $field.removeClass("-warning -error -success shake");
+      $field.removeClass("has-warning has-error has-success shake");
       $fieldValidation.removeClass("is-showing-message");
       $fieldLabel.css("height", "");
     });
