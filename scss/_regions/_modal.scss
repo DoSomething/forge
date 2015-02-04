@@ -115,6 +115,7 @@
     background-image: neue-asset-url("images/fallbacks/ie8-rgba-black-50.png");
     background: rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.25s;
+    z-index: 9998;
   }
 
   &.animated-close:after {
