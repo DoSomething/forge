@@ -99,6 +99,7 @@
   display: none;
 }
 
-.chrome.modal-open {
+// See also: _chrome.scss
+.chrome.has-modal {
   position: fixed;
 }
