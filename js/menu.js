@@ -12,7 +12,7 @@ define(function() {
     $(".js-navigation-toggle").on("touchstart mousedown", function(e) {
       e.preventDefault();
 
-      $(".chrome").toggleClass("mobile-menu-open");
+      $(".chrome").toggleClass("has-mobile-menu");
       $(".navigation").toggleClass("is-visible");
     });
 
