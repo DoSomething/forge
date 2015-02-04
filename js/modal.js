@@ -98,7 +98,7 @@ define(function(require) {
     if(!isOpen()) {
       // Set up overlay and show modal
       $chrome.css("top", offsetTop);
-      $chrome.addClass("modal-open");
+      $chrome.addClass("has-modal");
       $modalContainer.css("display", "block");
       if(options.animated && Modernizr.cssanimations) {
         $modalContainer.addClass("animated-open");
@@ -133,7 +133,8 @@ define(function(require) {
     $modal.find(".js-modal-generated").remove();
 
     // Remove overlay and reset scroll position
-    $chrome.removeClass("modal-open");
+    $chrome.removeClass("has-modal");
+    $chrome.removeClass("animated-close");
     $chrome.css("top", "");
     $document.scrollTop(scrollOffset);
 
@@ -152,6 +153,7 @@ define(function(require) {
     var scrollOffset = parseInt($chrome.css("top")) * -1;
 
     if(options.animated && Modernizr.cssanimations) {
+      $chrome.addClass("animated-close");
       $modalContainer.addClass("animated-close");
       $modalContainer.one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
         _cleanup(scrollOffset);
