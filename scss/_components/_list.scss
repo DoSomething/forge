@@ -1,0 +1,58 @@
+// List of items. You can use the `.with-lists` class to apply list styles to all `ol` and `ul`
+// within a container, for example when styling Markdown content.
+//
+// .-compacted - Closely spaced list elements.
+//
+// Styleguide List
+.list {
+  padding-left: $base-spacing;
+
+  li + li {
+    margin-top: ($base-spacing / 2);
+  }
+
+  &.-compacted {
+    li + li {
+      margin-top: 0;
+    }
+  }
+}
+
+ul.list {
+  list-style-type: square;
+}
+
+ol.list {
+  list-style-type: decimal;
+}
+
+.with-lists {
+  ul, ol {
+    padding-left: $base-spacing;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  li + li {
+    margin-top: ($base-spacing / 2);
+  }
+
+  &.-compacted {
+    li + li {
+      margin-top: 0;
+    }
+  }
+
+  &.-concatenated {
+    ul + ul {
+      margin-top: 0;
+    }
+  }
+}
+

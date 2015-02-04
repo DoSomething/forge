@@ -16,27 +16,33 @@
 //
 
 // We define some of our own variables and mixins to keep things DRY.
-@import "_utilities/functions";
+@import "_utilities/data";
 @import "_utilities/variables";
+@import "_utilities/functions";
 @import "_utilities/mixins";
 
 // Base
 @import "_base/reset";
 @import "_base/fonts";
-@import "_base/data";
 @import "_base/animations";
-@import "_base/typography";
-@import "_base/forms";
+@import "_base/base";
 @import "_base/helpers";
 
 // Components - basic non-divisible building blocks
-@import "_components/button";
+@import "_components/_forms/button";
+@import "_components/_forms/field-label";
+@import "_components/_forms/form-actions";
+@import "_components/_forms/form-item";
+@import "_components/_forms/option";
+@import "_components/_forms/select";
+@import "_components/_forms/text-field";
+@import "_components/heading";
+@import "_components/list";
 @import "_components/legal";
 @import "_components/message-callout";
 @import "_components/messages";
 @import "_components/social-icon";
 @import "_components/spinner";
-@import "_components/tabs";
 @import "_components/video";
 @import "_components/waypoints";
 
@@ -50,6 +56,7 @@
 @import "_modules/media-options";
 @import "_modules/polaroid";
 @import "_modules/sponsor";
+@import "_modules/tabs";
 @import "_modules/tile";
 
 // Regions - complete sections of an interface
