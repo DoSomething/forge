@@ -18,4 +18,4 @@ See [CONTRIBUTING](https://www.github.com/DoSomething/neue/blob/dev/CONTRIBUTING
 Neue supports Chrome 39+, Firefox 34+, Safari 7+, Android 4+, iOS 7+, and Internet Explorer 8+ (with polyfills). For IE 8 support, you'll need to include [HTML5Shiv](https://www.github.com/aFarkas/html5shiv) and [Respond.js](https://www.github.com/scottjehl/Respond).
 
 # License
-&copy;2014 DoSomething.org. Neue is free software, and may be redistributed under the terms specified in the [LICENSE](blob/dev/LICENSE.md) file. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.
+&copy;2015 DoSomething.org. Neue is free software, and may be redistributed under the terms specified in the [LICENSE](blob/dev/LICENSE.md) file. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.
