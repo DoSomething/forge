@@ -134,6 +134,7 @@ define(function(require) {
 
     // Remove overlay and reset scroll position
     $chrome.removeClass("has-modal");
+    $chrome.removeClass("animated-close");
     $chrome.css("top", "");
     $document.scrollTop(scrollOffset);
 
@@ -152,6 +153,7 @@ define(function(require) {
     var scrollOffset = parseInt($chrome.css("top")) * -1;
 
     if(options.animated && Modernizr.cssanimations) {
+      $chrome.addClass("animated-close");
       $modalContainer.addClass("animated-close");
       $modalContainer.one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
         _cleanup(scrollOffset);
