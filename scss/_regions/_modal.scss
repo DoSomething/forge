@@ -1,4 +1,8 @@
-// Show supplementary information to a user without leaving the page. Fills screen on mobile, centered with overlay on tablet/desktop.
+// Show supplementary information to a user without leaving the page. Fills
+// screen on mobile, centered with overlay on tablet/desktop. Use `.modal__block`
+// element to add padding inside the modal. (This allows "full-width" modal content
+// to work without a negative margin.)
+//
 // #### Options:
 // - `[data-modal-close]`: set to "true" to include a close button on the modal, or "skip" to delegate a skip form action
 // - `[data-modal-skip-form]`: selector for a skip `form` element to submit upon clicking the "skip" link
@@ -38,8 +42,6 @@
   background: #fff;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
   width: auto;
-  padding: $base-spacing;
-  margin: 0;
   word-wrap: break-word;
   z-index: 1050;
 
@@ -53,7 +55,6 @@
     // make space for "x" button & fit banner to edge of modal
     padding-left: $base-spacing;
     padding-right: 72px;
-    margin: (-$base-spacing) (-$base-spacing) $base-spacing;
   }
 }
 
@@ -90,6 +91,13 @@
       text-decoration: underline;
     }
   }
+}
+
+
+// Modal content block
+// Adds proper spacing around content in modal.
+.modal__block {
+  padding: $base-spacing;
 }
 
 
