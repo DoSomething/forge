@@ -26,9 +26,9 @@ define(function() {
     });
 
     // Toggle menu on dekstop
-    $('.navigation__dropdown-toggle').on("mousedown", function(e) {
+    $(".navigation__dropdown-toggle").on("mousedown", function(e) {
       e.preventDefault();
-      $('.navigation__dropdown').toggleClass("is-visible");
+      $(".navigation__dropdown").toggleClass("is-visible");
     });
   });
 });
