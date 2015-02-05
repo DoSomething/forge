@@ -225,6 +225,10 @@
 
   @include media($tablet) {
     float: right;
+
+    li:first-child {
+      padding-right: 16px;
+    }
   }
 
   li {
@@ -336,7 +340,6 @@
     margin-right: 38px;
     margin-left: 2px;
     min-width: 180px;
-    visibility: visible;
 
     p {
       color: $purple;
