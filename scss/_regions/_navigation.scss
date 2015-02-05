@@ -297,9 +297,9 @@
     }
 
     ul {
-      list-style-type: none;
       visibility: visible;
       margin-top: 0;
+
       @include media($tablet) {
         visibility: hidden;
       }
@@ -316,6 +316,7 @@
 
     p {
       visibility: hidden;
+      
       @include media($tablet) {
         visibility: visible;
         color: #fff;
