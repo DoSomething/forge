@@ -21,24 +21,3 @@
     color: $med-gray;
   }
 }
-
-// Validation styles
-// @see: validation.js
-.validation {
-  position: relative;
-  transition: top 0.5s;
-
-  &.is-showing-message {
-    top: -1.5em;
-  }
-}
-
-.validation__message {
-  &.has-error {
-    color: $error-color;
-  }
-
-  &.has-warning, &.has-success {
-    color: $purple;
-  }
-}
