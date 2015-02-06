@@ -10,14 +10,11 @@ define(function(require) {
   // Attach modules to window
   window.NEUE = {
     Carousel: require("./carousel"),
-    Events: require("./events"),
     JumpScroll: require("./jump-scroll"),
     Menu: require("./menu"),
     Messages: require("./messages"),
-    Modal: require("./modal"),
     ScrollIndicator: require("./scroll-indicator"),
     Tabs: require("./tabs"),
-    Validation: require("./validation")
   };
 
   return window.NEUE;
