@@ -303,6 +303,7 @@
     ul {
       visibility: visible;
       margin-top: 0;
+      list-style-type: none;
 
       @include media($tablet) {
         visibility: hidden;
@@ -319,15 +320,39 @@
     }
 
     p {
-      visibility: hidden;
+      display: none;
       
       @include media($tablet) {
-        visibility: visible;
+        cursor: pointer;
+        display: inline-block;
         color: #fff;
         padding-left: 8px;
-        padding-right: 8px;        
-      }      
+        padding-right: 8px;     
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;  
+      }     
     }
+
+    i {
+      display: none;
+      
+      @include media($tablet) {
+        display: inline-block;
+        position: absolute;
+        top: 40px;
+        
+        &:after {
+          @include icomoon-icon;
+          content: "\e607";
+          font-size: 32px;
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+          display: block;
+          color: #fff;
+        }
+      }
+    } 
 
   }
 
@@ -344,8 +369,17 @@
     p {
       color: $purple;
       font-weight: bold;
-      border-bottom: 1px solid $light-gray;
       margin-left: 0;
+    }
+
+    i {
+      &:after {
+        color: $purple;
+      }
+    }
+
+    div {
+      border-bottom: 1px solid $light-gray;
     }
 
     a, ul {
