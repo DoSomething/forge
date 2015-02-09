@@ -225,6 +225,10 @@
 
   @include media($tablet) {
     float: right;
+
+    li:first-child {
+      padding-right: 16px;
+    }
   }
 
   li {
@@ -234,7 +238,7 @@
     padding: gutter();
     margin: 0;
 
-    @include media($tablet) {
+    @include media($tablet) {    
       float: left;
       display: block;
       text-align: left;
@@ -285,8 +289,114 @@
   a {
     display: block;
     font-weight: bold;
-    margin-left: 18px;
     padding: 6px 9px;
+  }
+
+  .navigation__dropdown {
+
+    padding-top: 0;
+
+    @include media($tablet) {
+      padding-top: 12px;
+    }
+
+    ul {
+      visibility: visible;
+      margin-top: 0;
+      list-style-type: none;
+
+      @include media($tablet) {
+        visibility: hidden;
+      }
+
+      li {
+        padding: 0; 
+
+        @include media($tablet) {
+          padding: gutter() 0;
+        }
+      }
+
+    }
+
+    p {
+      display: none;
+      
+      @include media($tablet) {
+        cursor: pointer;
+        display: inline-block;
+        color: #fff;
+        padding-left: 8px;
+        padding-right: 8px;     
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;  
+      }     
+    }
+
+    i {
+      display: none;
+      
+      @include media($tablet) {
+        display: inline-block;
+        position: absolute;
+        top: 40px;
+        
+        &:after {
+          @include icomoon-icon;
+          content: "\e607";
+          font-size: 32px;
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+          display: block;
+          color: #fff;
+        }
+      }
+    } 
+  }
+
+  .navigation__dropdown.is-visible {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 0; 
+    border-radius: $lg-border-radius;
+    margin-top: 12px;
+    margin-right: 38px;
+    margin-left: 2px;
+    min-width: 180px;
+
+    p {
+      color: $purple;
+      font-weight: bold;
+      margin-left: 0;
+    }
+
+    i {
+      &:after {
+        color: $purple;
+      }
+    }
+
+    div {
+      border-bottom: 1px solid $light-gray;
+    }
+
+    a, ul {
+      color: $off-black;
+      font-weight: normal;
+      text-shadow: none; 
+      margin-left: 0;
+      margin-top: 0;
+      padding: 4px;
+    }    
+
+    li {
+      visibility: visible;
+      display: block;
+      float: none;
+      padding-top: 0;
+      padding-bottom: 0;  
+    }    
   }
 
   // @TODO: Temporary; will likely change to a border but this works well for now.
