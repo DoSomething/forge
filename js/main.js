@@ -10,6 +10,7 @@ define(function(require) {
   // Attach modules to window
   window.NEUE = {
     Carousel: require("./carousel"),
+    Footnote: require("./footnote"),
     JumpScroll: require("./jump-scroll"),
     Menu: require("./menu"),
     Messages: require("./messages"),

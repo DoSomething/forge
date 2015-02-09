@@ -7,7 +7,7 @@
     <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
 
     <% styleguide_block  'Base - Inline Elements' do %>
-      <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs for young people and social change</mark>, our members tackle campaigns that impact every cause, from poverty to violence to the environment to <em>literally</em> everything else. Any cause, anytime, anywhere. *mic drop*</p>
+      <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs for young people and social change</mark>, our members tackle campaigns that impact every cause, from poverty to violence to the environment to <em>literally</em> everything else.<sup>1</sup> Any cause, anytime, anywhere. *mic drop*</p>
       <p>This is a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>.</p>
     <% end %>
 
@@ -223,14 +223,26 @@
     </div>
     <% end %>
 
+    <h4 id="footnote">Footnote</h4>
+    <% styleguide_block  'Footnote' do %>
+    <h4>Legal text example:</h4>
+    <p class="footnote">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
+
+    <h4>Source footnote example:</h4>
+    <div class="footnote">
+      <h4 class="js-footnote-toggle">Sources</h4>
+
+      <ul class="js-footnote-hidden">
+        <li><sup>1</sup> Clark, Barry. "A Treatise on The Motherland", British Royal Archives, 2009.</li>
+        <li><sup>2</sup> Lorch, Julie. "Coffee Sure Is Great", Royal Academy of Coffee, 2010.</li>
+      </ul>
+    </div>
+    <% end %>
+
+
     <h4 id="heading">Heading</h4>
     <% styleguide_block  'Heading' do %>
       <h2 class="heading $modifier_class"><span>Heading</span></h2>
-    <% end %>
-
-    <h4 id="legal">Legal</h4>
-    <% styleguide_block  'Legal Text' do %>
-      <p class="legal">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
     <% end %>
 
     <h4 id="list">List</h4>
@@ -856,8 +868,8 @@
     <a href="#components" class="js-jump-scroll">Components</a>
     <ul>
       <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+      <li><a href="#footnote" class="js-jump-scroll">Footnote</a></li>
       <li><a href="#heading" class="js-jump-scroll">Heading</a></li>
-      <li><a href="#legal" class="js-jump-scroll">Legal</a></li>
       <li><a href="#list" class="js-jump-scroll">List</a></li>
       <li><a href="#callout" class="js-jump-scroll">Message Callout</a></li>
       <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
