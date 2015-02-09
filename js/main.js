@@ -15,6 +15,7 @@ define(function(require) {
     Messages: require("./messages"),
     ScrollIndicator: require("./scroll-indicator"),
     Tabs: require("./tabs"),
+    Tile: require("./tile")
   };
 
   return window.NEUE;
