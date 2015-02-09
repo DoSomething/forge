@@ -23,6 +23,10 @@
     text-align: right;
   }
 
+  li p {
+    display: inline-block;
+  }
+
   a {
     color: $med-gray;
     text-decoration: underline;
