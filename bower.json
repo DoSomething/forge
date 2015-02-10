@@ -17,7 +17,7 @@
     "highlightjs": "~8.0.0",
     "filament-sticky": "~0.1.4",
     "dosomething-modal": "DoSomething/modal#~0.1.0",
-    "dosomething-validation": "DoSomething/validation#~0.0.3"
+    "dosomething-validation": "DoSomething/validation#~0.1.0"
   },
   "resolutions": {
     "jquery": "1.8.3"
