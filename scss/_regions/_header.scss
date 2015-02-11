@@ -6,7 +6,7 @@
 //
 // Styleguide Header
 
-[role="banner"] {
+.header {
   position: relative;
   background: $purple no-repeat center center;
   background-size: cover;
@@ -34,7 +34,7 @@
     }
   }
 
-  .__title {
+  .header__title {
     color: $white;
     font-size: $font-larger;
     margin: 0;
@@ -44,7 +44,7 @@
     }
   }
 
-  .__subtitle {
+  .header__subtitle {
     color: $white;
     font-size: $font-regular;
 
@@ -53,9 +53,9 @@
     }
   }
 
-  .__title,
-  .__subtitle,
-  .__date {
+  .header__title,
+  .header__subtitle,
+  .header__date {
     text-shadow: $text-shadow;
   }
 
@@ -118,11 +118,11 @@
       }
     }
 
-    .__title {
+    .header__title {
       font-size: $font-larger;
     }
 
-    .__subtitle {
+    .header__subtitle {
       font-size: $font-regular;
       margin-bottom: 0;
 
@@ -152,11 +152,7 @@
       bottom: 0;
       left: 0;
       z-index: 5;
-      background: linear-gradient(rgba(#000, 0) 10%, rgba(#000, 0.2) 65%, rgba(#000, 0.5) 87%, rgba(#000, 0.85) 100%);
-
-      @include media($tablet) {
-        background: linear-gradient(rgba(#000, 0) 40%, rgba(#000, 0.2) 70%, rgba(#000, 0.5) 87%, rgba(#000, 0.85) 100%);
-      }
+      background: linear-gradient(rgba(0, 0, 0, 0.15) 5%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0.8) 100%);
     }
 
     > .wrapper {
@@ -166,14 +162,14 @@
       }
     }
 
-    .__subtitle {
+    .header__subtitle {
       @include media($tablet) {
         margin-bottom: 9px;
         width: 80%;
       }
     }
 
-    .__date {
+    .header__date {
       color: #fff;
       font-size: $font-small;
       margin-top: 0;
@@ -186,7 +182,7 @@
       }
     }
 
-    .__signup {
+    .header__signup {
       @include media($tablet) {
         clear: left;
         float: left;
