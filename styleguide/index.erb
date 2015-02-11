@@ -320,12 +320,12 @@
 
     <h4 id="figure">Figure</h4>
     <% styleguide_block  'Figure' do %>
-      <article class="figure">
+      <article class="figure $modifier_class">
         <div class="figure__media">
           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
         </div>
 
-        <div class="figure__description">
+        <div class="figure__body">
           <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
           fashion brands like H&amp;M are "taking eco-chic to the next level."
         </div>
@@ -486,7 +486,7 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="figure__description">
+          <div class="figure__body">
             <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
             fashion brands like H&amp;M are "taking eco-chic to the next level."
           </div>
@@ -499,7 +499,7 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="figure__description">
+          <div class="figure__body">
             <b>Seventeen</b> ran an Earth Day story about recycling old fabrics
             through DoSomething.org and H&amp;M's Comeback Clothes.
           </div>
@@ -512,7 +512,7 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </div>
 
-          <div class="figure__description">
+          <div class="figure__body">
             <b>Nylon</b> urged readers to clean out their closets and do good for
             the planet by recycling old clothes at H&amp;M.
           </div>
@@ -523,40 +523,38 @@
 
     <% styleguide_block  'Gallery - Duo' do %>
       <ul class="gallery -duo">
-        <li class="-first">
-          <article class="media">
-            <div class="media__image">
+        <li>
+          <article class="figure -left">
+            <div class="figure__media">
               <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
             </div>
 
-            <div class="media__body">
-              <h3 class="media__title"><a href=
-                  "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+            <div class="figure__body">
+              <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <div class="media__description">
+              <p>
                 Do you have stained or ripped clothes you don't wear? Recycle them
                 w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
                 <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-              </div>
+              </p>
             </div>
           </article>
         </li>
 
-        <li class="-second">
-          <article class="media">
-            <div class="media__image">
+        <li>
+          <article class="figure -left">
+            <div class="figure__media">
               <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
             </div>
 
-            <div class="media__body">
-              <h3 class="media__title"><a href=
-                  "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+            <div class="figure__body">
+              <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <div class="media__description">
+              <p>
                 Do you have stained or ripped clothes you don't wear? Recycle them
                 w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
                 <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-              </div>
+              </p>
             </div>
           </article>
         </li>
@@ -573,26 +571,6 @@
           </div>
         </div>
       </footer>
-    <% end %>
-
-    <h4 id="media">Media</h4>
-    <% styleguide_block  'Media' do %>
-      <article class="media $modifier_class">
-        <div class="media__image">
-          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
-        </div>
-
-        <div class="media__body">
-          <h3 class="media__title"><a href=
-              "http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
-
-          <div class="media__description">
-            Do you have stained or ripped clothes you don't wear? Recycle them
-            w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
-            <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-          </div>
-        </div>
-      </article>
     <% end %>
 
     <h4 id='polaroid'>Polaroid</h4>
@@ -863,7 +841,6 @@
       <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
       <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
       <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
-      <li><a href="#media" class="js-jump-scroll">Media</a></li>
       <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
       <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
       <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
