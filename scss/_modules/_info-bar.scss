@@ -32,7 +32,7 @@
   }
 
   @include media($tablet) {
-    .help {
+    .info-bar__secondary {
       float: right;
     }
   }
