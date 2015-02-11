@@ -234,7 +234,7 @@
     padding: gutter();
     margin: 0;
 
-    @include media($tablet) {
+    @include media($tablet) {    
       float: left;
       display: block;
       text-align: left;
@@ -285,8 +285,129 @@
   a {
     display: block;
     font-weight: bold;
-    margin-left: 18px;
     padding: 6px 9px;
+  }
+
+  .navigation__dropdown {
+
+    padding-top: 0;
+
+    @include media($tablet) {
+      padding-top: 12px;
+      margin-left: 24px;
+    }
+
+    ul {
+      display: block;
+      margin-top: 0;
+      list-style-type: none;
+
+      @include media($tablet) {
+        visibility: hidden; 
+      }
+
+      li {
+        padding: 0; 
+
+        @include media($tablet) {
+          padding: gutter() 0;
+          display: block;
+          float: none;
+        }
+      }
+
+    }
+
+    p {
+      display: none;
+      
+      @include media($tablet) {
+        display: inline-block;
+        float: right;
+        color: #fff;
+        padding-right: 0;     
+        padding-top: 0.5em;
+        padding-bottom: 0.5em; 
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); 
+      }     
+    }
+
+    .navigation__dropdown-toggle {
+      cursor: pointer;
+    }
+
+    i {
+      display: none;
+      
+      @include media($tablet) {
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        margin-top: 6px;
+        
+        &:after {
+          @include icomoon-icon;
+          content: "\e607";
+          font-size: 32px;
+          transform: rotate(90deg);
+          display: block;
+          color: #fff;
+        }
+      }
+    }
+
+    div {
+      float: right;
+      display: inline-block;
+    }
+  }
+
+  .navigation__dropdown.is-visible {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 0; 
+    border-radius: $lg-border-radius;
+    margin-top: 12px;
+    margin-left: 15px;
+
+    p {
+      color: $purple;
+      font-weight: bold;
+      margin-left: 0;
+      padding-left: 4px;
+      text-shadow: none;
+    }
+
+    i {
+      &:after {
+        color: $purple;
+      }
+    }
+
+    div {
+      width: 100%;
+    }
+
+    a, ul {
+      color: $off-black;
+      font-weight: normal;
+      text-shadow: none; 
+      margin-left: 0;
+      margin-top: 0;
+      padding: 4px;
+    }    
+
+    ul {
+      visibility: visible; 
+    }
+
+    li {
+      padding-top: 0;
+      padding-bottom: 0;  
+      padding-left: 8px;
+      padding-right: 4px;
+      text-align: right;
+    }    
   }
 
   // @TODO: Temporary; will likely change to a border but this works well for now.
