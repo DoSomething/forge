@@ -4,6 +4,7 @@
 // .-twitter - Twitter icon
 // .-tumblr - Tumblr icon
 // .-instagram - Instagram icon
+// .-linkedin - LinkedIn icon
 // .-youtube - YouTube icon
 //
 // Styleguide Social Icon
@@ -37,6 +38,10 @@
 
   &.-instagram:after {
     content: "\e601";
+  }
+
+  &.-linkedin:after {
+    content: "\eac8";
   }
 
   &.-youtube:after {
