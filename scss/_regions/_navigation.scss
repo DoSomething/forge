@@ -225,10 +225,6 @@
 
   @include media($tablet) {
     float: right;
-
-    li:first-child {
-      padding-right: 16px;
-    }
   }
 
   li {
@@ -298,15 +294,16 @@
 
     @include media($tablet) {
       padding-top: 12px;
+      margin-left: 24px;
     }
 
     ul {
-      visibility: visible;
+      display: block;
       margin-top: 0;
       list-style-type: none;
 
       @include media($tablet) {
-        visibility: hidden;
+        visibility: hidden; 
       }
 
       li {
@@ -314,6 +311,8 @@
 
         @include media($tablet) {
           padding: gutter() 0;
+          display: block;
+          float: none;
         }
       }
 
@@ -323,14 +322,18 @@
       display: none;
       
       @include media($tablet) {
-        cursor: pointer;
         display: inline-block;
+        float: right;
         color: #fff;
-        padding-left: 8px;
-        padding-right: 8px;     
+        padding-right: 0;     
         padding-top: 0.5em;
-        padding-bottom: 0.5em;  
+        padding-bottom: 0.5em; 
+        text-shadow: 0 1px 3px rgba(0,0,0,0.3); 
       }     
+    }
+
+    .navigation__dropdown-toggle {
+      cursor: pointer;
     }
 
     i {
@@ -338,21 +341,25 @@
       
       @include media($tablet) {
         display: inline-block;
-        position: absolute;
-        top: 40px;
+        vertical-align: middle;
+        float: right;
+        margin-top: 6px;
         
         &:after {
           @include icomoon-icon;
           content: "\e607";
           font-size: 32px;
-          -webkit-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
           transform: rotate(90deg);
           display: block;
           color: #fff;
         }
       }
-    } 
+    }
+
+    div {
+      float: right;
+      display: inline-block;
+    }
   }
 
   .navigation__dropdown.is-visible {
@@ -361,14 +368,14 @@
     padding-bottom: 0; 
     border-radius: $lg-border-radius;
     margin-top: 12px;
-    margin-right: 38px;
-    margin-left: 2px;
-    min-width: 180px;
+    margin-left: 15px;
 
     p {
       color: $purple;
       font-weight: bold;
       margin-left: 0;
+      padding-left: 4px;
+      text-shadow: none;
     }
 
     i {
@@ -378,7 +385,7 @@
     }
 
     div {
-      border-bottom: 1px solid $light-gray;
+      width: 100%;
     }
 
     a, ul {
@@ -390,12 +397,16 @@
       padding: 4px;
     }    
 
+    ul {
+      visibility: visible; 
+    }
+
     li {
-      visibility: visible;
-      display: block;
-      float: none;
       padding-top: 0;
       padding-bottom: 0;  
+      padding-left: 8px;
+      padding-right: 4px;
+      text-align: right;
     }    
   }
 
