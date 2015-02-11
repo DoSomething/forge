@@ -24,5 +24,11 @@ define(function() {
         $(this).toggleClass("is-collapsed");
       }
     });
+
+    // Toggle menu on dekstop
+    $(".navigation__dropdown-toggle").on("mousedown", function(e) {
+      e.preventDefault();
+      $(".navigation__dropdown").toggleClass("is-visible");
+    });
   });
 });
