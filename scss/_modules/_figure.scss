@@ -1,38 +1,75 @@
 // A figure block usually contains an image with a title and a description.
 //
+// .-left    - Show figure's media to the left of the description.
+// .-right   - Show figure's media to the right of the description.
+// .-medium  - Set figure's media to a fixed "medium" size.
+//
 // Styleguide Figure
 .figure {
+  @include clearfix;
   text-align: center;
 
+  // Add extra bottom margin on tiny screens
   @include media($mobile) {
     margin-bottom: ($base-spacing * 2);
   }
 
-  > .wrapper {
-    display: block;
-    overflow: hidden;
+  &.-left {
+    text-align: left;
+
+    > .figure__media {
+      float: left;
+      padding-right: gutter();
+    }
+
+    > .figure__body {
+      overflow: hidden;
+      padding-left: gutter();
+    }
   }
+
+  &.-right {
+    text-align: left;
+
+    > .figure__media {
+      float: right;
+      padding-left: gutter();
+    }
+
+    > .figure__body {
+      overflow: hidden;
+      padding-right: gutter();
+    }
+  }
+
+  &.-medium {
+    > .figure__media {
+      width: 75px;
+
+      @include media($medium) {
+        width: 150px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.figure__media {
+  text-align: center;
+  margin: 0 auto $base-spacing;
 
   img {
-    margin: 0 auto 18px;
-
-    @include media($desktop) {
-      max-width: 100%;
-    }
+    margin: 0 auto;
   }
+}
 
-  .figure__title {
-    color: $dark-gray;
-    line-height: 1.1;
-    margin: 0 0 9px;
-  }
-
-  .figure__description {
-    line-height: 1.2;
-
-    p {
-      margin: 0;
-    }
+.figure__body {
+  // Paragraphs should have less spacing in figures
+  p + p {
+    margin-top: ($base-spacing / 2);
   }
 }
 
