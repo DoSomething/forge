@@ -87,6 +87,18 @@
     })
   });
 
+  /**
+   * Mobile table of contents.
+   */
+  $(document).ready(function() {
+    $(".js-styleguide-navigation").addClass("is-hidden");
+
+    $(".js-styleguide-navigation-toggle").on("click", function(e) {
+      e.preventDefault();
+      $(".js-styleguide-navigation").toggleClass("is-hidden");
+    });
+  });
+
 }).call(this);
 
 

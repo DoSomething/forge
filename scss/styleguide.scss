@@ -29,8 +29,30 @@ main {
   @include clearfix;
 }
 
+.styleguide-navigation-toggle {
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+
 .styleguide-sidebar {
   padding-top: $base-spacing;
+
+  @include media($mobile) {
+    text-align: center;
+    margin: ($base-spacing / 2);
+    padding: $base-spacing;
+    border: 1px solid $light-gray;
+
+    .waypoints.is-hidden {
+      display: none;
+    }
+
+    .waypoints ul {
+      max-height: 600px;
+    }
+  }
 
   @include media($tablet) {
     @include span(4 rtl);
