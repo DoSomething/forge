@@ -1,4 +1,4 @@
-// Text input fields.
+// Single-line text input fields.
 //
 // :focus         - Field is selected for text input
 // .-search       - Search field appearance
@@ -56,15 +56,7 @@
 }
 
 
-// Specific style rules for search input fields.
-//
-// :focus   - Field is selected for text input
-// .is-loading - Indicates search field is loading results.
-//
-// Styleguide Forms - Search Fields
-
-
-// Multi-line textarea fields.
+// Multi-line text area fields. Can be resized vertically on capable browsers.
 //
 // Styleguide Forms - Textarea Field
 textarea.text-field {
