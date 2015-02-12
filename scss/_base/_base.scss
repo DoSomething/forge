@@ -22,7 +22,9 @@ body {
   line-height: $unitless-line-height;
 }
 
-// Inline text elements.
+// Tags for inline text elements are given default styles. Adjacent
+// paragraphs are given top margin spacing, and headings following paragraph
+// text have increased spacing.
 //
 // Styleguide Base - Inline Elements
 p, ul, ol {
