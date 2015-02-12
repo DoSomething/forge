@@ -1,6 +1,6 @@
 {
   "name": "neue",
-  "version": "6.0.0-beta5",
+  "version": "6.0.0-RC1",
   "main": [
     "dist/neue.css",
     "dist/neue.min.js"
