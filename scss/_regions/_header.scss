@@ -6,7 +6,7 @@
 //
 // Styleguide Header
 
-[role="banner"] {
+.header {
   position: relative;
   background: $purple no-repeat center center;
   background-size: cover;
@@ -34,7 +34,7 @@
     }
   }
 
-  .__title {
+  .header__title {
     color: $white;
     font-size: $font-larger;
     margin: 0;
@@ -44,7 +44,7 @@
     }
   }
 
-  .__subtitle {
+  .header__subtitle {
     color: $white;
     font-size: $font-regular;
 
@@ -53,9 +53,9 @@
     }
   }
 
-  .__title,
-  .__subtitle,
-  .__date {
+  .header__title,
+  .header__subtitle,
+  .header__date {
     text-shadow: $text-shadow;
   }
 
@@ -75,21 +75,10 @@
     }
   }
 
-  .sponsor {
-    padding: 18px 0 9px;
-
-    @include media($tablet) {
-      bottom: 0;
-      padding: 0;
-      position: absolute;
-      right: 0;
-    }
-  }
-
   // Makes space for sponsor module inside header.
   // @TODO: There's a better solution for this, but need a quick solution for now (2014.05.22).
   &.-sponsored {
-    .__subtitle {
+    .header__subtitle {
       @include media($tablet) {
         width: 75%;
       }
@@ -118,11 +107,11 @@
       }
     }
 
-    .__title {
+    .header__title {
       font-size: $font-larger;
     }
 
-    .__subtitle {
+    .header__subtitle {
       font-size: $font-regular;
       margin-bottom: 0;
 
@@ -166,14 +155,14 @@
       }
     }
 
-    .__subtitle {
+    .header__subtitle {
       @include media($tablet) {
         margin-bottom: 9px;
         width: 80%;
       }
     }
 
-    .__date {
+    .header__date {
       color: #fff;
       font-size: $font-small;
       margin-top: 0;
@@ -186,7 +175,7 @@
       }
     }
 
-    .__signup {
+    .header__signup {
       @include media($tablet) {
         clear: left;
         float: left;
