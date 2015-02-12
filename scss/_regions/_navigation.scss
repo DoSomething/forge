@@ -1,9 +1,9 @@
-// Chrome navigation with logo, navigation, and search.
+// Chrome navigation with logo, navigation, and search. Use `.-floating` modifier to float above
+// page content (such as appearing over a Header region).
 //
 // .-white     - Use white navigation text and search field (with subtle drop shadow).
-// .-floating  - Navigation should float above following elements on the page.
 //
-// Styleguide Site Navigation
+// Styleguide Navigation
 .navigation {
   width: 100%;
 

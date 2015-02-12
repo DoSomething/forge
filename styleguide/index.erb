@@ -1,119 +1,202 @@
+<nav class="styleguide-sidebar js-fixedsticky">
+  <a href="#" class="secondary styleguide-navigation-toggle js-styleguide-navigation-toggle">Table of Contents</a>
+  <ul class="waypoints -vertical js-scroll-indicator js-styleguide-navigation">
+    <li><a href="#intro" class="js-jump-scroll">Introduction</a></li>
+
+    <li>
+      <a href="#base" class="js-jump-scroll">Base Styles</a>
+      <ul>
+        <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
+        <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
+        <li><a href="#grid" class="js-jump-scroll">Grid System</a></li>
+        <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#components" class="js-jump-scroll">Components</a>
+      <ul>
+        <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+        <li><a href="#footnote" class="js-jump-scroll">Footnote</a></li>
+        <li><a href="#heading" class="js-jump-scroll">Heading</a></li>
+        <li><a href="#list" class="js-jump-scroll">List</a></li>
+        <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
+        <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
+        <li><a href="#social-icon" class="js-jump-scroll">Social Icon</a></li>
+        <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
+        <li><a href="#media-video" class="js-jump-scroll">Media Video</a></li>
+        <li><a href="#waypoints" class="js-jump-scroll">Waypoints</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#modules" class="js-jump-scroll">Modules</a>
+      <ul>
+        <li><a href="#call-to-action" class="js-jump-scroll">Call To Action</a></li>
+        <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
+        <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
+        <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
+        <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
+        <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
+        <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#regions" class="js-jump-scroll">Regions</a>
+      <ul>
+        <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
+        <li><a href="#container" class="js-jump-scroll">Container</a></li>
+        <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
+        <li><a href="#header" class="js-jump-scroll">Header</a></li>
+        <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
+        <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#resources" class="js-jump-scroll">Resources</a></li>
+  </ul>
+</nav>
+
 <article class="styleguide-content">
-    <p id="intro">This is <a href="https://www.github.com/dosomething/neue">Neue</a>, our interface framework and pattern library. It defines a set of base styles and common patterns shared throughout our website. It's a strong foundation for building beautiful interfaces.</p>
+  <p id="intro">This is <a href="https://www.github.com/dosomething/neue">Neue</a>, our interface framework and pattern library. It defines a set of base styles and common patterns shared throughout our website. It's a strong foundation for building beautiful interfaces.</p>
 
-    <p>Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork our <a href="https://github.com/dosomething/neue">GitHub repository</a> and use it as a starting point for your own pattern library, or read more about why we <a href="https://blog.dosomething.org/we-open-sourced-our-code-heres-why-you-should-too/">open-source our code</a>.</p>
+  <p>Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork our <a href="https://github.com/dosomething/neue">GitHub repository</a> and use it as a starting point for your own pattern library, or read more about why we <a href="https://blog.dosomething.org/we-open-sourced-our-code-heres-why-you-should-too/">open-source our code</a>.</p>
 
-    <h2 id="base">Base Styles</h2>
-    <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
+  <h2 id="base">Base Styles</h2>
+  <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
 
-    <% styleguide_block  'Base - Inline Elements' do %>
-      <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs for young people and social change</mark>, our members tackle campaigns that impact every cause, from poverty to violence to the environment to <em>literally</em> everything else.<sup>1</sup> Any cause, anytime, anywhere. *mic drop*</p>
-      <p>This is a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>.</p>
-    <% end %>
+  <% styleguide_block  'Base - Inline Elements' do %>
+  <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs for young people and social change</mark>, our members tackle campaigns that impact every cause, from poverty to violence to the environment to <em>literally</em> everything else.<sup>1</sup> Any cause, anytime, anywhere. *mic drop*</p>
+  <p>This is a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>.</p>
+  <% end %>
 
-    <h3 id="fonts-and-colors">Fonts &amp; Colors</h3>
-    <p>We use <a href="http://www.marksimonson.com/fonts/view/proxima-nova">Proxima Nova</a> for all headings and body copy.</p>
-    <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 400; ">
+  <h3 id="fonts-and-colors">Fonts &amp; Colors</h3>
+  <p>We use <a href="http://www.marksimonson.com/fonts/view/proxima-nova">Proxima Nova</a> for all headings and body copy.</p>
+  <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 400; ">
     Any cause, anytime, anywhere. <code>($font-proxima-nova, $weight-normal)</code>
-    </p>
+  </p>
 
-    <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 600; ">
+  <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 600; ">
     Any cause, anytime, anywhere. <code>($font-proxima-nova, $weight-sbold)</code>
-    </p>
+  </p>
 
-    <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 700; ">
+  <p class="font-tile" style="font-family: 'Proxima Nova'; font-weight: 700; ">
     Any cause, anytime, anywhere. <code>($font-proxima-nova, $weight-bold)</code>
-    </p>
+  </p>
 
-    <p>We use <a href="https://www.google.com/fonts/specimen/Covered+By+Your+Grace">Covered By Your Grace</a> as the "voice" of DoSomething.org.</p>
-    <p class="font-tile" style="font-family: 'CoveredGrace';">
+  <p>We use <a href="https://www.google.com/fonts/specimen/Covered+By+Your+Grace">Covered By Your Grace</a> as the "voice" of DoSomething.org.</p>
+  <p class="font-tile" style="font-family: 'CoveredGrace';">
     Any cause, anytime, anywhere. <code>($font-handwritten, $weight-normal)</code>
-    </p>
+  </p>
 
-    <h4>Brand Colors</h4>
-    <p>We have three primary brand colors.</p>
-    <ul class="gallery -duo">
-      <li>
+  <p>We have three primary brand colors.</p>
+  <ul class="gallery -duo">
+    <li>
       <div class="color-tile" data-hex="#23b7fb">
-      <strong>Blue</strong>
-      <code>($blue) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Blue</strong>
+        <code>($blue) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
+    </li>
 
-      <li>
+    <li>
       <div class="color-tile" data-hex="#4e2b63">
-      <strong>Purple</strong>
-      <code>($purple) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Purple</strong>
+        <code>($purple) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
+    </li>
 
-      <li>
+    <li>
       <div class="color-tile" data-hex="#fcd116">
-      <strong>Yellow</strong>
-      <code>($yellow) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Yellow</strong>
+        <code>($yellow) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
-    </ul>
+    </li>
+  </ul>
 
-    <h4>Gray Tones</h4>
-    <p>For consistency, we try to use these four grayscale values throughout our interfaces.</p>
-    <ul class="gallery -duo">
-      <li>
+  <p>For consistency, we try to use these four grayscale values throughout our interfaces.</p>
+  <ul class="gallery -duo">
+    <li>
       <div class="color-tile" data-hex="#222">
-      <strong>Off Black</strong>
-      <code>($off-black) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Off Black</strong>
+        <code>($off-black) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
+    </li>
 
-      <li>
+    <li>
       <div class="color-tile" data-hex="#444">
-      <strong>Dark Gray</strong>
-      <code>($dark-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Dark Gray</strong>
+        <code>($dark-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
+    </li>
 
-      <li>
+    <li>
       <div class="color-tile" data-hex="#999">
-      <strong>Medium Gray</strong>
-      <code>($med-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Medium Gray</strong>
+        <code>($med-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
+    </li>
 
-      <li>
+    <li>
       <div class="color-tile" data-hex="#ddd">
-      <strong>Light Gray</strong>
-      <code>($light-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
+        <strong>Light Gray</strong>
+        <code>($light-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
       </div>
-      </li>
-    </ul>
+    </li>
+  </ul>
 
-    <h4>System Colors</h4>
-    <p>They're not part of our brand, but we use these guys in special cases.</p>
-    <ul class="gallery -duo">
-      <li>
-        <div class="color-tile" data-hex="#ff4747">
+  <p>They're not part of our brand, but we use these guys in special cases.</p>
+  <ul class="gallery -duo">
+    <li>
+      <div class="color-tile" data-hex="#ff4747">
         <strong>Errors</strong>
         <code>($error-color) <span class="color-tile__value js-color-label">&hellip;</span></code>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </li>
+  </ul>
 
-    <p class="legal styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
+  <p class="footnote styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
 
-    <h3 id="grid">Grid System</h3>
-    <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
-    <p>We use <a href="http://susy.oddbird.net">Susy 2</a> to build our interface on a fluid grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. Our grid is split up into sixteen columns, with a 24 pixel static gutter between columns.</p>
-    <p>See the <a href="http://susydocs.oddbird.net/en/latest/">Susy documentation</a> for implementation details.</p>
+  <h3 id="grid">Grid System</h3>
+  <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
+  <p>We use <a href="http://susy.oddbird.net">Susy 2</a> to build our interface on a fluid grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. Our grid is split up into sixteen columns, with a 24 pixel static gutter between columns.</p>
+  <p>See the <a href="http://susydocs.oddbird.net/en/latest/">Susy documentation</a> for implementation details.</p>
 
-    <h3 id="animation">Animation</h3>
-    <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
-    <p>See <a href="https://github.com/DoSomething/neue/blob/dev/scss/_main/_animations.scss"><code>animation.scss</code></a> for details. Preview coming soon.</p>
+  <h3 id="animation">Animation</h3>
+  <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
 
+  <% styleguide_block 'Animation - Fade In' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-in">Preview</a>
+  <% end %>
 
-    <h2 id="components">Components</h2>
-    <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
+  <% styleguide_block 'Animation - Fade In Up' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-in-up">Preview</a>
+  <% end %>
 
-    <h4 id="forms">Forms</h4>
+  <% styleguide_block 'Animation - Fade Out' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-out">Preview</a>
+  <% end %>
+
+  <% styleguide_block 'Animation - Fade Out Down' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-out-down">Preview</a>
+  <% end %>
+
+  <% styleguide_block 'Animation - Tada' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="tada">Preview</a>
+  <% end %>
+
+  <% styleguide_block 'Animation - Wobble' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="wobble">Preview</a>
+  <% end %>
+
+  <% styleguide_block 'Animation - Shake' do %>
+  <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="shake">Preview</a>
+  <% end %>
+
+  <h2 id="components">Components</h2>
+  <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
+
+  <div id="forms">
     <% styleguide_block  'Forms - Button' do %>
     <a class="button $modifier_class">Example Button</a>
     <% end %>
@@ -222,120 +305,109 @@
       </label>
     </div>
     <% end %>
+  </div>
 
-    <h4 id="footnote">Footnote</h4>
-    <% styleguide_block  'Footnote' do %>
-    <h4>Legal text example:</h4>
-    <p class="footnote">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
+  <% styleguide_block  'Footnote' do %>
+  <h4>Legal text example:</h4>
+  <p class="footnote">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
 
-    <h4>Source footnote example:</h4>
-    <div class="footnote">
-      <h4 class="js-footnote-toggle">Sources</h4>
+  <h4>Source footnote example:</h4>
+  <div class="footnote">
+    <h4 class="js-footnote-toggle">Sources</h4>
 
-      <ul class="js-footnote-hidden">
-        <li><sup>1</sup> Clark, Barry. "A Treatise on The Motherland", British Royal Archives, 2009.</li>
-        <li><sup>2</sup> Lorch, Julie. "Coffee Sure Is Great", Royal Academy of Coffee, 2010.</li>
-      </ul>
+    <ul class="js-footnote-hidden">
+      <li><sup>1</sup> Clark, Barry. "A Treatise on The Motherland", British Royal Archives, 2009.</li>
+      <li><sup>2</sup> Lorch, Julie. "Coffee Sure Is Great", Royal Academy of Coffee, 2010.</li>
+    </ul>
+  </div>
+  <% end %>
+
+
+  <% styleguide_block  'Heading' do %>
+  <h2 class="heading $modifier_class"><span>Heading</span></h2>
+  <% end %>
+
+  <% styleguide_block  'List' do %>
+  <p>An unordered list:</p>
+  <ul class="list $modifier_class">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+    <li>Curabitur sed odio aliquet, efficitur diam vel, laoreet ipsum. Curabitur faucibus tincidunt augue.</li>
+    <li>In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+  </ul>
+
+
+  <p>And an ordered list:</p>
+  <ol class="list $modifier_class">
+    <li>Know it.</li>
+    <li>Plan it.</li>
+    <li>???</li>
+    <li>Profit.</li>
+  </ol>
+  <% end %>
+
+  <% styleguide_block  'Message Callout' do %>
+  <div class="message-callout $modifier_class">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
     </div>
-    <% end %>
+  </div>
+  <% end %>
 
+  <% styleguide_block 'Messages' do %>
+  <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
+  <% end %>
 
-    <h4 id="heading">Heading</h4>
-    <% styleguide_block  'Heading' do %>
-      <h2 class="heading $modifier_class"><span>Heading</span></h2>
-    <% end %>
+  <% styleguide_block 'Social Icon' do %>
+  <a class="social-icon $modifier_class"><span>Text Fallback</span></a>
+  <% end %>
 
-    <h4 id="list">List</h4>
-    <% styleguide_block  'List' do %>
-      <p>An unordered list:</p>
-      <ul class="list $modifier_class">
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
-        <li>Curabitur sed odio aliquet, efficitur diam vel, laoreet ipsum. Curabitur faucibus tincidunt augue.</li>
-        <li>In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
-      </ul>
+  <% styleguide_block  'Spinner' do %>
+  <div class="spinner"></div>
+  <% end %>
 
+  <% styleguide_block 'Media Video' do %>
+  <div class="media-video">
+    <iframe width="560" height="315" src="//www.youtube.com/embed/bkK2C0iBFt8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <% end %>
 
-      <p>And an ordered list:</p>
-      <ol class="list $modifier_class">
-        <li>Know it.</li>
-        <li>Plan it.</li>
-        <li>???</li>
-        <li>Profit.</li>
-      </ol>
-    <% end %>
+  <% styleguide_block  'Waypoints' do %>
+  <ul class="waypoints $modifier_class">
+    <li class="is-active"><a href="#">Section One</a></li>
+    <li><a href="#">Section Two</a></li>
+    <li><a class="waypoints__primary-link" href="#">Section Three</a></li>
+  </ul>
+  <% end %>
 
-    <h4 id="callout">Message Callout</h4>
-    <% styleguide_block  'Message Callout' do %>
-      <div class="message-callout $modifier_class">
-        <div class="message-callout__copy">
-          <p>This is something. Mic drop!</p>
-        </div>
-      </div>
-    <% end %>
+  <h2 id="modules">Modules</h2>
+  <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
 
-    <h4 id="messages">Messages</h4>
-    <% styleguide_block 'Messages - Status Banners' do %>
-      <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
-    <% end %>
+  <% styleguide_block 'Call To Action' do %>
+  <div class="cta">
+    <div class="wrapper">
+      <p class="cta__message">Miscreant! You should pay homage to our future kitten overlords:</p>
+      <a href="#" class="button">Support Our Kittens</a>
+    </div>
+  </div>
+  <% end %>
 
-    <h4 id="social-icon">Social Icon</h4>
-    <% styleguide_block 'Social Icon' do %>
-    <a class="social-icon $modifier_class"><span>Text Fallback</span></a>
-    <% end %>
+  <% styleguide_block  'Figure' do %>
+  <article class="figure $modifier_class">
+    <div class="figure__media">
+      <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+    </div>
 
-    <h4 id="spinner">Spinner</h4>
-    <% styleguide_block  'Loading Spinner' do %>
-      <div class="spinner"></div>
-    <% end %>
+    <div class="figure__body">
+      <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;M are "taking eco-chic to the next level."
+    </div>
+  </article>
+  <% end %>
 
-    <h4 id="video">Video</h4>
-    <% styleguide_block 'Video Embed' do %>
-      <div class="media-video">
-        <iframe width="560" height="315" src="//www.youtube.com/embed/bkK2C0iBFt8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-      </div>
-    <% end %>
-
-    <h4 id="waypoints">Waypoints</h4>
-    <% styleguide_block  'Waypoint Navigation' do %>
-      <ul class="waypoints $modifier_class">
-        <li class="is-active"><a href="#">Section One</a></li>
-        <li><a href="#">Section Two</a></li>
-        <li><a href="#">Section Three</a></li>
-        <li><a class="waypoints__primary-link" href="#">Section Four</a></li>
-      </ul>
-    <% end %>
-
-    <h2 id="modules">Modules</h2>
-    <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
-
-    <h4 id="cta">Call To Action</h4>
-    <% styleguide_block 'Call To Action' do %>
-      <div class="cta">
-        <div class="wrapper">
-          <p class="cta__message">Miscreant! You should pay homage to our future kitten overlords:</p>
-          <a href="#" class="button">Support Our Kittens</a>
-        </div>
-      </div>
-    <% end %>
-
-    <h4 id="figure">Figure</h4>
-    <% styleguide_block  'Figure' do %>
-      <article class="figure $modifier_class">
-        <div class="figure__media">
-          <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
-        </div>
-
-        <div class="figure__body">
-          <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
-          fashion brands like H&amp;M are "taking eco-chic to the next level."
-        </div>
-      </article>
-    <% end %>
-
-    <h4 id="gallery">Gallery</h4>
+  <div id="gallery">
     <% styleguide_block  'Gallery - Quartet' do %>
-      <ul class="gallery -quartet">
-        <li>
+    <ul class="gallery -quartet">
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -344,8 +416,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -354,8 +426,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -364,8 +436,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -374,13 +446,13 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Featured' do %>
-      <ul class="gallery -quartet -mosaic -featured">
-        <li>
+    <ul class="gallery -quartet -mosaic -featured">
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -389,8 +461,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -399,8 +471,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -409,8 +481,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -419,8 +491,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -429,13 +501,13 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Mosaic' do %>
-      <ul class="gallery -quartet -mosaic">
-        <li>
+    <ul class="gallery -quartet -mosaic">
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -444,8 +516,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -454,8 +526,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -464,8 +536,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -474,13 +546,13 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Triad' do %>
-      <ul class="gallery -triad $modifier_class">
-        <li>
+    <ul class="gallery -triad $modifier_class">
+      <li>
         <div class="figure">
           <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -491,9 +563,9 @@
             fashion brands like H&amp;M are "taking eco-chic to the next level."
           </div>
         </div>
-        </li>
+      </li>
 
-        <li>
+      <li>
         <div class="figure">
           <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -504,9 +576,9 @@
             through DoSomething.org and H&amp;M's Comeback Clothes.
           </div>
         </div>
-        </li>
+      </li>
 
-        <li>
+      <li>
         <div class="figure">
           <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -517,348 +589,279 @@
             the planet by recycling old clothes at H&amp;M.
           </div>
         </div>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Duo' do %>
-      <ul class="gallery -duo">
-        <li>
-          <article class="figure -left">
-            <div class="figure__media">
-              <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
-            </div>
-
-            <div class="figure__body">
-              <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
-
-              <p>
-                Do you have stained or ripped clothes you don't wear? Recycle them
-                w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
-                <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-              </p>
-            </div>
-          </article>
-        </li>
-
-        <li>
-          <article class="figure -left">
-            <div class="figure__media">
-              <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
-            </div>
-
-            <div class="figure__body">
-              <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
-
-              <p>
-                Do you have stained or ripped clothes you don't wear? Recycle them
-                w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
-                <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-              </p>
-            </div>
-          </article>
-        </li>
-      </ul>
-    <% end %>
-
-    <h4 id="info-bar">Info Bar</h4>
-    <% styleguide_block 'Information Bar' do %>
-      <footer class="info-bar $modifier_class">
-        <div class="wrapper">
-          Sponsored by <a href="#">Puppet Sloth</a>.
-          <div class="info-bar__secondary">
-            Questions? <a href="#">Contact Us</a>
-          </div>
-        </div>
-      </footer>
-    <% end %>
-
-    <h4 id='polaroid'>Polaroid</h4>
-    <% styleguide_block  'Polaroid image style' do %>
-      <figure class="polaroid">
-        <img src="http://www.placekitten.com/g/320/320" alt="another kitten">
-      </figure>
-    <% end %>
-
-    <h4 id="tabs">Tabs</h4>
-    <% styleguide_block  'Tabs' do %>
-      <section class="tabs js-tabs">
-        <a href="#" data-modal-href="#modal-tips-during" class="tabs__modal-toggle">View Tips</a>
-        <h4 class="visually-hidden">Tips</h4>
-        <div class="wrapper">
-          <nav class="tabs__menu">
-            <ul class="waypoints">
-              <li class="is-active"><a href="#tip-1" data-tab="1">Find Maxwell</a></li>
-              <li><a href="#tip-2" data-tab="2">Give Him 'Fee</a></li>
-            </ul>
-          </nav>
-
-          <ul class="tabs__body">
-            <li id="tip-1" class="tabs__tab">
-              <h5 class="tabs__title">Find Maxwell</h5>
-              <p>He's drinking 'fee. But he needs some more 'fee.</p>
-            </li>
-            <li id="tip-2" class="tabs__tab">
-              <h5 class="tabs__title">Give Him 'Fee</h5>
-              <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div data-modal id="modal-tips-during" class="modal--tips" role="dialog">
-        <h2 class="heading -banner">Tips</h2>
-        <h4 class="inline--alt-color">Find Maxwell</h4>
-        <p>He's drinking 'fee. But he needs some more 'fee.</p>
-
-        <h4 class="inline--alt-color">Give Him 'Fee</h4>
-        <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
-
-        <a href="#" class="js-close-modal">Back to main page</a>
-      </div>
-    <% end %>
-
-    <h4 id="tile">Tile</h4>
-    <% styleguide_block  'Tile' do %>
-      <article class="tile">
-        <a class="wrapper" href="#">
-          <div class="tile__meta">
-            <h1 class="tile__title">Kitten Overlords</h1>
-            <p class="tile__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
-          </div>
-          <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
-          <!-- <video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop></video> -->
-        </a>
-      </article>
-    <% end %>
-
-    <h2 id="regions">Regions</h2>
-    <p>Regions are complete sections of an interface.</p>
-
-    <h4 id="chrome">Chrome</h4>
-    <% styleguide_block  'Site Chrome' do %>
-      <!-- see page source -->
-    <% end %>
-
-    <h4 id="container">Container</h4>
-    <% styleguide_block  'Container' do %>
-      <div class="container">
-        <div class="wrapper">
-          <div class="container__block $modifier_class">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat vitae.</p>
+    <ul class="gallery -duo">
+      <li>
+        <article class="figure -left">
+          <div class="figure__media">
+            <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
           </div>
 
-          <div class="container__block $modifier_class">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat vitae.</p>
+          <div class="figure__body">
+            <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+
+            <p>
+              Do you have stained or ripped clothes you don't wear? Recycle them
+              w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+              <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+            </p>
           </div>
-        </div>
-      </div>
-    <% end %>
+        </article>
+      </li>
 
-    <h4 id="footer">Footer</h4>
-      <% styleguide_block  'Site Footer' do %>
-        <footer class="footer">
-          <div class="footer__columns">
-            <div class="footer__column -social">
-              <ul>
-                <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
-                <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
-                <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
-                <li><a href="#" class="social-icon -instagram"><span>Instagram</span></a></li>
-                <li><a href="#" class="social-icon -youtube"><span>YouTube</span></a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column -links">
-              <h4 class="js-toggle-collapsed">Who We Are</h4>
-              <ul>
-                <li><a href="#">What is this?</a></li>
-                <li><a href="#">Who are they?</a></li>
-                <li><a href="#">Why are we?</a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column -links">
-              <h4 class="js-toggle-collapsed">Our Friends</h4>
-              <ul>
-                <li><a href="#">Freshman</a></li>
-                <li><a href="#">ROTC Guys</a></li>
-                <li><a href="#">Preps</a></li>
-                <li><a href="#">Varsity Jocks</a></li>
-                <li><a href="#">Unfriendly Black Hotties</a></li>
-                <li><a href="#">The greatest people you will ever meet</a></li>
-              </ul>
-            </div>
-
-            <div class="footer__column -links">
-              <h4 class="js-toggle-collapsed">Get Involved</h4>
-              <ul>
-                <li><a href="#">Do things</a></li>
-                <li><a href="#">Do other things</a></li>
-              </ul>
-            </div>
+      <li>
+        <article class="figure -left">
+          <div class="figure__media">
+            <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
           </div>
 
-          <div class="footer__subfooter">
-            <ul>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
+          <div class="figure__body">
+            <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+
+            <p>
+              Do you have stained or ripped clothes you don't wear? Recycle them
+              w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+              <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+            </p>
           </div>
-      </footer>
+        </article>
+      </li>
+    </ul>
     <% end %>
+  </div>
 
-    <h4 id="header">Header</h4>
-    <% styleguide_block  'Header' do %>
-      <header role="banner" class="header $modifier_class">
-        <div class="wrapper">
-          <h1 class="header__title">Title</h1>
-          <p class="header__subtitle">Subtitle.</p>
-        </div>
-      </header>
-    <% end %>
-
-    <h4 id="modal">Modal</h4>
-    <% styleguide_block 'Modal (Popup)' do %>
-      <a href="http://www.example.com" data-modal-href="#modal--example" class="btn secondary">Show example modal</a>
-
-    <div data-modal id="modal--example" role="dialog">
-      <h2 class="heading -banner">Example Content</h2>
-      <div class="modal__block">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+  <% styleguide_block 'Info Bar' do %>
+  <footer class="info-bar $modifier_class">
+    <div class="wrapper">
+      Sponsored by <a href="#">Puppet Sloth</a>.
+      <div class="info-bar__secondary">
+        Questions? <a href="#">Contact Us</a>
       </div>
     </div>
-
-    <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
-      <h2 class="heading -banner">Now fill out this form.</h2>
-      <div class="modal__block">
-        <form action="#">
-          <div class="form-item">
-            <label for="name" class="field-label">Name</label>
-            <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
-          </div>
-
-          <div class="form-item">
-            <label for="confirmName" class="field-label">Confirm Name</label>
-            <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
-          </div>
-
-          <div class="form-actions">
-            <input type="submit" class="button">
-          </div>
-        </form>
-
-        <form action="http://www.google.com" id="skip-form">
-          <div class="form-actions">
-            <input type="submit" value="Skip" class="button -tertiary">
-          </div>
-        </form>
-      </div>
-    </div>
+  </footer>
   <% end %>
 
-    <!-- navigation -->
-    <h4 id="navigation">Navigation</h4>
-    <% styleguide_block  'Site Navigation' do %>
-      <nav class="navigation $modifier_class">
-        <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
-        <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
-        <div class="navigation__menu">
-          <ul class="navigation__primary">
-            <li>
-              <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
-                <strong class="navigation__title">Explore Campaigns</strong>
-                <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
-              </a>
-            </li>
-          </ul>
+  <% styleguide_block  'Polaroid' do %>
+  <figure class="polaroid">
+    <img src="http://www.placekitten.com/g/320/320" alt="another kitten">
+  </figure>
+  <% end %>
 
-          <ul class="navigation__secondary">
-            <li>
-              <form action="#" method="post">
-                <input class="text-field -search" type="search">
-              </form>
-            </li>
-            <li>
-              <a href="#">Log In</a>
-            </li>
-          </ul>
-        </div>
+  <% styleguide_block  'Tabs' do %>
+  <section class="tabs js-tabs">
+    <a href="#" data-modal-href="#modal-tips-during" class="tabs__modal-toggle">View Tips</a>
+    <h4 class="visually-hidden">Tips</h4>
+    <div class="wrapper">
+      <nav class="tabs__menu">
+        <ul class="waypoints">
+          <li class="is-active"><a href="#tip-1" data-tab="1">Find Maxwell</a></li>
+          <li><a href="#tip-2" data-tab="2">Give Him 'Fee</a></li>
+        </ul>
       </nav>
-    <% end %>
+
+      <ul class="tabs__body">
+        <li id="tip-1" class="tabs__tab">
+          <h5 class="tabs__title">Find Maxwell</h5>
+          <p>He's drinking 'fee. But he needs some more 'fee.</p>
+        </li>
+        <li id="tip-2" class="tabs__tab">
+          <h5 class="tabs__title">Give Him 'Fee</h5>
+          <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div data-modal id="modal-tips-during" class="modal--tips" role="dialog">
+    <h2 class="heading -banner">Tips</h2>
+    <h4 class="inline--alt-color">Find Maxwell</h4>
+    <p>He's drinking 'fee. But he needs some more 'fee.</p>
+
+    <h4 class="inline--alt-color">Give Him 'Fee</h4>
+    <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+
+    <a href="#" class="js-close-modal">Back to main page</a>
+  </div>
+  <% end %>
+
+  <% styleguide_block  'Tile' do %>
+  <article class="tile">
+    <a class="wrapper" href="#">
+      <div class="tile__meta">
+        <h1 class="tile__title">Kitten Overlords</h1>
+        <p class="tile__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+      </div>
+      <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
+      <!-- <video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop></video> -->
+    </a>
+  </article>
+  <% end %>
+
+  <h2 id="regions">Regions</h2>
+  <p>Regions are complete sections of an interface.</p>
+
+  <% styleguide_block  'Chrome' do %>
+  <!-- see page source -->
+  <% end %>
+
+  <% styleguide_block  'Container' do %>
+  <div class="container">
+    <div class="wrapper">
+      <div class="container__block $modifier_class">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat vitae.</p>
+      </div>
+
+      <div class="container__block $modifier_class">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat vitae.</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <% styleguide_block  'Site Footer' do %>
+  <footer class="footer">
+    <div class="footer__columns">
+      <div class="footer__column -social">
+        <ul>
+          <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
+          <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
+          <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
+          <li><a href="#" class="social-icon -instagram"><span>Instagram</span></a></li>
+          <li><a href="#" class="social-icon -youtube"><span>YouTube</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Who We Are</h4>
+        <ul>
+          <li><a href="#">What is this?</a></li>
+          <li><a href="#">Who are they?</a></li>
+          <li><a href="#">Why are we?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Our Friends</h4>
+        <ul>
+          <li><a href="#">Freshman</a></li>
+          <li><a href="#">ROTC Guys</a></li>
+          <li><a href="#">Preps</a></li>
+          <li><a href="#">Varsity Jocks</a></li>
+          <li><a href="#">Unfriendly Black Hotties</a></li>
+          <li><a href="#">The greatest people you will ever meet</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Get Involved</h4>
+        <ul>
+          <li><a href="#">Do things</a></li>
+          <li><a href="#">Do other things</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__subfooter">
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+  <% end %>
+
+  <% styleguide_block  'Header' do %>
+  <header role="banner" class="header $modifier_class">
+    <div class="wrapper">
+      <h1 class="header__title">Title</h1>
+      <p class="header__subtitle">Subtitle.</p>
+    </div>
+  </header>
+  <% end %>
+
+  <% styleguide_block 'Modal (Popup)' do %>
+  <a href="http://www.example.com" data-modal-href="#modal--example" class="btn secondary">Show example modal</a>
+
+  <div data-modal id="modal--example" role="dialog">
+    <h2 class="heading -banner">Example Content</h2>
+    <div class="modal__block">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Let us take a look at <a href="#" data-modal-href="#modal--pagetwo">another modal</a>.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, officia impedit eius velit consectetur provident ullam! Incidunt, rem, maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi, eum, accusamus.</p>
+    </div>
+  </div>
+
+  <div data-modal id="modal--pagetwo" role="dialog" data-modal-close="true" data-modal-skip-form="#skip-form">
+    <h2 class="heading -banner">Now fill out this form.</h2>
+    <div class="modal__block">
+      <form action="#">
+        <div class="form-item">
+          <label for="name" class="field-label">Name</label>
+          <input type="text" class="text-field js-validate" name="name" id="name" data-validate-trigger="#confirmName">
+        </div>
+
+        <div class="form-item">
+          <label for="confirmName" class="field-label">Confirm Name</label>
+          <input type="text" name="confirmName" class="text-field js-validate" data-validate="match" data-validate-match="#name" id="confirmName">
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" class="button">
+        </div>
+      </form>
+
+      <form action="http://www.google.com" id="skip-form">
+        <div class="form-actions">
+          <input type="submit" value="Skip" class="button -tertiary">
+        </div>
+      </form>
+    </div>
+  </div>
+  <% end %>
+
+  <% styleguide_block 'Navigation' do %>
+  <nav class="navigation $modifier_class">
+    <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+    <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+    <div class="navigation__menu">
+      <ul class="navigation__primary">
+        <li>
+          <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
+            <strong class="navigation__title">Explore Campaigns</strong>
+            <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="navigation__secondary">
+        <li>
+          <form action="#" method="post">
+            <input class="text-field -search" type="search">
+          </form>
+        </li>
+        <li>
+          <a href="#">Log In</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <% end %>
 
 
-    <h2 id="resources">Resources</h2>
-    <p>Neue also includes some additional resources for use with traditional design tools.</p>
-    <ul class="list">
-      <li><a href="/resources/ds-logo-vector.eps">DoSomething.org Logo (EPS)</a> &mdash; scalable vector version of our logo</li>
-      <li><a href="/resources/ds-logo-highres.png">DoSomething.org Logo (PNG)</a> &mdash; high-resolution rasterized version of our logo</li>
-      <li><a href="/resources/sketch.zip">Sketch Resources</a> &mdash; vector patterns for <a href="http://bohemiancoding.com/sketch/" title="Vector drawing tool for the Mac.">Sketch</a></li>
-    </ul>
+  <h2 id="resources">Resources</h2>
+  <p>Neue also includes some additional resources for use with traditional design tools.</p>
+  <ul class="list">
+    <li><a href="/resources/ds-logo-vector.eps">DoSomething.org Logo (EPS)</a> &mdash; scalable vector version of our logo</li>
+    <li><a href="/resources/ds-logo-highres.png">DoSomething.org Logo (PNG)</a> &mdash; high-resolution rasterized version of our logo</li>
+    <li><a href="/resources/sketch.zip">Sketch Resources</a> &mdash; vector patterns for <a href="http://bohemiancoding.com/sketch/" title="Vector drawing tool for the Mac.">Sketch</a></li>
+  </ul>
 
   <footer class="styleguide-footer">
-      <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
+    <p class="footnote">&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
   </footer>
 
 </article>
-
-<nav class="styleguide-sidebar js-fixedsticky">
-  <ul class="waypoints -vertical js-scroll-indicator">
-    <li><a href="#intro" class="js-jump-scroll">Introduction</a></li>
-
-    <li>
-    <a href="#base" class="js-jump-scroll">Base Styles</a>
-    <ul>
-      <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
-      <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
-      <li><a href="#grid" class="js-jump-scroll">Grid System</a></li>
-      <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
-    </ul>
-    </li>
-
-    <li>
-    <a href="#components" class="js-jump-scroll">Components</a>
-    <ul>
-      <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
-      <li><a href="#footnote" class="js-jump-scroll">Footnote</a></li>
-      <li><a href="#heading" class="js-jump-scroll">Heading</a></li>
-      <li><a href="#list" class="js-jump-scroll">List</a></li>
-      <li><a href="#callout" class="js-jump-scroll">Message Callout</a></li>
-      <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
-      <li><a href="#social-icon" class="js-jump-scroll">Social Icon</a></li>
-      <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
-      <li><a href="#video" class="js-jump-scroll">Video</a></li>
-      <li><a href="#waypoints" class="js-jump-scroll">Waypoints</a></li>
-    </ul>
-    </li>
-
-    <li>
-    <a href="#modules" class="js-jump-scroll">Modules</a>
-    <ul>
-      <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
-      <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
-      <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
-      <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
-      <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
-      <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
-      <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
-    </ul>
-    </li>
-
-    <li>
-    <a href="#regions" class="js-jump-scroll">Regions</a>
-    <ul>
-      <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
-      <li><a href="#container" class="js-jump-scroll">Container</a></li>
-      <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
-      <li><a href="#header" class="js-jump-scroll">Header</a></li>
-      <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
-      <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
-    </ul>
-    </li>
-
-    <li><a href="#resources" class="js-jump-scroll">Resources</a></li>
-  </ul>
-</nav>
