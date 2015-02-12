@@ -24,7 +24,6 @@
   display: block;
 }
 
-
 // Styleguide!
 main {
   @include clearfix;
@@ -77,25 +76,21 @@ main {
 }
 
 .styleguide-example {
-  margin: 15px 0 50px;
-  background: rgba(255, 255, 255, 0.5);
+  margin: $base-spacing 0 ($base-spacing * 2);
 }
 
 .styleguide-example-content {
-  border-radius: 2px;
-  border: 1px solid #ddd;
+  border-radius: $sm-border-radius;
+  border: 1px solid $light-gray;
 }
 
-.styleguide-example > h3 {
-  margin: 0;
-  padding: 5px 0;
-  color: #333;
-  font-size: 12px;
-  text-transform: uppercase;
-}
+.styleguide-reference-link {
+  color: $light-gray;
 
-.styleguide-example > h3 a {
-  color: #333;
+  &:hover {
+    color: $med-gray;
+    text-decoration: none;
+  }
 }
 
 .styleguide-example > h3 em {
@@ -103,50 +98,40 @@ main {
   text-transform: none;
   font-style: normal;
   font-weight: normal;
-  color: #999;
+  color: $med-gray;
 }
 
-.styleguide-example .styleguide-description {
-  padding: 10px 15px;
-  background: #f1f1f1;
-  border-bottom: 1px solid #ddd;
+.styleguide-description {
+  margin-bottom: ($base-spacing / 2);
 }
 
-.styleguide-example .styleguide-description p:first-child {
-  margin-top: 0;
-}
-
-.styleguide-example .styleguide-description p:last-child {
-  margin-bottom: 0;
-}
-
-.styleguide-example .styleguide-element {
+.styleguide-element {
   overflow: hidden;
   position: relative;
-  padding: 20px;
-  min-height: 100px;
+  padding: $base-spacing;
+  min-height: 75px;
 }
 
-.styleguide-example .styleguide-element + .styleguide-element {
-  padding-top: 15px;
+.styleguide-element + .styleguide-element {
   border-top: 1px solid #eee;
 }
 
-.styleguide-example .styleguide-element .styleguide-modifier-name {
+.styleguide-modifier-name {
   display: block;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5px 8px;
-  font-size: 11px;
-  color: #999;
-  background: #f9f9f9;
-  border: 1px solid #eee;
+  padding: 4px ($base-spacing / 2);
+  font-size: $font-smaller;
+  color: $med-gray;
+  background: #efefef;
+  border-bottom-left-radius: $sm-border-radius;
   border-top: 0;
   z-index: 10;
 }
 
-.styleguide-example .styleguide-html {
+.styleguide-html {
+  display: none;
   padding: 10px 25px 10px 5px;
   background: #efefef;
   border-top: 1px solid #dde7ea;
@@ -164,53 +149,30 @@ main {
   background: none;
 }
 
-.styleguide-example ul.styleguide-modifiers {
-  margin: 0 0 0 10px;
-}
+.styleguide-element__description {
+  display: block;
+  margin: 0 0 $base-spacing;
 
-.styleguide-example ul.styleguide-modifiers li {
-  list-style-type: none;
-  margin-left: 0;
-}
-
-.styleguide-example ul.styleguide-modifiers li strong {
-  font-family: Monaco, monospace;
-  font-size: 12px;
-  font-weight: normal;
-  color: #222;
-}
-
-.styleguide-modifier {
-  list-style-type: none;
-  padding: 0.5em 1em;
-  margin: 0;
-}
-
-.styleguide-modifier li + li {
-  margin-top: 0;
-}
-
-.kss-dark .styleguide-element {
-  background: #666;
-}
-
-.kss-min-height .styleguide-element {
-  min-height: 300px;
+  strong {
+    font-size: 90%;
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: $sm-border-radius;
+  }
 }
 
 .font-tile {
-  font-size: 27px;
-  margin: 18px 0;
-  padding: 18px;
-  border-radius: 2px;
-  background: #f1f1f1;
-  border: 1px solid #ddd;
+  font-size: $font-large;
+  margin: $base-spacing 0;
+  padding: $base-spacing;
+  border-radius: $sm-border-radius;
+  border: 1px solid $light-gray;
 }
 
 .font-tile code {
   display: block;
-  font-size: 12px;
-  color: #999;
+  font-size: $font-smaller;
+  color: $med-gray;
   font-weight: 400;
   line-height: 1.5;
   padding-top: 5px;
@@ -233,6 +195,13 @@ main {
   display: block;
 }
 
+.button.button--preview {
+  &:before {
+    content: "\25B6";
+    margin-right: ($base-spacing / 2);
+  }
+}
+
 .styleguide-tip {
   &:before {
     @include icomoon-icon;
@@ -246,36 +215,17 @@ main {
 .styleguide-footer {
   margin-top: $section-spacing;
   margin-bottom: $section-spacing;
-
-  p {
-    color: #aaa;
-    font-size: $font-small;
-  }
-
-  a {
-    color: #666;
-  }
 }
 
-header[role="banner"].-styleguide {
-  background: url("../styleguide/assets/example-poster.jpg") no-repeat;
-  background-size: cover;
-}
-
-.semver-badge {
-  font-size: 16px;
+.styleguide-version {
   vertical-align: 50%;
   background: rgba(#000, 0.25);
-  padding: 4px 8px;
+  padding: ($base-spacing / 4) ($base-spacing / 2);
+  border-radius: $lg-border-radius;
   text-shadow: none;
-  border-radius: 4px;
 }
 
-.intro-neue {
-  font-weight: 400;
-}
-
-.kss-markuplink {
+.styleguide-markuplink {
   color: $med-gray;
   font-size: $font-smaller;
   margin: 4px;
@@ -299,9 +249,8 @@ header[role="banner"].-styleguide {
 
 // Specific pattern overrides
 #message-callout--example---white,
-#carousel--example,
-#information-bar--example,
-#site-navigation--example--white {
+#info-bar--example,
+#navigation--example---white {
   background: #fff url("/styleguide/assets/pattern-dark-bg.png");
 }
 

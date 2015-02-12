@@ -30,7 +30,6 @@
     Any cause, anytime, anywhere. <code>($font-handwritten, $weight-normal)</code>
     </p>
 
-    <h4>Brand Colors</h4>
     <p>We have three primary brand colors.</p>
     <ul class="gallery -duo">
       <li>
@@ -55,7 +54,6 @@
       </li>
     </ul>
 
-    <h4>Gray Tones</h4>
     <p>For consistency, we try to use these four grayscale values throughout our interfaces.</p>
     <ul class="gallery -duo">
       <li>
@@ -87,7 +85,6 @@
       </li>
     </ul>
 
-    <h4>System Colors</h4>
     <p>They're not part of our brand, but we use these guys in special cases.</p>
     <ul class="gallery -duo">
       <li>
@@ -98,7 +95,7 @@
       </li>
     </ul>
 
-    <p class="legal styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
+    <p class="footnote styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
 
     <h3 id="grid">Grid System</h3>
     <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
@@ -107,13 +104,12 @@
 
     <h3 id="animation">Animation</h3>
     <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
-    <p>See <a href="https://github.com/DoSomething/neue/blob/dev/scss/_main/_animations.scss"><code>animation.scss</code></a> for details. Preview coming soon.</p>
 
 
     <h2 id="components">Components</h2>
     <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
 
-    <h4 id="forms">Forms</h4>
+  <div id="forms">
     <% styleguide_block  'Forms - Button' do %>
     <a class="button $modifier_class">Example Button</a>
     <% end %>
@@ -222,8 +218,8 @@
       </label>
     </div>
     <% end %>
+  </div>
 
-    <h4 id="footnote">Footnote</h4>
     <% styleguide_block  'Footnote' do %>
     <h4>Legal text example:</h4>
     <p class="footnote">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
@@ -240,12 +236,10 @@
     <% end %>
 
 
-    <h4 id="heading">Heading</h4>
     <% styleguide_block  'Heading' do %>
       <h2 class="heading $modifier_class"><span>Heading</span></h2>
     <% end %>
 
-    <h4 id="list">List</h4>
     <% styleguide_block  'List' do %>
       <p>An unordered list:</p>
       <ul class="list $modifier_class">
@@ -264,7 +258,6 @@
       </ol>
     <% end %>
 
-    <h4 id="callout">Message Callout</h4>
     <% styleguide_block  'Message Callout' do %>
       <div class="message-callout $modifier_class">
         <div class="message-callout__copy">
@@ -273,42 +266,35 @@
       </div>
     <% end %>
 
-    <h4 id="messages">Messages</h4>
-    <% styleguide_block 'Messages - Status Banners' do %>
+    <% styleguide_block 'Messages' do %>
       <div class="messages $modifier_class"><strong>There's something <em>I need</em></strong> to tell you.</div>
     <% end %>
 
-    <h4 id="social-icon">Social Icon</h4>
     <% styleguide_block 'Social Icon' do %>
     <a class="social-icon $modifier_class"><span>Text Fallback</span></a>
     <% end %>
 
-    <h4 id="spinner">Spinner</h4>
-    <% styleguide_block  'Loading Spinner' do %>
+    <% styleguide_block  'Spinner' do %>
       <div class="spinner"></div>
     <% end %>
 
-    <h4 id="video">Video</h4>
-    <% styleguide_block 'Video Embed' do %>
+    <% styleguide_block 'Media Video' do %>
       <div class="media-video">
         <iframe width="560" height="315" src="//www.youtube.com/embed/bkK2C0iBFt8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
       </div>
     <% end %>
 
-    <h4 id="waypoints">Waypoints</h4>
-    <% styleguide_block  'Waypoint Navigation' do %>
+    <% styleguide_block  'Waypoints' do %>
       <ul class="waypoints $modifier_class">
         <li class="is-active"><a href="#">Section One</a></li>
         <li><a href="#">Section Two</a></li>
-        <li><a href="#">Section Three</a></li>
-        <li><a class="waypoints__primary-link" href="#">Section Four</a></li>
+        <li><a class="waypoints__primary-link" href="#">Section Three</a></li>
       </ul>
     <% end %>
 
     <h2 id="modules">Modules</h2>
     <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
 
-    <h4 id="cta">Call To Action</h4>
     <% styleguide_block 'Call To Action' do %>
       <div class="cta">
         <div class="wrapper">
@@ -318,7 +304,6 @@
       </div>
     <% end %>
 
-    <h4 id="figure">Figure</h4>
     <% styleguide_block  'Figure' do %>
       <article class="figure $modifier_class">
         <div class="figure__media">
@@ -332,10 +317,10 @@
       </article>
     <% end %>
 
-    <h4 id="gallery">Gallery</h4>
+  <div id="gallery">
     <% styleguide_block  'Gallery - Quartet' do %>
-      <ul class="gallery -quartet">
-        <li>
+    <ul class="gallery -quartet">
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -344,8 +329,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -354,8 +339,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -364,8 +349,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile tile--campaign">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -374,13 +359,13 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Featured' do %>
-      <ul class="gallery -quartet -mosaic -featured">
-        <li>
+    <ul class="gallery -quartet -mosaic -featured">
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -389,8 +374,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -399,8 +384,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -409,8 +394,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -419,8 +404,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -429,13 +414,13 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Mosaic' do %>
-      <ul class="gallery -quartet -mosaic">
-        <li>
+    <ul class="gallery -quartet -mosaic">
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -444,8 +429,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -454,8 +439,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -464,8 +449,8 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-        <li>
+      </li>
+      <li>
         <article class="tile">
           <a class="wrapper" href="#">
             <div class="tile__meta">
@@ -474,13 +459,13 @@
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
           </a>
         </article>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Triad' do %>
-      <ul class="gallery -triad $modifier_class">
-        <li>
+    <ul class="gallery -triad $modifier_class">
+      <li>
         <div class="figure">
           <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -491,9 +476,9 @@
             fashion brands like H&amp;M are "taking eco-chic to the next level."
           </div>
         </div>
-        </li>
+      </li>
 
-        <li>
+      <li>
         <div class="figure">
           <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -504,9 +489,9 @@
             through DoSomething.org and H&amp;M's Comeback Clothes.
           </div>
         </div>
-        </li>
+      </li>
 
-        <li>
+      <li>
         <div class="figure">
           <div class="figure__media">
             <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
@@ -517,52 +502,52 @@
             the planet by recycling old clothes at H&amp;M.
           </div>
         </div>
-        </li>
-      </ul>
+      </li>
+    </ul>
     <% end %>
 
     <% styleguide_block  'Gallery - Duo' do %>
-      <ul class="gallery -duo">
-        <li>
-          <article class="figure -left">
-            <div class="figure__media">
-              <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
-            </div>
+    <ul class="gallery -duo">
+      <li>
+        <article class="figure -left">
+          <div class="figure__media">
+            <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
+          </div>
 
-            <div class="figure__body">
-              <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+          <div class="figure__body">
+            <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <p>
-                Do you have stained or ripped clothes you don't wear? Recycle them
-                w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
-                <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-              </p>
-            </div>
-          </article>
-        </li>
+            <p>
+              Do you have stained or ripped clothes you don't wear? Recycle them
+              w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+              <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+            </p>
+          </div>
+        </article>
+      </li>
 
-        <li>
-          <article class="figure -left">
-            <div class="figure__media">
-              <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
-            </div>
+      <li>
+        <article class="figure -left">
+          <div class="figure__media">
+            <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
+          </div>
 
-            <div class="figure__body">
-              <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+          <div class="figure__body">
+            <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
 
-              <p>
-                Do you have stained or ripped clothes you don't wear? Recycle them
-                w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
-                <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
-              </p>
-            </div>
-          </article>
-        </li>
-      </ul>
+            <p>
+              Do you have stained or ripped clothes you don't wear? Recycle them
+              w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+              <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+            </p>
+          </div>
+        </article>
+      </li>
+    </ul>
     <% end %>
+  </div>
 
-    <h4 id="info-bar">Info Bar</h4>
-    <% styleguide_block 'Information Bar' do %>
+    <% styleguide_block 'Info Bar' do %>
       <footer class="info-bar $modifier_class">
         <div class="wrapper">
           Sponsored by <a href="#">Puppet Sloth</a>.
@@ -573,14 +558,12 @@
       </footer>
     <% end %>
 
-    <h4 id='polaroid'>Polaroid</h4>
-    <% styleguide_block  'Polaroid image style' do %>
+    <% styleguide_block  'Polaroid' do %>
       <figure class="polaroid">
         <img src="http://www.placekitten.com/g/320/320" alt="another kitten">
       </figure>
     <% end %>
 
-    <h4 id="tabs">Tabs</h4>
     <% styleguide_block  'Tabs' do %>
       <section class="tabs js-tabs">
         <a href="#" data-modal-href="#modal-tips-during" class="tabs__modal-toggle">View Tips</a>
@@ -618,7 +601,6 @@
       </div>
     <% end %>
 
-    <h4 id="tile">Tile</h4>
     <% styleguide_block  'Tile' do %>
       <article class="tile">
         <a class="wrapper" href="#">
@@ -635,12 +617,10 @@
     <h2 id="regions">Regions</h2>
     <p>Regions are complete sections of an interface.</p>
 
-    <h4 id="chrome">Chrome</h4>
-    <% styleguide_block  'Site Chrome' do %>
+    <% styleguide_block  'Chrome' do %>
       <!-- see page source -->
     <% end %>
 
-    <h4 id="container">Container</h4>
     <% styleguide_block  'Container' do %>
       <div class="container">
         <div class="wrapper">
@@ -655,7 +635,6 @@
       </div>
     <% end %>
 
-    <h4 id="footer">Footer</h4>
       <% styleguide_block  'Site Footer' do %>
         <footer class="footer">
           <div class="footer__columns">
@@ -708,7 +687,6 @@
       </footer>
     <% end %>
 
-    <h4 id="header">Header</h4>
     <% styleguide_block  'Header' do %>
       <header role="banner" class="header $modifier_class">
         <div class="wrapper">
@@ -718,7 +696,6 @@
       </header>
     <% end %>
 
-    <h4 id="modal">Modal</h4>
     <% styleguide_block 'Modal (Popup)' do %>
       <a href="http://www.example.com" data-modal-href="#modal--example" class="btn secondary">Show example modal</a>
 
@@ -759,9 +736,7 @@
     </div>
   <% end %>
 
-    <!-- navigation -->
-    <h4 id="navigation">Navigation</h4>
-    <% styleguide_block  'Site Navigation' do %>
+    <% styleguide_block 'Navigation' do %>
       <nav class="navigation $modifier_class">
         <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
         <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
@@ -799,7 +774,7 @@
     </ul>
 
   <footer class="styleguide-footer">
-      <p>&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
+      <p class="footnote">&copy; 2014 DoSomething.org. Released under the <a href="https://github.com/DoSomething/neue/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/neue/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
   </footer>
 
 </article>
@@ -825,11 +800,11 @@
       <li><a href="#footnote" class="js-jump-scroll">Footnote</a></li>
       <li><a href="#heading" class="js-jump-scroll">Heading</a></li>
       <li><a href="#list" class="js-jump-scroll">List</a></li>
-      <li><a href="#callout" class="js-jump-scroll">Message Callout</a></li>
+      <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
       <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
       <li><a href="#social-icon" class="js-jump-scroll">Social Icon</a></li>
       <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
-      <li><a href="#video" class="js-jump-scroll">Video</a></li>
+      <li><a href="#media-video" class="js-jump-scroll">Media Video</a></li>
       <li><a href="#waypoints" class="js-jump-scroll">Waypoints</a></li>
     </ul>
     </li>
@@ -837,7 +812,7 @@
     <li>
     <a href="#modules" class="js-jump-scroll">Modules</a>
     <ul>
-      <li><a href="#cta" class="js-jump-scroll">Call To Action</a></li>
+      <li><a href="#call-to-action" class="js-jump-scroll">Call To Action</a></li>
       <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
       <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
       <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
