@@ -7,7 +7,7 @@
 
 // Element fades in.
 //
-// Styleguide 5.1 - Fade In
+// Styleguide Animation - Fade In
 .fade-in {
   @extend %animated;
   animation-name: fadeIn;
@@ -26,7 +26,7 @@
 
 // Element fades in and up.
 //
-// Styleguide 5.2 - Fade In Up
+// Styleguide Animation - Fade In Up
 .fade-in-up {
   @extend %animated;
   animation-name: fadeInUp;
@@ -47,7 +47,7 @@
 
 // Element fades out.
 //
-// Styleguide 5.3 - Fade Out
+// Styleguide Animation - Fade Out
 .fade-out {
   @extend %animated;
   animation-name: fadeOut;
@@ -66,7 +66,7 @@
 
 // Element fades out and down.
 //
-// Styleguide 5.4 - Fade Out Down
+// Styleguide Animation - Fade Out Down
 .fade-out-down {
   @extend %animated;
   animation-name: fadeOutDown;
@@ -100,7 +100,7 @@
 
 // "Wiggle" animation used to pull the user's attention to an element.
 //
-// Styleguide 5.5 - Tada
+// Styleguide Animation - Tada
 .tada {
   @extend %animated;
   animation-name: tada;
@@ -131,7 +131,7 @@
 
 // Kind of like a "womp womp".
 //
-// Styleguide 5.6 - Wobble
+// Styleguide Animation - Wobble
 .wobble {
   @extend %animated;
   animation-duration: 1s;
@@ -171,7 +171,7 @@
 
 // Shake animation (similar to OS X convention for form errors).
 //
-// Styleguide 5.7 - Fade In
+// Styleguide Animation - Shake
 @keyframes shake {
   0%, 100% {
     transform: translateX(0);
@@ -195,7 +195,7 @@
 
 // Zoom (scale) in.
 //
-// Styleguide 5.8 - Zoom In
+// Styleguide Animation - Zoom In
 @keyframes zoomIn {
   0% {
     opacity: 0;
