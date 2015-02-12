@@ -1,4 +1,5 @@
-// Spinner to indicate loading content.
+// Spinner to indicate loading content. Uses an animated SVG on modern browsers,
+// with fallback to an animated GIF based on feature detection.
 //
 // Styleguide Spinner
 .spinner {
