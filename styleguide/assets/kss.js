@@ -57,7 +57,7 @@
   $(document).ready(function() {
     $(".styleguide-example").each(function () {
       var $markupSample = $(this).find(".styleguide-html");
-      var $showMarkupLink = $("<p class='kss-markuplink'><a href='#'>Show Markup</a></p>");
+      var $showMarkupLink = $("<p class='styleguide-markuplink'><a href='#'>Show Markup</a></p>");
       $showMarkupLink.on("click", function (event) {
         event.preventDefault();
         $markupSample.slideToggle();
@@ -68,6 +68,23 @@
       $(this).append($showMarkupLink);
     });
 
+  });
+
+
+  /**
+   * Animation previews.
+   */
+  $(document).ready(function() {
+    $(".js-styleguide-animation-preview").on("click", function(e) {
+      e.preventDefault();
+      var animationClass = $(this).attr("data-class");
+
+      $(this).toggleClass(animationClass);
+
+      $(this).one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
+        $(this).removeClass(animationClass);
+      });
+    })
   });
 
 }).call(this);
