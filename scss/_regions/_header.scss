@@ -123,9 +123,9 @@
 
   // Hero image header banner styling.
   &.-hero {
+    display: table;
+    width: 100%;
     min-height: 465px;
-    padding-top: 216px;
-    padding-bottom: 28px;
 
     @include media($tablet) {
       height: 620px;
@@ -153,6 +153,9 @@
     }
 
     > .wrapper {
+      display: table-cell;
+      vertical-align: bottom;
+
       @include media($tablet) {
         bottom: 27px;
         position: absolute;
