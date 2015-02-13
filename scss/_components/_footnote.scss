@@ -23,8 +23,15 @@
     text-align: right;
   }
 
+  // Fix issue where superscript followed by Markdown
+  // content does not wrap correctly
   li p {
-    display: inline-block;
+    display: inline;
+  }
+
+  // Add some spacing between source items in lists
+  li + li {
+    margin-top: ($base-spacing / 2);
   }
 
   a {
