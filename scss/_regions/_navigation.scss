@@ -330,8 +330,8 @@
         float: right;
         color: #fff;
         padding-right: 0;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
     }
@@ -347,7 +347,7 @@
         display: inline-block;
         vertical-align: middle;
         float: right;
-        margin-top: 6px;
+        margin-top: 3px;
 
         &:after {
           @include icomoon-icon;
