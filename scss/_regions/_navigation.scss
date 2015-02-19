@@ -19,6 +19,15 @@
         text-shadow: $text-shadow;
       }
 
+      .navigation__dropdown {
+        p, i {
+          color: #fff;
+          &:after {
+            color: #fff;
+          }
+        }
+      }
+
       .text-field {
         color: #fff;
         text-shadow: $text-shadow;
@@ -328,7 +337,7 @@
       @include media($tablet) {
         display: inline-block;
         float: right;
-        color: #fff;
+        color: $off-black;
         padding-right: 0;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
@@ -355,7 +364,7 @@
           font-size: 32px;
           transform: rotate(90deg);
           display: block;
-          color: #fff;
+          color: $off-black;
         }
       }
     }
@@ -374,18 +383,20 @@
     margin-top: 12px;
     margin-left: 15px;
 
+    .navigation__dropdown-toggle {
+      p, i {
+        color: $purple;
+        &:after {
+          color: $purple;
+        }
+      }
+    }
+
     p {
-      color: $purple;
       font-weight: bold;
       margin-left: 0;
       padding-left: 4px;
       text-shadow: none;
-    }
-
-    i {
-      &:after {
-        color: $purple;
-      }
     }
 
     div {
