@@ -38,7 +38,7 @@
       }
 
       .text-field.-search {
-        background-image: neue-asset-url("images/search_white.svg");
+        background-image: data-url($data-search-white-svg);
 
         .modernizr-no-svg & {
           background-image: neue-asset-url("images/fallbacks/search_white.png");
@@ -280,11 +280,11 @@
     }
   }
 
-  .text-field.search {
-    background-image: neue-asset-url("images/search_white.svg");
+  .text-field.-search {
+    background-image: data-url($data-search-white-svg);
 
     @include media($tablet) {
-      background-image: neue-asset-url("images/search_black.svg");
+      background-image: data-url($data-search-black-svg);
 
       .modernizr-no-svg & {
         background-image: neue-asset-url("images/fallbacks/search_black.png");
@@ -387,7 +387,7 @@
     .navigation__dropdown-toggle {
       p, i {
         color: $purple;
-        
+
         &:after {
           color: $purple;
         }

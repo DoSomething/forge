@@ -9,5 +9,11 @@
 // Helper to generate URLs in client app stylesheets
 // @method asset-url
 @function asset-url($file) {
-  @return url(#{$asset-path}#{$file});
+  @return url("#{$asset-path}#{$file}");
+}
+
+// Helper to use data URLs in stylesheets
+// @method asset-url
+@function data-url($data) {
+  @return url("#{$data}");
 }
