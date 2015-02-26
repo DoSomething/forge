@@ -8,7 +8,7 @@
 // @param {String} $replace ('') - New value
 //
 // @return {String} - Updated string
-@function str-replace($string, $search, $replace: '') {
+@function str-replace($string, $search, $replace: "") {
   $index: str-index($string, $search);
 
   @if $index {
@@ -34,7 +34,7 @@
   );
 
   // Fix issue that only seems to be happening in Libsass...
-  $string: ' ' + $string + ' ';
+  $string: " " + $string + " ";
 
   @each $entity, $replacement in $entities {
     $string: str-replace($string, $entity, $replacement);
