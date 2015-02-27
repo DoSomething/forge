@@ -72,7 +72,7 @@
     }
 
     input:checked ~ .option__indicator {
-      background-image: url("#{$data-check-svg}");
+      background-image: data-url($data-check-svg);
     }
   }
 
@@ -82,7 +82,7 @@
     }
 
     input:checked ~ .option__indicator {
-      background-image: url("#{$data-disc-svg}");
+      background-image: data-url($data-disc-svg);
     }
   }
 }

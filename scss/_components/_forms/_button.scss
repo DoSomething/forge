@@ -112,22 +112,15 @@
     }
   }
 
-  &.is-loading {
+  &.is-loading, &.is-loading:hover, &.is-loading:active {
     position: relative;
+    color: $light-gray;
     color: transparent;
-    background: #eee neue-asset-url("images/spinner.svg") no-repeat center center;
+    background: #eee data-url($data-spinner-svg) no-repeat center center;
     background-size: 32px;
     box-shadow: none;
     cursor: default;
     user-select: none;
-
-    &:hover, &:active {
-      color: $light-gray;
-      color: transparent;
-      background: #eee no-repeat center center;
-      background-image: neue-asset-url("images/spinner.svg");
-      background-size: 32px;
-    }
 
     .modernizr-no-smil &, .modernizr-no-smil &:hover, .modernizr-no-smil &:active {
       // If no support for animated SVG, use 32px animated gif.
