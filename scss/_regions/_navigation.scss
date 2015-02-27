@@ -19,16 +19,6 @@
         text-shadow: $text-shadow;
       }
 
-      .navigation__dropdown {
-        p, i {
-          color: #fff;
-
-          &:after {
-            color: #fff;
-          }
-        }
-      }
-
       .text-field {
         color: #fff;
         text-shadow: $text-shadow;
@@ -185,7 +175,7 @@
   list-style-type: none;
   padding: 0;
 
-  li {
+  > li {
     line-height: 1.2;
     padding: 18px gutter();
     transition: padding 0.5s;
@@ -237,7 +227,7 @@
     float: right;
   }
 
-  li {
+  > li {
     font-size: 18px;
     line-height: 1.4;
     text-align: center;
@@ -250,11 +240,12 @@
       text-align: left;
       padding: gutter() 0;
       border-bottom: 0;
-    }
-  }
 
-  .login {
-    margin-left: $base-spacing;
+      // Add spacing between adjacent menu items
+      + li {
+        margin-left: $base-spacing;
+      }
+    }
   }
 
   .text-field {
@@ -298,154 +289,101 @@
 
   a {
     display: block;
-    font-weight: bold;
+    font-weight: $weight-bold;
     padding: 6px 9px;
   }
+}
 
-  .navigation__dropdown {
+.navigation__dropdown {
+  padding-top: 0;
 
-    padding-top: 0;
+  @include media($tablet) {
+    padding-top: 12px;
+  }
+
+  ul {
+    display: block;
+    margin-top: 0;
+    list-style-type: none;
 
     @include media($tablet) {
-      padding-top: 12px;
-      margin-left: 24px;
+      // Hide, but preserve horizontal spacing for dropdown items.
+      visibility: hidden;
+      overflow: hidden;
+      height: 0;
     }
 
-    ul {
+    li {
+      padding: 0 ($base-spacing / 4);
+      text-align: right;
+
+      @include media($tablet) {
+        display: block;
+        clear: both;
+        float: none;
+      }
+    }
+
+  }
+
+  a, ul {
+    font-weight: normal;
+    text-shadow: none;
+  }
+
+  .navigation__dropdown-toggle {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    font-weight: $weight-bold;
+    padding: 6px 9px;
+
+    @include media($tablet) {
       display: block;
-      margin-top: 0;
-      list-style-type: none;
+      text-align: right;
+      padding-right: 32px;
 
-      @include media($tablet) {
-        visibility: hidden;
-      }
-
-      li {
-        padding: 0;
-
-        @include media($tablet) {
-          padding: gutter() 0;
-          display: block;
-          float: none;
-        }
-      }
-
-    }
-
-    p {
-      display: none;
-
-      @include media($tablet) {
+      &:after {
+        @include icomoon-icon;
+        content: "\e607";
         display: inline-block;
-        float: right;
-        color: $off-black;
-        padding-right: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        right: 0;
+        top: 1px;
+        font-size: 32px;
+        transform: rotate(90deg);
       }
-    }
-
-    .navigation__dropdown-toggle {
-      cursor: pointer;
-    }
-
-    i {
-      display: none;
-
-      @include media($tablet) {
-        display: inline-block;
-        vertical-align: middle;
-        float: right;
-        margin-top: 3px;
-
-        &:after {
-          @include icomoon-icon;
-          content: "\e607";
-          font-size: 32px;
-          transform: rotate(90deg);
-          display: block;
-          color: $off-black;
-        }
-      }
-    }
-
-    div {
-      float: right;
-      display: inline-block;
     }
   }
 
-  .navigation__dropdown.is-visible {
-    background-color: #fff;
-    padding-top: 0;
-    padding-bottom: 0;
+  &.is-visible {
+    color: $off-black;
+    padding: 0;
     border-radius: $lg-border-radius;
-    margin-top: 12px;
-    margin-left: 15px;
+    margin-top: ($base-spacing / 2);
 
-    .navigation__dropdown-toggle {
-      p, i {
+    @include media($tablet) {
+      background-color: #fff;
+      padding-bottom: ($base-spacing / 2);
+
+      .navigation__dropdown-toggle {
         color: $purple;
-
-        &:after {
-          color: $purple;
-        }
+        text-shadow: none;
       }
-    }
-
-    p {
-      font-weight: bold;
-      margin-left: 0;
-      padding-left: 4px;
-      text-shadow: none;
-    }
-
-    div {
-      width: 100%;
-    }
-
-    a, ul {
-      color: $off-black;
-      font-weight: normal;
-      text-shadow: none;
-      margin-left: 0;
-      margin-top: 0;
-      padding: 4px;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     ul {
       visibility: visible;
-    }
+      overflow: visible;
+      height: auto;
 
-    li {
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: 8px;
-      padding-right: 4px;
-      text-align: right;
-    }
-  }
+      a {
+        color: $off-black;
+        text-shadow: none;
+        padding: 2px 9px;
 
-  // @TODO: Temporary; will likely change to a border but this works well for now.
-  @include media($tablet) {
-    .account {
-      > a {
-        position: relative;
-
-        &:after {
-          background-color: #fff;
-          content: "";
-          height: 18px;
-          margin-top: -9px;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          width: 1px;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
