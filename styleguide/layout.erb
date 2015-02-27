@@ -61,7 +61,15 @@
 
         <ul class="navigation__secondary">
           <li>
-            <a href="https://github.com/DoSomething/neue/releases" class="styleguide-version"><%= @version %></a>
+            <input type="search" class="text-field -search"/>
+          </li>
+
+          <li class="navigation__dropdown">
+            <a href="#" class="navigation__dropdown-toggle"><%= @version %></a>
+            <ul>
+              <li><a href="https://www.github.com/dosomething/neue">View on GitHub</a></li>
+              <li><a href="https://github.com/dosomething/neue/releases">Release Notes</a></li>
+            </ul>
           </li>
         </ul>
       </div>
