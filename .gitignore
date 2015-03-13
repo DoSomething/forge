@@ -1,13 +1,14 @@
-# Ignore build directory
-dist/
-
-# Ignore styleguide build
-/*.html
-
 # Ignore dependencies
 bower_components/
 node_modules
 npm-debug.log
+
+# Ignore resource files
+resources/
+
+# Ignore styleguide content
+styleguide/
+dist/styleguide.css
 
 # Vim stuff
 *.swp
@@ -31,7 +32,6 @@ Icon
 # editor ignores
 *.sublime-workspace
 *.sublime-project
-.idea
 
 # rack/pow stuff
 log/
