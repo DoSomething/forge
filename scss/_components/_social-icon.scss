@@ -7,6 +7,8 @@
 // .-linkedin - LinkedIn icon
 // .-youtube - YouTube icon
 //
+// Markup: <a class="social-icon {{modifier_class}}"><span>Text Fallback</span></a>
+//
 // Styleguide Social Icon
 .social-icon {
   &:after {

@@ -1,6 +1,8 @@
 // Spinner to indicate loading content. Uses an animated SVG on modern browsers,
 // with fallback to an animated GIF based on feature detection.
 //
+// Markup: <div class="spinner"></div>
+//
 // Styleguide Spinner
 .spinner {
   background: transparent data-url($data-spinner-svg) no-repeat center center;

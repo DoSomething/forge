@@ -1,5 +1,19 @@
+// Forms - Media Option Field
+//
 // Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
 // Progressively enhanced to look beautiful on modern browsers.
+//
+// Markup:
+//   <div class="form-item">
+//     <label class="media-option -radio">
+//       <input type="radio" value="value1" name="item" id="option1" checked="checked">
+//       <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+//     </label>
+//     <label class="media-option -radio">
+//       <input type="radio" value="value2" name="item" id="option2">
+//       <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+//     </label>
+//   </div>
 //
 // Styleguide Forms - Media Option Field
 .media-option {

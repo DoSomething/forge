@@ -1,3 +1,5 @@
+// Heading
+//
 // Various heading weights and styles.
 //
 // .-hero   - Hero heading
@@ -6,6 +8,8 @@
 // .-gamma  - Gamma heading, default appearance for <code>h3</code> tags
 // .-delta  - Delta heading, default appearance for <code>h4</code>, <code>h5</code>, and <code>h6</code> tags
 // .-banner - Stylized header banners.
+//
+// Markup: <h2 class="heading {{modifier_class}}"><span>Heading</span></h2>
 //
 // Styleguide Heading
 h1, h2, h3, h4, h5, h6,

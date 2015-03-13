@@ -1,9 +1,14 @@
+// Forms - Text Field
+//
 // Single-line text input fields.
 //
 // :focus         - Field is selected for text input
 // .-search       - Search field appearance
 // .is-loading    - Loading indicator, for example while fetching an AJAX response.
 // .has-error     - Error state, used for validation issues.
+//
+// Markup:
+//   <input type="text" class="text-field {{modifier_class}}" placeholder="Type something...">
 //
 // Styleguide Forms - Text Field
 .text-field {
@@ -57,7 +62,12 @@
 }
 
 
+// Textarea Field
+//
 // Multi-line text area fields. Can be resized vertically on capable browsers.
+//
+// Markup:
+//   <textarea name="textarea" class="text-field" placeholder="Write something here..."></textarea>
 //
 // Styleguide Forms - Textarea Field
 textarea.text-field {

@@ -1,5 +1,45 @@
+// Tabs
+//
 // Tabbed container. Gracefully degrades into plain text if JavaScript is disabled.
 // Extends the __Waypoints__ patterns for tab navigation.
+//
+// Markup:
+//   <section class="tabs js-tabs">
+//     <a href="#" data-modal-href="#modal-tips-during" class="tabs__modal-toggle">View Tips</a>
+//     <h4 class="visually-hidden">Tips</h4>
+//     <div class="wrapper">
+//       <nav class="tabs__menu">
+//         <ul class="waypoints">
+//           <li class="is-active"><a href="#tip-1" data-tab="1">Find Maxwell</a></li>
+//           <li><a href="#tip-2" data-tab="2">Give Him 'Fee</a></li>
+//         </ul>
+//       </nav>
+//       <ul class="tabs__body">
+//         <li id="tip-1" class="tabs__tab">
+//           <h5 class="tabs__title">Find Maxwell</h5>
+//           <p>He's drinking 'fee. But he needs some more 'fee.</p>
+//         </li>
+//         <li id="tip-2" class="tabs__tab">
+//           <h5 class="tabs__title">Give Him 'Fee</h5>
+//           <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+//         </li>
+//       </ul>
+//     </div>
+//   </section>
+//   <div data-modal id="modal-tips-during" class="modal--tips" role="dialog">
+//     <h2 class="heading -banner">Tips</h2>
+//     <div class="modal__block">
+//       <h4 class="inline--alt-color">Find Maxwell</h4>
+//       <p>He's drinking 'fee. But he needs some more 'fee.</p>
+//     </div>
+//     <div class="modal__block">
+//       <h4 class="inline--alt-color">Give Him 'Fee</h4>
+//       <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+//     </div>
+//     <div class="modal__block form-actions">
+//       <a href="#" class="js-close-modal">Back to main page</a>
+//     </div>
+//   </div>
 //
 // Styleguide Tabs
 
