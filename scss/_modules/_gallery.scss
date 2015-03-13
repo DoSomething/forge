@@ -1,5 +1,8 @@
+// Gallery
+//
 // Generic module class for all galleries. Galleries can contain items of any type (e.g. tile,
-// figure, etc.) Add additional modifier classes to designate styling for a specific type of gallery.
+// figure, etc.) Requires an additional modifier classes to designate a specific type of
+// gallery (see modifiers below).
 //
 // Styleguide Gallery
 .gallery {
@@ -14,8 +17,54 @@
     padding: 0 gutter();
   }
 
+  // Gallery - Quartet
+  //
   // A "quartet" gallery shows four items per row. Galleries can contain items of
   // any type but work particularly well with __Figures__ and __Tiles__.
+  //
+  // Markup:
+  //   <ul class="gallery -quartet">
+  //     <li>
+  //       <article class="tile">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //   </ul>
   //
   // Styleguide Gallery - Quartet
   &.-quartet {
@@ -30,6 +79,8 @@
     }
   }
 
+  // Gallery - Triad
+  //
   // A "triad" gallery shows three items per row. Galleries can contain items of
   // any type but work particularly well with __Figures__ and __Tiles__.
   //
@@ -37,6 +88,43 @@
   // height to force content below to line up with adjacent tiles
   // since image dimensions can vary.  Defaults to 75px tall.
   // This should be overridden when necessary.
+  //
+  // Markup:
+  //   <ul class="gallery -triad {{modifier_class}}">
+  //     <li>
+  //       <div class="figure">
+  //         <div class="figure__media">
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </div>
+  //         <div class="figure__body">
+  //           <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+  //           fashion brands like H&amp;M are "taking eco-chic to the next level."
+  //         </div>
+  //       </div>
+  //     </li>
+  //     <li>
+  //       <div class="figure">
+  //         <div class="figure__media">
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </div>
+  //         <div class="figure__body">
+  //           <b>Seventeen</b> ran an Earth Day story about recycling old fabrics
+  //           through DoSomething.org and H&amp;M's Comeback Clothes.
+  //         </div>
+  //       </div>
+  //     </li>
+  //     <li>
+  //       <div class="figure">
+  //         <div class="figure__media">
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </div>
+  //         <div class="figure__body">
+  //           <b>Nylon</b> urged readers to clean out their closets and do good for
+  //           the planet by recycling old clothes at H&amp;M.
+  //         </div>
+  //       </div>
+  //     </li>
+  //   </ul>
   //
   // Styleguide Gallery - Triad
   &.-triad {
@@ -67,8 +155,44 @@
     }
   }
 
+  // Gallery - Duo
+  //
   // A "duo" gallery shows two items per row. Galleries can contain items of
   // any type but work particularly well with __Figures__ and __Tiles__.
+  //
+  // Markup:
+  //   <ul class="gallery -duo">
+  //     <li>
+  //       <article class="figure -left">
+  //         <div class="figure__media">
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
+  //         </div>
+  //         <div class="figure__body">
+  //           <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+  //           <p>
+  //             Do you have stained or ripped clothes you don't wear? Recycle them
+  //             w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+  //             <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+  //           </p>
+  //         </div>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="figure -left">
+  //         <div class="figure__media">
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/75/75" />
+  //         </div>
+  //         <div class="figure__body">
+  //           <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+  //           <p>
+  //             Do you have stained or ripped clothes you don't wear? Recycle them
+  //             w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+  //             <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+  //           </p>
+  //         </div>
+  //       </article>
+  //     </li>
+  //   </ul>
   //
   // Styleguide Gallery - Duo
   &.-duo {
@@ -83,8 +207,64 @@
     }
   }
 
+  // Gallery - Featured
+  //
   // Gallery style which emphasizes the first item in the gallery.
   // Works best when paired with the gallery's `-quartet` and `-mosaic` modifier classes.
+  //
+  // Markup:
+  //   <ul class="gallery -quartet -mosaic -featured">
+  //     <li>
+  //       <article class="tile">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //   </ul>
   //
   // Styleguide Gallery - Featured
   &.-featured {
@@ -107,7 +287,53 @@
     }
   }
 
+  // Gallery - Mosaic
+  //
   // Removes spacing between gallery items. This is typically used with our __Tile__ pattern.
+  //
+  // Markup:
+  //   <ul class="gallery -quartet -mosaic">
+  //     <li>
+  //       <article class="tile">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //     <li>
+  //       <article class="tile tile--campaign">
+  //         <a class="wrapper" href="#">
+  //           <div class="tile__meta">
+  //             <h1 class="tile__title">Kitten Overlord</h1>
+  //           </div>
+  //           <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+  //         </a>
+  //       </article>
+  //     </li>
+  //   </ul>
   //
   // Styleguide Gallery - Mosaic
   &.-mosaic {

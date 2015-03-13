@@ -1,7 +1,17 @@
+// Info Bar
+//
 // The Info Bar contains left and right-aligned content areas,
 // and typically lives above the footer.
 //
 // .-dark - Dark variation.
+//
+// Markup:
+//   <footer class="info-bar {{modifier_class}}">
+//     <div class="wrapper">
+//       Sponsored by <a href="#">Puppet Sloth</a>.
+//       <div class="info-bar__secondary">Questions? <a href="#">Contact Us</a></div>
+//     </div>
+//   </footer>
 //
 // Styleguide Info Bar
 

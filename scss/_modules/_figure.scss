@@ -1,8 +1,21 @@
+// Figure
+//
 // A figure block usually contains an image with a title and a description.
 //
 // .-left    - Show figure's media to the left of the description.
 // .-right   - Show figure's media to the right of the description.
 // .-medium  - Set figure's media to a fixed "medium" size.
+//
+// Markup:
+//   <article class="figure {{modifier_class}}">
+//     <div class="figure__media">
+//       <img alt="kitten overlords" src="http://placekitten.com/g/300/300" />
+//     </div>
+//     <div class="figure__body">
+//       <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+//       fashion brands like H&amp;M are taking eco-chic to the next level.
+//     </div>
+//   </article>
 //
 // Styleguide Figure
 .figure {

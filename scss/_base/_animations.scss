@@ -4,8 +4,12 @@
   animation-duration: 0.5s;
 }
 
-
+// Fade In
+//
 // Element fades in.
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-in">Preview</a>
 //
 // Styleguide Animation - Fade In
 .fade-in {
@@ -23,8 +27,12 @@
   }
 }
 
-
+// Fade In & Up
+//
 // Element fades in and up.
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-in-up">Preview</a>
 //
 // Styleguide Animation - Fade In Up
 .fade-in-up {
@@ -45,7 +53,12 @@
 }
 
 
+// Fade Out
+//
 // Element fades out.
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-out">Preview</a>
 //
 // Styleguide Animation - Fade Out
 .fade-out {
@@ -63,8 +76,12 @@
   }
 }
 
-
+// Fade Out & Down
+//
 // Element fades out and down.
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-out-down">Preview</a>
 //
 // Styleguide Animation - Fade Out Down
 .fade-out-down {
@@ -85,7 +102,6 @@
 }
 
 
-
 // Move down animation
 @keyframes moveDown {
   0% {
@@ -97,8 +113,12 @@
   }
 }
 
-
+// Wiggle
+//
 // "Wiggle" animation used to pull the user's attention to an element.
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="tada">Preview</a>
 //
 // Styleguide Animation - Tada
 .tada {
@@ -128,8 +148,12 @@
   }
 }
 
-
+// Wobble
+//
 // Kind of like a "womp womp".
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="wobble">Preview</a>
 //
 // Styleguide Animation - Wobble
 .wobble {
@@ -168,8 +192,12 @@
   }
 }
 
-
+// Shake
+//
 // Shake animation (similar to OS X convention for form errors).
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="shake">Preview</a>
 //
 // Styleguide Animation - Shake
 @keyframes shake {
@@ -192,8 +220,12 @@
   animation-name: shake;
 }
 
-
+// Zoom In
+//
 // Zoom (scale) in.
+//
+// Markup:
+//   <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="zoom-in">Preview</a>
 //
 // Styleguide Animation - Zoom In
 @keyframes zoomIn {

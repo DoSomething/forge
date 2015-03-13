@@ -1,5 +1,19 @@
+// Tile
+//
 // A tile block contains an image with an overlaid title and tagline. Generally used for
 // campaigns, but can be used in any context.
+//
+// Markup:
+//   <article class="tile">
+//     <a class="wrapper" href="#">
+//       <div class="tile__meta">
+//         <h1 class="tile__title">Kitten Overlords</h1>
+//         <p class="tile__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+//       </div>
+//       <img alt="kitten overlords" src="http://placekitten.com/g/600/600" />
+//       <!-- <video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop></video> -->
+//     </a>
+//   </article>
 //
 // Styleguide Tile
 .tile {

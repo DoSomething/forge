@@ -1,13 +1,25 @@
+// Modal
+//
 // Show supplementary information to a user without leaving the page. Fills
 // screen on mobile, centered with overlay on tablet/desktop. Use `.modal__block`
 // element to add padding inside the modal. (This allows "full-width" modal content
 // to work without a negative margin.)
 //
-// #### Options:
-// - `[data-modal-close]`: set to "true" to include a close button on the modal, or "skip" to delegate a skip form action
-// - `[data-modal-skip-form]`: selector for a skip `form` element to submit upon clicking the "skip" link
+// See [DoSomething/modal](https://www.github.com/dosomething/modal) for configuration options.
 //
-// Styleguide Modal (Popup)
+// Markup:
+//   <a href="http://www.example.com" data-modal-href="#example-modal" class="btn secondary">Show example modal</a>
+//   <div data-modal id="example-modal" role="dialog">
+//     <h2 class="heading -banner">Example Content</h2>
+//     <div class="modal__block">
+//       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem,
+//        officia impedit eius velit consectetur provident ullam! Incidunt, rem,
+//        maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi,
+//        eum, accusamus.</p>
+//     </div>
+//   </div>
+//
+// Styleguide Modal
 
 // Additional styles for modals.
 // See http://www.github.com/DoSomething/modal
