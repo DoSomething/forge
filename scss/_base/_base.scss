@@ -22,9 +22,18 @@ body {
   line-height: $unitless-line-height;
 }
 
+// Inline Elements
+//
 // Tags for inline text elements are given default styles. Adjacent
 // paragraphs are given top margin spacing, and headings following paragraph
 // text have increased spacing.
+//
+// Markup:
+//   <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs
+//   for young people and social change</mark>, our members tackle campaigns that impact every cause,
+//   from poverty to violence to the environment to <em>literally</em> everything else.<sup>1</sup>
+//   Any cause, anytime, anywhere. *mic drop*</p>
+//   <p>This is a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>.</p>
 //
 // Styleguide Base - Inline Elements
 p, ul, ol {

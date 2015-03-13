@@ -1,3 +1,5 @@
+// Container
+//
 // Standard container for centered 12-column layouts. Collapses to full-width on mobile.
 // Modifier classes can be applied to the required `container__block` to use different
 // preset layouts. Optionally, the `container__row` class can be used to align into rows.
@@ -6,6 +8,20 @@
 //
 // .-narrow - Three-quarters width container.
 // .-half   - Half-width container, can be placed side-by-side to create two-column layouts.
+//
+// Markup:
+//   <div class="container">
+//     <div class="wrapper">
+//       <div class="container__block {{modifier_class}}">
+//         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+//         condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+//       </div>
+//       <div class="container__block {{modifier_class}}">
+//         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+//         condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+//       </div>
+//     </div>
+//   </div>
 //
 // Styleguide Container
 

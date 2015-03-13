@@ -6,6 +6,13 @@
 // .-dynamic-right  - Callout that starts below or above an item on mobile, but then switches to positon to the right of item.
 // .-white          - White text and arrow (for use on dark backgrounds).
 //
+// Markup:
+//   <div class="message-callout {{modifier_class}}">
+//     <div class="message-callout__copy">
+//       <p>This is something. Mic drop!</p>
+//     </div>
+//   </div>
+//
 // Styleguide Message Callout
 
 .message-callout {

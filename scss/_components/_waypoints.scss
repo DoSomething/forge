@@ -1,8 +1,18 @@
+// Waypoints
+//
 // Used to navigate between sections/panels/pages within an interface. Apply `.is-active` class to
 // list element for "active" state.
 //
 // .-vertical - Vertical tab layout (for use in a sidebar).
 // .-primary  - Emphasized tabs
+//
+// Markup:
+//   <ul class="waypoints {{modifier_class}}">
+//     <li class="is-active"><a href="#">Section One</a></li>
+//     <li><a href="#">Section Two</a></li>
+//     <li><a class="waypoints__primary-link" href="#">Section Three</a></li>
+//   </ul>
+//
 //
 // Styleguide Waypoints
 .waypoints {

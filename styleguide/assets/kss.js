@@ -64,8 +64,10 @@
         $(this).fadeOut();
       });
 
-      $markupSample.hide();
-      $(this).append($showMarkupLink);
+      if($markupSample.length) {
+        $markupSample.hide();
+        $(this).append($showMarkupLink);
+      }
     });
 
   });

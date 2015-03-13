@@ -1,5 +1,40 @@
+// Forms - Option Field
+//
 // Checkboxes and radio boxes. Progressively enhanced to look beautiful on modern browsers.
 // Older browsers (such as Internet Explorer 8) will see platform-native controls.
+//
+// Markup:
+//   <label class="field-label">Some checkboxes</label>
+//   <div class="form-item">
+//     <label class="option -checkbox">
+//       <input checked type="checkbox" id="option1">
+//       <span class="option__indicator"></span>
+//       <span>Choose this option.</span>
+//     </label>
+//     <label class="option -checkbox">
+//       <input type="checkbox" id="option2">
+//       <span class="option__indicator"></span>
+//       <span>Choose that option.</span>
+//     </label>
+//     <label class="option -checkbox">
+//       <input type="checkbox" id="option3">
+//       <span class="option__indicator"></span>
+//       <span>Choose this unreasonably long-winded and ultimately pointless option.</span>
+//     </label>
+//   </div>
+//   <label class="field-label">Some radio buttons</label>
+//   <div class="form-item">
+//     <label class="option -radio">
+//       <input checked type="radio" name="choice" id="choice1">
+//       <span class="option__indicator"></span>
+//       <span>Choose one option.</span>
+//     </label>
+//     <label class="option -radio">
+//       <input type="radio" name="choice" id="choice2">
+//       <span class="option__indicator"></span>
+//       <span>Choose the other option.</span>
+//     </label>
+//   </div>
 //
 // Styleguide Forms - Option Field
 .option {
