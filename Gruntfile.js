@@ -11,6 +11,14 @@ module.exports = function(grunt) {
     clean: {
       'dist': ['dist/']
     },
+    bump: {
+      options: {
+        files: ["package.json", "bower.json"],
+        commitFiles: ["package.json", "bower.json"],
+        push: false,
+        createTag: false
+      }
+    },
     copy: {
       assets: {
         files: [
