@@ -1,7 +1,35 @@
+// Navigation
+//
 // Chrome navigation with logo, navigation, and search. Use `.-floating` modifier to float above
 // page content (such as appearing over a __Header__ region).
 //
 // .-white     - Use white navigation text and search field (with subtle drop shadow).
+//
+// Markup:
+//   <nav class="navigation {{modifier_class}}">
+//     <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+//     <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+//     <div class="navigation__menu">
+//       <ul class="navigation__primary">
+//         <li>
+//           <a href="#">
+//             <strong class="navigation__title">Explore Campaigns</strong>
+//             <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
+//           </a>
+//         </li>
+//       </ul>
+//       <ul class="navigation__secondary">
+//         <li>
+//           <form action="#" method="post">
+//             <input class="text-field -search" type="search">
+//           </form>
+//         </li>
+//         <li>
+//           <a href="#">Log In</a>
+//         </li>
+//       </ul>
+//     </div>
+//   </nav>
 //
 // Styleguide Navigation
 .navigation {

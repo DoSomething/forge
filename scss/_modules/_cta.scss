@@ -1,6 +1,15 @@
-// The Call To Action module is used to show show a short
-// "call to action" message with an accompanying button.
-// CTAs typically span the full width of the page.
+// Call To Action
+//
+// The Call To Action module is used to show show a short "call to action" message
+// with an accompanying button. CTAs typically span the full width of the page.
+//
+// Markup:
+//   <div class="cta">
+//     <div class="wrapper">
+//       <p class="cta__message">Miscreant! You should pay homage to our future kitten overlords:</p>
+//       <a href="#" class="button">Support Our Kittens</a>
+//     </div>
+//   </div>
 //
 // Styleguide Call To Action
 

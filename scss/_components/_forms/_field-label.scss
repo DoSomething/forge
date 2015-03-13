@@ -1,8 +1,19 @@
+// Forms - Field Label
+//
 // Labels for form elements. Optional validation styles triggered by
 // [client-side validation](https://www.github.com/dosomething/validation).
 //
 // .has-success    - Successful form validation
 // .has-error      - Something's wrong!
+//
+// Markup:
+//   <!-- validation classes and markup generated dynamically -->
+//   <label class="field-label">
+//     <span class="validation">
+//       <div class="validation__message {{modifier_class}}">Field Label</div>
+//     </span>
+//   </label>
+//   <input class="text-field {{modifier_class}}" type="text">
 //
 // Styleguide Forms - Field Label
 .field-label {

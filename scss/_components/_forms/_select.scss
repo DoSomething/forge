@@ -1,6 +1,17 @@
+// Forms - Select Box
+//
 // Select boxes present a list of options on a form.
 //
 // .has-error - Error state
+//
+// Markup:
+//   <div class="select {{modifier_class}}">
+//     <select>
+//       <option>Awesome Things</option>
+//       <option>Popular Things</option>
+//       <option>Random Things</option>
+//     </select>
+//   </div>
 //
 // Styleguide Forms - Select Box
 .select {

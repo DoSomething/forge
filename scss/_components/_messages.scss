@@ -4,6 +4,11 @@
 //
 // .-error - Used to display errors. Be careful not to blame the user for a mistake.
 //
+// Markup:
+//   <div class="messages {{modifier_class}}">
+//     <strong>There's something <em>I need</em></strong> to tell you.
+//   </div>
+//
 // Styleguide Messages
 
 .messages {

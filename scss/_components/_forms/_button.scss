@@ -1,3 +1,5 @@
+// Forms - Button
+//
 // Buttons are generally used for interface actions. Suitable for all-purpose
 // use. Defaults to primary call-to-action appearance.
 //
@@ -8,6 +10,9 @@
 // .is-loading        - AJAX loading animation. Used when loading results inline.
 // .-secondary        - Should be used if not the main call-to-action on a page.
 // .-tertiary         - Used to de-emphasize button (for example, a "cancel" option), but still show inline with other fields.
+//
+// Markup:
+//   <a class="button {{modifier_class}}">Example Button</a>
 //
 // Styleguide Forms - Button
 .button {
