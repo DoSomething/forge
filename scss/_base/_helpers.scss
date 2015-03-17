@@ -33,3 +33,50 @@
 [hidden] {
   display: none;
 }
+
+/*
+ * Global utility classes to help with showing elements at different breakpoints
+ * "show-at-xxx"   : used to display at a certain breakpoint and up.
+ * "show-only-xxx" : used to display only at a specific breakpoint.
+ */
+.show-at-medium {
+  display: none;
+
+  @include media($medium) {
+    display: block;
+  }
+}
+
+.show-at-large {
+  display: none;
+
+  @include media($large) {
+    display: block;
+  }
+}
+
+.show-at-larger {
+  display: none;
+
+  @include media($larger) {
+    display: block;
+  }
+}
+
+.show-only-small {
+  @include media($medium) {
+    display: none;
+  }
+}
+
+.show-only-medium {
+  display: none;
+
+  @include media($medium) {
+    display: block;
+  }
+
+  @include media($large) {
+    display: none;
+  }
+}
