@@ -1,0 +1,9 @@
+box: wercker/nodejs
+
+# Run tests on all pull requests and branches
+build:
+  steps:
+    - npm-install
+    - grunt:
+        tasks: build
+    - npm-test
