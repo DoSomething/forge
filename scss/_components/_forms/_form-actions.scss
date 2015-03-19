@@ -50,4 +50,10 @@
   li + li {
     padding-left: $base-spacing;
   }
+
+  .button {
+    font-size: $font-regular;
+    padding-top: ($base-spacing / 2) + 2px;
+    padding-bottom: ($base-spacing / 2) - 2px;
+  }
 }

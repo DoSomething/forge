@@ -41,6 +41,12 @@
 
   &.-search {
     background-image: data-url($data-search-svg);
+    padding-right: 0;
+
+    // Search "cancel" button does not render properly on fields with padding.
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
 
     .modernizr-no-svg & {
       background-image: neue-asset-url("images/fallbacks/search.png");

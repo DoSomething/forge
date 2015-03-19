@@ -70,7 +70,11 @@
 
   &.-primary {
     background: $light-gray;
-    padding: gutter();
+    padding: gutter() 0;
+
+    li {
+      margin: 0 gutter();
+    }
 
     a {
       color: $med-gray;
