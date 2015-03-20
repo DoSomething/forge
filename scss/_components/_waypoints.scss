@@ -72,6 +72,10 @@
     background: $light-gray;
     padding: gutter() 0;
 
+    @include media($medium) {
+      padding: gutter();
+    }
+
     li {
       margin: 0 gutter();
     }
