@@ -6,11 +6,19 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
-  // Load tasks from `tasks/`
+  // Configure Grunt tasks
   grunt.initConfig({
+    /**
+     * Clean the `dist/` folder between builds.
+     */
     clean: {
       'dist': ['dist/']
     },
+
+    /**
+     * Bump version numbers in `package.json` and `bower.json`,
+     * and make a version commit marker. Used by CI script.
+     */
     bump: {
       options: {
         files: ["package.json", "bower.json"],
@@ -19,6 +27,10 @@ module.exports = function(grunt) {
         createTag: false
       }
     },
+
+    /**
+     * Copy assets into `dist/` directory.
+     */
     copy: {
       assets: {
         files: [
@@ -26,6 +38,11 @@ module.exports = function(grunt) {
         ]
       }
     },
+
+    /**
+     * Run Express pattern library server in background while
+     * Grunt task is active.
+     */
     express: {
       dev: {
         options: {
@@ -33,6 +50,10 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    /**
+     * Build JavaScript with RequireJS.
+     */
     requirejs: {
       options: {
         baseUrl: "dist/",
@@ -46,12 +67,28 @@ module.exports = function(grunt) {
         wrap: true,
         preserveLicenseComments: false,
       },
+
+      // On production builds, we should minify and drop
+      // dead code, `debugger`, and `console.log` statements.
       prod: {
         options: {
+          preserveLicenseComments: false,
           generateSourceMaps: false,
-          optimize: "uglify2"
+          optimize: "uglify2",
+          uglify2: {
+            compress: {
+              dead_code: true,
+              drop_debugger: true,
+              drop_console: true,
+              global_defs: {
+                DEBUG: false
+              }
+            }
+          }
         }
       },
+
+      // On development builds, include source maps & do not minify.
       debug: {
         options: {
           generateSourceMaps: true,
@@ -59,7 +96,12 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    /**
+     * Pre-process CSS with LibSass.
+     */
     sass: {
+      // On production builds, minify and remove comments.
       prod: {
         files: {
           'dist/neue.css': 'scss/neue-build.scss',
@@ -69,6 +111,8 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         }
       },
+
+      // On development builds, include source maps & do not minify.
       debug: {
         files: {
           'dist/neue.css': 'scss/neue-build.scss',
@@ -79,6 +123,14 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    /**
+     * Post-process CSS with PostCSS.
+     *
+     * We use Autoprefixer to automatically add vendor-prefixes for appropriate
+     * browsers. We use CSS-MQPacker to concatenate all media queries at the
+     * end of our built stylesheets.
+     */
     postcss: {
       options: {
         processors: [
@@ -88,16 +140,22 @@ module.exports = function(grunt) {
           require('css-mqpacker').postcss
         ]
       },
+
+      // On production builds, omit source maps.
       prod: {
         src: ['dist/neue.css', 'dist/styleguide.css'],
         options: {
           map: false
         }
       },
+
+      // On development builds, include source maps.
       debug: {
         src: ['dist/neue.css', 'dist/styleguide.css']
       }
     },
+
+
     modernizr: {
       all: {
         "devFile": "remote",
@@ -110,6 +168,7 @@ module.exports = function(grunt) {
           ]
         },
         extensibility : {
+          // We prefix all Modernizr classes with `modernizr-` to avoid class conflicts.
           "cssclassprefix": "modernizr-"
         },
         "extra" : {
@@ -126,6 +185,10 @@ module.exports = function(grunt) {
         ]
       }
     },
+
+    /**
+     * Lint JavaScript using JSHint.
+     */
     jshint: {
       options: {
         force: true,
@@ -138,6 +201,10 @@ module.exports = function(grunt) {
         "!tests/lib/**/*.js"
       ]
     },
+
+    /**
+     * Watch files for changes, and trigger relevant tasks.
+     */
     watch: {
       sass: {
         files: ["scss/**/*.scss"],
@@ -154,10 +221,25 @@ module.exports = function(grunt) {
     }
   });
 
-  // Aliases
+  /**
+   * Register Grunt aliases.
+   */
+
+  // > grunt
+  // Build for development & watch for changes.
   grunt.registerTask('default', ['build:debug', 'express:dev', 'test', 'watch']);
+
+  // > grunt build
+  // Build for production.
   grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'requirejs:prod', 'modernizr:all']);
+
+  // > grunt build:debug
+  // Build for development.
   grunt.registerTask('build:debug', ['clean:dist', 'copy:assets', 'sass:debug', 'postcss:debug', 'requirejs:debug', 'modernizr:all']);
+
+  // > grunt test
+  // Run included unit tests and linters.
   grunt.registerTask('test', ['jshint']);
+
 };
 
