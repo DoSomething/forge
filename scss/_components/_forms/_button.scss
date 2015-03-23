@@ -33,6 +33,7 @@
   text-transform: uppercase;
   text-shadow: none;
   border-radius: $sm-border-radius;
+  transition: background 0.25s;
 
   // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
   -moz-appearance: none;
