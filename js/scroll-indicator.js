@@ -6,59 +6,10 @@
  */
 
 import $ from "jquery";
+import throttle from "lodash/function/throttle";
+import sortedIndex from "lodash/array/sortedIndex";
 
 var links = [];
-
-/**
- * @see _.throttle
- */
-var throttle = function(func, wait, options) {
-  var context, args, result;
-  var timeout = null;
-  var previous = 0;
-
-  options || (options = {});
-
-  var later = function() {
-    previous = new Date();
-    timeout = null;
-    result = func.apply(context, args);
-  };
-
-  return function() {
-    var now = new Date();
-    if (!previous && options.leading === false) previous = now;
-    var remaining = wait - (now - previous);
-    context = this;
-    args = arguments;
-
-    if (remaining <= 0) {
-      clearTimeout(timeout);
-      timeout = null;
-      previous = now;
-      result = func.apply(context, args);
-    } else if (!timeout && options.trailing !== false) {
-      timeout = setTimeout(later, remaining);
-    }
-
-    return result;
-  };
-};
-
-/**
- * @see _.sortedIndex
- */
-function sortedIndex(array, value, key) {
-  var low = 0,
-  high = array ? array.length : low;
-
-  while (low < high) {
-    var mid = (low + high) >>> 1; // jshint ignore:line
-    (array[mid][key] < value) ? low = mid + 1 : high = mid;
-  }
-
-  return low ? low - 1 : low;
-}
 
 /**
  * Modified binary search. Finds target key, or next lowest if
