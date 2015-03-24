@@ -15,12 +15,8 @@
   "undef": true,
   "unused": true,
   "globals": {
-    "requirejs": false,
-    "require": false,
-    "define": false,
     "console": false,
     "jQuery": false,
-    "$": false,
     "_gaq": false
   },
   "trailing": true,

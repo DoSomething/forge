@@ -6,9 +6,10 @@
  * to `window.Neue` when included on a page as a script tag.
  */
 
+import "./footer";
 import "./footnote";
 import "./jump-scroll";
-import "./menu";
+import "./navigation";
 import Messages from "./messages";
 import "./scroll-indicator";
 import "./tabs";
