@@ -122,6 +122,11 @@ module.exports = function(grunt) {
           library: 'Neue',
           libraryTarget: 'umd'
         },
+        externals: {
+          // Don't bundle the 'jquery' package in neue.js, but
+          // instead load from `jQuery` global variable.
+          'jquery': 'jQuery'
+        },
         module: {
           loaders: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
