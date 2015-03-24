@@ -1,6 +1,8 @@
 /* jshint node:true */
 "use strict";
 
+var webpack = require('webpack');
+
 module.exports = function(grunt) {
   // Load tasks & measure timing
   require('time-grunt')(grunt);
@@ -47,52 +49,6 @@ module.exports = function(grunt) {
       dev: {
         options: {
           script: 'styleguide/bin/start.js'
-        }
-      }
-    },
-
-    /**
-     * Build JavaScript with RequireJS.
-     */
-    requirejs: {
-      options: {
-        baseUrl: "dist/",
-        name: "../bower_components/almond/almond",
-        paths: {
-          "neue": "../js"
-        },
-        include: "neue/main",
-        insertRequire: ["neue/main"],
-        out: "dist/neue.js",
-        wrap: true,
-        preserveLicenseComments: false,
-      },
-
-      // On production builds, we should minify and drop
-      // dead code, `debugger`, and `console.log` statements.
-      prod: {
-        options: {
-          preserveLicenseComments: false,
-          generateSourceMaps: false,
-          optimize: "uglify2",
-          uglify2: {
-            compress: {
-              dead_code: true,
-              drop_debugger: true,
-              drop_console: true,
-              global_defs: {
-                DEBUG: false
-              }
-            }
-          }
-        }
-      },
-
-      // On development builds, include source maps & do not minify.
-      debug: {
-        options: {
-          generateSourceMaps: true,
-          optimize: "none"
         }
       }
     },
@@ -155,7 +111,70 @@ module.exports = function(grunt) {
       }
     },
 
+    /**
+     * Build JavaScript with Webpack.
+     */
+    webpack: {
+      options: {
+        entry: './js/index.js',
+        output: {
+          filename: 'dist/neue.js',
+          library: 'Neue',
+          libraryTarget: 'umd'
+        },
+        module: {
+          loaders: [
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+          ]
+        }
+      },
 
+      // On production builds, disable source maps & set production flags
+      prod: {
+        // ...
+        plugins: [
+          new webpack.DefinePlugin({
+            DEBUG: false,
+            PRODUCTION: true
+          })
+        ]
+      },
+
+      // On development builds, include source maps & set debug flags
+      debug: {
+        devtool: '#inline-source-map',
+        plugins: [
+          new webpack.DefinePlugin({
+            DEBUG: true,
+            PRODUCTION: false
+          })
+        ]
+      }
+    },
+
+    /**
+     * Uglify JavaScript with UglifyJS2.
+     */
+    uglify: {
+      // On production builds, we should minify and drop
+      // dead code, `debugger`, and `console.log` statements.
+      prod: {
+        files: { 'dist/neue.js': ['dist/neue.js'] },
+        options: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+            dead_code: true
+          }
+        }
+
+      }
+    },
+
+    /**
+     * Create custom Modernizr build based on referenced CSS
+     * classes and JavaScript Modernizr checks.
+     */
     modernizr: {
       all: {
         "devFile": "remote",
@@ -212,7 +231,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ["js/**/*.js"],
-        tasks: ["requirejs:debug", "jshint"]
+        tasks: ["webpack:debug", "jshint"]
       },
       assets: {
         files: ["assets/**/*"],
@@ -231,11 +250,11 @@ module.exports = function(grunt) {
 
   // > grunt build
   // Build for production.
-  grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'requirejs:prod', 'modernizr:all']);
+  grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'webpack:prod', 'uglify:prod', 'modernizr:all']);
 
   // > grunt build:debug
   // Build for development.
-  grunt.registerTask('build:debug', ['clean:dist', 'copy:assets', 'sass:debug', 'postcss:debug', 'requirejs:debug', 'modernizr:all']);
+  grunt.registerTask('build:debug', ['clean:dist', 'copy:assets', 'sass:debug', 'postcss:debug', 'webpack:debug', 'modernizr:all']);
 
   // > grunt test
   // Run included unit tests and linters.
