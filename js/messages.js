@@ -1,52 +1,38 @@
 /**
  * @module neue/messages
- * System Messages. Will create a close ("X") button
- * for users with JavaScript enabled that uses the following
- * syntax to hook into this function:
  *
- * @example
- * //  <div class="js-message">Alert! You win.</div>
- *
- * @returns
- * // <div class="js-message">Alert! You win.
- * //   <a href="#" class="js-close-message">x</a>
- * // </div>
+ * Adds "x" close button to messages pattern, and binds
+ * a click handler to allow user to dismiss the message.
  */
 
-define(function() {
-  "use strict";
+import $ from "jquery";
 
-  var $ = window.jQuery;
+const messageClose = `<a href="#" class="js-close-message messages__close"><span>Close</span></a>`;
 
-  var messageClose = "<a href=\"#\" class=\"js-close-message messages__close\"><span>Close</span></a>";
+/**
+* Adds a close button to system message banner, with optional callback.
+*
+* @param {jQuery}   $messages  Object containing message divs to be modified.
+* @param {function} callback   Callback fired after message is closed.
+*/
+let attachCloseButton = function($messages, callback = null) {
+  // Create message close button
+  $messages.append(messageClose);
 
-  /**
-  * Adds a close button to system message banner, with optional callback.
-  *
-  * @param {jQuery}   $messages  Object containing message divs to be modified.
-  * @param {function} callback   Callback fired after message is closed.
-  */
-  var attachCloseButton = function($messages, callback) {
-    // Create message close button
-    $messages.append(messageClose);
+  // Close message when "x" is clicked:
+  $messages.on("click", ".js-close-message", function(event) {
+    event.preventDefault();
+    $(this).parent(".messages").slideUp();
 
-    // Close message when "x" is clicked:
-    $messages.on("click", ".js-close-message", function(event) {
-      event.preventDefault();
-      $(this).parent(".messages").slideUp();
-
-      if(callback && typeof callback === "function") {
-        callback();
-      }
-    });
-  };
-
-  // Prepare any messages in the DOM on load
-  $(function() {
-    attachCloseButton( $(".messages") );
+    if(callback && typeof callback === "function") {
+      callback();
+    }
   });
+};
 
-  return {
-    attachCloseButton: attachCloseButton
-  };
+// Prepare any messages in the DOM on load
+$(document).ready(function() {
+  attachCloseButton( $(".messages") );
 });
+
+export default { attachCloseButton };

@@ -1,10 +1,13 @@
-define(function() {
-  "use strict";
+/**
+ * Initialize and attach event handlers for Tabs pattern.
+ */
 
-  var $ = window.jQuery;
+import $ from "jquery";
 
-  var $tabs = $(".js-tabs"),
-      $tabMenuLinks = $tabs.find(".tabs__menu a");
+$(document).ready(function() {
+
+  let $tabs = $(".js-tabs");
+  let $tabMenuLinks = $tabs.find(".tabs__menu a");
 
   // Show the first tab in any "js-tabs" collection.
   $tabs.each(function() {
@@ -15,19 +18,19 @@ define(function() {
   $tabMenuLinks.on("click", function(event) {
     event.preventDefault();
 
-    var $this = $(this),
-        $siblings = $this.parent().siblings(),
-        selection = $this.data("tab") - 1,
-        $tabs = $this.closest(".js-tabs").find(".tabs__tab"),
-        tab = $tabs.get(selection);
+    let $siblings = $(this).parent().siblings();
+    let selection = $(this).data("tab") - 1;
+    let $tabs = $(this).closest(".js-tabs").find(".tabs__tab");
+    let tab = $tabs.get(selection);
 
     $siblings.removeClass("is-active");
-    $this.parent().addClass("is-active");
+    $(this).parent().addClass("is-active");
 
     // Show selected tab.
     $tabs.removeClass("is-active");
     $(tab).addClass("is-active");
-
   });
 
 });
+
+
