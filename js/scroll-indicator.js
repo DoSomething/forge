@@ -9,66 +9,61 @@ import $ from "jquery";
 import throttle from "lodash/function/throttle";
 import sortedIndex from "lodash/array/sortedIndex";
 
-var links = [];
+let oldIndicator;
+let offsets = [];
+let links = [];
 
 /**
- * Modified binary search. Finds target key, or next lowest if
- * it doesn't exist.
- * @see _.binarySearch
+ * Prepare all `.js-scroll-indicator` links on the page.
  */
-function binarySearch(array, value) {
-  var index = sortedIndex(array, value, "offset");
-  return array[index];
-}
-
-// Registers links and their targets with scroll handler
-function prepareIndicator($link) {
-  // Calculate the element's offset from the top of the page while anchored
-  var $linkTarget = $( $link.attr("href") );
-  if( $linkTarget.length ) {
-    // Add jQuery object and offset value to link map
-    links.push({ offset: $linkTarget.offset().top, link: $link });
-  }
-}
-
-// Prepare all `.js-scroll-indicator` links on the page.
 function preparePage() {
+  offsets = [];
   links = [];
 
-  $(".js-scroll-indicator").find("a").each(function(index, link) {
-    prepareIndicator( $(link) );
+  $(".js-scroll-indicator").find("a").each(function(index, el) {
+    let $link = $(el);
+    // Calculate the element's offset from the top of the page while anchored
+    let $linkTarget = $( $link.attr("href") );
+    if( $linkTarget.length ) {
+      // Add jQuery object and offset value to link map
+      offsets.push($linkTarget.offset().top);
+      links.push($link);
+    }
   });
 }
 
-var oldIndicator;
-// Scroll handler: highlights the furthest link the user has passed
+/**
+ * Scroll handler to highlight the link the user is currently reading.
+ */
 function updateScrollIndicators() {
-  var newIndicator = binarySearch(links, $(window).scrollTop() + 40);
   // @NOTE: We use a 40px offset to trigger indicator slightly after scroll position
   // (so that nav switches closer to where a user will likely be reading the text)
+  let offsetIndex = sortedIndex(offsets, $(window).scrollTop() + 40);
+  let newIndicator = links[offsetIndex];
 
-  if(newIndicator && newIndicator.link) {
-    var newIndicatorParents = newIndicator.link.parentsUntil(".js-scroll-indicator");
-    var oldIndicatorParents = $();
+  if(newIndicator) {
+    let newIndicatorParents = newIndicator.parentsUntil(".js-scroll-indicator");
 
     if(oldIndicator && oldIndicator !== newIndicator) {
-      oldIndicator.link.removeClass("is-active");
-      oldIndicatorParents = oldIndicator.link.parentsUntil(".js-scroll-indicator");
+      let oldIndicatorParents = oldIndicator.parentsUntil(".js-scroll-indicator").not(newIndicatorParents);
+      oldIndicatorParents.removeClass("is-active");
+      oldIndicator.removeClass("is-active");
     }
 
-    newIndicator.link.addClass("is-active");
+    newIndicator.addClass("is-active");
     newIndicatorParents.addClass("is-active");
-    oldIndicatorParents.not(newIndicatorParents).removeClass("is-active");
 
     oldIndicator = newIndicator;
   }
 }
 
-// Attach our functions to their respective events.
+/**
+ * Attach event listeners and prepare link references on load.
+ */
 $(document).ready(function() {
   preparePage();
 
-  var throttledScroll = throttle(updateScrollIndicators, 60);
+  let throttledScroll = throttle(updateScrollIndicators, 60);
 
   $(window).on("scroll", throttledScroll);
   $(window).on("resize", preparePage);
