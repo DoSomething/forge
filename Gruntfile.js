@@ -124,8 +124,12 @@ module.exports = function(grunt) {
         },
         externals: {
           // Don't bundle the 'jquery' package in neue.js, but
-          // instead load from `jQuery` global variable.
-          'jquery': 'jQuery'
+          // instead load from `jQuery` global variable or AMD/CJS package.
+          'jquery': {
+            root: 'jQuery',
+            commonjs2: 'jquery',
+            amd: 'jquery'
+          }
         },
         module: {
           loaders: [
@@ -136,7 +140,6 @@ module.exports = function(grunt) {
 
       // On production builds, disable source maps & set production flags
       prod: {
-        // ...
         plugins: [
           new webpack.DefinePlugin({
             DEBUG: false,
