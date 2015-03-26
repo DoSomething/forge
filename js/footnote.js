@@ -2,28 +2,23 @@
  * Enables "toggle" functionality on Footnote pattern.
  */
 
-define(function() {
-  "use strict";
+import $ from "jquery";
 
-  var $ = window.jQuery;
+$(document).ready(function() {
 
-  $(function() {
+  // Look for any `js-footnote-toggle` hooks...
+  $(".js-footnote-toggle").each(function() {
+    let $content = $(this).closest(".footnote").find(".js-footnote-hidden");
 
-    $(".js-footnote-toggle").each(function() {
-      var $content = $(this).closest(".footnote").find(".js-footnote-hidden");
+    // Hide content in a footnote if there's a toggle link.
+    $content.hide();
 
-      // Hide content in a footnote if there's a toggle link.
-      $content.hide();
+    // Make toggle into a link
+    $(this).wrapInner("<a href='#'></a>").on("click", function(event) {
+      event.preventDefault();
 
-      // Make toggle into a link
-      $(this).wrapInner("<a href='#'></a>").on("click", function(event) {
-        event.preventDefault();
-
-        $content.slideToggle();
-      });
-
+      $content.slideToggle();
     });
-
 
   });
 });
