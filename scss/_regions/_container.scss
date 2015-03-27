@@ -5,6 +5,7 @@
 // preset layouts. Optionally, the `container__row` class can be used to align into rows.
 //
 // .-padded    - Apply extra padding to the bottom of the container.
+// .-slanted   - Slanted design.
 //
 // Markup:
 //   <div class="container {{modifier_class}}">
@@ -25,9 +26,32 @@
 .container {
   @include clearfix;
   clear: both;
+  position: relative;
 
   &.-padded {
     padding-bottom: $base-spacing * 2;
+  }
+
+  &.-slanted {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing;
+    z-index: 1;
+
+    &:before {
+      content: ".";
+      color: $light-gray;
+      background: $light-gray;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: $base-spacing;
+      right: 0;
+      transform: skewY(-2deg);
+      z-index: -1;
+    }
   }
 
   > .wrapper {
