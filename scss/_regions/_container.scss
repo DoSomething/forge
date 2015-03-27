@@ -4,19 +4,16 @@
 // Modifier classes can be applied to the required `container__block` to use different
 // preset layouts. Optionally, the `container__row` class can be used to align into rows.
 //
-// Apply `.-padded` modifier to add extra bottom padding to a container.
-//
-// .-narrow - Three-quarters width container.
-// .-half   - Half-width container, can be placed side-by-side to create two-column layouts.
+// .-padded    - Apply extra padding to the bottom of the container.
 //
 // Markup:
-//   <div class="container">
+//   <div class="container {{modifier_class}}">
 //     <div class="wrapper">
-//       <div class="container__block {{modifier_class}}">
+//       <div class="container__block -half">
 //         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
 //         condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
 //       </div>
-//       <div class="container__block {{modifier_class}}">
+//       <div class="container__block -half">
 //         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
 //         condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
 //       </div>
@@ -41,6 +38,29 @@
       @include push(2);
     }
 
+    // Container - Container Block
+    //
+    // Inner container element for the Container pattern. Can be used to create columned
+    // content layouts.
+    //
+    // .-narrow - Three-quarters width container.
+    // .-half   - Half-width container, can be placed side-by-side to create two-column layouts.
+    //
+    // Markup:
+    //   <div class="container">
+    //     <div class="wrapper">
+    //       <div class="container__block {{modifier_class}}">
+    //         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+    //         condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+    //       </div>
+    //       <div class="container__block {{modifier_class}}">
+    //         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+    //         condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+    //       </div>
+    //     </div>
+    //   </div>
+    //
+    // Styleguide Container - Container Block
     .container__block {
       // When inside a container wrapper, increase top/bottom padding
       // on the container body.
