@@ -87,12 +87,7 @@
       z-index: 10;
 
       li {
-        margin: 0;
-      }
-
-      a {
-        display: inline-block;
-        padding: ($base-spacing / 4) ($base-spacing / 2);
+        padding: ($base-spacing / 4) 0;
       }
 
       .is-active {
