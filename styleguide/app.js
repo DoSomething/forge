@@ -33,5 +33,7 @@ app.get('/', function(req, res) {
 });
 
 // Start 'er up!
-console.log('Styleguide listening on port 3000.');
-app.listen(3000);
+const PORT = 3000;
+app.listen(PORT, function() {
+  console.log(`Pattern Library running on 'http://localhost:${PORT}'.`);
+});
