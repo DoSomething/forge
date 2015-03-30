@@ -168,14 +168,13 @@
       vertical-align: bottom;
 
       @include media($tablet) {
-        bottom: 27px;
         position: absolute;
+        bottom: $base-spacing;
       }
     }
 
     .header__subtitle {
       @include media($tablet) {
-        margin-bottom: 9px;
         width: 80%;
       }
     }
@@ -194,6 +193,8 @@
     }
 
     .header__signup {
+      margin-top: $base-spacing;
+
       @include media($tablet) {
         clear: left;
         float: left;
