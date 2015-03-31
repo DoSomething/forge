@@ -2,6 +2,7 @@ import express from 'express';
 import ejs from 'ejs';
 import kss from 'kss';
 import pkg from '../package.json';
+import highlight from 'highlight.js';
 
 // Express App
 var app = express();
@@ -11,8 +12,8 @@ app.set('views', __dirname);
 
 app.use(express.static(__dirname + '/../'));
 
-app.locals.renderMarkup = function(markup) {
-  return markup.replace('{{modifier_class}}', pattern.modifiers(i).className());
+app.locals.highlight = function(markup) {
+  return highlight.highlightAuto(markup).value;
 };
 
 app.get('/', function(req, res) {
