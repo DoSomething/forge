@@ -1,21 +1,17 @@
 {
   "name": "dosomething-neue",
-  "version": "6.3.0",
+  "version": "6.4.0",
   "license": "MIT",
   "engines": {
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "node styleguide/bin/start.js",
+    "prepublish": "babel js --out-dir lib",
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/DoSomething/neue.git"
-  },
-  "scripts": {
-    "prepublish": "babel js --out-dir lib",
-    "test": "grunt test"
   },
   "dependencies": {
     "jquery": "^1.7.0",
