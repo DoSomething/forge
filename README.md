@@ -4,10 +4,10 @@ This is [Neue](http://neue.dosomething.org), our interface framework and pattern
 Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork this repository and use it as a starting point for your own website and style guide, or read more about [why we open-source our code](https://blog.dosomething.org/we-open-sourced-our-code-heres-why-you-should-too/).
 
 ### Usage
-You can get your own copy of Neue by [downloading a release](https://github.com/DoSomething/neue/releases) or by using [Bower](http://bower.io):
+You can get your own copy of Neue by [downloading a release](https://github.com/DoSomething/neue/releases) or by using [NPM](http://npmjs.com):
 
 ```
-bower install DoSomething/neue#^6.0.0
+npm install dosomething-neue
 ```
 
 Include the bundled `dist/neue.css` and `dist/neue.js` in your page. Be sure to include jQuery 1.7+ and the bundled Modernizr build `dist/modernizr.js`. That's it! Check out the online [pattern library](http://neue.dosomething.org/) and start building.
@@ -21,8 +21,6 @@ You can also run the pattern library on your local machine! Here's the steps:
   2. Run `npm install` to configure dependencies.
   3. Run `grunt` to build assets, watch for changes, and run styleguide server.
   4. Check it out at `localhost:3000` in your browser!
-
-Check the [Deployment](https://github.com/DoSomething/neue/wiki/Deployments) page on the wiki for instructions to deploy a new version of the Pattern Library.
 
 ### License
 &copy;2015 DoSomething.org. Neue is free software, and may be redistributed under the terms specified in the [LICENSE](blob/dev/LICENSE.md) file. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.
