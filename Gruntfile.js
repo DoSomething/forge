@@ -23,8 +23,8 @@ module.exports = function(grunt) {
      */
     bump: {
       options: {
-        files: ["package.json", "bower.json"],
-        commitFiles: ["package.json", "bower.json"],
+        files: ["package.json"],
+        commitFiles: ["package.json"],
         push: false,
         createTag: false
       }
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       // On production builds, minify and remove comments.
       prod: {
         files: {
-          'dist/neue.css': 'scss/neue-build.scss',
+          'dist/neue.css': 'scss/neue.scss',
           'dist/styleguide.css': 'scss/styleguide.scss'
         },
         options: {
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
       // On development builds, include source maps & do not minify.
       debug: {
         files: {
-          'dist/neue.css': 'scss/neue-build.scss',
+          'dist/neue.css': 'scss/neue.scss',
           'dist/styleguide.css': 'scss/styleguide.scss'
         },
         options: {
@@ -218,7 +218,6 @@ module.exports = function(grunt) {
      */
     jshint: {
       options: {
-        force: true,
         jshintrc: true,
         reporter: require("jshint-stylish")
       },
