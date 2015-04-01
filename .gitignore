@@ -1,5 +1,6 @@
 # Ignore build directory
 dist/
+lib/
 
 # Ignore styleguide build
 /*.html

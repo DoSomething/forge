@@ -15,6 +15,9 @@
 //   Neue's variables and helpers.
 //
 
+// We use Susy 2 to build semantic grid layouts.
+@import "../node_modules/susy/sass/susy";
+
 // We define some of our own variables and mixins to keep things DRY.
 @import "_utilities/variables";
 @import "_utilities/functions";

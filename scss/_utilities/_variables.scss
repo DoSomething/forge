@@ -1,3 +1,15 @@
+// Asset Pipeline
+// --------------
+
+// This is the path where Neue's assets can be found. Be
+// sure to include the trailing slash!
+// ex: $neue-path: "bower_components/neue/assets/"
+$neue-path: "assets/" !default;
+
+// The $asset-path variable can be used by your client-app
+// to simplify including asset URLs.
+$asset-path: "" !default;
+
 // Layout
 // ------
 

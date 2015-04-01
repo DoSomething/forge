@@ -19,7 +19,7 @@
 
     <% if(!locals.hide_markup) { %>
       <div class="styleguide-html">
-        <pre class="styleguide-code"><code class="html"><%= pattern.markup() %></code></pre>
+        <pre class="styleguide-code"><code class="html"><%- highlight(pattern.markup()) %></code></pre>
       </div>
     <% } %>
   </div>
