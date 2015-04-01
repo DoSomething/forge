@@ -1,4 +1,4 @@
-# Neue [![Build Status](http://img.shields.io/wercker/ci/550b2c5b67ccfc73272e2f42.svg)](https://travis-ci.org/DoSomething/neue) 
+# Neue [![Build Status](https://img.shields.io/wercker/ci/550b2c5b67ccfc73272e2f42.svg)](https://travis-ci.org/DoSomething/neue) [![NPM](https://img.shields.io/npm/v/dosomething-neue.svg)](https://www.npmjs.com/package/dosomething-neue)
 This is [Neue](http://neue.dosomething.org), our interface framework and pattern library. It defines a set of base styles and common patterns shared throughout our website. It's a strong foundation for building beautiful interfaces.
 
 Neue was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork this repository and use it as a starting point for your own website and style guide, or read more about [why we open-source our code](https://blog.dosomething.org/we-open-sourced-our-code-heres-why-you-should-too/).
