@@ -7,3 +7,17 @@ build:
     - grunt:
         tasks: build
     - npm-test
+
+# Automatically deploy `dev` branch to Github pages
+deploy:
+  steps:
+    - script:
+        name: build static pattern library
+        code: |-
+          node styleguide/bin/start.js &
+          sleep 5 # let Node start up!
+          wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
+    - gh-pages:
+        token: $GH_TOKEN
+        domain: neue.dosomething.org
+        basedir: build
