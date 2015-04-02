@@ -7,3 +7,11 @@ build:
     - grunt:
         tasks: build
     - npm-test
+    - script:
+        name: build static styleguide
+        code: |-
+          node styleguide/bin/start.js &
+          sleep 5 # let Node start up!
+          wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
+          ls -la
+          ls -la build
