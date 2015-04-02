@@ -7,9 +7,9 @@ build:
     - grunt:
         tasks: build
     - npm-test
-    - script
+    - script:
         name: build static styleguide
-        script: |
+        code: |-
           node styleguide/bin/start.js &
           sleep 5 # let Node start up!
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
