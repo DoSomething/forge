@@ -31,10 +31,9 @@ deploy:
         name: prepare notification
         code: |-
           export PACKAGE_NAME="$(./node_modules/npv/npv.js --name)"
+          export NPM_VERSION="$(./node_modules/npv/npv.js)"
           export PACKAGE_VERSION="$(npm show $NPM_PACKAGE version  2> /dev/null)"
-          if [ "$(./node_modules/npv/npv.js)" = "$(npm show $PACKAGE_NAME version  2> /dev/null)" ]; then
-            export WERCKER_SLACK_NOTIFY_ON="failed"
-          fi
+          if [ "$NPM_VERSION" = "$PACKAGE_VERSION" ]; then export WERCKER_SLACK_NOTIFY_ON="failed"; fi;
   after-steps:
     - sherzberg/slack-notify:
         subdomain: dosomething
