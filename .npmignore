@@ -1,7 +1,13 @@
 # Ignore dependencies
 bower_components/
 node_modules
+
+# Ignore pattern library site build
+build/
+
+# NPM stuff
 npm-debug.log
+npmauth
 
 # Ignore resource files
 resources/

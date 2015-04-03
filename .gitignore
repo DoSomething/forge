@@ -1,14 +1,16 @@
 # Ignore build directory
 dist/
 lib/
-
-# Ignore styleguide build
-/*.html
+build/
 
 # Ignore dependencies
 bower_components/
 node_modules
 npm-debug.log
+
+# NPM stuff
+npm-debug.log
+npmauth
 
 # Vim stuff
 *.swp
