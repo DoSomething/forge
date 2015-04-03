@@ -13,6 +13,14 @@ build:
 deploy:
   steps:
     - script:
+        name: prepare notification variables
+        code: |-
+          npm install npv
+          export PACKAGE_NAME="$(./node_modules/npv/npv.js --name)"
+          export NPM_VERSION="$(./node_modules/npv/npv.js)"
+          export PACKAGE_VERSION="$(npm show $NPM_PACKAGE version  2> /dev/null)"
+          if [ "$NPM_VERSION" = "$PACKAGE_VERSION" ]; then export WERCKER_SLACK_NOTIFY_ON="failed"; fi;
+    - script:
         name: build static pattern library
         code: |-
           export NODE_ENV='production'
@@ -27,13 +35,6 @@ deploy:
         username: $NPM_USERNAME
         email: $NPM_EMAIL
         password: $NPM_PASSWORD
-    - script:
-        name: prepare notification
-        code: |-
-          export PACKAGE_NAME="$(./node_modules/npv/npv.js --name)"
-          export NPM_VERSION="$(./node_modules/npv/npv.js)"
-          export PACKAGE_VERSION="$(npm show $NPM_PACKAGE version  2> /dev/null)"
-          if [ "$NPM_VERSION" = "$PACKAGE_VERSION" ]; then export WERCKER_SLACK_NOTIFY_ON="failed"; fi;
   after-steps:
     - sherzberg/slack-notify:
         subdomain: dosomething
