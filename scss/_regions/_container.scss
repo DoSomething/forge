@@ -54,6 +54,24 @@
     }
   }
 
+  &.-loud {
+    background: $purple;
+    color: $white;
+
+    h1, h2, h3, h4, h5, h6, .heading {
+      color: $yellow;
+    }
+  }
+
+  &.-loud.-slanted {
+    background: transparent;
+
+    &:before {
+      color: $purple;
+      background: $purple;
+    }
+  }
+
   > .wrapper {
     position: relative;
 
