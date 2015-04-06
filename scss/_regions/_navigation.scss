@@ -287,9 +287,11 @@
 
     @include media($tablet) {
       width: 32px;
+      cursor: pointer;
 
       &:focus {
         width: 100px;
+        cursor: text;
         border-bottom: 2px solid $off-black;
       }
     }
@@ -338,8 +340,7 @@
     list-style-type: none;
 
     @include media($tablet) {
-      // Hide, but preserve horizontal spacing for dropdown items.
-      visibility: hidden;
+      display: none;
       overflow: hidden;
       height: 0;
     }
@@ -404,7 +405,7 @@
     }
 
     ul {
-      visibility: visible;
+      display: block;
       overflow: visible;
       height: auto;
 
