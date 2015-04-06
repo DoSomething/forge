@@ -18,15 +18,16 @@
   font-size: $font-medium;
   border: 0;
   border-bottom: 2px solid $med-gray;
-  background-clip: padding-box;
-  padding: 0 ($base-spacing / 4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+  background: transparent;
+  padding: 0;
   margin: 0;
   transition: border 0.5s;
 
-  &::-webkit-input-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; line-height: 1.8; }
-  &::-moz-placeholder { font-family: $font-proxima-nova;  font-size: $font-regular;color: $light-gray; line-height: 1.8; }
-  &:-moz-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; line-height: 1.8; }
-  &:-ms-input-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; line-height: 1.8; }
+  &::-webkit-input-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; color: rgba(0, 0, 0, 0.3); line-height: 1.8; }
+  &::-moz-placeholder { font-family: $font-proxima-nova;  font-size: $font-regular;color: $light-gray;  color: rgba(0, 0, 0, 0.3);line-height: 1.8; }
+  &:-moz-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; color: rgba(0, 0, 0, 0.3); line-height: 1.8; }
+  &:-ms-input-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; color: rgba(0, 0, 0, 0.3); line-height: 1.8; }
 
   // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
   -moz-appearance: none;
