@@ -36,6 +36,13 @@ h1, h2, h3, h4, h5, h6,
       text-transform: uppercase;
       padding: gutter() $base-spacing;
       margin: gutter();
+
+      text-shadow: $dark-gray 1px 1px,
+      $dark-gray 2px 2px,
+      $dark-gray 3px 3px,
+      $dark-gray 4px 4px,
+      $dark-gray 5px 5px,
+      $dark-gray 6px 6px;
     }
   }
 }
