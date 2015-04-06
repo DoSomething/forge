@@ -397,6 +397,7 @@
     @include media($tablet) {
       background-color: #fff;
       padding-bottom: ($base-spacing / 2);
+      box-shadow: $box-shadow;
 
       .navigation__dropdown-toggle {
         color: $purple;
