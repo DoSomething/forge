@@ -13,7 +13,7 @@
 //
 // Styleguide Forms - Form Item
 .form-item {
-  margin-bottom: ($base-spacing / 2);
+  margin-bottom: $base-spacing;
 
   &.-padded {
     margin: $base-spacing 0;
