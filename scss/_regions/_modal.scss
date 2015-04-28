@@ -43,3 +43,9 @@
   padding: $base-spacing;
 }
 
+// Add support for modal overlay in IE8
+.modernizr-no-svg .chrome.has-modal {
+  &:after {
+    background: neue-asset-url('images/fallbacks/ie8-rgba-black-50.png');
+  }
+}
