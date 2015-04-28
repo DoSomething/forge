@@ -1,6 +1,6 @@
 {
   "name": "dosomething-neue",
-  "version": "6.4.6",
+  "version": "6.4.7",
   "license": "MIT",
   "engines": {
     "node": "0.10.x"
