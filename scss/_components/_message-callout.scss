@@ -1,10 +1,12 @@
 // Handwritten text callout with arrow pointing to other content.
 //
-// .-below          - Callout is positioned below an element.
-// .-above          - Callout is positioned above element it's pointing to.
-// .-right          - Callout is positioned to the right of element it's pointing to.
-// .-dynamic-right  - Callout that starts below or above an item on mobile, but then switches to positon to the right of item.
-// .-white          - White text and arrow (for use on dark backgrounds).
+// .-below            - Callout is positioned below an element.
+// .-above            - Callout is positioned above element it's pointing to.
+// .-right            - Callout is positioned to the right of element it's pointing to.
+// .-dynamic-right    - Callout that starts below or above an item on mobile, but then switches to positon to the right of item.
+// .-above-horizontal - Callout is positioned horizontally above the element that it is pointing to without rotation.
+// .-white            - White text and arrow (for use on dark backgrounds).
+// .-blue             - Blue text and arrow.
 //
 // Markup:
 //   <div class="message-callout {{modifier_class}}">
@@ -51,6 +53,14 @@
     .message-callout__copy {
       p {
         color: #fff;
+      }
+    }
+  }
+
+  &.-blue {
+    .message-callout__copy {
+      p {
+        color: $blue;
       }
     }
   }
@@ -171,5 +181,38 @@
       }
     }
   }
+
+  &.-above-horizontal {
+    transform: none;
+
+    .message-callout__copy {
+      padding: 18px 0px;
+
+      &:before {
+        background: neue-asset-url("images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
+        height: 38px;
+        bottom: -20px;
+        width: 30px;
+        transform: scaleY(-1) scaleX(-1);
+      }
+    }
+
+    &.-white {
+      .message-callout__copy {
+        &:before {
+          background: neue-asset-url("images/callout/arrow-up-white.png") 50% 50% / 25px no-repeat transparent;
+        }
+      }
+    }
+
+    &.-blue {
+      .message-callout__copy {
+        &:before {
+          background: neue-asset-url("images/callout/arrow-up-blue.png") 50% 50% / 25px no-repeat transparent;
+        }
+      }
+    }
+  }
+
 
 }
