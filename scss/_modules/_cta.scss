@@ -3,11 +3,13 @@
 // The Call To Action module is used to show show a short "call to action" message
 // with an accompanying button. CTAs typically span the full width of the page.
 //
+// .-inline - Show message and action side-by-side on larger screens.
+//
 // Markup:
-//   <div class="cta">
+//   <div class="cta {{modifier_class}}">
 //     <div class="wrapper">
-//       <p class="cta__message">Miscreant! You should pay homage to our future kitten overlords:</p>
-//       <a href="#" class="button">Support Our Kittens</a>
+//       <p class="cta__message">You must pay homage to our future <em>kitten</em> overlords.</p>
+//       <div class="cta__action"><a href="#" class="button">Do This</a></div>
 //     </div>
 //   </div>
 //
@@ -16,24 +18,55 @@
 .cta {
   @include clearfix;
   @include gutters;
-  background: lighten($light-gray, 10%);
-  border-bottom: 2px solid $light-gray;
-  border-top: 2px solid $light-gray;
+  background: $black;
+  text-align: center;
 
   > .wrapper {
-    text-align: center;
     padding: $base-spacing 0;
 
-    @include media($tablet) {
+    @include media($medium) {
       @include span(12);
       @include push(2);
+    }
+  }
+
+  &.-inline {
+    text-align: left;
+
+    > .wrapper {
+      display: table;
+    }
+
+    .cta__message {
+      @include media($large) {
+        @include span(8 of 12);
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: right;
+        margin-bottom: 0;
+      }
+    }
+
+    .cta__action {
+      @include media($large) {
+        @include span(4 of 12);
+        float: none;
+        display: table-cell !important;
+        vertical-align: middle;
+      }
     }
   }
 }
 
 .cta__message {
-  color: $base-font-color;
+  color: $white;
   font-size: $font-medium;
   font-weight: $weight-sbold;
   margin: 0 0 $base-spacing;
+
+  em {
+    font-style: normal;
+    color: $yellow;
+  }
 }
