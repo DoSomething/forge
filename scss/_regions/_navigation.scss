@@ -50,9 +50,12 @@
       .text-field {
         color: #fff;
         text-shadow: $text-shadow;
-        border: 1px solid #fff;
-        box-shadow: 0 1px 3px rgba(#000, 0.2),
-        inset 0 1px 3px rgba(#000, 0.2);
+
+        @include media($tablet) {
+          &:focus {
+            border-bottom: 2px solid $off-black;
+          }
+        }
       }
 
       .text-field.-search {
@@ -278,25 +281,27 @@
 
   .text-field {
     background-color: transparent;
-    color: #fff;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 1px solid #fff;
-    box-shadow: 0 1px 0 rgba(#000, 0.2),
-    inset 0 1px 0 rgba(#000, 0.2);
+    color: $off-black;
+    border: 0;
     transition: width 0.5s;
 
     @include media($tablet) {
-      width: 100px;
-      color: $off-black;
-      border: 1px solid $off-black;
-      box-shadow: 0 1px 0 rgba(#fff, 0.2),
-      inset 0 1px 0 rgba(#fff, 0.2);
+      width: 32px;
+      cursor: pointer;
+
+      &:focus {
+        width: 100px;
+        cursor: text;
+        border-bottom: 2px solid $off-black;
+      }
     }
 
     @include media($large) {
-      width: 200px;
+      &:focus {
+        width: 200px;
+      }
     }
+
   }
 
   .text-field.-search {
@@ -335,8 +340,7 @@
     list-style-type: none;
 
     @include media($tablet) {
-      // Hide, but preserve horizontal spacing for dropdown items.
-      visibility: hidden;
+      display: none;
       overflow: hidden;
       height: 0;
     }
@@ -393,6 +397,7 @@
     @include media($tablet) {
       background-color: #fff;
       padding-bottom: ($base-spacing / 2);
+      box-shadow: $box-shadow;
 
       .navigation__dropdown-toggle {
         color: $purple;
@@ -401,7 +406,7 @@
     }
 
     ul {
-      visibility: visible;
+      display: block;
       overflow: visible;
       height: auto;
 
