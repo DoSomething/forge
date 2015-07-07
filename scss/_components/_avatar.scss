@@ -1,0 +1,17 @@
+// Avatar
+//
+// Rounded image. Used to show a user profile image.
+//
+// Markup:
+//    <div class="avatar">
+//      <img src="http://placekitten.com/g/300/300" />
+//    </div>
+//
+// Styleguide Avatar
+
+.avatar {
+  border-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+}
