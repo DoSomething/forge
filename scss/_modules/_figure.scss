@@ -3,6 +3,7 @@
 // A figure block usually contains an image with a title and a description.
 //
 // .-left    - Show figure's media to the left of the description.
+// .-left.-center - Show a figure's media to the left of the description, with the text vertically centered.
 // .-right   - Show figure's media to the right of the description.
 // .-medium  - Set figure's media to a fixed "medium" size.
 //
@@ -38,6 +39,20 @@
     > .figure__body {
       overflow: hidden;
       padding-left: gutter();
+    }
+
+    &.-center {
+      display: table;
+
+      .figure__media {
+        margin: 0px;
+        display: table-cell;
+      }
+
+      .figure__body {
+        display: table-cell;
+        vertical-align: middle;
+      }
     }
   }
 
