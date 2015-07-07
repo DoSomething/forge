@@ -32,6 +32,7 @@
 @import "_base/helpers";
 
 // Components - basic non-divisible building blocks
+@import "_components/avatar";
 @import "_components/_forms/button";
 @import "_components/_forms/field-label";
 @import "_components/_forms/form-actions";
@@ -49,7 +50,6 @@
 @import "_components/spinner";
 @import "_components/video";
 @import "_components/waypoints";
-@import "_components/avatar";
 
 // Modules - basic patterns, may contain other components or modules
 @import "_modules/cta";
