@@ -31,6 +31,7 @@
 
 <body>
 <div class="chrome">
+
   <div id="top" class="wrapper">
     <nav class="navigation -white -floating">
       <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
@@ -259,6 +260,8 @@
         <h2 id="components">Components</h2>
         <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Neue to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
 
+        <%- include('pattern', { pattern: styleguide.section('Avatar') }) %>
+
         <div id="forms">
           <%- include('pattern', { pattern: styleguide.section('Forms - Button') }) %>
           <%- include('pattern', { pattern: styleguide.section('Forms - Form Item') }) %>
@@ -270,7 +273,6 @@
           <%- include('pattern', { pattern: styleguide.section('Forms - Text Field') }) %>
         </div>
 
-        <%- include('pattern', { pattern: styleguide.section('Avatar') }) %>
         <%- include('pattern', { pattern: styleguide.section('Footnote') }) %>
         <%- include('pattern', { pattern: styleguide.section('Heading') }) %>
         <%- include('pattern', { pattern: styleguide.section('List') }) %>
