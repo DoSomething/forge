@@ -156,9 +156,10 @@ main {
   display: none;
   padding: 10px 25px 10px 5px;
   background: #efefef;
-  border-top: 1px solid #dde7ea;
+  border-radius: $sm-border-radius;
   font-size: 18px;
   overflow: auto;
+  margin-top: $base-spacing;
 }
 
 .hljs {

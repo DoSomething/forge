@@ -7,26 +7,26 @@
   <% if(pattern.markup()) { %>
   <div class="styleguide-example-content">
     <div id="<%= pattern.referenceURI().replace('%20', '-') %>--example" class="styleguide-element">
-       <%- pattern.markup() %>
+      <%- pattern.markup() %>
     </div>
 
     <% for(var i = 0; i < pattern.modifiers().length; i++) { %>
-      <figure id="<%= pattern.referenceURI().replace('%20', '-') + '--example--' + pattern.modifiers(i).className() %>" class="styleguide-element">
-        <figcaption class="styleguide-element__description"><strong><%= pattern.modifiers(i).name() %></strong> <%- pattern.modifiers(i).description() %></figcaption>
-        <%- pattern.markup().replace(/\{\{modifier_class}}/g, pattern.modifiers(i).className()) %>
-      </figure>
-    <% } %>
-
-    <% if(!locals.hide_markup) { %>
-      <div class="styleguide-html">
-        <pre class="styleguide-code"><code class="html"><%- highlight(pattern.markup()) %></code></pre>
-      </div>
+    <figure id="<%= pattern.referenceURI().replace('%20', '-') + '--example--' + pattern.modifiers(i).className() %>" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong><%= pattern.modifiers(i).name() %></strong> <%- pattern.modifiers(i).description() %></figcaption>
+      <%- pattern.markup().replace(/\{\{modifier_class}}/g, pattern.modifiers(i).className()) %>
+    </figure>
     <% } %>
   </div>
+
+  <% if(!locals.hide_markup) { %>
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><%- highlight(pattern.markup()) %></code></pre>
+  </div>
+  <% } %>
   <% } %>
 </div>
 <% } else { %>
-  <div class="messages -error">
-    Could not load a pattern with that name...
-  </div>
+<div class="messages -error">
+  Could not load a pattern with that name...
+</div>
 <% } %>

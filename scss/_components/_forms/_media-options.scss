@@ -7,11 +7,11 @@
 //   <div class="form-item">
 //     <label class="media-option -radio">
 //       <input type="radio" value="value1" name="item" id="option1" checked="checked">
-//       <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+//       <img alt="kitten overlords" src="/styleguide/assets/placeholder-small.jpg">
 //     </label>
 //     <label class="media-option -radio">
 //       <input type="radio" value="value2" name="item" id="option2">
-//       <img alt="kitten overlords" src="http://placekitten.com/g/600/600">
+//       <img alt="kitten overlords" src="/styleguide/assets/placeholder-small.jpg">
 //     </label>
 //   </div>
 //
@@ -61,8 +61,8 @@
     cursor: pointer;
     border: 2px solid $med-gray;
     border-radius: $sm-border-radius;
-    max-width: 100px;
     width: 100%;
+    max-width: 100px;
   }
 
   input:active ~ img {
@@ -71,12 +71,10 @@
 
   input:checked ~ img {
     border-color: $blue;
-    border-width: 4px;
   }
 
   input:checked:active ~ img {
     border-color: darken($blue, $tint);
-    border-width: 4px;
   }
 
   // "OR" label applied to radio buttons.
