@@ -4,7 +4,7 @@
 //
 // Markup:
 //    <div class="avatar">
-//      <img src="http://placekitten.com/g/300/300" />
+//      <img src="/styleguide/assets/placeholder.jpg" />
 //    </div>
 //
 // Styleguide Avatar
@@ -13,4 +13,9 @@
   border-radius: 50%;
   overflow: hidden;
   width: 100px;
+
+  img {
+    min-width: 100px;
+    min-height: 100px;
+  }
 }
