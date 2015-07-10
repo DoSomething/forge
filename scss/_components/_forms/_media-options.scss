@@ -61,7 +61,8 @@
     cursor: pointer;
     border: 2px solid $med-gray;
     border-radius: $sm-border-radius;
-    width: 75px;
+    width: 100%;
+    max-width: 100px;
   }
 
   input:active ~ img {
