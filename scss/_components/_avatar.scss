@@ -13,4 +13,9 @@
   border-radius: 50%;
   overflow: hidden;
   width: 100px;
+
+  img {
+    min-width: 100px;
+    min-height: 100px;
+  }
 }
