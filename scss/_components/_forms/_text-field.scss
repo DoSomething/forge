@@ -2,8 +2,9 @@
 //
 // Single-line text input fields.
 //
-// :focus         - Field is selected for text input
-// .-search       - Search field appearance
+// :focus         - Field is selected for text input.
+// :disabled      - Field is disabled, and it's value can't be interacted with.
+// .-search       - Search field appearance.
 // .is-loading    - Loading indicator, for example while fetching an AJAX response.
 // .has-error     - Error state, used for validation issues.
 //
@@ -31,6 +32,12 @@
     outline: none;
     border: 1px solid $blue;
     box-shadow: 0 0 3px $blue;
+  }
+
+  &:disabled {
+    color: $med-gray;
+    background-color: lighten($light-gray, $tint);
+    cursor: not-allowed;
   }
 
   &.-search, &.is-loading {
