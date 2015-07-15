@@ -41,7 +41,8 @@
   }
 
   &.-search, &.is-loading {
-    background: #fff no-repeat 12px 50%;
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
     background-size: 18px 18px;
     padding-left: 36px;
   }
