@@ -2,35 +2,33 @@
  * Initialize and attach event handlers for Tabs pattern.
  */
 
-import $ from "jquery";
+import $ from 'jquery';
 
 $(document).ready(function() {
+  const $tabs = $('.js-tabs');
+  const $tabMenuLinks = $tabs.find('.tabs__menu a');
 
-  let $tabs = $(".js-tabs");
-  let $tabMenuLinks = $tabs.find(".tabs__menu a");
-
-  // Show the first tab in any "js-tabs" collection.
+  // Show the first tab in any 'js-tabs' collection.
   $tabs.each(function() {
-    $(this).find(".tabs__tab").first().addClass("is-active");
+    $(this).find('.tabs__tab').first().addClass('is-active');
   });
 
   // View other tabs on click.
-  $tabMenuLinks.on("click", function(event) {
+  $tabMenuLinks.on('click', function(event) {
     event.preventDefault();
 
-    let $siblings = $(this).parent().siblings();
-    let selection = $(this).data("tab") - 1;
-    let $tabs = $(this).closest(".js-tabs").find(".tabs__tab");
-    let tab = $tabs.get(selection);
+    const $siblings = $(this).parent().siblings();
+    const selection = $(this).data('tab') - 1;
+    const $innerTabs = $(this).closest('.js-tabs').find('.tabs__tab');
+    const tab = $tabs.get(selection);
 
-    $siblings.removeClass("is-active");
-    $(this).parent().addClass("is-active");
+    $siblings.removeClass('is-active');
+    $(this).parent().addClass('is-active');
 
     // Show selected tab.
-    $tabs.removeClass("is-active");
-    $(tab).addClass("is-active");
+    $innerTabs.removeClass('is-active');
+    $(tab).addClass('is-active');
   });
-
 });
 
 
