@@ -6,13 +6,13 @@
  * to `window.Neue` when included on a page as a script tag.
  */
 
-import "./footer";
-import "./footnote";
-import "./jump-scroll";
-import "./navigation";
-import Messages from "./messages";
-import "./scroll-indicator";
-import "./tabs";
+import './footer';
+import './footnote';
+import './jump-scroll';
+import './navigation';
+import Messages from './messages';
+import './scroll-indicator';
+import './tabs';
 
 // Export public API
 export default { Messages };

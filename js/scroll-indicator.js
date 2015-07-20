@@ -5,9 +5,9 @@
  * Triggered by a `.js-scroll-indicator` on a link.
  */
 
-import $ from "jquery";
-import throttle from "lodash/function/throttle";
-import sortedIndex from "lodash/array/sortedIndex";
+import $ from 'jquery';
+import throttle from 'lodash/function/throttle';
+import sortedIndex from 'lodash/array/sortedIndex';
 
 let oldIndicator;
 let offsets = [];
@@ -20,11 +20,12 @@ function preparePage() {
   offsets = [];
   links = [];
 
-  $(".js-scroll-indicator").find("a").each(function(index, el) {
-    let $link = $(el);
+  $('.js-scroll-indicator').find('a').each(function(index, el) {
+    const $link = $(el);
+
     // Calculate the element's offset from the top of the page while anchored
-    let $linkTarget = $( $link.attr("href") );
-    if( $linkTarget.length ) {
+    const $linkTarget = $($link.attr('href'));
+    if ($linkTarget.length) {
       // Add jQuery object and offset value to link map
       offsets.push($linkTarget.offset().top);
       links.push($link);
@@ -38,20 +39,20 @@ function preparePage() {
 function updateScrollIndicators() {
   // @NOTE: We use a 40px offset to trigger indicator slightly after scroll position
   // (so that nav switches closer to where a user will likely be reading the text)
-  let offsetIndex = sortedIndex(offsets, $(window).scrollTop() + 40);
-  let newIndicator = links[offsetIndex];
+  const offsetIndex = sortedIndex(offsets, $(window).scrollTop() + 40);
+  const newIndicator = links[offsetIndex];
 
-  if(newIndicator) {
-    let newIndicatorParents = newIndicator.parentsUntil(".js-scroll-indicator");
+  if (newIndicator) {
+    const newIndicatorParents = newIndicator.parentsUntil('.js-scroll-indicator');
 
-    if(oldIndicator && oldIndicator !== newIndicator) {
-      let oldIndicatorParents = oldIndicator.parentsUntil(".js-scroll-indicator").not(newIndicatorParents);
-      oldIndicatorParents.removeClass("is-active");
-      oldIndicator.removeClass("is-active");
+    if (oldIndicator && oldIndicator !== newIndicator) {
+      const oldIndicatorParents = oldIndicator.parentsUntil('.js-scroll-indicator').not(newIndicatorParents);
+      oldIndicatorParents.removeClass('is-active');
+      oldIndicator.removeClass('is-active');
     }
 
-    newIndicator.addClass("is-active");
-    newIndicatorParents.addClass("is-active");
+    newIndicator.addClass('is-active');
+    newIndicatorParents.addClass('is-active');
 
     oldIndicator = newIndicator;
   }
@@ -63,8 +64,6 @@ function updateScrollIndicators() {
 $(document).ready(function() {
   preparePage();
 
-  let throttledScroll = throttle(updateScrollIndicators, 60);
-
-  $(window).on("scroll", throttledScroll);
-  $(window).on("resize", preparePage);
+  $(window).on('scroll', throttle(updateScrollIndicators, 60));
+  $(window).on('resize', preparePage);
 });

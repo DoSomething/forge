@@ -144,6 +144,14 @@ module.exports = function(grunt) {
           new webpack.DefinePlugin({
             DEBUG: false,
             PRODUCTION: true
+          }),
+          new webpack.optimize.UglifyJsPlugin({
+            compress: {
+              warnings: false,
+              drop_console: true,
+              drop_debugger: true,
+              dead_code: true
+            }
           })
         ]
       },
@@ -157,25 +165,6 @@ module.exports = function(grunt) {
             PRODUCTION: false
           })
         ]
-      }
-    },
-
-    /**
-     * Uglify JavaScript with UglifyJS2.
-     */
-    uglify: {
-      // On production builds, we should minify and drop
-      // dead code, `debugger`, and `console.log` statements.
-      prod: {
-        files: { 'dist/neue.js': ['dist/neue.js'] },
-        options: {
-          compress: {
-            drop_console: true,
-            drop_debugger: true,
-            dead_code: true
-          }
-        }
-
       }
     },
 
@@ -214,18 +203,10 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Lint JavaScript using JSHint.
+     * Lint JavaScript using ESLint.
      */
-    jshint: {
-      options: {
-        jshintrc: true,
-        reporter: require("jshint-stylish")
-      },
-      all: [
-        "js/**/*.js",
-        "tests/**/*.js",
-        "!tests/lib/**/*.js"
-      ]
+    eslint: {
+      target: ["js/**/*.js", "!js/modernizr/**/*.js"]
     },
 
     /**
@@ -238,7 +219,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ["js/**/*.js"],
-        tasks: ["webpack:debug", "jshint"]
+        tasks: ["webpack:debug", "eslint"]
       },
       assets: {
         files: ["assets/**/*"],
@@ -257,7 +238,7 @@ module.exports = function(grunt) {
 
   // > grunt build
   // Build for production.
-  grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'webpack:prod', 'uglify:prod', 'modernizr:all']);
+  grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'webpack:prod', 'modernizr:all']);
 
   // > grunt build:debug
   // Build for development.
@@ -265,7 +246,7 @@ module.exports = function(grunt) {
 
   // > grunt test
   // Run included unit tests and linters.
-  grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('test', ['eslint']);
 
 };
 

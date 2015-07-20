@@ -20,14 +20,16 @@
     "susy": "^2.2.2"
   },
   "devDependencies": {
-    "respond.js": "~1.4.2",
     "autoprefixer-core": "^4.0.2",
     "babel": "^4.7.8",
+    "babel-eslint": "^3.1.23",
     "babel-loader": "^4.2.0",
     "css-mqpacker": "^2.0.0",
     "dosomething-modal": "^0.3.0",
     "dosomething-validation": "^0.2.0",
     "ejs": "^2.3.1",
+    "eslint": "^0.24.1",
+    "eslint-plugin-react": "^2.7.0",
     "express": "^4.12.2",
     "fixed-sticky": "DFurnes/fixed-sticky#master",
     "grunt-bump": "^0.0.14",
@@ -38,6 +40,7 @@
     "grunt-contrib-requirejs": "^0.4.0",
     "grunt-contrib-uglify": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^16.0.0",
     "grunt-express-server": "^0.4.19",
     "grunt-modernizr": "^0.6.0",
     "grunt-postcss": "^0.2.0",
@@ -48,6 +51,7 @@
     "jshint-stylish": "^1.0.0",
     "kss": "^2.0.2",
     "load-grunt-tasks": "^3.1.0",
+    "respond.js": "~1.4.2",
     "time-grunt": "^1.0.0"
   }
 }
