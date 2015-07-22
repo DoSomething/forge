@@ -1,9 +1,10 @@
-# Ignore dependencies
-bower_components/
-node_modules
-
-# Ignore pattern library site build
+# Ignore pattern library resources
 build/
+styleguide/
+resources/
+
+# Ignore dependencies
+node_modules
 
 # NPM stuff
 npm-debug.log
@@ -18,9 +19,6 @@ dist/styleguide.css
 
 # Vim stuff
 *.swp
-
-# SASS stuff
-.sass-cache
 
 # OS X stuff
 .DS_Store
@@ -38,10 +36,4 @@ Icon
 # editor ignores
 *.sublime-workspace
 *.sublime-project
-
-# rack/pow stuff
-log/
-tmp/
-
-
-
+.idea/
