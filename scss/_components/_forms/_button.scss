@@ -129,7 +129,7 @@
 
     .modernizr-no-smil &, .modernizr-no-smil &:hover, .modernizr-no-smil &:active {
       // If no support for animated SVG, use 32px animated gif.
-      background-image: neue-asset-url("images/fallbacks/spinner.gif");
+      background-image: forge-asset-url("images/fallbacks/spinner.gif");
     }
 
     .modernizr-no-rgba &, .modernizr-no-rgba &:hover, .modernizr-no-rgba &:active {

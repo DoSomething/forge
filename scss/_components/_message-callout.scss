@@ -74,7 +74,7 @@
 
       // Arrow Up
       &:before {
-        background: neue-asset-url("images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
+        background: forge-asset-url("images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
         height: 38px;
         right: -5px;
         top: -15px;
@@ -85,7 +85,7 @@
     &.-white {
       .message-callout__copy {
         &:before {
-          background-image: neue-asset-url("images/callout/arrow-up-white.png");
+          background-image: forge-asset-url("images/callout/arrow-up-white.png");
         }
       }
     }
@@ -96,7 +96,7 @@
   &.-above {
     .message-callout__copy {
       &:before {
-        background: neue-asset-url("images/callout/arrow-down-black.png") 50% 50% / 14px no-repeat transparent;
+        background: forge-asset-url("images/callout/arrow-down-black.png") 50% 50% / 14px no-repeat transparent;
         height: 50px;
         right: -20px;
         bottom: -15px;
@@ -107,7 +107,7 @@
     &.-white {
       .message-callout__copy {
         &:before {
-          background-image: neue-asset-url("images/callout/arrow-down-white.png");
+          background-image: forge-asset-url("images/callout/arrow-down-white.png");
         }
       }
     }
@@ -124,7 +124,7 @@
       padding-left: 45px;
 
       &:before {
-        background: neue-asset-url("images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
+        background: forge-asset-url("images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
         height: 19px;
         left: 0;
         margin-top: -9px;
@@ -137,7 +137,7 @@
     &.-white {
       .message-callout__copy {
         &:before {
-          background-image: neue-asset-url("images/callout/arrow-left-white.png");
+          background-image: forge-asset-url("images/callout/arrow-left-white.png");
         }
       }
     }
@@ -160,7 +160,7 @@
         padding-left: 45px;
 
         &:before {
-          background: neue-asset-url("images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
+          background: forge-asset-url("images/callout/arrow-left-black.png") 50% 50% / 35px no-repeat transparent;
           height: 19px;
           left: 0;
           margin-top: -9px;
@@ -175,7 +175,7 @@
       &.-white {
         .message-callout__copy {
           &:before {
-            background-image: neue-asset-url("images/callout/arrow-left-white.png");
+            background-image: forge-asset-url("images/callout/arrow-left-white.png");
           }
         }
       }
@@ -189,7 +189,7 @@
       padding: 18px 0px;
 
       &:before {
-        background: neue-asset-url("images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
+        background: forge-asset-url("images/callout/arrow-up-black.png") 50% 50% / 25px no-repeat transparent;
         height: 38px;
         bottom: -20px;
         width: 30px;
@@ -200,7 +200,7 @@
     &.-white {
       .message-callout__copy {
         &:before {
-          background: neue-asset-url("images/callout/arrow-up-white.png") 50% 50% / 25px no-repeat transparent;
+          background: forge-asset-url("images/callout/arrow-up-white.png") 50% 50% / 25px no-repeat transparent;
         }
       }
     }
@@ -208,7 +208,7 @@
     &.-blue {
       .message-callout__copy {
         &:before {
-          background: neue-asset-url("images/callout/arrow-up-blue.png") 50% 50% / 25px no-repeat transparent;
+          background: forge-asset-url("images/callout/arrow-up-blue.png") 50% 50% / 25px no-repeat transparent;
         }
       }
     }

@@ -29,7 +29,7 @@ deploy:
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
     - lukevivier/gh-pages:
         token: $GH_TOKEN
-        domain: neue.dosomething.org
+        domain: forge.dosomething.org
         basedir: build
     - nahody/npm_publish:
         username: $NPM_USERNAME

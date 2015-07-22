@@ -1,10 +1,3 @@
-/**
- * @module neue/messages
- *
- * Adds 'x' close button to messages pattern, and binds
- * a click handler to allow user to dismiss the message.
- */
-
 import $ from 'jquery';
 
 const messageClose = `<a href='#' class='js-close-message messages__close'><span>Close</span></a>`;

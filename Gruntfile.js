@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       // On production builds, minify and remove comments.
       prod: {
         files: {
-          'dist/neue.css': 'scss/neue.scss',
+          'dist/forge.css': 'scss/forge.scss',
           'dist/styleguide.css': 'scss/styleguide.scss'
         },
         options: {
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
       // On development builds, include source maps & do not minify.
       debug: {
         files: {
-          'dist/neue.css': 'scss/neue.scss',
+          'dist/forge.css': 'scss/forge.scss',
           'dist/styleguide.css': 'scss/styleguide.scss'
         },
         options: {
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
 
       // On production builds, omit source maps.
       prod: {
-        src: ['dist/neue.css', 'dist/styleguide.css'],
+        src: ['dist/forge.css', 'dist/styleguide.css'],
         options: {
           map: false
         }
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
 
       // On development builds, include source maps.
       debug: {
-        src: ['dist/neue.css', 'dist/styleguide.css']
+        src: ['dist/forge.css', 'dist/styleguide.css']
       }
     },
 
@@ -118,12 +118,12 @@ module.exports = function(grunt) {
       options: {
         entry: './js/index.js',
         output: {
-          filename: 'dist/neue.js',
-          library: 'Neue',
+          filename: 'dist/forge.js',
+          library: 'Forge',
           libraryTarget: 'umd'
         },
         externals: {
-          // Don't bundle the 'jquery' package in neue.js, but
+          // Don't bundle the 'jquery' package in forge.js, but
           // instead load from `jQuery` global variable or AMD/CJS package.
           'jquery': {
             root: 'jQuery',

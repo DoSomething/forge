@@ -13,7 +13,7 @@
   width: 32px;
 
   .modernizr-no-smil & {
-    background-image: neue-asset-url("images/fallbacks/spinner.gif");
+    background-image: forge-asset-url("images/fallbacks/spinner.gif");
   }
 }
 
