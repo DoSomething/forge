@@ -59,7 +59,7 @@
         background-image: data-url($data-search-white-svg);
 
         .modernizr-no-svg & {
-          background-image: neue-asset-url("images/fallbacks/search_white.png");
+          background-image: forge-asset-url("images/fallbacks/search_white.png");
         }
       }
     }
@@ -112,13 +112,13 @@
   &:after {
     content: "";
     display: block;
-    background: neue-asset-url("images/logo.svg");
+    background: forge-asset-url("images/logo.svg");
     width: 72px;
     height: 60px;
   }
 
   .modernizr-no-svg &:after {
-    background: neue-asset-url("images/logo.png");
+    background: forge-asset-url("images/logo.png");
   }
 
   @include media($mobile) {
@@ -306,12 +306,12 @@
       background-image: data-url($data-search-black-svg);
 
       .modernizr-no-svg & {
-        background-image: neue-asset-url("images/fallbacks/search_black.png");
+        background-image: forge-asset-url("images/fallbacks/search_black.png");
       }
     }
 
     .modernizr-no-svg & {
-      background-image: neue-asset-url("images/fallbacks/search_white.png");
+      background-image: forge-asset-url("images/fallbacks/search_white.png");
     }
   }
 

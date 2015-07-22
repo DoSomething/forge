@@ -159,7 +159,7 @@
       }
 
       .modernizr-no-cssgradients & {
-        background: transparent neue-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
+        background: transparent forge-asset-url("images/fallbacks/black-gradient.png") 0 bottom repeat-x;
       }
     }
 

@@ -44,15 +44,21 @@
 }
 
 
-// Helper to generate Neue URLs in client app stylesheets
-// @NOTE See `neue-build.scss` for $neue-path.
+// Helper to generate Forge URLs in client app stylesheets
+// @NOTE See `variables.scss` for $forge-path.
+@function forge-asset-url($file) {
+  @return url("#{$forge-path}#{$file}");
+}
+
+// @DEPRECATED: Use `forge-asset-url()` instead!
 @function neue-asset-url($file) {
-  @return url("#{$neue-path}#{$file}");
+  @warn "The neue-asset-url() helper is deprecated. Use forge-asset-url() instead!";
+  @return forge-asset-url($file);
 }
 
 
 // Helper to generate URLs in client app stylesheets
-// @NOTE See `neue-build.scss` for $asset-path.
+// @NOTE See `variables.scss` for $asset-path.
 @function asset-url($file) {
   @return url("#{$asset-path}#{$file}");
 }

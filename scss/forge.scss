@@ -1,18 +1,23 @@
-//                 ____  _____    _   __
-//                / __ \/ ___/   / | / /__  __  _____
-//               / / / /\__ \   /  |/ / _ \/ / / / _ \
-//              / /_/ /___/ /  / /|  /  __/ /_/ /  __/
-//             /_____//____/  /_/ |_/\___/\__,_/\___/
+//
+//     ▄████████  ▄██████▄     ▄████████    ▄██████▄     ▄████████
+//    ███    ███ ███    ███   ███    ███   ███    ███   ███    ███
+//    ███    █▀  ███    ███   ███    ███   ███    ▀▀    ███    █▀
+//   ▄███▄▄▄     ███    ███  ▄███▄▄▄▄██▀  ▄███         ▄███▄▄▄
+//  ▀▀███▀▀▀     ███    ███ ▀▀███▀▀▀▀▀   ▀▀███ ████▄  ▀▀███▀▀▀
+//    ███        ███    ███ ▀███████████   ███    ███   ███    █▄
+//    ███        ███    ███   ███    ███   ███    ███   ███    ███
+//    ███         ▀██████▀    ███    ███   ████████▀    ██████████
+//                            ███    ███
 //
 //   =============== Base Styles/Pattern Library ===============
 //
-//   This is the main file for the Neue Pattern Library. It
+//   This is the main file for the Forge pattern library. It
 //   should include base styles and reusable patterns for use
 //   across all DoSomething.org web applications.
 //
 //   Any app-specific styles should live in their respective
-//   project repo, and can import "neue.scss" for access to
-//   Neue's variables and helpers.
+//   project repo, and can import "forge.scss" for access to
+//   Forge's variables and helpers.
 //
 
 // We use Susy 2 to build semantic grid layouts.

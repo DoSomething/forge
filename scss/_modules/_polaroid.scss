@@ -18,7 +18,7 @@
     transform: rotate(-3deg);
 
     &:after {
-      background-image: neue-asset-url("images/polaroid-frame.png");
+      background-image: forge-asset-url("images/polaroid-frame.png");
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: 170px;

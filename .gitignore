@@ -1,12 +1,10 @@
-# Ignore build directory
+# Ignore build directories
 dist/
 lib/
 build/
 
 # Ignore dependencies
-bower_components/
 node_modules
-npm-debug.log
 
 # NPM stuff
 npm-debug.log
@@ -14,9 +12,6 @@ npmauth
 
 # Vim stuff
 *.swp
-
-# SASS stuff
-.sass-cache
 
 # OS X stuff
 .DS_Store
@@ -34,11 +29,4 @@ Icon
 # editor ignores
 *.sublime-workspace
 *.sublime-project
-.idea
-
-# rack/pow stuff
-log/
-tmp/
-
-
-
+.idea/
