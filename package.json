@@ -1,7 +1,7 @@
 {
   "name": "@dosomething/forge",
   "description": "Interface framework and pattern library for DoSomething.org.",
-  "version": "6.4.11",
+  "version": "6.5.0",
   "license": "MIT",
   "engines": {
     "node": "0.12.x"
