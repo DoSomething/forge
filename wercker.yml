@@ -8,18 +8,9 @@ build:
         tasks: build
     - npm-test
 
-# Automatically deploy `master` branch to Github pages & publish
-# package to NPM if version is not published to registry.
+# Automatically deploy `dev` branch to Github pages
 deploy:
   steps:
-    - script:
-        name: prepare notification variables
-        code: |-
-          npm install npv
-          export PACKAGE_NAME="$(./node_modules/npv/npv.js --name)"
-          export NPM_VERSION="$(./node_modules/npv/npv.js)"
-          export PACKAGE_VERSION="$(npm show $NPM_PACKAGE version  2> /dev/null)"
-          if [ "$NPM_VERSION" = "$PACKAGE_VERSION" ]; then export WERCKER_SLACK_NOTIFY_ON="failed"; fi;
     - script:
         name: build static pattern library
         code: |-
@@ -31,15 +22,3 @@ deploy:
         token: $GH_TOKEN
         domain: forge.dosomething.org
         basedir: build
-    - nahody/npm_publish:
-        username: $NPM_USERNAME
-        email: $NPM_EMAIL
-        password: $NPM_PASSWORD
-  after-steps:
-    - sherzberg/slack-notify:
-        subdomain: dosomething
-        token: $SLACK_TOKEN
-        channel: "#frontend"
-        username: npm
-        icon_url: https://avatars2.githubusercontent.com/u/6078720?v=3&s=200
-        passed_message: 'Published $PACKAGE_NAME $PACKAGE_VERSION to NPM.'

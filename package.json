@@ -8,7 +8,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "babel js --out-dir lib",
+    "prepublish": "grunt build && babel js --out-dir lib",
     "test": "grunt test"
   },
   "repository": {
