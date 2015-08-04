@@ -1,4 +1,4 @@
-# Forge [![Build Status](https://img.shields.io/wercker/ci/550b2c5b67ccfc73272e2f42.svg)](https://app.wercker.com/#applications/550b2c5b67ccfc73272e2f42) [![NPM](https://img.shields.io/npm/v/@dosomething/forge.svg)](https://www.npmjs.com/package/@dosomething/forge)
+# Forge [![Build Status](https://img.shields.io/wercker/ci/55c0c3ed603eb27f5318e478.svg)](https://app.wercker.com/#applications/55c0c3ed603eb27f5318e478) [![NPM](https://img.shields.io/npm/v/@dosomething/forge.svg)](https://www.npmjs.com/package/@dosomething/forge)
 This is [Forge](http://forge.dosomething.org), our interface framework and pattern library. It defines a set of base styles and common patterns shared throughout our website. It's a strong foundation for building beautiful interfaces.
 
 Forge was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork this repository and use it as a starting point for your own pattern library, or read more about [why we open-source our code](https://blog.dosomething.org/we-open-sourced-our-code-heres-why-you-should-too/).
