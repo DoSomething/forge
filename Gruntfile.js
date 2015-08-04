@@ -1,4 +1,4 @@
-/* jshint node:true */
+/* eslint-disable */
 "use strict";
 
 var webpack = require('webpack');
@@ -210,12 +210,19 @@ module.exports = function(grunt) {
     },
 
     /**
+     * Lint SCSS using Sasslint.
+     */
+    sasslint: {
+      all: ['scss/**/*.scss'],
+    },
+
+    /**
      * Watch files for changes, and trigger relevant tasks.
      */
     watch: {
       sass: {
         files: ["scss/**/*.scss"],
-        tasks: ["sass:debug", "postcss:debug"]
+        tasks: ["sass:debug", "postcss:debug", "sasslint"]
       },
       js: {
         files: ["js/**/*.js"],
@@ -246,7 +253,7 @@ module.exports = function(grunt) {
 
   // > grunt test
   // Run included unit tests and linters.
-  grunt.registerTask('test', ['eslint']);
+  grunt.registerTask('test', ['eslint', 'sasslint']);
 
 };
 

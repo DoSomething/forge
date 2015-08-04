@@ -46,6 +46,7 @@
     "grunt-modernizr": "^0.6.0",
     "grunt-postcss": "^0.2.0",
     "grunt-sass": "^0.18.0",
+    "grunt-sasslint": "0.0.5",
     "grunt-webpack": "^1.0.8",
     "highlight.js": "^8.4.0",
     "html5shiv": "aFarkas/html5shiv.git#3.7.2",
