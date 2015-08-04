@@ -20,7 +20,7 @@ $(document).ready(function() {
     const $siblings = $(this).parent().siblings();
     const selection = $(this).data('tab') - 1;
     const $innerTabs = $(this).closest('.js-tabs').find('.tabs__tab');
-    const tab = $tabs.get(selection);
+    const tab = $innerTabs.get(selection);
 
     $siblings.removeClass('is-active');
     $(this).parent().addClass('is-active');
