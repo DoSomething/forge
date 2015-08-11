@@ -2,35 +2,35 @@
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 400;
-  src: forge-asset-url("fonts/proxima-nova/ProximaNova-Regular.eot");
-  src: forge-asset-url("fonts/proxima-nova/ProximaNova-Regular.eot?") format("eot"),
-       forge-asset-url("fonts/proxima-nova/ProximaNova-Regular.woff") format("woff");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-Regular.eot");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-Regular.eot?") format("eot"),
+       url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 600;
-  src: forge-asset-url("fonts/proxima-nova/ProximaNova-SBold.eot");
-  src: forge-asset-url("fonts/proxima-nova/ProximaNova-SBold.eot?") format("eot"),
-       forge-asset-url("fonts/proxima-nova/ProximaNova-SBold.woff") format("woff");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-SBold.eot");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-SBold.eot?") format("eot"),
+       url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-SBold.woff") format("woff");
 }
 
 @font-face {
   font-family: "Proxima Nova";
   font-weight: 700;
-  src: forge-asset-url("fonts/proxima-nova/ProximaNova-Bold.eot");
-  src: forge-asset-url("fonts/proxima-nova/ProximaNova-Bold.eot?") format("eot"),
-       forge-asset-url("fonts/proxima-nova/ProximaNova-Bold.woff") format("woff");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-Bold.eot");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-Bold.eot?") format("eot"),
+       url("https://www.dosomething.org/sites/default/files/fonts/proxima-nova/ProximaNova-Bold.woff") format("woff");
 }
 
 // Covered By Your Grace
 @font-face {
   font-family: "CoveredGrace";
-  src: forge-asset-url("fonts/covered-grace/CoveredGrace-Regular.eot");
-  src: forge-asset-url("fonts/covered-grace/CoveredGrace-Regular.eot?#iefix") format("embedded-opentype"),
-       forge-asset-url("fonts/covered-grace/CoveredGrace-Regular.woff") format("woff"),
-       forge-asset-url("fonts/covered-grace/CoveredGrace-Regular.ttf") format("truetype"),
-       forge-asset-url("fonts/covered-grace/CoveredGrace-Regular.svg#covered_by_your_graceregular") format("svg");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/covered-grace/CoveredGrace-Regular.eot");
+  src: url("https://www.dosomething.org/sites/default/files/fonts/covered-grace/CoveredGrace-Regular.eot?#iefix") format("embedded-opentype"),
+       url("https://www.dosomething.org/sites/default/files/fonts/covered-grace/CoveredGrace-Regular.woff") format("woff"),
+       url("https://www.dosomething.org/sites/default/files/fonts/covered-grace/CoveredGrace-Regular.ttf") format("truetype"),
+       url("https://www.dosomething.org/sites/default/files/fonts/covered-grace/CoveredGrace-Regular.svg#covered_by_your_graceregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -39,11 +39,11 @@
 // Icomoon (icon font)
 @font-face {
   font-family: "icomoon";
-  src: forge-asset-url("fonts/icomoon/icomoon.eot");
-  src: forge-asset-url("fonts/icomoon/icomoon.eot#iefix") format("embedded-opentype"),
-       forge-asset-url("fonts/icomoon/icomoon.ttf") format("truetype"),
-       forge-asset-url("fonts/icomoon/icomoon.woff") format("woff"),
-       forge-asset-url("fonts/icomoon/icomoon.svg#icomoon") format("svg");
+  src: forge-asset-url("icons/icomoon.eot");
+  src: forge-asset-url("icons/icomoon.eot#iefix") format("embedded-opentype"),
+       forge-asset-url("icons/icomoon.ttf") format("truetype"),
+       forge-asset-url("icons/icomoon.woff") format("woff"),
+       forge-asset-url("icons/icomoon.svg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
