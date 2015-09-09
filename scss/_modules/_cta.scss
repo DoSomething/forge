@@ -1,33 +1,52 @@
 // Call To Action
 //
 // The Call To Action module is used to show show a short "call to action" message
-// with an accompanying button. CTAs typically span the full width of the page.
+// with an accompanying button or set of actions. CTAs typically span the full width of the page.
 //
 // Markup:
 //   <div class="cta">
-//     <div class="wrapper">
+//     <div class="cta__block">
 //       <p class="cta__message">Miscreant! You should pay homage to our future kitten overlords:</p>
+//     </div>
+//     <div class="cta__block">
 //       <a href="#" class="button">Support Our Kittens</a>
 //     </div>
+//   </div>
+//   <br/>
+//   <div class="cta">
+//     <div class="cta__block">
+//       <p class="cta__message">Rejoice, and share the good news of our benevolent feline rulers:</p>
+//     </div>
+//     <ul class="cta__actions">
+//       <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
+//       <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
+//       <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
+//     </ul>
 //   </div>
 //
 // Styleguide Call To Action
 
 .cta {
   @include clearfix;
-  @include gutters;
   background: lighten($light-gray, 10%);
   border-bottom: 2px solid $light-gray;
   border-top: 2px solid $light-gray;
 
-  > .wrapper {
+  // @DEPRECATED: Prefer new `cta__block` container over `wrapper`.
+  > .wrapper, .cta__block {
     text-align: center;
-    padding: $base-spacing 0;
+    margin: $base-spacing 0;
 
     @include media($tablet) {
       @include span(12);
       @include push(2);
+      float: none;
     }
+  }
+
+  // @NOTE: Hack to keep old `.wrapper` behavior. Will be removed in Forge 7.0
+  > .wrapper .cta__message {
+    margin-bottom: $base-spacing;
   }
 }
 
@@ -35,5 +54,31 @@
   color: $base-font-color;
   font-size: $font-medium;
   font-weight: $weight-sbold;
-  margin: 0 0 $base-spacing;
+}
+
+.cta__actions {
+  width: 100%;
+  display: table;
+
+  li {
+    display: table-cell;
+    text-align: center;
+
+    a {
+      display: block;
+      width: 100%;
+      color: $med-gray;
+      padding: $base-spacing 0;
+    }
+
+    a:hover {
+      background: $blue;
+      color: #fff;
+    }
+
+    .social-icon:after {
+      font-size: 32px;
+    }
+  }
+
 }
