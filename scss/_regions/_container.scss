@@ -4,7 +4,8 @@
 // Modifier classes can be applied to the required `container__block` to use different
 // preset layouts. Optionally, the `container__row` class can be used to align into rows.
 //
-// Apply `.-padded` modifier to add extra bottom padding to a container.
+// Apply `.-padded` modifier to add extra bottom padding to a container, or `.-dark` to
+// use a dark purple background which blends seamlessly with the header.
 //
 // .-narrow - Three-quarters width container.
 // .-half   - Half-width container, can be placed side-by-side to create two-column layouts.
@@ -31,6 +32,11 @@
 
   &.-padded {
     padding-bottom: $base-spacing * 2;
+  }
+
+  &.-dark {
+    background: $purple;
+    color: #fff;
   }
 
   > .wrapper {
