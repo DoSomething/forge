@@ -1,0 +1,31 @@
+// Social Menu
+//
+// A group of __Social Icons__, used for share actions or linking to social media accounts.
+//
+// .-with-callout - Add additional padding for pairing with an `-above-horizontal` Message Callout.
+//
+// Markup:
+//  <ul class="social-menu {{modifier_class}}">
+//    <li><a class="social-icon -facebook" href="#"><span>Facebook</span></a></li>
+//    <li><a class="social-icon -twitter" href="#"><span>Twitter</span></a></li>
+//    <li><a class="social-icon -tumblr" href="#"><span>Tumblr</span></a></li>
+//  </ul>
+//
+// Styleguide Social Menu
+
+.social-menu {
+  margin: ($base-spacing / 2) 0;
+
+  li {
+    display: inline-block;
+  }
+
+  li + li {
+    margin-left: 12px;
+  }
+
+  // When there is an -above-horizontal message callout above the share bar.
+  &.-with-callout {
+    padding: 0 0 ($base-spacing / 2) $base-spacing;
+  }
+}

@@ -38,6 +38,7 @@
 
 // Components - basic non-divisible building blocks
 @import "_components/avatar";
+@import "_components/chat-bubble";
 @import "_components/_forms/button";
 @import "_components/_forms/field-label";
 @import "_components/_forms/form-actions";
@@ -49,11 +50,11 @@
 @import "_components/heading";
 @import "_components/list";
 @import "_components/footnote";
+@import "_components/media-video";
 @import "_components/message-callout";
 @import "_components/messages";
 @import "_components/social-icon";
 @import "_components/spinner";
-@import "_components/video";
 @import "_components/waypoints";
 
 // Modules - basic patterns, may contain other components or modules
@@ -62,6 +63,7 @@
 @import "_modules/gallery";
 @import "_modules/info-bar";
 @import "_modules/polaroid";
+@import "_modules/social-menu";
 @import "_modules/tabs";
 @import "_modules/tile";
 

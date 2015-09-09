@@ -1,0 +1,33 @@
+// Chat Bubble
+//
+// Used for longer conversational messaging, such as a note from a campaign lead.
+//
+// Markup:
+//   <div class="chat-bubble">
+//     1 items collected! That’s amazing - thanks to everyone for rocking Hunt
+//     Day 2: Trash Scavenger Hunt. Let’s keep it up! Add your contribution in
+//     the Prove It section below.
+//   </div>
+//
+// Styleguide Chat Bubble
+.chat-bubble {
+  position: relative;
+  width: 100%;
+  background-color: $light-gray;
+  border-radius: 10px;
+  padding: $base-spacing;
+  text-align: left;
+  font-size: $font-small;
+  margin-bottom: $base-spacing;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    left: 15%;
+    top: 100%;
+    border: 10px solid;
+    border-color: $light-gray transparent transparent $light-gray;
+  }
+}
