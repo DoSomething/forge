@@ -24,8 +24,9 @@
     margin-left: 12px;
   }
 
-  // When there is an -above-horizontal message callout above the share bar.
+  // When there is an `.-above-horizontal` Message Callout above the share bar.
   &.-with-callout {
-    padding: 0 0 ($base-spacing / 2) $base-spacing;
+    padding-left: 32px;
+    margin: 0;
   }
 }
