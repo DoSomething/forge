@@ -21,6 +21,7 @@
 // Styleguide Figure
 .figure {
   @include clearfix;
+  width: 100%;
   text-align: center;
 
   // Add extra bottom margin on tiny screens
