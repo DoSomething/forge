@@ -122,24 +122,30 @@
       }
     });
 
-    // Live filtering
-    $('.js-styleguide-filter').on('keyup', function(event) {
-      var term = $(this).val().toLowerCase();
+    function jumpToFirstMatch() {
       var $items = $('.js-styleguide-navigation li');
+      var $first = $items.filter('.is-expanded:not(.is-hidden)').first();
 
-      // "Jump" to first match if enter is pressed
+      var $child = $first.find('.is-expanded:not(.is-hidden)');
+      if ($child.length) {
+        $first = $child;
+      }
+
+      $first.find('a').first().trigger('click');
+    }
+
+    // Press `enter` to jump
+    $('.js-styleguide-filter').on('keydown', function(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-
-        var $first = $items.filter('.is-expanded:not(.is-hidden)').first();
-
-        var $child = $first.find('.is-expanded:not(is-hidden)');
-        if ($child.length) {
-          $first = $child;
-        }
-
-        $first.find('a').first().trigger('click');
+        jumpToFirstMatch();
       }
+    });
+
+    // Live filtering
+    $('.js-styleguide-filter').on('input', function() {
+      var term = $(this).val().toLowerCase();
+      var $items = $('.js-styleguide-navigation li');
 
       // Remove classes if search field is emptied
       if (term === '') {
