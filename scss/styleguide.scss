@@ -277,3 +277,22 @@ main {
   background: #fff url("/styleguide/assets/pattern-dark-bg.png");
 }
 
+
+.text-field.-search.styleguide-filter {
+  border: 0;
+  background-position: 0 50%;
+  padding-left: 18px;
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.waypoints li.is-hidden {
+  display: none;
+}
+
+.waypoints li.is-expanded ul {
+  max-height: 600px;
+}

@@ -1,4 +1,6 @@
 (function() {
+  var $ = window.jQuery;
+
   /**
    * Generate KSS state previews.
    */
@@ -99,6 +101,68 @@
       e.preventDefault();
       $(".js-styleguide-navigation").toggleClass("is-hidden");
     });
+  });
+
+  /**
+   * Filtering!
+   */
+  function includes(text, term) {
+    return text.indexOf(term) !== -1;
+  }
+
+  $(document).ready(function() {
+
+    // Press `t` to filter patterns
+    $(document).on('keydown', function(event) {
+      if (event.target !== document.body) return;
+
+      if(event.keyCode === 84) {
+        event.preventDefault();
+        $('.js-styleguide-filter').focus();
+      }
+    });
+
+    // Live filtering
+    $('.js-styleguide-filter').on('keyup', function(event) {
+      var term = $(this).val().toLowerCase();
+      var $items = $('.js-styleguide-navigation li');
+
+      // "Jump" to first match if enter is pressed
+      if (event.keyCode === 13) {
+        event.preventDefault();
+
+        var $first = $items.filter('.is-expanded:not(.is-hidden)').first();
+
+        var $child = $first.find('.is-expanded:not(is-hidden)');
+        if ($child.length) {
+          $first = $child;
+        }
+
+        $first.find('a').first().trigger('click');
+      }
+
+      // Remove classes if search field is emptied
+      if (term === '') {
+        $items
+          .removeClass('is-expanded')
+          .removeClass('is-hidden');
+
+        return;
+      }
+
+      $items.each(function() {
+        var contents = $(this).text().toLowerCase();
+
+        if (includes(contents, term)) {
+          $(this).addClass('is-expanded');
+          $(this).removeClass('is-hidden');
+        } else {
+          $(this).addClass('is-hidden');
+        }
+      });
+
+    });
+
   });
 
 }).call(this);

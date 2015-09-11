@@ -19,7 +19,7 @@ You can also run the pattern library on your local machine! Here's the steps:
 
   1. Fork & clone this repository.
   2. Run `npm install` to configure dependencies.
-  3. Run `grunt` to build assets, watch for changes, and run styleguide server.
+  3. Run `npm start` to build assets, watch for changes, and run styleguide server.
   4. Check it out at `localhost:3000` in your browser!
 
 ### License
