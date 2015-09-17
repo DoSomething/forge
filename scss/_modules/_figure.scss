@@ -35,25 +35,36 @@
     > .figure__media {
       float: left;
       padding-right: gutter();
+      margin: 0;
     }
 
     > .figure__body {
       overflow: hidden;
       padding-left: gutter();
     }
+  }
 
-    &.-center {
-      display: table;
+  // @NOTE: This modifier only pairs with `.left`!
+  &.-center {
+    display: table;
 
-      .figure__media {
-        margin: 0px;
-        display: table-cell;
-      }
+    // We use `table-cell` display property to let us vertically
+    // align the contents of the figure.
+    .figure__body, .figure__media {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
-      .figure__body {
-        display: table-cell;
-        vertical-align: middle;
-      }
+    // Remove `max-width` rule from images, because otherwise
+    // the media table-cell just collapses!
+    .figure__media > img {
+      max-width: none;
+    }
+
+    // Hack to force the body to take up all of the space
+    // in the table that the `.figure__media` does not.
+    .figure__body {
+      width: 100%;
     }
   }
 
@@ -63,6 +74,7 @@
     > .figure__media {
       float: right;
       padding-left: gutter();
+      margin: 0;
     }
 
     > .figure__body {

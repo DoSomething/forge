@@ -44,7 +44,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-eslint": "^16.0.0",
     "grunt-express-server": "^0.4.19",
-    "grunt-modernizr": "^0.6.0",
+    "grunt-modernizr": "metaloha/grunt-modernizr#d6657bf302bd9288e25a513197fb0e30c64ce677",
     "grunt-postcss": "^0.2.0",
     "grunt-sass": "^0.18.0",
     "grunt-sasslint": "0.0.5",
