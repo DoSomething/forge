@@ -35,6 +35,7 @@
     > .figure__media {
       float: left;
       padding-right: gutter();
+      margin: 0;
     }
 
     > .figure__body {
@@ -73,6 +74,7 @@
     > .figure__media {
       float: right;
       padding-left: gutter();
+      margin: 0;
     }
 
     > .figure__body {
