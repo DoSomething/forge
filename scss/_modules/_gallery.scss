@@ -6,12 +6,17 @@
 //
 // Styleguide Gallery
 .gallery {
+  @include clearfix;
   list-style-type: none;
   margin: 0;
   padding: 0;
 
-  @include clearfix();
+  // Optional gallery heading container
+  .gallery__heading {
+    @include span(100%);
+  }
 
+  // Gallery items
   > li {
     margin: gutter() 0;
     padding: 0 gutter();
@@ -20,10 +25,14 @@
   // Gallery - Quartet
   //
   // A "quartet" gallery shows four items per row. Galleries can contain items of
-  // any type but work particularly well with __Figures__ and __Tiles__.
+  // any type but work particularly well with __Figures__ and __Tiles__. May optionally
+  // include a heading within `.gallery__heading`.
   //
   // Markup:
   //   <ul class="gallery -quartet">
+  //     <div class="gallery__heading">
+  //       <h2>Gallery Heading</h2>
+  //     </div>
   //     <li>
   //       <article class="tile">
   //         <a class="wrapper" href="#">
@@ -82,7 +91,8 @@
   // Gallery - Triad
   //
   // A "triad" gallery shows three items per row. Galleries can contain items of
-  // any type but work particularly well with __Figures__ and __Tiles__.
+  // any type but work particularly well with __Figures__ and __Tiles__. May optionally
+  // include a heading within `.gallery__heading`.
   //
   // .-aligned - Tiles with image flushed to top and minimum
   // height to force content below to line up with adjacent tiles
@@ -91,6 +101,9 @@
   //
   // Markup:
   //   <ul class="gallery -triad {{modifier_class}}">
+  //     <div class="gallery__heading">
+  //       <h2>Gallery Heading</h2>
+  //     </div>
   //     <li>
   //       <div class="figure">
   //         <div class="figure__media">
@@ -158,10 +171,14 @@
   // Gallery - Duo
   //
   // A "duo" gallery shows two items per row. Galleries can contain items of
-  // any type but work particularly well with __Figures__ and __Tiles__.
+  // any type but work particularly well with __Figures__ and __Tiles__. May optionally
+  // include a heading within `.gallery__heading`.
   //
   // Markup:
   //   <ul class="gallery -duo">
+  //     <div class="gallery__heading">
+  //       <h2>Gallery Heading</h2>
+  //     </div>
   //     <li>
   //       <article class="figure -left">
   //         <div class="figure__media">
