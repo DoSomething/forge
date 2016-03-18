@@ -2,6 +2,8 @@
 "use strict";
 
 var webpack = require('webpack');
+var webpackConfig = require('./webpack.config');
+
 
 module.exports = function(grunt) {
   // Load tasks & measure timing
@@ -115,57 +117,7 @@ module.exports = function(grunt) {
      * Build JavaScript with Webpack.
      */
     webpack: {
-      options: {
-        entry: './js/index.js',
-        output: {
-          filename: 'dist/forge.js',
-          library: 'Forge',
-          libraryTarget: 'umd'
-        },
-        externals: {
-          // Don't bundle the 'jquery' package in forge.js, but
-          // instead load from `jQuery` global variable or AMD/CJS package.
-          'jquery': {
-            root: 'jQuery',
-            commonjs2: 'jquery',
-            amd: 'jquery'
-          }
-        },
-        module: {
-          loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
-          ]
-        }
-      },
-
-      // On production builds, disable source maps & set production flags
-      prod: {
-        plugins: [
-          new webpack.DefinePlugin({
-            DEBUG: false,
-            PRODUCTION: true
-          }),
-          new webpack.optimize.UglifyJsPlugin({
-            compress: {
-              warnings: false,
-              drop_console: true,
-              drop_debugger: true,
-              dead_code: true
-            }
-          })
-        ]
-      },
-
-      // On development builds, include source maps & set debug flags
-      debug: {
-        devtool: '#inline-source-map',
-        plugins: [
-          new webpack.DefinePlugin({
-            DEBUG: true,
-            PRODUCTION: false
-          })
-        ]
-      }
+      webpackConfig
     },
 
     /**
@@ -245,11 +197,11 @@ module.exports = function(grunt) {
 
   // > grunt build
   // Build for production.
-  grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'webpack:prod', 'modernizr:all']);
+  grunt.registerTask('build', ['clean:dist', 'copy:assets', 'sass:prod', 'postcss:prod', 'webpack', 'modernizr:all']);
 
   // > grunt build:debug
   // Build for development.
-  grunt.registerTask('build:debug', ['clean:dist', 'copy:assets', 'sass:debug', 'postcss:debug', 'webpack:debug', 'modernizr:all']);
+  grunt.registerTask('build:debug', ['clean:dist', 'copy:assets', 'sass:debug', 'postcss:debug', 'webpack', 'modernizr:all']);
 
   // > grunt test
   // Run included unit tests and linters.
