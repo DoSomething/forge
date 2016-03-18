@@ -155,13 +155,6 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Lint JavaScript using ESLint.
-     */
-    eslint: {
-      target: ["js/**/*.js", "!js/modernizr/**/*.js"]
-    },
-
-    /**
      * Lint SCSS using Sasslint.
      */
     sasslint: {
@@ -205,7 +198,7 @@ module.exports = function(grunt) {
 
   // > grunt test
   // Run included unit tests and linters.
-  grunt.registerTask('test', ['eslint', 'sasslint']);
+  grunt.registerTask('test', ['sasslint']);
 
 };
 
