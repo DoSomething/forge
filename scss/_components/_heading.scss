@@ -27,16 +27,26 @@ h1, h2, h3, h4, h5, h6,
 
 .heading.-banner {
   @include clearfix;
-  background: $black;
-  color: $white;
+  color: $black;
   text-transform: uppercase;
-  padding: gutter();
   margin: 0;
 
   span {
+    display: block;
+    padding: $base-spacing gutters() 0;
+
     @include media($medium) {
       @include span(12 no-gutters);
       @include push(2);
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 330px;
+      max-width: 100%;
+      height: 6px;
+      background: $yellow;
     }
   }
 }
