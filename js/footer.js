@@ -2,13 +2,13 @@
  * Event handlers for Footer pattern.
  */
 
-import $ from 'jquery';
+const $ = require('jquery');
 
-$(document).ready(function() {
+$(document).ready(() => {
   // Hide footer on mobile until clicked
   const $collapsible = $('.js-toggle-collapsed');
   $collapsible.addClass('is-collapsed is-toggleable');
-  $collapsible.on('click', function() {
+  $collapsible.on('click', function () {
     if (window.matchMedia('screen and (max-width: 768px)').matches) {
       $(this).toggleClass('is-collapsed');
     }

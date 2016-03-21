@@ -2,11 +2,11 @@
  * Event handlers for Navigation pattern.
  */
 
-import $ from 'jquery';
+const $ = require('jquery');
 
-$(document).ready(function() {
+$(document).ready(() => {
   // Toggle dropdown menu navigation on mobile:
-  $('.js-navigation-toggle').on('touchstart mousedown', function(event) {
+  $('.js-navigation-toggle').on('touchstart mousedown', (event) => {
     event.preventDefault();
 
     $('.chrome').toggleClass('has-mobile-menu');
@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
 
   // Toggle menu on desktop
-  $('.navigation__dropdown-toggle').on('click', function(event) {
+  $('.navigation__dropdown-toggle').on('click', (event) => {
     event.preventDefault();
     $('.navigation__dropdown').toggleClass('is-visible');
   });

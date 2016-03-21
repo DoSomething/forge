@@ -2,19 +2,19 @@
  * Initialize and attach event handlers for Tabs pattern.
  */
 
-import $ from 'jquery';
+const $ = require('jquery');
 
-$(document).ready(function() {
+$(document).ready(() => {
   const $tabs = $('.js-tabs');
   const $tabMenuLinks = $tabs.find('.tabs__menu a');
 
   // Show the first tab in any 'js-tabs' collection.
-  $tabs.each(function() {
+  $tabs.each(function () {
     $(this).find('.tabs__tab').first().addClass('is-active');
   });
 
   // View other tabs on click.
-  $tabMenuLinks.on('click', function(event) {
+  $tabMenuLinks.on('click', function (event) {
     event.preventDefault();
 
     const $siblings = $(this).parent().siblings();
@@ -30,5 +30,3 @@ $(document).ready(function() {
     $(tab).addClass('is-active');
   });
 });
-
-

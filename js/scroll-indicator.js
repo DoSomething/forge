@@ -5,9 +5,9 @@
  * Triggered by a `.js-scroll-indicator` on a link.
  */
 
-import $ from 'jquery';
-import throttle from 'lodash/function/throttle';
-import sortedIndex from 'lodash/array/sortedIndex';
+const $ = require('jquery');
+const throttle = require('lodash/function/throttle');
+const sortedIndex = require('lodash/array/sortedIndex');
 
 let oldIndicator;
 let offsets = [];
@@ -20,7 +20,7 @@ function preparePage() {
   offsets = [];
   links = [];
 
-  $('.js-scroll-indicator').find('a').each(function(index, el) {
+  $('.js-scroll-indicator').find('a').each((index, el) => {
     const $link = $(el);
 
     // Calculate the element's offset from the top of the page while anchored
@@ -46,7 +46,9 @@ function updateScrollIndicators() {
     const newIndicatorParents = newIndicator.parentsUntil('.js-scroll-indicator');
 
     if (oldIndicator && oldIndicator !== newIndicator) {
-      const oldIndicatorParents = oldIndicator.parentsUntil('.js-scroll-indicator').not(newIndicatorParents);
+      const oldIndicatorParents = oldIndicator
+        .parentsUntil('.js-scroll-indicator')
+        .not(newIndicatorParents);
       oldIndicatorParents.removeClass('is-active');
       oldIndicator.removeClass('is-active');
     }
@@ -61,7 +63,7 @@ function updateScrollIndicators() {
 /**
  * Attach event listeners and prepare link references on load.
  */
-$(document).ready(function() {
+$(document).ready(() => {
   preparePage();
 
   $(window).on('scroll', throttle(updateScrollIndicators, 60));

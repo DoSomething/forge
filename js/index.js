@@ -14,5 +14,8 @@ import Messages from './messages';
 import './scroll-indicator';
 import './tabs';
 
+// Additional custom feature-detection test(s)
+import './feature-detect/label-click';
+
 // Export public API
 export default { Messages };
