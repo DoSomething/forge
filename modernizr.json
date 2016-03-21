@@ -8,6 +8,7 @@
   ],
   "feature-detects": [
     "svg",
+    "css/checked",
     "css/gradients",
     "css/rgba",
     "svg/smil"
