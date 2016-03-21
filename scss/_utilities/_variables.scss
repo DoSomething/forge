@@ -4,7 +4,7 @@
 // This is the path where Forge's assets can be found. Be
 // sure to include the trailing slash!
 // ex: $forge-path: "node_modules/@dosomething/forge/assets/"
-$neue-path: "assets/" !default; // @DEPRECATED: Will be removed in Forge 7.0.
+$neue-path: "../assets/" !default; // @DEPRECATED: Will be removed in Forge 7.0.
 $forge-path: $neue-path !default;
 
 // The $asset-path variable can be used by your client-app
