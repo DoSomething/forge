@@ -7,7 +7,8 @@
 // .-beta   - Beta heading, default appearance for <code>h2</code> tags
 // .-gamma  - Gamma heading, default appearance for <code>h3</code> tags
 // .-delta  - Delta heading, default appearance for <code>h4</code>, <code>h5</code>, and <code>h6</code> tags
-// .-banner - Stylized header banners.
+// .-banner - Stylized header banner.
+// .-banner.-inverse - Stylized header banner (for yellow backgrounds).
 //
 // Markup: <h2 class="heading {{modifier_class}}"><span>Heading</span></h2>
 //
@@ -48,6 +49,13 @@ h1, h2, h3, h4, h5, h6,
       height: 6px;
       background: $yellow;
     }
+  }
+}
+
+// An alternate version of the "banner" for use on yellow backgrounds.
+.heading.-banner.-inverse {
+  span:after {
+    background: $white;
   }
 }
 
