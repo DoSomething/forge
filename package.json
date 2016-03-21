@@ -21,8 +21,9 @@
     "clean": "rm -rf dist",
     "start": "npm run styleguide & npm run build:dev",
     "styleguide": "babel-node styleguide/server.js",
-    "build": "npm run clean && NODE_ENV=production webpack && babel js --out-dir lib",
-    "build:dev": "npm run clean && webpack",
+    "build": "npm run clean && npm run modernizr && NODE_ENV=production webpack && babel js --out-dir lib",
+    "build:dev": "npm run clean && npm run modernizr && webpack",
+    "modernizr": "modernizr -c modernizr.json -d dist/modernizr.js",
     "test": "eslint js && sasslint scss/**/*.scss"
   },
   "repository": {
@@ -51,6 +52,7 @@
     "highlight.js": "^8.4.0",
     "html5shiv": "aFarkas/html5shiv.git#3.7.2",
     "kss": "^2.0.2",
+    "modernizr": "^3.3.1",
     "respond.js": "~1.4.2",
     "sasslint": "0.0.10",
     "webpack": "^1.12.14",
