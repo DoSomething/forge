@@ -20,7 +20,7 @@
     "prepublish": "npm run build",
     "clean": "rm -rf dist",
     "start": "npm run styleguide & npm run build:dev",
-    "styleguide": "babel-node styleguide/server.js",
+    "styleguide": "babel-node styleguide/app.js",
     "build": "npm run clean && npm run modernizr && NODE_ENV=production webpack && babel js --out-dir lib",
     "build:dev": "npm run clean && npm run modernizr && webpack",
     "modernizr": "modernizr -c modernizr.json -d dist/modernizr.js",

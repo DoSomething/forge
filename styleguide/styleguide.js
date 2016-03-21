@@ -5,7 +5,7 @@ import 'fixed-sticky';
 /**
  * Document all the things!
  */
-import './client.scss';
+import './styleguide.scss';
 
 import './assets/kss';
 import './assets/kss-colortiles';

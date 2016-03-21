@@ -16,6 +16,7 @@ resources/
 # Ignore styleguide content
 styleguide/
 dist/styleguide.css
+dist/styleguide.js
 
 # Vim stuff
 *.swp

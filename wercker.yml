@@ -16,7 +16,7 @@ deploy:
         name: build static pattern library
         code: |-
           export NODE_ENV='production'
-          node styleguide/bin/start.js &
+          npm run styleguide
           sleep 5 # let Node start up!
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
     - lukevivier/gh-pages:
