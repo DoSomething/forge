@@ -6,6 +6,15 @@
   "engines": {
     "node": "0.12.x"
   },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@dosomething/eslint-config"
+  },
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "grunt build && babel js --out-dir lib",
