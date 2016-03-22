@@ -36,11 +36,21 @@
       float: left;
       padding-right: gutter();
       margin: 0;
+
+      // Adds in a left-side gutter to balance within the page
+      @include media($mobile) {
+        padding-left: gutter();
+      }
     }
 
     > .figure__body {
       overflow: hidden;
       padding-left: gutter();
+
+      // Adds in a right-side gutter to balance within the page
+      @include media($mobile) {
+        padding-right: gutter();
+      }
     }
   }
 
