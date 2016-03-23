@@ -1,0 +1,16 @@
+{
+  "minify": true,
+  "classPrefix": "modernizr-",
+  "options": [
+    "addTest",
+    "testStyles",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "svg",
+    "css/checked",
+    "css/gradients",
+    "css/rgba",
+    "svg/smil"
+  ]
+}

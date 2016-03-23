@@ -1,11 +1,12 @@
-box: wercker/nodejs
+box: node:4.2.6
 
 # Run tests on all pull requests and branches
 build:
   steps:
     - npm-install
-    - grunt:
-        tasks: build
+    - script:
+        name: build production assets
+        code: npm run build
     - npm-test
 
 # Automatically deploy `dev` branch to Github pages
@@ -15,7 +16,7 @@ deploy:
         name: build static pattern library
         code: |-
           export NODE_ENV='production'
-          node styleguide/bin/start.js &
+          npm run styleguide
           sleep 5 # let Node start up!
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
     - lukevivier/gh-pages:

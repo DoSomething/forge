@@ -23,4 +23,4 @@ You can also run the pattern library on your local machine! Here's the steps:
   4. Check it out at `localhost:3000` in your browser!
 
 ### License
-&copy;2015 DoSomething.org. Forge is free software, and may be redistributed under the terms specified in the [LICENSE](https://github.com/DoSomething/forge/blob/dev/LICENSE) file. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.
+&copy;2016 DoSomething.org. Forge is free software, and may be redistributed under the terms specified in the [LICENSE](https://github.com/DoSomething/forge/blob/dev/LICENSE) file. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.

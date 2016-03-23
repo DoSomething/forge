@@ -1,6 +1,6 @@
-import $ from 'jquery';
+const $ = require('jquery');
 
-const messageClose = `<a href='#' class='js-close-message messages__close'><span>Close</span></a>`;
+const messageClose = '<a href="#" class="js-close-message messages__close"><span>Close</span></a>';
 
 /**
 * Adds a close button to system message banner, with optional callback.
@@ -13,7 +13,7 @@ function attachCloseButton($messages, callback = null) {
   $messages.append(messageClose);
 
   // Close message when 'x' is clicked:
-  $messages.on('click', '.js-close-message', function(event) {
+  $messages.on('click', '.js-close-message', function (event) {
     event.preventDefault();
     $(this).parent('.messages').slideUp();
 
@@ -24,8 +24,8 @@ function attachCloseButton($messages, callback = null) {
 }
 
 // Prepare any messages in the DOM on load
-$(document).ready(function() {
-  attachCloseButton( $('.messages') );
+$(document).ready(() => {
+  attachCloseButton($('.messages'));
 });
 
 export default { attachCloseButton };
