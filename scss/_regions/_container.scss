@@ -31,7 +31,7 @@
   clear: both;
 
   &.-padded {
-    padding-bottom: $base-spacing * 2;
+    padding-bottom: $base-spacing * 2.5;
   }
 
   &.-dark {
@@ -51,6 +51,7 @@
       // When inside a container wrapper, increase top/bottom padding
       // on the container body.
       padding: $base-spacing gutters();
+      line-height: $comfortable-line-height;
 
       &.-narrow {
         @include media($tablet) {
@@ -59,6 +60,8 @@
       }
 
       &.-half {
+        line-height: $unitless-line-height; // reset to "base" line height for smaller columns
+
         @include media($tablet) {
           @include span(6 of 12);
         }

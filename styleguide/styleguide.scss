@@ -85,6 +85,7 @@ main {
   @include clearfix;
   @include span(100%);
   padding-top: $base-spacing;
+  line-height: $comfortable-line-height;
 
   @include media($tablet) {
     @include span(10);
