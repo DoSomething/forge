@@ -56,7 +56,7 @@
       }
 
       .text-field.-search {
-        background-image: data-url($data-search-white-svg);
+        background-image: forge-asset-url('icons/search_white.svg');
 
         .modernizr-no-svg & {
           background-image: forge-asset-url("images/fallbacks/search_white.png");
@@ -300,10 +300,10 @@
   }
 
   .text-field.-search {
-    background-image: data-url($data-search-white-svg);
+    background-image: forge-asset-url('icons/search_white.svg');
 
     @include media($tablet) {
-      background-image: data-url($data-search-black-svg);
+      background-image: forge-asset-url('icons/search_black.svg');
 
       .modernizr-no-svg & {
         background-image: forge-asset-url("images/fallbacks/search_black.png");

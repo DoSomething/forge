@@ -48,7 +48,7 @@
   }
 
   &.-search {
-    background-image: data-url($data-search-svg);
+    background-image: forge-asset-url('icons/search.svg');
     padding-right: 0;
 
     // Search "cancel" button does not render properly on fields with padding.
@@ -57,16 +57,16 @@
     }
 
     .modernizr-no-svg & {
-      background-image: forge-asset-url("images/fallbacks/search.png");
+      background-image: forge-asset-url('images/fallbacks/search.png');
     }
   }
 
   &.is-loading {
-    background-image: data-url($data-spinner-svg);
+    background-image: forge-asset-url('icons/spinner.svg');
 
     .modernizr-no-svg &,
     .modernizr-no-smil & {
-      background-image: forge-asset-url("images/fallbacks/spinner16.gif");
+      background-image: forge-asset-url('images/fallbacks/spinner16.gif');
     }
   }
 
