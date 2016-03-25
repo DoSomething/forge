@@ -38,9 +38,3 @@
 @function asset-url($file) {
   @return url("#{$asset-path}#{$file}");
 }
-
-
-// Helper to use data URLs in stylesheets
-@function data-url($data) {
-  @return url("#{$data}");
-}
