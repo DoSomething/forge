@@ -107,7 +107,7 @@
     }
 
     input:checked ~ .option__indicator {
-      background-image: data-url($data-check-svg);
+      background-image: forge-asset-url('icons/check.svg');
     }
   }
 
@@ -117,7 +117,7 @@
     }
 
     input:checked ~ .option__indicator {
-      background-image: data-url($data-disc-svg);
+      background-image: forge-asset-url('icons/disc.svg');
     }
   }
 }
