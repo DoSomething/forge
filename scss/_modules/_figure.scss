@@ -40,7 +40,6 @@
 
     > .figure__body {
       overflow: hidden;
-      padding-left: gutter();
     }
   }
 
@@ -79,7 +78,6 @@
 
     > .figure__body {
       overflow: hidden;
-      padding-right: gutter();
     }
   }
 
@@ -100,7 +98,7 @@
 
 .figure__media {
   text-align: center;
-  margin: 0 auto $base-spacing;
+  margin: 0 auto gutter() / 2;
 
   img {
     margin: 0 auto;
