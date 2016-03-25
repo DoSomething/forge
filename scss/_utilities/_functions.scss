@@ -18,7 +18,6 @@
   @return $string;
 }
 
-
 // URL-encode a given string.
 // @param {String} $string - Initial string
 // @return {String} - URL-encoded string
@@ -42,7 +41,6 @@
 
   @return quote($string);
 }
-
 
 // Helper to generate Forge URLs in client app stylesheets
 // @NOTE See `variables.scss` for $forge-path.
