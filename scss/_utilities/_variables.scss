@@ -74,18 +74,25 @@ $weight-sbold: 600;
 $weight-bold: 700;
 
 // Typography
-$font-hero: 54px;
-$font-larger: 36px;
-$font-large: 32px;
-$font-medium: 24px;
-$font-regular: 18px; // base font size
-$font-small: 16px;
-$font-smaller: 13px;
+$font-base: 18px;
+$typographic-scale: 1.25;
+
+$font-gigantic: type-scale(7); // 83.989px;
+$font-superhero: type-scale(6); // 67.187px;
+$font-hero: type-scale(5); // 53.750px;
+// $font-larger-er: type-scale(4); // 43.945px
+$font-larger: type-scale(3); // 35.156px
+$font-large: type-scale(2); // 28.125px
+$font-medium: type-scale(1); // 22.500px
+$font-regular: type-scale(0); // 18.000px
+$font-small: type-scale(-1); // 14.400px
+$font-smaller: type-scale(-2); // 11.520px
 
 $base-font-size: $font-regular;
-$unitless-line-height: 1.5;
+$unitless-line-height: 1.4444444;
 $header-line-height: 1.2;
-$base-line-height: $base-font-size * $unitless-line-height;
+$comfortable-line-height: 1.5625; // ~28.125px at 18px
+
 
 // Measurements
 $base-spacing: 24px;

@@ -18,7 +18,6 @@
   @return $string;
 }
 
-
 // URL-encode a given string.
 // @param {String} $string - Initial string
 // @return {String} - URL-encoded string
@@ -43,7 +42,6 @@
   @return quote($string);
 }
 
-
 // Helper to generate Forge URLs in client app stylesheets
 // @NOTE See `variables.scss` for $forge-path.
 @function forge-asset-url($file) {
@@ -56,6 +54,26 @@
   @return forge-asset-url($file);
 }
 
+// Calculate font-size based on a typographic scale.
+@function type-scale($step) {
+  $font-size: $font-base;
+
+  @if $step == 0 {
+    @return $font-size;
+  }
+
+  @if $step > 0 {
+    @for $i from 1 through $step {
+      $font-size: $font-size * $typographic-scale;
+    }
+  } @else {
+    @for $i from $step to 0 {
+      $font-size: $font-size / $typographic-scale;
+    }
+  }
+
+  @return $font-size;
+}
 
 // Helper to generate URLs in client app stylesheets
 // @NOTE See `variables.scss` for $asset-path.
