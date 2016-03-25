@@ -34,8 +34,8 @@
 
     > .figure__media {
       float: left;
-      padding-right: gutter();
-      margin: 0;
+      margin-right: gutter();
+      margin-bottom: 0;
     }
 
     > .figure__body {
@@ -72,8 +72,8 @@
 
     > .figure__media {
       float: right;
-      padding-left: gutter();
-      margin: 0;
+      margin-left: gutter();
+      margin-bottom: 0;
     }
 
     > .figure__body {
@@ -92,6 +92,16 @@
       img {
         width: 100%;
       }
+    }
+  }
+
+  &.-tinted {
+    border-radius: $lg-border-radius;
+    background: $off-white;
+    overflow: hidden;
+
+    > .figure__body {
+      margin: gutter();
     }
   }
 }
