@@ -7,8 +7,9 @@
 // .-beta   - Beta heading, default appearance for <code>h2</code> tags
 // .-gamma  - Gamma heading, default appearance for <code>h3</code> tags
 // .-delta  - Delta heading, default appearance for <code>h4</code>, <code>h5</code>, and <code>h6</code> tags
-// .-banner - Stylized header banner.
-// .-banner.-inverse - Stylized header banner (for yellow backgrounds).
+// .-banner - ~~Stylized header banner with included gutter.~~ (Deprecated. Use `.-emphasized` instead, using Container pattern for appropriate margins.)
+// .-emphasized - Stylized heading with a heavy yellow underline.
+// .-emphasized.-inverse - Stylized heading with a heavy white underline (for use on yellow backgrounds).
 //
 // Markup: <h2 class="heading {{modifier_class}}"><span>Heading</span></h2>
 //
@@ -26,8 +27,9 @@ h1, h2, h3, h4, h5, h6,
   text-rendering: optimizeLegibility;
 }
 
+// @DEPRECATED: Gives old `.heading.-banner` elements the appearance
+// of the new "emphasized" heading pattern with appropriate padding.
 .heading.-banner {
-  @include clearfix;
   color: $black;
   text-transform: uppercase;
   margin: 0;
@@ -52,9 +54,25 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-// An alternate version of the "banner" for use on yellow backgrounds.
-.heading.-banner.-inverse {
-  span:after {
+// Emphasized heading with heavy yellow underline.
+.heading.-emphasized {
+  color: $black;
+  text-transform: uppercase;
+  padding: 0 0 $base-spacing;
+  overflow: hidden;
+  margin: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 330px;
+    max-width: 100%;
+    height: 5px;
+    background: $yellow;
+  }
+
+  // An alternate version of the "banner" for use on yellow backgrounds.
+  &.-inverse:after {
     background: $white;
   }
 }

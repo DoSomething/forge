@@ -24,25 +24,28 @@
 // Additional styles for modals.
 // See http://www.github.com/DoSomething/modal
 [data-modal] {
-  .heading.-banner {
+  overflow: hidden;
+
+  .heading.-emphasized {
     // make space for "x" button on the right.
-    padding: $base-spacing 72px $base-spacing $base-spacing;
+    margin: $base-spacing 72px $base-spacing $base-spacing;
+    padding: 0;
   }
-}
 
-.modal-close-button {
-  color: $med-gray;
-  top: 12px;
+  .modal-close-button {
+    color: $med-gray;
+    top: 6px;
 
-  @include media($medium) {
-    font-size: 42px;
+    @include media($medium) {
+      font-size: 42px;
+    }
   }
 }
 
 // Modal content block
 // Adds proper spacing around content in modal.
 .modal__block {
-  padding: $base-spacing;
+  margin: $base-spacing;
 }
 
 // Add support for modal overlay in IE8

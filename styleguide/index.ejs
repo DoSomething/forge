@@ -123,6 +123,7 @@
           <li>
             <a href="#modules" class="js-jump-scroll">Modules</a>
             <ul>
+              <li><a href="#bragging-gallery" class="js-jump-scroll">Bragging Gallery</a></li>
               <li><a href="#call-to-action" class="js-jump-scroll">Call To Action</a></li>
               <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
               <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
@@ -293,6 +294,7 @@
         <h2 id="modules">Modules</h2>
         <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
 
+        <%- include('pattern', { pattern: styleguide.section('Bragging Gallery') }) %>
         <%- include('pattern', { pattern: styleguide.section('Call To Action') }) %>
         <%- include('pattern', { pattern: styleguide.section('Figure') }) %>
         <%- include('pattern', { pattern: styleguide.section('Gallery') }) %>
