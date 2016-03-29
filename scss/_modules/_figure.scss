@@ -6,7 +6,6 @@
 // .-left.-center - Show a figure's media to the left of the description, with the text vertically centered.
 // .-right   - Show figure's media to the right of the description.
 // .-medium  - Set figure's media to a fixed "medium" size.
-// .-tinted.-left - Tinted figure appearance, with a solid background & rounded edges. Should be paired with either the `.-left` or `.-right` modifiers.
 //
 // Markup:
 //   <article class="figure {{modifier_class}}">
@@ -93,16 +92,6 @@
       img {
         width: 100%;
       }
-    }
-  }
-
-  &.-tinted {
-    border-radius: $lg-border-radius;
-    background: $off-white;
-    overflow: hidden;
-
-    > .figure__body {
-      margin: gutter();
     }
   }
 }
