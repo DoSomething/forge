@@ -15,10 +15,11 @@ deploy:
     - script:
         name: build static pattern library
         code: |-
-          export NODE_ENV='production'
-          npm run styleguide
+          export NODE_ENV=production
+          export STYLEGUIDE_PORT=8000
+          npm run styleguide &
           sleep 5 # let Node start up!
-          wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:3000/
+          wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:${STYLEGUIDE_PORT}/
     - lukevivier/gh-pages:
         token: $GH_TOKEN
         domain: forge.dosomething.org

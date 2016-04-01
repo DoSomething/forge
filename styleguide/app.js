@@ -34,7 +34,7 @@ app.get('/', function(req, res) {
 });
 
 // Start 'er up!
-const PORT = 3000;
+const PORT = process.env.STYLEGUIDE_PORT || 3000;
 app.listen(PORT, function() {
   console.log(`Pattern Library running on 'http://localhost:${PORT}'.`);
 });
