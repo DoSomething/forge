@@ -3,9 +3,6 @@
   "description": "Interface framework and pattern library for DoSomething.org.",
   "version": "6.6.2",
   "license": "MIT",
-  "engines": {
-    "node": "0.12.x"
-  },
   "babel": {
     "presets": [
       "es2015",
