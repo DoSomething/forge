@@ -8,10 +8,6 @@ build:
         name: build production assets
         code: npm run build
     - npm-test
-
-# Automatically deploy `dev` branch to Github pages
-deploy:
-  steps:
     - script:
         name: build static pattern library
         code: |-
@@ -20,6 +16,10 @@ deploy:
           npm run styleguide &
           sleep 5 # let Node start up!
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:${STYLEGUIDE_PORT}/
+
+# Automatically deploy `dev` branch to Github pages
+deploy:
+  steps:
     - lukevivier/gh-pages:
         token: $GH_TOKEN
         domain: forge.dosomething.org
