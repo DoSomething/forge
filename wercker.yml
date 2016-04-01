@@ -19,7 +19,7 @@ deploy:
           export STYLEGUIDE_PORT=8000
           npm run styleguide &
           sleep 5 # let Node start up!
-          wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:8000/
+          wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:${STYLEGUIDE_PORT}/
     - lukevivier/gh-pages:
         token: $GH_TOKEN
         domain: forge.dosomething.org
