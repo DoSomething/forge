@@ -50,7 +50,8 @@
     .container__block {
       // When inside a container wrapper, increase top/bottom padding
       // on the container body.
-      padding: $base-spacing gutters();
+      padding: 0 gutters();
+      margin: $base-spacing 0;
       line-height: $comfortable-line-height;
 
       &.-narrow {
@@ -72,6 +73,11 @@
   // Use container rows to separate rows in columned layouts.
   .container__row {
     @include clearfix;
+    margin: $base-spacing 0;
+
+    > .container__block {
+      margin: 0;
+    }
   }
 
   // Use container body for all container content, with optional modifiers

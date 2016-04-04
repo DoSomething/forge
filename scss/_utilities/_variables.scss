@@ -87,7 +87,7 @@ $font-large: type-scale(2); // 28.125px
 $font-medium: type-scale(1); // 22.500px
 $font-regular: type-scale(0); // 18.000px
 $font-small: type-scale(-1); // 14.400px
-$font-smaller: type-scale(-2); // 11.520px
+$font-smaller: $font-small; // DEPRECATED: Use $font-small.
 
 $base-font-size: $font-regular;
 $unitless-line-height: 1.4444444;
