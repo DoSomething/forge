@@ -39,6 +39,11 @@
     @include media($medium) {
       font-size: 42px;
     }
+
+    &.-alt {
+      font-size: $font-regular;
+      top: 30px; // Magic number to align in center of where "X" would be.
+    }
   }
 }
 
