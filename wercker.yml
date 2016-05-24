@@ -14,7 +14,7 @@ build:
           export NODE_ENV=production
           export STYLEGUIDE_PORT=8000
           npm run styleguide &
-          sleep 5 # let Node start up!
+          sleep 10 # let Node start up!
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:${STYLEGUIDE_PORT}/
 
 # Automatically deploy `dev` branch to Github pages
