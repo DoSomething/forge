@@ -55,6 +55,15 @@
       margin: $base-spacing 0;
       line-height: $comfortable-line-height;
 
+      // HACK: Since we use `.container__row` for vertical spacing, but collapse
+      // all "blocks" to stack on mobile, we need to add appropriate margins between
+      // blocks when they're stacked.
+      & + .container__block {
+        @include media($mobile) {
+          margin-top: $base-spacing;
+        }
+      }
+
       &.-narrow {
         @include media($tablet) {
           @include span(9 of 12);
