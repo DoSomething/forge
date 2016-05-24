@@ -41,6 +41,7 @@
 
   > .wrapper {
     position: relative;
+    float: left;
 
     @include media($tablet) {
       @include span(12 no-gutters);
