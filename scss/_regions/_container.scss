@@ -41,6 +41,7 @@
 
   > .wrapper {
     position: relative;
+    float: left;
 
     @include media($tablet) {
       @include span(12 no-gutters);
@@ -53,6 +54,15 @@
       padding: 0 gutters();
       margin: $base-spacing 0;
       line-height: $comfortable-line-height;
+
+      // HACK: Since we use `.container__row` for vertical spacing, but collapse
+      // all "blocks" to stack on mobile, we need to add appropriate margins between
+      // blocks when they're stacked.
+      & + .container__block {
+        @include media($mobile) {
+          margin-top: $base-spacing;
+        }
+      }
 
       &.-narrow {
         @include media($tablet) {
