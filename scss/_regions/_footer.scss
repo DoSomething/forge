@@ -102,7 +102,15 @@
       }
 
       .social-icon {
-        margin: ($base-spacing / 2);
+        // @TODO: The margin value was revised to account for an increase in number of
+        // social media icons, and the row of them breaking when the viewport was too
+        // narrow. It's something to address in the future, and maybe remove some of
+        // these styles and let the theme implementing Forge decide on spacing, or
+        // maybe just have the theme override the default values specified here?
+        // The new padding value accounts for wide icons that get cut off even if
+        // same height as other icons.
+        margin: 8px;
+        padding: 1px 1px 0;
 
         @include media($tablet) {
           margin-top: 0;
