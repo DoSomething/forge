@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "jquery": "^1.11.0",
-    "lodash": "^3.5.0",
+    "lodash": "^4.15.0",
     "susy": "^2.2.2"
   },
   "devDependencies": {

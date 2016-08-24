@@ -6,8 +6,8 @@
  */
 
 const $ = require('jquery');
-const throttle = require('lodash/function/throttle');
-const sortedIndex = require('lodash/array/sortedIndex');
+const throttle = require('lodash/throttle');
+const sortedIndex = require('lodash/sortedIndex');
 
 let oldIndicator;
 let offsets = [];
