@@ -9,20 +9,26 @@
 // .has-error     - Error state, used for validation issues.
 //
 // Markup:
+//   <label class="field-label">First Name</label>
 //   <input type="text" class="text-field {{modifier_class}}" placeholder="Type something...">
 //
 // Styleguide Forms - Text Field
 .text-field {
   width: 100%;
-  font-family: $font-proxima-nova;
-  font-size: $font-regular;
-  border: 1px solid $light-gray;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: $lg-border-radius;
-  background-clip: padding-box;
-  padding: ($base-spacing / 2);
+  font-family: $font-handwritten;
+  font-size: $font-medium;
+  border: 0;
+  border-bottom: 2px solid $med-gray;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+  background: transparent;
+  padding: 0;
   margin: 0;
   transition: border 0.5s;
+
+  &::-webkit-input-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; color: rgba(0, 0, 0, 0.3); line-height: 1.8; }
+  &::-moz-placeholder { font-family: $font-proxima-nova;  font-size: $font-regular;color: $light-gray;  color: rgba(0, 0, 0, 0.3);line-height: 1.8; }
+  &:-moz-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; color: rgba(0, 0, 0, 0.3); line-height: 1.8; }
+  &:-ms-input-placeholder { font-family: $font-proxima-nova; font-size: $font-regular; color: $light-gray; color: rgba(0, 0, 0, 0.3); line-height: 1.8; }
 
   // Fixes styling in Firefox/Safari; non-standard properties so not autoprefixed.
   -moz-appearance: none;
@@ -30,8 +36,7 @@
 
   &:focus {
     outline: none;
-    border: 1px solid $blue;
-    box-shadow: 0 0 3px $blue;
+    border-color: $blue;
   }
 
   &:disabled {
