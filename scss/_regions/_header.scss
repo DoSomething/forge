@@ -21,7 +21,6 @@
   position: relative;
   background: $purple no-repeat center center;
   background-size: cover;
-  overflow: hidden;
   padding: 144px ($base-spacing / 2) $base-spacing;
 
   @include media($tablet) {
@@ -33,6 +32,7 @@
     position: relative;
     text-align: center;
     width: 100%;
+    margin-bottom: $base-spacing;
     z-index: 10;
 
     @include clearfix();
@@ -46,9 +46,25 @@
   }
 
   .header__title {
+    position: relative;
+    display: inline-block;
+    float: left;
     color: $white;
     font-size: $font-larger;
     margin: 0;
+
+    &:after {
+      content: ".";
+      color: $black;
+      background: $black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transform: skewY(1deg) perspective(500px) translateZ(-150px) translateX(7%) scale(1.5) rotateY(15deg);
+      z-index: -1;
+    }
 
     @include media($tablet) {
       font-size: $font-hero;
@@ -56,18 +72,32 @@
   }
 
   .header__subtitle {
-    color: $white;
+    clear: both;
+    position: relative;
+    left: ($base-spacing / 2);
+    float: left;
+    display: inline-block;
+    color: $black;
     font-size: $font-regular;
+    font-weight: $weight-sbold;
+    z-index: 2;
+
+    &:after {
+      content: ".";
+      color: $yellow;
+      background: $yellow;
+      position: absolute;
+      top: 0;
+      left: ($base-spacing / -2);
+      bottom: 0;
+      right: ($base-spacing / -2);
+      transform: rotateZ(-0.75deg);
+      z-index: -1;
+    }
 
     @include media($tablet) {
       font-size: $font-medium;
     }
-  }
-
-  .header__title,
-  .header__subtitle,
-  .header__date {
-    text-shadow: $text-shadow;
   }
 
   video {
