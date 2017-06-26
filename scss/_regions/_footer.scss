@@ -109,7 +109,7 @@
         // maybe just have the theme override the default values specified here?
         // The new padding value accounts for wide icons that get cut off even if
         // same height as other icons.
-        margin: 8px;
+        margin: 6px;
         padding: 1px 1px 0;
 
         @include media($tablet) {
