@@ -1,0 +1,70 @@
+$max-width: 1440px;
+
+$small: "(max-width: 759px)";
+$medium: "(min-width: 760px)";
+$large: "(min-width: 960px)";
+$larger: "(min-width: 1060px)";
+
+// Primary Colors
+$blue: #23b7fb;
+$purple: #4e2b63;
+$yellow: #fcd116;
+
+// Grayscale Colors
+$black: #000;
+$off-black: #222;
+$dark-gray: #444;
+$med-gray: #999;
+$light-gray: #ddd;
+$off-white: #f6f6f6;
+$white: #fff;
+
+$tint: 10%;
+
+// Semantic Colors
+$base-background-color: $light-gray;
+$base-font-color: $dark-gray;
+$error-color: #ff4747;
+
+// Font Stacks
+$font-proxima-nova: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-handwritten: "CoveredGrace", cursive;
+$base-font-family: $font-proxima-nova;
+$accent-font-family: $font-handwritten;
+
+// Weights
+$weight-normal: 400;
+$weight-sbold: 600;
+$weight-bold: 700;
+
+// Typography
+$font-base: 18px;
+$typographic-scale: 1.25;
+
+$font-gigantic: type-scale(7); // 83.989px;
+$font-superhero: type-scale(6); // 67.187px;
+$font-hero: type-scale(5); // 53.750px;
+// $font-larger-er: type-scale(4); // 43.945px
+$font-larger: type-scale(3); // 35.156px
+$font-large: type-scale(2); // 28.125px
+$font-medium: type-scale(1); // 22.500px
+$font-regular: type-scale(0); // 18.000px
+$font-small: type-scale(-1); // 14.400px
+$font-smaller: $font-small; // DEPRECATED: Use $font-small.
+
+$base-font-size: $font-regular;
+$unitless-line-height: 1.4444444;
+$header-line-height: 1.2;
+$comfortable-line-height: 1.5625; // ~28.125px at 18px
+
+// Measurements
+$base-spacing: 24px;
+$section-spacing: 48px;
+
+// Decoration
+$sm-border-radius: 2px; // for accent (images, text fields, etc)
+$lg-border-radius: 4px; // used for primary interactive elements (buttons, etc)
+$box-shadow: 0 2px 12px rgba(#000, 0.3);
+$text-shadow: 0 1px 3px rgba(#000, 0.3);
+$text-emboss: 0 1px 0 rgba(#fff, 0.2);
+

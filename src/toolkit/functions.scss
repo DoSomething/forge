@@ -1,0 +1,20 @@
+// Calculate font-size based on a typographic scale.
+@function type-scale($step) {
+  $font-size: $font-base;
+
+  @if $step == 0 {
+    @return $font-size;
+  }
+
+  @if $step > 0 {
+    @for $i from 1 through $step {
+      $font-size: $font-size * $typographic-scale;
+    }
+  } @else {
+    @for $i from $step to 0 {
+      $font-size: $font-size / $typographic-scale;
+    }
+  }
+
+  @return $font-size;
+}

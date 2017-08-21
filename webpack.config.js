@@ -1,18 +1,13 @@
-var config = require('@dosomething/webpack-config');
+const configure = require('@dosomething/webpack-config');
 
-module.exports = config({
+module.exports = configure({
   entry: {
-    forge: './index.js',
-    styleguide: './styleguide/styleguide.js'
+    core: './src/core.js',
+    client: './src/client.js',
+    admin: './src/admin.js',
   },
-  
-  // Don't bundle the 'jquery' package with the library (forge.js), but
-  // instead load from `jQuery` global variable or AMD/CJS package.
-  externals: {
-    'jquery': {
-      root: 'jQuery',
-      commonjs2: 'jquery',
-      amd: 'jquery'
-    }
-  },
+
+  output: {
+    path: __dirname + '/dist',
+  }
 });
