@@ -1,4 +1,5 @@
 const configure = require('@dosomething/webpack-config');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = configure({
@@ -8,6 +9,7 @@ module.exports = configure({
   },
 
   output: {
+    filename: '[name].js',
     path: path.join(__dirname, 'dist'),
   },
 
@@ -21,4 +23,8 @@ module.exports = configure({
       amd: 'jquery'
     }
   },
+
+  plugins: [
+    new ExtractTextPlugin('[name].css'),
+  ]
 });
