@@ -11,11 +11,11 @@ build:
     - script:
         name: build static pattern library
         code: |-
-          touch .nojekyll
           export STYLEGUIDE_PORT=8000
           npm run styleguide &
           sleep 10 # let Node start up!
           wget -mpc --user-agent="" -e robots=off -P build -nH http://localhost:${STYLEGUIDE_PORT}/
+          touch build/.nojekyll
 
 # Automatically deploy `dev` branch to Github pages
 deploy:
