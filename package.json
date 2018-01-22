@@ -9,7 +9,11 @@
     ]
   },
   "eslintConfig": {
-    "extends": "@dosomething/eslint-config"
+    "extends": "@dosomething/eslint-config",
+    "globals": {
+      "document": false,
+      "window": false
+    }
   },
   "main": "lib/index.js",
   "scripts": {
@@ -39,8 +43,7 @@
     "dosomething-modal": "^0.3.2",
     "dosomething-validation": "^0.2.4",
     "ejs": "^2.3.1",
-    "eslint": "^2.4.0",
-    "eslint-plugin-react": "^4.2.3",
+    "eslint": "^4.1.6",
     "express": "^4.16.2",
     "highlight.js": "^8.4.0",
     "html5shiv": "^3.7.3",

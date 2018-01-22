@@ -1,4 +1,4 @@
-box: node:4.2.6
+box: node:8
 
 # Run tests on all pull requests and branches
 build:
