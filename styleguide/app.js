@@ -17,7 +17,7 @@ app.locals.highlight = function(markup) {
 };
 
 app.get('/', function(req, res) {
-  let version = app.get('env') === 'production' ? pkg.version : pkg.version + '-dev';
+  let version = pkg.version;
 
   // Read KSS on each render. Since this is only used for local development, I'm
   // not too worried about performance. (It takes approx. 40ms to parse KSS.)
