@@ -1,6 +1,5 @@
 import 'dosomething-modal';
 import 'dosomething-validation';
-import 'fixed-sticky';
 
 /**
  * Document all the things!

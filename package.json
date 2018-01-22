@@ -44,7 +44,6 @@
     "eslint": "^2.4.0",
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.12.2",
-    "fixed-sticky": "DFurnes/fixed-sticky#master",
     "highlight.js": "^8.4.0",
     "html5shiv": "aFarkas/html5shiv.git#3.7.2",
     "kss": "^2.0.2",
