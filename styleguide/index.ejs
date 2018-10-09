@@ -159,7 +159,7 @@
         <h2 id="base">Base Styles</h2>
         <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
 
-        <%- include('pattern', { pattern: styleguide.section('Base - Inline Elements') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Base - Inline Elements') }) %>
 
         <h3 id="fonts-and-colors">Fonts &amp; Colors</h3>
         <p>We use <a href="http://www.marksimonson.com/fonts/view/proxima-nova">Proxima Nova</a> for all headings and body copy.</p>
@@ -255,69 +255,69 @@
         <h3 id="animation">Animation</h3>
         <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
 
-        <%- include('pattern', { pattern: styleguide.section('Animation - Fade In'), hide_markup: true  }) %>
-        <%- include('pattern', { pattern: styleguide.section('Animation - Fade In Up'), hide_markup: true  }) %>
-        <%- include('pattern', { pattern: styleguide.section('Animation - Fade Out'), hide_markup: true  }) %>
-        <%- include('pattern', { pattern: styleguide.section('Animation - Fade Out Down'), hide_markup: true  }) %>
-        <%- include('pattern', { pattern: styleguide.section('Animation - Tada'), hide_markup: true  }) %>
-        <%- include('pattern', { pattern: styleguide.section('Animation - Wobble'), hide_markup: true  }) %>
-        <%- include('pattern', { pattern: styleguide.section('Animation - Shake'), hide_markup: true }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Fade In'), hide_markup: true  }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Fade In Up'), hide_markup: true  }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Fade Out'), hide_markup: true  }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Fade Out Down'), hide_markup: true  }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Tada'), hide_markup: true  }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Wobble'), hide_markup: true  }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Animation - Shake'), hide_markup: true }) %>
 
         <h2 id="components">Components</h2>
         <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Forge to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
 
-        <%- include('pattern', { pattern: styleguide.section('Avatar') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Chat Bubble') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Avatar') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Chat Bubble') }) %>
 
         <div id="forms">
-          <%- include('pattern', { pattern: styleguide.section('Forms - Button') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Form Item') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Form Action') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Inline Form Action') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Field Label') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Option Field') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Media Option Field') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Select Box') }) %>
-          <%- include('pattern', { pattern: styleguide.section('Forms - Text Field') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Button') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Form Item') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Form Action') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Inline Form Action') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Field Label') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Option Field') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Media Option Field') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Select Box') }) %>
+          <%- include('pattern', { pattern: styleguide.sections('Forms - Text Field') }) %>
         </div>
 
-        <%- include('pattern', { pattern: styleguide.section('Footnote') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Heading') }) %>
-        <%- include('pattern', { pattern: styleguide.section('List') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Media Video') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Message Callout') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Messages') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Social Icon') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Spinner') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Waypoints') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Footnote') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Heading') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('List') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Media Video') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Message Callout') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Messages') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Social Icon') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Spinner') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Waypoints') }) %>
 
         <h2 id="modules">Modules</h2>
         <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
 
-        <%- include('pattern', { pattern: styleguide.section('Bragging Gallery') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Call To Action') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Figure') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Gallery') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Gallery - Quartet') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Gallery - Triad') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Gallery - Duo') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Gallery - Featured') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Gallery - Mosaic') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Info Bar') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Polaroid') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Social Menu') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Tabs') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Tile') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Bragging Gallery') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Call To Action') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Figure') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Gallery') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Gallery - Quartet') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Gallery - Triad') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Gallery - Duo') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Gallery - Featured') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Gallery - Mosaic') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Info Bar') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Polaroid') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Social Menu') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Tabs') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Tile') }) %>
 
         <h2 id="regions">Regions</h2>
         <p>Regions are complete sections of an interface.</p>
 
-        <%- include('pattern', { pattern: styleguide.section('Chrome') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Container') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Footer') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Header') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Modal') }) %>
-        <%- include('pattern', { pattern: styleguide.section('Navigation') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Chrome') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Container') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Footer') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Header') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Modal') }) %>
+        <%- include('pattern', { pattern: styleguide.sections('Navigation') }) %>
 
         <h2 id="resources">Resources</h2>
         <p>Forge also includes some additional resources for use with traditional design tools.</p>
