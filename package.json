@@ -24,7 +24,7 @@
     "build": "npm run clean && npm run modernizr && NODE_ENV=production webpack && NODE_ENV=test babel js --out-dir lib",
     "build:dev": "npm run clean && npm run modernizr && webpack",
     "modernizr": "modernizr -c modernizr.json -d dist/modernizr.js",
-    "test": "eslint js && sasslint scss/**/*.scss"
+    "test": "eslint js"
   },
   "repository": {
     "type": "git",
@@ -47,10 +47,9 @@
     "express": "^4.16.2",
     "highlight.js": "^8.4.0",
     "html5shiv": "^3.7.3",
-    "kss": "^2.0.2",
+    "kss": "3.0.0-beta.23",
     "modernizr": "^3.3.1",
     "respond.js": "~1.4.2",
-    "sasslint": "0.0.10",
     "webpack": "^3.0.0"
   }
 }

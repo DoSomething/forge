@@ -21,9 +21,7 @@ app.get('/', function(req, res) {
 
   // Read KSS on each render. Since this is only used for local development, I'm
   // not too worried about performance. (It takes approx. 40ms to parse KSS.)
-  kss.traverse(__dirname + '/../scss', {}, function(err, styleguide) {
-    if(err) console.error(err);
-
+  kss.traverse(__dirname + '/../scss', {}).then(function(styleguide) {
     res.render('index', {
       version: version,
       styleguide: styleguide,
