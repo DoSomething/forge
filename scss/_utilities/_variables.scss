@@ -63,7 +63,8 @@ $color-tint: 10%;
 // ----------
 
 // Font Stacks
-$font-proxima-nova: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-sans-serif: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-proxima-nova: $font-sans-serif; // DEPRECATED: Use $font-sans-serif.
 $font-handwritten: "CoveredGrace", cursive;
 
 $base-font-family: $font-proxima-nova;
