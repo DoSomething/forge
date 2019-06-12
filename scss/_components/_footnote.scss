@@ -16,18 +16,20 @@
 //   </div>
 //
 // Styleguide Footnote
+$footnote-gray: #757575;
+
 .footnote {
   font-size: $font-small;
-  color: $med-gray;
+  color: $footnote-gray;
 
   p {
     font-size: $font-small;
-    color: $med-gray;
+    color: $footnote-gray;
     margin: 0;
   }
 
   .heading, h1, h2, h3, h4, h5, h6 {
-    color: $med-gray;
+    color: $footnote-gray;
   }
 
   sup {
@@ -49,7 +51,7 @@
   }
 
   a {
-    color: $med-gray;
+    color: $footnote-gray;
     text-decoration: underline;
 
     &:hover {
