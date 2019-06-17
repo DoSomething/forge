@@ -8,7 +8,8 @@
       [
         "@dosomething",
         {
-          "withGraphQL": false
+          "withGraphQL": false,
+          "withPolyfills": false
         }
       ]
     ]
@@ -49,7 +50,6 @@
     "url": "https://github.com/DoSomething/forge.git"
   },
   "dependencies": {
-    "core-js": "^3.1.4",
     "jquery": "^3.4.1",
     "lodash": "^4.15.0",
     "susy": "^2.2.2"
