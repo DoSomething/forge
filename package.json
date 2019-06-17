@@ -5,9 +5,19 @@
   "license": "MIT",
   "babel": {
     "presets": [
-      "@dosomething/babel-config"
+      [
+        "@dosomething",
+        {
+          "withGraphQL": false
+        }
+      ]
     ]
   },
+  "browserslist": [
+    ">0.5%",
+    "ie 11",
+    "not op_mini all"
+  ],
   "eslintConfig": {
     "extends": "@dosomething/eslint-config",
     "globals": {
@@ -15,41 +25,58 @@
       "window": false
     }
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "npm run build",
-    "clean": "rm -rf dist",
-    "start": "npm run styleguide & npm run build:dev",
+    "start": "npm run styleguide & npm run modernizr && webpack --env=development --hide-modules --watch",
     "styleguide": "NODE_ENV=test babel-node styleguide/app.js",
-    "build": "npm run clean && npm run modernizr && NODE_ENV=production webpack && NODE_ENV=test babel js --out-dir lib",
-    "build:dev": "npm run clean && npm run modernizr && webpack",
+    "build": "webpack --env=production && NODE_ENV=test babel js --out-dir lib && npm run modernizr",
+    "build:dev": "npm run modernizr && webpack --env=development --hide-modules",
     "modernizr": "modernizr -c modernizr.json -d dist/modernizr.js",
-    "test": "eslint js"
+    "test": "eslint js",
+    "prepublish": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/DoSomething/forge.git"
   },
   "dependencies": {
-    "jquery": "^3.0.0",
+    "core-js": "^3.1.4",
+    "jquery": "^3.4.1",
     "lodash": "^4.15.0",
     "susy": "^2.2.2"
   },
   "devDependencies": {
-    "@dosomething/babel-config": "^2.0.1",
-    "@dosomething/eslint-config": "^3.1.2",
-    "@dosomething/webpack-config": "^3.0.0",
-    "babel-cli": "^6.6.5",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/runtime": "^7.4.5",
+    "@dosomething/babel-preset": "^3.2.0",
+    "@dosomething/eslint-config": "^5.0.0",
+    "@dosomething/webpack-config": "^5.1.0",
     "dosomething-modal": "^0.3.2",
     "dosomething-validation": "^0.2.7",
-    "ejs": "^2.3.1",
+    "ejs": "^2.6.2",
     "eslint": "^4.1.6",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "highlight.js": "^8.4.0",
     "html5shiv": "^3.7.3",
+    "husky": "^2.4.1",
     "kss": "3.0.0-beta.23",
-    "modernizr": "^3.3.1",
+    "modernizr": "^3.7.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "respond.js": "~1.4.2",
-    "webpack": "^3.0.0"
+    "webpack": "~4.28.0",
+    "webpack-cli": "^3.3.4"
   }
 }
