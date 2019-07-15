@@ -51,15 +51,15 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.14",
     "susy": "^2.2.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/node": "^7.4.5",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
     "@babel/preset-flow": "^7.0.0",
-    "@babel/runtime": "^7.4.5",
+    "@babel/runtime": "^7.5.4",
     "@dosomething/babel-preset": "^3.2.0",
     "@dosomething/eslint-config": "^5.0.1",
     "@dosomething/webpack-config": "^5.1.0",
@@ -70,13 +70,13 @@
     "express": "^4.17.1",
     "highlight.js": "^8.4.0",
     "html5shiv": "^3.7.3",
-    "husky": "^2.4.1",
+    "husky": "^2.7.0",
     "kss": "3.0.0-beta.23",
     "modernizr": "^3.7.1",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "respond.js": "~1.4.2",
     "webpack": "~4.28.0",
-    "webpack-cli": "^3.3.4"
+    "webpack-cli": "^3.3.6"
   }
 }
