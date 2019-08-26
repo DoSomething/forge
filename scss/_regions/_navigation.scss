@@ -83,6 +83,10 @@
   &.is-visible {
     .navigation__logo {
       position: fixed;
+
+      @include media($large) {
+        position: relative;
+      }
     }
 
     .navigation__toggle {
