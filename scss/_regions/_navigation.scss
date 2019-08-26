@@ -35,7 +35,7 @@
 .navigation {
   width: 100%;
 
-  @include media($tablet) {
+  @include media($large) {
     padding: $base-spacing 0;
   }
 
@@ -51,15 +51,16 @@
         color: #fff;
         text-shadow: $text-shadow;
         border: 1px solid #fff;
-        box-shadow: 0 1px 3px rgba(#000, 0.2),
-        inset 0 1px 3px rgba(#000, 0.2);
+        box-shadow: 0 1px 3px rgba(#000, 0.2), inset 0 1px 3px rgba(#000, 0.2);
       }
 
       .text-field.-search {
         background-image: forge-asset-url('icons/search_white.svg');
 
         .modernizr-no-svg & {
-          background-image: forge-asset-url("images/fallbacks/search_white.png");
+          background-image: forge-asset-url(
+            'images/fallbacks/search_white.png'
+          );
         }
       }
     }
@@ -80,20 +81,18 @@
 
   // Mobile navigation view
   &.is-visible {
-    @include media($mobile) {
-      .navigation__logo {
-        position: fixed;
-      }
+    .navigation__logo {
+      position: fixed;
+    }
 
-      .navigation__toggle {
-        position: fixed;
-        color: #fff;
-      }
+    .navigation__toggle {
+      position: fixed;
+      color: $white;
+    }
 
-      .navigation__menu {
-        display: block;
-        animation: zoomIn 0.5s;
-      }
+    .navigation__menu {
+      display: block;
+      animation: zoomIn 0.5s;
     }
   }
 
@@ -107,37 +106,34 @@
 // DoSomething.org logo container
 .navigation__logo {
   float: left;
+  left: auto;
   padding: gutter();
+  position: relative;
+  top: auto;
+  z-index: auto;
 
-  &:after {
-    content: "";
-    display: block;
-    background: forge-asset-url("images/logo.svg");
-    width: 72px;
-    height: 60px;
-  }
-
-  .modernizr-no-svg &:after {
-    background: forge-asset-url("images/logo.png");
-  }
-
-  @include media($mobile) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9998;
-  }
-
-  @include media($tablet) {
+  @include media($large) {
     @include span(2);
     min-width: 96px;
     padding: 0 gutter();
   }
 
-  @include media($desktop) {
+  @include media($larger) {
     &:after {
       margin-left: gutter();
     }
+  }
+
+  &:after {
+    background: forge-asset-url('images/logo.svg');
+    content: '';
+    display: block;
+    height: 60px;
+    width: 72px;
+  }
+
+  .modernizr-no-svg &:after {
+    background: forge-asset-url('images/logo.png');
   }
 
   span {
@@ -155,12 +151,12 @@
 
   &:after {
     @include icomoon-icon;
-    content: "\e608";
+    content: '\e608';
     font-size: 32px;
     text-decoration: none;
   }
 
-  @include media($tablet) {
+  @include media($large) {
     display: none;
   }
 
@@ -171,30 +167,31 @@
 
 // Contents of menu, toggled on-and-off on mobile.
 .navigation__menu {
+  background: $off-black;
   display: none;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  width: 100%;
   z-index: 100;
 
-  @include media($mobile) {
-    background: $off-black;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-
-    a {
-      color: #fff;
-      text-align: center;
-    }
-
-    .navigation__primary li {
-      min-height: 78px;
-      margin: 10vh 0;
-    }
+  a {
+    color: #fff;
+    text-align: center;
   }
 
-  @include media($tablet) {
+  @include media($large) {
     @include clearfix;
+    background: none;
     display: block;
+    height: auto;
+    position: relative;
+    width: auto;
+
+    a {
+      color: $off-black;
+      text-align: left;
+    }
   }
 }
 
@@ -203,20 +200,27 @@
   list-style-type: none;
   padding: 0;
 
+  @include media($large) {
+    float: left;
+  }
+
   > li {
+    margin: 10vh 0;
+    min-height: 78px;
     line-height: 1.2;
     padding: 18px gutter();
     transition: padding 0.5s;
 
-    @include media($tablet) {
+    @include media($large) {
       float: left;
       display: block;
-      min-width: span(2);
       margin: 0 gutter() 0 0;
+      min-height: auto;
+      min-width: span(2);
       text-align: left;
     }
 
-    @include media($desktop) {
+    @include media($larger) {
       padding: gutter();
     }
   }
@@ -234,11 +238,11 @@
     font-size: $font-small;
     opacity: 0.8;
 
-    @include media($tablet) {
+    @include media($large) {
       display: none;
     }
 
-    @include media($desktop) {
+    @include media($larger) {
       display: block;
     }
   }
@@ -251,7 +255,7 @@
   margin: 0 gutter();
   padding: 0;
 
-  @include media($tablet) {
+  @include media($large) {
     float: right;
   }
 
@@ -262,7 +266,7 @@
     padding: gutter();
     margin: 0;
 
-    @include media($tablet) {
+    @include media($large) {
       float: left;
       display: block;
       text-align: left;
@@ -271,7 +275,7 @@
 
       // Add spacing between adjacent menu items
       + li {
-        margin-left: $base-spacing;
+        margin-left: $base-spacing / 2;
       }
     }
   }
@@ -282,19 +286,17 @@
     padding-top: 5px;
     padding-bottom: 5px;
     border: 1px solid #fff;
-    box-shadow: 0 1px 0 rgba(#000, 0.2),
-    inset 0 1px 0 rgba(#000, 0.2);
+    box-shadow: 0 1px 0 rgba(#000, 0.2), inset 0 1px 0 rgba(#000, 0.2);
     transition: width 0.5s;
 
-    @include media($tablet) {
-      width: 100px;
+    @include media($large) {
+      width: 145px;
       color: $off-black;
       border: 1px solid $off-black;
-      box-shadow: 0 1px 0 rgba(#fff, 0.2),
-      inset 0 1px 0 rgba(#fff, 0.2);
+      box-shadow: 0 1px 0 rgba(#fff, 0.2), inset 0 1px 0 rgba(#fff, 0.2);
     }
 
-    @include media($large) {
+    @include media($largest) {
       width: 200px;
     }
   }
@@ -302,16 +304,16 @@
   .text-field.-search {
     background-image: forge-asset-url('icons/search_white.svg');
 
-    @include media($tablet) {
+    @include media($large) {
       background-image: forge-asset-url('icons/search_black.svg');
 
       .modernizr-no-svg & {
-        background-image: forge-asset-url("images/fallbacks/search_black.png");
+        background-image: forge-asset-url('images/fallbacks/search_black.png');
       }
     }
 
     .modernizr-no-svg & {
-      background-image: forge-asset-url("images/fallbacks/search_white.png");
+      background-image: forge-asset-url('images/fallbacks/search_white.png');
     }
   }
 
@@ -351,10 +353,10 @@
         float: none;
       }
     }
-
   }
 
-  a, ul {
+  a,
+  ul {
     font-weight: normal;
     text-shadow: none;
   }
@@ -373,7 +375,7 @@
 
       &:after {
         @include icomoon-icon;
-        content: "\e607";
+        content: '\e607';
         display: inline-block;
         position: absolute;
         right: 0;
@@ -421,7 +423,9 @@
 // When menu is open, prevent scrolling on mobile breakpoint.
 // See also: _chrome.scss
 .chrome.has-mobile-menu {
-  @include media($mobile) {
-    position: fixed;
+  position: fixed;
+
+  @include media($large) {
+    position: relative;
   }
 }

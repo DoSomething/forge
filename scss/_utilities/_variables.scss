@@ -4,22 +4,23 @@
 // This is the path where Forge's assets can be found. Be
 // sure to include the trailing slash!
 // ex: $forge-path: "node_modules/@dosomething/forge/assets/"
-$neue-path: "../assets/" !default; // @DEPRECATED: Will be removed in Forge 7.0.
+$neue-path: '../assets/' !default; // @DEPRECATED: Will be removed in Forge 7.0.
 $forge-path: $neue-path !default;
 
 // The $asset-path variable can be used by your client-app
 // to simplify including asset URLs.
-$asset-path: "" !default;
+$asset-path: '' !default;
 
 // Layout
 // ------
 
 $max-width: 1440px;
 
-$small: "(max-width: 759px)";
-$medium: "(min-width: 760px)";
-$large: "(min-width: 960px)";
-$larger: "(min-width: 1060px)";
+$small: '(max-width: 759px)';
+$medium: '(min-width: 760px)';
+$large: '(min-width: 960px)';
+$larger: '(min-width: 1060px)';
+$largest: '(min-width: 1280px)';
 
 $mobile: $small;
 $tablet: $medium;
@@ -28,7 +29,9 @@ $desktop: $larger;
 $susy: (
   container: 1440px,
   columns: 16,
-  gutters: (24/64.5),
+  gutters: (
+    24/64.5,
+  ),
   column-width: 64.5px,
   gutter-position: inside-static,
   global-box-sizing: border-box,
@@ -63,9 +66,10 @@ $color-tint: 10%;
 // ----------
 
 // Font Stacks
-$font-sans-serif: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-sans-serif: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial',
+  sans-serif;
 $font-proxima-nova: $font-sans-serif; // DEPRECATED: Use $font-sans-serif.
-$font-handwritten: "CoveredGrace", cursive;
+$font-handwritten: 'CoveredGrace', cursive;
 
 $base-font-family: $font-proxima-nova;
 $accent-font-family: $font-handwritten;
