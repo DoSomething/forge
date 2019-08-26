@@ -29,9 +29,7 @@ $desktop: $larger;
 $susy: (
   container: 1440px,
   columns: 16,
-  gutters: (
-    24/64.5,
-  ),
+  gutters: (24/64.5),
   column-width: 64.5px,
   gutter-position: inside-static,
   global-box-sizing: border-box,
