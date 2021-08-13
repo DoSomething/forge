@@ -1,0 +1,2990 @@
+<!DOCTYPE html>
+
+<!--[if lte IE 8 ]> <html dir="ltr" lang="en-US" class="modernizr-no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en-US" class="modernizr-no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="modernizr-no-js"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Pattern Library | DoSomething.org</title>
+
+  <script type="text/javascript" src="dist/modernizr.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/images/apple-touch-icon-precomposed.png">
+
+  <link rel="stylesheet" href="node_modules/dosomething-modal/dist/modal.css" media="screen, projection" type="text/css">
+  <link rel="stylesheet" href="node_modules/dosomething-validation/dist/validation.css" media="screen, projection" type="text/css">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="dist/forge.css" media="screen, projection" type="text/css">
+  <link rel="stylesheet" href="dist/styleguide.css" media="screen, projection" type="text/css">
+
+  <!--[if lt IE 9]>
+  <script src="node_modules/html5shiv/dist/html5shiv.js" type="text/javascript"></script>
+  <script src="node_modules/respond.js/dest/respond.min.js" type="text/javascript"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="node_modules/highlight.js/styles/github.css" media="screen, projection" type="text/css">
+</head>
+
+<body>
+<div class="chrome">
+
+  <div id="top" class="wrapper">
+    <nav class="navigation -white -floating">
+      <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+      <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+      <div class="navigation__menu">
+        <ul class="navigation__primary">
+          <li>
+            <a href="//sites.google.com/a/dosomething.org/dosomethinguxwiki/">
+              <strong class="navigation__title">Product Wiki</strong>
+              <span class="navigation__subtitle">Specs, mocks, etc.</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="//brand.dosomething.org">
+              <strong class="navigation__title">Brand Guide</strong>
+              <span class="navigation__subtitle">Style, tone, &amp; voice</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="//forge.dosomething.org">
+              <strong class="navigation__title">Pattern Library</strong>
+              <span class="navigation__subtitle">Interface framework</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="navigation__secondary">
+          <li class="navigation__dropdown">
+            <a href="#" class="navigation__dropdown-toggle">6.10.0</a>
+            <ul>
+              <li><a href="https://www.github.com/dosomething/forge">View on GitHub</a></li>
+              <li><a href="https://www.npmjs.com/package/@dosomething/forge">View on NPM</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="header" role="banner">
+      <div class="wrapper">
+        <h1 class="header__title">
+          Pattern Library
+        </h1>
+        <p class="header__subtitle">
+          Any pattern, anytime, anywhere.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <nav class="styleguide-sidebar">
+        <a href="#" class="secondary styleguide-navigation-toggle js-styleguide-navigation-toggle">Table of Contents</a>
+        <form class="filter">
+          <input type="search" placeholder="Search..." class="text-field -search styleguide-filter js-styleguide-filter">
+        </form>
+        <ul class="waypoints -vertical js-scroll-indicator js-styleguide-navigation">
+          <li><a href="#intro" class="js-jump-scroll">Introduction</a></li>
+
+          <li>
+            <a href="#base" class="js-jump-scroll">Base Styles</a>
+            <ul>
+              <li><a href="#base" class="js-jump-scroll">Base Elements</a></li>
+              <li><a href="#fonts-and-colors" class="js-jump-scroll">Fonts &amp; Colors</a></li>
+              <li><a href="#grid" class="js-jump-scroll">Grid System</a></li>
+              <li><a href="#animation" class="js-jump-scroll">Animation</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#components" class="js-jump-scroll">Components</a>
+            <ul>
+              <li><a href="#avatar" class="js-jump-scroll">Avatar</a></li>
+              <li><a href="#chat-bubble" class="js-jump-scroll">Chat Bubble</a></li>
+              <li><a href="#forms" class="js-jump-scroll">Forms</a></li>
+              <li><a href="#footnote" class="js-jump-scroll">Footnote</a></li>
+              <li><a href="#heading" class="js-jump-scroll">Heading</a></li>
+              <li><a href="#list" class="js-jump-scroll">List</a></li>
+              <li><a href="#media-video" class="js-jump-scroll">Media Video</a></li>
+              <li><a href="#message-callout" class="js-jump-scroll">Message Callout</a></li>
+              <li><a href="#messages" class="js-jump-scroll">Messages</a></li>
+              <li><a href="#social-icon" class="js-jump-scroll">Social Icon</a></li>
+              <li><a href="#spinner" class="js-jump-scroll">Spinner</a></li>
+              <li><a href="#waypoints" class="js-jump-scroll">Waypoints</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#modules" class="js-jump-scroll">Modules</a>
+            <ul>
+              <li><a href="#bragging-gallery" class="js-jump-scroll">Bragging Gallery</a></li>
+              <li><a href="#call-to-action" class="js-jump-scroll">Call To Action</a></li>
+              <li><a href="#figure" class="js-jump-scroll">Figure</a></li>
+              <li><a href="#gallery" class="js-jump-scroll">Gallery</a></li>
+              <li><a href="#info-bar" class="js-jump-scroll">Info Bar</a></li>
+              <li><a href="#polaroid" class="js-jump-scroll">Polaroid</a></li>
+              <li><a href="#social-menu" class="js-jump-scroll">Social Menu</a></li>
+              <li><a href="#tabs" class="js-jump-scroll">Tabs</a></li>
+              <li><a href="#tile" class="js-jump-scroll">Tile</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#regions" class="js-jump-scroll">Regions</a>
+            <ul>
+              <li><a href="#chrome" class="js-jump-scroll">Chrome</a></li>
+              <li><a href="#container" class="js-jump-scroll">Container</a></li>
+              <li><a href="#footer" class="js-jump-scroll">Footer</a></li>
+              <li><a href="#header" class="js-jump-scroll">Header</a></li>
+              <li><a href="#modal" class="js-jump-scroll">Modal</a></li>
+              <li><a href="#navigation" class="js-jump-scroll">Navigation</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#resources" class="js-jump-scroll">Resources</a></li>
+        </ul>
+      </nav>
+
+      <article class="styleguide-content">
+        <p id="intro">This is <a href="https://www.github.com/dosomething/forge">Forge</a>, our interface framework and pattern library. It defines a set of base styles and common patterns shared throughout our website. It's a strong foundation for building beautiful interfaces.</p>
+
+        <p>Forge was built for our internal needs at DoSomething.org, but it could also work for your organization. Feel free to fork our <a href="https://github.com/dosomething/forge">GitHub repository</a> and use it as a starting point for your own pattern library, or read more about why we <a href="https://blog.dosomething.org/we-open-sourced-our-code-heres-why-you-should-too/">open-source our code</a>.</p>
+
+        <h2 id="base">Base Styles</h2>
+        <p>Content is the basis for our design, so we need a strong typographic foundation. We define base HTML classes with comfortable font-size and spacing for readability, and a clear information hierarchy between elements.</p>
+
+        
+<div class="styleguide-example">
+  <h4 id="base-inline-elements">Inline Elements <a class="styleguide-reference-link" href="#base-inline-elements">#</a></h4>
+  <div class="styleguide-description">
+    <p>Tags for inline text elements are given default styles. Adjacent
+paragraphs are given top margin spacing, and headings following paragraph
+text have increased spacing.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="base-inline-elements--example" class="styleguide-element">
+        <p>DoSomething.org <strong>makes the world suck less</strong>. One of the <mark>largest orgs
+  for young people and social change</mark>, our members tackle campaigns that impact every cause,
+  from poverty to violence to the environment to <em>literally</em> everything else.<sup>1</sup>
+  Any cause, anytime, anywhere. *mic drop*</p>
+  <p>This is a <a href="#">link</a>, and a <a href="#" class="secondary">secondary link</a>.</p>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;p&gt;DoSomething.org &lt;strong&gt;makes <span class="hljs-operator">the</span> world suck less&lt;/strong&gt;. One <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> &lt;mark&gt;largest orgs
+  <span class="hljs-keyword">for</span> young people <span class="hljs-operator">and</span> social change&lt;/mark&gt;, our members tackle campaigns that impact every cause,
+  <span class="hljs-built_in">from</span> poverty <span class="hljs-built_in">to</span> violence <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> environment <span class="hljs-built_in">to</span> &lt;em&gt;literally&lt;/em&gt; everything <span class="hljs-keyword">else</span>.&lt;sup&gt;<span class="hljs-number">1</span>&lt;/sup&gt;
+  Any cause, anytime, anywhere. *mic drop*&lt;/p&gt;
+  &lt;p&gt;This is <span class="hljs-operator">a</span> &lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"#"</span>&gt;link&lt;/<span class="hljs-operator">a</span>&gt;, <span class="hljs-operator">and</span> <span class="hljs-operator">a</span> &lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"#"</span> class=<span class="hljs-string">"secondary"</span>&gt;secondary link&lt;/<span class="hljs-operator">a</span>&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+
+        <h3 id="fonts-and-colors">Fonts &amp; Colors</h3>
+        <p>We use <a href="https://fonts.google.com/specimen/Source+Sans+Pro">Source Sans Pro</a> for all headings and body copy.</p>
+
+        <p>We use <a href="https://www.google.com/fonts/specimen/Covered+By+Your+Grace">Covered By Your Grace</a> as the "voice" of DoSomething.org.</p>
+        <p class="font-tile" style="font-family: 'CoveredGrace';">
+          Any cause, anytime, anywhere. <code>($font-handwritten, $weight-normal)</code>
+        </p>
+
+        <p>We have three primary brand colors.</p>
+        <ul class="gallery -duo">
+          <li>
+            <div class="color-tile" data-hex="#23b7fb">
+              <strong>Blue</strong>
+              <code>($blue) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+
+          <li>
+            <div class="color-tile" data-hex="#4e2b63">
+              <strong>Purple</strong>
+              <code>($purple) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+
+          <li>
+            <div class="color-tile" data-hex="#fcd116">
+              <strong>Yellow</strong>
+              <code>($yellow) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+        </ul>
+
+        <p>For consistency, we try to use these four grayscale values throughout our interfaces.</p>
+        <ul class="gallery -duo">
+          <li>
+            <div class="color-tile" data-hex="#222">
+              <strong>Off Black</strong>
+              <code>($off-black) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+
+          <li>
+            <div class="color-tile" data-hex="#444">
+              <strong>Dark Gray</strong>
+              <code>($dark-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+
+          <li>
+            <div class="color-tile" data-hex="#999">
+              <strong>Medium Gray</strong>
+              <code>($med-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+
+          <li>
+            <div class="color-tile" data-hex="#ddd">
+              <strong>Light Gray</strong>
+              <code>($light-gray) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+        </ul>
+
+        <p>They're not part of our brand, but we use these guys in special cases.</p>
+        <ul class="gallery -duo">
+          <li>
+            <div class="color-tile" data-hex="#ff4747">
+              <strong>Errors</strong>
+              <code>($error-color) <span class="color-tile__value js-color-label">&hellip;</span></code>
+            </div>
+          </li>
+        </ul>
+
+        <p class="footnote styleguide-tip"><strong>Tip:</strong> Double-click on a swatch to switch between color formats.</p>
+
+        <h3 id="grid">Grid System</h3>
+        <img src="styleguide/assets/grid-visualization.jpg" alt="visualization of grid on DoSomething.org homepage" />
+        <p>We use <a href="http://susy.oddbird.net">Susy 2</a> to build our interface on a fluid grid. This promotes consistency and provides rules for layouts to comfortably expand and contract in a multi-device world. Our grid is split up into sixteen columns, with a 24 pixel static gutter between columns.</p>
+        <p>See the <a href="http://susydocs.oddbird.net/en/latest/">Susy documentation</a> for implementation details.</p>
+
+        <h3 id="animation">Animation</h3>
+        <p>We use animation to add a sense of playfulness and delight to our interface. Animations also hint at functionality and inform the user's mental model of how an interface functions.</p>
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-fade-in">Fade In <a class="styleguide-reference-link" href="#animation-fade-in">#</a></h4>
+  <div class="styleguide-description">
+    <p>Element fades in.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-fade-in--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-in">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-fade-in-up">Fade In &amp; Up <a class="styleguide-reference-link" href="#animation-fade-in-up">#</a></h4>
+  <div class="styleguide-description">
+    <p>Element fades in and up.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-fade-in-up--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-in-up">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-fade-out">Fade Out <a class="styleguide-reference-link" href="#animation-fade-out">#</a></h4>
+  <div class="styleguide-description">
+    <p>Element fades out.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-fade-out--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-out">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-fade-out-down">Fade Out &amp; Down <a class="styleguide-reference-link" href="#animation-fade-out-down">#</a></h4>
+  <div class="styleguide-description">
+    <p>Element fades out and down.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-fade-out-down--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="fade-out-down">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-tada">Wiggle <a class="styleguide-reference-link" href="#animation-tada">#</a></h4>
+  <div class="styleguide-description">
+    <p>&quot;Wiggle&quot; animation used to pull the user's attention to an element.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-tada--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="tada">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-wobble">Wobble <a class="styleguide-reference-link" href="#animation-wobble">#</a></h4>
+  <div class="styleguide-description">
+    <p>Kind of like a &quot;womp womp&quot;.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-wobble--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="wobble">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="animation-shake">Shake <a class="styleguide-reference-link" href="#animation-shake">#</a></h4>
+  <div class="styleguide-description">
+    <p>Shake animation (similar to OS X convention for form errors).</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="animation-shake--example" class="styleguide-element">
+        <a class="button -secondary button--preview js-styleguide-animation-preview" data-class="shake">Preview</a>
+    </div>
+
+    
+  </div>
+
+  
+  
+</div>
+
+
+
+        <h2 id="components">Components</h2>
+        <p>We don't want to re-invent the wheel. Re-usable interface patterns are catalogued within Forge to promote consistency throughout our interfaces and minimize code bloat. We start by defining atomic components. These are the smallest building blocks of our interfaces.</p>
+
+        
+<div class="styleguide-example">
+  <h4 id="avatar">Avatar <a class="styleguide-reference-link" href="#avatar">#</a></h4>
+  <div class="styleguide-description">
+    <p>Rounded image. Used to show a user profile image.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="avatar--example" class="styleguide-element">
+         <div class="avatar">
+     <img src="/styleguide/assets/placeholder.jpg" />
+   </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">   &lt;<span class="hljs-tag">div</span> class=<span class="hljs-string">"avatar"</span>&gt;
+     &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"/styleguide/assets/placeholder.jpg"</span> /&gt;
+   &lt;/div&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="chat-bubble">Chat Bubble <a class="styleguide-reference-link" href="#chat-bubble">#</a></h4>
+  <div class="styleguide-description">
+    <p>Used for longer conversational messaging, such as a note from a campaign lead.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="chat-bubble--example" class="styleguide-element">
+        <div class="chat-bubble">
+    1 items collected! That’s amazing - thanks to everyone for rocking Hunt
+    Day 2: Trash Scavenger Hunt. Let’s keep it up! Add your contribution in
+    the Prove It section below.
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"chat-bubble"</span>&gt;
+    <span class="hljs-number">1</span> items collected! That’s amazing - thanks <span class="hljs-keyword">to</span> everyone <span class="hljs-keyword">for</span> rocking Hunt
+    Day <span class="hljs-number">2</span>: Trash Scavenger Hunt. Let’s keep <span class="hljs-keyword">it</span> up! Add your contribution <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">the</span> Prove It section <span class="hljs-keyword">below</span>.
+  &lt;/<span class="hljs-keyword">div</span>&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+
+        <div id="forms">
+          
+<div class="styleguide-example">
+  <h4 id="forms-button">Forms - Button <a class="styleguide-reference-link" href="#forms-button">#</a></h4>
+  <div class="styleguide-description">
+    <p>Buttons are generally used for interface actions. Suitable for all-purpose
+use. Defaults to primary call-to-action appearance.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-button--example" class="styleguide-element">
+        <a class="button {{modifier_class}}">Example Button</a>
+    </div>
+
+    
+    <figure id="forms-button--example--pseudo-class-hover" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>:hover</strong> Suble hover state (will not be displayed on touch interfaces)</figcaption>
+        <a class="button pseudo-class-hover">Example Button</a>
+    </figure>
+    
+    <figure id="forms-button--example--pseudo-class-focus" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>:focus</strong> Focus state for users navigating the page using tab keys.</figcaption>
+        <a class="button pseudo-class-focus">Example Button</a>
+    </figure>
+    
+    <figure id="forms-button--example--pseudo-class-active" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>:active</strong> &quot;Pushed&quot; button state</figcaption>
+        <a class="button pseudo-class-active">Example Button</a>
+    </figure>
+    
+    <figure id="forms-button--example--is-disabled" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.is-disabled</strong> Disabled (non-interactive) button state. Consider removing button from interface if not necessary to avoid confusion.</figcaption>
+        <a class="button is-disabled">Example Button</a>
+    </figure>
+    
+    <figure id="forms-button--example--is-loading" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.is-loading</strong> AJAX loading animation. Used when loading results inline.</figcaption>
+        <a class="button is-loading">Example Button</a>
+    </figure>
+    
+    <figure id="forms-button--example---secondary" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-secondary</strong> Should be used if not the main call-to-action on a page.</figcaption>
+        <a class="button -secondary">Example Button</a>
+    </figure>
+    
+    <figure id="forms-button--example---tertiary" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-tertiary</strong> Used to de-emphasize button (for example, a &quot;cancel&quot; option), but still show inline with other fields.</figcaption>
+        <a class="button -tertiary">Example Button</a>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>Example Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-form-item">Forms - Form Item <a class="styleguide-reference-link" href="#forms-form-item">#</a></h4>
+  <div class="styleguide-description">
+    <p>A label and a form element.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-form-item--example" class="styleguide-element">
+        <div class="form-item {{modifier_class}}">
+    <label class="field-label">Field Label</label>
+    <input type="text" class="text-field">
+  </div>
+    </div>
+
+    
+    <figure id="forms-form-item--example---padded" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-padded</strong> Adds extra padding above and below field group.</figcaption>
+        <div class="form-item -padded">
+    <label class="field-label">Field Label</label>
+    <input type="text" class="text-field">
+  </div>
+    </figure>
+    
+    <figure id="forms-form-item--example---inline" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-inline</strong> Form elements appear side-by-side.</figcaption>
+        <div class="form-item -inline">
+    <label class="field-label">Field Label</label>
+    <input type="text" class="text-field">
+  </div>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-item </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field-label"</span>&gt;</span>Field Label<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-field"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-form-action">Forms - Form Actions <a class="styleguide-reference-link" href="#forms-form-action">#</a></h4>
+  <div class="styleguide-description">
+    <p>Container for form actions, such as submit buttons.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-form-action--example" class="styleguide-element">
+        <div class="form-actions {{modifier_class}}">
+    <input type="submit" class="button" value="Submit">
+  </div>
+  <ul class="form-actions {{modifier_class}}">
+    <li><a href="#">Forgot your password?</a></li>
+    <li><a href="#">Create an account</a></li>
+  </ul>
+    </div>
+
+    
+    <figure id="forms-form-action--example---padded" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-padded</strong> Adds top and bottom padding, for use independent of form items.</figcaption>
+        <div class="form-actions -padded">
+    <input type="submit" class="button" value="Submit">
+  </div>
+  <ul class="form-actions -padded">
+    <li><a href="#">Forgot your password?</a></li>
+    <li><a href="#">Create an account</a></li>
+  </ul>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-actions </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Submit"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-actions </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Forgot your password?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Create an account<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-inline-form-action">Forms - Inline Form Actions <a class="styleguide-reference-link" href="#forms-inline-form-action">#</a></h4>
+  <div class="styleguide-description">
+    <p>Container for form actions, with all items shown in a row.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-inline-form-action--example" class="styleguide-element">
+        <ul class="form-actions -inline {{modifier_class}}">
+    <li><input type="submit" class="button" value="Submit"></li>
+    <li><input type="submit" class="button -tertiary" value="Skip"></li>
+  </ul>
+    </div>
+
+    
+    <figure id="forms-inline-form-action--example---padded" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-padded</strong> Adds top and bottom padding, for use independent of form items.</figcaption>
+        <ul class="form-actions -inline -padded">
+    <li><input type="submit" class="button" value="Submit"></li>
+    <li><input type="submit" class="button -tertiary" value="Skip"></li>
+  </ul>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-actions -inline </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Submit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button -tertiary"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Skip"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-field-label">Forms - Field Label <a class="styleguide-reference-link" href="#forms-field-label">#</a></h4>
+  <div class="styleguide-description">
+    <p>Labels for form elements. Optional validation styles triggered by
+<a href="https://www.github.com/dosomething/validation">client-side validation</a>.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-field-label--example" class="styleguide-element">
+        <!-- validation classes and markup generated dynamically -->
+  <label class="field-label">
+    <span class="validation">
+      <div class="validation__message {{modifier_class}}">Field Label</div>
+    </span>
+  </label>
+  <input class="text-field {{modifier_class}}" type="text">
+    </div>
+
+    
+    <figure id="forms-field-label--example--has-success" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.has-success</strong> Successful form validation</figcaption>
+        <!-- validation classes and markup generated dynamically -->
+  <label class="field-label">
+    <span class="validation">
+      <div class="validation__message has-success">Field Label</div>
+    </span>
+  </label>
+  <input class="text-field has-success" type="text">
+    </figure>
+    
+    <figure id="forms-field-label--example--has-error" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.has-error</strong> Something's wrong!</figcaption>
+        <!-- validation classes and markup generated dynamically -->
+  <label class="field-label">
+    <span class="validation">
+      <div class="validation__message has-error">Field Label</div>
+    </span>
+  </label>
+  <input class="text-field has-error" type="text">
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-comment">&lt;!-- validation classes and markup generated dynamically --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field-label"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"validation"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"validation__message </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>Field Label<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-field </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-option-field">Forms - Option Field <a class="styleguide-reference-link" href="#forms-option-field">#</a></h4>
+  <div class="styleguide-description">
+    <p>Checkboxes and radio boxes. Progressively enhanced to look beautiful on modern browsers.
+Older browsers (such as Internet Explorer 8) will see platform-native controls.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-option-field--example" class="styleguide-element">
+        <label class="field-label">Some checkboxes</label>
+  <div class="form-item">
+    <label class="option -checkbox">
+      <input checked type="checkbox" id="option1">
+      <span class="option__indicator"></span>
+      <span>Choose this option.</span>
+    </label>
+    <label class="option -checkbox">
+      <input type="checkbox" id="option2">
+      <span class="option__indicator"></span>
+      <span>Choose that option.</span>
+    </label>
+    <label class="option -checkbox">
+      <input type="checkbox" id="option3">
+      <span class="option__indicator"></span>
+      <span>Choose this unreasonably long-winded and ultimately pointless option.</span>
+    </label>
+  </div>
+  <label class="field-label">Some radio buttons</label>
+  <div class="form-item">
+    <label class="option -radio">
+      <input checked type="radio" name="choice" id="choice1">
+      <span class="option__indicator"></span>
+      <span>Choose one option.</span>
+    </label>
+    <label class="option -radio">
+      <input type="radio" name="choice" id="choice2">
+      <span class="option__indicator"></span>
+      <span>Choose the other option.</span>
+    </label>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field-label"</span>&gt;</span>Some checkboxes<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option -checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">checked</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"option1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option__indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Choose this option.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option -checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"option2"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option__indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Choose that option.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option -checkbox"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"option3"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option__indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Choose this unreasonably long-winded and ultimately pointless option.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"field-label"</span>&gt;</span>Some radio buttons<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option -radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">checked</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"choice"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"choice1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option__indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Choose one option.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option -radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"choice"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"choice2"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"option__indicator"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Choose the other option.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-media-option-field">Forms - Media Option Field <a class="styleguide-reference-link" href="#forms-media-option-field">#</a></h4>
+  <div class="styleguide-description">
+    <p>Custom single or multi-select option styles to mimic behavior of radio buttons and checkboxes.
+Progressively enhanced to look beautiful on modern browsers.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-media-option-field--example" class="styleguide-element">
+        <div class="form-item">
+    <label class="media-option -radio">
+      <input type="radio" value="value1" name="item" id="option1" checked="checked">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder-small.jpg">
+    </label>
+    <label class="media-option -radio">
+      <input type="radio" value="value2" name="item" id="option2">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder-small.jpg">
+    </label>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;<span class="hljs-tag">div</span> class=<span class="hljs-string">"form-item"</span>&gt;
+    &lt;<span class="hljs-tag">label</span> class=<span class="hljs-string">"media-option -radio"</span>&gt;
+      &lt;<span class="hljs-tag">input</span> type=<span class="hljs-string">"radio"</span> value=<span class="hljs-string">"value1"</span> name=<span class="hljs-string">"item"</span> id=<span class="hljs-string">"option1"</span> checked=<span class="hljs-string">"checked"</span>&gt;
+      &lt;<span class="hljs-tag">img</span> alt=<span class="hljs-string">"kitten overlords"</span> src=<span class="hljs-string">"/styleguide/assets/placeholder-small.jpg"</span>&gt;
+    &lt;/label&gt;
+    &lt;<span class="hljs-tag">label</span> class=<span class="hljs-string">"media-option -radio"</span>&gt;
+      &lt;<span class="hljs-tag">input</span> type=<span class="hljs-string">"radio"</span> value=<span class="hljs-string">"value2"</span> name=<span class="hljs-string">"item"</span> id=<span class="hljs-string">"option2"</span>&gt;
+      &lt;<span class="hljs-tag">img</span> alt=<span class="hljs-string">"kitten overlords"</span> src=<span class="hljs-string">"/styleguide/assets/placeholder-small.jpg"</span>&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-select-box">Forms - Select Box <a class="styleguide-reference-link" href="#forms-select-box">#</a></h4>
+  <div class="styleguide-description">
+    <p>Select boxes present a list of options on a form.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-select-box--example" class="styleguide-element">
+        <div class="select {{modifier_class}}">
+    <select>
+      <option>Awesome Things</option>
+      <option>Popular Things</option>
+      <option>Random Things</option>
+    </select>
+  </div>
+    </div>
+
+    
+    <figure id="forms-select-box--example--has-error" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.has-error</strong> Error state</figcaption>
+        <div class="select has-error">
+    <select>
+      <option>Awesome Things</option>
+      <option>Popular Things</option>
+      <option>Random Things</option>
+    </select>
+  </div>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"select </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">select</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Awesome Things<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Popular Things<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">option</span>&gt;</span>Random Things<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+          
+<div class="styleguide-example">
+  <h4 id="forms-text-field">Forms - Text Field <a class="styleguide-reference-link" href="#forms-text-field">#</a></h4>
+  <div class="styleguide-description">
+    <p>Single-line text input fields.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="forms-text-field--example" class="styleguide-element">
+        <input type="text" class="text-field {{modifier_class}}" placeholder="Type something...">
+    </div>
+
+    
+    <figure id="forms-text-field--example--pseudo-class-focus" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>:focus</strong> Field is selected for text input.</figcaption>
+        <input type="text" class="text-field pseudo-class-focus" placeholder="Type something...">
+    </figure>
+    
+    <figure id="forms-text-field--example--pseudo-class-disabled" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>:disabled</strong> Field is disabled, and it's value can't be interacted with.</figcaption>
+        <input type="text" class="text-field pseudo-class-disabled" placeholder="Type something...">
+    </figure>
+    
+    <figure id="forms-text-field--example---search" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-search</strong> Search field appearance.</figcaption>
+        <input type="text" class="text-field -search" placeholder="Type something...">
+    </figure>
+    
+    <figure id="forms-text-field--example--is-loading" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.is-loading</strong> Loading indicator, for example while fetching an AJAX response.</figcaption>
+        <input type="text" class="text-field is-loading" placeholder="Type something...">
+    </figure>
+    
+    <figure id="forms-text-field--example--has-error" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.has-error</strong> Error state, used for validation issues.</figcaption>
+        <input type="text" class="text-field has-error" placeholder="Type something...">
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-field </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Type something..."</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        </div>
+
+        
+<div class="styleguide-example">
+  <h4 id="footnote">Footnote <a class="styleguide-reference-link" href="#footnote">#</a></h4>
+  <div class="styleguide-description">
+    <p>The fine print. Use for legal text, disclaimers, references, or help text. Use <code>.js-footnote-toggle</code>
+and <code>.js-footnote-hidden</code> to create toggleable content. See <code>footnote.js</code> for implementation.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="footnote--example" class="styleguide-element">
+        <h4>Legal text example:</h4>
+  <p class="footnote">By clicking submit, you agree to <a href="#">sell your soul</a> to the lorem ipsum dolor sit amet.</p>
+  <h4>Source footnote example:</h4>
+  <div class="footnote">
+    <h4 class="js-footnote-toggle">Sources</h4>
+    <ul class="js-footnote-hidden">
+      <li><sup>1</sup> Clark, Barry. "A Treatise on The Motherland", British Royal Archives, 2009.</li>
+      <li><sup>2</sup> Lorch, Julie. "Coffee Sure Is Great", Royal Academy of Coffee, 2010.</li>
+    </ul>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Legal text example:<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footnote"</span>&gt;</span>By clicking submit, you agree to <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>sell your soul<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> to the lorem ipsum dolor sit amet.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Source footnote example:<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footnote"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-footnote-toggle"</span>&gt;</span>Sources<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-footnote-hidden"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">sup</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">sup</span>&gt;</span> Clark, Barry. "A Treatise on The Motherland", British Royal Archives, 2009.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">sup</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">sup</span>&gt;</span> Lorch, Julie. "Coffee Sure Is Great", Royal Academy of Coffee, 2010.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="heading">Heading <a class="styleguide-reference-link" href="#heading">#</a></h4>
+  <div class="styleguide-description">
+    <p>Various heading weights and styles.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="heading--example" class="styleguide-element">
+      <h2 class="heading {{modifier_class}}"><span>Heading</span></h2>
+    </div>
+
+    
+    <figure id="heading--example---hero" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-hero</strong> Hero heading</figcaption>
+      <h2 class="heading -hero"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---alpha" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-alpha</strong> Alpha heading, default appearance for <code>h1</code> tags</figcaption>
+      <h2 class="heading -alpha"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---beta" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-beta</strong> Beta heading, default appearance for <code>h2</code> tags</figcaption>
+      <h2 class="heading -beta"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---gamma" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-gamma</strong> Gamma heading, default appearance for <code>h3</code> tags</figcaption>
+      <h2 class="heading -gamma"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---delta" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-delta</strong> Delta heading, default appearance for <code>h4</code>, <code>h5</code>, and <code>h6</code> tags</figcaption>
+      <h2 class="heading -delta"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---banner" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-banner</strong> <s>Stylized header banner with included gutter.</s> (Deprecated. Use <code>.-emphasized</code> instead, using Container pattern for appropriate margins.)</figcaption>
+      <h2 class="heading -banner"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---emphasized" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-emphasized</strong> Stylized heading with a heavy yellow underline.</figcaption>
+      <h2 class="heading -emphasized"><span>Heading</span></h2>
+    </figure>
+    
+    <figure id="heading--example---emphasized -inverse" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-emphasized.-inverse</strong> Stylized heading with a heavy white underline (for use on yellow backgrounds).</figcaption>
+      <h2 class="heading -emphasized -inverse"><span>Heading</span></h2>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="list">List <a class="styleguide-reference-link" href="#list">#</a></h4>
+  <div class="styleguide-description">
+    <p>List of items. You can use the <code>.with-lists</code> class to apply list styles to all <code>ol</code> and <code>ul</code>
+within a container, for example when styling Markdown content.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="list--example" class="styleguide-element">
+        <p>An unordered list:</p>
+  <ul class="list {{modifier_class}}">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+    <li>Curabitur sed odio aliquet, efficitur diam vel, laoreet ipsum. Curabitur faucibus tincidunt augue.</li>
+    <li>In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+  </ul>
+  <p>And an ordered list:</p>
+  <ol class="list {{modifier_class}}">
+    <li>Know it.</li>
+    <li>Plan it.</li>
+    <li>???</li>
+    <li>Profit.</li>
+  </ol>
+    </div>
+
+    
+    <figure id="list--example---compacted" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-compacted</strong> Closely spaced list elements.</figcaption>
+        <p>An unordered list:</p>
+  <ul class="list -compacted">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+    <li>Curabitur sed odio aliquet, efficitur diam vel, laoreet ipsum. Curabitur faucibus tincidunt augue.</li>
+    <li>In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.</li>
+  </ul>
+  <p>And an ordered list:</p>
+  <ol class="list -compacted">
+    <li>Know it.</li>
+    <li>Plan it.</li>
+    <li>???</li>
+    <li>Profit.</li>
+  </ol>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>An unordered list:<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Curabitur sed odio aliquet, efficitur diam vel, laoreet ipsum. Curabitur faucibus tincidunt augue.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>In non pretium risus. Sed ultrices dolor magna, in ultricies sapien ornare ac.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>And an ordered list:<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Know it.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Plan it.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>???<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Profit.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="media-video">Media Video <a class="styleguide-reference-link" href="#media-video">#</a></h4>
+  <div class="styleguide-description">
+    <p>Make embedded videos scale responsively.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="media-video--example" class="styleguide-element">
+        <div class="media-video">
+  <iframe width="560" height="315" src="//www.youtube.com/embed/bkK2C0iBFt8?rel=0&amp;showinfo=0"
+    frameborder="0" allowfullscreen></iframe>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;<span class="hljs-tag">div</span> class=<span class="hljs-string">"media-video"</span>&gt;
+  &lt;<span class="hljs-tag">iframe</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"560"</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">"315"</span> src=<span class="hljs-string">"//www.youtube.com/embed/bkK2C0iBFt8?rel=0&amp;amp;showinfo=0"</span>
+    frameborder=<span class="hljs-string">"0"</span> allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;/div&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="message-callout">Message Callout <a class="styleguide-reference-link" href="#message-callout">#</a></h4>
+  <div class="styleguide-description">
+    <p>Handwritten text callout with arrow pointing to other content.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="message-callout--example" class="styleguide-element">
+        <div class="message-callout {{modifier_class}}">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </div>
+
+    
+    <figure id="message-callout--example---below" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-below</strong> Callout is positioned below an element.</figcaption>
+        <div class="message-callout -below">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="message-callout--example---above" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-above</strong> Callout is positioned above element it's pointing to.</figcaption>
+        <div class="message-callout -above">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="message-callout--example---right" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-right</strong> Callout is positioned to the right of element it's pointing to.</figcaption>
+        <div class="message-callout -right">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="message-callout--example---dynamic-right" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-dynamic-right</strong> Callout that starts below or above an item on mobile, but then switches to positon to the right of item.</figcaption>
+        <div class="message-callout -dynamic-right">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="message-callout--example---above-horizontal" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-above-horizontal</strong> Callout is positioned horizontally above the element that it is pointing to without rotation.</figcaption>
+        <div class="message-callout -above-horizontal">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="message-callout--example---white" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-white</strong> White text and arrow (for use on dark backgrounds).</figcaption>
+        <div class="message-callout -white">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="message-callout--example---blue" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-blue</strong> Blue text and arrow.</figcaption>
+        <div class="message-callout -blue">
+    <div class="message-callout__copy">
+      <p>This is something. Mic drop!</p>
+    </div>
+  </div>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"message-callout </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"message-callout__copy"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is something. Mic drop!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="messages">Messages <a class="styleguide-reference-link" href="#messages">#</a></h4>
+  <div class="styleguide-description">
+    <p>Status message styles. These should be used to provide feedback to the user for
+events that occur outside the normal application flow (such as application errors).
+Close button is added using JavaScript. See <code>system-messages.js</code>.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="messages--example" class="styleguide-element">
+        <div class="messages {{modifier_class}}">
+    <strong>There's something <em>I need</em></strong> to tell you.
+  </div>
+    </div>
+
+    
+    <figure id="messages--example---error" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-error</strong> Used to display errors. Be careful not to blame the user for a mistake.</figcaption>
+        <div class="messages -error">
+    <strong>There's something <em>I need</em></strong> to tell you.
+  </div>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"messages </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>There's something <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>I need<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> to tell you.
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="social-icon">Social icons are used to link to social networks, or to link sharing actions. <a class="styleguide-reference-link" href="#social-icon">#</a></h4>
+  <div class="styleguide-description">
+    
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="social-icon--example" class="styleguide-element">
+      <a class="social-icon {{modifier_class}}"><span>Text Fallback</span></a>
+    </div>
+
+    
+    <figure id="social-icon--example---facebook" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-facebook</strong> Facebook icon</figcaption>
+      <a class="social-icon -facebook"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---instagram" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-instagram</strong> Instagram icon</figcaption>
+      <a class="social-icon -instagram"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---linkedin" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-linkedin</strong> LinkedIn icon</figcaption>
+      <a class="social-icon -linkedin"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---snapchat" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-snapchat</strong> Snapchat icon</figcaption>
+      <a class="social-icon -snapchat"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---tumblr" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-tumblr</strong> Tumblr icon</figcaption>
+      <a class="social-icon -tumblr"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---twitter" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-twitter</strong> Twitter icon</figcaption>
+      <a class="social-icon -twitter"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---weheartit" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-weheartit</strong> We Heart It icon</figcaption>
+      <a class="social-icon -weheartit"><span>Text Fallback</span></a>
+    </figure>
+    
+    <figure id="social-icon--example---youtube" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-youtube</strong> YouTube icon</figcaption>
+      <a class="social-icon -youtube"><span>Text Fallback</span></a>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Text Fallback<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="spinner">Spinner <a class="styleguide-reference-link" href="#spinner">#</a></h4>
+  <div class="styleguide-description">
+    <p>A spinner is used to indicate loading content. Uses an animated SVG on modern browsers,
+with fallback to an animated GIF based on feature detection.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="spinner--example" class="styleguide-element">
+      <div class="spinner"></div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"spinner"</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="waypoints">Waypoints <a class="styleguide-reference-link" href="#waypoints">#</a></h4>
+  <div class="styleguide-description">
+    <p>Used to navigate between sections/panels/pages within an interface. Apply <code>.is-active</code> class to
+list element for &quot;active&quot; state.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="waypoints--example" class="styleguide-element">
+        <ul class="waypoints {{modifier_class}}">
+    <li class="is-active"><a href="#">Section One</a></li>
+    <li><a href="#">Section Two</a></li>
+    <li><a class="waypoints__primary-link" href="#">Section Three</a></li>
+  </ul>
+    </div>
+
+    
+    <figure id="waypoints--example---vertical" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-vertical</strong> Vertical tab layout (for use in a sidebar).</figcaption>
+        <ul class="waypoints -vertical">
+    <li class="is-active"><a href="#">Section One</a></li>
+    <li><a href="#">Section Two</a></li>
+    <li><a class="waypoints__primary-link" href="#">Section Three</a></li>
+  </ul>
+    </figure>
+    
+    <figure id="waypoints--example---primary" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-primary</strong> Emphasized tabs</figcaption>
+        <ul class="waypoints -primary">
+    <li class="is-active"><a href="#">Section One</a></li>
+    <li><a href="#">Section Two</a></li>
+    <li><a class="waypoints__primary-link" href="#">Section Three</a></li>
+  </ul>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"waypoints </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"is-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Section One<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Section Two<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"waypoints__primary-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Section Three<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+
+        <h2 id="modules">Modules</h2>
+        <p>Modules are groups of components, and generally work as a standalone part of an interface. They may even contain other modules (for example, the gallery module contains multiple tile modules).</p>
+
+        
+<div class="styleguide-example">
+  <h4 id="bragging-gallery">Bragging Gallery <a class="styleguide-reference-link" href="#bragging-gallery">#</a></h4>
+  <div class="styleguide-description">
+    <p>Did we kill it on something? This is the perfect component for showcasing a large photo with a bit of text attached.
+This could be a great media snapshot, celebrity endorsment or even a member callout.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="bragging-gallery--example" class="styleguide-element">
+        <article class="figure -left -center">
+    <div class="figure__media">
+      <img alt="winning cat" src="/styleguide/assets/placeholder.jpg" />
+    </div>
+    <div class="figure__body">
+      <h2 class="heading -emphasized">Grand Prize</h2>
+      <p><strong>Look at this cat.</strong> How'd she get so god-damned cute?
+      What gives her the right? Who does she think she is?</p>
+    </div>
+  </article>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure -left -center"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__media"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"winning cat"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading -emphasized"</span>&gt;</span>Grand Prize<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Look at this cat.<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> How'd she get so god-damned cute?
+      What gives her the right? Who does she think she is?<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="call-to-action">Call To Action <a class="styleguide-reference-link" href="#call-to-action">#</a></h4>
+  <div class="styleguide-description">
+    <p>The Call To Action module is used to show show a short &quot;call to action&quot; message
+with an accompanying button or set of actions. CTAs typically span the full width of the page.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="call-to-action--example" class="styleguide-element">
+        <div class="cta">
+    <div class="cta__block">
+      <p class="cta__message">Miscreant! You should pay homage to our future kitten overlords:</p>
+    </div>
+    <div class="cta__block">
+      <a href="#" class="button">Support Our Kittens</a>
+    </div>
+  </div>
+  <br/>
+  <div class="cta">
+    <div class="cta__block">
+      <p class="cta__message">Rejoice, and share the good news of our benevolent feline rulers:</p>
+    </div>
+    <ul class="cta__actions">
+      <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
+      <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
+      <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
+    </ul>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta__block"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta__message"</span>&gt;</span>Miscreant! You should pay homage to our future kitten overlords:<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta__block"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Support Our Kittens<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta__block"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta__message"</span>&gt;</span>Rejoice, and share the good news of our benevolent feline rulers:<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cta__actions"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -facebook"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -twitter"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -tumblr"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Tumblr<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="figure">Figure <a class="styleguide-reference-link" href="#figure">#</a></h4>
+  <div class="styleguide-description">
+    <p>A figure block usually contains an image with a title and a description.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="figure--example" class="styleguide-element">
+        <article class="figure {{modifier_class}}">
+    <div class="figure__media">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+    </div>
+    <div class="figure__body">
+      <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;M are taking eco-chic to the next level.
+    </div>
+  </article>
+    </div>
+
+    
+    <figure id="figure--example---left" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-left</strong> Show figure's media to the left of the description.</figcaption>
+        <article class="figure -left">
+    <div class="figure__media">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+    </div>
+    <div class="figure__body">
+      <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;M are taking eco-chic to the next level.
+    </div>
+  </article>
+    </figure>
+    
+    <figure id="figure--example---left -center" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-left.-center</strong> Show a figure's media to the left of the description, with the text vertically centered.</figcaption>
+        <article class="figure -left -center">
+    <div class="figure__media">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+    </div>
+    <div class="figure__body">
+      <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;M are taking eco-chic to the next level.
+    </div>
+  </article>
+    </figure>
+    
+    <figure id="figure--example---right" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-right</strong> Show figure's media to the right of the description.</figcaption>
+        <article class="figure -right">
+    <div class="figure__media">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+    </div>
+    <div class="figure__body">
+      <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;M are taking eco-chic to the next level.
+    </div>
+  </article>
+    </figure>
+    
+    <figure id="figure--example---medium" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-medium</strong> Set figure's media to a fixed &quot;medium&quot; size.</figcaption>
+        <article class="figure -medium">
+    <div class="figure__media">
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+    </div>
+    <div class="figure__body">
+      <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;M are taking eco-chic to the next level.
+    </div>
+  </article>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__media"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__body"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Teen Vogue<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> featured Comeback Clothes as one of the ways
+      fashion brands like H&amp;amp;M are taking eco-chic to the next level.
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="gallery">Gallery <a class="styleguide-reference-link" href="#gallery">#</a></h4>
+  <div class="styleguide-description">
+    <p>Generic module class for all galleries. Galleries can contain items of any type (e.g. tile,
+figure, etc.) Requires an additional modifier classes to designate a specific type of
+gallery (see modifiers below).</p>
+
+  </div>
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="gallery-quartet">Gallery - Quartet <a class="styleguide-reference-link" href="#gallery-quartet">#</a></h4>
+  <div class="styleguide-description">
+    <p>A &quot;quartet&quot; gallery shows four items per row. Galleries can contain items of
+any type but work particularly well with <strong>Figures</strong> and <strong>Tiles</strong>. May optionally
+include a heading within <code>.gallery__heading</code>.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="gallery-quartet--example" class="styleguide-element">
+        <ul class="gallery -quartet">
+    <div class="gallery__heading">
+      <h2>Gallery Heading</h2>
+    </div>
+    <li>
+      <article class="tile">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+  </ul>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gallery -quartet"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gallery__heading"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Gallery Heading<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="gallery-triad">Gallery - Triad <a class="styleguide-reference-link" href="#gallery-triad">#</a></h4>
+  <div class="styleguide-description">
+    <p>A &quot;triad&quot; gallery shows three items per row. Galleries can contain items of
+any type but work particularly well with <strong>Figures</strong> and <strong>Tiles</strong>. May optionally
+include a heading within <code>.gallery__heading</code>.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="gallery-triad--example" class="styleguide-element">
+        <ul class="gallery -triad {{modifier_class}}">
+    <div class="gallery__heading">
+      <h2>Gallery Heading</h2>
+    </div>
+    <li>
+      <div class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </div>
+        <div class="figure__body">
+          <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+          fashion brands like H&amp;M are "taking eco-chic to the next level."
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </div>
+        <div class="figure__body">
+          <b>Seventeen</b> ran an Earth Day story about recycling old fabrics
+          through DoSomething.org and H&amp;M's Comeback Clothes.
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </div>
+        <div class="figure__body">
+          <b>Nylon</b> urged readers to clean out their closets and do good for
+          the planet by recycling old clothes at H&amp;M.
+        </div>
+      </div>
+    </li>
+  </ul>
+    </div>
+
+    
+    <figure id="gallery-triad--example---aligned" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-aligned</strong> Tiles with image flushed to top and minimum height to force content below to line up with adjacent tiles since image dimensions can vary.  Defaults to 75px tall. This should be overridden when necessary.</figcaption>
+        <ul class="gallery -triad -aligned">
+    <div class="gallery__heading">
+      <h2>Gallery Heading</h2>
+    </div>
+    <li>
+      <div class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </div>
+        <div class="figure__body">
+          <b>Teen Vogue</b> featured Comeback Clothes as one of the ways
+          fashion brands like H&amp;M are "taking eco-chic to the next level."
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </div>
+        <div class="figure__body">
+          <b>Seventeen</b> ran an Earth Day story about recycling old fabrics
+          through DoSomething.org and H&amp;M's Comeback Clothes.
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="figure">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </div>
+        <div class="figure__body">
+          <b>Nylon</b> urged readers to clean out their closets and do good for
+          the planet by recycling old clothes at H&amp;M.
+        </div>
+      </div>
+    </li>
+  </ul>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;ul <span class="hljs-type">class</span>=<span class="hljs-string">"gallery -triad {{modifier_class}}"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"gallery__heading"</span>&gt;
+      &lt;h2&gt;Gallery Heading&lt;/h2&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;li&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure__media"</span>&gt;
+          &lt;img alt=<span class="hljs-string">"kitten overlords"</span> src=<span class="hljs-string">"/styleguide/assets/placeholder.jpg"</span> /&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure__body"</span>&gt;
+          &lt;b&gt;Teen Vogue&lt;/b&gt; featured Comeback Clothes <span class="hljs-keyword">as</span> one <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> ways
+          fashion brands like H&amp;amp;M are <span class="hljs-string">"taking eco-chic to the next level."</span>
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure__media"</span>&gt;
+          &lt;img alt=<span class="hljs-string">"kitten overlords"</span> src=<span class="hljs-string">"/styleguide/assets/placeholder.jpg"</span> /&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure__body"</span>&gt;
+          &lt;b&gt;Seventeen&lt;/b&gt; ran an Earth Day story <span class="hljs-keyword">about</span> recycling old fabrics
+          <span class="hljs-keyword">through</span> DoSomething.org <span class="hljs-keyword">and</span> H&amp;amp;M's Comeback Clothes.
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure"</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure__media"</span>&gt;
+          &lt;img alt=<span class="hljs-string">"kitten overlords"</span> src=<span class="hljs-string">"/styleguide/assets/placeholder.jpg"</span> /&gt;
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+        &lt;<span class="hljs-keyword">div</span> <span class="hljs-type">class</span>=<span class="hljs-string">"figure__body"</span>&gt;
+          &lt;b&gt;Nylon&lt;/b&gt; urged readers <span class="hljs-keyword">to</span> clean out their closets <span class="hljs-keyword">and</span> do good <span class="hljs-keyword">for</span>
+          <span class="hljs-keyword">the</span> planet <span class="hljs-keyword">by</span> recycling old clothes <span class="hljs-keyword">at</span> H&amp;amp;M.
+        &lt;/<span class="hljs-keyword">div</span>&gt;
+      &lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="gallery-duo">Gallery - Duo <a class="styleguide-reference-link" href="#gallery-duo">#</a></h4>
+  <div class="styleguide-description">
+    <p>A &quot;duo&quot; gallery shows two items per row. Galleries can contain items of
+any type but work particularly well with <strong>Figures</strong> and <strong>Tiles</strong>. May optionally
+include a heading within <code>.gallery__heading</code>.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="gallery-duo--example" class="styleguide-element">
+        <ul class="gallery -duo">
+    <div class="gallery__heading">
+      <h2>Gallery Heading</h2>
+    </div>
+    <li>
+      <article class="figure -left">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder-small.jpg" />
+        </div>
+        <div class="figure__body">
+          <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+          <p>
+            Do you have stained or ripped clothes you don't wear? Recycle them
+            w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+            <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+          </p>
+        </div>
+      </article>
+    </li>
+    <li>
+      <article class="figure -left">
+        <div class="figure__media">
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder-small.jpg" />
+        </div>
+        <div class="figure__body">
+          <h3><a href="http://twitter.com/harryshumjr">@HarryShumJr</a></h3>
+          <p>
+            Do you have stained or ripped clothes you don't wear? Recycle them
+            w/ <a href="http://twitter.com/dosomething">@DoSomething</a>
+            <a href="http://twitter.com/hmusa">http://dsorg.us/CLOTHES</a>
+          </p>
+        </div>
+      </article>
+    </li>
+  </ul>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gallery -duo"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gallery__heading"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Gallery Heading<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure -left"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__media"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder-small.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__body"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://twitter.com/harryshumjr"</span>&gt;</span>@HarryShumJr<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+            Do you have stained or ripped clothes you don't wear? Recycle them
+            w/ <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://twitter.com/dosomething"</span>&gt;</span>@DoSomething<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://twitter.com/hmusa"</span>&gt;</span>http://dsorg.us/CLOTHES<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure -left"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__media"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder-small.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"figure__body"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://twitter.com/harryshumjr"</span>&gt;</span>@HarryShumJr<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+            Do you have stained or ripped clothes you don't wear? Recycle them
+            w/ <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://twitter.com/dosomething"</span>&gt;</span>@DoSomething<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://twitter.com/hmusa"</span>&gt;</span>http://dsorg.us/CLOTHES<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="gallery-featured">Gallery - Featured <a class="styleguide-reference-link" href="#gallery-featured">#</a></h4>
+  <div class="styleguide-description">
+    <p>Gallery style which emphasizes the first item in the gallery.
+Works best when paired with the gallery's <code>-quartet</code> and <code>-mosaic</code> modifier classes.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="gallery-featured--example" class="styleguide-element">
+        <ul class="gallery -quartet -mosaic -featured">
+    <li>
+      <article class="tile">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+  </ul>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gallery -quartet -mosaic -featured"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="gallery-mosaic">Gallery - Mosaic <a class="styleguide-reference-link" href="#gallery-mosaic">#</a></h4>
+  <div class="styleguide-description">
+    <p>Removes spacing between gallery items. This is typically used with our <strong>Tile</strong> pattern.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="gallery-mosaic--example" class="styleguide-element">
+        <ul class="gallery -quartet -mosaic">
+    <li>
+      <article class="tile">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+    <li>
+      <article class="tile tile--campaign">
+        <a class="wrapper" href="#">
+          <div class="tile__meta">
+            <h1 class="tile__title">Kitten Overlord</h1>
+          </div>
+          <img alt="kitten overlords" src="/styleguide/assets/placeholder.jpg" />
+        </a>
+      </article>
+    </li>
+  </ul>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"gallery -quartet -mosaic"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile tile--campaign"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder.jpg"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="info-bar">Info Bar <a class="styleguide-reference-link" href="#info-bar">#</a></h4>
+  <div class="styleguide-description">
+    <p>The Info Bar contains left and right-aligned content areas,
+and typically lives above the footer.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="info-bar--example" class="styleguide-element">
+        <footer class="info-bar {{modifier_class}}">
+    <div class="wrapper">
+      Sponsored by <a href="#">Puppet Sloth</a>.
+      <div class="info-bar__secondary">Questions? <a href="#">Contact Us</a></div>
+    </div>
+  </footer>
+    </div>
+
+    
+    <figure id="info-bar--example---dark" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-dark</strong> Dark variation.</figcaption>
+        <footer class="info-bar -dark">
+    <div class="wrapper">
+      Sponsored by <a href="#">Puppet Sloth</a>.
+      <div class="info-bar__secondary">Questions? <a href="#">Contact Us</a></div>
+    </div>
+  </footer>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"info-bar </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
+      Sponsored by <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Puppet Sloth<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>.
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"info-bar__secondary"</span>&gt;</span>Questions? <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Contact Us<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="polaroid">Polaroid <a class="styleguide-reference-link" href="#polaroid">#</a></h4>
+  <div class="styleguide-description">
+    <p>Module class for styling a figure with a &quot;polaroid&quot; effect.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="polaroid--example" class="styleguide-element">
+        <figure class="polaroid">
+    <img src="/styleguide/assets/placeholder.jpg" alt="another kitten">
+  </figure>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;<span class="hljs-tag">figure</span> class=<span class="hljs-string">"polaroid"</span>&gt;
+    &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"/styleguide/assets/placeholder.jpg"</span> alt=<span class="hljs-string">"another kitten"</span>&gt;
+  &lt;/figure&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="social-menu">Social Menu <a class="styleguide-reference-link" href="#social-menu">#</a></h4>
+  <div class="styleguide-description">
+    <p>A group of <strong>Social Icons</strong>, used for share actions or linking to social media accounts.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="social-menu--example" class="styleguide-element">
+       <ul class="social-menu {{modifier_class}}">
+   <li><a class="social-icon -facebook" href="#"><span>Facebook</span></a></li>
+   <li><a class="social-icon -twitter" href="#"><span>Twitter</span></a></li>
+   <li><a class="social-icon -tumblr" href="#"><span>Tumblr</span></a></li>
+ </ul>
+    </div>
+
+    
+    <figure id="social-menu--example---with-callout" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-with-callout</strong> Add additional padding for pairing with an <code>-above-horizontal</code> Message Callout.</figcaption>
+       <ul class="social-menu -with-callout">
+   <li><a class="social-icon -facebook" href="#"><span>Facebook</span></a></li>
+   <li><a class="social-icon -twitter" href="#"><span>Twitter</span></a></li>
+   <li><a class="social-icon -tumblr" href="#"><span>Tumblr</span></a></li>
+ </ul>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-menu </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -facebook"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -twitter"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -tumblr"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Tumblr<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="tabs">Tabs <a class="styleguide-reference-link" href="#tabs">#</a></h4>
+  <div class="styleguide-description">
+    <p>Tabbed container. Gracefully degrades into plain text if JavaScript is disabled.
+Extends the <strong>Waypoints</strong> patterns for tab navigation.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="tabs--example" class="styleguide-element">
+        <section class="tabs js-tabs">
+    <a href="#" data-modal-href="#modal-tips-during" class="tabs__modal-toggle">View Tips</a>
+    <h4 class="visually-hidden">Tips</h4>
+    <div class="wrapper">
+      <nav class="tabs__menu">
+        <ul class="waypoints">
+          <li class="is-active"><a href="#tip-1" data-tab="1">Find Maxwell</a></li>
+          <li><a href="#tip-2" data-tab="2">Give Him 'Fee</a></li>
+        </ul>
+      </nav>
+      <ul class="tabs__body">
+        <li id="tip-1" class="tabs__tab">
+          <h5 class="tabs__title">Find Maxwell</h5>
+          <p>He's drinking 'fee. But he needs some more 'fee.</p>
+        </li>
+        <li id="tip-2" class="tabs__tab">
+          <h5 class="tabs__title">Give Him 'Fee</h5>
+          <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div data-modal id="modal-tips-during" class="modal--tips" role="dialog">
+    <h2 class="heading -banner">Tips</h2>
+    <div class="modal__block">
+      <h4 class="inline--alt-color">Find Maxwell</h4>
+      <p>He's drinking 'fee. But he needs some more 'fee.</p>
+    </div>
+    <div class="modal__block">
+      <h4 class="inline--alt-color">Give Him 'Fee</h4>
+      <p>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.</p>
+    </div>
+    <div class="modal__block form-actions">
+      <a href="#" class="js-close-modal">Back to main page</a>
+    </div>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs js-tabs"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">data-modal-href</span>=<span class="hljs-value">"#modal-tips-during"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__modal-toggle"</span>&gt;</span>View Tips<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"visually-hidden"</span>&gt;</span>Tips<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__menu"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"waypoints"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"is-active"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tip-1"</span> <span class="hljs-attribute">data-tab</span>=<span class="hljs-value">"1"</span>&gt;</span>Find Maxwell<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#tip-2"</span> <span class="hljs-attribute">data-tab</span>=<span class="hljs-value">"2"</span>&gt;</span>Give Him 'Fee<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__body"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tip-1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__tab"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__title"</span>&gt;</span>Find Maxwell<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>He's drinking 'fee. But he needs some more 'fee.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"tip-2"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__tab"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tabs__title"</span>&gt;</span>Give Him 'Fee<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-modal</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"modal-tips-during"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal--tips"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"dialog"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading -banner"</span>&gt;</span>Tips<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal__block"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline--alt-color"</span>&gt;</span>Find Maxwell<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>He's drinking 'fee. But he needs some more 'fee.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal__block"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline--alt-color"</span>&gt;</span>Give Him 'Fee<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Give him some 'fee. You'll get 300 points in the Intern Scavenger Hunt.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal__block form-actions"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-close-modal"</span>&gt;</span>Back to main page<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="tile">Tile <a class="styleguide-reference-link" href="#tile">#</a></h4>
+  <div class="styleguide-description">
+    <p>A tile block contains an image with an overlaid title and tagline. Generally used for
+campaigns, but can be used in any context.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="tile--example" class="styleguide-element">
+        <article class="tile">
+    <a class="wrapper" href="#">
+      <div class="tile__meta">
+        <h1 class="tile__title">Kitten Overlords</h1>
+        <p class="tile__tagline">According to the latest research, kittens will outlive the human species after the apocalypse.</p>
+      </div>
+      <img alt="kitten overlords" src="/styleguide/assets/placeholder-large.jpg" />
+      <!-- <video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop></video> -->
+    </a>
+  </article>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__meta"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__title"</span>&gt;</span>Kitten Overlords<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tile__tagline"</span>&gt;</span>According to the latest research, kittens will outlive the human species after the apocalypse.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"kitten overlords"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/styleguide/assets/placeholder-large.jpg"</span> /&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;video src="source.mp4" width="1080" height="1080" poster="poster.png" autoplay loop&gt;&lt;/video&gt; --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+
+        <h2 id="regions">Regions</h2>
+        <p>Regions are complete sections of an interface.</p>
+
+        
+<div class="styleguide-example">
+  <h4 id="chrome">Chrome <a class="styleguide-reference-link" href="#chrome">#</a></h4>
+  <div class="styleguide-description">
+    <p>The entire page should be wrapped in <code>.chrome</code> to lock page in
+place while modals are open. The page content should be wrapped
+in a <code>.wrapper</code> to set max-width and apply background
+box shadow to the page.</p>
+
+  </div>
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="container">Container <a class="styleguide-reference-link" href="#container">#</a></h4>
+  <div class="styleguide-description">
+    <p>Standard container for centered 12-column layouts. Collapses to full-width on mobile.
+Modifier classes can be applied to the required <code>container__block</code> to use different
+preset layouts. Optionally, the <code>container__row</code> class can be used to align into rows.</p>
+<p>Apply <code>.-padded</code> modifier to add extra bottom padding to a container, or <code>.-dark</code> to
+use a dark purple background which blends seamlessly with the header.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="container--example" class="styleguide-element">
+        <div class="container">
+    <div class="wrapper">
+      <div class="container__block {{modifier_class}}">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+      </div>
+      <div class="container__block {{modifier_class}}">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+      </div>
+    </div>
+  </div>
+    </div>
+
+    
+    <figure id="container--example---narrow" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-narrow</strong> Three-quarters width container.</figcaption>
+        <div class="container">
+    <div class="wrapper">
+      <div class="container__block -narrow">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+      </div>
+      <div class="container__block -narrow">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+      </div>
+    </div>
+  </div>
+    </figure>
+    
+    <figure id="container--example---half" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-half</strong> Half-width container, can be placed side-by-side to create two-column layouts.</figcaption>
+        <div class="container">
+    <div class="wrapper">
+      <div class="container__block -half">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+      </div>
+      <div class="container__block -half">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.</p>
+      </div>
+    </div>
+  </div>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container__block </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container__block </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus
+        condimentum aliquet. Maecenas suscipit commodo dui, eu venenatis nisl volutpat.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="footer">Footer <a class="styleguide-reference-link" href="#footer">#</a></h4>
+  <div class="styleguide-description">
+    <p>Chrome footer with social links &amp; footer menus.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="footer--example" class="styleguide-element">
+        <footer class="footer">
+    <div class="footer__columns">
+      <div class="footer__column -social">
+        <ul>
+          <li><a href="#" class="social-icon -facebook"><span>Facebook</span></a></li>
+          <li><a href="#" class="social-icon -twitter"><span>Twitter</span></a></li>
+          <li><a href="#" class="social-icon -tumblr"><span>Tumblr</span></a></li>
+          <li><a href="#" class="social-icon -instagram"><span>Instagram</span></a></li>
+          <li><a href="#" class="social-icon -youtube"><span>YouTube</span></a></li>
+        </ul>
+      </div>
+      <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Who We Are</h4>
+        <ul>
+          <li><a href="#">What is this?</a></li>
+          <li><a href="#">Who are they?</a></li>
+          <li><a href="#">Why are we?</a></li>
+        </ul>
+      </div>
+      <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Our Friends</h4>
+        <ul>
+          <li><a href="#">Freshman</a></li>
+          <li><a href="#">ROTC Guys</a></li>
+          <li><a href="#">Preps</a></li>
+          <li><a href="#">Varsity Jocks</a></li>
+          <li><a href="#">Unfriendly Black Hotties</a></li>
+          <li><a href="#">The greatest people you will ever meet</a></li>
+        </ul>
+      </div>
+      <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Get Involved</h4>
+        <ul>
+          <li><a href="#">Do things</a></li>
+          <li><a href="#">Do other things</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__subfooter">
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </footer>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  <span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer__columns"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer__column -social"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -facebook"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -twitter"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -tumblr"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Tumblr<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -instagram"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Instagram<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"social-icon -youtube"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>YouTube<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer__column -links"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-toggle-collapsed"</span>&gt;</span>Who We Are<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>What is this?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Who are they?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Why are we?<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer__column -links"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-toggle-collapsed"</span>&gt;</span>Our Friends<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Freshman<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>ROTC Guys<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Preps<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Varsity Jocks<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Unfriendly Black Hotties<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>The greatest people you will ever meet<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer__column -links"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"js-toggle-collapsed"</span>&gt;</span>Get Involved<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Do things<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Do other things<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"footer__subfooter"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Terms of Service<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Privacy Policy<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="header">Header <a class="styleguide-reference-link" href="#header">#</a></h4>
+  <div class="styleguide-description">
+    <p>Main page header region, including page title and an optional subtitle.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="header--example" class="styleguide-element">
+        <header role="banner" class="header {{modifier_class}}">
+    <div class="wrapper">
+      <h1 class="header__title">Title</h1>
+      <p class="header__subtitle">Subtitle.</p>
+    </div>
+  </header>
+    </div>
+
+    
+    <figure id="header--example---sponsored" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-sponsored</strong> Makes space for sponsor module within header.</figcaption>
+        <header role="banner" class="header -sponsored">
+    <div class="wrapper">
+      <h1 class="header__title">Title</h1>
+      <p class="header__subtitle">Subtitle.</p>
+    </div>
+  </header>
+    </figure>
+    
+    <figure id="header--example---centered" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-centered</strong> Center text in the header (generally used for non-content pages).</figcaption>
+        <header role="banner" class="header -centered">
+    <div class="wrapper">
+      <h1 class="header__title">Title</h1>
+      <p class="header__subtitle">Subtitle.</p>
+    </div>
+  </header>
+    </figure>
+    
+    <figure id="header--example---hero" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-hero</strong> Hero image header banner styling.</figcaption>
+        <header role="banner" class="header -hero">
+    <div class="wrapper">
+      <h1 class="header__title">Title</h1>
+      <p class="header__subtitle">Subtitle.</p>
+    </div>
+  </header>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"banner"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"header </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"wrapper"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"header__title"</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"header__subtitle"</span>&gt;</span>Subtitle.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="modal">Modal <a class="styleguide-reference-link" href="#modal">#</a></h4>
+  <div class="styleguide-description">
+    <p>Show supplementary information to a user without leaving the page. Fills
+screen on mobile, centered with overlay on tablet/desktop. Use <code>.modal__block</code>
+element to add padding inside the modal. (This allows &quot;full-width&quot; modal content
+to work without a negative margin.)</p>
+<p>See <a href="https://www.github.com/dosomething/modal">DoSomething/modal</a> for configuration options.</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="modal--example" class="styleguide-element">
+        <a href="http://www.example.com" data-modal-href="#example-modal" class="btn secondary">Show example modal</a>
+  <div data-modal id="example-modal" role="dialog">
+    <div class="modal__block">
+      <h2>Example Content</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem,
+       officia impedit eius velit consectetur provident ullam! Incidunt, rem,
+       maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi,
+       eum, accusamus.</p>
+    </div>
+  </div>
+    </div>
+
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html">  &lt;a href="http://www.example.com" data-modal-href="#example-modal" class="btn secondary"&gt;Show example modal&lt;/a&gt;
+  &lt;div data-modal id="example-modal" role="dialog"&gt;
+    &lt;div class="modal__block"&gt;
+      &lt;h2&gt;Example Content&lt;/h2&gt;
+      &lt;p&gt;Lo<span class="hljs-comment">rem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem,</span>
+       officia impedit eius velit consectetur provident ullam! Incidunt, <span class="hljs-comment">rem,</span>
+       maxime sit non natus praesentium nobis voluptas enim repudiandae. Commodi,
+       eum, accusamus.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+  </div>
+  
+  
+</div>
+
+
+        
+<div class="styleguide-example">
+  <h4 id="navigation">Navigation <a class="styleguide-reference-link" href="#navigation">#</a></h4>
+  <div class="styleguide-description">
+    <p>Chrome navigation with logo, navigation, and search. Use <code>.-floating</code> modifier to float above
+page content (such as appearing over a <strong>Header</strong> region).</p>
+
+  </div>
+  
+  <div class="styleguide-example-content">
+    <div id="navigation--example" class="styleguide-element">
+        <nav class="navigation {{modifier_class}}">
+    <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+    <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+    <div class="navigation__menu">
+      <ul class="navigation__primary">
+        <li>
+          <a href="#">
+            <strong class="navigation__title">Explore Campaigns</strong>
+            <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navigation__secondary">
+        <li>
+          <form action="#" method="post">
+            <input class="text-field -search" type="search">
+          </form>
+        </li>
+        <li>
+          <a href="#">Log In</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    </div>
+
+    
+    <figure id="navigation--example---white" class="styleguide-element">
+      <figcaption class="styleguide-element__description"><strong>.-white</strong> Use white navigation text and search field (with subtle drop shadow).</figcaption>
+        <nav class="navigation -white">
+    <a class="navigation__logo" href="http://www.dosomething.org"><span>DoSomething.org</span></a>
+    <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+    <div class="navigation__menu">
+      <ul class="navigation__primary">
+        <li>
+          <a href="#">
+            <strong class="navigation__title">Explore Campaigns</strong>
+            <span class="navigation__subtitle">Any cause, any time, anywhere.</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navigation__secondary">
+        <li>
+          <form action="#" method="post">
+            <input class="text-field -search" type="search">
+          </form>
+        </li>
+        <li>
+          <a href="#">Log In</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    </figure>
+    
+  </div>
+
+  
+  <div class="styleguide-html">
+    <pre class="styleguide-code"><code class="html"><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation </span></span></span><span class="hljs-expression">{{<span class="hljs-variable">modifier</span>_<span class="hljs-variable">class</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__logo"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.dosomething.org"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>DoSomething.org<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__toggle js-navigation-toggle"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Show Menu<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__menu"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__primary"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">strong</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__title"</span>&gt;</span>Explore Campaigns<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__subtitle"</span>&gt;</span>Any cause, any time, anywhere.<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navigation__secondary"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-field -search"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"search"</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Log In<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></span></code></pre>
+  </div>
+  
+  
+</div>
+
+
+
+        <h2 id="resources">Resources</h2>
+        <p>Forge also includes some additional resources for use with traditional design tools.</p>
+        <ul class="list">
+          <li><a href="/resources/ds-logo-vector.eps">DoSomething.org Logo (EPS)</a> &mdash; scalable vector version of our logo</li>
+          <li><a href="/resources/ds-logo-highres.png">DoSomething.org Logo (PNG)</a> &mdash; high-resolution rasterized version of our logo</li>
+          <li><a href="/resources/ds-logo-landscape.png">DoSomething.org Logo Landscape (PNG)</a> &mdash; rasterized version of our logo in landscape format 1200px by 630px optimized for social platform shares</li>
+          <li><a href="/resources/sketch.zip">Sketch Resources</a> &mdash; vector patterns for <a href="http://bohemiancoding.com/sketch/" title="Vector drawing tool for the Mac.">Sketch</a></li>
+        </ul>
+
+        <footer class="styleguide-footer">
+          <p class="footnote">&copy; 2021 DoSomething.org. Released under the <a href="https://github.com/DoSomething/forge/blob/dev/LICENSE">MIT License</a> on <a href="https://github.com/DoSomething/forge/">GitHub</a>. The name and logo for DoSomething.org are trademarks of Do Something, Inc and may not be used without permission.</p>
+        </footer>
+
+      </article>
+
+    </main>
+
+  </div>
+</div>
+
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript" src="dist/forge.js"></script>
+<script type="text/javascript" src="dist/styleguide.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64876573-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
